@@ -711,3 +711,15 @@ test('project shift moves the deadline, open milestones and linked to-dos', () =
   assert.ok(slides.blocks.every((b) => b.d < '2026-10-22'));
   assert.equal(Object.values(s.tasks).find((t) => t.title === 'Talk transcripts').plan, '2026-10-14');
 });
+
+test('block books a fixed session that plan keeps', () => {
+  const f = fixture();
+  ef(f, 'block', 't_ocd', '--on', '2026-10-07', '--min', '2h');
+  ef(f, 'plan');
+  const t = read(f).tasks.t_ocd;
+  const fixed = t.blocks.filter((b) => b.auto === false);
+  assert.equal(fixed.length, 1);
+  assert.equal(fixed[0].d, '2026-10-07');
+  assert.equal(fixed[0].m, 120);
+  assert.equal(t.blocks.filter((b) => !b.done).reduce((n, b) => n + b.m, 0), 240);
+});

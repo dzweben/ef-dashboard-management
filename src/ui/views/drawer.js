@@ -376,6 +376,9 @@ function actions(ctx, task) {
   const status = task.status ?? 'todo';
   const title = task.title || 'Task';
   const out = [];
+  // Edits save as you go; this just closes the sheet. (A plain "Done" here read as
+  // "done editing" and checked tasks off by accident.)
+  out.push(h('button.btn.btn-hot.dr-act-close', { type: 'button', id: 'dr-close', onclick: () => ctx.closeOverlay?.() }, 'Save + close'));
   if (status === 'todo') {
     out.push(h('button.btn.btn-acid.dr-act-done', {
       type: 'button', id: 'dr-done',
@@ -385,7 +388,7 @@ function actions(ctx, task) {
         ctx.closeOverlay?.();
         ctx.act('completeTask', { id: task.id }, { toast: 'Done. Nice.', undo: reopenUndo(ctx.act, task) });
       },
-    }, icon('check'), 'Done'));
+    }, icon('check'), 'Mark complete'));
     out.push(h('button.btn', { type: 'button', id: 'dr-clock', onclick: () => { ctx.closeOverlay?.(); ctx.act('clockIn', { ref: `task:${task.id}`, title, cat: task.cat, goal: 5 }, { toast: `Clock's running: ${title}. Just 5 minutes.` }); } }, icon('play'), '5 min'));
     out.push(h('button.btn', { type: 'button', id: 'dr-move', onclick: () => ctx.openMove?.(task.id) }, icon('arrow-right'), 'Push'));
     out.push(h('button.btn.btn-ghost', { type: 'button', id: 'dr-drop', onclick: () => { ctx.closeOverlay?.(); ctx.act('dropTask', { id: task.id }, { toast: `Dropped: ${title}`, kind: 'info', undo: reopenUndo(ctx.act, task) }); } }, icon('x'), 'Drop'));

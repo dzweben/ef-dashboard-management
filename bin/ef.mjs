@@ -771,7 +771,7 @@ Capture + edit:
   ef move <task> <date>         (dates: tomorrow, fri, next mon, 10/12, in 3 days...)
   ef edit <task> [--title t] [--cat id] [--due D|none] [--plan D|none] [--time 3pm|none] [--est 1h|none] [--prio n] [--notes t] [--project id|none] [--triage yes|no] [--win yes|no] [--clear-blocks]
   ef sub <task> 'subtask' [--est 30m]    ef subdone <task> <n|text>
-  ef log <task> <minutes>        ef plan [<task>] [--keep]   (auto-book work blocks before deadlines)
+  ef log <task> <minutes>        ef plan [<task>] [--keep]   ef block <task> --on <date> --min 3h  (fixed session ef plan won't move)   (auto-book work blocks before deadlines)
   <task> is an id (t_...) or words from the title; a lone "-" reads the words from stdin.
 
 Look:
@@ -992,6 +992,20 @@ async function main() {
       const t = findTask(state, q, 'any');
       mustChange(apply('logTime', { ref: `task:${t.id}`, minutes }), `could not log time on ${t.title}`);
       console.log(`logged ${fmtMinutes(minutes)} on ${t.title} (${fmtMinutes(state.tasks[t.id].spent)} total)`);
+      break;
+    }
+
+    case 'block': {
+      // ef block <task> --on <date> --min <duration>: a fixed work session Danny chose (never moved by ef plan)
+      const t = findTask(state, pos.join(' '), 'todo');
+      const d = dateArg(flags.on, today, '--on date');
+      const m = parseDuration(String(flags.min ?? ''));
+      if (!m) die('usage: ef block <task> --on <date> --min 3h');
+      const blocks = [...(t.blocks ?? []), { id: makeId('b_'), d, m, done: false, auto: false }];
+      mustChange(apply('editTask', { id: t.id, patch: { blocks } }), `could not add a block to ${t.title}`);
+      const { updates } = allocate(state, { today, taskIds: [t.id], from: planStart(ctx.now, state.settings.tz) });
+      if (Object.keys(updates).length) apply('applyAllocation', { updates });
+      console.log(`booked ${fmtMinutes(m)} on ${fmtDay(d)} for ${t.title}`);
       break;
     }
 
