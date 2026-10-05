@@ -149,6 +149,9 @@ time. "by X" / "due X" sets a deadline; "- X" / "on X" / "@X" sets the do-day.
   keep it light: one short line, framed as a suggestion he can take or leave
   ("Tue's a bit full; want the AI slides on Wed instead?"). Don't lecture
   about load.
+- **Full days are normal.** Research + clinical + classes is his job; a
+  6–8h day of to-dos is a regular day (capacity is set to 8h weekdays, 7h Fri,
+  3h weekends). Don't comment on how big a day is.
 - **Capacity is a soft guide, not a rule.** `ef risks` only flags a day
   that's clearly packed (about a third over his usual capacity). Never move
   things on your own because a day is full; suggest the move and let him
