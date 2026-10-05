@@ -364,3 +364,40 @@ export function applyWrites(state, writes = []) {
 export function clone(v) {
   return v === undefined ? undefined : JSON.parse(JSON.stringify(v));
 }
+
+const sameJSON = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+
+/**
+ * Doc-level writes that turn `base` into `next` (field-level `update`s for changed
+ * entries, `set` for new ones, `delete` for removed ones, `set` for changed meta docs).
+ * Used to replay one side's changes onto a newer remote state (3-way merge):
+ *   applyWrites(remote, diffWrites(base, ours))
+ */
+export function diffWrites(base, next) {
+  const writes = [];
+  for (const col of COLLECTIONS) {
+    const a = base?.[col] ?? {};
+    const b = next?.[col] ?? {};
+    for (const [id, doc] of Object.entries(b)) {
+      const prev = a[id];
+      if (!prev) {
+        writes.push({ op: 'set', col, id, data: stripMeta(doc) });
+        continue;
+      }
+      const changed = {};
+      for (const k of new Set([...Object.keys(prev), ...Object.keys(doc)])) {
+        if (k.startsWith('_')) continue;
+        if (!sameJSON(prev[k], doc[k])) changed[k] = doc[k] === undefined ? null : doc[k];
+      }
+      if (Object.keys(changed).length) writes.push({ op: 'update', col, id, data: changed });
+    }
+    for (const id of Object.keys(a)) if (!(id in b)) writes.push({ op: 'delete', col, id });
+  }
+  for (const id of META_DOCS) {
+    if (!sameJSON(base?.[id] ?? null, next?.[id] ?? null)) {
+      if (next?.[id] == null) writes.push({ op: 'delete', col: 'meta', id });
+      else writes.push({ op: 'set', col: 'meta', id, data: clone(next[id]) });
+    }
+  }
+  return writes;
+}

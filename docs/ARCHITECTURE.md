@@ -266,8 +266,9 @@ All in `src/engine/`, ESM, pure. `ctx = { now: ISO, today: "YYYY-MM-DD", src }`.
   Sat), `eow`/`end of week` (this Friday; if today is Fri/Sat/Sun the next
   Friday), `eom`/`end of month`, `in N days|weeks`, `M/D`, `M/D/YY(YY)`,
   `YYYY-MM-DD`, `oct 12`, `october 12th`, `12 oct`, bare ordinal `12th` (next
-  occurrence of that day of month, today counts). Month/day without a year picks
-  the next occurrence on or after today.
+  occurrence of that day of month, today counts). Month/day without a year means
+  this year's date unless that is more than 60 days in the past (then next year),
+  so "10/1" typed on Oct 5 is Oct 1 (overdue) and "1/15" typed in October is next January.
 
 ### parse.js
 - `parseQuickAdd(text, { today, cats, settings })` →
