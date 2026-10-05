@@ -23,19 +23,19 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-05T20:20:56.903Z",
+    "at": "2026-10-05T20:24:50.306Z",
     "headline": "5 things today. Start with: Reschedule dentist (10m).",
     "lines": [
       "INCOMING // Clinical notes (3 behind) Wed 10/7 (2d): 1h left, 0m booked · RSA front-to-back for Nyx: finish + full review Thu 10/8 (3d): 3h left, 3h booked",
       "CHORES // Closet reset · Clean first floor · Water plants. Most overdue: Closet reset (48d since last).",
-      "TOMORROW // Tue 10/6 [8h/4h]: Clinical notes (3 behind) · OCD pres: read the Barlow chapter · Email Johanna: full LEARN breakdown (issues we ran into) · RSA: participant data fixes · +2 more",
+      "TOMORROW // Tue 10/6 [6h 30m/4h]: Clinical notes (3 behind) · OCD pres: read the Barlow chapter · Email Johanna: full LEARN breakdown (issues we ran into) · RSA: participant data fixes · +1 more",
       "DONE // 11 today · streak 8d"
     ],
     "asks": [
       "Clinical notes (3 behind) needs 1h but only 5m is free before Wed 10/7. Cut scope or move the deadline?",
       "Anything coming up for Meetings?",
-      "RSA front-to-back for Nyx: finish + full review needs 3h but only 2h 10m is free before Thu 10/8. Cut scope or move the deadline?",
-      "Tue 10/6 looks packed: 8h planned vs ~4h. Push something?"
+      "RSA front-to-back for Nyx: finish + full review needs 3h but only 2h 40m is free before Thu 10/8. Cut scope or move the deadline?",
+      "Tue 10/6 looks packed: 6h 30m planned vs ~4h. Push something?"
     ],
     "focus": [
       "t_dentist",
@@ -47,8 +47,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-05T20:18:47.773Z",
-    "lastActivitySeen": "2026-10-05T20:18:47.773Z"
+    "lastClaudeSync": "2026-10-05T20:24:44.368Z",
+    "lastActivitySeen": "2026-10-05T20:24:44.368Z"
   },
   "cats": {
     "admin": {
@@ -1646,7 +1646,7 @@
       "status": "todo",
       "due": null,
       "time": null,
-      "plan": "2026-10-06",
+      "plan": "2026-10-12",
       "est": 90,
       "spent": 0,
       "blocks": [],
@@ -1656,10 +1656,10 @@
       "notes": "",
       "subs": [],
       "triage": false,
-      "moved": 0,
+      "moved": 1,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T04:00:00.000Z",
+      "updated": "2026-10-05T20:24:46.264Z",
       "doneAt": null,
       "src": "import"
     },
@@ -6217,6 +6217,16 @@
       "title": "SPARK grant update",
       "from": null,
       "to": "2026-10-10"
+    },
+    "a_ycu59y2p": {
+      "id": "a_ycu59y2p",
+      "at": "2026-10-05T20:24:46.264Z",
+      "src": "chat",
+      "type": "move",
+      "ref": "t_abcdjason",
+      "title": "Start ABCD work for Jason",
+      "from": "2026-10-06",
+      "to": "2026-10-12"
     },
     "a_yorvm1jk": {
       "id": "a_yorvm1jk",
