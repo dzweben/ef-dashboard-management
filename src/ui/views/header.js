@@ -127,7 +127,7 @@ export function mountHeader(el, ctx) {
 
   function parse(text) {
     try {
-      return parseQuickAdd(text, { today: cur.today, cats: cur.state?.cats, settings: cur.state?.settings });
+      return parseQuickAdd(text, { today: cur.today, now: cur.now, cats: cur.state?.cats, settings: cur.state?.settings });
     } catch (err) {
       if (typeof console !== 'undefined') console.error(err);
       return null;
@@ -152,16 +152,24 @@ export function mountHeader(el, ctx) {
     }
     const parts = [h('span.qa-arrow', '└─')];
     parts.push(h('span.qa-title', p.title ? p.title : h('span.faint', 'needs a title')));
-    if (p.newCatName) parts.push(chip(`NEW CATEGORY: ${p.newCatName}`, 'hot', 'plus'));
+    if (!cur.loaded) {
+      // Categories aren't known yet: "#rsa" would read as a brand-new category.
+      parts.push(chip('LOADING BOARD…', '', null, { title: 'Your categories are still loading from GitHub.' }));
+    } else if (p.newCatName) parts.push(chip(`NEW CATEGORY: ${p.newCatName}`, 'hot', 'plus'));
     else {
-      const cat = typeof cur.cat === 'function' ? cur.cat(p.cat) : cur.state?.cats?.[p.cat];
-      const isInbox = !p.cat || p.cat === 'inbox';
-      const unsure = !isInbox && isNum(p.catConfidence) && p.catConfidence < 0.75;
+      const parsedInbox = !p.cat || p.cat === 'inbox';
+      // A recurring line becomes a chore, and an unfiled chore goes under Home (ops.addChore).
+      const catId = parsedInbox && p.recurring && cur.state?.cats?.home ? 'home' : p.cat;
+      const cat = typeof cur.cat === 'function' ? cur.cat(catId) : cur.state?.cats?.[catId];
+      const isInbox = !catId || catId === 'inbox';
+      const unsure = !parsedInbox && isNum(p.catConfidence) && p.catConfidence < 0.75;
       parts.push(h('span.chip.qa-cat', {
         class: isInbox ? 'is-inbox' : '',
         style: catStyle(cat),
-        title: isInbox ? 'No category matched. Add #tag to file it.' : `Filed by ${p.catReason || 'match'}`,
-      }, h('i.catdot', { style: catStyle(cat) }), up(cat?.name ?? p.cat ?? 'Inbox'), unsure ? '?' : ''));
+        title: isInbox
+          ? 'No category matched. Add #tag to file it.'
+          : parsedInbox ? 'Chores without a #tag go under Home.' : `Filed by ${p.catReason || 'match'}`,
+      }, h('i.catdot', { style: catStyle(cat) }), up(cat?.name ?? catId ?? 'Inbox'), unsure ? '?' : ''));
     }
     if (p.recurring) parts.push(chip(`${cadence(p.recurring)} CHORE`, 'acid', 'repeat'));
     if (p.plan) parts.push(chip(`DO ${up(fmtDay(p.plan))}`, 'cyan', 'calendar'));
@@ -204,10 +212,15 @@ export function mountHeader(el, ctx) {
       busy = false;
       form.classList.remove('is-busy');
     }
-    if (!res) return; // act already explained (read-only, error)
+    if (!res) return; // act already explained (read-only, still loading, error); the text stays
     const writes = arr(res.writes);
     if (!writes.length) {
-      cur.toast?.("Didn't add anything (empty title?).", { kind: 'error' });
+      const dup = res.duplicateOf ? cur.state?.chores?.[res.duplicateOf] : null;
+      if (dup) {
+        cur.toast?.(`Already tracking that chore: ${dup.title}.`, { kind: 'info' });
+        input.value = '';
+        renderPreview();
+      } else cur.toast?.("Didn't add anything (empty title?).", { kind: 'error' });
       return;
     }
     if (history[0] !== text) history.unshift(text);
@@ -313,7 +326,7 @@ export function mountHeader(el, ctx) {
   function renderSync(c) {
     const kind = c.store?.status?.kind || (c.loaded ? 'synced' : 'loading');
     const mode = c.store?.mode || 'readonly';
-    const sig = `${kind}|${mode}|${c.store?.status?.message ?? ''}|${c.store?.status?.at ?? ''}`;
+    const sig = `${kind}|${mode}|${c.store?.status?.message ?? ''}|${c.store?.status?.at ?? ''}|${!!c.loaded}|${c.store?.canWrite}`;
     if (sig === syncSig) return;
     syncSig = sig;
     const def = SYNC[kind] ?? { label: up(kind), tone: 'ink' };
@@ -333,7 +346,9 @@ export function mountHeader(el, ctx) {
     const modeText = mode === 'github' ? 'LIVE' : mode === 'local' ? 'PREVIEW' : 'READ-ONLY';
     modeTag.textContent = modeText;
     modeTag.className = `hdr-mode is-${mode}`;
-    input.setAttribute('placeholder', c.store?.canWrite === false ? 'read-only: connect GitHub in Setup to add' : 'email mike - tomorrow');
+    input.setAttribute('placeholder', c.store?.canWrite === false
+      ? 'read-only: connect GitHub in Setup to add'
+      : c.loaded ? 'email mike - tomorrow' : 'loading your board…');
   }
 
   function vitalCell(key, label, valueEl, extra, { tone = '', title = '' } = {}) {

@@ -4,7 +4,7 @@
 
 import { addDays, diffDays, isISODate, isWeekend, localDateOf, rangeDays, todayISO } from './dates.js';
 import { DEFAULT_SETTINGS } from './model.js';
-import { allocatedFuture, capacityFor, dayLoads, makeRunway, remaining, shortfall } from './schedule.js';
+import { allocatedFuture, capacityFor, dayLoads, isPastEvent, makeRunway, remaining, shortfall } from './schedule.js';
 
 const isObj = (v) => v !== null && typeof v === 'object' && !Array.isArray(v);
 const isNum = (v) => typeof v === 'number' && Number.isFinite(v);
@@ -81,7 +81,13 @@ function choreInfo(c, today) {
   let due;
   let urgency;
   let nextDue;
-  if (every === 1) {
+  const start = dateOr(c.start);
+  if (!last && !log.length && start && start > today) {
+    // never done and set to start later ("laundry every week - sat")
+    due = false;
+    urgency = 0;
+    nextDue = start;
+  } else if (every === 1) {
     due = todayCount < perDay;
     urgency = Math.max(0, (perDay - todayCount) / perDay);
     nextDue = due ? today : addDays(today, 1);
@@ -112,6 +118,8 @@ export function choreView(state, today) {
 /**
  * The Today list. A task lands in the first matching bucket of:
  * triage, overdue, dueToday, meetings, planned, carried. `blocks` is separate.
+ * triage = flagged `triage`, or a past meeting/appointment (schedule.isPastEvent:
+ * its day is gone, so "did it happen?" rather than rolling over as carried).
  * `chores` are the active chores due now (Chore objects, most urgent first).
  */
 export function todayView(state, today) {
@@ -129,7 +137,7 @@ export function todayView(state, today) {
     if (!isOpen(t)) continue;
     const due = dateOr(t.due);
     const plan = dateOr(t.plan);
-    if (t.triage === true) out.triage.push(t);
+    if (t.triage === true || isPastEvent(t, t0)) out.triage.push(t);
     else if (due && due < t0) out.overdue.push(t);
     else if (due === t0) out.dueToday.push(t);
     else if (MEETING_KINDS.has(t.kind) && (plan === t0 || due === t0)) out.meetings.push(t);

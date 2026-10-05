@@ -1,6 +1,9 @@
 // A tiny DOM for UI tests in plain Node (no jsdom: the repo has no deps).
 // Covers what src/ui/dom.js and the views use: elements, text, attributes,
 // classList, dataset, style, events (via Node's EventTarget), simple selectors.
+// Focus follows Chromium: focus()/blur() also fire `focusout` on the document, and
+// removing a subtree that holds the focused field fires that field's `change` (when
+// its value moved since focus) and `blur` while it is still attached, like Chrome does.
 // Import it before any src/ui module: `import { installDom } from './fixtures/ui-dom.js'; installDom();`
 
 const VOID = new Set(['input', 'br', 'img', 'hr', 'meta', 'link']);
@@ -40,6 +43,7 @@ class FakeNode extends EventTarget {
     return child;
   }
   removeChild(child) {
+    loseFocusInside(child);
     const i = this.childNodes.indexOf(child);
     if (i >= 0) this.childNodes.splice(i, 1);
     child.parentNode = null;
@@ -78,6 +82,21 @@ class FakeNode extends EventTarget {
     return out;
   }
   querySelector(sel) { return this.querySelectorAll(sel)[0] ?? null; }
+}
+
+/** Chromium: a focused field inside a removed subtree reports change + blur, then focus goes to body. */
+function loseFocusInside(node) {
+  const d = globalThis.document;
+  const a = d?.activeElement;
+  if (!a || a === d.body || !(node instanceof FakeNode) || !node.contains(a)) return;
+  if (a._focusValue !== undefined && a.value !== a._focusValue) {
+    a._focusValue = a.value;
+    a.dispatchEvent(new Event('change'));
+  }
+  if (d.activeElement !== a) return; // a handler moved focus already
+  a.dispatchEvent(new Event('blur'));
+  d.dispatchEvent(new Event('focusout'));
+  d.activeElement = d.body;
 }
 
 class FakeText extends FakeNode {
@@ -182,7 +201,11 @@ class FakeElement extends FakeNode {
     const prev = d.activeElement;
     if (prev === this) return;
     d.activeElement = this;
-    if (prev && prev !== d.body) prev.dispatchEvent(new Event('blur'));
+    if (prev && prev !== d.body) {
+      prev.dispatchEvent(new Event('blur'));
+      d.dispatchEvent(new Event('focusout'));
+    }
+    this._focusValue = this.value;
     this.dispatchEvent(new Event('focus'));
   }
   blur() {
@@ -190,6 +213,7 @@ class FakeElement extends FakeNode {
     if (d.activeElement === this) {
       d.activeElement = d.body;
       this.dispatchEvent(new Event('blur'));
+      d.dispatchEvent(new Event('focusout'));
     }
   }
   select() {}
@@ -308,6 +332,8 @@ export function installDom({ reducedMotion = false, finePointer = true } = {}) {
   };
   globalThis.document = document;
   globalThis.window = window;
+  globalThis.location = window.location;
+  globalThis.history = { replaceState() {} };
   globalThis.Node = FakeNode;
   globalThis.Element = FakeElement;
   globalThis.requestAnimationFrame = (fn) => setTimeout(() => fn(Date.now()), 0);
@@ -320,6 +346,23 @@ export function installDom({ reducedMotion = false, finePointer = true } = {}) {
       document.body.replaceChildren();
       document.activeElement = document.body;
     },
+  };
+}
+
+/** The page skeleton main.js boots into (src/ui/template.html's ids). */
+export function mountAppShell(document) {
+  document.body.replaceChildren();
+  for (const [tag, id] of [['header', 'ef-header'], ['nav', 'ef-tabs'], ['main', 'ef-main'], ['div', 'ef-overlay'], ['div', 'ef-toasts']]) {
+    const el = document.createElement(tag);
+    el.id = id;
+    document.body.appendChild(el);
+  }
+  return {
+    header: document.getElementById('ef-header'),
+    tabs: document.getElementById('ef-tabs'),
+    main: document.getElementById('ef-main'),
+    overlay: document.getElementById('ef-overlay'),
+    toasts: document.getElementById('ef-toasts'),
   };
 }
 

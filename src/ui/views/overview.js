@@ -32,11 +32,32 @@ function crashed(area, err) {
   );
 }
 
-function skeleton(area) {
-  return h('section.panel.skel', { 'aria-busy': 'true', 'aria-label': `${area.label} loading`, class: area.tall ? 'is-tall' : '' },
+/** The first load failed (rejected token, offline, GitHub down): say so instead of LOADING… forever. */
+function loadProblem(ctx) {
+  const st = ctx?.store?.status;
+  return st && (st.kind === 'error' || st.kind === 'offline') && st.message ? st : null;
+}
+
+function skeleton(area, ctx, problem) {
+  const stuck = problem && area.key === 'today'
+    ? h('div.skel-stuck', { role: 'alert' },
+        h('p.skel-msg', problem.message),
+        h('p.skel-actions',
+          h('button.btn.btn-sm', { type: 'button', onclick: () => ctx.setTab?.('setup') }, icon('settings'), 'Setup'),
+          h('button.btn.btn-sm', { type: 'button', onclick: () => ctx.store?.refresh?.() }, icon('refresh'), 'Retry'),
+        ))
+    : null;
+  return h('section.panel.skel', {
+    'aria-busy': problem ? 'false' : 'true',
+    'aria-label': `${area.label} ${problem ? 'not loaded' : 'loading'}`,
+    class: [area.tall && 'is-tall', problem && 'is-stuck'].filter(Boolean).join(' '),
+  },
     h('div.panel-head', h('h2', h('span.slash', '//'), area.label)),
     h('div.panel-body',
-      h('p.skel-label', 'LOADING', h('span.skel-dots', '…')),
+      problem
+        ? h('p.skel-label', "CAN'T LOAD YET")
+        : h('p.skel-label', 'LOADING', h('span.skel-dots', '…')),
+      stuck,
       h('div.skel-bar'), h('div.skel-bar.is-short'), h('div.skel-bar'),
     ),
   );
@@ -44,10 +65,11 @@ function skeleton(area) {
 
 export function renderOverview(ctx) {
   const loading = !ctx.loaded;
+  const problem = loading ? loadProblem(ctx) : null;
   const grid = h('div.ov', { class: loading ? 'is-loading' : '' });
   for (const area of AREAS) {
     let node;
-    if (loading) node = skeleton(area);
+    if (loading) node = skeleton(area, ctx, problem);
     else {
       try {
         node = area.render(ctx);

@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { emptyState, normalizeCategory, normalizeChore, normalizeTask } from '../src/engine/model.js';
 import { DEFAULT_CATEGORIES } from '../src/engine/defaults.js';
 import { OPS } from '../src/engine/ops.js';
-import { buildBrief, changesSince, commitMessage, missingCategoryCheck } from '../src/engine/brief.js';
+import { buildBrief, changesBetween, changesSince, commitMessage, missingCategoryCheck } from '../src/engine/brief.js';
 import { fixture, makeState, deepFreeze, TODAY, NOW } from './fixtures/engine-fixture.js';
 
 const at = (min) => new Date(Date.parse(NOW) + min * 60000).toISOString();
@@ -160,6 +160,71 @@ test('changesSince: the since cutoff is exclusive; null means everything', () =>
   assert.doesNotThrow(() => changesSince({ activity: { x: null, y: { id: 'y', at: 'bad', src: 'dash' } } }, 'garbage'));
 });
 
+test('ENG-12: a drop that was reopened (the toast undo) nets out; done/drop flips keep the last verdict', () => {
+  let s = base();
+  const step = (op, id, min) => { s = OPS[op](s, { id }, { now: at(min), today: TODAY, src: 'dash' }).state; };
+  step('dropTask', 't_donate', 1);
+  step('reopenTask', 't_donate', 2);
+  step('dropTask', 't_closet', 3);
+  step('completeTask', 't_closet', 4); // dropped, then actually done
+  step('completeTask', 't_email', 5);
+  step('dropTask', 't_email', 6); // done, then dropped
+  const ch = changesSince(s, NOW);
+  assert.deepEqual(ch.dropped, ['Email Mike']);
+  assert.deepEqual(ch.done, ['Clean closet']);
+  assert.deepEqual(ch.other, []);
+  // a reopen with nothing to net against is still reported
+  step('reopenTask', 't_notes', 7);
+  assert.deepEqual(changesSince(s, at(6)).other, ['undone: Session notes']);
+});
+
+test('changesBetween: reports activity ids new since `before`, whatever their timestamps', () => {
+  const before = base();
+  // a check-off made offline at 13:58 that only reaches GitHub after Claude's 14:00 sync
+  const late = OPS.completeTask(before, { id: 't_email' }, { now: '2026-10-05T13:58:00.000Z', today: TODAY, src: 'dash' }).state;
+  const after = OPS.completeTask(late, { id: 't_quiz' }, { now: at(5), today: TODAY, src: 'chat' }).state;
+  assert.deepEqual(changesSince(after, NOW).done, [], 'the timestamp filter misses it (SYNC-5)');
+  const ch = changesBetween(before, after);
+  assert.deepEqual(ch.done, ['Email Mike']);
+  assert.ok(ch.entries.every((a) => a.src === 'dash'));
+  assert.deepEqual(Object.keys(ch), Object.keys(changesSince(after, NOW)));
+  assert.deepEqual(changesBetween(before, after, { src: 'any' }).done, ['Email Mike', 'CBT quiz']);
+  // already-seen entries are never reported again
+  assert.deepEqual(changesBetween(after, after).entries, []);
+  // renamed (rewritten) entries are not "new"
+  const renamed = OPS.editTask(after, { id: 't_email', patch: { title: 'Email Mike re: RSA' } }, { now: at(6), today: TODAY, src: 'chat' }).state;
+  assert.deepEqual(changesBetween(after, renamed).entries, []);
+  assert.deepEqual(changesBetween(null, after).done, ['Email Mike']);
+  assert.doesNotThrow(() => changesBetween(undefined, { activity: { x: null, y: { id: 'y', at: 'bad', src: 'dash' } } }));
+});
+
+test('ENG-3: a clock left running past the session cap is the first ask', () => {
+  const s = base();
+  const on = OPS.clockIn(s, { ref: 'task:t_big' }, { now: '2026-10-05T01:00:00.000Z', today: '2026-10-04', src: 'dash' }).state;
+  const b = buildBrief(on, { today: TODAY, now: NOW });
+  assert.equal(b.asks[0], "The clock on 'RSA manuscript draft' has been running 13h. Still at it, or stop it? (A session logs at most 3h.)");
+  assert.ok(b.asks.length <= 4);
+  // a fresh clock is not nagged about
+  const fresh = OPS.clockIn(s, { ref: 'task:t_big' }, { now: at(-30), today: TODAY, src: 'dash' }).state;
+  assert.ok(!buildBrief(fresh, { today: TODAY, now: NOW }).asks.some((q) => q.startsWith('The clock')));
+});
+
+test('ENG-4: past meetings are asked about, never the brief\'s focus', () => {
+  const s = deepFreeze(makeState({ tasks: [
+    { id: 't_dent', title: 'Dentist appt', kind: 'appt', plan: '2026-10-07', time: '09:30' },
+    { id: 't_lab', title: 'Lab meeting', kind: 'meeting', plan: '2026-10-08', time: '14:00' },
+    { id: 't_mike', title: 'Email Mike', kind: 'email', plan: '2026-10-08' },
+    { id: 't_adv', title: 'Advisor meeting', kind: 'meeting', due: '2026-10-09', est: 60 },
+  ] }));
+  const b = buildBrief(s, { today: '2026-10-12', now: '2026-10-12T14:00:00.000Z' });
+  assert.equal(b.headline, '1 thing today. Start with: Email Mike.');
+  assert.deepEqual(b.focus, ['t_mike']);
+  assert.ok(b.asks.includes("Did 'Dentist appt' happen?"));
+  assert.ok(b.asks.includes("Did 'Lab meeting' happen?"));
+  assert.ok(!b.asks.some((q) => /late\./.test(q)), 'a past meeting is not late work');
+  assert.ok(!b.lines.some((l) => l.startsWith('OVERDUE')));
+});
+
 // ---------------------------------------------------------------- missingCategoryCheck
 
 test('missingCategoryCheck: asks about empty always-present areas, max 2', () => {
@@ -224,6 +289,11 @@ const A = (type, title, extra = {}) => ({ id: `a_${title}`, at: NOW, src: 'dash'
 test('commitMessage: subject + one bullet per entry', () => {
   const msg = commitMessage([A('done', 'Email Mike'), A('move', 'RSA intro', { from: '2026-10-05', to: '2026-10-08' })]);
   assert.equal(msg, 'dash: ✓ Email Mike · → RSA intro (Thu)\n\n- done: Email Mike\n- moved: RSA intro → Thu 10/8');
+});
+
+test('CLI-1: commitMessage names an ef archive entry and where the old tasks went', () => {
+  const msg = commitMessage([A('archive', 'Archived 5 old done tasks', { src: 'chat', to: 'data/archive/2026.json' })]);
+  assert.equal(msg, 'chat: ▣ Archived 5 old done tasks\n\n- archived: Archived 5 old done tasks (data/archive/2026.json)');
 });
 
 test('commitMessage: long bursts summarize as "+N more" within 72 chars', () => {

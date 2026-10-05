@@ -1,5 +1,5 @@
 // EF Console boot: picks a store, owns app state, renders views, dispatches ops.
-import { h, mount, safeStorage } from './dom.js';
+import { h, mount, safeStorage, isSegmented } from './dom.js';
 import { todayISO, nowISO } from '../engine/dates.js';
 import { OPS } from '../engine/ops.js';
 import { todayView, calendarView, upcomingDeadlines, backlog, projectView, choreView } from '../engine/views.js';
@@ -26,7 +26,16 @@ export const DEFAULT_CONFIG = Object.freeze({
   repo: 'ef-dashboard-management',
   branch: '', // '' = the repo's default branch
   path: 'data/state.json',
+  // Author + committer of every website commit (GitHub's noreply address, never a personal email).
+  author: Object.freeze({ name: 'Danny Zweben', email: '176344411+dzweben@users.noreply.github.com' }),
 });
+
+/** Statuses that mean the store is talking to its backend fine. */
+const HEALTHY = new Set(['synced', 'saving', 'pending']);
+/** After pointerup with no click (drag-select, a press that slid off), how long renders stay held. */
+const POINTER_RELEASE_MS = 400;
+/** A held pointer never blocks renders longer than this. */
+const POINTER_HOLD_MAX_MS = 5000;
 
 export const TABS = [
   { id: 'overview', label: 'Today', icon: 'bolt' },
@@ -46,13 +55,23 @@ const VIEWS = {
   setup: renderSetup,
 };
 
+const CONFIG_KEYS = ['owner', 'repo', 'branch', 'path'];
+
+/** owner/repo/branch/path from `cfg` over the defaults; author always comes from DEFAULT_CONFIG. */
+function pickConfig(cfg) {
+  const out = { ...DEFAULT_CONFIG };
+  if (cfg && typeof cfg === 'object') {
+    for (const k of CONFIG_KEYS) if (typeof cfg[k] === 'string') out[k] = cfg[k];
+  }
+  return out;
+}
+
 function readConfig() {
   try {
     const raw = storage.get('ef.gh.config');
-    const cfg = raw ? JSON.parse(raw) : {};
-    return { ...DEFAULT_CONFIG, ...(cfg && typeof cfg === 'object' ? cfg : {}) };
+    return pickConfig(raw ? JSON.parse(raw) : {});
   } catch {
-    return { ...DEFAULT_CONFIG };
+    return pickConfig({});
   }
 }
 
@@ -61,7 +80,13 @@ function tabFromHash() {
   return TABS.some((x) => x.id === t) ? t : 'overview';
 }
 
-export function boot(root = document) {
+/**
+ * Mount the app into `root` (a document). `opts.createStore(storeOptions)` swaps in a
+ * store (tests); by default the preview seed picks the local store, else GitHub with
+ * storeOptions = { owner, repo, branch, path, author, token }.
+ * Returns the app object; `app.dispose()` removes timers and listeners.
+ */
+export function boot(root = document, opts = {}) {
   const els = {
     header: root.getElementById('ef-header'),
     tabs: root.getElementById('ef-tabs'),
@@ -72,42 +97,92 @@ export function boot(root = document) {
 
   const app = {
     state: emptyState(),
-    loaded: false,
+    loaded: false, // the current store has delivered real state at least once
+    loadFailed: false, // the current store's first load failed (cleared once it reports healthy)
     config: readConfig(),
     token: storage.get('ef.gh.token') || '',
     store: null,
     status: { kind: 'loading', at: null, message: 'Loading…' },
     ui: { tab: tabFromHash(), drawer: null, move: null, clockSheet: null, filters: {}, flash: null },
     renderQueued: false,
+    renderHeld: false, // a render was skipped while the pointer was down
+    pointerHold: false,
+    holdTimer: null,
+    focusHeld: false, // a view/overlay kept its DOM because a date/time field in it is being typed in
+    renderedTab: null,
     header: null,
     unsub: null,
+    unstatus: null,
   };
 
   // ---------- store ----------
+  function defaultStore(storeOptions) {
+    const preview = window.__EF_PREVIEW__;
+    if (preview) return createLocalStore(normalizeState(preview), { key: 'ef.preview.v1' });
+    return createGitHubStore(storeOptions);
+  }
+
   function pickStore() {
     if (app.unsub) app.unsub();
+    if (app.unstatus) app.unstatus();
+    app.unsub = app.unstatus = null;
     if (app.store && app.store.dispose) app.store.dispose();
-    const preview = window.__EF_PREVIEW__;
-    if (preview) {
-      app.store = createLocalStore(normalizeState(preview), { key: 'ef.preview.v1' });
-    } else {
-      app.store = createGitHubStore({ ...app.config, token: app.token || null });
-    }
-    app.unsub = app.store.subscribe((state) => {
+    // A new store (new token / repo) starts unloaded: nothing may be written until
+    // it has delivered real state, or writes would be computed against a stale/empty board.
+    app.loaded = false;
+    app.loadFailed = false;
+    app.status = { kind: 'loading', at: null, message: 'Loading…' };
+    const storeOptions = { ...app.config, author: { ...DEFAULT_CONFIG.author }, token: app.token || null };
+    const store = typeof opts.createStore === 'function' ? opts.createStore(storeOptions) : defaultStore(storeOptions);
+    app.store = store;
+    const current = () => app.store === store;
+    app.unsub = store.subscribe((state) => {
+      if (!current() || !state) return;
       app.state = state;
       app.loaded = true;
       schedule();
     });
-    if (app.store.onStatus) {
-      app.store.onStatus((st) => {
+    if (store.onStatus) {
+      const off = store.onStatus((st) => {
+        if (!current() || !st) return;
         app.status = st;
+        if (HEALTHY.has(st.kind)) app.loadFailed = false;
         schedule();
       });
+      app.unstatus = typeof off === 'function' ? off : null;
     }
-    app.store.load().catch((err) => {
-      if (app.status.kind === 'loading') app.status = { kind: 'error', at: nowISO(), message: err?.message || String(err) };
-      schedule();
-    });
+    let loading;
+    try {
+      loading = Promise.resolve(store.load());
+    } catch (err) {
+      loading = Promise.reject(err);
+    }
+    loading.then(
+      () => {
+        if (!current()) return;
+        // e.g. a rejected token with a read-only fallback: the board shows, writes stay off
+        if (app.status.kind === 'error') app.loadFailed = true;
+        schedule();
+      },
+      (err) => {
+        if (!current()) return;
+        app.loadFailed = true;
+        if (app.status.kind === 'loading') app.status = { kind: 'error', at: nowISO(), message: err?.message || String(err) };
+        schedule();
+      },
+    );
+  }
+
+  /** Why writes are refused right now (still loading / the first load failed), or null. */
+  function notReadyReason() {
+    const st = app.status ?? {};
+    const why = (st.kind === 'error' || st.kind === 'offline') && st.message ? ` ${st.message}` : '';
+    if (!app.loaded) return `Still loading your board…${why}`;
+    if (app.loadFailed && st.kind === 'error') return `Still loading your board…${why || ' GitHub load failed.'}`;
+    // The store's own answer: a read-only fallback copy (after a rejected token) is
+    // on screen but was never loaded through the API, so it is not a base to write on.
+    if (typeof app.store?.isLoaded === 'function' && app.store.isLoaded() === false) return `Still loading your board…${why || ' GitHub load failed.'}`;
+    return null;
   }
 
   // ---------- context passed to every view ----------
@@ -127,10 +202,11 @@ export function boot(root = document) {
       config: app.config,
       hasToken: !!app.token,
       act, setUI, setTab, rerender: schedule,
-      openTask: (id) => setUI({ drawer: { taskId: id }, move: null, clockSheet: null }),
-      openMove: (taskId, blockId = null) => setUI({ move: { taskId, blockId }, drawer: null, clockSheet: null }),
-      openClock: (ref = null) => setUI({ clockSheet: { ref }, drawer: null, move: null }),
-      closeOverlay: () => setUI({ drawer: null, move: null, clockSheet: null }),
+      // every overlay change disarms the drawer's "Really delete?"
+      openTask: (id) => setUI({ drawer: { taskId: id }, move: null, clockSheet: null, drawerConfirm: null }),
+      openMove: (taskId, blockId = null) => setUI({ move: { taskId, blockId }, drawer: null, clockSheet: null, drawerConfirm: null }),
+      openClock: (ref = null) => setUI({ clockSheet: { ref }, drawer: null, move: null, drawerConfirm: null }),
+      closeOverlay,
       toast,
       fx: { burst, stamp },
       icon,
@@ -170,6 +246,11 @@ export function boot(root = document) {
       toast('Read-only. Connect GitHub in Setup to save changes.', { kind: 'error', action: { label: 'Setup', fn: () => setTab('setup') } });
       return null;
     }
+    const notReady = notReadyReason();
+    if (notReady) {
+      toast(notReady, { kind: 'error', action: app.status?.kind === 'error' ? { label: 'Setup', fn: () => setTab('setup') } : null });
+      return null;
+    }
     const tz = app.state.settings?.tz || 'America/New_York';
     const ctx = { now: nowISO(), today: todayISO(tz), src: 'dash' };
     let res;
@@ -185,7 +266,9 @@ export function boot(root = document) {
       await app.store.apply(res.writes, res.activity ?? []);
     } catch (err) {
       console.error(err);
-      toast(`Couldn't save: ${err?.message || err}`, { kind: 'error' });
+      // the store refused because it has no loaded base yet: its message is already user-ready
+      if (err?.code === 'not_loaded') toast(err.message || 'Still loading your board…', { kind: 'error', action: app.status?.kind === 'error' ? { label: 'Setup', fn: () => setTab('setup') } : null });
+      else toast(`Couldn't save: ${err?.message || err}`, { kind: 'error' });
       return null;
     }
     if (opts.toast) toast(opts.toast, { kind: opts.kind ?? 'good', action: opts.undo ? { label: 'Undo', fn: opts.undo } : null });
@@ -195,6 +278,10 @@ export function boot(root = document) {
   function setUI(patch) {
     app.ui = { ...app.ui, ...patch };
     schedule();
+  }
+
+  function closeOverlay() {
+    setUI({ drawer: null, move: null, clockSheet: null, drawerConfirm: null });
   }
 
   function setTab(tab) {
@@ -213,12 +300,15 @@ export function boot(root = document) {
   }
   function clearToken() { setToken(''); }
   function saveConfig(cfg) {
-    app.config = { ...DEFAULT_CONFIG, ...cfg };
-    storage.set('ef.gh.config', JSON.stringify(app.config));
+    app.config = pickConfig(cfg);
+    const saved = {};
+    for (const k of CONFIG_KEYS) saved[k] = app.config[k];
+    storage.set('ef.gh.config', JSON.stringify(saved));
     pickStore();
   }
 
   // ---------- toasts ----------
+  const toastTimers = new Set();
   function toast(message, { kind = 'info', action = null, ms = 4200 } = {}) {
     const el = h('div.toast', { class: kind === 'error' ? 'is-error' : kind === 'good' ? 'is-good' : '', role: 'status' },
       h('span', message),
@@ -226,17 +316,56 @@ export function boot(root = document) {
     );
     els.toasts.appendChild(el);
     while (els.toasts.children.length > 3) els.toasts.firstChild.remove();
-    setTimeout(() => el.remove(), ms);
+    const t = setTimeout(() => {
+      toastTimers.delete(t);
+      el.remove();
+    }, ms);
+    toastTimers.add(t);
   }
 
   // ---------- render ----------
   function schedule() {
-    if (app.renderQueued) return;
+    if (app.renderQueued || app.disposed) return;
     app.renderQueued = true;
     requestAnimationFrame(() => {
       app.renderQueued = false;
+      if (app.disposed) return;
+      // Never swap the element under a pressed pointer: a blur-commit on mousedown
+      // would otherwise re-render before mouseup and the click would be lost.
+      if (app.pointerHold) {
+        app.renderHeld = true;
+        return;
+      }
       render();
     });
+  }
+
+  // pointer gate: hold renders from pointerdown until the click has been handled
+  function holdRenders() {
+    app.pointerHold = true;
+    clearTimeout(app.holdTimer);
+    app.holdTimer = setTimeout(releaseRenders, POINTER_HOLD_MAX_MS);
+  }
+  function releaseSoon(ms) {
+    if (!app.pointerHold) return;
+    clearTimeout(app.holdTimer);
+    app.holdTimer = setTimeout(releaseRenders, ms);
+  }
+  function releaseRenders() {
+    clearTimeout(app.holdTimer);
+    app.holdTimer = null;
+    if (!app.pointerHold) return;
+    app.pointerHold = false;
+    if (app.renderHeld) {
+      app.renderHeld = false;
+      schedule();
+    }
+  }
+
+  /** A date/time field inside `container` has focus (typing it segment by segment). */
+  function typingSegmented(container) {
+    const a = document.activeElement;
+    return !!a && a !== container && typeof container.contains === 'function' && container.contains(a) && isSegmented(a);
   }
 
   function renderTabs(ctx) {
@@ -255,17 +384,24 @@ export function boot(root = document) {
     if (!app.header) app.header = mountHeader(els.header, ctx);
     app.header.update(ctx);
     mount(els.tabs, renderTabs(ctx));
-    const view = VIEWS[ctx.ui.tab] ?? VIEWS.overview;
-    let node;
-    try {
-      node = view(ctx);
-    } catch (err) {
-      console.error(err);
-      node = h('div.panel', h('div.panel-body', h('p', `This view crashed: ${err?.message || err}`)));
+    // A date/time field being typed in keeps its DOM until it loses focus: rebuilding
+    // it resets the segment caret, so the next digits land in the month.
+    if (app.renderedTab === ctx.ui.tab && typingSegmented(els.main)) {
+      app.focusHeld = true;
+    } else {
+      const view = VIEWS[ctx.ui.tab] ?? VIEWS.overview;
+      let node;
+      try {
+        node = view(ctx);
+      } catch (err) {
+        console.error(err);
+        node = h('div.panel', h('div.panel-body', h('p', `This view crashed: ${err?.message || err}`)));
+      }
+      const y = window.scrollY;
+      mount(els.main, node);
+      app.renderedTab = ctx.ui.tab;
+      if (Math.abs(window.scrollY - y) > 2) window.scrollTo(0, y);
     }
-    const y = window.scrollY;
-    mount(els.main, node);
-    if (Math.abs(window.scrollY - y) > 2) window.scrollTo(0, y);
     let overlay = null;
     try {
       if (ctx.ui.drawer) overlay = renderDrawer(ctx);
@@ -274,8 +410,12 @@ export function boot(root = document) {
     } catch (err) {
       console.error(err);
     }
+    els.toasts.classList.toggle('is-beside-sheet', !!overlay && overlay.classList.contains('is-side'));
     if (overlay) {
-      if (els.overlay.firstChild !== overlay) mount(els.overlay, overlay);
+      const shown = els.overlay.firstChild;
+      const sameSheet = !!shown && shown.dataset?.key != null && shown.dataset.key === overlay.dataset?.key;
+      if (sameSheet && typingSegmented(els.overlay)) app.focusHeld = true;
+      else if (shown !== overlay) mount(els.overlay, overlay);
       els.overlay.hidden = false;
     } else {
       els.overlay.replaceChildren();
@@ -284,15 +424,44 @@ export function boot(root = document) {
   }
 
   // ---------- global listeners ----------
-  window.addEventListener('hashchange', () => setTab(tabFromHash()));
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && (app.ui.drawer || app.ui.move || app.ui.clockSheet)) {
-      setUI({ drawer: null, move: null, clockSheet: null });
-    }
+  const listeners = [];
+  const listen = (target, type, fn, capture = false) => {
+    target.addEventListener(type, fn, capture);
+    listeners.push(() => target.removeEventListener(type, fn, capture));
+  };
+  listen(window, 'hashchange', () => setTab(tabFromHash()));
+  listen(document, 'keydown', (e) => {
+    if (e.key === 'Escape' && (app.ui.drawer || app.ui.move || app.ui.clockSheet)) closeOverlay();
   });
+  listen(document, 'pointerdown', holdRenders, true);
+  listen(document, 'pointerup', () => releaseSoon(POINTER_RELEASE_MS), true);
+  listen(document, 'pointercancel', releaseRenders, true);
+  listen(document, 'dragstart', releaseRenders, true);
+  listen(document, 'click', () => releaseSoon(0), true); // after this click's own handlers
+  listen(window, 'blur', releaseRenders);
+  listen(document, 'focusout', () => {
+    if (!app.focusHeld) return;
+    app.focusHeld = false;
+    schedule(); // re-checks focus on the next frame, after it has moved
+  }, true);
   // tick: keeps the clock widget, "today", and relative times fresh
-  setInterval(() => app.header && app.header.tick && app.header.tick(buildCtx()), 1000);
-  setInterval(schedule, 60 * 1000);
+  const timers = [
+    setInterval(() => app.header && app.header.tick && app.header.tick(buildCtx()), 1000),
+    setInterval(schedule, 60 * 1000),
+  ];
+
+  app.act = act;
+  app.buildCtx = buildCtx;
+  app.dispose = () => {
+    app.disposed = true;
+    for (const t of timers) clearInterval(t);
+    for (const t of toastTimers) clearTimeout(t);
+    clearTimeout(app.holdTimer);
+    for (const off of listeners.splice(0)) off();
+    if (app.unsub) app.unsub();
+    if (app.unstatus) app.unstatus();
+    if (app.store && app.store.dispose) app.store.dispose();
+  };
 
   pickStore();
   schedule();

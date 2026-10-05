@@ -285,6 +285,8 @@
 .vital.is-hot .vital-num { color: var(--pink); }
 .vital.is-acid .vital-num { color: var(--acid); text-shadow: 0 0 18px rgba(200, 255, 26, 0.35); }
 .v-load .vital-num { font-size: 1.9rem; }
+/* "10h 30m / 4h" can outgrow a narrow cell: the cap drops under the number instead of clipping */
+.v-load .vital-val { flex-wrap: wrap; row-gap: 0; }
 
 /* ------------------------------------------------------------ tab bar */
 .tabbar {

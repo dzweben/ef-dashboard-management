@@ -1,0 +1,3 @@
+# data/state.json merges field by field through bin/ef-merge.mjs (registered by
+# bin/ef.mjs as the "efstate" merge driver), never as text: no conflict markers.
+data/state.json merge=efstate

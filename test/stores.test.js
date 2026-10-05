@@ -1,11 +1,14 @@
 import { test, mock } from 'node:test';
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
 import {
-  createGitHubStore, encodeBase64Utf8, decodeBase64Utf8, READONLY_MESSAGE, TOKEN_MESSAGE,
+  createGitHubStore, encodeBase64Utf8, decodeBase64Utf8, READONLY_MESSAGE, TOKEN_MESSAGE, LOADING_MESSAGE, NOT_LOADED,
 } from '../src/store/githubstore.js';
 import { createLocalStore, LOCAL_MESSAGE } from '../src/store/localstore.js';
 import { emptyState, normalizeState, serializeState, applyWrites } from '../src/engine/model.js';
 import { commitMessage } from '../src/engine/brief.js';
+import { OPS } from '../src/engine/ops.js';
+import { parseQuickAdd } from '../src/engine/parse.js';
 
 const NOW = '2026-10-05T14:00:00.000Z';
 const OWNER = 'dzweben';
@@ -164,6 +167,7 @@ function track(store) {
   return { states, statuses, last: () => statuses[statuses.length - 1] };
 }
 
+/** Web Storage lookalike (getItem/setItem/removeItem + key(i)/length, like localStorage). */
 function memStorage() {
   const m = new Map();
   return {
@@ -171,6 +175,8 @@ function memStorage() {
     getItem: (k) => (m.has(k) ? m.get(k) : null),
     setItem: (k, v) => m.set(k, String(v)),
     removeItem: (k) => m.delete(k),
+    key: (i) => [...m.keys()][i] ?? null,
+    get length() { return m.size; },
   };
 }
 
@@ -277,7 +283,8 @@ test('load: 404 means no file yet -> empty state; the first save creates it with
   store.dispose();
 });
 
-test('load: a bad token -> error status with the Setup message, and load rejects', async () => {
+// UI-2: this used to assert getState() === null, i.e. the board stuck on LOADING forever.
+test('load: a bad token -> error status with the Setup message and load rejects; the public file shows read-only; taps are refused (UI-2)', async () => {
   const gh = fakeGitHub();
   gh.validToken = 'something-else';
   const store = makeStore(gh);
@@ -285,7 +292,39 @@ test('load: a bad token -> error status with the Setup message, and load rejects
   await assert.rejects(store.load(), (err) => err.message === TOKEN_MESSAGE);
   assert.equal(t.last().kind, 'error');
   assert.equal(t.last().message, TOKEN_MESSAGE);
+  // not stuck on LOADING: the board renders from raw.githubusercontent.com (no token sent there)
+  assert.deepEqual(store.getState(), seedState());
+  assert.equal(t.states.length, 1);
+  assert.equal(store.isLoaded(), false, 'a display copy is not a base to write on');
+  const raw = gh.calls.find((c) => c.url.startsWith('https://raw.githubusercontent.com/'));
+  assert.ok(raw, 'read the public file');
+  assert.ok(gh.calls.filter((c) => !c.url.startsWith('https://api.github.com/')).every((c) => !c.headers || !('Authorization' in c.headers)));
+  // the first tap is refused (act() toasts it) instead of "Added" onto a board that can never save
+  await assert.rejects(store.apply(doneWrites('t_mike', 'Email Mike').writes, []),
+    (err) => err.code === NOT_LOADED && err.message === TOKEN_MESSAGE);
+  assert.equal(store.getState().tasks.t_mike.status, 'todo');
+  assert.equal(store.hasPending(), false);
+  assert.equal(t.last().message, TOKEN_MESSAGE, 'the status still explains the token');
+  await store.flush();
+  await store.refresh(); // tapping sync retries the authenticated load (still rejected)
+  assert.equal(t.last().message, TOKEN_MESSAGE);
+  assert.equal(gh.count('PUT'), 0);
+  assert.equal(gh.state().tasks.t_mike.status, 'todo');
+  store.dispose();
+});
+
+test('load: a bad token on a private repo -> error status, nothing to show, taps refused (UI-2)', async () => {
+  const gh = fakeGitHub({ publicRepo: false });
+  gh.validToken = 'something-else';
+  const store = makeStore(gh);
+  const t = track(store);
+  await assert.rejects(store.load(), (err) => err.message === TOKEN_MESSAGE);
+  assert.equal(t.last().kind, 'error');
+  assert.equal(t.last().message, TOKEN_MESSAGE);
   assert.equal(store.getState(), null);
+  await assert.rejects(store.apply(doneWrites('t_mike', 'Email Mike').writes, []), { code: NOT_LOADED });
+  assert.equal(store.getState(), null, 'never an emptyState() board with one task on it');
+  assert.equal(gh.count('PUT'), 0);
   store.dispose();
 });
 
@@ -296,13 +335,15 @@ test('load: invalid JSON on GitHub is an error and nothing is overwritten', asyn
   await assert.rejects(store.load());
   assert.equal(t.last().kind, 'error');
   assert.match(t.last().message, /valid JSON/);
-  // a tap anyway: the store refuses to PUT over a file it couldn't read
+  // a tap anyway: refused (there is no base to apply it to), nothing queued, nothing PUT.
+  // (This used to expect hasPending() === true: writes queued against nothing.)
   const { writes, activity } = addWrites({ id: 't_x', title: 'X' });
-  await store.apply(writes, activity);
+  await assert.rejects(store.apply(writes, activity), (err) => err.code === NOT_LOADED && /valid JSON/.test(err.message));
   await store.flush();
   assert.equal(gh.count('PUT'), 0);
   assert.equal(gh.file.text, '{ "tasks": { oops');
-  assert.equal(store.hasPending(), true);
+  assert.equal(store.hasPending(), false);
+  assert.equal(store.getState(), null);
   store.dispose();
 });
 
@@ -866,6 +907,461 @@ test('files over 1 MB (no inline content) are read through the blob API', async 
   assert.equal(state.tasks.t_mike.title, 'Email Mike');
   assert.equal(gh.count('GET', /\/git\/blobs\//), 1);
   store.dispose();
+});
+
+// ------------------------------------------------------------ review regressions (real ops through the store)
+
+const ctxAt = (now, src = 'dash') => ({ now, today: '2026-10-05', src });
+const quickAddFields = (p) => ({
+  title: p.title, due: p.due, plan: p.plan, time: p.time, est: p.est, prio: p.prio,
+  cat: p.cat, kind: p.kind, newCatName: p.newCatName, recurring: p.recurring,
+});
+const realStateText = () => readFileSync(new URL('../data/state.json', import.meta.url), 'utf8');
+/** The saved queues in a memStorage, flattened to batches. */
+const savedBatches = (storage) => [...storage.m.values()].flatMap((v) => JSON.parse(v).batches ?? []);
+
+/** A fetch that holds contents GETs until release() (a slow first load). */
+function gatedGets(gh) {
+  let release;
+  const gate = new Promise((r) => { release = r; });
+  const realFetch = gh.fetch;
+  gh.fetch = async (url, init = {}) => {
+    if (/\/contents\//.test(url) && (init.method ?? 'GET') === 'GET') await gate;
+    return realFetch(url, init);
+  };
+  return release;
+}
+
+/** A fetch whose next PUT reaches GitHub (and commits) but whose response is lost. */
+function loseNextPutResponse(gh) {
+  const realFetch = gh.fetch;
+  let armed = true;
+  gh.fetch = async (url, init = {}) => {
+    const res = await realFetch(url, init);
+    if (armed && (init.method ?? 'GET') === 'PUT' && res.ok) {
+      armed = false;
+      throw new TypeError('Failed to fetch');
+    }
+    return res;
+  };
+}
+
+test('UI-1/SYNC-1: a "#manuscripts" quick-add while the first load is still running is refused, never replayed over the real category', async () => {
+  const gh = fakeGitHub({ initial: realStateText() });
+  const real = gh.state().cats.manuscripts;
+  assert.equal(real.group, 'research');
+  const release = gatedGets(gh);
+  const store = makeStore(gh, { fetchImpl: gh.fetch, debounceMs: 60000 });
+  const loading = store.load();
+  await drain();
+  // main.js: app.state is still emptyState(), so "#manuscripts" parses as a NEW category
+  const appState = emptyState();
+  const p = parseQuickAdd('revise discussion section #manuscripts', { today: '2026-10-05', cats: appState.cats, settings: appState.settings });
+  assert.equal(p.newCatName, 'manuscripts');
+  const r = OPS.addTask(appState, quickAddFields(p), ctxAt(NOW));
+  assert.ok(r.writes.some((w) => w.op === 'set' && w.col === 'cats' && w.id === 'manuscripts'));
+  await assert.rejects(store.apply(r.writes, r.activity), (err) => err.code === NOT_LOADED && err.message === LOADING_MESSAGE);
+  release();
+  await loading;
+  assert.equal(store.isLoaded(), true);
+  await store.flush();
+  assert.equal(gh.count('PUT'), 0);
+  assert.equal(store.hasPending(), false);
+  assert.deepEqual(gh.state().cats.manuscripts, real, 'real category untouched on GitHub');
+  assert.deepEqual(store.getState().cats.manuscripts, real);
+  store.dispose();
+});
+
+test('SYNC-1: a quick-add while the first load failed (offline) is refused; after recovery the real category is intact', async () => {
+  const gh = fakeGitHub({ initial: realStateText() });
+  const real = gh.state().cats.manuscripts;
+  gh.offline = true;
+  const store = makeStore(gh, { debounceMs: 60000 });
+  await assert.rejects(store.load());
+  const appState = emptyState();
+  const p = parseQuickAdd('revise discussion section #manuscripts', { today: '2026-10-05', cats: appState.cats, settings: appState.settings });
+  const r = OPS.addTask(appState, quickAddFields(p), ctxAt(NOW));
+  await assert.rejects(store.apply(r.writes, r.activity), (err) => err.code === NOT_LOADED && /Offline/.test(err.message));
+  assert.equal(store.getState(), null);
+  gh.offline = false;
+  await store.refresh(); // back online (the retry timer or the sync light)
+  assert.equal(store.isLoaded(), true);
+  await store.flush();
+  assert.equal(gh.count('PUT'), 0);
+  assert.deepEqual(gh.state().cats.manuscripts, real);
+  // now that the board is loaded, the same quick-add files into the existing category
+  const st = store.getState();
+  const p2 = parseQuickAdd('revise discussion section #manuscripts', { today: '2026-10-05', cats: st.cats, settings: st.settings });
+  assert.equal(p2.cat, 'manuscripts');
+  assert.equal(p2.newCatName, null);
+  store.dispose();
+});
+
+test('SYNC-1: "#neuro" on a tab that has not polled yet files under the category Claude just created, never replaces it', async () => {
+  const gh = fakeGitHub();
+  const store = makeStore(gh, { debounceMs: 60000 });
+  await store.load();
+  // Claude creates the category from chat (git push); the tab hasn't polled
+  gh.remoteEdit((s) => OPS.addCategory(s, { name: 'Neuro', group: 'coursework', aliases: ['neuro', 'seminar'] }, ctxAt(NOW, 'chat')).state);
+  const claudeCat = gh.state().cats.neuro;
+  const st = store.getState();
+  const p = parseQuickAdd('read chapter 3 #neuro', { today: '2026-10-05', cats: st.cats, settings: st.settings });
+  assert.equal(p.newCatName, 'neuro');
+  const r = OPS.addTask(st, quickAddFields(p), ctxAt('2026-10-05T14:00:05.000Z'));
+  await store.apply(r.writes, r.activity);
+  assert.equal(store.getState().cats.neuro.group, 'admin', 'optimistic local default');
+  await store.flush();
+  assert.equal(gh.count('PUT'), 2, 'conflict, then rebased');
+  const remote = gh.state();
+  assert.deepEqual(remote.cats.neuro, claudeCat, "Claude's category kept: name, group, color, aliases");
+  const task = Object.values(remote.tasks).find((t) => t.title === 'Read chapter 3');
+  assert.equal(task.cat, 'neuro');
+  assert.deepEqual(store.getState(), remote);
+  store.dispose();
+});
+
+test('SYNC-2: the queue holds fine-grained writes (diffWrites of each change), not whole arrays and totals', async () => {
+  const s = seedState();
+  s.clock = { active: true, ref: 'task:t_hw', title: 'Multivariate HW 3', cat: 'inbox', start: '2026-10-05T13:35:00.000Z', goal: 5 };
+  s.tasks.t_hw.subs = [{ id: 's1', t: 'Q1', done: false }, { id: 's2', t: 'Q2', done: false }];
+  const gh = fakeGitHub({ initial: s });
+  const storage = memStorage();
+  const store = makeStore(gh, { pendingStorage: storage, debounceMs: 60000 });
+  await store.load();
+  const out = OPS.clockOut(store.getState(), { markDone: false }, ctxAt(NOW));
+  await store.apply(out.writes, out.activity);
+  const sub = OPS.toggleSub(store.getState(), { id: 't_hw', subId: 's2' }, ctxAt(NOW));
+  await store.apply(sub.writes, sub.activity);
+  const [b1, b2] = savedBatches(storage);
+  const w1 = b1.writes.find((w) => w.col === 'tasks' && w.id === 't_hw');
+  assert.deepEqual(w1.inc, { spent: 25 }, 'a delta, not spent = old + 25');
+  assert.equal('spent' in (w1.data ?? {}), false);
+  const w2 = b2.writes.find((w) => w.col === 'tasks' && w.id === 't_hw');
+  assert.deepEqual(w2.arr.subs.patch, { s2: { done: true } }, 'one element, one field');
+  assert.equal('subs' in (w2.data ?? {}), false);
+  assert.ok(b1.acts.length && b2.acts.length, 'each batch knows its activity ids');
+  assert.equal(store.getState().tasks.t_hw.spent, 25);
+  assert.equal(store.getState().tasks.t_hw.subs[1].done, true);
+  store.dispose();
+});
+
+test("SYNC-2: Claude adds a substep while the site checks another -> both survive the rebase", async () => {
+  const s = seedState();
+  s.tasks.t_hw.subs = [{ id: 's1', t: 'Q1', done: false }, { id: 's2', t: 'Q2', done: false }];
+  const gh = fakeGitHub({ initial: s });
+  const store = makeStore(gh, { debounceMs: 60000 });
+  await store.load();
+  gh.beforePut = async () => {
+    gh.beforePut = null;
+    gh.remoteEdit((st) => OPS.addSub(st, { id: 't_hw', t: 'Q3 (from chat)' }, ctxAt('2026-10-05T14:00:01.000Z', 'chat')).state);
+  };
+  const r = OPS.toggleSub(store.getState(), { id: 't_hw', subId: 's1' }, ctxAt('2026-10-05T14:00:02.000Z'));
+  await store.apply(r.writes, r.activity);
+  await store.flush();
+  const subs = gh.state().tasks.t_hw.subs;
+  assert.equal(subs.find((x) => x.id === 's1').done, true, 'site toggle kept');
+  assert.ok(subs.some((x) => x.t === 'Q3 (from chat)'), `Claude's substep kept: ${JSON.stringify(subs)}`);
+  assert.equal(subs.length, 3);
+  store.dispose();
+});
+
+test('SYNC-2: Claude logs 30m while the site clocks out 25m on the same task -> spent = 55 = the sessions', async () => {
+  const s = seedState();
+  s.clock = { active: true, ref: 'task:t_hw', title: 'Multivariate HW 3', cat: 'inbox', start: '2026-10-05T13:35:00.000Z', goal: 5 };
+  const gh = fakeGitHub({ initial: s });
+  const store = makeStore(gh, { debounceMs: 60000 });
+  await store.load();
+  gh.beforePut = async () => {
+    gh.beforePut = null;
+    gh.remoteEdit((st) => OPS.logTime(st, { ref: 'task:t_hw', minutes: 30 }, ctxAt('2026-10-05T13:59:00.000Z', 'chat')).state);
+  };
+  const r = OPS.clockOut(store.getState(), { markDone: false }, ctxAt(NOW));
+  await store.apply(r.writes, r.activity);
+  await store.flush();
+  const st = gh.state();
+  const sessMin = Object.values(st.sessions).reduce((a, x) => a + x.min, 0);
+  assert.equal(sessMin, 55, 'both sessions recorded');
+  assert.equal(st.tasks.t_hw.spent, 55);
+  assert.equal(st.clock.active, false);
+  store.dispose();
+});
+
+test("SYNC-2: Claude re-plans blocks while the site checks one -> the check, Claude's moves and new blocks all survive", async () => {
+  const s = seedState();
+  s.tasks.t_hw.due = '2026-10-09';
+  s.tasks.t_hw.blocks = [
+    { id: 'b_1', d: '2026-10-05', m: 60, done: false, auto: true },
+    { id: 'b_2', d: '2026-10-06', m: 60, done: false, auto: true },
+  ];
+  const gh = fakeGitHub({ initial: s });
+  const store = makeStore(gh, { debounceMs: 60000 });
+  await store.load();
+  gh.beforePut = async () => {
+    gh.beforePut = null;
+    gh.remoteEdit((st) => OPS.applyAllocation(st, { updates: { t_hw: [
+      { id: 'b_1', d: '2026-10-05', m: 60, done: false, auto: true },
+      { id: 'b_2', d: '2026-10-07', m: 60, done: false, auto: true },
+      { id: 'b_3', d: '2026-10-08', m: 60, done: false, auto: true },
+    ] } }, ctxAt('2026-10-05T14:00:01.000Z', 'chat')).state);
+  };
+  const r = OPS.toggleBlock(store.getState(), { id: 't_hw', blockId: 'b_1' }, ctxAt('2026-10-05T14:00:02.000Z'));
+  await store.apply(r.writes, r.activity);
+  await store.flush();
+  const t = gh.state().tasks.t_hw;
+  const byId = Object.fromEntries(t.blocks.map((b) => [b.id, b]));
+  assert.equal(byId.b_1.done, true, 'site check kept');
+  assert.equal(byId.b_2.d, '2026-10-07', "Claude's move kept");
+  assert.ok(byId.b_3, "Claude's new block kept");
+  assert.equal(t.spent, 60);
+  store.dispose();
+});
+
+test('SYNC-2: Ziggy walked on the site while Claude logs a walk from chat -> both walks in the log', async () => {
+  const s = seedState();
+  s.chores.c_ziggy = {
+    id: 'c_ziggy', title: 'Walk Ziggy', cat: 'inbox', every: 1, perDay: 2, last: '2026-10-04', log: ['2026-10-04'],
+    min: 5, active: true, notes: '', created: NOW, updated: NOW,
+  };
+  const gh = fakeGitHub({ initial: normalizeState(s) });
+  const store = makeStore(gh, { debounceMs: 60000 });
+  await store.load();
+  gh.beforePut = async () => {
+    gh.beforePut = null;
+    gh.remoteEdit((st) => OPS.choreDone(st, { id: 'c_ziggy' }, ctxAt('2026-10-05T13:00:00.000Z', 'chat')).state);
+  };
+  const r = OPS.choreDone(store.getState(), { id: 'c_ziggy' }, ctxAt('2026-10-05T14:00:00.000Z'));
+  await store.apply(r.writes, r.activity);
+  await store.flush();
+  assert.deepEqual(gh.state().chores.c_ziggy.log, ['2026-10-04', '2026-10-05', '2026-10-05']);
+  store.dispose();
+});
+
+test('SYNC-3: a committed PUT whose response was lost is never replayed later over Claude\'s newer change', async () => {
+  const gh = fakeGitHub();
+  const storage = memStorage();
+  loseNextPutResponse(gh);
+  const first = makeStore(gh, { pendingStorage: storage, debounceMs: 60000, fetchImpl: gh.fetch });
+  await first.load();
+  const r = OPS.completeTask(first.getState(), { id: 't_mike' }, ctxAt(NOW));
+  await first.apply(r.writes, r.activity);
+  await first.flush(); // GitHub committed it; the phone never saw the answer
+  assert.equal(gh.state().tasks.t_mike.status, 'done');
+  assert.equal(first.hasPending(), true, 'from where the tab sits, it might not have landed');
+  first.dispose(); // iOS discards the tab
+  // later, in chat: "Email Mike isn't actually done" -> ef undo
+  gh.remoteEdit((st) => OPS.reopenTask(st, { id: 't_mike' }, ctxAt('2026-10-05T18:00:00.000Z', 'chat')).state);
+  const commits = gh.commits.length;
+  const second = makeStore(gh, { pendingStorage: storage, debounceMs: 60000, now: () => '2026-10-06T12:00:00.000Z', fetchImpl: gh.fetch });
+  assert.equal(second.hasPending(), true, 'the saved batch was claimed');
+  const t = track(second);
+  await second.load();
+  assert.equal(second.hasPending(), false, 'recognized as committed (its activity is on GitHub) and dropped');
+  await second.flush();
+  assert.equal(gh.commits.length, commits, 'nothing re-committed');
+  assert.equal(gh.state().tasks.t_mike.status, 'todo', "Claude's reopen stands");
+  assert.equal(second.getState().tasks.t_mike.status, 'todo');
+  assert.equal(t.last().kind, 'synced');
+  assert.equal(storage.m.size, 0, 'crash net emptied');
+  second.dispose();
+});
+
+test('SYNC-3: a lost PUT response then a retry does not commit the same clock-out twice (spent stays 25)', async () => {
+  const s = seedState();
+  s.clock = { active: true, ref: 'task:t_hw', title: 'Multivariate HW 3', cat: 'inbox', start: '2026-10-05T13:35:00.000Z', goal: 5 };
+  const gh = fakeGitHub({ initial: s });
+  loseNextPutResponse(gh);
+  const store = makeStore(gh, { debounceMs: 60000, fetchImpl: gh.fetch });
+  const t = track(store);
+  await store.load();
+  const r = OPS.clockOut(store.getState(), { markDone: false }, ctxAt(NOW));
+  await store.apply(r.writes, r.activity);
+  await store.flush();
+  assert.equal(t.last().kind, 'offline');
+  assert.equal(gh.commits.length, 1);
+  await store.refresh(); // the 'online' event / retry / sync light
+  assert.equal(gh.commits.length, 1, 'no second commit');
+  assert.equal(gh.state().tasks.t_hw.spent, 25);
+  assert.equal(Object.keys(gh.state().sessions).length, 1);
+  assert.equal(store.getState().tasks.t_hw.spent, 25);
+  assert.equal(store.hasPending(), false);
+  assert.equal(t.last().kind, 'synced');
+  store.dispose();
+});
+
+test("SYNC-4: two tabs offline each keep their own saved queue; closing one loses nothing", async () => {
+  const gh = fakeGitHub();
+  const storage = memStorage();
+  const A = makeStore(gh, { pendingStorage: storage, debounceMs: 60000 });
+  const B = makeStore(gh, { pendingStorage: storage, debounceMs: 60000 });
+  await A.load();
+  await B.load();
+  gh.offline = true;
+  const ra = OPS.completeTask(A.getState(), { id: 't_mike' }, ctxAt(NOW));
+  await A.apply(ra.writes, ra.activity);
+  const rb = OPS.completeTask(B.getState(), { id: 't_hw' }, ctxAt('2026-10-05T14:01:00.000Z'));
+  await B.apply(rb.writes, rb.activity);
+  assert.equal(storage.m.size, 2, 'one saved queue per tab');
+  A.dispose(); // tab A closed while offline
+  gh.offline = false;
+  await B.flush(); // B saves its own change and clears only its own queue
+  assert.equal(gh.state().tasks.t_hw.status, 'done');
+  assert.equal(storage.m.size, 1, "A's queue is still there");
+  const C = makeStore(gh, { pendingStorage: storage, debounceMs: 60000 }); // tab A reopened
+  await C.load();
+  await C.flush();
+  assert.equal(gh.state().tasks.t_mike.status, 'done', "tab A's check-off made it");
+  assert.equal(gh.state().tasks.t_hw.status, 'done');
+  assert.equal(storage.m.size, 0);
+  B.dispose();
+  C.dispose();
+});
+
+test("SYNC-4: a store replaced in Setup never clears the new store's saved queue, and never PUTs again", async () => {
+  const gh = fakeGitHub();
+  const storage = memStorage();
+  const first = makeStore(gh, { pendingStorage: storage, debounceMs: 60000 });
+  await first.load();
+  let release;
+  const gate = new Promise((r) => { release = r; });
+  gh.beforePut = async () => { gh.beforePut = null; await gate; };
+  const a = OPS.completeTask(first.getState(), { id: 't_mike' }, ctxAt(NOW));
+  await first.apply(a.writes, a.activity);
+  const inflight = first.flush();
+  await drain();
+  first.dispose(); // Setup -> Save token -> pickStore()
+  const second = makeStore(gh, { pendingStorage: storage, debounceMs: 60000 });
+  await second.load();
+  const b = OPS.completeTask(second.getState(), { id: 't_hw' }, ctxAt('2026-10-05T14:00:05.000Z'));
+  await second.apply(b.writes, b.activity);
+  release();
+  await inflight; // the old store's PUT lands after it was disposed
+  assert.equal(gh.state().tasks.t_mike.status, 'done');
+  assert.ok(savedBatches(storage).some((x) => x.writes.some((w) => w.col === 'tasks' && w.id === 't_hw')), "the new store's write is still saved");
+  second.dispose(); // tab killed before second's debounce fired
+  const third = makeStore(gh, { pendingStorage: storage, debounceMs: 60000 });
+  await third.load();
+  await third.flush();
+  assert.equal(gh.state().tasks.t_hw.status, 'done', "second store's write made it");
+  assert.equal(gh.commits.length, 2, 't_mike once (first store), t_hw once (third store)');
+  assert.match(gh.commits[1].message, /Multivariate HW 3/);
+  assert.doesNotMatch(gh.commits[1].message, /Email Mike/);
+  assert.equal(storage.m.size, 0);
+  third.dispose();
+});
+
+test('SYNC-4: a disposed store whose PUT conflicts stops instead of retrying', async () => {
+  const gh = fakeGitHub();
+  const store = makeStore(gh, { debounceMs: 60000 });
+  await store.load();
+  let release;
+  const gate = new Promise((r) => { release = r; });
+  gh.beforePut = async () => {
+    gh.beforePut = null;
+    await gate;
+    gh.remoteEdit((s) => applyWrites(s, [{ op: 'update', col: 'tasks', id: 't_hw', data: { notes: 'from claude' } }]));
+  };
+  const a = OPS.completeTask(store.getState(), { id: 't_mike' }, ctxAt(NOW));
+  await store.apply(a.writes, a.activity);
+  const inflight = store.flush();
+  await drain();
+  store.dispose();
+  release();
+  await inflight;
+  await drain(5);
+  assert.equal(gh.count('PUT'), 1, 'no retry after dispose');
+  assert.equal(gh.state().tasks.t_mike.status, 'todo');
+});
+
+test('SYNC-4: a saved queue from the previous version (one shared v1 key) is claimed and pushed once', async () => {
+  const gh = fakeGitHub();
+  const storage = memStorage();
+  const mine = doneWrites('t_mike', 'Email Mike');
+  storage.setItem(`ef.pending.v1:${OWNER}/${REPO}:~:${PATH}`, JSON.stringify({ v: 1, at: NOW, writes: mine.writes, activity: mine.activity }));
+  const store = makeStore(gh, { pendingStorage: storage, debounceMs: 60000 });
+  assert.equal(store.hasPending(), true);
+  await store.load();
+  await store.flush();
+  assert.equal(gh.state().tasks.t_mike.status, 'done');
+  assert.equal(gh.commits[0].message, commitMessage(mine.activity));
+  assert.equal(storage.m.size, 0);
+  store.dispose();
+});
+
+test('SYNC-6: a lagging replica serving an older, never-seen version cannot pin the board to it', async () => {
+  const gh = fakeGitHub();
+  const store = makeStore(gh);
+  const older = { ...gh.file };
+  gh.remoteEdit((st) => OPS.completeTask(st, { id: 't_mike' }, ctxAt(NOW, 'chat')).state);
+  await store.load(); // sees the head (t_mike done)
+  assert.equal(store.getState().tasks.t_mike.status, 'done');
+  gh.staleNext = older; // one poll hits a replica one commit behind
+  await store.refresh();
+  await store.refresh(); // replica caught up
+  assert.equal(store.getState().tasks.t_mike.status, 'done', 'back on the real head');
+  await store.refresh();
+  assert.equal(gh.calls.at(-1).headers['If-None-Match'], `W/"etag-${gh.file.sha}"`, 'polling the head again (304s), not stuck');
+  assert.equal(store.getState().tasks.t_mike.status, 'done');
+  store.dispose();
+});
+
+test('SYNC-6: after a poll pulled a new version, a lagging replica serving the previous one is ignored (confirmed, no rollback)', async () => {
+  const gh = fakeGitHub();
+  const store = makeStore(gh);
+  const t = track(store);
+  await store.load();
+  const v1 = { ...gh.file };
+  gh.remoteEdit((st) => OPS.completeTask(st, { id: 't_mike' }, ctxAt(NOW, 'chat')).state);
+  await store.refresh();
+  assert.equal(store.getState().tasks.t_mike.status, 'done');
+  const renders = t.states.length;
+  gh.staleNext = v1;
+  await store.refresh();
+  assert.equal(store.getState().tasks.t_mike.status, 'done', 'no rollback to the version we left');
+  assert.equal(t.states.length, renders, 'no flicker');
+  store.dispose();
+});
+
+test('SEC-2: website commits carry the configured author and committer (noreply), and none when not configured', async () => {
+  const author = { name: 'Danny Zweben', email: '176344411+dzweben@users.noreply.github.com' };
+  const gh = fakeGitHub();
+  const store = makeStore(gh, { author });
+  await store.load();
+  await store.apply(doneWrites('t_mike', 'Email Mike').writes, []);
+  await store.flush();
+  const put = gh.calls.find((c) => c.method === 'PUT');
+  assert.deepEqual(put.body.author, author);
+  assert.deepEqual(put.body.committer, author);
+  store.dispose();
+
+  const gh2 = fakeGitHub();
+  const plain = makeStore(gh2, { author: { name: 'x', email: '' } }); // incomplete -> ignored
+  await plain.load();
+  await plain.apply(doneWrites('t_mike', 'Email Mike').writes, []);
+  await plain.flush();
+  const put2 = gh2.calls.find((c) => c.method === 'PUT');
+  assert.equal('author' in put2.body, false);
+  assert.equal('committer' in put2.body, false);
+  plain.dispose();
+});
+
+test('SEC-6: the store never persists the token, whichever tokenStorage the UI chose', async () => {
+  for (const tokenStorage of ['local', 'session']) {
+    const gh = fakeGitHub();
+    const storage = memStorage();
+    gh.offline = false;
+    const store = makeStore(gh, { pendingStorage: storage, tokenStorage, debounceMs: 60000 });
+    await store.load();
+    await store.apply(doneWrites('t_mike', 'Email Mike').writes, []);
+    assert.equal(storage.m.size, 1, 'the queue is saved');
+    for (const [k, v] of storage.m) {
+      assert.doesNotMatch(k, new RegExp(TOKEN));
+      assert.doesNotMatch(v, new RegExp(TOKEN));
+    }
+    await store.flush();
+    assert.ok(gh.calls.every((c) => !c.body || !JSON.stringify(c.body).includes(TOKEN)), 'never in a request body');
+    assert.equal(gh.state().tasks.t_mike.status, 'done');
+    store.dispose();
+  }
 });
 
 // ------------------------------------------------------------ local store

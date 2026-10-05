@@ -156,6 +156,7 @@ export function createLocalStore(seedState, opts = {}) {
     apply,
     refresh,
     getState: () => state,
+    isLoaded: () => state !== null, // same contract as the GitHub store: true once load() ran
     hasPending: () => false,
     flush: () => Promise.resolve(state),
     dispose,

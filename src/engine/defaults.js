@@ -25,7 +25,7 @@ export const DEFAULT_CATEGORIES = [
     aliases: ['server', 'lite', 'website', 'qualtrics', 'app', 'code', 'github', 'script'] },
   // clinical
   { id: 'psc', name: 'Clinical (PSC)', group: 'clinical', color: '#fd93a7', glyph: 'PS', order: 20,
-    aliases: ['psc', 'client', 'clients', 'session notes', 'clinical', 'titanium', 'supervision', 'dbt', 'visit', 'intake', 'assessment report'] },
+    aliases: ['psc', 'client', 'clients', 'session notes', 'clinical', 'titanium', 'supervision', 'dbt', 'home visit', 'intake', 'assessment report'] },
   // coursework
   { id: 'cbt', name: 'CBT', group: 'coursework', color: '#d1b64a', glyph: 'CB', order: 30,
     aliases: ['cbt', 'ocd', 'workshop', 'dyads'] },

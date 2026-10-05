@@ -122,6 +122,29 @@ function prioMark(task) {
   return null;
 }
 
+/**
+ * Undo for "done" / "drop": reopen the task, and put a triage item back in
+ * "Did these happen?" (completeTask / dropTask clear triage; reopenTask doesn't restore it).
+ */
+export function reopenUndo(act, task) {
+  const id = task?.id;
+  if (task?.triage === true) return () => act('editTask', { id, patch: { status: 'todo', triage: true } });
+  return () => act('reopenTask', { id });
+}
+
+/**
+ * Check-offs waiting out the stamp, keyed by task (and block). Kept in ctx.ui so a
+ * re-render during the delay rebuilds the row still checked, and unticking the new
+ * row cancels the same timer.
+ */
+function pendingDone(ctx) {
+  const ui = ctx?.ui;
+  if (!ui || typeof ui !== 'object') return FALLBACK_PENDING;
+  if (!(ui.pendingDone instanceof Map)) ui.pendingDone = new Map();
+  return ui.pendingDone;
+}
+const FALLBACK_PENDING = new Map();
+
 function actBtn(label, iconName, onclick, extra = {}) {
   const { text, ...props } = extra;
   return h('button.btn.btn-sm.trow-btn', { type: 'button', title: label, 'aria-label': label, onclick, ...props },
@@ -174,8 +197,11 @@ export function taskRow(task, ctx, opts = {}) {
   const label = block
     ? `Mark ${fmtMinutes(block.m)} block of "${title}" ${done ? 'not done' : 'done'}`
     : `Mark "${title}" ${done ? 'not done' : 'done'}`;
-  const check = h('input.check', { type: 'checkbox', checked: done, disabled: dropped || !id, 'aria-label': label });
-  let timer = null;
+  const pending = pendingDone(ctx);
+  const pkey = id ? (block ? `${id}:${block.id}` : id) : null;
+  const isPending = !!pkey && !done && !dropped && pending.has(pkey);
+  if (isPending) row.classList.add('is-completing', 'is-rerendered'); // already stamped: no replayed thunk
+  const check = h('input.check', { type: 'checkbox', checked: done || isPending, disabled: dropped || !id, 'aria-label': label });
   check.addEventListener('change', () => {
     const checked = check.checked;
     const readOnly = ctx?.store && ctx.store.canWrite === false;
@@ -185,11 +211,12 @@ export function taskRow(task, ctx, opts = {}) {
         row.classList.remove('is-completing');
       }
     };
-    if (!checked && timer) {
-      // un-ticked during the stamp: cancel the pending completion
-      clearTimeout(timer);
-      timer = null;
-      row.classList.remove('is-completing');
+    const waiting = pkey ? pending.get(pkey) : null;
+    if (!checked && waiting) {
+      // un-ticked during the stamp (on this row or the one it re-rendered from): cancel
+      clearTimeout(waiting.timer);
+      pending.delete(pkey);
+      row.classList.remove('is-completing', 'is-rerendered');
       return;
     }
     if (readOnly) {
@@ -197,16 +224,22 @@ export function taskRow(task, ctx, opts = {}) {
       return;
     }
     if (checked) {
+      if (waiting) clearTimeout(waiting.timer); // a stale twin re-checked: one completion only
       row.classList.add('is-completing');
       ctx?.fx?.burst?.(row, 'var(--acid)');
       ctx?.fx?.stamp?.(row, block ? `+${up(fmtMinutes(block.m))}` : 'DONE');
-      timer = setTimeout(() => {
-        timer = null;
+      const failed = () => {
+        revert(null);
+        ctx?.rerender?.(); // the row on screen may be a re-rendered twin still showing the stamp
+      };
+      const timer = setTimeout(() => {
+        if (pkey && pending.get(pkey)?.timer === timer) pending.delete(pkey);
         const p = block
           ? act('toggleBlock', { id, blockId: block.id }, { toast: `Logged ${fmtMinutes(block.m)} on ${title}.`, undo: () => act('toggleBlock', { id, blockId: block.id }) })
-          : act('completeTask', { id }, { toast: hashPick(id, DONE_LINES), undo: () => act('reopenTask', { id }) });
-        Promise.resolve(p).then(revert, () => revert(null));
+          : act('completeTask', { id }, { toast: hashPick(id, DONE_LINES), undo: reopenUndo(act, t) });
+        Promise.resolve(p).then((res) => { if (!res) failed(); }, failed);
       }, COMPLETE_DELAY_MS);
+      if (pkey) pending.set(pkey, { timer });
     } else {
       const p = block
         ? act('toggleBlock', { id, blockId: block.id }, { toast: 'Block reopened.', kind: 'info' })
@@ -231,10 +264,10 @@ export function taskRow(task, ctx, opts = {}) {
     acts = h('div.trow-acts.is-pinned',
       actBtn('Yes, it happened', 'check', () => {
         ctx?.fx?.burst?.(row, 'var(--acid)');
-        act('completeTask', { id }, { toast: `Logged: ${title}`, undo: () => act('reopenTask', { id }) });
+        act('completeTask', { id }, { toast: `Logged: ${title}`, undo: reopenUndo(act, t) });
       }, { text: 'Yes', class: 'is-yes' }),
       actBtn('Move to today', 'undo', () => act('moveTask', { id, to: today }, { toast: `${title} → today` }), { text: 'Today' }),
-      actBtn('Drop it', 'x', () => act('dropTask', { id }, { toast: `Dropped: ${title}`, kind: 'info', undo: () => act('reopenTask', { id }) }), { text: 'Drop', class: 'is-drop' }),
+      actBtn('Drop it', 'x', () => act('dropTask', { id }, { toast: `Dropped: ${title}`, kind: 'info', undo: reopenUndo(act, t) }), { text: 'Drop', class: 'is-drop' }),
     );
   } else if (!done && !dropped && id) {
     const buttons = [];

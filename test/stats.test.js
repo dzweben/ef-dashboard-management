@@ -152,3 +152,15 @@ test('stats never mutate their input', () => {
   wins(st, {});
   assert.equal(JSON.stringify(st), snap);
 });
+
+test('ENG-3: a forgotten timer counts at most 180 minutes toward the week', async () => {
+  const { OPS } = await import('../src/engine/ops.js');
+  const st = fixture();
+  const before = weekStats(st, TODAY).minutes;
+  const on = OPS.clockIn(st, { ref: 'chore:c_laundry' }, { now: '2026-10-05T14:00:00.000Z', today: TODAY, src: 'dash' }).state;
+  const off = OPS.clockIn(on, { ref: 'task:t_email' }, { now: '2026-10-07T13:00:00.000Z', today: '2026-10-07', src: 'dash' }).state;
+  assert.equal(weekStats(off, '2026-10-07').minutes, before + 180);
+  // a hand-made session without `min` is capped the same way
+  const raw = makeState({ sessions: [{ id: 's_x', ref: 'free', title: 'x', cat: 'admin', start: '2026-10-05T12:00:00.000Z', end: '2026-10-06T12:00:00.000Z', d: TODAY }] });
+  assert.equal(weekStats(raw, TODAY).minutes, 180);
+});

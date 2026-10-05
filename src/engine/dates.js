@@ -289,7 +289,7 @@ function fullYear(y) {
 
 // Each rule: [regex anchored at start (applied to the lowercased text at a word boundary), resolver(match, today) → iso|null]
 const DATE_RULES = [
-  [/^(?:today|tod|tonight|this evening|this afternoon|this morning|eod)\b/, (m, t) => t],
+  [/^(?:today|tod|tonight|this evening|this afternoon|this morning|eod|end of (?:the )?day)\b/, (m, t) => t],
   [/^(?:tomorrow|tmrw|tmr|tmw|tom|2morrow)\b/, (m, t) => addDays(t, 1)],
   [/^(?:the )?day after tomorrow\b/, (m, t) => addDays(t, 2)],
   [/^yesterday\b/, (m, t) => addDays(t, -1)],
@@ -368,16 +368,25 @@ const DATE_RULES = [
   }],
 ];
 
+// "eod fri", "end of day on friday": eod is the time of day, the date after it is the day.
+const EOD_PREFIX_RE = /^(?:eod|end of (?:the )?day)(?:\s+on)?\s+(?=\S)/;
+
 /**
  * Parse a date phrase at the START of `text` (leading whitespace ignored).
  * Returns { date, consumed } where consumed is the exact matched substring of the
  * original text (after leading whitespace), or null.
+ * "eod"/"end of day" alone is today; followed by a date ("eod fri") it is that date.
  */
 export function parseDatePhrase(text, today) {
   if (typeof text !== 'string' || !isISODate(today)) return null;
   const lead = text.match(/^\s*/)[0].length;
   const body = text.slice(lead);
   const lower = body.toLowerCase();
+  const eod = lower.match(EOD_PREFIX_RE);
+  if (eod) {
+    const next = parseDatePhrase(body.slice(eod[0].length), today);
+    if (next) return { date: next.date, consumed: body.slice(0, eod[0].length + next.consumed.length) };
+  }
   for (const [re, resolve] of DATE_RULES) {
     const m = lower.match(re);
     if (!m) continue;

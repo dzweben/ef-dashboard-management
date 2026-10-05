@@ -3,7 +3,7 @@
 // activity. Pure: no DOM, no Node APIs. See docs/ARCHITECTURE.md ("brief.js").
 
 import { addDays, diffDays, fmtDay, fmtMinutes, fmtTime, fmtWeekday, isISODate, localDateOf, todayISO } from './dates.js';
-import { DEFAULT_SETTINGS } from './model.js';
+import { DEFAULT_SETTINGS, SESSION_CAP_MIN } from './model.js';
 import { backlog, calendarView, choreView, todayView, upcomingDeadlines } from './views.js';
 import { remaining, risks } from './schedule.js';
 import { streak } from './stats.js';
@@ -43,9 +43,10 @@ function leftTag(t) {
 /**
  * Focus: up to 3 task ids. Overdue first, then due today, then the rest of
  * today's plate (planned, rolled over, work blocks) by priority, quick wins first.
+ * Triage items (stale, or past meetings) are never focus: the brief asks about them.
  */
 function pickFocus(tv) {
-  const seen = new Set();
+  const seen = new Set(tv.triage.map((t) => t.id)); // "did it happen?" items are questions, not focus
   const out = [];
   const take = (t) => {
     if (!t || seen.has(t.id) || out.length >= 3) return;
@@ -146,7 +147,19 @@ function fairPick(groups, max) {
   return out;
 }
 
-function asksFor(state, today, tv) {
+/** A clock left running past the session cap: ask before it logs a bogus session (ENG-3). */
+function clockAsks(state, now) {
+  const c = state?.clock;
+  const start = tsMs(c?.start);
+  const at = tsMs(now);
+  if (!isObj(c) || c.active !== true || start == null || at == null) return [];
+  const min = Math.round((at - start) / 60000);
+  if (min <= SESSION_CAP_MIN) return [];
+  const what = String(c.title ?? '').trim() || 'Focus';
+  return [`The clock on '${what}' has been running ${fmtMinutes(min)}. Still at it, or stop it? (A session logs at most ${fmtMinutes(SESSION_CAP_MIN)}.)`];
+}
+
+function asksFor(state, today, tv, now) {
   const tasks = state?.tasks ?? {};
   const rs = risks(state, today);
   const title = (id) => titleOf(tasks[id]);
@@ -175,6 +188,7 @@ function asksFor(state, today, tv) {
 
   return fairPick(
     [
+      { items: clockAsks(state, now), first: 1 },
       { items: triage, first: 2 },
       { items: estimates, first: 1 },
       { items: warnings, first: 1 },
@@ -229,7 +243,7 @@ export function buildBrief(state, opts = {}) {
     lines.push(`DONE // ${tv.doneToday.length} today${s.current > 1 ? ` · streak ${s.current}d` : ''}`);
   }
 
-  const asks = asksFor(state, today, tv);
+  const asks = asksFor(state, today, tv, now);
   const focusIds = focus.map((t) => t.id);
 
   const text = [
@@ -250,22 +264,26 @@ function fmtTo(to) {
   return isISODate(to) ? fmtDay(to) : String(to);
 }
 
-/**
- * What Danny did on the website (activity src "dash") after `sinceIso`, oldest
- * first, plus net groups: a done that was undone again disappears, repeated
- * moves collapse to first-from → last-to, an add that was deleted again vanishes.
- */
-export function changesSince(state, sinceIso) {
-  const sinceMs = tsMs(sinceIso);
-  const entries = list(state?.activity)
-    .filter((a) => a.src === 'dash' && typeof a.at === 'string' && tsMs(a.at) != null)
-    .filter((a) => (sinceMs == null ? true : tsMs(a.at) > sinceMs))
-    .sort((a, b) => tsMs(a.at) - tsMs(b.at));
+/** Valid activity entries (src filter: 'dash' by default, 'any' for all), oldest first. */
+function activityEntries(coll, src) {
+  return list(coll)
+    .filter((a) => (src === 'any' || a.src === src) && typeof a.at === 'string' && tsMs(a.at) != null)
+    .map((a, i) => [a, i])
+    .sort(([a, ia], [b, ib]) => tsMs(a.at) - tsMs(b.at) || ia - ib)
+    .map(([a]) => a);
+}
 
+/**
+ * Net groups for a run of activity entries (oldest first): a done that was
+ * undone again disappears, so does a drop that was reopened (or later marked
+ * done, and vice versa); repeated moves collapse to first-from → last-to; an add
+ * that was deleted again vanishes.
+ */
+function summarize(entries) {
   const done = new Map();
   const added = new Map();
   const moved = new Map();
-  const dropped = [];
+  const dropped = new Map();
   const chores = [];
   const clock = [];
   const other = [];
@@ -273,30 +291,36 @@ export function changesSince(state, sinceIso) {
 
   for (const a of entries) {
     const title = String(a.title ?? '');
+    const k = key(a);
     switch (a.type) {
       case 'done':
-        done.set(key(a), title);
+        dropped.delete(k);
+        done.set(k, title);
         break;
-      case 'undone':
-        if (done.has(key(a))) done.delete(key(a));
-        else other.push(`undone: ${title}`);
+      case 'undone': {
+        const wasDone = done.delete(k);
+        const wasDropped = dropped.delete(k);
+        if (!wasDone && !wasDropped) other.push(`undone: ${title}`);
         break;
+      }
       case 'add':
-        added.set(key(a), title);
+        added.set(k, title);
         break;
       case 'delete':
-        if (added.has(key(a))) added.delete(key(a));
+        if (added.has(k)) added.delete(k);
         else other.push(`delete: ${title}`);
-        moved.delete(key(a));
-        done.delete(key(a));
+        moved.delete(k);
+        done.delete(k);
+        dropped.delete(k);
         break;
       case 'move': {
-        const prev = moved.get(key(a));
-        moved.set(key(a), { title, from: prev ? prev.from : a.from ?? null, to: a.to ?? null });
+        const prev = moved.get(k);
+        moved.set(k, { title, from: prev ? prev.from : a.from ?? null, to: a.to ?? null });
         break;
       }
       case 'drop':
-        dropped.push(title);
+        done.delete(k);
+        dropped.set(k, title);
         break;
       case 'chore':
         chores.push(title);
@@ -314,11 +338,38 @@ export function changesSince(state, sinceIso) {
     done: [...done.values()],
     added: [...added.values()],
     moved: [...moved.values()].filter((m) => m.from !== m.to),
-    dropped,
+    dropped: [...dropped.values()],
     chores,
     clock,
     other,
   };
+}
+
+/**
+ * What Danny did on the website (activity src "dash") after `sinceIso`, oldest
+ * first, plus net groups (see summarize). Filters on the device timestamp `at`,
+ * so an entry stamped before `sinceIso` that only reached GitHub after it is
+ * missed: `ef sync` uses changesBetween instead.
+ */
+export function changesSince(state, sinceIso) {
+  const sinceMs = tsMs(sinceIso);
+  const entries = activityEntries(state?.activity, 'dash').filter((a) => (sinceMs == null ? true : tsMs(a.at) > sinceMs));
+  return summarize(entries);
+}
+
+/**
+ * Same shape as changesSince, from the activity entries whose ids are in
+ * `after.activity` but not in `before.activity` (whatever their timestamps), so
+ * a check-off made offline and pushed late is still reported once. Website
+ * entries only (src "dash"); `{ src: 'any' }` includes Claude's own.
+ */
+export function changesBetween(before, after, opts = {}) {
+  const o = isObj(opts) ? opts : {};
+  const src = o.src === 'any' ? 'any' : typeof o.src === 'string' && o.src ? o.src : 'dash';
+  const seen = new Set(list(before?.activity).map((a) => a.id));
+  if (isObj(before?.activity)) for (const id of Object.keys(before.activity)) seen.add(id);
+  const fresh = list(after?.activity).filter((a) => typeof a.id === 'string' && !seen.has(a.id));
+  return summarize(activityEntries(fresh, src));
 }
 
 // ---------------------------------------------------------------- missingCategoryCheck
@@ -404,8 +455,8 @@ export function missingCategoryCheck(state, today) {
 
 // ---------------------------------------------------------------- commitMessage
 
-const SYM = { done: '✓', add: '+', move: '→', drop: '✕', delete: '✕', undone: '↺', chore: '♺', clock: '⏱', edit: '✎', sub: '☐', block: '▦', milestone: '◆', cat: '#', settings: '⚙' };
-const VERB = { done: 'done', add: 'added', move: 'moved', drop: 'dropped', delete: 'deleted', undone: 'reopened', chore: 'chore', clock: 'clock', edit: 'edited', sub: 'subtask', block: 'block', milestone: 'milestone', cat: 'category', settings: 'settings' };
+const SYM = { done: '✓', add: '+', move: '→', drop: '✕', delete: '✕', undone: '↺', chore: '♺', clock: '⏱', edit: '✎', sub: '☐', block: '▦', milestone: '◆', cat: '#', settings: '⚙', archive: '▣' };
+const VERB = { done: 'done', add: 'added', move: 'moved', drop: 'dropped', delete: 'deleted', undone: 'reopened', chore: 'chore', clock: 'clock', edit: 'edited', sub: 'subtask', block: 'block', milestone: 'milestone', cat: 'category', settings: 'settings', archive: 'archived' };
 const SUBJECT_MAX = 72;
 
 const chars = (s) => Array.from(s).length;

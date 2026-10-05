@@ -1,7 +1,7 @@
 // Setup: connect GitHub (token + repo), categories, capacity, days off, chores, about.
 // Also exports the small helpers my other views share (focus keeper, drafts, tab jump),
 // because each engineer may only write their own files.
-import { h, catStyle } from '../dom.js';
+import { h, catStyle, isReplacing } from '../dom.js';
 import { icon as iconFallback } from '../icons.js';
 import { GROUPS, DEFAULT_SETTINGS } from '../../engine/model.js';
 import { addDays, diffDays, dowKey, fmtDay, fmtMinutes, isISODate } from '../../engine/dates.js';
@@ -80,6 +80,31 @@ export function draftClear(ctx, ...keys) {
   const d = ctx?.ui?.drafts;
   if (!d || typeof d !== 'object') return;
   for (const k of keys) delete d[k];
+}
+
+/**
+ * Props for a text field that edits a stored value and saves when you leave it.
+ * Typing lives in ctx.ui.drafts[key], so a re-render mid-word (the minute tick, a sync
+ * status change) rebuilds the field with what you typed and keepFocus puts the caret
+ * back. The change Chromium fires while a re-render swaps the field out is ignored
+ * (dom.isReplacing); the real change on leaving the field commits once, then the draft goes.
+ */
+export function editField(ctx, key, stored, commit) {
+  return {
+    value: draftGet(ctx, key, stored ?? ''),
+    oninput: (e) => draftSet(ctx, key, e.currentTarget.value),
+    onchange: (e) => {
+      const el = e.currentTarget;
+      if (isReplacing(el)) return;
+      draftClear(ctx, key);
+      commit(el.value, el);
+    },
+    onblur: (e) => {
+      // typed and then put back: no change event, so drop the draft here (a real edit
+      // already committed on change; one interrupted by a window switch keeps its draft)
+      if (!isReplacing(e.currentTarget) && e.currentTarget.value === String(stored ?? '')) draftClear(ctx, key);
+    },
+  };
 }
 
 /** Jump to another tab (adds a history entry, so Back returns). */
@@ -294,8 +319,8 @@ function githubSection(ctx) {
     ),
     h('p.setup-note#setup-token-note',
       hasToken
-        ? h('span', h('b.setup-ok', 'TOKEN SAVED IN THIS BROWSER. '), 'Kept in localStorage only: never committed, never sent anywhere but api.github.com.')
-        : 'Kept in this browser’s localStorage only: never committed, never sent anywhere but api.github.com.',
+        ? h('span', h('b.setup-ok', 'TOKEN SAVED IN THIS BROWSER. '), 'Kept in localStorage only: never committed, never sent anywhere but api.github.com. Your other github.io sites share this storage, so only give it this one repo.')
+        : 'Kept in this browser’s localStorage only: never committed, never sent anywhere but api.github.com. Your other github.io sites share this storage, so only give it this one repo.',
       hasToken
         ? h('button.btn.btn-sm.setup-forget', {
             type: 'button',
@@ -408,13 +433,13 @@ function categoriesSection(ctx, canWrite) {
         }),
       ),
       h(`input.field.setup-cat-name#${id}-name`, {
-        value: cat.name ?? '',
         'aria-label': `${cat.name} name`,
         disabled: !canWrite,
-        onchange: (e) => {
-          const v = e.currentTarget.value.trim();
+        ...editField(ctx, `${id}.name`, cat.name, (raw, el) => {
+          const v = raw.trim();
           if (v && v !== cat.name) edit(cat, { name: v });
-        },
+          else el.value = cat.name ?? '';
+        }),
       }),
       h(`select.field.setup-cat-group#${id}-group`, {
         'aria-label': `${cat.name} group`,
@@ -422,22 +447,21 @@ function categoriesSection(ctx, canWrite) {
         onchange: (e) => edit(cat, { group: e.currentTarget.value }, `${cat.name} → ${GROUPS.find((g) => g.id === e.currentTarget.value)?.label ?? ''}`),
       }, GROUPS.map((g) => h('option', { value: g.id, selected: g.id === cat.group }, g.label))),
       h(`input.field.setup-cat-glyph#${id}-glyph`, {
-        value: cat.glyph ?? '',
         maxlength: '3',
         'aria-label': `${cat.name} glyph (up to 3 characters)`,
         title: 'Glyph (≤3 chars)',
         disabled: !canWrite,
-        onchange: (e) => {
-          const v = e.currentTarget.value.trim().slice(0, 3);
+        ...editField(ctx, `${id}.glyph`, cat.glyph, (raw, el) => {
+          const v = raw.trim().slice(0, 3);
           if (v && v !== cat.glyph) edit(cat, { glyph: v });
-        },
+          else el.value = cat.glyph ?? '';
+        }),
       }),
       h(`input.field.setup-cat-alias#${id}-aliases`, {
-        value: Array.isArray(cat.aliases) ? cat.aliases.join(', ') : '',
         placeholder: 'aliases, comma, separated',
         'aria-label': `${cat.name} aliases`,
         disabled: !canWrite,
-        onchange: (e) => edit(cat, { aliases: e.currentTarget.value }),
+        ...editField(ctx, `${id}.aliases`, Array.isArray(cat.aliases) ? cat.aliases.join(', ') : '', (raw) => edit(cat, { aliases: raw })),
       }),
       h('button.btn.btn-sm.setup-cat-arch', {
         type: 'button',
@@ -543,13 +567,13 @@ function capacitySection(ctx, canWrite) {
         min: '0',
         max: '1440',
         step: '15',
-        value: String(v),
         'aria-label': `${label} focus minutes`,
         disabled: !canWrite,
-        onchange: (e) => {
-          const n = Math.max(0, Math.min(1440, Math.round(Number(e.currentTarget.value) || 0)));
+        ...editField(ctx, `cap-${k}`, String(v), (raw, el) => {
+          const n = Math.max(0, Math.min(1440, Math.round(Number(raw) || 0)));
           if (n !== v) ctx?.act?.('editSettings', { patch: { cap: { [k]: n } } }, { toast: `${label}: ${n ? fmtMinutes(n) : 'off'} of focus` });
-        },
+          else el.value = String(v);
+        }),
       }),
     );
   };
@@ -627,12 +651,12 @@ function choresSection(ctx, canWrite) {
         min: String(min),
         max: String(max),
         step: String(step),
-        value: String(c[key] ?? ''),
         disabled: !canWrite,
-        onchange: (e) => {
-          const n = Math.round(Number(e.currentTarget.value));
-          if (Number.isFinite(n) && n >= min && n <= max && n !== c[key]) edit(c, { [key]: n });
-        },
+        ...editField(ctx, `chore-${c.id}.${key}`, String(c[key] ?? ''), (raw, el) => {
+          const n = Math.round(Number(raw));
+          if (raw.trim() && Number.isFinite(n) && n >= min && n <= max && n !== c[key]) edit(c, { [key]: n });
+          else el.value = String(c[key] ?? '');
+        }),
       }),
     );
 
@@ -645,13 +669,13 @@ function choresSection(ctx, canWrite) {
     return h('div.setup-chore', { class: active ? '' : 'is-off', style: catStyle(cat) },
       h('span.catmark', { style: catStyle(cat), 'aria-hidden': 'true' }, cat.glyph || '··'),
       h(`input.field.setup-chore-title#chore-${c.id}-title`, {
-        value: c.title ?? '',
         'aria-label': 'Chore title',
         disabled: !canWrite,
-        onchange: (e) => {
-          const v = e.currentTarget.value.trim();
+        ...editField(ctx, `chore-${c.id}.title`, c.title, (raw, el) => {
+          const v = raw.trim();
           if (v && v !== c.title) edit(c, { title: v });
-        },
+          else el.value = c.title ?? '';
+        }),
       }),
       h('span.chip.setup-chore-cad', cadenceLabel(c)),
       numIn(c, 'every', 'every (d)'),

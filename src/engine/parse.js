@@ -3,12 +3,16 @@
 //
 // How parseQuickAdd works: the input is whitespace-collapsed, then structured
 // pieces are found and blanked out (replaced by spaces, so indices stay put)
-// in a fixed order: #tags, recurrence, estimate, time, priority, due phrases
-// ("by fri", "due 10/16"), "@date", a trailing " - <date>" segment, a bare
-// trailing date ("call mom sat"), a leading date ("tomorrow: email mike") and a
-// trailing "low". Whatever is left, tidied, is the title.
+// in a fixed order: #tags, recurrence, estimate, time (with a connector right
+// before it: "by 5pm", "around 3pm"), priority (incl. a trailing "low"), due
+// phrases ("by fri", "due 10/16"), "@date", a trailing " - <date>" segment, a
+// bare trailing date ("call mom sat"), a leading date ("tomorrow: email mike")
+// and a trailing "low" again. Then: a weak cadence word ("weekly") next to a
+// one-off date goes back into the title; the leftover date becomes plan or due;
+// a bare evening clock gets pm; a time with no day lands on today. Whatever is
+// left, tidied, is the title.
 
-import { parseDatePhrase, parseDuration, parseTime, isISODate, todayISO } from './dates.js';
+import { addDays, localDateOf, localTimeOf, parseDatePhrase, parseDuration, parseTime, isISODate, todayISO } from './dates.js';
 import { DEFAULT_CATEGORIES, KEYWORD_RULES, resolveCategory, catList } from './categories.js';
 import { INBOX_CATEGORY } from './model.js';
 
@@ -83,7 +87,7 @@ const LEADING_DATE_RE = new RegExp(
     '(?:jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec)[a-z]*\\.? \\d)',
   'i',
 );
-const QUALIFIER_RE = /\s+(?:in the\s+)?(morning|afternoon|evening|night|am|pm|eod|first thing)$/i;
+const QUALIFIER_RE = /\s+(?:in the\s+)?(morning|afternoon|evening|night|am|pm|eod|end of (?:the )?day|first thing)$/i;
 
 const coreDateWord = (consumed) => consumed.toLowerCase().replace(/^on\s+/, '').trim();
 const isWeak = (consumed) => WEAK_DATE_WORDS.has(coreDateWord(consumed));
@@ -112,7 +116,7 @@ function leadingDate(rest, today) {
   const hit = parseDatePhrase(rest, today);
   if (!hit) return null;
   let len = lead + hit.consumed.length;
-  const q = rest.slice(len).match(/^\s+(?:in the\s+)?(?:morning|afternoon|evening|night|eod)(?![a-z0-9])/i);
+  const q = rest.slice(len).match(/^\s+(?:in the\s+)?(?:morning|afternoon|evening|night|eod|end of (?:the )?day)(?![a-z0-9])/i);
   if (q) len += q[0].length;
   return { date: hit.date, len, core: hit.consumed };
 }
@@ -128,6 +132,11 @@ function capitalizedName(st, start, core) {
 
 const TAG_RE = /(^|\s)#([a-z][\w\-+&./:]*)/gi;
 
+// Recurrence phrases. Strong forms ("every week", "2x a day") always make a
+// chore. Weak forms are bare adjectives ("weekly", "daily", "mondays") that
+// also read as part of a one-off title ("submit weekly report by fri"): they
+// make a chore only when no one-off date was given (see parseQuickAdd step 10a).
+// Strong rules run first so a weak word never blocks a strong phrase.
 const RECUR_RULES = [
   // "2x a day", "3 times per day", "2x/day", "2x daily", "2x a week"
   [new RegExp(`${B}(\\d+|one|two|three|four|five|six)\\s*(?:x|times)\\s*(?:a|per|each|every|/)?\\s*(day|daily|week|weekly|wk)${E}`, 'gi'),
@@ -146,15 +155,18 @@ const RECUR_RULES = [
       const u = m[3].toLowerCase();
       return { every: Math.min(365, u.startsWith('d') ? n : u.startsWith('w') ? n * 7 : n * 30), perDay: 1 };
     }],
-  [new RegExp(`${B}(?:(?:every|each)\\s+(?:day|morning|night|evening|weekday)|everyday|daily|nightly)${E}`, 'gi'),
-    () => ({ every: 1, perDay: 1 })],
-  [new RegExp(`${B}(?:biweekly|fortnightly)${E}`, 'gi'), () => ({ every: 14, perDay: 1 })],
-  [new RegExp(`${B}(?:(?:every|each)\\s+(?:week|wk)|weekly)${E}`, 'gi'), () => ({ every: 7, perDay: 1 })],
-  [new RegExp(`${B}(?:(?:every|each)\\s+month|monthly)${E}`, 'gi'), () => ({ every: 30, perDay: 1 })],
+  [new RegExp(`${B}(?:every|each)\\s+(?:day|morning|night|evening|weekday)${E}`, 'gi'), () => ({ every: 1, perDay: 1 })],
+  [new RegExp(`${B}(?:every|each)\\s+(?:week|wk)${E}`, 'gi'), () => ({ every: 7, perDay: 1 })],
+  [new RegExp(`${B}(?:every|each)\\s+month${E}`, 'gi'), () => ({ every: 30, perDay: 1 })],
   [new RegExp(`${B}(?:every|each)\\s+(?:mon|tue|tues|wed|weds|thu|thur|thurs|fri|sat|sun)(?:day)?s?${E}`, 'gi'),
     () => ({ every: 7, perDay: 1 })],
+  // weak: bare adjectives
+  [new RegExp(`${B}(?:everyday|daily|nightly)${E}`, 'gi'), () => ({ every: 1, perDay: 1 }), 'weak'],
+  [new RegExp(`${B}(?:biweekly|fortnightly)${E}`, 'gi'), () => ({ every: 14, perDay: 1 }), 'weak'],
+  [new RegExp(`${B}weekly${E}`, 'gi'), () => ({ every: 7, perDay: 1 }), 'weak'],
+  [new RegExp(`${B}monthly${E}`, 'gi'), () => ({ every: 30, perDay: 1 }), 'weak'],
   [new RegExp(`${B}(?:on\\s+)?(?:mondays|tuesdays|wednesdays|thursdays|fridays|saturdays|sundays)${E}`, 'gi'),
-    () => ({ every: 7, perDay: 1 })],
+    () => ({ every: 7, perDay: 1 }), 'weak'],
 ];
 
 function perPeriod(n, unit) {
@@ -213,7 +225,19 @@ function parseBareClock(s) {
   const mm = m[2] ? parseInt(m[2], 10) : 0;
   if (h > 23 || mm > 59) return null;
   if (h === 0 || h >= 13) return `${String(h).padStart(2, '0')}:${String(mm).padStart(2, '0')}`;
+  // "11:59" is the end-of-day deadline time; nobody means one minute before noon.
+  if (h === 11 && mm === 59) return '23:59';
   return guessTime(h, mm);
+}
+
+// "tonight at 9:30", "evening call at 8": a bare morning-range hour means pm.
+const EVENING_RE = /(?:^|[^a-z0-9])(?:tonight|evening|night)(?![a-z0-9])/i;
+
+/** A bare-clock time (no am/pm) moved to the evening: 8–11 → 20–23. Other hours were already guessed pm or given as 24h. */
+function eveningTime(hhmm) {
+  const [h, mm] = hhmm.split(':').map(Number);
+  if (h < 8 || h > 11) return hhmm;
+  return `${h + 12}:${String(mm).padStart(2, '0')}`;
 }
 
 const toMin = (hhmm) => {
@@ -273,7 +297,10 @@ function capitalizeNames(title) {
     const bare = m[1].replace(/['’]s$/, '');
     if (HONORIFICS.has(m[1] + (m[2].startsWith('.') ? '.' : '')) || HONORIFICS.has(m[1])) {
       out[t] = capWord(m[1]) + m[2];
-      if (t + 1 < out.length && /^[a-z]/.test(out[t + 1])) out[t + 1] = capWord(out[t + 1]);
+      // "dr smith" → "Dr Smith", but "prof about exam" / "dr re: labs" keep the stop word lowercase.
+      const next = t + 1 < out.length ? out[t + 1] : '';
+      const nextBare = next.toLowerCase().replace(/[:,;.!?]+$/, '').replace(/['’]s$/, '');
+      if (/^[a-z]/.test(next) && !NAME_STOP.has(nextBare)) out[t + 1] = capWord(next);
       continue;
     }
     if (NAME_STOP.has(bare) || NAME_STOP.has(m[1])) continue;
@@ -302,6 +329,21 @@ function cleanTitle(s, { hadParts }) {
 
 // ---------------------------------------------------------------- kind
 
+const KIND_DEADLINE_RE = /(?:^|[^a-z0-9])(?:exam|quiz|midterm|final exam|deadline|submit|submission)(?![a-z0-9])/i;
+// Titles that only talk about, grade or set up an exam/quiz/deadline ("email prof about exam",
+// "grade quizzes", "schedule exam"): the date is when Danny does that, not a deadline.
+const ABOUT_START_RE =
+  /^\s*(?:e-?mail|ask|tell|call|text|ping|message|msg|dm|remind|reply|respond|thank|follow[- ]?up|talk|discuss|meet|grade|proctor|schedule|reschedule|book)(?![a-z0-9])/i;
+// "… about the exam", "… re: quiz 3", "… regarding the deadline": everything from the preposition on is the topic.
+const ABOUT_CLAUSE_RE = /(?:^|[^a-z0-9])(?:about|regarding|re)(?=:|\s).*$/i;
+
+/** The title names a deliverable (matches `re`) as its own subject, not as the topic of a message/grading/scheduling task. */
+function namesDeliverable(title, re) {
+  const t = String(title ?? '');
+  if (ABOUT_START_RE.test(t)) return false;
+  return re.test(t.replace(ABOUT_CLAUSE_RE, ''));
+}
+
 /** Task kind from its title (+ due/time). Exported for editTask-style re-inference. */
 export function inferKind(title, { due = null, time = null } = {}) {
   const t = String(title ?? '').toLowerCase().trim();
@@ -317,7 +359,7 @@ export function inferKind(title, { due = null, time = null } = {}) {
   if (/(?:^|[^a-z0-9])(?:meeting|1:1)(?![a-z0-9])/.test(t)) return 'meeting';
   if (/(?:^|[^a-z0-9])(?:draft|drafts|write-?up|writing)(?![a-z0-9])/.test(t)) return 'writing';
   if (/(?:^|[^a-z0-9])(?:glm|analysis|analyses|pre-?proc\w*|preprocess\w*|regressions?|t-tests?)(?![a-z0-9])/.test(t)) return 'analysis';
-  if (due && /(?:^|[^a-z0-9])(?:exam|quiz|midterm|final exam|deadline|submit|submission)(?![a-z0-9])/.test(t)) return 'deadline';
+  if (due && namesDeliverable(t, KIND_DEADLINE_RE)) return 'deadline';
   if (/^(?:buy|pick up|drop off|return|mail|ship|grab)\b/.test(t)) return 'errand';
   if (time && /(?:^|[^a-z0-9])(?:class|seminar|lecture|colloquium|talk|defen[cs]e|webinar|office hours|session|standup|stand-up|interview|workshop|training|orientation|rehearsal|game|concert|party|dinner|lunch)(?![a-z0-9])/.test(t)) return 'meeting';
   return 'task';
@@ -357,10 +399,33 @@ function resolveCats(cats) {
   return catList(cats);
 }
 
+// Alias-hit specificity (see inferCategory).
+const isAcronymCase = (s) => (s.match(/[A-Za-z]/g) ?? []).length >= 2 && !/[a-z]/.test(s);
+
+/** End index of a short "Label:" prefix ("OCD pres: write main script"), or -1. */
+function labelEnd(text) {
+  const m = text.match(/^\s*([^:]{1,40}?):\s+\S/);
+  if (!m || m[1].trim().split(/\s+/).length > 4) return -1;
+  return m[0].indexOf(':');
+}
+
+/** An action verb opening a clause ("email jason", "text ronan and email chloe", "remind me to email …"): it says what to do, not what it is about. */
+function isLeadVerb(text, at, typed) {
+  if (!/^\s+\S/.test(text.slice(at + typed.length))) return false;
+  const before = text.slice(0, at).trimEnd();
+  const prev = before.split(/\s+/).pop().toLowerCase();
+  return before === '' || LEAD_JOINERS.has(prev) || prev === 'to' || /[,;:]$/.test(prev);
+}
+
 /**
  * Guess a category for a task title.
- * Alias hit (word boundary, longest alias wins; ties → lower `order`) → 0.9;
- * KEYWORD_RULES → 0.6; else { id: "inbox", confidence: 0 }.
+ * Alias hits (word boundary) are ranked by specificity first: +1 when typed as
+ * an acronym ("OCD", "DTI"), +1 when inside a short "Label:" prefix ("OCD pres:
+ * …"), −1 when the alias is just a clause's action verb ("email jason"); then
+ * by alias length; then lower `order`. The winner gets 0.9 when it is the only
+ * category hit or more specific than the runner-up; a close call between two
+ * categories ("fix app form") gets 0.45 and a reason naming both, so the CLI
+ * asks Danny. KEYWORD_RULES → 0.6; else { id: "inbox", confidence: 0 }.
  * Archived categories are never inferred.
  */
 export function inferCategory(title, cats) {
@@ -368,18 +433,28 @@ export function inferCategory(title, cats) {
   const list = resolveCats(cats).filter((c) => c.id !== 'inbox' && !c.archived);
   if (!text.trim()) return { id: 'inbox', confidence: 0, reason: 'empty title' };
 
-  let best = null;
+  const label = labelEnd(text);
+  const perCat = new Map(); // cat id → its most specific hit
   for (const c of list) {
     for (const term of termsOf(c)) {
       const m = phraseRe(term).exec(text);
       if (!m) continue;
-      const len = term.length;
-      if (!best || len > best.len || (len === best.len && orderOf(c) < orderOf(best.cat))) {
-        best = { cat: c, len, term };
-      }
+      const typed = m[1];
+      const at = m.index + m[0].length - typed.length;
+      const verb = VERB_LEADS.has(typed.toLowerCase());
+      const spec = verb && isLeadVerb(text, at, typed) ? -1 : (isAcronymCase(typed) ? 1 : 0) + (!verb && label >= 0 && at < label ? 1 : 0);
+      const hit = { cat: c, term, spec, len: term.length };
+      const prev = perCat.get(c.id);
+      if (!prev || spec > prev.spec || (spec === prev.spec && hit.len > prev.len)) perCat.set(c.id, hit);
     }
   }
-  if (best) return { id: best.cat.id, confidence: 0.9, reason: `alias "${best.term}"` };
+  if (perCat.size) {
+    const ranked = [...perCat.values()].sort((a, b) => b.spec - a.spec || b.len - a.len || orderOf(a.cat) - orderOf(b.cat));
+    const [best, runner] = ranked;
+    const reason = `alias "${best.term}"`;
+    if (!runner || best.spec > runner.spec) return { id: best.cat.id, confidence: 0.9, reason };
+    return { id: best.cat.id, confidence: 0.45, reason: `${reason}; also matches ${runner.cat.name ?? runner.cat.id} ("${runner.term}")` };
+  }
 
   const byId = new Map(list.map((c) => [c.id, c]));
   for (const rule of KEYWORD_RULES) {
@@ -402,6 +477,14 @@ export function inferCategory(title, cats) {
 
 const DUE_WORD_RE = /(?:^|[^a-z0-9])(?:due|deadline|exams?|quiz(?:zes)?|midterm|submit|submission|turn in|hand in)(?![a-z0-9])/i;
 const PREP_START_RE = /^\s*(?:study|prep|prepare|review|practice|start|work on|outline|read)(?![a-z0-9])/i;
+// Connector word(s) directly before a time ("by 5pm", "due by noon", "around 3pm"); group 2 is the connector.
+const TIME_CONNECTOR_RE =
+  /(^|\s)((?:due\s+)?(?:by|before|until|till|til)|no later than|due(?:\s+at)?|after|around|approx\.?|~)\s*$/i;
+// "stop by", "swing by": the "by" belongs to the verb, not to the time after it.
+const PHRASAL_BY_RE = /(?:^|\s)(?:stop|stopping|drop|dropping|swing|swinging|come|coming|pop|popping|pass|go|going)\s*$/i;
+// "eod" / "end of day" with nothing else: a time of day, which a separate date ("fri by eod") overrides.
+const EOD_ONLY_RE = /^(?:eod|end of (?:the )?day)$/i;
+const TRAILING_LOW_RE = /(^|\s)(low)\s*$/i;
 
 function emptyResult() {
   return {
@@ -416,6 +499,17 @@ function emptyResult() {
  * state.cats map or an array (defaults to DEFAULT_CATEGORIES + inbox when absent).
  * Never throws; empty input → title "".
  */
+/** Local "HH:MM" of `now` when it falls on `today` (in tz), else "" (sorts before every time). */
+function nowTimeOn(now, today, tz) {
+  if (typeof now !== 'string' || !now) return '';
+  try {
+    if (localDateOf(now, tz || undefined) !== today) return '';
+    return localTimeOf(now, tz || undefined) ?? '';
+  } catch {
+    return '';
+  }
+}
+
 export function parseQuickAdd(text, opts = {}) {
   const o = opts && typeof opts === 'object' ? opts : {};
   const cats = resolveCats(o.cats);
@@ -457,23 +551,27 @@ export function parseQuickAdd(text, opts = {}) {
     st.tokens = st.tokens.filter((t) => t.type !== 'newcat');
   }
 
-  // 2. recurrence
-  for (const [re, fn] of RECUR_RULES) {
+  // 2. recurrence. Weak spans ("weekly" in "submit weekly report by fri") are
+  // remembered so step 10a can put them back when a one-off date shows up.
+  let recurStrong = false;
+  const weakSpans = [];
+  for (const [re, fn, strength] of RECUR_RULES) {
+    const weak = strength === 'weak';
     scan(st, re, (m, start, end) => {
       const r = fn(m);
       if (!r) return false;
+      if (recurring && r.every !== recurring.every) return false;
       if (!recurring) {
         recurring = r;
         addToken(st, 'recurring', start, end, { ...r });
-        return true;
-      }
-      if (r.every === recurring.every) {
+      } else {
         recurring = { every: r.every, perDay: Math.max(r.perDay, recurring.perDay) };
         const tok = st.tokens.find((t) => t.type === 'recurring');
         if (tok) tok.value = { ...recurring };
-        return true;
       }
-      return false;
+      if (weak) weakSpans.push([start, end]);
+      else recurStrong = true;
+      return true;
     });
   }
 
@@ -491,9 +589,11 @@ export function parseQuickAdd(text, opts = {}) {
   }
 
   // 4. time
-  const setTime = (val, start, end, extra) => {
+  let timeBare = null; // the typed clock when it had no am/pm ("9:30", "at 8"), for the evening fix-up
+  const setTime = (val, start, end, extra, bare = null) => {
     if (time !== null || !val) return false;
     time = val;
+    timeBare = bare;
     addToken(st, 'time', start, end, val);
     if (extra) extra();
     return true;
@@ -522,17 +622,17 @@ export function parseQuickAdd(text, opts = {}) {
         est = d;
         addToken(st, 'est', start, end, d);
       }
-    });
+    }, m[2]);
   });
   // "at 3pm", "@ 15:00", "at noon"
   scan(st, new RegExp(`${B}(?:at\\s+|@\\s*)(${T_AMPM}|\\d{1,2}:\\d{2}|noon|midnight)${AMPM_END}`, 'gi'), (m, start, end) => {
-    const v = /^\d{1,2}:\d{2}$/.test(m[2]) ? parseBareClock(m[2]) : parseTime(m[2]);
-    return setTime(v, start, end);
+    const bare = /^\d{1,2}:\d{2}$/.test(m[2]);
+    return setTime(bare ? parseBareClock(m[2]) : parseTime(m[2]), start, end, null, bare ? m[2] : null);
   });
   // bare "3pm", "3:30 pm"
   scan(st, new RegExp(`(^|[^a-z0-9:/.])(${T_AMPM_FULL})${AMPM_END}`, 'gi'), (m, start, end) => setTime(parseTime(m[2]), start, end));
   // bare "15:00", "1:30"
-  scan(st, /(^|[^a-z0-9:/.])(\d{1,2}:\d{2})(?![0-9:/a-z])/gi, (m, start, end) => setTime(parseBareClock(m[2]), start, end));
+  scan(st, /(^|[^a-z0-9:/.])(\d{1,2}:\d{2})(?![0-9:/a-z])/gi, (m, start, end) => setTime(parseBareClock(m[2]), start, end, null, m[2]));
   // "noon", "midnight"
   scan(st, new RegExp(`${B}(noon|midnight)${E}`, 'gi'), (m, start, end) => setTime(parseTime(m[2]), start, end));
   // "at 3" (bare hour) only when nothing word-like follows except a date phrase / separator
@@ -541,8 +641,25 @@ export function parseQuickAdd(text, opts = {}) {
     const rest = st.w.slice(end);
     const ok = /^\s*$/.test(rest) || /^\s*[,;.!)\-–—]/.test(rest) || leadingDate(rest, today) !== null;
     if (!ok) return false;
-    return setTime(parseBareClock(m[2]), start, end);
+    return setTime(parseBareClock(m[2]), start, end, null, m[2]);
   });
+
+  // 4b. a connector right before the time belongs to it: "tomorrow by 5pm",
+  // "fri around 3pm". Left behind, it would hide the date in front of it from
+  // the date passes below. "by"/"before"/"due" make that date a deadline.
+  let byTime = false;
+  {
+    const tok = st.tokens.find((t) => t.type === 'time');
+    const cm = tok ? st.w.slice(0, tok._at).match(TIME_CONNECTOR_RE) : null;
+    // "hw due at 5pm" yes; "stop by at 3pm", "swing by 5pm" no: there the word belongs to the verb.
+    const viaAt = cm && /^(?:at|@)/i.test(tok.text);
+    const phrasal = cm && /^by$/i.test(cm[2]) && PHRASAL_BY_RE.test(st.w.slice(0, cm.index + cm[1].length));
+    if (cm && !phrasal && (!viaAt || /^due$/i.test(cm[2]))) {
+      const start = cm.index + cm[1].length;
+      byTime = /^(?:due|by|before|no later than)(?![a-z])/i.test(cm[2]);
+      mask(st, start, start + cm[2].length);
+    }
+  }
 
   // 5. priority
   const bumpPrio = (p) => {
@@ -587,8 +704,22 @@ export function parseQuickAdd(text, opts = {}) {
     addToken(st, 'prio', start, end, 0);
     return true;
   });
+  // A trailing standalone "low" means low priority. Taken before the date passes
+  // so "laundry - sat low" still finds "sat", and again after them for "laundry low - sat".
+  let lowTaken = false;
+  const takeTrailingLow = () => {
+    const lm = lowTaken ? null : st.w.match(TRAILING_LOW_RE);
+    if (!lm) return;
+    const start = lm.index + lm[1].length;
+    lowTaken = true;
+    if (prio === null) prio = 0;
+    addToken(st, 'prio', start, start + 3, 0);
+    mask(st, start, start + 3);
+  };
+  takeTrailingLow();
 
   // 6. explicit due: "by fri", "due 10/16", "deadline: oct 20", "due by the 15th"
+  let eodTok = null; // "by eod" alone: today, unless another date says which day ("fri by eod")
   scan(st, new RegExp(`${B}(due\\s+(?:by|on)|due:?|deadline:?|by)\\s+`, 'gi'), (m, start, end) => {
     if (due !== null) return false;
     const rest = st.w.slice(end);
@@ -600,6 +731,7 @@ export function parseQuickAdd(text, opts = {}) {
     if (capitalizedName(st, end + rest.match(/^\s*/)[0].length, hit.core)) return false;
     due = hit.date;
     addToken(st, 'due', start, end + hit.len, hit.date);
+    if (EOD_ONLY_RE.test(hit.core.trim())) eodTok = st.tokens[st.tokens.length - 1];
     mask(st, start, end + hit.len);
     return false;
   });
@@ -663,6 +795,9 @@ export function parseQuickAdd(text, opts = {}) {
       if (DETERMINERS.has(prev)) break;
       if (isWeak(hit.core) && WEAK_BLOCKERS.has(prev)) break;
       if (capitalizedName(st, i, hit.core)) break;
+      // "prep for thursday", "plan for next week": the date is the object; taking
+      // it would leave a one-word title ("Prep") and a wrong do-day.
+      if (prev === 'for' && before.slice(0, before.length - pm[1].length).split(/\s+/).filter(Boolean).length === 1) break;
       let start = i;
       if (prev === 'on' || prev === 'for') start = before.length - pm[1].length;
       soft = { date: hit.date, how: 'trailing' };
@@ -693,21 +828,24 @@ export function parseQuickAdd(text, opts = {}) {
     }
   }
 
-  // 9b. a trailing standalone "low" means low priority
-  {
-    const lm = st.w.match(/(^|\s)(low)\s*$/i);
-    if (lm) {
-      const start = lm.index + lm[1].length;
-      if (prio === null) prio = 0;
-      addToken(st, 'prio', start, start + 3, 0);
-      mask(st, start, start + 3);
-    }
+  // 9b. "low" left at the end once the date is gone ("laundry low - sat")
+  takeTrailingLow();
+
+  // 10a. a weak cadence word next to a one-off date is part of the title
+  // ("submit weekly report by fri", "daily standup notes - tomorrow"): put it
+  // back and make a dated task, not a chore that would drop the date.
+  if (recurring && !recurStrong && (due !== null || plan !== null || soft !== null)) {
+    for (const [s, e] of weakSpans) st.w = st.w.slice(0, s) + st.orig.slice(s, e) + st.w.slice(e);
+    recurring = null;
+    st.tokens = st.tokens.filter((t) => t.type !== 'recurring');
   }
 
-  // 10. soft date → plan, or due when the title reads like a deadline
+  // 10. soft date → plan, or due when the title reads like a deadline, the time
+  // came with "by" ("tomorrow by 5pm"), or "by eod" only gave the time of day ("fri by eod")
   const remaining = st.w.replace(/\s+/g, ' ').trim();
   if (soft) {
-    const deadlineish = DUE_WORD_RE.test(remaining) && !PREP_START_RE.test(remaining);
+    if (eodTok) due = null;
+    const deadlineish = eodTok !== null || byTime || (namesDeliverable(remaining, DUE_WORD_RE) && !PREP_START_RE.test(remaining));
     let target = null;
     if (deadlineish && due === null) target = 'due';
     else if (plan === null) target = 'plan';
@@ -716,6 +854,27 @@ export function parseQuickAdd(text, opts = {}) {
     const tok = [...st.tokens].reverse().find((t) => t.type === 'plan' && t.value === soft.date);
     if (tok && target === 'due') tok.type = 'due';
     if (!target && tok) st.tokens.splice(st.tokens.indexOf(tok), 1);
+    if (eodTok) eodTok.value = due;
+  }
+
+  // 10b. a bare clock with "tonight"/"evening"/"night" is pm ("due tonight at 9:30")
+  if (time !== null && timeBare !== null && !/^0/.test(timeBare) && EVENING_RE.test(st.orig)) {
+    const t2 = eveningTime(time);
+    if (t2 !== time) {
+      time = t2;
+      const tt = st.tokens.find((t) => t.type === 'time');
+      if (tt) tt.value = t2;
+    }
+  }
+
+  // 10c. a time with no day is today ("lab meeting 2pm"), not the backlog; "by 5pm" → due today.
+  // With `now` given, a time already past today means tomorrow (typed at 9pm: "lab meeting 2pm").
+  if (time !== null && due === null && plan === null && !recurring) {
+    const at = st.tokens.find((t) => t.type === 'time')?._at ?? 0;
+    const day = time < nowTimeOn(o.now, today, o.settings?.tz) ? addDays(today, 1) : today;
+    if (byTime) due = day;
+    else plan = day;
+    st.tokens.push({ type: byTime ? 'due' : 'plan', text: '', value: day, _at: at });
   }
 
   const hadParts = st.tokens.some((t) => ['due', 'plan', 'time', 'est', 'recurring'].includes(t.type));
@@ -735,6 +894,12 @@ export function parseQuickAdd(text, opts = {}) {
     cat = inf.id;
     catConfidence = inf.confidence;
     catReason = inf.reason;
+    // addTask files an unfiled chore under Home (ops.defaultChoreCat); say so up front so the preview matches.
+    if (recurring && cat === 'inbox' && cats.some((c) => c.id === 'home')) {
+      cat = 'home';
+      catConfidence = 0.3;
+      catReason = 'chores default to Home';
+    }
   }
 
   const tokens = st.tokens

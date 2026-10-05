@@ -4,11 +4,12 @@
 //    `input`, so typing never triggers a render) and are committed on change/blur;
 //  - focus, caret and scroll position are restored by element id after mounting;
 //  - the slide-in animation only plays when an overlay first opens.
-import { h, catMark, catStyle } from '../dom.js';
+import { h, catMark, catStyle, isReplacing, isSaneDate } from '../dom.js';
 import { icon } from '../icons.js';
 import { GROUPS, KINDS } from '../../engine/model.js';
 import { addDays, diffDays, dow, fmtDay, fmtMinutes, fmtWeekday, isISODate, localDateOf, parseDuration, startOfWeek } from '../../engine/dates.js';
 import { allocate, planStart } from '../../engine/schedule.js';
+import { reopenUndo } from './taskrow.js';
 
 const isObj = (v) => v !== null && typeof v === 'object' && !Array.isArray(v);
 const isNum = (v) => typeof v === 'number' && Number.isFinite(v);
@@ -115,26 +116,61 @@ function dropDraft(ctx, taskId, id) {
   if (d) delete d.values[id];
 }
 
+// Keys that edit a date input's segments (typing, not the picker).
+const DATE_TYPING_KEYS = new Set(['Backspace', 'Delete', 'ArrowUp', 'ArrowDown']);
+
 /**
  * A text-ish input whose in-progress value survives re-renders. `commit(next, el)`
  * runs on change / Enter / Escape when the value differs from what was last committed.
+ * A change fired while a re-render swaps the field for its twin is ignored (dom.isReplacing):
+ * the twin shows the draft, so nothing is lost and nothing half-typed is saved.
+ *
+ * type=date: Chromium fires `change` for every segment that completes a date while
+ * typing (10/1 → 10/14 → year 0002 …), so typed dates commit on blur / Enter only, and
+ * only when they are real dates (year 1900–2199); anything else reverts. A pick from the
+ * native picker (no keys pressed) still commits right away. `required` refuses ''.
  */
-function draftInput(ctx, taskId, { id, value, commit, type = 'text', multiline = false, ...attrs }) {
+function draftInput(ctx, taskId, { id, value, commit, type = 'text', multiline = false, required = false, ...attrs }) {
   const base = value ?? '';
+  const isDate = type === 'date' && !multiline;
   const el = multiline
     ? h('textarea.field', { id, rows: 3, ...attrs })
     : h('input.field', { id, type, autocomplete: 'off', ...attrs });
   el.value = readDraft(ctx, taskId, id, base);
   let last = base;
+  let typing = false;
   const doCommit = () => {
+    if (isReplacing(el)) return;
     const next = el.value;
+    typing = false;
+    const partial = isDate && el.validity?.badInput === true; // e.g. 10/1_/____
+    if (isDate && (partial || !isSaneDate(next, { required }))) {
+      el.value = last;
+      dropDraft(ctx, taskId, id);
+      if (next || partial) ctx.toast?.("That date doesn't look right. Kept the old one.", { kind: 'error' });
+      return;
+    }
     dropDraft(ctx, taskId, id);
     if (next === last) return;
     last = next;
     commit(next, el);
   };
   el.addEventListener('input', () => writeDraft(ctx, taskId, id, el.value));
-  el.addEventListener('change', doCommit);
+  if (isDate) {
+    el.addEventListener('keydown', (e) => {
+      if (/^\d$/.test(e.key) || DATE_TYPING_KEYS.has(e.key)) typing = true;
+    });
+    el.addEventListener('change', () => {
+      if (!typing) doCommit();
+    });
+    el.addEventListener('blur', () => {
+      // the window lost focus (app switch): the field keeps focus, typing resumes later
+      if (typeof document !== 'undefined' && typeof document.hasFocus === 'function' && !document.hasFocus()) return;
+      doCommit();
+    });
+  } else {
+    el.addEventListener('change', doCommit);
+  }
   el.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') doCommit();
     else if (e.key === 'Enter' && !multiline) {
@@ -295,8 +331,8 @@ function blocksSection(ctx, task) {
               onchange: () => ctx.act('toggleBlock', { id: task.id, blockId: b.id }),
             }),
             draftInput(ctx, task.id, {
-              id: `dr-blk-d-${b.id}`, type: 'date', value: b.d, 'aria-label': 'Block date',
-              commit: (v) => v && ctx.act('moveBlock', { id: task.id, blockId: b.id, to: v }, { toast: `Block → ${fmtDay(v)}`, kind: 'info' }),
+              id: `dr-blk-d-${b.id}`, type: 'date', value: b.d, 'aria-label': 'Block date', required: true,
+              commit: (v) => ctx.act('moveBlock', { id: task.id, blockId: b.id, to: v }, { toast: `Block → ${fmtDay(v)}`, kind: 'info' }),
             }),
             h('span.dr-block-m', fmtMinutes(b.m)),
             h('span.chip', { class: b.auto === false ? 'chip-cyan' : '', title: b.auto === false ? 'Placed by hand: auto-plan keeps it' : 'Placed by auto-plan' }, b.auto === false ? 'PINNED' : 'AUTO'),
@@ -347,12 +383,12 @@ function actions(ctx, task) {
         ctx.fx?.burst?.(e.currentTarget, 'var(--acid)');
         ctx.fx?.stamp?.(e.currentTarget, 'DONE');
         ctx.closeOverlay?.();
-        ctx.act('completeTask', { id: task.id }, { toast: 'Done. Nice.', undo: () => ctx.act('reopenTask', { id: task.id }) });
+        ctx.act('completeTask', { id: task.id }, { toast: 'Done. Nice.', undo: reopenUndo(ctx.act, task) });
       },
     }, icon('check'), 'Done'));
     out.push(h('button.btn', { type: 'button', id: 'dr-clock', onclick: () => { ctx.closeOverlay?.(); ctx.act('clockIn', { ref: `task:${task.id}`, title, cat: task.cat, goal: 5 }, { toast: `Clock's running: ${title}. Just 5 minutes.` }); } }, icon('play'), '5 min'));
     out.push(h('button.btn', { type: 'button', id: 'dr-move', onclick: () => ctx.openMove?.(task.id) }, icon('arrow-right'), 'Push'));
-    out.push(h('button.btn.btn-ghost', { type: 'button', id: 'dr-drop', onclick: () => { ctx.closeOverlay?.(); ctx.act('dropTask', { id: task.id }, { toast: `Dropped: ${title}`, kind: 'info', undo: () => ctx.act('reopenTask', { id: task.id }) }); } }, icon('x'), 'Drop'));
+    out.push(h('button.btn.btn-ghost', { type: 'button', id: 'dr-drop', onclick: () => { ctx.closeOverlay?.(); ctx.act('dropTask', { id: task.id }, { toast: `Dropped: ${title}`, kind: 'info', undo: reopenUndo(ctx.act, task) }); } }, icon('x'), 'Drop'));
   } else {
     out.push(h('button.btn', { type: 'button', id: 'dr-reopen', onclick: () => ctx.act('reopenTask', { id: task.id }, { toast: `Back on the list: ${title}`, kind: 'info' }) }, icon('undo'), status === 'done' ? 'Reopen' : 'Restore'));
   }
@@ -520,8 +556,24 @@ export function renderMoveSheet(ctx) {
     );
   });
 
-  const dateEl = h('input.field', { id: 'mv-date', type: 'date', min: today, value: current ?? '' });
-  const go = () => dateEl.value && pick(dateEl.value);
+  // The picked date lives on the ctx.ui.move object itself (mutated in place, so
+  // picking never triggers a render) and survives re-renders until Move is tapped.
+  const picked = typeof ctx.ui?.move?.date === 'string' ? ctx.ui.move.date : null;
+  const dateEl = h('input.field', { id: 'mv-date', type: 'date', min: today, value: picked ?? current ?? '' });
+  const remember = () => {
+    if (isObj(ctx.ui?.move)) ctx.ui.move.date = dateEl.value;
+  };
+  dateEl.addEventListener('input', remember);
+  dateEl.addEventListener('change', remember);
+  const go = () => {
+    const v = dateEl.value;
+    if (!v) return;
+    if (dateEl.validity?.badInput || !isSaneDate(v, { required: true })) {
+      ctx.toast?.("That date doesn't look right.", { kind: 'error' });
+      return;
+    }
+    pick(v);
+  };
   dateEl.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); go(); } });
 
   const head = h('div.sheet-head', { style: catStyle(cat) },

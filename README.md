@@ -24,7 +24,13 @@ long-term projects, with Claude as the chat front end.
    - Repository permissions: **Contents → Read and write**
    - Expiration: up to a year
    Open the site → **Setup** → paste the token → Save. It's stored only in
-   that browser. Do this once per device (phone + laptop).
+   that browser's localStorage for `dzweben.github.io`, which every GitHub Pages
+   site under your account shares, so any of your other Pages sites could read
+   it. That's why Claude's `ef sync` / `ef push` never pull **code** changes
+   silently (the website only ever writes `data/state.json`): if a token leaked,
+   it could not turn into code Claude runs. Revoke the token on GitHub if `ef`
+   ever reports a website commit that changed code. Do this once per device
+   (phone + laptop).
 3. **Privacy.** The repo is public right now, so anyone could read
    `data/state.json`. Making it private keeps the data private (the site then
    reads it with your token). GitHub Pages on a private repo needs GitHub Pro,
@@ -57,4 +63,10 @@ node bin/ef.mjs help # the CLI Claude uses every turn
 - `src/engine/`: pure logic shared by the website and the CLI
 - `src/store/`: GitHub-backed store (Contents API, optimistic saves, conflict merge)
 - `src/ui/`: the website (`src/ui/README.md` is the design brief)
+- `bin/ef.mjs`: the CLI; `bin/ef-merge.mjs`: the git merge driver that merges
+  `data/state.json` field by field (`ef` registers it in each clone, see
+  `.gitattributes`), so website and chat edits never collide as text
 - `CLAUDE.md`: how Claude runs each turn
+
+The website only reads and writes the repo's **default branch**; data changes
+belong there (`ef sync` / `ef push` warn when you're on another branch).

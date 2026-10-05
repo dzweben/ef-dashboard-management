@@ -103,7 +103,8 @@
     transform: translate(6px, -50%);
     transition: opacity 110ms, transform 110ms var(--ease);
   }
-  .trow:hover .trow-acts, .trow:focus-within .trow-acts { opacity: 1; pointer-events: auto; transform: translate(0, -50%); }
+  /* floating actions only: the pinned triage bar is grid-placed and must not jump on hover */
+  .trow:hover .trow-acts:not(.is-pinned), .trow:focus-within .trow-acts:not(.is-pinned) { opacity: 1; pointer-events: auto; transform: translate(0, -50%); }
   .trow[draggable='true'] { cursor: grab; }
   .trow[draggable='true']:active { cursor: grabbing; }
 }
@@ -126,6 +127,8 @@
 .trow.is-completing .check::before { animation: slash-a 170ms var(--ease) both; }
 .trow.is-completing .check::after { animation: slash-b 170ms 90ms var(--ease) both; }
 .trow.is-completing .trow-acts { opacity: 0 !important; pointer-events: none !important; }
+/* a re-render inside the stamp window rebuilds the row already stamped: don't replay the thunk */
+.trow.is-completing.is-rerendered, .trow.is-rerendered .check::before, .trow.is-rerendered .check::after { animation: none; }
 .trow.is-dragging { opacity: 0.4; outline: 2px dashed var(--pink); outline-offset: -2px; }
 @keyframes slash-a { from { transform: translate(-50%, -50%) rotate(45deg) scaleX(0); } to { transform: translate(-50%, -50%) rotate(45deg) scaleX(1); } }
 @keyframes slash-b { from { transform: translate(-50%, -50%) rotate(-45deg) scaleX(0); } to { transform: translate(-50%, -50%) rotate(-45deg) scaleX(1); } }

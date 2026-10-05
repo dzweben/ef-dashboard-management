@@ -2,7 +2,7 @@
 // Pure; days are local calendar dates in the settings timezone. See docs/ARCHITECTURE.md.
 
 import { addDays, diffDays, isISODate, localDateOf, rangeDays, startOfWeek, todayISO } from './dates.js';
-import { DEFAULT_SETTINGS } from './model.js';
+import { DEFAULT_SETTINGS, SESSION_CAP_MIN } from './model.js';
 
 const isObj = (v) => v !== null && typeof v === 'object' && !Array.isArray(v);
 const isNum = (v) => typeof v === 'number' && Number.isFinite(v);
@@ -40,12 +40,12 @@ function doneDate(t, tz) {
   return localDay(t.doneAt, tz);
 }
 
-/** Minutes of a clock-in session (its `min`, else end − start). */
+/** Minutes of a clock-in session (its `min`, else end − start capped at SESSION_CAP_MIN, like clockOut). */
 function sessionMinutes(s) {
   if (isNum(s.min)) return Math.max(0, Math.round(s.min));
   const a = tsMs(s.start);
   const b = tsMs(s.end);
-  return a != null && b != null && b > a ? Math.round((b - a) / 60000) : 0;
+  return a != null && b != null && b > a ? Math.min(SESSION_CAP_MIN, Math.round((b - a) / 60000)) : 0;
 }
 
 /** Local date of a session (its `d`, else the local date of `start`). */

@@ -245,6 +245,14 @@ select.field { appearance: auto; }
   display: grid; gap: 8px; z-index: 90; width: min(460px, calc(100vw - 32px));
 }
 @media (min-width: 720px) { .toasts { bottom: calc(24px + env(safe-area-inset-bottom, 0px)); } }
+/* a side drawer (460px + 8px shadow) owns the right edge from 721px up: main.js marks the
+   stack while one is open, and the toasts center in the space left of it, off its buttons */
+@media (min-width: 721px) {
+  .toasts.is-beside-sheet {
+    left: calc((100vw - 468px) / 2);
+    width: min(460px, calc(100vw - 468px - 32px));
+  }
+}
 .toast {
   display: flex; align-items: center; gap: 12px; justify-content: space-between;
   padding: 10px 12px 10px 14px;

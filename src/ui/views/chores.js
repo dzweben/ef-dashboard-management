@@ -30,6 +30,10 @@ export function choreState(row, today) {
   const todayCount = Math.max(0, Number(row?.todayCount) || 0);
   const since = Number.isFinite(row?.daysSince) ? row.daysSince : null;
   const last = since == null ? 'never logged' : since === 0 ? 'last: today' : since === 1 ? 'last: yesterday' : `last: ${since}d ago`;
+  if (since == null && row?.due === false && row?.nextDue && today && row.nextDue > today) {
+    // a new chore set to start later ("laundry every week - sat")
+    return { tone: 'fresh', lit: 0, text: `STARTS ${String(fmtRelative(row.nextDue, today)).toUpperCase()}`, last };
+  }
   if (every === 1) {
     const done = Math.min(todayCount, perDay);
     if (done >= perDay) return { tone: 'done', lit: FUSE_SEGS, text: 'DONE TODAY', last, pips: { done, of: perDay } };

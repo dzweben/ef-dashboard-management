@@ -2,7 +2,7 @@
 // Pure: no DOM, no Node APIs, never mutates its inputs. See docs/ARCHITECTURE.md.
 
 import { addDays, diffDays, dowKey, fmtDay, fmtMinutes, isISODate, rangeDays, todayISO, localDateOf, localTimeOf } from './dates.js';
-import { DEFAULT_SETTINGS, makeId } from './model.js';
+import { DEFAULT_SETTINGS, makeId, normalizeCapOverrides } from './model.js';
 
 const isObj = (v) => v !== null && typeof v === 'object' && !Array.isArray(v);
 const isNum = (v) => typeof v === 'number' && Number.isFinite(v);
@@ -36,6 +36,7 @@ function settingsFrom(raw) {
     defaultEst: isNum(p.defaultEst) && p.defaultEst >= 0 ? Math.round(p.defaultEst) : DEFAULT_SETTINGS.defaultEst,
     horizon: isNum(p.horizon) && p.horizon > 0 ? Math.round(p.horizon) : DEFAULT_SETTINGS.horizon,
     offDays: Array.isArray(p.offDays) ? p.offDays.filter(isISODate) : [],
+    capOverrides: normalizeCapOverrides(p.capOverrides),
   };
 }
 
@@ -53,6 +54,20 @@ const dateOr = (v) => (isISODate(v) ? v : null);
 function blocksOf(task) {
   if (!isObj(task) || !Array.isArray(task.blocks)) return [];
   return task.blocks.filter((b) => isObj(b) && isISODate(b.d) && num(b.m) > 0);
+}
+
+const MEETING_KINDS = new Set(['meeting', 'appt']);
+
+/**
+ * An open meeting/appointment whose day (plan, else due) is before `today` and
+ * that has no deadline still ahead: it either happened or it didn't, so it is a
+ * "did it happen?" (triage) item, never carried-over or overdue work.
+ */
+export function isPastEvent(task, today) {
+  if (!isObj(task) || !MEETING_KINDS.has(task.kind) || !isOpen(task) || !isISODate(today)) return false;
+  const due = dateOr(task.due);
+  const day = dateOr(task.plan) ?? due;
+  return !!day && day < today && !(due && due >= today);
 }
 
 const isUndone = (b) => b.done !== true;
@@ -77,11 +92,14 @@ function byDeadline(a, b) {
 
 // ---------------------------------------------------------------- capacity + remaining work
 
-/** Focus minutes available for to-dos on `iso` (0 on offDays or invalid dates). */
+/** Focus minutes available for to-dos on `iso`: 0 on offDays or invalid dates, else settings.capOverrides[iso], else the weekday cap. */
 export function capacityFor(settings, iso) {
   if (!isISODate(iso)) return 0;
   const s = isObj(settings) ? settings : {};
   if (Array.isArray(s.offDays) && s.offDays.includes(iso)) return 0;
+  // One-day override ("less time tomorrow": ef settings --cap-on tomorrow=90).
+  const o = isObj(s.capOverrides) ? s.capOverrides[iso] : undefined;
+  if (isNum(o)) return Math.max(0, Math.round(o));
   const key = dowKey(iso);
   const v = isObj(s.cap) && isNum(s.cap[key]) ? s.cap[key] : DEFAULT_SETTINGS.cap[key];
   return Math.max(0, Math.round(v));
@@ -267,7 +285,8 @@ const RISK_ORDER = { crunch: 0, 'under-allocated': 1, overbooked: 2, 'needs-esti
 /**
  * Everything that is going to bite: overdue + infeasible work (crunch), work not
  * blocked out (under-allocated), overbooked days in the next 14 days, and
- * deadline-ish tasks with no estimate. Triage tasks are skipped.
+ * deadline-ish tasks with no estimate. Triage tasks and past meetings /
+ * appointments (isPastEvent: "did it happen?", not late work) are skipped.
  */
 export function risks(state, today) {
   const s = settingsFrom(state?.settings);
@@ -276,7 +295,7 @@ export function risks(state, today) {
   const out = [];
 
   for (const t of taskList(state)) {
-    if (!isOpen(t) || t.triage === true) continue;
+    if (!isOpen(t) || t.triage === true || isPastEvent(t, t0)) continue;
     const due = dateOr(t.due);
     if (!due) continue;
     if (due < t0) {
@@ -390,7 +409,7 @@ export function allocate(state, opts = {}) {
 
   const open = taskList(state).filter(isOpen);
   const scoped = open.filter(
-    (t) => (!only || only.has(t.id)) && hasEst(t) && dateOr(t.due) && remaining(t) > 0,
+    (t) => (!only || only.has(t.id)) && hasEst(t) && dateOr(t.due) && remaining(t) > 0 && !isPastEvent(t, today),
   );
   const outRisks = scoped
     .filter((t) => t.due < today)

@@ -359,6 +359,11 @@ describe('chores helpers', () => {
     assert.equal(choreState({ chore: { every: 7 }, daysSince: 7 }, TODAY).text, 'DUE TODAY');
     assert.equal(choreState({ chore: { every: 1, perDay: 1 }, todayCount: 3 }, TODAY).tone, 'done');
     assert.doesNotThrow(() => choreState(undefined, undefined));
+    // a new chore set to start later ("laundry every week - sat") is not DUE yet
+    const later = choreState({ chore: { every: 7, start: '2026-10-10' }, due: false, daysSince: null, nextDue: '2026-10-10' }, TODAY);
+    assert.equal(later.tone, 'fresh');
+    assert.equal(later.text, 'STARTS SAT');
+    assert.equal(later.last, 'never logged');
   });
 });
 

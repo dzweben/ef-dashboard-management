@@ -9,7 +9,7 @@
 // ctx = { now: ISO, today: "YYYY-MM-DD", src: "dash"|"chat"|"import" }.
 
 import {
-  DEFAULT_SETTINGS, GROUPS, KINDS, PRIO_LABELS, STATUSES,
+  DEFAULT_SETTINGS, GROUPS, KINDS, PRIO_LABELS, SESSION_CAP_MIN, STATUSES,
   applyWrites, makeId,
   normalizeBrief, normalizeCategory, normalizeChore, normalizeClock, normalizeProject,
   normalizeSettings, normalizeTask,
@@ -142,6 +142,51 @@ function nextLocalId(items, prefix) {
   return id;
 }
 
+/** `s` with every exact occurrence of `from` replaced by `to` (no regex). */
+const replaceAllExact = (s, from, to) => (from && s.includes(from) ? s.split(from).join(to) : s);
+
+/**
+ * After a rename, rewrite the old title wherever the history still carries it:
+ * activity entries about this entity (incl. "Title / sub" entries), its clock
+ * sessions, the running clock and the brief. Keeps a scrubbed identifier (a
+ * client's initials) from surviving in public state.json.
+ * kind: 'task' | 'chore' | 'project'.
+ */
+function renameInHistory(tx, state, kind, id, oldTitle, newTitle) {
+  const from = String(oldTitle ?? '');
+  const to = String(newTitle ?? '');
+  if (!from || from === to) return;
+  for (const a of Object.values(obj(state?.activity))) {
+    if (!isObj(a) || a.ref !== id || typeof a.title !== 'string') continue;
+    const title = replaceAllExact(a.title, from, to);
+    if (title !== a.title) tx.update('activity', a.id, { title });
+  }
+  const ref = `${kind}:${id}`;
+  if (kind !== 'project') {
+    for (const x of Object.values(obj(state?.sessions))) {
+      if (!isObj(x) || x.ref !== ref || typeof x.title !== 'string') continue;
+      const title = replaceAllExact(x.title, from, to);
+      if (title !== x.title) tx.update('sessions', x.id, { title });
+    }
+    const clock = obj(state?.clock);
+    if (clock.active === true && clock.ref === ref && typeof clock.title === 'string') {
+      const title = replaceAllExact(clock.title, from, to).trim();
+      if (title !== clock.title) tx.meta('clock', normalizeClock({ ...clock, title }));
+    }
+  }
+  const brief = state?.brief;
+  if (isObj(brief)) {
+    const fix = (v) => (typeof v === 'string' ? replaceAllExact(v, from, to) : v);
+    const next = {
+      ...brief,
+      headline: fix(brief.headline),
+      lines: Array.isArray(brief.lines) ? brief.lines.map(fix) : brief.lines,
+      asks: Array.isArray(brief.asks) ? brief.asks.map(fix) : brief.asks,
+    };
+    if (!sameJSON(next, brief)) tx.meta('brief', next);
+  }
+}
+
 /** Category id from an id / name / alias, or null if nothing matches. */
 function resolveCatId(state, v) {
   if (typeof v !== 'string' || !v.trim()) return null;
@@ -271,7 +316,8 @@ const num0 = (v) => (isNum(v) ? v : 0);
 /**
  * Add a task. `partial` may be a parse.parseQuickAdd() result: `newCatName`
  * (when no category matched) creates that category first; `recurring` makes a
- * chore instead. Parse-only fields never reach the stored task.
+ * chore instead (a no-op with `duplicateOf` when that chore already exists, see
+ * addChore). Parse-only fields never reach the stored task.
  */
 export function addTask(state, partial = {}, ctx = {}) {
   const c = ctxOf(state, ctx);
@@ -295,12 +341,18 @@ export function addTask(state, partial = {}, ctx = {}) {
   if (!catId) catId = fields.cat ?? null;
 
   if (isObj(p.recurring)) {
+    // Already tracking this chore: nothing to add (not even a new category).
+    const dup = findDuplicateChore(state, title);
+    if (dup) return { ...noop(state), duplicateOf: dup.id };
     const est = minutesField(p.est);
+    // "laundry every week - sat": the date is when it first comes due (chore.start).
+    const start = isISODate(fields.plan) ? fields.plan : isISODate(fields.due) ? fields.due : null;
     tx.run(addChore, {
       title,
       cat: catId && catId !== 'inbox' ? catId : undefined,
       every: p.recurring.every,
       perDay: p.recurring.perDay,
+      start: start && start > c.today ? start : undefined,
       min: isNum(p.min) ? p.min : isNum(est) && est > 0 ? est : undefined,
       notes: typeof p.notes === 'string' ? p.notes : '',
     });
@@ -483,6 +535,7 @@ export function editTask(state, args = {}, ctx = {}) {
 
   const tx = new Tx(state, c);
   tx.update('tasks', t.id, changed);
+  if ('title' in changed) renameInHistory(tx, state, 'task', t.id, t.title, n.title);
   const keys = Object.keys(changed).filter((k) => !['updated', 'doneAt', 'moved'].includes(k));
   if ('status' in changed) {
     tx.log({ done: 'done', todo: 'undone', dropped: 'drop' }[changed.status] ?? 'edit', t.id, n.title);
@@ -589,9 +642,19 @@ export function clockIn(state, args = {}, ctx = {}) {
 }
 
 /**
- * Stop the timer: record a session (≥ 1 minute), add the minutes to the task's
- * `spent` (and complete it when markDone), or mark the chore done today (any
- * clock-in on a chore counts, even 5 minutes). No clock running → no-op.
+ * SESSION_CAP_MIN (model.js, re-exported here): the longest session one clock-out
+ * logs. A timer left running overnight would otherwise pour a whole day into
+ * `spent` (zeroing the task's remaining work); past the cap the session keeps
+ * the cap, `rawMin` (the wall-clock length) and `capped: true`, so the UI or
+ * Claude can ask how long it really was.
+ */
+export { SESSION_CAP_MIN };
+
+/**
+ * Stop the timer: record a session (≥ 1 minute, at most SESSION_CAP_MIN), add the
+ * minutes to the task's `spent` (and complete it when markDone), or mark the
+ * chore done on the day the session started (any clock-in on a chore counts,
+ * even 5 minutes). No clock running → no-op.
  */
 export function clockOut(state, args = {}, ctx = {}) {
   const c = ctxOf(state, ctx);
@@ -601,7 +664,9 @@ export function clockOut(state, args = {}, ctx = {}) {
   const startMs = Date.parse(clock.start);
   const nowMs = Date.parse(c.now);
   const start = Number.isNaN(startMs) ? c.now : clock.start;
-  const min = Number.isNaN(startMs) ? 1 : Math.max(1, Math.round((nowMs - startMs) / 60000));
+  const rawMin = Number.isNaN(startMs) ? 1 : Math.max(1, Math.round((nowMs - startMs) / 60000));
+  const min = Math.min(rawMin, SESSION_CAP_MIN);
+  const capped = rawMin > min;
   const target = resolveRef(state, clock.ref);
   const title = str(clock.title) || str(target.entity?.title) || 'Focus';
 
@@ -616,12 +681,16 @@ export function clockOut(state, args = {}, ctx = {}) {
     min,
     d: localDateOf(start, c.tz) ?? c.today,
   };
+  if (capped) {
+    session.rawMin = rawMin;
+    session.capped = true;
+  }
   tx.set('sessions', session.id, session);
   if (target.kind === 'task') tx.update('tasks', target.id, { spent: num0(target.entity.spent) + min, updated: c.now });
   tx.meta('clock', { active: false });
-  tx.log('clock', target.id, title, null, `${min}m`);
+  tx.log('clock', target.id, title, null, capped ? `${min}m (capped; clock ran ${rawMin}m)` : `${min}m`);
   if (target.kind === 'task' && a.markDone === true) tx.run(completeTask, { id: target.id });
-  if (target.kind === 'chore') tx.run(choreDone, { id: target.id });
+  if (target.kind === 'chore') tx.run(choreDone, { id: target.id, date: session.d });
   return tx.result();
 }
 
@@ -655,29 +724,58 @@ export function logTime(state, args = {}, ctx = {}) {
 
 // ---------------------------------------------------------------- chores
 
-/** Check off a chore for today (log keeps the last 90 check-offs; a date may repeat). */
+/**
+ * Check off a chore (log keeps the last 90 check-offs, oldest first; a date may
+ * repeat). `date` (optional, "YYYY-MM-DD" ≤ today, e.g. the day a clocked
+ * session started) backdates the check-off; default today. `last` = latest date.
+ */
 export function choreDone(state, args = {}, ctx = {}) {
   const c = ctxOf(state, ctx);
-  const ch = entry(state, 'chores', obj(args).id);
+  const a = obj(args);
+  const ch = entry(state, 'chores', a.id);
   if (!ch) return noop(state);
-  const log = [...(Array.isArray(ch.log) ? ch.log.filter(isISODate) : []), c.today].slice(-90);
+  const date = isISODate(a.date) && a.date < c.today ? a.date : c.today;
+  const prev = Array.isArray(ch.log) ? ch.log.filter(isISODate) : [];
+  let at = prev.length;
+  while (at > 0 && prev[at - 1] > date) at--;
+  const log = [...prev.slice(0, at), date, ...prev.slice(at)].slice(-90);
+  const last = isISODate(ch.last) && ch.last > date ? ch.last : date;
   const tx = new Tx(state, c);
-  tx.update('chores', ch.id, { last: c.today, log, updated: c.now });
-  tx.log('chore', ch.id, ch.title);
+  tx.update('chores', ch.id, { last, log, updated: c.now });
+  tx.log('chore', ch.id, ch.title, null, date === c.today ? null : date);
   return tx.result();
 }
 
-const CHORE_EDITABLE = ['title', 'cat', 'every', 'perDay', 'min', 'active', 'notes', 'last', 'log'];
+const CHORE_EDITABLE = ['title', 'cat', 'every', 'perDay', 'min', 'active', 'notes', 'last', 'start', 'log'];
 
 function defaultChoreCat(state) {
   return isObj(state?.cats?.home) ? 'home' : 'inbox';
 }
 
+/** Title compared for duplicates: lowercase letters and digits, single spaces ("Walk  Ziggy!" → "walk ziggy"). */
+function choreKey(title) {
+  return String(title ?? '').toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
+}
+
+/** The active chore whose title matches `title` (choreKey), or null. */
+export function findDuplicateChore(state, title) {
+  const k = choreKey(title);
+  if (!k) return null;
+  return Object.values(obj(state?.chores)).find((x) => isObj(x) && x.active !== false && choreKey(x.title) === k) ?? null;
+}
+
+/**
+ * New chore. An active chore with the same title (case / punctuation aside)
+ * already exists → no-op: no writes, no activity, and `duplicateOf` = that
+ * chore's id so callers can say "already tracking Walk Ziggy".
+ */
 export function addChore(state, partial = {}, ctx = {}) {
   const c = ctxOf(state, ctx);
   const p = obj(partial);
   const title = str(p.title).trim();
   if (!title) return noop(state);
+  const dup = findDuplicateChore(state, title);
+  if (dup) return { ...noop(state), duplicateOf: dup.id };
   const id = freshId(state?.chores, p.id, 'c_');
   const fields = {};
   for (const k of CHORE_EDITABLE) if (k in p && p[k] !== undefined) fields[k] = p[k];
@@ -711,9 +809,9 @@ export function editChore(state, args = {}, ctx = {}) {
       if (b !== UNSET) p.active = b;
       continue;
     }
-    if (k === 'last') {
+    if (k === 'last' || k === 'start') {
       const d = dateField(v, c.today);
-      if (d !== UNSET) p.last = d;
+      if (d !== UNSET) p[k] = d;
       continue;
     }
     if (k === 'log' && !Array.isArray(v)) continue;
@@ -730,6 +828,7 @@ export function editChore(state, args = {}, ctx = {}) {
   changed.updated = c.now;
   const tx = new Tx(state, c);
   tx.update('chores', ch.id, changed);
+  if ('title' in changed) renameInHistory(tx, state, 'chore', ch.id, ch.title, n.title);
   tx.log('edit', ch.id, n.title, null, Object.keys(changed).filter((k) => k !== 'updated').join(','));
   return tx.result();
 }
@@ -771,7 +870,9 @@ export function addCategory(state, args = {}, ctx = {}) {
   if (typeof a.note === 'string') opts.note = a.note;
   const cat = makeCategory(name, opts);
   const tx = new Tx(state, c);
-  tx.set('cats', cat.id, cat);
+  // create-only: replayed onto a newer state where the same slug already exists
+  // (Claude made it from chat meanwhile), theirs is kept and our task files under it
+  tx.push({ op: 'set', col: 'cats', id: cat.id, data: cat, ifAbsent: true });
   tx.log('cat', cat.id, cat.name, null, 'new');
   return tx.result();
 }
@@ -868,6 +969,7 @@ export function editProject(state, args = {}, ctx = {}) {
   changed.updated = c.now;
   const tx = new Tx(state, c);
   tx.update('projects', proj.id, changed);
+  if ('name' in changed) renameInHistory(tx, state, 'project', proj.id, proj.name, n.name);
   tx.log('edit', proj.id, n.name, null, Object.keys(changed).filter((k) => k !== 'updated').join(','));
   return tx.result();
 }
@@ -960,6 +1062,98 @@ export function editSettings(state, args = {}, ctx = {}) {
   return tx.result();
 }
 
+// ---------------------------------------------------------------- privacy
+
+const escapeRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+/**
+ * Replace `find` (case-insensitive, literal) with `replace` (default "")
+ * everywhere text is stored: task titles / notes / substeps, chore titles /
+ * notes, project names / goals / notes / milestones, category names / notes,
+ * activity titles (and text from/to), session titles, the running clock and the
+ * brief. For scrubbing a client identifier out of public state.json; git
+ * history and past commit messages still hold it (only a history rewrite fixes
+ * those). Logs one generic "Privacy scrub" activity that never contains `find`.
+ */
+export function scrubText(state, args = {}, ctx = {}) {
+  const c = ctxOf(state, ctx);
+  const a = obj(args);
+  const find = typeof a.find === 'string' ? a.find : '';
+  if (!find.trim()) return noop(state);
+  const replace = typeof a.replace === 'string' ? a.replace : '';
+  const re = new RegExp(escapeRe(find), 'gi');
+  const sub = (v) => (typeof v === 'string' ? v.replace(re, () => replace) : v);
+  const line = (v, fallback) => {
+    if (typeof v !== 'string') return v;
+    const out = sub(v).replace(/[ \t]{2,}/g, ' ').trim();
+    return out || fallback;
+  };
+  const tx = new Tx(state, c);
+  let fields = 0;
+  const patch = (col, doc, next) => {
+    const changed = changedFields(doc, next, Object.keys(next));
+    const n = Object.keys(changed).length;
+    if (!n) return;
+    fields += n;
+    if (['tasks', 'chores', 'projects'].includes(col)) changed.updated = c.now;
+    tx.update(col, doc.id, changed);
+  };
+
+  for (const t of Object.values(obj(state?.tasks))) {
+    if (!isObj(t)) continue;
+    patch('tasks', t, {
+      title: line(t.title, 'Untitled'),
+      notes: sub(t.notes),
+      subs: Array.isArray(t.subs) ? t.subs.map((x) => (isObj(x) ? { ...x, t: sub(x.t) } : x)) : t.subs,
+    });
+  }
+  for (const ch of Object.values(obj(state?.chores))) {
+    if (isObj(ch)) patch('chores', ch, { title: line(ch.title, 'Chore'), notes: sub(ch.notes) });
+  }
+  for (const p of Object.values(obj(state?.projects))) {
+    if (!isObj(p)) continue;
+    patch('projects', p, {
+      name: line(p.name, 'Untitled project'),
+      goal: sub(p.goal),
+      notes: sub(p.notes),
+      milestones: Array.isArray(p.milestones) ? p.milestones.map((m) => (isObj(m) ? { ...m, t: sub(m.t) } : m)) : p.milestones,
+    });
+  }
+  for (const cat of Object.values(obj(state?.cats))) {
+    if (isObj(cat)) patch('cats', cat, { name: line(cat.name, 'Category'), note: sub(cat.note) });
+  }
+  for (const x of Object.values(obj(state?.sessions))) {
+    if (isObj(x)) patch('sessions', x, { title: line(x.title, 'Focus') });
+  }
+  for (const x of Object.values(obj(state?.activity))) {
+    if (isObj(x)) patch('activity', x, { title: line(x.title, ''), from: sub(x.from), to: sub(x.to) });
+  }
+  const clock = obj(state?.clock);
+  if (clock.active === true && typeof clock.title === 'string') {
+    const title = line(clock.title, 'Focus');
+    if (title !== clock.title) {
+      fields += 1;
+      tx.meta('clock', normalizeClock({ ...clock, title }));
+    }
+  }
+  const brief = state?.brief;
+  if (isObj(brief)) {
+    const next = {
+      ...brief,
+      headline: sub(brief.headline),
+      lines: Array.isArray(brief.lines) ? brief.lines.map(sub) : brief.lines,
+      asks: Array.isArray(brief.asks) ? brief.asks.map(sub) : brief.asks,
+    };
+    if (!sameJSON(next, brief)) {
+      fields += 1;
+      tx.meta('brief', next);
+    }
+  }
+  if (!fields) return noop(state);
+  tx.log('edit', null, 'Privacy scrub', null, `${fields} field${fields === 1 ? '' : 's'}`);
+  return tx.result();
+}
+
 // ---------------------------------------------------------------- registry
 
 export const OPS = {
@@ -991,4 +1185,5 @@ export const OPS = {
   applyAllocation,
   setBrief,
   editSettings,
+  scrubText,
 };

@@ -95,10 +95,59 @@ function append(el, children) {
   }
 }
 
-/** Replace all children of `el` with `nodes`. */
+// The focused element that mount() is swapping for a same-id twin, while the swap runs.
+let replacing = null;
+
+/** True while `el` is the focused field mount() is replacing with a twin of the same id. */
+export function isReplacing(el) {
+  return !!el && el === replacing;
+}
+
+function holdsId(node, id) {
+  if (!node || typeof node !== 'object') return false;
+  if (node.id === id) return true;
+  for (const c of node.children ?? []) if (holdsId(c, id)) return true;
+  return false;
+}
+
+/**
+ * Replace all children of `el` with `nodes`.
+ * Chromium fires `change` and `blur` on a focused field while it is being removed.
+ * When the new nodes carry a field with the same id (a re-render, not a close),
+ * those events are not the user leaving the field: handlers check isReplacing()
+ * and skip committing, because the twin already shows the draft and gets focus back.
+ */
 export function mount(el, ...nodes) {
-  el.replaceChildren(...nodes.flat(Infinity).filter((n) => n !== null && n !== undefined && n !== false));
+  const list = nodes.flat(Infinity).filter((n) => n !== null && n !== undefined && n !== false);
+  let active = null;
+  try { active = typeof document !== 'undefined' ? document.activeElement : null; } catch { active = null; }
+  const prev = replacing;
+  if (active && active !== el && active.id && typeof el.contains === 'function' && el.contains(active) && list.some((n) => holdsId(n, active.id))) {
+    replacing = active;
+  }
+  try {
+    el.replaceChildren(...list);
+  } finally {
+    replacing = prev;
+  }
   return el;
+}
+
+/** Inputs typed segment by segment (mm/dd/yyyy, hh:mm): rebuilding one mid-typing resets the segment caret. */
+export function isSegmented(el) {
+  if (!el || String(el.localName || el.tagName || '').toLowerCase() !== 'input') return false;
+  return /^(date|time|datetime-local|month|week)$/.test(String(el.type || ''));
+}
+
+/** A typed date worth saving: '' (cleared) unless `required`, else a real YYYY-MM-DD in 1900..2199. */
+export function isSaneDate(v, { required = false } = {}) {
+  const s = String(v ?? '');
+  if (!s) return !required;
+  const m = s.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (!m) return false;
+  const [y, mo, d] = [Number(m[1]), Number(m[2]), Number(m[3])];
+  if (y < 1900 || y > 2199 || mo < 1 || mo > 12 || d < 1) return false;
+  return d <= new Date(Date.UTC(y, mo, 0)).getUTCDate();
 }
 
 /** Inline style variables for a category color: { '--c': '#89b7ff' } */

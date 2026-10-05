@@ -73,6 +73,29 @@ focus across renders live in the header (mounted once) or in overlays
 their in-progress values in `ctx.ui.drawerDraft` and restore focus by `id`;
 see "Overlays" below).
 
+Rules main.js and `dom.mount` enforce so a re-render never eats input:
+- **Writes wait for the board.** `ctx.act` refuses (toast "Still loading your
+  board…") until the current store has delivered real state (`ctx.loaded`), and
+  while the store is in `error` after a failed first load (e.g. a rejected
+  token, even if the store shows a read-only fallback). A new token/repo
+  (`setToken`/`saveConfig`) starts a new store, unloaded again. Before load the
+  quick-add preview says LOADING BOARD instead of guessing "new category".
+- **No swap under a pressed pointer.** Renders are held from `pointerdown` until
+  the click has run (or `pointerup` + 400ms with no click), so a field that
+  commits on blur at mousedown can't replace the button being clicked.
+- **Date/time fields keep their DOM while focused.** Rebuilding one resets its
+  segment caret, so the view/overlay holding a focused `type=date|time` input is
+  not re-mounted until focus leaves (focusout re-renders).
+- **Re-render twins don't commit.** Chromium fires `change`/`blur` on a focused
+  field while it is removed. `dom.mount` marks it (`isReplacing(el)`) when the new
+  tree has a field with the same id; change/blur handlers skip committing then,
+  because the twin shows the draft and gets focus back. When the field just goes
+  away (overlay closed, tab switched), the change commits as usual.
+- Text fields that save on leave keep typing in a draft: `ctx.ui.drawerDraft`
+  (drawer) or `ctx.ui.drafts` via `setup.editField(ctx, key, stored, commit)`.
+  Typed dates in the drawer commit on blur / Enter only, never mid-segment, and
+  only when sane (`dom.isSaneDate`: year 1900–2199); picker picks commit at once.
+
 ## ctx (built by main.js `buildCtx()`)
 
 ```js
@@ -93,9 +116,9 @@ ctx = {
   },
   cat(id) → Category (falls back to inbox), cats,
   ui: { tab, drawer: {taskId}|null, move: {taskId, blockId}|null, clockSheet: {ref}|null, filters: {}, ... },
-  loaded: bool,                          // false until the first state arrives
+  loaded: bool,                          // false until the current store delivers its first state
   store: { mode: "github"|"local"|"readonly", status: {kind, at, message}, canWrite, refresh() },
-  config: { owner, repo, branch, path }, hasToken,
+  config: { owner, repo, branch, path, author }, hasToken,   // author: noreply identity for website commits
   act(opName, args, { toast, kind, undo }) → Promise<result|null>   // opName from engine/ops.js OPS
   setUI(patch), rerender(),
   openTask(taskId), openMove(taskId, blockId?), openClock(ref?), closeOverlay(),
@@ -156,13 +179,15 @@ pink outline while dragging over.
   blocks (list with date + minutes + done check; "Auto-plan" button runs
   `schedule.allocate(state, { today, taskIds: [id] })` then
   `act('applyAllocation', { updates })`), and actions: Done, Drop, Delete
-  (two-step: first click turns the button into "Really delete?"). Save on
+  (two-step: first click turns the button into "Really delete?"; opening or
+  closing any overlay disarms it). Save on
   change of each field (blur/change → `act('editTask', ...)`), not on every
   keystroke. Escape / backdrop click closes.
 - **Move sheet** (`ctx.ui.move = { taskId, blockId }`): quick picks Today,
   Tomorrow, +2 days, Next Mon, This weekend, plus the 14 day chips from
   `ctx.vm.cal` (each with its load meter) and a native `<input type=date>`.
-  Picking one runs moveTask/moveBlock and closes with a toast.
+  Picking one runs moveTask/moveBlock and closes with a toast. A date typed or
+  picked in the date field is kept on `ctx.ui.move.date` until Move is tapped.
 - **Clock sheet** (`ctx.ui.clockSheet = { ref }`): the "just 5 minutes"
   picker. Big copy: "5 minutes. That's it." Suggestions: due chores first
   (from `ctx.vm.chores`), then today's tasks; a free-text "something else"

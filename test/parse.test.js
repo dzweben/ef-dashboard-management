@@ -2,7 +2,8 @@ import { test, describe } from 'node:test';
 import assert from 'node:assert/strict';
 import { parseQuickAdd, inferCategory, inferKind } from '../src/engine/parse.js';
 import { DEFAULT_CATEGORIES } from '../src/engine/defaults.js';
-import { INBOX_CATEGORY, normalizeCategory } from '../src/engine/model.js';
+import { INBOX_CATEGORY, normalizeCategory, emptyState } from '../src/engine/model.js';
+import { addTask } from '../src/engine/ops.js';
 
 const TODAY = '2026-10-05'; // Monday
 const cats = [...DEFAULT_CATEGORIES, INBOX_CATEGORY];
@@ -353,5 +354,237 @@ describe('inferKind', () => {
     assert.equal(inferKind('Schedule dentist'), 'task');
     assert.equal(inferKind(''), 'task');
     assert.equal(inferKind(null), 'task');
+  });
+});
+
+
+// ---------------------------------------------------------------- adversarial review regressions
+
+/** What addTask actually stores for a quick-add line (the CLI and the site both go parse → addTask). */
+function saved(text) {
+  const state = emptyState();
+  for (const c of DEFAULT_CATEGORIES) state.cats[c.id] = normalizeCategory({ ...c }, { now: '2026-09-01T12:00:00.000Z' });
+  const parsed = parseQuickAdd(text, { today: TODAY, cats: state.cats });
+  const res = addTask(state, parsed, { now: '2026-10-05T13:00:00.000Z', today: TODAY, src: 'chat' });
+  const w = res.writes.find((x) => x.op === 'set' && (x.col === 'tasks' || x.col === 'chores'));
+  return { parsed, col: w?.col ?? null, item: w ? res.state[w.col][w.id] : null };
+}
+
+describe('ENG-1: bare cadence adjectives next to a one-off date', () => {
+  test('ENG-1 weekly/daily/monthly/biweekly/<day>s in a dated title stay in the title, no chore', () => {
+    check('submit weekly report by fri', { title: 'Submit weekly report', due: '2026-10-09', recurring: null, kind: 'deadline' });
+    check('send weekly lab update - fri', { title: 'Send weekly lab update', plan: '2026-10-09', recurring: null });
+    check('daily standup notes - tomorrow', { title: 'Daily standup notes', plan: '2026-10-06', recurring: null });
+    check('monthly budget review by 10/31', { title: 'Monthly budget review', due: '2026-10-31', recurring: null });
+    check('biweekly timesheet due fri', { title: 'Biweekly timesheet', due: '2026-10-09', recurring: null });
+    check('grade weekly quizzes - thu', { title: 'Grade weekly quizzes', plan: '2026-10-08', recurring: null });
+    check('email tom about the daily diary study - wed', { title: 'Email Tom about the daily diary study', plan: '2026-10-07', recurring: null });
+    const r = check('email mondays group - fri', { plan: '2026-10-09', recurring: null });
+    assert.match(r.title, /^Email mondays group$/i);
+    assert.ok(!r.tokens.some((t) => t.type === 'recurring'));
+  });
+  test('ENG-1 a cadence with no date is still a chore; strong forms stay chores even with a date', () => {
+    check('laundry weekly', { recurring: { every: 7, perDay: 1 }, title: 'Laundry' });
+    check('walk ziggy daily', { recurring: { every: 1, perDay: 1 } });
+    check('laundry mondays', { recurring: { every: 7, perDay: 1 }, title: 'Laundry' });
+    check('laundry every week - sat', { recurring: { every: 7, perDay: 1 }, title: 'Laundry' });
+    // a strong phrase is not blocked by an earlier weak word with another cadence
+    check('daily standup notes every week', { recurring: { every: 7, perDay: 1 }, title: 'Daily standup notes' });
+  });
+  test('ENG-1 end to end: addTask stores a dated task, not a chore that drops the date', () => {
+    const a = saved('submit weekly report by fri');
+    assert.equal(a.col, 'tasks');
+    assert.equal(a.item.title, 'Submit weekly report');
+    assert.equal(a.item.due, '2026-10-09');
+    const b = saved('send weekly lab update - fri');
+    assert.equal(b.col, 'tasks');
+    assert.equal(b.item.plan, '2026-10-09');
+  });
+});
+
+describe('ENG-2: a date followed by a connector + time', () => {
+  test('ENG-2 "tomorrow by 5pm" keeps the date and drops the connector', () => {
+    check('email mike tomorrow by 5pm', { title: 'Email Mike', due: '2026-10-06', plan: null, time: '17:00' });
+    check('submit form friday by noon', { title: 'Submit form', due: '2026-10-09', time: '12:00' });
+    check('finish draft tomorrow by 3pm', { title: 'Finish draft', due: '2026-10-06', time: '15:00' });
+    check('email mike tomorrow before 10am', { title: 'Email Mike', due: '2026-10-06', time: '10:00' });
+    check('email mike - tomorrow by 5pm', { title: 'Email Mike', due: '2026-10-06', time: '17:00' });
+    check('hw due at 5pm tomorrow', { title: 'Hw', due: '2026-10-06', time: '17:00' });
+  });
+  test('ENG-2 around/after/~ keep the date as a do-day', () => {
+    check('call mike tomorrow around 3pm', { title: 'Call Mike', plan: '2026-10-06', due: null, time: '15:00' });
+    check('pick up meds tomorrow after 5pm', { title: 'Pick up meds', plan: '2026-10-06', due: null, time: '17:00' });
+    check('call mom tomorrow ~3pm', { title: 'Call Mom', plan: '2026-10-06', time: '15:00' });
+  });
+  test('ENG-2 unchanged neighbours: "by 5pm tomorrow", "at 3pm", phrasal "stop by"', () => {
+    check('email mike by 5pm tomorrow', { title: 'Email Mike', due: '2026-10-06', time: '17:00' });
+    check('call mike friday at 3pm', { title: 'Call Mike', plan: '2026-10-09', due: null, time: '15:00' });
+    check('stop by at 3pm', { due: null, time: '15:00' });
+  });
+});
+
+describe('ENG-5: "eod" before a date', () => {
+  test('ENG-5 "by eod fri" is due Friday with no stray plan', () => {
+    check('send budget to tom by eod fri', { title: 'Send budget to tom', due: '2026-10-09', plan: null });
+    check('send budget by eod friday', { due: '2026-10-09', plan: null });
+    check('send budget by end of day fri', { title: 'Send budget', due: '2026-10-09', plan: null });
+    check('send budget by end of the day on friday', { title: 'Send budget', due: '2026-10-09', plan: null });
+  });
+  test('ENG-5 "fri by eod" / "by fri eod" are due Friday too; "by eod" alone is today', () => {
+    check('send budget fri by eod', { title: 'Send budget', due: '2026-10-09', plan: null });
+    check('send budget by fri eod', { title: 'Send budget', due: '2026-10-09', plan: null });
+    check('send budget by fri end of day', { title: 'Send budget', due: '2026-10-09', plan: null });
+    check('send budget by eod', { title: 'Send budget', due: '2026-10-05', plan: null });
+    check('send budget by eod and email tom', { due: '2026-10-05', title: 'Send budget and email Tom' });
+  });
+});
+
+describe('ENG-6: titles about an exam/quiz are not deadlines', () => {
+  test('ENG-6 emailing/asking/grading about an exam sets a do-day, not a due date', () => {
+    check('email prof about exam - tomorrow', { plan: '2026-10-06', due: null, kind: 'email' });
+    check('ask tom about the quiz - fri', { plan: '2026-10-09', due: null, kind: 'task' });
+    check('grade quizzes - tom', { plan: '2026-10-06', due: null });
+    check('proctor exam wed', { plan: '2026-10-07', due: null });
+    check('reply to jason about submission - fri', { plan: '2026-10-09', due: null });
+  });
+  test('ENG-6 the deliverable itself is still a deadline', () => {
+    check('multivar exam - oct 20', { due: '2026-10-20', plan: null, kind: 'deadline' });
+    check('quiz 3 - wed', { due: '2026-10-07', plan: null });
+    check('submit abstract about memory - fri', { due: '2026-10-09', plan: null });
+    check('study for multivar exam - tomorrow', { plan: '2026-10-06', due: null });
+  });
+  test('ENG-6 inferKind: an explicit due date on a question about a quiz is not kind deadline', () => {
+    assert.equal(inferKind('Ask Tom about the quiz', { due: '2026-10-09' }), 'task');
+    assert.equal(inferKind('Grade quizzes', { due: '2026-10-09' }), 'task');
+    assert.equal(inferKind('Multivar exam', { due: '2026-10-20' }), 'deadline');
+    assert.equal(inferKind('Quiz 3', { due: '2026-10-07' }), 'deadline');
+  });
+});
+
+describe('ENG-7: trailing "low" after a date', () => {
+  test('ENG-7 "sat low" / "tomorrow low" keep the date and set low priority', () => {
+    check('laundry - sat low', { title: 'Laundry', plan: '2026-10-10', prio: 0 });
+    check('email mike tomorrow low', { title: 'Email Mike', plan: '2026-10-06', prio: 0 });
+    check('laundry sat low', { title: 'Laundry', plan: '2026-10-10', prio: 0 });
+    check('laundry by sat low', { title: 'Laundry', due: '2026-10-10', prio: 0 });
+    check('laundry low - sat', { title: 'Laundry', plan: '2026-10-10', prio: 0 });
+  });
+});
+
+describe('ENG-8: "<verb> for <date>"', () => {
+  test('ENG-8 a one-word title keeps "for <date>" as its object', () => {
+    check('prep for thursday', { title: 'Prep for thursday', plan: null, due: null });
+    check('plan for next week', { title: 'Plan for next week', plan: null, due: null });
+  });
+  test('ENG-8 longer titles and "on <date>" still take the date', () => {
+    check('buy cake for friday', { title: 'Buy cake', plan: '2026-10-09' });
+    check('laundry sat', { title: 'Laundry', plan: '2026-10-10' });
+    check('call mom on sat', { title: 'Call Mom', plan: '2026-10-10' });
+    check('for thursday', { title: '', plan: '2026-10-08' });
+  });
+});
+
+describe('ENG-9: honorific + stop word', () => {
+  test('ENG-9 the word after Dr/Prof is capitalized only when it is a name', () => {
+    check('email prof about exam', { title: 'Email Prof about exam' });
+    check('email dr re: labs', { title: 'Email Dr re: labs' });
+    check('email dr smith', { title: 'Email Dr Smith' });
+    check('call dr. kim tomorrow at 10:30am', { title: 'Call Dr. Kim' });
+  });
+});
+
+describe('ENG-10: competing aliases', () => {
+  test('ENG-10 an acronym or "Label:" prefix beats a longer generic alias', () => {
+    check('OCD pres: write main script - thu', { cat: 'cbt', catConfidence: 0.9, plan: '2026-10-08' });
+    check('ocd pres: write main script', { cat: 'cbt' });
+    assert.equal(inferCategory('ABCD review meeting', cats).id, 'manuscripts');
+    assert.equal(inferCategory('Prepare for DTI meeting', cats).id, 'dti');
+    assert.equal(inferCategory('Send out DTI email', cats).id, 'dti');
+    assert.equal(inferCategory('RSA manuscript update', cats).id, 'rsa');
+  });
+  test('ENG-10 a leading action verb does not compete with the topic', () => {
+    assert.deepEqual(inferCategory('email lily', cats), { id: 'undergrad', confidence: 0.9, reason: 'alias "lily"' });
+    assert.equal(inferCategory('text ronan and email chloe', cats).confidence, 0.9);
+    assert.equal(inferCategory('remind me to email the committee', cats).id, 'gradroles');
+    assert.equal(inferCategory('email jason about the manuscript', cats).confidence, 0.9);
+  });
+  test('ENG-10 a close call between two categories is low confidence and names both', () => {
+    const r = inferCategory('fix app form', cats);
+    assert.equal(r.confidence, 0.45);
+    assert.match(r.reason, /alias "form".*Dev projects \("app"\)/);
+    const p = P('script for ocd slides');
+    assert.ok(p.catConfidence < 0.5, JSON.stringify(p));
+    assert.match(p.catReason, /also matches/);
+  });
+});
+
+describe('ENG-11: evening deadlines', () => {
+  test('ENG-11 "11:59" and a bare hour with tonight/evening/night are pm', () => {
+    check('hw due tonight at 11:59', { due: '2026-10-05', time: '23:59' });
+    check('multivar hw due tonight at 11:59', { due: '2026-10-05', time: '23:59' });
+    check('turn in hw by 11:59 tonight', { due: '2026-10-05', time: '23:59' });
+    check('hw due fri 11:59', { due: '2026-10-09', time: '23:59' });
+    check('call mike tonight at 9:30', { plan: '2026-10-05', time: '21:30' });
+    check('night walk at 9', { time: '21:00' });
+  });
+  test('ENG-11 explicit am, 24h clocks and mornings are untouched', () => {
+    check('hw due tonight at 11:59am', { time: '11:59' });
+    check('call dr. kim tomorrow at 10:30am', { time: '10:30' });
+    check('standup tomorrow at 9:30', { time: '09:30' });
+    check('flight tonight at 08:15', { time: '08:15' });
+  });
+});
+
+test('ENG-10 follow-up: a personal "visit" is not filed as clinical work (the psc alias is "home visit")', () => {
+  assert.notEqual(P('visit grandma sunday').cat, 'psc');
+  assert.equal(P('visit grandma sunday').plan, '2026-10-11');
+  assert.equal(P('clinical visit confirmations').cat, 'psc');
+  assert.ok(!DEFAULT_CATEGORIES.find((c) => c.id === 'psc').aliases.includes('visit'));
+});
+
+describe('ENG-13: a time with no date', () => {
+  test('ENG-13 lands on today instead of the backlog', () => {
+    const r = check('lab meeting 2pm', { plan: '2026-10-05', due: null, time: '14:00', kind: 'meeting' });
+    assert.ok(r.tokens.some((t) => t.type === 'plan' && t.value === '2026-10-05'));
+    check('text ronan 2pm', { plan: '2026-10-05', time: '14:00' });
+    check('1:1 with teij at 3', { plan: '2026-10-05', time: '15:00' });
+  });
+  test('ENG-13 "by 5pm" with no date is due today; recurring chores get no date', () => {
+    check('submit form by 5pm', { due: '2026-10-05', plan: null, time: '17:00' });
+    check('every monday standup at 10am', { plan: null, due: null, recurring: { every: 7, perDay: 1 } });
+    check('email mike', { plan: null, due: null, time: null });
+  });
+  test('ENG-13 with `now` known, a bare time already past today rolls to tomorrow', () => {
+    const at9pm = '2026-10-06T01:00:00.000Z'; // Mon 10/5 9:00pm in New York
+    assert.equal(P('lab meeting 2pm', { now: at9pm }).plan, '2026-10-06');
+    assert.equal(P('submit form by 5pm', { now: at9pm }).due, '2026-10-06');
+    assert.equal(P('call mom at 10pm', { now: at9pm }).plan, '2026-10-05', 'still ahead today');
+    const at8am = '2026-10-05T12:00:00.000Z'; // 8:00am
+    assert.equal(P('lab meeting 2pm', { now: at8am }).plan, '2026-10-05');
+    // an explicit day is never moved; a `now` on another day (or none) changes nothing
+    assert.equal(P('lab meeting 2pm today', { now: at9pm }).plan, '2026-10-05');
+    assert.equal(P('lab meeting 2pm', { now: '2026-10-08T23:00:00.000Z' }).plan, '2026-10-05');
+    assert.equal(P('lab meeting 2pm', { now: 'garbage' }).plan, '2026-10-05');
+  });
+});
+
+describe('UI-11: chore category in the preview', () => {
+  test('UI-11 an uncategorized recurring line previews as Home, the way it is saved', () => {
+    for (const text of ['water the cactus every 3 days', 'stretch every day']) {
+      const { parsed, col, item } = saved(text);
+      assert.equal(parsed.cat, 'home', text);
+      assert.equal(parsed.catReason, 'chores default to Home');
+      assert.ok(parsed.catConfidence > 0 && parsed.catConfidence < 0.5);
+      assert.equal(col, 'chores');
+      assert.equal(item.cat, parsed.cat, `${text}: preview ${parsed.cat}, saved ${item.cat}`);
+    }
+  });
+  test('UI-11 tags, aliases and non-recurring tasks are unaffected; no Home category → inbox', () => {
+    check('#rsa backup every week', { cat: 'rsa', catReason: 'tagged' });
+    check('walk ziggy 2x a day', { cat: 'ziggy' });
+    check('water the cactus', { cat: 'inbox', recurring: null });
+    const noHome = cats.filter((c) => c.id !== 'home');
+    const r = parseQuickAdd('water the cactus every 3 days', { today: TODAY, cats: noHome });
+    assert.equal(r.cat, 'inbox');
   });
 });

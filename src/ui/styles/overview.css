@@ -49,4 +49,10 @@
   animation: skel-sweep 2.2s linear infinite;
 }
 @keyframes skel-shimmer { to { transform: translateX(100%); } }
+/* first load failed: stop the shimmer, show why and a way out */
+.skel.is-stuck .skel-label { color: var(--blood); }
+.skel.is-stuck .skel-bar::after, .skel.is-stuck::after { animation: none; opacity: 0; }
+.skel-stuck { display: grid; gap: 10px; margin-top: 8px; }
+.skel-msg { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--ink-2); overflow-wrap: anywhere; }
+.skel-actions { display: flex; flex-wrap: wrap; gap: 8px; }
 @keyframes skel-sweep { from { top: 0; } to { top: 100%; } }

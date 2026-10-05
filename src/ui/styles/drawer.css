@@ -118,7 +118,11 @@ body:has(> .overlay:not([hidden])) { overflow: hidden; }
 .mv-quick:hover { border-color: var(--cyan); }
 .mv-quick:active { transform: translate(3px, 3px); box-shadow: none; }
 .mv-quick[aria-current] { border-color: var(--pink); }
-.mv-quick-label { font-family: var(--font-shout); font-weight: 900; font-size: 1.15rem; line-height: 1; text-transform: uppercase; }
+/* The label shrinks with its button (container units, sized for the condensed web
+   font) so "TOMORROW" fits a 320px phone; before that font loads, the wider fallback
+   wraps inside the button instead of running past its border (UI-13). */
+.mv-quick { container-type: inline-size; min-width: 0; }
+.mv-quick-label { font-family: var(--font-shout); font-weight: 900; font-size: 1.15rem; font-size: min(1.15rem, 22cqi); line-height: 1; text-transform: uppercase; overflow-wrap: anywhere; }
 .mv-quick-date { font-family: var(--font-mono); font-size: 10px; color: var(--ink-3); }
 .mv-cal-head { display: flex; justify-content: space-between; gap: 8px; margin-bottom: -6px; }
 .mv-days { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; }

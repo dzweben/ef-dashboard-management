@@ -1,26 +1,45 @@
 // GitHub-backed store: data/state.json in the repo IS the database.
 //
 //   load()   GET  /repos/{o}/{r}/contents/{path}?ref={branch}   (base64 JSON + sha + ETag)
-//   apply()  optimistic local applyWrites, queue the writes, debounce a commit
-//   flush()  PUT  /repos/{o}/{r}/contents/{path}  { message, content, sha, branch }
-//            409/422 -> refetch, applyWrites(remote, pending), retry (max 3)
+//   apply()  optimistic local applyWrites, queue the FINE-GRAINED diff of that
+//            change (model.diffWrites: counters as `inc` deltas, id-arrays by
+//            element, …) as one batch, debounce a commit
+//   flush()  PUT  /repos/{o}/{r}/contents/{path}  { message, content, sha, branch, author, committer }
+//            409/422 -> refetch, drop batches GitHub already has, replay the
+//            rest on the remote (applyWrites(remote, queued)), retry (max 3)
 //   poll     GET with If-None-Match every pollMs while the page is visible
+//
+// apply() refuses (Error code "not_loaded") until a load from the API has
+// succeeded: writes computed against an empty or stale board must never be
+// replayed over the real file. If the token is rejected at load, the public
+// file is shown read-only (raw.githubusercontent.com) with the error status.
+//
+// The queue is kept per store instance in localStorage (crash net for a closed
+// tab or a store swap in Setup). A new store claims every saved queue for the
+// same repo/branch/path; a batch whose activity ids are already in the remote
+// file was committed (a PUT whose response was lost) and is dropped, never replayed.
 //
 // No token -> read-only mode: reads raw.githubusercontent.com, never writes.
 // Works in browsers and Node 22 (fetch, atob/btoa, TextEncoder/TextDecoder are global).
-// The token is only ever sent to api.github.com in the Authorization header.
-import { normalizeState, emptyState, applyWrites, serializeState } from '../engine/model.js';
+// The token is only ever sent to api.github.com in the Authorization header, and
+// the store never persists it (where the UI keeps it, e.g. its tokenStorage
+// "local" | "session" choice, is the UI's business).
+import { normalizeState, emptyState, applyWrites, diffWrites, serializeState, makeId } from '../engine/model.js';
 import { commitMessage } from '../engine/brief.js';
 
 export const API_BASE = 'https://api.github.com';
 export const RAW_BASE = 'https://raw.githubusercontent.com';
 export const READONLY_MESSAGE = 'Read-only. Add a token in Setup to save.';
 export const TOKEN_MESSAGE = 'GitHub rejected the token. Check Setup.';
+export const LOADING_MESSAGE = 'Still loading your board from GitHub. Try again in a moment.';
+export const NOT_LOADED_MESSAGE = "Your board hasn't loaded from GitHub yet.";
+export const NOT_LOADED = 'not_loaded'; // err.code from apply() before the first successful load
 export const OFFLINE_BACKOFF_MS = Object.freeze([5000, 15000, 60000]);
 export const MAX_PUT_ATTEMPTS = 3;
 
-const PENDING_TTL_MS = 48 * 3600 * 1000; // crash-saved writes older than this are dropped
+const PENDING_TTL_MS = 48 * 3600 * 1000; // crash-saved batches older than this are dropped
 const STALE_SHA_CAP = 64;
+const CONFIRM = 'confirm'; // adopt(): "a version we already left came back; re-read before rolling back"
 
 // ------------------------------------------------------------ base64 (UTF-8)
 
@@ -51,7 +70,9 @@ const plural = (n, word) => `${n} ${word}${n === 1 ? '' : 's'}`;
 const secs = (ms) => (ms >= 60000 ? `${Math.round(ms / 60000)}m` : `${Math.round(ms / 1000)}s`);
 const seg = (s) => encodeURIComponent(String(s ?? '').trim());
 const encodePath = (p) => String(p ?? '').split('/').filter(Boolean).map(encodeURIComponent).join('/');
+const isObj = (v) => v !== null && typeof v === 'object' && !Array.isArray(v);
 const isWrite = (w) => !!w && typeof w === 'object' && typeof w.op === 'string' && typeof w.col === 'string';
+const hasOwn = (o, k) => isObj(o) && Object.prototype.hasOwnProperty.call(o, k);
 const safe = (fn, ...args) => { try { fn(...args); } catch (err) { if (typeof console !== 'undefined') console.error(err); } };
 
 function safeLocalStorage(win) {
@@ -103,6 +124,25 @@ function httpError(res, json, { owner, repo } = {}) {
   return err;
 }
 
+/** `{ name, email }` with both non-empty, or null. */
+function gitIdentity(v) {
+  if (!isObj(v)) return null;
+  const name = typeof v.name === 'string' ? v.name.trim() : '';
+  const email = typeof v.email === 'string' ? v.email.trim() : '';
+  return name && email ? { name, email } : null;
+}
+
+/** The activity ids a list of writes creates (how a batch is recognized once it is on GitHub). */
+const activityIdsOf = (writes) => writes.filter((w) => w.col === 'activity' && w.op === 'set' && typeof w.id === 'string').map((w) => w.id);
+
+/**
+ * In the queue, a collection `set` always means "create": diffWrites only emits
+ * it for a doc the base didn't have. Mark it so a replay never replaces a doc of
+ * that id that exists by then (a category Claude created from chat with the same
+ * slug, or our own earlier commit).
+ */
+const markCreates = (writes) => writes.map((w) => (w.op === 'set' && w.col !== 'meta' ? { ...w, ifAbsent: true } : w));
+
 // ------------------------------------------------------------ the store
 
 export function createGitHubStore(opts = {}) {
@@ -119,6 +159,9 @@ export function createGitHubStore(opts = {}) {
     win = globalThis.window,
     timeoutMs = 20000, // abort a hung request after this long (treated as offline)
   } = opts;
+  // Commit identity for website saves (author AND committer), e.g. Danny's
+  // GitHub noreply address, so no account email lands in a public history.
+  const identity = gitIdentity(opts.author);
   // Crash net for queued writes (survives a closed tab / a store swap in Setup).
   // Pass `pendingStorage: null` to disable; defaults to the window's localStorage.
   const pendingStorage = 'pendingStorage' in opts ? opts.pendingStorage : safeLocalStorage(win);
@@ -126,18 +169,25 @@ export function createGitHubStore(opts = {}) {
   const tok = typeof token === 'string' ? token.trim() : '';
   const mode = tok ? 'github' : 'readonly';
   const filePath = String(path || 'data/state.json').replace(/^\/+/, '');
-  const pendingKey = `ef.pending.v1:${owner}/${repo}:${branch || '~'}:${filePath}`;
+  const queueBase = `${owner}/${repo}:${branch || '~'}:${filePath}`;
+  const legacyKey = `ef.pending.v1:${queueBase}`; // one shared queue (before per-instance keys)
+  const keyPrefix = `ef.pending.v2:${queueBase}#`;
+  const ownKey = `${keyPrefix}${makeId('')}`; // this instance's queue; others are claimed on start
 
-  let state = null; // State | null until the first successful load
+  let state = null; // State | null until the first load (or the read-only fallback)
+  let loaded = false; // a load through the API succeeded: `state` is a real base we may write on
+  let lastLoadError = null;
   let sha = null; // blob sha of the remote file we last saw (null = no file)
-  let etag = null; // ETag of the last contents GET
+  let etag = null; // ETag of the last contents GET we adopted
   let rawText = null; // read-only mode: last raw body
   let remoteKnown = false; // we have seen the remote file (or its absence) at least once
   let resolvedBranch = String(branch || '').trim() || null;
   let branchPromise = null;
-  const pending = []; // Write[] applied locally, not yet committed
-  const pendingActivity = []; // Activity[] for the commit message
-  const staleShas = new Set(); // shas we've moved past; ignore lagging replicas that serve them
+  let publicRef = null; // branch for the read-only fallback, looked up once without the token
+  // Batch = { id, at, writes: Write[] (fine-grained), activity: Activity[], acts: activityId[] }
+  const pending = [];
+  const staleShas = new Set(); // known older than a version we committed or were rejected against
+  const leftShas = new Set(); // versions a poll moved us away from (probably older; confirmed before rolling back)
   let status = null;
   let inFlight = null; // Promise while a PUT cycle runs
   let dirty = false; // flush() was requested while a PUT was in flight
@@ -177,35 +227,128 @@ export function createGitHubStore(opts = {}) {
     setStatus(kind, message);
   }
 
+  const syncedMessage = (verb = 'Synced with') => `${verb} GitHub${sha ? ` (${String(sha).slice(0, 7)})` : ''}.`;
+
+  // ---------------------------------------------------------- the queue
+
+  /** Our queued batches replayed on top of `base` (a remote state). */
+  function replay(base) {
+    if (!pending.length) return base;
+    const exists = new Map();
+    const out = [];
+    for (const b of pending) {
+      for (const w of b.writes) {
+        if (w.col !== 'meta' && typeof w.id === 'string') {
+          const k = `${w.col}\u0000${w.id}`;
+          if (!exists.has(k)) exists.set(k, hasOwn(base?.[w.col], w.id));
+          if (w.op === 'set') {
+            if (w.ifAbsent && exists.get(k)) continue; // someone created it first: keep theirs, our later updates patch it
+            exists.set(k, true);
+          } else if (w.op === 'delete') {
+            exists.set(k, false);
+          }
+        }
+        out.push(w);
+      }
+    }
+    return applyWrites(base, out);
+  }
+
+  /** Drop batches GitHub already has (their activity is in `remoteState`). Returns how many. */
+  function dropCommitted(remoteState) {
+    const acts = remoteState?.activity;
+    if (!isObj(acts) || !pending.length) return 0;
+    let dropped = 0;
+    for (let i = pending.length - 1; i >= 0; i--) {
+      if (pending[i].acts.some((id) => hasOwn(acts, id))) {
+        pending.splice(i, 1);
+        dropped += 1;
+      }
+    }
+    if (dropped) savePending();
+    return dropped;
+  }
+
+  function removeBatches(ids) {
+    for (let i = pending.length - 1; i >= 0; i--) if (ids.has(pending[i].id)) pending.splice(i, 1);
+  }
+
   // ---------------------------------------------------------- persistence of the queue
 
   function savePending() {
-    if (!pendingStorage || mode !== 'github') return;
+    if (!pendingStorage || mode !== 'github' || disposed) return false;
     try {
-      if (pending.length) {
-        pendingStorage.setItem(pendingKey, JSON.stringify({ v: 1, at: now(), writes: pending, activity: pendingActivity }));
-      } else {
-        pendingStorage.removeItem(pendingKey);
-      }
-    } catch { /* storage full or blocked: in-memory queue still works */ }
+      if (pending.length) pendingStorage.setItem(ownKey, JSON.stringify({ v: 2, at: now(), batches: pending }));
+      else pendingStorage.removeItem(ownKey);
+      return true;
+    } catch {
+      return false; // storage full or blocked: the in-memory queue still works
+    }
   }
 
+  /** A saved batch, validated, or null when it is junk or older than the TTL. */
+  function toBatch(raw, fallbackId) {
+    if (!isObj(raw)) return null;
+    const age = Date.parse(now()) - Date.parse(raw.at);
+    if (!(age >= 0 && age < PENDING_TTL_MS)) return null; // too old (or clock weirdness): don't replay
+    const writes = Array.isArray(raw.writes) ? raw.writes.filter(isWrite) : [];
+    if (!writes.length) return null;
+    const activity = Array.isArray(raw.activity) ? raw.activity.filter(isObj) : [];
+    const acts = [...new Set([
+      ...(Array.isArray(raw.acts) ? raw.acts.filter((x) => typeof x === 'string') : []),
+      ...activityIdsOf(writes),
+      ...activity.map((a) => a.id).filter((x) => typeof x === 'string'),
+    ])];
+    return { id: typeof raw.id === 'string' && raw.id ? raw.id : fallbackId, at: raw.at, writes, activity, acts };
+  }
+
+  /** Batches stored under one key (v2 per-instance queue, or the v1 shared queue as one batch). */
+  function readEntry(text) {
+    try {
+      const saved = JSON.parse(text);
+      if (saved?.v === 2 && Array.isArray(saved.batches)) {
+        return saved.batches.map((b, i) => toBatch(b, `q_${saved.at}_${i}`)).filter(Boolean);
+      }
+      if (Array.isArray(saved?.writes)) { // v1: whole-doc op writes, replayed as they are (creates guarded)
+        const b = toBatch({ ...saved, writes: markCreates(saved.writes.filter(isWrite)) }, `legacy_${saved.at}`);
+        return b ? [b] : [];
+      }
+    } catch { /* corrupt entry */ }
+    return [];
+  }
+
+  /** On start: claim every saved queue for this repo/branch/path (other tabs, earlier stores, v1). */
   function restorePending() {
     if (!pendingStorage || mode !== 'github') return;
+    const keys = [legacyKey];
     try {
-      const raw = pendingStorage.getItem(pendingKey);
-      if (!raw) return;
-      const saved = JSON.parse(raw);
-      const age = Date.parse(now()) - Date.parse(saved?.at);
-      if (!(age >= 0 && age < PENDING_TTL_MS)) { // too old (or clock weirdness): don't replay
-        pendingStorage.removeItem(pendingKey);
-        return;
+      const n = Number(pendingStorage.length) || 0;
+      if (typeof pendingStorage.key === 'function') {
+        for (let i = 0; i < n; i++) {
+          const k = pendingStorage.key(i);
+          if (typeof k === 'string' && k.startsWith(keyPrefix) && k !== ownKey) keys.push(k);
+        }
       }
-      const ws = Array.isArray(saved.writes) ? saved.writes.filter(isWrite) : [];
-      if (!ws.length) return;
-      pending.push(...ws);
-      if (Array.isArray(saved.activity)) pendingActivity.push(...saved.activity.filter((a) => a && typeof a === 'object'));
-    } catch { /* corrupt entry: ignore */ }
+    } catch { /* no key enumeration: only the v1 queue is found */ }
+    const claimed = [];
+    const seen = new Set();
+    for (const k of keys) {
+      let text = null;
+      try { text = pendingStorage.getItem(k); } catch { /* blocked */ }
+      if (text == null) continue;
+      claimed.push(k);
+      for (const b of readEntry(text)) {
+        if (seen.has(b.id)) continue;
+        seen.add(b.id);
+        pending.push(b);
+      }
+    }
+    pending.sort((a, b) => Date.parse(a.at) - Date.parse(b.at));
+    // Keep them under our own key before releasing the others, so a crash in between loses nothing.
+    if (pending.length && !savePending()) return;
+    for (const k of claimed) {
+      try { pendingStorage.removeItem(k); } catch { /* ignore */ }
+    }
   }
 
   // ---------------------------------------------------------- HTTP
@@ -240,6 +383,10 @@ export function createGitHubStore(opts = {}) {
 
   const repoUrl = () => `${API_BASE}/repos/${seg(owner)}/${seg(repo)}`;
   const contentsUrl = (ref) => `${repoUrl()}/contents/${encodePath(filePath)}${ref ? `?ref=${encodeURIComponent(ref)}` : ''}`;
+  const rawUrl = (ref) => {
+    bust += 1;
+    return `${RAW_BASE}/${seg(owner)}/${seg(repo)}/${encodePath(ref)}/${encodePath(filePath)}?ef=${Date.now().toString(36)}${bust}`;
+  };
 
   function checkConfig() {
     if (!String(owner).trim() || !String(repo).trim()) {
@@ -324,59 +471,79 @@ export function createGitHubStore(opts = {}) {
     return { state: parseState(text), sha: json.sha ?? null, etag: header(res, 'etag'), text };
   }
 
-  function markStale(oldSha) {
-    if (!oldSha) return;
-    staleShas.add(oldSha);
-    while (staleShas.size > STALE_SHA_CAP) staleShas.delete(staleShas.values().next().value);
+  function capped(set, value) {
+    if (!value) return;
+    set.add(value);
+    while (set.size > STALE_SHA_CAP) set.delete(set.values().next().value);
+  }
+  const markStale = (oldSha) => capped(staleShas, oldSha);
+
+  /** Make a fetched file our base: drop what it already contains from the queue, replay the rest. */
+  function takeRemote(remote) {
+    etag = remote.etag || null;
+    sha = remote.sha ?? null;
+    if (sha) { staleShas.delete(sha); leftShas.delete(sha); }
+    remoteKnown = true;
+    dropCommitted(remote.state);
+    state = replay(remote.state);
   }
 
-  /** Take a fetched remote as the new base. Returns true when `state` changed. */
-  function adopt(remote) {
+  /**
+   * Take a fetched remote (load / poll) as the new base. Returns true when
+   * `state` changed, or CONFIRM when it is a version a poll already moved us
+   * away from (a lagging replica, usually): the caller re-reads before rolling
+   * back. `trusted` (a first load, a confirmed read) skips the ordering checks.
+   */
+  function adopt(remote, { trusted = false } = {}) {
     if (remote.notModified) return false;
     if (remote.missing) {
       etag = null;
-      if (remoteKnown && !sha && state) return false; // still no file; nothing new
-      if (remoteKnown && sha && state) { // file vanished: keep our copy; the next save recreates it
-        markStale(sha);
+      remoteKnown = true;
+      if (loaded && state) { // file vanished: keep our copy; the next save recreates it
+        if (sha) markStale(sha);
         sha = null;
         return false;
       }
-      remoteKnown = true;
       sha = null;
-      state = applyWrites(emptyState(), pending);
+      state = replay(emptyState());
       return true;
     }
-    if (remote.etag) etag = remote.etag;
-    if (state && remote.sha && remote.sha === sha) { remoteKnown = true; return false; }
-    if (state && remote.sha && staleShas.has(remote.sha)) return false; // a lagging replica served an old version
-    if (sha && sha !== remote.sha) markStale(sha);
-    sha = remote.sha ?? null;
-    staleShas.delete(sha);
-    remoteKnown = true;
-    state = pending.length ? applyWrites(remote.state, pending) : remote.state;
+    const incoming = remote.sha ?? null;
+    if (loaded && state && incoming && incoming === sha) {
+      if (remote.etag) etag = remote.etag;
+      remoteKnown = true;
+      return false;
+    }
+    if (loaded && state && incoming && !trusted) {
+      if (staleShas.has(incoming)) return false; // older than what we committed: a lagging replica (etag untouched)
+      if (leftShas.has(incoming)) return CONFIRM;
+    }
+    // A sha we haven't seen is taken as newer, but the one we leave is only
+    // "probably older": if it comes back, re-read first instead of ignoring it forever.
+    if (sha && sha !== incoming) capped(leftShas, sha);
+    takeRemote(remote);
     return true;
   }
 
   /** Conflict path: always take what GitHub has now and replay our queue on top. */
   async function rebaseOnRemote() {
     const remote = await fetchRemote({ conditional: false });
+    if (disposed) return false;
+    const before = sha;
     if (remote.missing) {
-      markStale(sha);
+      if (sha) markStale(sha);
       sha = null;
       etag = null;
-      if (!state) state = applyWrites(emptyState(), pending);
       remoteKnown = true;
-      return;
+      if (!loaded || !state) state = replay(emptyState());
+    } else {
+      if (sha && sha !== remote.sha) markStale(sha); // GitHub rejected it: it is behind for good
+      takeRemote(remote);
     }
-    if (sha && sha !== remote.sha) markStale(sha);
-    const before = sha;
-    sha = remote.sha ?? null;
-    staleShas.delete(sha);
-    if (remote.etag) etag = remote.etag;
-    remoteKnown = true;
-    state = applyWrites(remote.state, pending);
+    loaded = true;
+    lastLoadError = null;
     notify();
-    return before === sha; // true = GitHub served the same version that was just rejected
+    return !remote.missing && before === sha; // true = GitHub served the same version that was just rejected
   }
 
   // ---------------------------------------------------------- errors / retry
@@ -425,8 +592,8 @@ export function createGitHubStore(opts = {}) {
   function recover() {
     retryTimer = null;
     if (disposed) return;
-    if (mode === 'github' && pending.length) flush();
-    else if (!state) load().catch(() => {});
+    if (!loaded) load().catch(() => {});
+    else if (mode === 'github' && pending.length) flush();
     else pull().catch(() => {});
   }
 
@@ -448,11 +615,18 @@ export function createGitHubStore(opts = {}) {
     try {
       remote = await fetchRemote({ conditional: false });
     } catch (err) {
+      if (!loaded) lastLoadError = err;
       report(err);
+      // The API refused us (bad/expired token, no access, rate limit, 5xx): show the
+      // public file read-only so the board isn't stuck on "loading". Writes stay refused.
+      if (!loaded && err && err.status && !err.config && !err.parse) await showPublicCopy();
       throw err;
     }
-    const changed = adopt(remote);
-    if (changed || remote.missing) notify();
+    if (disposed) return state;
+    const changed = adopt(remote, { trusted: !loaded }) === true; // a re-load never rolls back to a version we left
+    loaded = true;
+    lastLoadError = null;
+    if (changed) notify();
     backoffIdx = 0;
     if (pending.length) {
       setStatus('pending', `${plural(pending.length, 'change')} waiting to save.`);
@@ -460,21 +634,41 @@ export function createGitHubStore(opts = {}) {
     } else if (!inFlight) {
       setStatus('synced', remote.missing
         ? `No ${filePath} on GitHub yet. Your first change creates it.`
-        : `Synced with GitHub${sha ? ` (${String(sha).slice(0, 7)})` : ''}.`);
+        : syncedMessage());
     }
     return state;
   }
 
+  /**
+   * Best effort, github mode only: the file from raw.githubusercontent.com (no
+   * token) for display while the API load fails. Never sets the status, never
+   * makes the store writable.
+   */
+  async function showPublicCopy() {
+    try {
+      if (!publicRef) publicRef = resolvedBranch;
+      if (!publicRef) {
+        const res = await request('GET', repoUrl(), { headers: { Accept: 'application/vnd.github+json' } });
+        const json = await readJson(res);
+        publicRef = (res.ok && json && typeof json.default_branch === 'string' && json.default_branch) || 'main';
+      }
+      const res = await request('GET', rawUrl(publicRef));
+      if (!res.ok) return;
+      const next = parseState(await res.text());
+      if (disposed || loaded) return;
+      dropCommitted(next);
+      state = replay(next);
+      notify();
+    } catch { /* nothing to show: the status already explains */ }
+  }
+
   /** Read-only mode: raw.githubusercontent.com, no auth header, cache-busted. */
   async function readRaw({ initial = false } = {}) {
-    let ref;
     let res;
     try {
       checkConfig();
-      ref = await getBranch();
-      bust += 1;
-      const url = `${RAW_BASE}/${seg(owner)}/${seg(repo)}/${encodePath(ref)}/${encodePath(filePath)}?ef=${Date.now().toString(36)}${bust}`;
-      res = await request('GET', url);
+      const ref = await getBranch();
+      res = await request('GET', rawUrl(ref));
     } catch (err) {
       report(err);
       throw err;
@@ -485,6 +679,7 @@ export function createGitHubStore(opts = {}) {
         state = emptyState();
         notify();
       }
+      loaded = true;
       setStatusOnce('readonly', `Read-only. Couldn't read ${filePath} from ${owner}/${repo} (private repo?). Add a token in Setup.`);
       return state;
     }
@@ -513,6 +708,7 @@ export function createGitHubStore(opts = {}) {
         throw err;
       }
     }
+    loaded = true;
     setStatusOnce('readonly', READONLY_MESSAGE);
     return state;
   }
@@ -520,33 +716,48 @@ export function createGitHubStore(opts = {}) {
   /** Conditional GET (ETag); replace or rebase when GitHub has something new. */
   function pull() {
     if (disposed) return Promise.resolve(state);
-    if (!state) return load();
-    if (!pulling) pulling = doPull().finally(() => { pulling = null; });
+    if (!loaded) return load();
+    if (!pulling) {
+      pulling = (async () => {
+        if (inFlight) await inFlight; // never swap the base under a PUT
+        return doPull();
+      })().finally(() => { pulling = null; });
+    }
     return pulling;
   }
 
   async function doPull() {
+    if (disposed) return state;
     if (mode === 'readonly') {
       try { await readRaw(); } catch { /* status already set */ }
       return state;
     }
-    let remote;
+    let changed;
     try {
-      remote = await fetchRemote({ conditional: true });
+      const remote = await fetchRemote({ conditional: true });
+      if (disposed) return state;
+      changed = adopt(remote);
+      if (changed === CONFIRM) {
+        // A version we already moved past is back. Usually a lagging replica; but
+        // if GitHub serves it again it is the real head (we had taken an older,
+        // unseen version for newer), so take it rather than stick on ours.
+        const again = await fetchRemote({ conditional: false });
+        if (disposed) return state;
+        changed = adopt(again, { trusted: !again.missing && again.sha === remote.sha });
+        if (changed === CONFIRM) changed = false;
+      }
     } catch (err) {
       // Don't clobber a queued-save status with a poll hiccup unless it's news.
       report(err);
       return state;
     }
-    if (disposed) return state;
-    const changed = adopt(remote);
     if (changed) notify();
     backoffIdx = 0;
     if (pending.length) {
       if (changed && !inFlight && !debounceTimer) scheduleFlush();
     } else if (!inFlight && (!status || status.kind !== 'synced' || changed)) {
       if (retryTimer) { clearTimeout(retryTimer); retryTimer = null; }
-      setStatus('synced', changed ? 'Pulled the latest from GitHub.' : `Synced with GitHub${sha ? ` (${String(sha).slice(0, 7)})` : ''}.`);
+      setStatus('synced', changed ? 'Pulled the latest from GitHub.' : syncedMessage());
     }
     return state;
   }
@@ -564,18 +775,37 @@ export function createGitHubStore(opts = {}) {
 
   // ---------------------------------------------------------- apply / flush
 
+  function notLoadedError() {
+    const err = new Error(loadPromise ? LOADING_MESSAGE : (lastLoadError && lastLoadError.message) || NOT_LOADED_MESSAGE);
+    err.code = NOT_LOADED;
+    if (lastLoadError) err.cause = lastLoadError;
+    return err;
+  }
+
+  /**
+   * Optimistically apply an op's writes and queue them as one batch: the
+   * fine-grained diff of the change (diffWrites), so a replay onto a newer
+   * remote keeps the other side's concurrent edits. Rejects (code "not_loaded")
+   * until a load has succeeded: those writes were computed against a board we
+   * don't have.
+   */
   async function apply(writes = [], activity = []) {
     if (mode === 'readonly') throw new Error('read-only');
     if (disposed) throw new Error('Store disposed.');
     const ws = Array.isArray(writes) ? writes.filter(isWrite) : [];
-    const acts = Array.isArray(activity) ? activity.filter((a) => a && typeof a === 'object') : [];
     if (!ws.length) return state;
-    if (loadPromise) {
-      try { await loadPromise; } catch { /* apply on top of whatever we have; flush reconciles */ }
-    }
-    state = applyWrites(state ?? emptyState(), ws);
-    pending.push(...ws);
-    pendingActivity.push(...acts);
+    if (!loaded || !state) throw notLoadedError();
+    const before = state;
+    const after = applyWrites(before, ws);
+    const queued = markCreates(diffWrites(before, after));
+    if (!queued.length) return state; // nothing actually changed (e.g. an update to a doc that is gone)
+    const given = Array.isArray(activity) ? activity.filter(isObj) : [];
+    const created = queued.filter((w) => w.col === 'activity' && w.op === 'set' && isObj(w.data)).map((w) => w.data);
+    const acts = activityIdsOf(queued);
+    let at;
+    try { at = now(); } catch { at = new Date().toISOString(); }
+    pending.push({ id: makeId('q_'), at, writes: queued, activity: given.length ? given : created, acts });
+    state = after;
     savePending();
     notify();
     if (retryTimer) {
@@ -640,19 +870,31 @@ export function createGitHubStore(opts = {}) {
   async function pushOnce() {
     let lastConflict = '';
     for (let attempt = 1; attempt <= MAX_PUT_ATTEMPTS; attempt++) {
-      if (!pending.length) return 'ok';
+      if (disposed) return 'fail'; // a replaced store never writes again; its queue is claimed by the next one
+      if (!pending.length) { // e.g. the rebase found every batch already on GitHub
+        setStatus('synced', syncedMessage());
+        return 'ok';
+      }
       try {
-        if (!remoteKnown || !state) await rebaseOnRemote(); // never PUT blind over a file we haven't read
+        if (!loaded || !remoteKnown || !state) { // never PUT blind over a file we haven't read
+          await rebaseOnRemote();
+          if (disposed) return 'fail';
+          if (!pending.length) continue;
+        }
         const ref = await getBranch();
-        const n = pending.length;
-        const nAct = pendingActivity.length;
+        const sent = pending.slice();
+        const ids = new Set(sent.map((b) => b.id));
         const body = serializeState(state);
         let message = '';
-        try { message = commitMessage(pendingActivity.slice(0, nAct)); } catch { message = ''; }
-        if (typeof message !== 'string' || !message.trim()) message = `dash: ${plural(n, 'change')} from EF Console`;
-        setStatus('saving', `Pushing ${plural(n, 'change')} to GitHub…`);
+        try { message = commitMessage(sent.flatMap((b) => b.activity)); } catch { message = ''; }
+        if (typeof message !== 'string' || !message.trim()) message = `dash: ${plural(sent.length, 'change')} from EF Console`;
+        setStatus('saving', `Pushing ${plural(sent.length, 'change')} to GitHub…`);
         const payload = { message, content: encodeBase64Utf8(body), branch: ref };
         if (sha) payload.sha = sha;
+        if (identity) {
+          payload.author = { ...identity };
+          payload.committer = { ...identity };
+        }
         const res = await request('PUT', contentsUrl(null), {
           headers: apiHeaders({ 'Content-Type': 'application/json' }),
           body: payload,
@@ -663,13 +905,12 @@ export function createGitHubStore(opts = {}) {
           if (sha && newSha !== sha) markStale(sha);
           sha = newSha;
           if (!newSha) remoteKnown = false; // odd response: re-read before the next save
-          staleShas.delete(sha);
-          pending.splice(0, n);
-          pendingActivity.splice(0, nAct);
+          else { staleShas.delete(sha); leftShas.delete(sha); }
+          removeBatches(ids); // by id: batches queued (or dropped) meanwhile are untouched
           savePending();
           backoffIdx = 0;
           if (pending.length) setStatus('pending', `${plural(pending.length, 'change')} queued.`);
-          else setStatus('synced', `Saved to GitHub${sha ? ` (${sha.slice(0, 7)})` : ''}.`);
+          else setStatus('synced', syncedMessage('Saved to'));
           return 'ok';
         }
         if (res.status === 409 || res.status === 422) {
@@ -683,6 +924,10 @@ export function createGitHubStore(opts = {}) {
         report(err);
         return 'fail';
       }
+    }
+    if (!pending.length) {
+      setStatus('synced', syncedMessage());
+      return 'ok';
     }
     setStatus('conflict', `Couldn't merge with GitHub after ${MAX_PUT_ATTEMPTS} tries (${lastConflict}). ` +
       `${plural(pending.length, 'change')} kept on this device. Tap sync to retry.`);
@@ -742,6 +987,11 @@ export function createGitHubStore(opts = {}) {
     } catch { /* no DOM events */ }
   }
 
+  /**
+   * Stop: no timers, events, notifications, storage writes or further PUTs. A
+   * PUT already on the wire may still land; the batches stay in this store's
+   * saved queue, and the next store claims them and drops what GitHub has.
+   */
   function dispose() {
     if (disposed) return;
     disposed = true;
@@ -785,6 +1035,8 @@ export function createGitHubStore(opts = {}) {
     apply,
     refresh,
     getState: () => state,
+    /** true once a load succeeded (github: through the API, so apply() works; readonly: the raw read). */
+    isLoaded: () => loaded,
     hasPending: () => pending.length > 0 || !!inFlight,
     flush,
     dispose,

@@ -73,6 +73,26 @@ describe('todayView', () => {
   });
 });
 
+test('ENG-4: past meetings / appointments ask "did it happen?" (triage) instead of rolling over as carried', () => {
+  const st = makeState({ tasks: [
+    { id: 'dentist', title: 'Dentist appt', kind: 'appt', plan: '2026-10-07', time: '09:30' },
+    { id: 'lab', title: 'Lab meeting', kind: 'meeting', plan: '2026-10-08', time: '14:00' },
+    { id: 'mike', title: 'Email Mike', kind: 'email', plan: '2026-10-08' },
+    { id: 'due_meet', title: 'Advisor meeting', kind: 'meeting', due: '2026-10-09' },
+    { id: 'prep', title: 'Committee meeting prep', kind: 'meeting', plan: '2026-10-09', due: '2026-10-20' },
+    { id: 'today_meet', title: 'Standup', kind: 'meeting', plan: '2026-10-12', time: '10:00' },
+    { id: 'next_meet', title: 'Seminar', kind: 'meeting', plan: '2026-10-14' },
+    { id: 'done_meet', title: 'Old 1:1', kind: 'meeting', plan: '2026-10-06', status: 'done', doneAt: '2026-10-06T15:00:00.000Z' },
+  ] });
+  const tv = todayView(st, '2026-10-12');
+  assert.deepEqual(ids(tv.triage), ['dentist', 'lab', 'due_meet']);
+  assert.deepEqual(ids(tv.carried), ['mike', 'prep']); // a deadline still ahead keeps it carried
+  assert.deepEqual(ids(tv.overdue), []);
+  assert.deepEqual(ids(tv.meetings), ['today_meet']);
+  // before its day it is a normal meeting
+  assert.deepEqual(ids(todayView(st, '2026-10-07').meetings), ['dentist']);
+});
+
 describe('calendarView', () => {
   const cal = calendarView(fixture(), TODAY, 14, TODAY);
   const day = (d) => cal.find((c) => c.d === d);

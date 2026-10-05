@@ -1,12 +1,13 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
-  applyWrites, emptyState, normalizeCategory, normalizeState, normalizeTask, serializeState,
+  applyWrites, diffWrites, emptyState, normalizeCategory, normalizeState, normalizeTask, serializeState,
 } from '../src/engine/model.js';
 import { DEFAULT_CATEGORIES } from '../src/engine/defaults.js';
 import { parseQuickAdd } from '../src/engine/parse.js';
 import { allocate } from '../src/engine/schedule.js';
-import { OPS } from '../src/engine/ops.js';
+import { choreView, calendarView, todayView } from '../src/engine/views.js';
+import { OPS, SESSION_CAP_MIN } from '../src/engine/ops.js';
 import { fixture, deepFreeze, TODAY, NOW } from './fixtures/engine-fixture.js';
 
 const ctx = { now: NOW, today: TODAY, src: 'dash' };
@@ -40,6 +41,8 @@ function run(name, state, args, c = ctx) {
     assert.match(a.id, /^a_[0-9a-z]{8}$/);
   }
   if (res.writes.length) assert.equal(serializeState(res.state), canonical(res.state), `${name}: state stays canonical`);
+  // The store and the CLI replay ops as fine-grained diffs (inc / arr): they must reproduce the op exactly.
+  assert.equal(serializeState(applyWrites(state ?? {}, diffWrites(state, res.state))), serializeState(res.state), `${name}: diffWrites round-trips`);
   return res;
 }
 
@@ -52,7 +55,7 @@ test('OPS registry has exactly the contract ops', () => {
     'addCategory', 'addChore', 'addMilestone', 'addProject', 'addSub', 'addTask', 'applyAllocation',
     'choreDone', 'clockIn', 'clockOut', 'completeTask', 'deleteChore', 'deleteTask', 'dropTask',
     'editCategory', 'editChore', 'editProject', 'editSettings', 'editTask', 'logTime', 'moveBlock',
-    'moveTask', 'removeSub', 'reopenTask', 'setBrief', 'toggleBlock', 'toggleMilestone', 'toggleSub',
+    'moveTask', 'removeSub', 'reopenTask', 'scrubText', 'setBrief', 'toggleBlock', 'toggleMilestone', 'toggleSub',
   ]);
   for (const fn of Object.values(OPS)) assert.equal(typeof fn, 'function');
 });
@@ -152,7 +155,8 @@ test('addTask: newCatGroup picks the group; an existing match reuses the categor
 
 test('addTask with recurring makes a chore instead of a task', () => {
   const s = base();
-  const parsed = parseQuickAdd('walk ziggy twice a day', { today: TODAY, cats: s.cats });
+  // (was 'walk ziggy twice a day', which duplicated the fixture's active Walk Ziggy chore: see CLI-14 below)
+  const parsed = parseQuickAdd('brush ziggy twice a day', { today: TODAY, cats: s.cats });
   const res = run('addTask', s, parsed);
   assert.ok(!res.writes.some((w) => w.col === 'tasks'));
   const w = res.writes.find((x) => x.col === 'chores');
@@ -616,4 +620,155 @@ test('ops work on a fresh empty state', () => {
   const r3 = run('clockIn', r2.state, { title: 'Focus' });
   const r4 = run('clockOut', r3.state, {}, { ...ctx, now: at(30) });
   assert.equal(Object.values(r4.state.sessions)[0].min, 30);
+});
+
+// ---------------------------------------------------------------- review regressions
+
+test('ENG-3: a forgotten timer is capped at 180m (rawMin + capped kept); spent stays sane', () => {
+  const s = base();
+  const on = run('clockIn', s, { ref: 'task:t_big' }); // 10/5 14:00Z
+  const off = run('clockOut', on.state, {}, { ...ctx, now: '2026-10-06T13:00:00.000Z', today: '2026-10-06' });
+  const sess = Object.values(off.state.sessions).find((x) => x.ref === 'task:t_big');
+  assert.equal(sess.min, SESSION_CAP_MIN);
+  assert.equal(SESSION_CAP_MIN, 180);
+  assert.equal(sess.rawMin, 1380);
+  assert.equal(sess.capped, true);
+  assert.equal(off.state.tasks.t_big.spent, 180);
+  assert.match(off.activity[0].to, /^180m \(capped; clock ran 1380m\)$/);
+  // a normal session carries neither flag
+  const ok = run('clockOut', on.state, {}, { ...ctx, now: at(180) });
+  const s2 = Object.values(ok.state.sessions).find((x) => x.ref === 'task:t_big');
+  assert.equal(s2.min, 180);
+  assert.ok(!('capped' in s2) && !('rawMin' in s2));
+});
+
+test('ENG-3: an auto-stopped chore session is capped and logs the chore on the day it started', () => {
+  const s = base();
+  const on = run('clockIn', s, { ref: 'chore:c_laundry' }); // Mon 10/5
+  const later = { ...ctx, now: '2026-10-07T13:00:00.000Z', today: '2026-10-07' };
+  const two = run('clockIn', on.state, { ref: 'task:t_email' }, later); // auto-stops laundry on Wed
+  const sess = Object.values(two.state.sessions).find((x) => x.ref === 'chore:c_laundry');
+  assert.equal(sess.d, TODAY);
+  assert.equal(sess.min, 180);
+  assert.equal(sess.rawMin, 2820);
+  assert.equal(two.state.chores.c_laundry.last, TODAY);
+  assert.deepEqual(two.state.chores.c_laundry.log, ['2026-09-30', TODAY]);
+});
+
+test('ENG-3: choreDone takes an optional past date (sorted into the log, never in the future)', () => {
+  const s = base();
+  const back = run('choreDone', s, { id: 'c_ziggy', date: '2026-10-04' });
+  assert.deepEqual(back.state.chores.c_ziggy.log, ['2026-10-03', '2026-10-03', '2026-10-04', '2026-10-04', '2026-10-04', TODAY]);
+  assert.equal(back.state.chores.c_ziggy.last, TODAY); // still the latest
+  assert.equal(back.activity[0].to, '2026-10-04');
+  const fut = run('choreDone', s, { id: 'c_ziggy', date: '2026-10-09' });
+  assert.equal(fut.state.chores.c_ziggy.log.at(-1), TODAY);
+  assert.equal(fut.activity[0].to, null);
+});
+
+test('CLI-14: adding a chore that already exists is a no-op that names the existing one', () => {
+  const s = base();
+  const parsed = parseQuickAdd('walk ziggy 2x a day', { today: TODAY, cats: s.cats });
+  const res = run('addTask', s, parsed);
+  assert.equal(res.state, s);
+  assert.deepEqual(res.writes, []);
+  assert.deepEqual(res.activity, []);
+  assert.equal(res.duplicateOf, 'c_ziggy');
+  const direct = run('addChore', s, { title: '  walk  ZIGGY! ', every: 1, perDay: 2 });
+  assert.deepEqual(direct.writes, []);
+  assert.equal(direct.duplicateOf, 'c_ziggy');
+  // a duplicate never creates the "new" category either
+  assert.deepEqual(run('addTask', s, { title: 'Laundry', recurring: { every: 7 }, newCatName: 'Chores galore' }).writes, []);
+  // a retired chore with the same title doesn't block a new one; other titles are fine
+  assert.equal(run('addChore', s, { title: 'Retired chore', every: 1 }).writes.filter((w) => w.col === 'chores').length, 1);
+  assert.equal(run('addChore', s, { title: 'Walk Ziggy at night', every: 1 }).duplicateOf, undefined);
+});
+
+test('ENG-1 follow-up: a strong cadence with a date ("every week - sat") keeps the date as the chore\'s first due day', () => {
+  const s = base();
+  const parsed = parseQuickAdd('sweep porch every week - sat', { today: TODAY, cats: s.cats });
+  assert.deepEqual(parsed.recurring, { every: 7, perDay: 1 });
+  assert.equal(parsed.plan, '2026-10-10');
+  const res = run('addTask', s, parsed);
+  const ch = Object.values(res.state.chores).find((c) => c.title === 'Sweep porch');
+  assert.equal(ch.start, '2026-10-10');
+  assert.equal(ch.last, null, 'nothing is claimed as done');
+  assert.deepEqual(ch.log, []);
+  const row = choreView(res.state, TODAY).find((r) => r.chore.id === ch.id);
+  assert.equal(row.due, false, 'not due before its first day');
+  assert.equal(row.nextDue, '2026-10-10');
+  assert.ok(!todayView(res.state, TODAY).chores.some((c) => c.id === ch.id));
+  const cal = calendarView(res.state, TODAY, 14);
+  assert.deepEqual(cal.filter((d) => d.chores.some((c) => c.id === ch.id)).map((d) => d.d), ['2026-10-10', '2026-10-17']);
+  assert.equal(choreView(res.state, '2026-10-10').find((r) => r.chore.id === ch.id).due, true, 'due on its first day');
+  // done early: the normal cadence takes over from that day
+  const early = run('choreDone', res.state, { id: ch.id });
+  assert.equal(choreView(early.state, TODAY).find((r) => r.chore.id === ch.id).nextDue, '2026-10-12');
+  // editChore sets and clears it (state stays canonical: run() checks)
+  const moved = run('editChore', res.state, { id: ch.id, patch: { start: '2026-10-17' } });
+  assert.equal(moved.state.chores[ch.id].start, '2026-10-17');
+  const cleared = run('editChore', moved.state, { id: ch.id, patch: { start: null } });
+  assert.equal(cleared.state.chores[ch.id].start, null);
+  assert.equal(choreView(cleared.state, TODAY).find((r) => r.chore.id === ch.id).due, true);
+  // no date, or a date of today: due now, as before (no start stored)
+  const now = run('addTask', s, parseQuickAdd('sweep porch every week - today', { today: TODAY, cats: s.cats }));
+  assert.equal(Object.values(now.state.chores).find((c) => c.title === 'Sweep porch').start, null);
+});
+
+test('SEC-3: renaming a task rewrites its title in activity, sessions, the clock and the brief', () => {
+  const s = base();
+  const leak = 'Session notes for client J.D';
+  const added = run('addTask', s, parseQuickAdd(`session notes for client J.D - today`, { today: TODAY, cats: s.cats }));
+  const id = added.writes.find((w) => w.col === 'tasks').id;
+  assert.equal(added.state.tasks[id].title, leak);
+  let st = run('addSub', added.state, { id, t: 'outline' }).state;
+  st = run('logTime', st, { ref: `task:${id}`, minutes: 10 }).state;
+  st = run('clockIn', st, { ref: `task:${id}` }).state;
+  st = run('setBrief', st, { headline: `Start with: ${leak}.`, lines: [`DUE TODAY // ${leak}`], asks: [], focus: [id] }).state;
+  const res = run('editTask', st, { id, patch: { title: 'Session notes' } });
+  const out = serializeState(res.state);
+  assert.ok(!out.includes('J.D'), 'no trace of the identifier left in state.json');
+  assert.equal(res.state.tasks[id].title, 'Session notes');
+  const acts = Object.values(res.state.activity).filter((a) => a.ref === id);
+  assert.ok(acts.some((a) => a.type === 'add' && a.title === 'Session notes'));
+  assert.ok(acts.some((a) => a.type === 'sub' && a.title === 'Session notes / outline'));
+  assert.equal(res.state.clock.title, 'Session notes');
+  assert.equal(res.state.brief.headline, 'Start with: Session notes.');
+  // only the new edit entry counts as new activity (no "I see you added…" noise)
+  assert.deepEqual(types(res), ['edit']);
+  // renaming a chore or a project does the same for their entries
+  const ch = run('editChore', run('choreDone', s, { id: 'c_trash' }).state, { id: 'c_trash', patch: { title: 'Trash + recycling' } });
+  assert.ok(Object.values(ch.state.activity).filter((a) => a.ref === 'c_trash').every((a) => a.title === 'Trash + recycling'));
+  const pr = run('editProject', run('toggleMilestone', s, { id: 'p_rsa', msId: 'm2' }).state, { id: 'p_rsa', patch: { name: 'RSA paper' } });
+  assert.ok(Object.values(pr.state.activity).some((a) => a.title === 'RSA paper / Results'));
+});
+
+test('SEC-3: scrubText replaces a string everywhere text is stored (case-insensitive, literal)', () => {
+  const s = base();
+  let st = run('addTask', s, { title: 'Client J.D. intake report', notes: 'call j.d. back', cat: 'psc' }).state;
+  const id = Object.values(st.tasks).find((t) => t.title.startsWith('Client')).id;
+  st = run('addSub', st, { id, t: 'J.D. history' }).state;
+  st = run('logTime', st, { ref: `task:${id}`, minutes: 15 }).state;
+  st = run('addChore', st, { title: 'Text J.D.', every: 7 }).state;
+  st = run('addMilestone', st, { id: 'p_rsa', t: 'Ask J.D.' }).state;
+  st = run('clockIn', st, { ref: 'free', title: 'Prep for J.D.' }).state;
+  st = run('setBrief', st, { headline: 'J.D. first', lines: ['x J.D. y'], asks: ['Did J.D. show?'], focus: [] }).state;
+  const res = run('scrubText', st, { find: 'j.d.', replace: 'client' });
+  const out = serializeState(res.state);
+  assert.ok(!/j\.d\./i.test(out), 'identifier gone from state.json');
+  assert.equal(res.state.tasks[id].title, 'Client client intake report');
+  assert.equal(res.state.tasks[id].notes, 'call client back');
+  assert.equal(res.state.tasks[id].subs[0].t, 'client history');
+  assert.equal(res.state.clock.title, 'Prep for client');
+  assert.equal(res.state.brief.asks[0], 'Did client show?');
+  assert.deepEqual(types(res), ['edit']);
+  assert.equal(res.activity[0].title, 'Privacy scrub');
+  assert.ok(!/j\.d/i.test(JSON.stringify(res.activity)));
+  // literal, not a regex: "J.D." does not match "JxDx"; empty replace collapses spaces
+  const lit = run('scrubText', base((x) => { x.tasks.t_email.title = 'Email JxDx'; }), { find: 'j.d.' });
+  assert.deepEqual(lit.writes, []);
+  const gone = run('scrubText', st, { find: ' J.D.' });
+  assert.equal(gone.state.tasks[id].title, 'Client intake report');
+  assert.deepEqual(run('scrubText', s, { find: '   ' }).writes, []);
+  assert.deepEqual(run('scrubText', s, { find: 'zzz-not-there' }).writes, []);
 });

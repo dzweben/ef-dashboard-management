@@ -17,11 +17,29 @@ Run these from the repo root (`/home/user/ef-dashboard-management`). If the
 directory is missing, clone `https://github.com/dzweben/ef-dashboard-management`
 there first. The CLI needs no `npm install`.
 
+0. **Privacy first.** If Danny's message has a client name, initials, or any
+   clinical detail, rewrite it generically *before* it goes into any ef
+   command (see "Privacy rules"). Never pass an identifier to ef, not even to
+   `ef find`.
 1. `node bin/ef.mjs sync`
-   Pulls the website's commits and prints **what Danny did since your last
-   turn** plus today's board. Open your reply by acknowledging it in one line
-   ("Saw you knocked out the dentist call and laundry, nice."). If he checked
-   nothing off and it's past noon, don't nag; just move on.
+   Pulls the website's commits (`git pull --rebase --autostash`) and prints
+   **what Danny did on the website** that arrived with this pull, plus today's
+   board. Open your reply by acknowledging it in one line ("Saw you knocked out
+   the dentist call and laundry, nice."). If he checked nothing off and it's
+   past noon, don't nag; just move on.
+   - `BOTH SIDES CHANGED THE SAME FIELD`: you and the website changed the same
+     thing; chat's value was kept. Tell Danny in one line and offer to switch.
+   - `WRONG BRANCH FOR DATA` banner: the website only reads origin's default
+     branch. Do the data turn there (see "Git"); don't ignore it.
+   - `pull failed`: carry on with local data; `ef push` merges later.
+   - `CODE CHANGED ON GITHUB`: origin has commits that change code (anything
+     outside `data/`). ef never pulls code silently, because the website's
+     token can write the whole repo and ef runs whatever it pulls. Look at the
+     printed commits (`git log -p HEAD..origin/main -- . ':(exclude)data'`). If
+     it's Danny's or another Claude session's code work and the diff looks
+     right, rerun with `--allow-code` (`ef sync --allow-code`, `ef push
+     --allow-code`). If a website (`dash:`) commit changed code, or anything
+     looks off, don't pull: tell Danny to revoke his website token on GitHub.
 2. Turn his message into commands (see "Translating chat" below). Echo every
    resolved date in your reply ("Email Mike → Tue 10/6").
 3. `node bin/ef.mjs risks` and, when anything with an estimate and a deadline
@@ -31,33 +49,63 @@ there first. The CLI needs no `npm install`.
 5. `node bin/ef.mjs commit && node bin/ef.mjs push`
    Commits as Danny with a message listing what changed. Danny wants a commit
    for **every** turn, so this always runs, even if only the brief changed.
-   If push reports it merged website commits, that's fine. If it exits 3,
-   follow its instructions.
+   - `merged our changes on top of new website commits`: fine. Mention what is
+     listed under `WEBSITE CHANGES MERGED DURING PUSH` (Danny did it while you
+     worked) and any `BOTH SIDES CHANGED` line.
+   - Exit 1 (`push rejected by GitHub`, `push failed`): nothing reached the
+     website. Your commits are safe locally; tell Danny in one line and run
+     `ef push` again next turn.
+   - Exit 3: a conflict in a *code* file (`data/state.json` always merges by
+     itself), or `CODE CHANGED ON GITHUB` (see step 1). ef already aborted (or
+     never started) the rebase, so nothing was lost; follow the printed steps.
+     Never `git reset --hard`, never force-push.
 
 Only then write the reply.
+
+### Quoting Danny's text (the shell must never touch it)
+
+Always wrap Danny's words in **single quotes**: `ef add 'pay $40 copay - fri'`.
+Inside double quotes bash expands `$40` to nothing and runs `` `backticks` ``
+and `$(...)` as commands. For an apostrophe inside single quotes write
+`'"'"'` (`ef add 'email mike'"'"'s advisor - tomorrow'`), or pipe the text in
+with a quoted heredoc, where nothing is expanded at all (one to-do per line):
+
+```bash
+node bin/ef.mjs add - <<'EOF'
+email mike's advisor - tomorrow
+pay $40 copay - fri
+EOF
+```
+
+A lone `-` reads the words from stdin for the other commands too
+(`node bin/ef.mjs done - <<'EOF'` …).
 
 ## Translating chat into commands
 
 | Danny says | You run |
 |---|---|
-| `email mike - tomorrow` | `ef add "email mike - tomorrow"` |
-| several lines / a dump | one `ef add` per to-do; split compound lines ("email tom and sam" → two) only when they're clearly separate actions |
-| `RSA intro by fri, ~3h` | `ef add "RSA intro by fri ~3h"` then `ef plan` |
-| `done with X` / `finished X` / `X ✓` | `ef done "X"` |
-| `push X to thursday` / `move X` | `ef move "X" thu` |
-| `drop X` / `not doing X` | `ef drop "X"` |
-| `X happened` / `X didn't happen` (triage) | `ef done "X"` / `ef move "X" <date>` or `ef drop "X"` |
-| `starting laundry` / `clock me in on X` | `ef clock in laundry` (5-minute goal by default) |
-| `done` / `stopping` (while clocked in) | `ef clock out --done` (or without `--done` if he only stopped) |
-| `walked ziggy` / `did laundry` | `ef chore done ziggy` / `ef chore done laundry` |
+| `email mike - tomorrow` | `ef add 'email mike - tomorrow'` |
+| several lines / a dump | one to-do per line with `ef add - <<'EOF'`; split compound lines ("email tom and sam" → two) only when they're clearly separate actions |
+| `RSA intro by fri, ~3h` | `ef add 'RSA intro by fri ~3h'` then `ef plan` |
+| `done with X` / `finished X` / `X ✓` | `ef done 'X'` |
+| `push X to thursday` / `move X` | `ef move 'X' thu` |
+| `drop X` / `not doing X` | `ef drop 'X'` |
+| `X happened` / `X didn't happen` (triage) | `ef done 'X'` / `ef move 'X' <date>` or `ef drop 'X'` |
+| `starting laundry` / `clock me in on X` | `ef clock in 'laundry'` (5-minute goal by default; an id like `t_…` works too) |
+| `done` / `stopping` (while clocked in) | `ef clock out --done` (or without `--done` if he only stopped). If it prints `capped at 3h` the timer was probably forgotten: ask how long he really worked and `ef log <id> <minutes>` only if it was longer |
+| `walked ziggy` / `did laundry` | `ef chore done 'ziggy'` / `ef chore done 'laundry'` |
 | `what's due today?` | `ef today` (+ `ef deadlines` for the week) |
 | `what's coming up?` | `ef deadlines`, `ef cal` |
-| `I have less time tomorrow` | `ef settings --cap tue=90` style, or move things |
-| a new course, paper, study, role | `ef cat add "Name" --group <group> --alias a,b` then file the task |
+| `I have less time tomorrow` | `ef settings --cap-on tomorrow=90` (that day only), or move things (`ef move`). Never `--cap tue=…` for a one-off: `--cap` changes every week |
+| `I'm off friday` | `ef settings --off fri` |
+| a new course, paper, study, role | `ef cat add 'Name' --group <group> --alias a,b` then file the task |
 
 `ef help` lists every command. Tasks are found by id or by words from the
-title; if a query is ambiguous the CLI lists candidates. Pick the right one
-or ask.
+title (filler like "the" or "my" is ignored); if a query is ambiguous, or
+nothing matches every word, the CLI exits 2 and lists candidates. Pick the
+right one (rerun with its id) or ask. A command that changed nothing exits 1
+with the reason: never tell Danny something was captured unless the command
+succeeded.
 
 Dates: weekday names mean the next one after today ("fri"); `next fri` means
 Friday of next week; `10/12` is this year unless that's >60 days ago. All in
@@ -99,8 +147,15 @@ time. "by X" / "due X" sets a deadline; "- X" / "on X" / "@X" sets the do-day.
 
 - Never write client names, initials, or any clinical detail into the data.
   Clinical to-dos stay generic: "Session notes", "Client prep", "Assessment
-  report". If Danny types a client identifier, store a generic version and tell
-  him you did.
+  report". If Danny types a client identifier, rewrite it generically
+  **before running any ef command** ("session notes for client J.D - today"
+  → `ef add 'Session notes - today'`) and tell him you did.
+- If an identifier is already stored (typed on the website, or spotted on the
+  board), remove it from everything stored (titles, notes, subtasks, activity,
+  the brief) with `ef scrub '<identifier>' --with 'client'` (`--with` is
+  optional; without it the text is just removed), then commit and push. Tell
+  Danny that git history and the website's commit message still contain it:
+  only he can remove those (rewrite history, or make the repo private).
 - No passwords, tokens, or portal logins in the data, ever.
 
 ## Scheduled check-ins
@@ -115,9 +170,9 @@ tomorrow, and keep it to a few lines.
 - Live site: https://dzweben.github.io/ef-dashboard-management/ (GitHub Pages,
   served from `docs/` on the default branch). Danny enables Pages once in
   Settings → Pages.
-- It reads and writes `data/state.json` through the GitHub API with a
-  fine-grained token that Danny pastes into the site's Setup tab (stored only
-  in his browser; Contents: read and write on this repo only).
+- It reads and writes `data/state.json` on the **default branch** through the
+  GitHub API with a fine-grained token that Danny pastes into the site's Setup
+  tab (stored only in his browser; Contents: read and write on this repo only).
 - Rebuild after UI changes: `npm install && npm run build` (writes
   `docs/index.html`), then commit `docs/` too.
 
@@ -129,7 +184,31 @@ tomorrow, and keep it to a few lines.
 - `src/store/`: GitHub-backed and local stores for the website.
 - `src/ui/`: the website (vanilla JS views + CSS; `src/ui/README.md` is the
   design brief).
-- `bin/ef.mjs`: the CLI used every turn.
+- `bin/ef.mjs`: the CLI used every turn. `bin/ef-merge.mjs`: the git merge
+  driver for `data/state.json` (see "Git").
 - `test/`: `npm test` (node:test).
+
+## Git
+
 - Git identity in this repo is Danny's (`Danny Zweben`, GitHub noreply email).
-  Develop on the branch you were told to use; never force-push.
+  Never force-push and never `git reset --hard`: it silently drops unpushed
+  commits and uncommitted edits. ef only runs `git pull --rebase --autostash`
+  and plain `git push`.
+- **Data turns run on origin's default branch** (`main`): it is the only
+  branch the website reads and writes. `ef sync` and `ef push` print a
+  `WRONG BRANCH FOR DATA` banner otherwise (they never switch branches for
+  you); commit or stash code work, `git checkout main`, then run the data
+  commands. Code work can live on the branch you were told to use; data never
+  belongs there.
+- `data/state.json` is never text-merged. On every run ef registers the
+  `efstate` merge driver (`git config merge.efstate.driver 'node
+  bin/ef-merge.mjs %O %A %B'`; `.gitattributes`: `data/state.json
+  merge=efstate`). It merges field by field, so website and chat edits both
+  survive: time adds up, subtasks / blocks / milestones merge by id, chore
+  walks are counted, settings merge per key. A manual `git pull --rebase` in
+  this clone uses it too.
+- If ef ever says `data/state.json is not valid JSON` (conflict markers from a
+  merge made before the driver was registered): if a rebase or merge is in
+  progress, `git rebase --abort` (or `git merge --abort`); then
+  `git checkout HEAD -- data/state.json`, `node bin/ef.mjs sync`, and redo
+  this turn's ef commands.

@@ -18,7 +18,8 @@
     "prefBlock": 60,
     "defaultEst": 20,
     "horizon": 14,
-    "offDays": []
+    "offDays": [],
+    "capOverrides": {}
   },
   "brief": {
     "at": "2026-10-05T05:31:48.741Z",
@@ -363,7 +364,7 @@
         "titanium",
         "supervision",
         "dbt",
-        "visit",
+        "home visit",
         "intake",
         "assessment report"
       ],
@@ -3950,6 +3951,7 @@
       "every": 14,
       "perDay": 1,
       "last": "2026-08-18",
+      "start": null,
       "log": [
         "2026-07-24",
         "2026-08-03",
@@ -3969,6 +3971,7 @@
       "every": 14,
       "perDay": 1,
       "last": "2026-09-20",
+      "start": null,
       "log": [
         "2026-08-30",
         "2026-09-20"
@@ -3986,6 +3989,7 @@
       "every": 7,
       "perDay": 1,
       "last": "2026-09-20",
+      "start": null,
       "log": [
         "2026-09-20"
       ],
@@ -4002,6 +4006,7 @@
       "every": 7,
       "perDay": 1,
       "last": "2026-09-19",
+      "start": null,
       "log": [
         "2026-08-29",
         "2026-09-19"
@@ -4019,6 +4024,7 @@
       "every": 7,
       "perDay": 1,
       "last": null,
+      "start": null,
       "log": [],
       "min": 5,
       "active": true,
@@ -4033,6 +4039,7 @@
       "every": 1,
       "perDay": 2,
       "last": null,
+      "start": null,
       "log": [],
       "min": 15,
       "active": true,

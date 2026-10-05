@@ -1,7 +1,7 @@
 import { test, describe } from 'node:test';
 import assert from 'node:assert/strict';
 import {
-  capacityFor, remaining, allocatedFuture, shortfall, dayLoad, dayLoads, runway, allocate, risks, planStart,
+  capacityFor, remaining, allocatedFuture, shortfall, dayLoad, dayLoads, runway, allocate, risks, planStart, isPastEvent,
 } from '../src/engine/schedule.js';
 import { normalizeSettings } from '../src/engine/model.js';
 import { diffDays } from '../src/engine/dates.js';
@@ -29,6 +29,15 @@ describe('capacityFor', () => {
     assert.equal(capacityFor(undefined, '2026-10-05'), 240);
     assert.equal(capacityFor({ cap: { mon: 30 } }, '2026-10-05'), 30);
     assert.equal(capacityFor({ cap: { mon: 30 } }, '2026-10-06'), 240);
+  });
+  test('CLI-10: a one-day capOverride replaces that date only; offDays still win', () => {
+    const o = normalizeSettings({ offDays: ['2026-10-07'], capOverrides: { '2026-10-06': 90, '2026-10-07': 200, '2026-10-08': 0 } });
+    assert.equal(capacityFor(o, '2026-10-06'), 90, 'Tue 10/6 only');
+    assert.equal(capacityFor(o, '2026-10-13'), 240, 'next Tuesday keeps the weekly cap');
+    assert.equal(capacityFor(o, '2026-10-07'), 0, 'an off day stays off');
+    assert.equal(capacityFor(o, '2026-10-08'), 0, 'an override of 0 is honoured');
+    const st = makeState({ settings: o });
+    assert.equal(dayLoad(st, '2026-10-06').cap, 90, 'dayLoad / the calendar use the override');
   });
 });
 
@@ -453,4 +462,23 @@ describe('allocate: preferred session length + plan start', () => {
     assert.equal(planStart('2026-10-05T21:00:00.000Z', 'America/New_York'), '2026-10-06'); // 5:00pm ET
     assert.equal(planStart('2026-10-06T03:30:00.000Z', 'America/New_York'), '2026-10-06'); // 11:30pm ET → tomorrow
   });
+});
+
+test('ENG-4: past meetings / appointments are not late work (no crunch, no blocks)', () => {
+  const st = makeState({ tasks: [
+    { id: 'adv', title: 'Advisor meeting', kind: 'meeting', due: '2026-10-02', est: 60 },
+    { id: 'appt', title: 'Dentist', kind: 'appt', plan: '2026-10-01', due: '2026-10-01', est: 90 },
+    { id: 'late', title: 'IRB form', kind: 'deadline', due: '2026-10-02', est: 60 },
+    { id: 'soon', title: 'Committee meeting', kind: 'meeting', plan: '2026-10-07', due: '2026-10-07', est: 60 },
+  ] });
+  const rs = risks(st, TODAY);
+  assert.deepEqual(rs.filter((r) => r.type === 'crunch').map((r) => r.taskId), ['late']);
+  const { updates, risks: ar } = allocate(st, { today: TODAY });
+  assert.deepEqual(ar.map((r) => r.taskId), ['late']);
+  assert.ok(!('adv' in updates) && !('appt' in updates));
+  assert.ok(isPastEvent(st.tasks.adv, TODAY));
+  assert.ok(!isPastEvent(st.tasks.soon, TODAY));
+  assert.ok(!isPastEvent(st.tasks.late, TODAY));
+  assert.ok(!isPastEvent({ ...st.tasks.adv, status: 'done' }, TODAY));
+  assert.ok(!isPastEvent(null, TODAY));
 });
