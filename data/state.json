@@ -16,7 +16,6 @@
     "maxBlock": 120,
     "minBlock": 30,
     "prefBlock": 60,
-    "overbookAt": 1.35,
     "defaultEst": 20,
     "horizon": 14,
     "offDays": [],
@@ -2242,7 +2241,7 @@
       "status": "todo",
       "due": null,
       "time": null,
-      "plan": "2026-10-05",
+      "plan": "2026-10-06",
       "est": 60,
       "spent": 0,
       "blocks": [],
@@ -2268,10 +2267,10 @@
         }
       ],
       "triage": false,
-      "moved": 0,
+      "moved": 1,
       "win": false,
       "created": "2026-10-05T14:17:31.806Z",
-      "updated": "2026-10-05T14:17:32.198Z",
+      "updated": "2026-10-05T19:53:13.745Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -5990,6 +5989,16 @@
       "title": "SPARK docs: task-completion audit script",
       "from": null,
       "to": "due,est,prio,project,blocks"
+    },
+    "a_x196b213": {
+      "id": "a_x196b213",
+      "at": "2026-10-05T19:53:13.745Z",
+      "src": "dash",
+      "type": "move",
+      "ref": "t_ff9fmzh1",
+      "title": "Clinical notes (3 behind)",
+      "from": "2026-10-05",
+      "to": "2026-10-06"
     },
     "a_xizy3mri": {
       "id": "a_xizy3mri",
