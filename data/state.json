@@ -23,13 +23,13 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-05T20:25:26.332Z",
+    "at": "2026-10-05T23:37:02.904Z",
     "headline": "8 things today. Start with: Reschedule dentist (10m).",
     "lines": [
       "INCOMING // Clinical notes (3 behind) Wed 10/7 (2d): 1h left, 1h booked · RSA front-to-back for Nyx: finish + full review Thu 10/8 (3d): 3h left, 3h booked",
       "CHORES // Closet reset · Clean first floor · Water plants. Most overdue: Closet reset (48d since last).",
       "TOMORROW // Tue 10/6 [6h 30m/8h]: Clinical notes (3 behind) · OCD pres: read the Barlow chapter · Email Johanna: full LEARN breakdown (issues we ran into) · RSA: participant data fixes · +2 more",
-      "DONE // 11 today · streak 8d"
+      "DONE // 14 today · streak 8d"
     ],
     "asks": [
       "Anything coming up for Meetings?",
@@ -45,8 +45,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-05T20:25:24.328Z",
-    "lastActivitySeen": "2026-10-05T20:25:24.328Z"
+    "lastClaudeSync": "2026-10-05T23:36:59.097Z",
+    "lastActivitySeen": "2026-10-05T23:36:59.097Z"
   },
   "cats": {
     "admin": {
@@ -160,6 +160,20 @@
       "note": "Executive functioning",
       "archived": false,
       "created": "2026-10-05T04:00:00.000Z"
+    },
+    "fun": {
+      "id": "fun",
+      "name": "Fun",
+      "group": "life",
+      "color": "#bfbd5c",
+      "glyph": "FU",
+      "aliases": [
+        "fun"
+      ],
+      "order": 75,
+      "note": "",
+      "archived": false,
+      "created": "2026-10-05T23:37:01.667Z"
     },
     "gradroles": {
       "id": "gradroles",
@@ -1205,6 +1219,30 @@
       "doneAt": "2026-09-25T17:00:00.000Z",
       "src": "import"
     },
+    "t_47gu573l": {
+      "id": "t_47gu573l",
+      "title": "Baked cookies",
+      "cat": "fun",
+      "status": "done",
+      "due": null,
+      "time": null,
+      "plan": null,
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-05T23:37:02.067Z",
+      "updated": "2026-10-05T23:37:02.209Z",
+      "doneAt": "2026-10-05T23:37:02.209Z",
+      "src": "chat"
+    },
     "t_4dz0f3k6": {
       "id": "t_4dz0f3k6",
       "title": "Follow up with Nyx if no reply",
@@ -1227,6 +1265,30 @@
       "created": "2026-10-05T16:07:46.945Z",
       "updated": "2026-10-05T16:45:35.622Z",
       "doneAt": null,
+      "src": "chat"
+    },
+    "t_53v1h9ku": {
+      "id": "t_53v1h9ku",
+      "title": "Workout",
+      "cat": "fun",
+      "status": "done",
+      "due": null,
+      "time": null,
+      "plan": null,
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-05T23:37:01.821Z",
+      "updated": "2026-10-05T23:37:01.943Z",
+      "doneAt": "2026-10-05T23:37:01.943Z",
       "src": "chat"
     },
     "t_5e8u0jdk": {
@@ -4854,6 +4916,30 @@
       "doneAt": "2026-09-24T17:00:00.000Z",
       "src": "import"
     },
+    "t_zcnwzz7r": {
+      "id": "t_zcnwzz7r",
+      "title": "Beautiful moments with Ziggy",
+      "cat": "fun",
+      "status": "done",
+      "due": null,
+      "time": null,
+      "plan": null,
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-05T23:37:02.439Z",
+      "updated": "2026-10-05T23:37:02.568Z",
+      "doneAt": "2026-10-05T23:37:02.568Z",
+      "src": "chat"
+    },
     "t_zhr60254": {
       "id": "t_zhr60254",
       "title": "AI pres: start a Claude Code thread",
@@ -5194,6 +5280,16 @@
       "from": null,
       "to": "2026-10-07"
     },
+    "a_2ofysfc5": {
+      "id": "a_2ofysfc5",
+      "at": "2026-10-05T23:37:01.667Z",
+      "src": "chat",
+      "type": "cat",
+      "ref": "fun",
+      "title": "Fun",
+      "from": null,
+      "to": "new"
+    },
     "a_35tsikm0": {
       "id": "a_35tsikm0",
       "at": "2026-10-05T14:17:13.553Z",
@@ -5231,6 +5327,16 @@
       "type": "done",
       "ref": "t_dticons",
       "title": "DTI: fix icons",
+      "from": null,
+      "to": null
+    },
+    "a_4d4nvklo": {
+      "id": "a_4d4nvklo",
+      "at": "2026-10-05T23:37:01.943Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_53v1h9ku",
+      "title": "Workout",
       "from": null,
       "to": null
     },
@@ -5574,6 +5680,26 @@
       "from": null,
       "to": "plan,notes"
     },
+    "a_dd0g1iy5": {
+      "id": "a_dd0g1iy5",
+      "at": "2026-10-05T23:37:02.209Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_47gu573l",
+      "title": "Baked cookies",
+      "from": null,
+      "to": null
+    },
+    "a_dtpssg8p": {
+      "id": "a_dtpssg8p",
+      "at": "2026-10-05T23:37:02.568Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_zcnwzz7r",
+      "title": "Beautiful moments with Ziggy",
+      "from": null,
+      "to": null
+    },
     "a_e42b40da": {
       "id": "a_e42b40da",
       "at": "2026-10-05T16:07:46.554Z",
@@ -5784,6 +5910,16 @@
       "from": null,
       "to": "2026-10-05"
     },
+    "a_k0kq8xn9": {
+      "id": "a_k0kq8xn9",
+      "at": "2026-10-05T23:37:01.821Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_53v1h9ku",
+      "title": "Workout",
+      "from": null,
+      "to": null
+    },
     "a_kmmzb3xc": {
       "id": "a_kmmzb3xc",
       "at": "2026-10-05T16:49:39.066Z",
@@ -5853,6 +5989,16 @@
       "title": "Auto-plan: 4 tasks",
       "from": null,
       "to": "planned"
+    },
+    "a_ngdc2fsa": {
+      "id": "a_ngdc2fsa",
+      "at": "2026-10-05T23:37:02.439Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_zcnwzz7r",
+      "title": "Beautiful moments with Ziggy",
+      "from": null,
+      "to": null
     },
     "a_nj430qnj": {
       "id": "a_nj430qnj",
@@ -5983,6 +6129,16 @@
       "title": "Auto-plan: 5 tasks",
       "from": null,
       "to": "planned"
+    },
+    "a_qkfw5s24": {
+      "id": "a_qkfw5s24",
+      "at": "2026-10-05T23:37:02.067Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_47gu573l",
+      "title": "Baked cookies",
+      "from": null,
+      "to": null
     },
     "a_qkpq4c0n": {
       "id": "a_qkpq4c0n",
