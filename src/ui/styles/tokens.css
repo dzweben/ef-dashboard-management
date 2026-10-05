@@ -1,0 +1,84 @@
+/* EF Console design tokens.
+   Concept: a punk zine taped to a hacked terminal. Photocopy-black ground with
+   grain + scanlines, hard-edged panels with offset neon shadows, stencil
+   headlines, mono readouts, sharpie scrawl for Claude's notes, masking tape for
+   day labels, hazard stripes for overdue. Deliberately single-theme (dark).
+   Layout: terminal header + vitals strip + 12-column panel grid. */
+:root {
+  color-scheme: dark;
+
+  /* ground + surfaces */
+  --void: #050506;
+  --bg: #0b0b0d;
+  --panel: #111114;
+  --panel-2: #17171c;
+  --panel-3: #202027;
+  --line: #2a2a33;
+  --line-2: #3a3a46;
+  --paper: #ece7da;        /* photocopied paper for stickers + notes */
+  --paper-ink: #111111;
+  --tape: rgba(236, 222, 160, 0.82);
+
+  /* ink */
+  --ink: #f2f0ea;
+  --ink-2: #b4b0a8;
+  --ink-3: #7a776f;
+  --ink-4: #47453f;
+
+  /* neons */
+  --pink: #ff2d95;         /* the accent: urgency, primary actions */
+  --acid: #c8ff1a;         /* done, wins, streaks */
+  --cyan: #18e4ff;         /* info, links, focus */
+  --hazard: #ffd60a;       /* warnings, tape-yellow */
+  --blood: #ff3b30;        /* overdue, critical */
+  --accent: var(--pink);
+  --accent-ink: #12000a;
+
+  /* semantic */
+  --good: var(--acid);
+  --warn: var(--hazard);
+  --crit: var(--blood);
+  --focus-ring: 0 0 0 2px var(--bg), 0 0 0 4px var(--cyan);
+
+  /* type */
+  --font-display: 'Big Shoulders Stencil Display', 'Arial Narrow', Impact, sans-serif;
+  --font-shout: 'Big Shoulders Display', 'Arial Narrow', Impact, sans-serif;
+  --font-body: 'Archivo', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Space Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+  --font-scrawl: 'Permanent Marker', 'Comic Sans MS', 'Marker Felt', cursive;
+  --fs-2xs: 0.66rem;
+  --fs-xs: 0.72rem;
+  --fs-sm: 0.82rem;
+  --fs-md: 0.94rem;
+  --fs-lg: 1.12rem;
+  --fs-xl: 1.5rem;
+  --fs-2xl: 2.2rem;
+  --fs-3xl: 3.2rem;
+
+  /* space + shape: sharp corners, hard offset shadows */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+  --r-1: 0px;
+  --r-2: 2px;
+  --r-3: 2px;
+  --hard: 4px 4px 0 0;
+  --shadow-pink: 4px 4px 0 0 var(--pink);
+  --shadow-cyan: 4px 4px 0 0 var(--cyan);
+  --shadow-acid: 4px 4px 0 0 var(--acid);
+  --shadow-ink: 4px 4px 0 0 #000;
+  --glow-pink: 0 0 0 1px var(--pink), 0 0 16px -2px rgba(255, 45, 149, 0.7);
+  --glow-cyan: 0 0 0 1px var(--cyan), 0 0 16px -2px rgba(24, 228, 255, 0.6);
+  --glow-acid: 0 0 0 1px var(--acid), 0 0 16px -2px rgba(200, 255, 26, 0.55);
+
+  /* textures (inline SVG, no network) */
+  --grain: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .07 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  --halftone: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1.4px);
+  --hazard-stripes: repeating-linear-gradient(-45deg, var(--hazard) 0 8px, #000 8px 16px);
+
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --dur: 160ms;
+}

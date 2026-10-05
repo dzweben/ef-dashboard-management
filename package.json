@@ -1,0 +1,18 @@
+{
+  "name": "ef-dashboard-management",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Danny's EF Console: a live to-do / projects / calendar dashboard with Claude as the conversational front end.",
+  "type": "module",
+  "bin": { "ef": "bin/ef.mjs" },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test test/",
+    "ef": "node bin/ef.mjs",
+    "shot": "node scripts/screenshot.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.0"
+  },
+  "engines": { "node": ">=20" }
+}

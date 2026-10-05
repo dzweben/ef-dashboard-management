@@ -1,0 +1,5 @@
+node_modules/
+.ef/
+*.log
+.DS_Store
+shots/

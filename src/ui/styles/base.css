@@ -1,0 +1,266 @@
+/* Shared primitives. View-specific styles live in their own files. */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background-color: var(--bg);
+  background-image: var(--grain), var(--halftone);
+  background-size: 160px 160px, 6px 6px;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--fs-md);
+  line-height: 1.45;
+  min-height: 100%;
+}
+/* CRT scanlines over everything, never blocking input */
+body::after {
+  content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 100;
+  background: repeating-linear-gradient(180deg, rgba(0, 0, 0, 0) 0 2px, rgba(0, 0, 0, 0.16) 2px 3px);
+  mix-blend-mode: multiply;
+}
+button, input, select, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; }
+:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+a { color: var(--cyan); text-underline-offset: 3px; }
+h1, h2, h3, h4 { margin: 0; font-family: var(--font-display); font-weight: 800; text-wrap: balance; letter-spacing: 0.02em; text-transform: uppercase; line-height: 1; }
+p { margin: 0; }
+::selection { background: var(--pink); color: #000; }
+.num, .mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.shout { font-family: var(--font-shout); font-weight: 900; letter-spacing: 0.01em; line-height: 0.9; }
+.scrawl { font-family: var(--font-scrawl); font-weight: 400; letter-spacing: 0.01em; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+/* labels: the bracketed terminal readouts used across the console */
+.label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-2xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.label.is-bracket::before { content: '['; color: var(--ink-4); margin-right: 2px; }
+.label.is-bracket::after { content: ']'; color: var(--ink-4); margin-left: 2px; }
+.muted { color: var(--ink-2); }
+.faint { color: var(--ink-3); }
+
+/* app shell */
+.app { max-width: 1480px; margin: 0 auto; padding-inline: 16px; padding-block: 0 104px; }
+@media (min-width: 720px) { .app { padding-inline: 24px; padding-block-end: 56px; } }
+
+/* panels: hard black boxes with a 2px rule and an offset shadow */
+.panel {
+  background: var(--panel);
+  border: 2px solid var(--line-2);
+  box-shadow: var(--shadow-ink);
+  min-width: 0;
+  position: relative;
+}
+.panel.is-pink { border-color: var(--pink); box-shadow: var(--shadow-pink); }
+.panel.is-cyan { border-color: var(--cyan); box-shadow: var(--shadow-cyan); }
+.panel.is-acid { border-color: var(--acid); box-shadow: var(--shadow-acid); }
+.panel-head {
+  display: flex; align-items: center; justify-content: space-between; gap: var(--sp-3);
+  padding: var(--sp-3) var(--sp-4) var(--sp-2);
+  border-bottom: 2px dashed var(--line);
+}
+.panel-head h2 { font-size: var(--fs-xl); }
+.panel-head h2 .slash { color: var(--pink); margin-right: 6px; }
+.panel-head .label { white-space: nowrap; }
+.panel-body { padding: var(--sp-3) var(--sp-4) var(--sp-4); min-width: 0; }
+
+/* masking tape: day labels, section stamps */
+.tape {
+  display: inline-block;
+  padding: 2px 10px 3px;
+  background: var(--tape);
+  color: var(--paper-ink);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transform: rotate(-1.5deg);
+  clip-path: polygon(2% 0, 98% 4%, 100% 92%, 96% 100%, 3% 96%, 0 8%);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+}
+/* paper sticker: Claude's notes, empty states */
+.sticker {
+  background: var(--paper);
+  color: var(--paper-ink);
+  padding: var(--sp-3) var(--sp-4);
+  box-shadow: 3px 3px 0 #000;
+  transform: rotate(-0.6deg);
+  position: relative;
+}
+.sticker::before {
+  content: ''; position: absolute; top: -9px; left: 50%; width: 70px; height: 18px;
+  transform: translateX(-50%) rotate(2deg); background: var(--tape);
+}
+
+/* buttons: hard, uppercase, they press down into their shadow */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  min-height: 34px; padding: 0 12px;
+  border: 2px solid var(--ink-2);
+  background: var(--panel-2);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  box-shadow: 3px 3px 0 #000;
+  transition: transform 80ms var(--ease), box-shadow 80ms var(--ease), background var(--dur), border-color var(--dur), color var(--dur);
+  white-space: nowrap;
+}
+.btn:hover { border-color: var(--cyan); color: var(--cyan); }
+.btn:active { transform: translate(3px, 3px); box-shadow: 0 0 0 #000; }
+.btn[disabled] { opacity: 0.4; cursor: not-allowed; }
+.btn-hot { background: var(--pink); border-color: var(--pink); color: var(--accent-ink); }
+.btn-hot:hover { background: #ff57ab; border-color: #ff57ab; color: var(--accent-ink); }
+.btn-acid { background: var(--acid); border-color: var(--acid); color: #0b1200; }
+.btn-acid:hover { background: #d8ff55; border-color: #d8ff55; color: #0b1200; }
+.btn-ghost { background: transparent; border-color: transparent; box-shadow: none; color: var(--ink-2); }
+.btn-ghost:hover { border-color: var(--line-2); color: var(--ink); background: var(--panel-2); }
+.btn-ghost:active { transform: none; }
+.btn-sm { min-height: 26px; padding: 0 8px; font-size: var(--fs-2xs); box-shadow: 2px 2px 0 #000; }
+.btn-icon { width: 34px; padding: 0; }
+.btn-icon.btn-sm { width: 26px; }
+.btn svg { width: 16px; height: 16px; flex: none; }
+.btn-sm svg { width: 13px; height: 13px; }
+
+/* chips + badges */
+.chip {
+  display: inline-flex; align-items: center; gap: 5px;
+  height: 22px; padding: 0 7px;
+  border: 1px solid var(--line-2);
+  background: var(--panel-2);
+  color: var(--ink-2);
+  font-family: var(--font-mono);
+  font-size: var(--fs-2xs);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.chip-hot { color: var(--pink); border-color: var(--pink); background: rgba(255, 45, 149, 0.1); }
+.chip-crit { color: #000; border-color: var(--blood); background: var(--blood); font-weight: 700; }
+.chip-warn { color: var(--hazard); border-color: var(--hazard); background: rgba(255, 214, 10, 0.08); }
+.chip-acid { color: var(--acid); border-color: var(--acid); background: rgba(200, 255, 26, 0.08); }
+.chip-cyan { color: var(--cyan); border-color: var(--cyan); background: rgba(24, 228, 255, 0.08); }
+button.chip { cursor: pointer; }
+button.chip:hover { border-color: var(--ink-2); color: var(--ink); }
+button.chip[aria-pressed='true'] { color: #000; border-color: var(--ink); background: var(--ink); }
+
+/* category mark: a square "patch" in the category color with its glyph */
+.catmark {
+  --c: var(--ink-3);
+  display: inline-grid; place-items: center;
+  width: 24px; height: 24px; flex: none;
+  background: var(--c);
+  color: #0b0b0d;
+  font-family: var(--font-mono);
+  font-size: 9px; font-weight: 700; letter-spacing: 0;
+  box-shadow: 2px 2px 0 #000;
+}
+.catdot { --c: var(--ink-3); width: 9px; height: 9px; background: var(--c); flex: none; display: inline-block; }
+
+/* checkbox: a stamped box; checked draws an acid X */
+.check {
+  appearance: none; -webkit-appearance: none; margin: 0;
+  width: 22px; height: 22px; flex: none;
+  border: 2px solid var(--ink-2);
+  background: var(--void);
+  display: inline-grid; place-items: center;
+  cursor: pointer;
+  position: relative;
+  transition: border-color var(--dur), box-shadow var(--dur), background var(--dur);
+}
+.check:hover { border-color: var(--acid); box-shadow: var(--glow-acid); }
+.check:checked { border-color: var(--acid); background: rgba(200, 255, 26, 0.12); }
+.check:checked::before, .check:checked::after {
+  content: ''; position: absolute; width: 22px; height: 3px; background: var(--acid);
+  top: 50%; left: 50%;
+}
+.check:checked::before { transform: translate(-50%, -50%) rotate(45deg); }
+.check:checked::after { transform: translate(-50%, -50%) rotate(-45deg); }
+@media (pointer: coarse) { .check { width: 26px; height: 26px; } .check:checked::before, .check:checked::after { width: 26px; } }
+
+/* form fields: terminal inputs */
+.field {
+  width: 100%; min-height: 38px; padding: 6px 10px;
+  border: 2px solid var(--line-2);
+  border-radius: 0;
+  background: var(--void);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+}
+.field:focus { outline: none; border-color: var(--cyan); box-shadow: 3px 3px 0 var(--cyan); }
+textarea.field { min-height: 76px; resize: vertical; font-family: var(--font-body); font-size: var(--fs-md); }
+select.field { appearance: auto; }
+.field-row { display: grid; gap: 6px; min-width: 0; }
+.field-row > .label { display: block; }
+
+/* meters: segmented, like an LED bar */
+.meter {
+  height: 10px; background: var(--void); border: 1px solid var(--line-2); overflow: hidden; position: relative;
+}
+.meter > i { display: block; height: 100%; background: var(--acid); }
+.meter::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: repeating-linear-gradient(90deg, transparent 0 6px, var(--void) 6px 8px);
+}
+.meter.is-hot > i { background: var(--pink); }
+.meter.is-warn > i { background: var(--hazard); }
+.meter.is-crit > i { background: var(--blood); }
+.meter.is-cyan > i { background: var(--cyan); }
+
+/* hazard stripe rule for overdue sections */
+.hazard { height: 8px; background: var(--hazard-stripes); }
+
+/* empty states */
+.empty {
+  display: grid; gap: 6px; justify-items: start;
+  padding: var(--sp-4);
+  border: 2px dashed var(--line-2);
+  color: var(--ink-2);
+  font-size: var(--fs-sm);
+}
+.empty .scrawl { color: var(--acid); font-size: var(--fs-lg); }
+
+/* glitch text: the logo and big moments */
+.glitch { position: relative; display: inline-block; }
+.glitch::before, .glitch::after {
+  content: attr(data-text); position: absolute; inset: 0; pointer-events: none;
+}
+.glitch::before { color: var(--pink); transform: translate(2px, 0); mix-blend-mode: screen; clip-path: inset(0 0 55% 0); animation: glitch-a 3.2s infinite steps(1); }
+.glitch::after { color: var(--cyan); transform: translate(-2px, 0); mix-blend-mode: screen; clip-path: inset(50% 0 0 0); animation: glitch-b 4.1s infinite steps(1); }
+@keyframes glitch-a { 0%, 92% { transform: translate(2px, 0); } 93% { transform: translate(-3px, 1px); } 96% { transform: translate(4px, -1px); } }
+@keyframes glitch-b { 0%, 88% { transform: translate(-2px, 0); } 90% { transform: translate(3px, 1px); } 94% { transform: translate(-4px, 0); } }
+
+/* toasts */
+.toasts {
+  position: fixed; left: 50%; transform: translateX(-50%);
+  bottom: calc(80px + env(safe-area-inset-bottom, 0px));
+  display: grid; gap: 8px; z-index: 90; width: min(460px, calc(100vw - 32px));
+}
+@media (min-width: 720px) { .toasts { bottom: calc(24px + env(safe-area-inset-bottom, 0px)); } }
+.toast {
+  display: flex; align-items: center; gap: 12px; justify-content: space-between;
+  padding: 10px 12px 10px 14px;
+  background: var(--panel-2); border: 2px solid var(--ink-2);
+  box-shadow: var(--shadow-ink);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  animation: toast-in 200ms var(--ease);
+}
+.toast.is-error { border-color: var(--blood); box-shadow: 4px 4px 0 var(--blood); }
+.toast.is-good { border-color: var(--acid); box-shadow: var(--shadow-acid); }
+@keyframes toast-in { from { transform: translateY(10px) rotate(-1deg); opacity: 0.3; } to { transform: none; opacity: 1; } }
+
+/* scroll containers that may exceed width */
+.hscroll { overflow-x: auto; overscroll-behavior-x: contain; -webkit-overflow-scrolling: touch; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 1ms !important; animation-iteration-count: 1 !important; transition-duration: 1ms !important; scroll-behavior: auto !important; }
+}
