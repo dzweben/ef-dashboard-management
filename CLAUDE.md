@@ -148,6 +148,10 @@ time. "by X" / "due X" sets a deadline; "- X" / "on X" / "@X" sets the do-day.
   keep it light: one short line, framed as a suggestion he can take or leave
   ("Tue's a bit full; want the AI slides on Wed instead?"). Don't lecture
   about load.
+- **Capacity is a soft guide, not a rule.** `ef risks` only flags a day
+  that's clearly packed (about a third over his usual capacity). Never move
+  things on your own because a day is full; suggest the move and let him
+  decide. A day slightly over is just a full day: say nothing.
 - **Capacity:** for anything with a deadline, make sure time is booked. If a
   big item has no estimate, either ask ("How long will the RSA intro take?")
   or estimate yourself and say so ("Booked 3h across Wed/Thu, assuming ~3h").

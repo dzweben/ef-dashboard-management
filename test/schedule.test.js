@@ -380,14 +380,21 @@ describe('risks', () => {
     assert.deepEqual(risks(after, TODAY).map((x) => x.type), ['crunch', 'needs-estimate']);
   });
 
-  test('overbooked days within 14 days (> cap × 1.15)', () => {
+  test('overbooked days within 14 days (> cap × 1.35, a soft guide)', () => {
     const over = makeState({ tasks: [
       { id: 'a', plan: '2026-10-08', est: 150 },
       { id: 'b', plan: '2026-10-08', est: 150 },
+      { id: 'c', plan: '2026-10-08', est: 30 },
       { id: 'far', plan: '2026-10-25', est: 600 },
     ] });
     const r = risks(over, TODAY);
-    assert.deepEqual(r, [{ type: 'overbooked', d: '2026-10-08', minutes: 60, message: 'Thu 10/8 is overbooked: 5h planned vs 4h' }]);
+    assert.deepEqual(r, [{ type: 'overbooked', d: '2026-10-08', minutes: 90, message: 'Thu 10/8 looks packed: 5h 30m planned vs ~4h' }]);
+    // 5h vs 4h (1.25x) is a normal full day, not a warning
+    const full = makeState({ tasks: [{ id: 'a', plan: '2026-10-08', est: 150 }, { id: 'b', plan: '2026-10-08', est: 150 }] });
+    assert.deepEqual(risks(full, TODAY), []);
+    // settings.overbookAt tightens or loosens it
+    const strict = makeState({ settings: { overbookAt: 1.1 }, tasks: [{ id: 'a', plan: '2026-10-08', est: 150 }, { id: 'b', plan: '2026-10-08', est: 150 }] });
+    assert.equal(risks(strict, TODAY).length, 1);
 
     const ok = makeState({ tasks: [{ id: 'a', plan: '2026-10-08', est: 150 }, { id: 'b', plan: '2026-10-08', est: 120 }] });
     assert.deepEqual(risks(ok, TODAY), []);

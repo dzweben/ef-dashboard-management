@@ -11,7 +11,9 @@ const num = (v, d = 0) => (isNum(v) ? v : d);
 const ESTIMATE_KINDS = new Set(['writing', 'analysis', 'deadline']);
 const ESTIMATE_TITLE_RE = /\b(presentations?|manuscripts?|papers?|posters?|exams?|talks?|workshops?|thesis|theses)\b/i;
 
-const OVERBOOK_FACTOR = 1.15;
+// Capacity is a soft guide: only flag a day that is clearly over (Danny asked for
+// light-touch planning). settings.overbookAt overrides this.
+const OVERBOOK_FACTOR = 1.35;
 const OVERBOOK_DAYS = 14;
 const ESTIMATE_WINDOW_DAYS = 21;
 
@@ -327,12 +329,13 @@ export function risks(state, today) {
 
   for (const d of rangeDays(t0, OVERBOOK_DAYS)) {
     const l = loadFromIndex(idx, s, d);
-    if (l.cap > 0 && l.total > l.cap * OVERBOOK_FACTOR) {
+    const factor = isNum(state?.settings?.overbookAt) && state.settings.overbookAt >= 1 ? state.settings.overbookAt : OVERBOOK_FACTOR;
+    if (l.cap > 0 && l.total > l.cap * factor) {
       out.push({
         type: 'overbooked',
         d,
         minutes: l.total - l.cap,
-        message: `${fmtDay(d)} is overbooked: ${fmtMinutes(l.total)} planned vs ${fmtMinutes(l.cap)}`,
+        message: `${fmtDay(d)} looks packed: ${fmtMinutes(l.total)} planned vs ~${fmtMinutes(l.cap)}`,
       });
     }
   }
