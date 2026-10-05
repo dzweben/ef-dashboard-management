@@ -22,10 +22,10 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-05T14:15:15.294Z",
+    "at": "2026-10-05T14:15:45.581Z",
     "headline": "7 things today. Start with: Email Nyx: set up RSA meeting (10m).",
     "lines": [
-      "CHORES // Closet reset · Laundry · Grocery run · Clean first floor · +2 more. Just 5 minutes on Closet reset (48d since last).",
+      "CHORES // Closet reset · Laundry · Grocery run · Clean first floor · +1 more. Just 5 minutes on Closet reset (48d since last).",
       "TOMORROW // Tue 10/6 [4h/4h]: Nyx planning · RSA: participant data fixes · Start ABCD work for Jason · OCD pres: illustrations for dyads 45m"
     ],
     "asks": [
@@ -44,8 +44,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-05T14:14:49.928Z",
-    "lastActivitySeen": "2026-10-05T14:14:49.928Z"
+    "lastClaudeSync": "2026-10-05T14:15:43.693Z",
+    "lastActivitySeen": "2026-10-05T14:15:43.693Z"
   },
   "cats": {
     "admin": {
@@ -4042,14 +4042,24 @@
       "start": null,
       "log": [],
       "min": 15,
-      "active": true,
+      "active": false,
       "notes": "",
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T04:00:00.000Z"
+      "updated": "2026-10-05T14:15:45.288Z"
     }
   },
   "sessions": {},
   "activity": {
+    "a_0edgmsqc": {
+      "id": "a_0edgmsqc",
+      "at": "2026-10-05T14:15:45.288Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "c_ziggy",
+      "title": "Walk Ziggy",
+      "from": null,
+      "to": "active"
+    },
     "a_ab1vdls5": {
       "id": "a_ab1vdls5",
       "at": "2026-10-05T05:29:51.592Z",
