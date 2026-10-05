@@ -92,6 +92,7 @@ A lone `-` reads the words from stdin for the other commands too
 | `did laundry saturday` | `ef chore done 'laundry' --on sat` |
 | `push X to thursday` / `move X` | `ef move 'X' thu` |
 | `drop X` / `not doing X` | `ef drop 'X'` |
+| `the AI talk moved to the 26th` (a project's date moved) | `ef project shift '<project>' 10/26` (moves its deadline, open milestones and linked to-dos by the same amount and re-books work) |
 | `X happened` / `X didn't happen` (triage) | `ef done 'X'` / `ef move 'X' <date>` or `ef drop 'X'` |
 | `starting laundry` / `clock me in on X` | `ef clock in 'laundry'` (5-minute goal by default; an id like `t_…` works too) |
 | `done` / `stopping` (while clocked in) | `ef clock out --done` (or without `--done` if he only stopped). If it prints `capped at 3h` the timer was probably forgotten: ask how long he really worked and `ef log <id> <minutes>` only if it was longer |

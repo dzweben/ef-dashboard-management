@@ -694,3 +694,20 @@ test('edit --clear-blocks removes undone work blocks (keeps finished ones)', () 
   assert.equal(t.due, null);
   assert.deepEqual(t.blocks.filter((b) => !b.done), []);
 });
+
+test('project shift moves the deadline, open milestones and linked to-dos', () => {
+  const f = fixture();
+  ef(f, 'project', 'add', 'Talk', '--due', '2026-10-19');
+  const pid = Object.values(read(f).projects).find((p) => p.name === 'Talk').id;
+  ef(f, 'ms', pid, 'Slides out', '--due', '2026-10-15');
+  ef(f, 'add', 'talk slides', '--due', '2026-10-15', '--est', '2h', '--project', pid);
+  ef(f, 'add', 'talk transcripts', '--plan', '2026-10-07', '--project', pid);
+  ef(f, 'project', 'shift', pid, '10/26');
+  const s = read(f);
+  assert.equal(s.projects[pid].due, '2026-10-26');
+  assert.equal(s.projects[pid].milestones[0].due, '2026-10-22');
+  const slides = Object.values(s.tasks).find((t) => t.title === 'Talk slides');
+  assert.equal(slides.due, '2026-10-22');
+  assert.ok(slides.blocks.every((b) => b.d < '2026-10-22'));
+  assert.equal(Object.values(s.tasks).find((t) => t.title === 'Talk transcripts').plan, '2026-10-14');
+});

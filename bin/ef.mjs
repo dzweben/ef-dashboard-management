@@ -783,7 +783,8 @@ Chores, clock, categories, projects, settings:
   ef clock in <task id|chore id|words> [--goal 5] [--free]   ef clock out [--done]   ef clock
   ef cat add 'Name' [--group research|clinical|coursework|teaching|service|admin|life] [--alias a,b] [--color #hex]
   ef cat edit <id> [--name n] [--color #hex] [--group g] [--alias a,b] [--archive yes|no]
-  ef project add 'Name' [--cat id] [--due D] [--goal txt]   ef ms <project> 'milestone' [--due D]   ef msdone <project> <milestone>
+  ef project add 'Name' [--cat id] [--due D] [--goal txt]   ef project edit <project> [--due D] [--name n] [--status active|paused|done]
+  ef project shift <project> <+days|new due date>   (moves the deadline, open milestones, linked to-dos; re-books work)   ef ms <project> 'milestone' [--due D]   ef msdone <project> <milestone>
   ef settings [--cap mon=240,tue=240,...]   every week (per weekday)
   ef settings --cap-on tomorrow=90[,fri=120]   one day only (D=none removes it)   [--off 2026-11-26]
   ef scrub '<client identifier>' [--with 'client']   remove text from everything stored (privacy)
@@ -1183,7 +1184,51 @@ async function main() {
 
     case 'project': {
       const [sub, ...r] = pos;
-      if (sub !== 'add') die("usage: ef project add 'Name' --cat id");
+      if (sub === 'edit' || sub === 'shift') {
+        const plist = Object.fromEntries(Object.values(state.projects).map((x) => [x.id, { ...x, title: x.name }]));
+        if (sub === 'edit') {
+          const p = findIn(plist, r.join(' '), 'project');
+          const patch = {};
+          if (flags.name) patch.name = String(flags.name);
+          if (flags.goal) patch.goal = String(flags.goal);
+          if (flags.status) patch.status = String(flags.status);
+          if (flags.due) patch.due = flags.due === 'none' ? null : dateArg(flags.due, today, 'due');
+          if (flags.cat) patch.cat = (resolveCategory(flags.cat, state.cats) ?? die('no such category')).id;
+          if (!Object.keys(patch).length) die('nothing to edit');
+          mustChange(apply('editProject', { id: p.id, patch }), `nothing changed on ${p.name}`);
+          console.log(`project edited: ${state.projects[p.id].name}${state.projects[p.id].due ? ` · due ${fmtDay(state.projects[p.id].due)}` : ''}`);
+          break;
+        }
+        // shift: ef project shift <project> <+N days | new due date>
+        const last = r[r.length - 1];
+        const p = findIn(plist, r.slice(0, -1).join(' '), 'project');
+        let days;
+        if (/^[+-]?\d+d?$/.test(String(last))) days = parseInt(last, 10);
+        else {
+          if (!p.due) die(`${p.name} has no due date; give a number of days (e.g. +7)`);
+          days = diffDays(p.due, dateArg(last, today, 'new due date'));
+        }
+        if (!days) die('shift by 0 days changes nothing');
+        const sh = (d) => (d ? addDays(d, days) : d);
+        apply('editProject', { id: p.id, patch: { due: sh(p.due), milestones: p.milestones.map((m) => (m.done ? m : { ...m, due: sh(m.due) })) } });
+        const moved = [];
+        for (const t of Object.values(state.tasks)) {
+          if (t.project !== p.id || t.status !== 'todo') continue;
+          const patch = {};
+          if (t.due) patch.due = sh(t.due);
+          if (t.plan) patch.plan = sh(t.plan);
+          // auto blocks are re-booked below; Danny's manual blocks shift with the project
+          patch.blocks = (t.blocks ?? []).filter((b) => b.done || b.auto === false).map((b) => (b.done ? b : { ...b, d: sh(b.d) }));
+          apply('editTask', { id: t.id, patch });
+          moved.push(t.id);
+        }
+        const { updates } = allocate(state, { today, taskIds: moved, from: planStart(ctx.now, state.settings.tz) });
+        if (Object.keys(updates).length) apply('applyAllocation', { updates });
+        console.log(`shifted ${p.name} by ${days > 0 ? '+' : ''}${days}d → due ${fmtDay(state.projects[p.id].due)}`);
+        for (const id of moved) console.log(fmtTaskLine(state.tasks[id]));
+        break;
+      }
+      if (sub !== 'add') die("usage: ef project add 'Name' --cat id | ef project edit <project> --due D | ef project shift <project> <+days|new due>");
       const name = r.join(' ').trim();
       if (!name) die("usage: ef project add 'Name' --cat id");
       mustChange(apply('addProject', { name, cat: flags.cat ? (resolveCategory(flags.cat, state.cats) ?? die('no such category')).id : 'inbox', due: flags.due ? dateArg(flags.due, today) : null, goal: flags.goal ? String(flags.goal) : '' }), `could not add project ${name}`);
