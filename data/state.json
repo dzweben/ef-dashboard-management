@@ -23,13 +23,13 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-05T16:49:52.650Z",
+    "at": "2026-10-05T19:19:22.177Z",
     "headline": "6 things today. Start with: Clinical notes (3 behind) (1h).",
     "lines": [
       "INCOMING // RSA front-to-back for Nyx: finish + full review Thu 10/8 (3d): 2h left, 0m booked, AT RISK",
       "CHORES // Closet reset · Clean first floor · Water plants. Most overdue: Closet reset (48d since last).",
       "TOMORROW // Tue 10/6 [4h/4h]: Email Johanna: full LEARN breakdown (issues we ran into) · RSA: participant data fixes · Start ABCD work for Jason · OCD pres: build workshop 1h",
-      "DONE // 8 today · streak 8d"
+      "DONE // 10 today · streak 8d"
     ],
     "asks": [
       "RSA front-to-back for Nyx: finish + full review needs 2h but only 5m is free before Thu 10/8. Cut scope or move the deadline?",
@@ -46,8 +46,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-05T16:49:36.591Z",
-    "lastActivitySeen": "2026-10-05T16:49:36.591Z"
+    "lastClaudeSync": "2026-10-05T19:19:19.396Z",
+    "lastActivitySeen": "2026-10-05T19:19:19.396Z"
   },
   "cats": {
     "admin": {
@@ -917,6 +917,30 @@
       "updated": "2026-08-29T17:00:00.000Z",
       "doneAt": "2026-08-29T17:00:00.000Z",
       "src": "import"
+    },
+    "t_2fzd11gu": {
+      "id": "t_2fzd11gu",
+      "title": "Sent welcome packet",
+      "cat": "psc",
+      "status": "done",
+      "due": null,
+      "time": null,
+      "plan": null,
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-05T19:19:21.662Z",
+      "updated": "2026-10-05T19:19:21.768Z",
+      "doneAt": "2026-10-05T19:19:21.768Z",
+      "src": "chat"
     },
     "t_2fzjefdt": {
       "id": "t_2fzjefdt",
@@ -4628,6 +4652,30 @@
       "doneAt": "2026-07-30T17:00:00.000Z",
       "src": "import"
     },
+    "t_yalu9vlo": {
+      "id": "t_yalu9vlo",
+      "title": "Sent 2 session reminders",
+      "cat": "psc",
+      "status": "done",
+      "due": null,
+      "time": null,
+      "plan": null,
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-05T19:19:21.914Z",
+      "updated": "2026-10-05T19:19:22.039Z",
+      "doneAt": "2026-10-05T19:19:22.039Z",
+      "src": "chat"
+    },
     "t_ybnggfmw": {
       "id": "t_ybnggfmw",
       "title": "Email Veronica (HR)",
@@ -5012,6 +5060,16 @@
       "from": null,
       "to": "2026-10-06"
     },
+    "a_1035a7a5": {
+      "id": "a_1035a7a5",
+      "at": "2026-10-05T19:19:21.914Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_yalu9vlo",
+      "title": "Sent 2 session reminders",
+      "from": null,
+      "to": null
+    },
     "a_131eea89": {
       "id": "a_131eea89",
       "at": "2026-10-05T14:36:33.913Z",
@@ -5159,6 +5217,16 @@
       "type": "chore",
       "ref": "c_groceries",
       "title": "Grocery run",
+      "from": null,
+      "to": null
+    },
+    "a_6fowju9x": {
+      "id": "a_6fowju9x",
+      "at": "2026-10-05T19:19:22.039Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_yalu9vlo",
+      "title": "Sent 2 session reminders",
       "from": null,
       "to": null
     },
@@ -5339,6 +5407,16 @@
       "type": "chore",
       "ref": "c_laundry",
       "title": "Laundry",
+      "from": null,
+      "to": null
+    },
+    "a_d3gwjfzc": {
+      "id": "a_d3gwjfzc",
+      "at": "2026-10-05T19:19:21.768Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_2fzd11gu",
+      "title": "Sent welcome packet",
       "from": null,
       "to": null
     },
@@ -5761,6 +5839,16 @@
       "title": "SPARK docs: task-completion audit script",
       "from": null,
       "to": "2026-10-10"
+    },
+    "a_uifa8e2c": {
+      "id": "a_uifa8e2c",
+      "at": "2026-10-05T19:19:21.662Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_2fzd11gu",
+      "title": "Sent welcome packet",
+      "from": null,
+      "to": null
     },
     "a_unxbdn3k": {
       "id": "a_unxbdn3k",
