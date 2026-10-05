@@ -23,16 +23,15 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-05T19:19:41.775Z",
+    "at": "2026-10-05T19:41:00.476Z",
     "headline": "6 things today. Start with: Clinical notes (3 behind) (1h).",
     "lines": [
-      "INCOMING // RSA front-to-back for Nyx: finish + full review Thu 10/8 (3d): 2h left, 0m booked, AT RISK",
+      "INCOMING // RSA front-to-back for Nyx: finish + full review Thu 10/8 (3d): 2h left, 2h booked",
       "CHORES // Closet reset · Clean first floor · Water plants. Most overdue: Closet reset (48d since last).",
-      "TOMORROW // Tue 10/6 [4h/4h]: Email Johanna: full LEARN breakdown (issues we ran into) · RSA: participant data fixes · Start ABCD work for Jason · OCD pres: build workshop 1h",
-      "DONE // 10 today · streak 8d"
+      "TOMORROW // Tue 10/6 [4h/4h]: Email Johanna: full LEARN breakdown (issues we ran into) · RSA: participant data fixes · Start ABCD work for Jason · RSA front-to-back for Nyx: finish + full review 1h",
+      "DONE // 11 today · streak 8d"
     ],
     "asks": [
-      "RSA front-to-back for Nyx: finish + full review needs 2h but only 5m is free before Thu 10/8. Cut scope or move the deadline?",
       "Anything coming up for Meetings?",
       "Anything coming up for Ziggy?"
     ],
@@ -46,8 +45,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-05T19:19:39.834Z",
-    "lastActivitySeen": "2026-10-05T19:19:39.834Z"
+    "lastClaudeSync": "2026-10-05T19:39:53.908Z",
+    "lastActivitySeen": "2026-10-05T19:39:53.908Z"
   },
   "cats": {
     "admin": {
@@ -584,7 +583,7 @@
       "cat": "gradroles",
       "kind": "project",
       "status": "active",
-      "due": "2026-10-19",
+      "due": "2026-10-26",
       "goal": "Present to the department on 10/19; slides + plan out by 10/15",
       "milestones": [
         {
@@ -604,14 +603,14 @@
         {
           "id": "m3",
           "t": "Slides + plan sent out",
-          "due": "2026-10-15",
+          "due": "2026-10-22",
           "done": false,
           "doneAt": null
         },
         {
           "id": "m4",
           "t": "Present",
-          "due": "2026-10-19",
+          "due": "2026-10-26",
           "done": false,
           "doneAt": null
         }
@@ -620,7 +619,7 @@
       "notes": "",
       "order": 0,
       "created": "2026-10-05T14:17:21.417Z",
-      "updated": "2026-10-05T14:17:29.847Z"
+      "updated": "2026-10-05T19:40:51.932Z"
     },
     "p_ocd": {
       "id": "p_ocd",
@@ -1139,7 +1138,7 @@
       "title": "Department AI presentation",
       "cat": "gradroles",
       "status": "todo",
-      "due": "2026-10-19",
+      "due": "2026-10-26",
       "time": null,
       "plan": null,
       "est": 0,
@@ -1154,7 +1153,7 @@
       "moved": 0,
       "win": true,
       "created": "2026-10-05T14:17:30.453Z",
-      "updated": "2026-10-05T14:17:30.453Z",
+      "updated": "2026-10-05T19:40:51.937Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -1789,7 +1788,7 @@
       "status": "todo",
       "due": null,
       "time": null,
-      "plan": "2026-10-07",
+      "plan": "2026-10-14",
       "est": 45,
       "spent": 0,
       "blocks": [],
@@ -1799,10 +1798,10 @@
       "notes": "",
       "subs": [],
       "triage": false,
-      "moved": 0,
+      "moved": 1,
       "win": false,
       "created": "2026-10-05T14:17:30.009Z",
-      "updated": "2026-10-05T14:17:30.009Z",
+      "updated": "2026-10-05T19:40:51.938Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -1835,30 +1834,30 @@
       "title": "AI pres: build slides + plan, send out",
       "cat": "gradroles",
       "status": "todo",
-      "due": "2026-10-15",
+      "due": "2026-10-22",
       "time": null,
       "plan": null,
       "est": 180,
       "spent": 0,
       "blocks": [
         {
-          "id": "b_ntjqin7i",
-          "d": "2026-10-07",
-          "m": 60,
-          "done": false,
-          "auto": true
-        },
-        {
-          "id": "b_gtmz6xxu",
+          "id": "b_aefkj1ms",
           "d": "2026-10-10",
+          "m": 40,
+          "done": false,
+          "auto": true
+        },
+        {
+          "id": "b_pmr3xwpp",
+          "d": "2026-10-14",
           "m": 60,
           "done": false,
           "auto": true
         },
         {
-          "id": "b_s99m4bzj",
-          "d": "2026-10-12",
-          "m": 60,
+          "id": "b_j76kdhsm",
+          "d": "2026-10-18",
+          "m": 80,
           "done": false,
           "auto": true
         }
@@ -1872,7 +1871,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T14:17:30.295Z",
-      "updated": "2026-10-05T16:07:52.027Z",
+      "updated": "2026-10-05T19:40:52.144Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -3342,7 +3341,22 @@
       "plan": null,
       "est": 180,
       "spent": 60,
-      "blocks": [],
+      "blocks": [
+        {
+          "id": "b_7vrunos6",
+          "d": "2026-10-05",
+          "m": 60,
+          "done": false,
+          "auto": true
+        },
+        {
+          "id": "b_wj71ycyu",
+          "d": "2026-10-06",
+          "m": 60,
+          "done": false,
+          "auto": true
+        }
+      ],
       "project": null,
       "prio": 1,
       "kind": "task",
@@ -3368,7 +3382,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T16:49:47.391Z",
+      "updated": "2026-10-05T19:40:52.144Z",
       "doneAt": null,
       "src": "import"
     },
@@ -3408,6 +3422,13 @@
       "spent": 0,
       "blocks": [
         {
+          "id": "b_z2e4cl03",
+          "d": "2026-10-08",
+          "m": 30,
+          "done": false,
+          "auto": true
+        },
+        {
           "id": "b_bog560wi",
           "d": "2026-10-09",
           "m": 30,
@@ -3415,22 +3436,15 @@
           "auto": true
         },
         {
-          "id": "b_d44xlzu5",
-          "d": "2026-10-11",
-          "m": 30,
-          "done": false,
-          "auto": true
-        },
-        {
-          "id": "b_ta1r0fzs",
-          "d": "2026-10-13",
+          "id": "b_f2qzxohq",
+          "d": "2026-10-12",
           "m": 60,
           "done": false,
           "auto": true
         },
         {
-          "id": "b_xip1g5i3",
-          "d": "2026-10-16",
+          "id": "b_tivmtmvk",
+          "d": "2026-10-15",
           "m": 60,
           "done": false,
           "auto": true
@@ -3445,7 +3459,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T16:07:52.027Z",
+      "updated": "2026-10-05T19:40:52.144Z",
       "doneAt": null,
       "src": "import"
     },
@@ -3485,9 +3499,16 @@
       "spent": 0,
       "blocks": [
         {
-          "id": "b_w1sez76b",
-          "d": "2026-10-11",
-          "m": 60,
+          "id": "b_g9p7q7bl",
+          "d": "2026-10-09",
+          "m": 30,
+          "done": false,
+          "auto": true
+        },
+        {
+          "id": "b_gqfmpbgc",
+          "d": "2026-10-10",
+          "m": 30,
           "done": false,
           "auto": true
         }
@@ -3501,7 +3522,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T16:07:52.027Z",
+      "updated": "2026-10-05T19:40:52.144Z",
       "doneAt": null,
       "src": "import"
     },
@@ -3519,27 +3540,27 @@
         {
           "id": "b_8e8jwgzh",
           "d": "2026-10-07",
-          "m": 30,
+          "m": 60,
           "done": false,
           "auto": true
         },
         {
           "id": "b_i527khz9",
           "d": "2026-10-09",
-          "m": 90,
-          "done": false,
-          "auto": true
-        },
-        {
-          "id": "b_9ckwamp5",
-          "d": "2026-10-12",
           "m": 60,
           "done": false,
           "auto": true
         },
         {
-          "id": "b_mlhs0acb",
-          "d": "2026-10-14",
+          "id": "b_k62keaei",
+          "d": "2026-10-11",
+          "m": 60,
+          "done": false,
+          "auto": true
+        },
+        {
+          "id": "b_6tfbadji",
+          "d": "2026-10-13",
           "m": 60,
           "done": false,
           "auto": true
@@ -3554,7 +3575,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T16:07:52.027Z",
+      "updated": "2026-10-05T19:40:52.144Z",
       "doneAt": null,
       "src": "import"
     },
@@ -3572,13 +3593,13 @@
         {
           "id": "b_deuu88mm",
           "d": "2026-10-05",
-          "m": 60,
+          "m": 35,
           "done": false,
           "auto": true
         },
         {
-          "id": "b_t1q8ayt4",
-          "d": "2026-10-06",
+          "id": "b_htf8yutr",
+          "d": "2026-10-07",
           "m": 60,
           "done": false,
           "auto": true
@@ -3593,7 +3614,7 @@
         {
           "id": "b_num34lzs",
           "d": "2026-10-11",
-          "m": 60,
+          "m": 85,
           "done": false,
           "auto": true
         }
@@ -3607,7 +3628,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T16:07:52.027Z",
+      "updated": "2026-10-05T19:40:52.144Z",
       "doneAt": null,
       "src": "import"
     },
@@ -4827,7 +4848,7 @@
       "status": "todo",
       "due": null,
       "time": null,
-      "plan": "2026-10-08",
+      "plan": "2026-10-15",
       "est": 30,
       "spent": 0,
       "blocks": [],
@@ -4837,10 +4858,10 @@
       "notes": "",
       "subs": [],
       "triage": false,
-      "moved": 0,
+      "moved": 1,
       "win": false,
       "created": "2026-10-05T14:17:30.159Z",
-      "updated": "2026-10-05T14:17:30.159Z",
+      "updated": "2026-10-05T19:40:51.939Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -5080,6 +5101,16 @@
       "from": null,
       "to": "2026-10-05"
     },
+    "a_17n2sb12": {
+      "id": "a_17n2sb12",
+      "at": "2026-10-05T19:40:51.939Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_cdhxbtfb",
+      "title": "AI pres: build slides + plan, send out",
+      "from": null,
+      "to": "due,blocks"
+    },
     "a_1e8d70tp": {
       "id": "a_1e8d70tp",
       "at": "2026-10-05T16:49:38.464Z",
@@ -5180,6 +5211,16 @@
       "from": null,
       "to": "done"
     },
+    "a_4ovoan82": {
+      "id": "a_4ovoan82",
+      "at": "2026-10-05T19:40:51.941Z",
+      "src": "chat",
+      "type": "block",
+      "ref": "t_cdhxbtfb",
+      "title": "AI pres: build slides + plan, send out",
+      "from": null,
+      "to": "planned"
+    },
     "a_538wiuzb": {
       "id": "a_538wiuzb",
       "at": "2026-10-05T14:17:30.865Z",
@@ -5199,6 +5240,16 @@
       "title": "VST analyses for Johanna",
       "from": null,
       "to": null
+    },
+    "a_5jpx22vg": {
+      "id": "a_5jpx22vg",
+      "at": "2026-10-05T19:40:51.937Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_3e4d9blz",
+      "title": "Department AI presentation",
+      "from": null,
+      "to": "due"
     },
     "a_5l68bjk2": {
       "id": "a_5l68bjk2",
@@ -5459,6 +5510,16 @@
       "title": "Email Eunice about the chapter",
       "from": null,
       "to": null
+    },
+    "a_e8pgn01e": {
+      "id": "a_e8pgn01e",
+      "at": "2026-10-05T19:40:51.938Z",
+      "src": "chat",
+      "type": "move",
+      "ref": "t_bgaw290s",
+      "title": "AI pres: convert voice transcripts",
+      "from": "2026-10-07",
+      "to": "2026-10-14"
     },
     "a_epvdwcly": {
       "id": "a_epvdwcly",
@@ -5940,6 +6001,16 @@
       "from": null,
       "to": "added"
     },
+    "a_xp3gx7p7": {
+      "id": "a_xp3gx7p7",
+      "at": "2026-10-05T19:40:51.939Z",
+      "src": "chat",
+      "type": "move",
+      "ref": "t_zhr60254",
+      "title": "AI pres: start a Claude Code thread",
+      "from": "2026-10-08",
+      "to": "2026-10-15"
+    },
     "a_y6558ve2": {
       "id": "a_y6558ve2",
       "at": "2026-10-05T14:34:46.312Z",
@@ -5959,6 +6030,16 @@
       "title": "Multivar assignment 4",
       "from": null,
       "to": null
+    },
+    "a_yqpb0x9r": {
+      "id": "a_yqpb0x9r",
+      "at": "2026-10-05T19:40:51.932Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "p_m7qpuz93",
+      "title": "Department AI presentation",
+      "from": null,
+      "to": "due,milestones"
     },
     "a_yr4847gz": {
       "id": "a_yr4847gz",
@@ -5997,6 +6078,16 @@
       "type": "block",
       "ref": null,
       "title": "Auto-plan: 4 tasks",
+      "from": null,
+      "to": "planned"
+    },
+    "a_zpht6pyr": {
+      "id": "a_zpht6pyr",
+      "at": "2026-10-05T19:40:52.144Z",
+      "src": "chat",
+      "type": "block",
+      "ref": null,
+      "title": "Auto-plan: 6 tasks",
       "from": null,
       "to": "planned"
     },
