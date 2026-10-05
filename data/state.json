@@ -22,12 +22,12 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-05T14:17:40.980Z",
+    "at": "2026-10-05T14:20:30.473Z",
     "headline": "8 things today. Start with: Clinical notes (3 behind) (1h).",
     "lines": [
       "CHORES // Closet reset · Clean first floor · Water plants. Just 5 minutes on Closet reset (48d since last).",
       "TOMORROW // Tue 10/6 [4h/4h]: RSA: participant data fixes · Start ABCD work for Jason · AI pres: build slides + plan, send out 1h · OCD pres: write main script 45m",
-      "DONE // 3 today"
+      "DONE // 1 today · streak 3d"
     ],
     "asks": [
       "Did 'DTI: fix icons' happen?",
@@ -45,8 +45,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-05T14:16:57.384Z",
-    "lastActivitySeen": "2026-10-05T14:16:57.384Z"
+    "lastClaudeSync": "2026-10-05T14:20:27.839Z",
+    "lastActivitySeen": "2026-10-05T14:20:27.839Z"
   },
   "cats": {
     "admin": {
@@ -1429,8 +1429,8 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T14:17:30.719Z",
-      "updated": "2026-10-05T14:17:30.865Z",
-      "doneAt": "2026-10-05T14:17:30.865Z",
+      "updated": "2026-10-05T14:19:45.867Z",
+      "doneAt": "2026-10-04T16:00:00.000Z",
       "src": "chat"
     },
     "t_8zpmocd1": {
@@ -1867,7 +1867,7 @@
       "id": "t_deftdocs",
       "title": "DEFT documentation for Andrew",
       "cat": "manuscripts",
-      "status": "todo",
+      "status": "done",
       "due": null,
       "time": null,
       "plan": "2026-10-07",
@@ -1883,8 +1883,8 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T04:00:00.000Z",
-      "doneAt": null,
+      "updated": "2026-10-05T14:19:45.616Z",
+      "doneAt": "2026-10-01T16:00:00.000Z",
       "src": "import"
     },
     "t_dentist": {
@@ -2835,8 +2835,8 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T14:17:30.577Z",
-      "doneAt": "2026-10-05T14:17:30.577Z",
+      "updated": "2026-10-05T14:19:45.741Z",
+      "doneAt": "2026-09-25T16:00:00.000Z",
       "src": "import"
     },
     "t_myezwqph": {
@@ -4460,17 +4460,17 @@
       "cat": "home",
       "every": 7,
       "perDay": 1,
-      "last": "2026-10-05",
+      "last": "2026-10-03",
       "start": null,
       "log": [
         "2026-09-20",
-        "2026-10-05"
+        "2026-10-03"
       ],
       "min": 5,
       "active": true,
       "notes": "",
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T14:17:31.380Z"
+      "updated": "2026-10-05T14:19:45.936Z"
     },
     "c_laundry": {
       "id": "c_laundry",
@@ -4478,18 +4478,18 @@
       "cat": "home",
       "every": 7,
       "perDay": 1,
-      "last": "2026-10-05",
+      "last": "2026-10-04",
       "start": null,
       "log": [
         "2026-08-29",
         "2026-09-19",
-        "2026-10-05"
+        "2026-10-04"
       ],
       "min": 5,
       "active": true,
       "notes": "",
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T14:17:31.510Z"
+      "updated": "2026-10-05T14:19:45.936Z"
     },
     "c_plants": {
       "id": "c_plants",
@@ -4644,6 +4644,16 @@
       "from": null,
       "to": null
     },
+    "a_8cecu3qz": {
+      "id": "a_8cecu3qz",
+      "at": "2026-10-05T14:19:45.867Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_8frv9vmq",
+      "title": "Multivar assignment 5",
+      "from": null,
+      "to": "doneAt"
+    },
     "a_8nllrbgc": {
       "id": "a_8nllrbgc",
       "at": "2026-10-05T14:17:14.242Z",
@@ -4764,6 +4774,16 @@
       "from": null,
       "to": "added"
     },
+    "a_jtff7l66": {
+      "id": "a_jtff7l66",
+      "at": "2026-10-05T14:19:45.936Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "c_laundry",
+      "title": "Laundry",
+      "from": null,
+      "to": "last,log"
+    },
     "a_jv3m53zo": {
       "id": "a_jv3m53zo",
       "at": "2026-10-05T14:17:31.806Z",
@@ -4804,6 +4824,16 @@
       "from": null,
       "to": "todo"
     },
+    "a_q3523u1d": {
+      "id": "a_q3523u1d",
+      "at": "2026-10-05T14:19:45.616Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_deftdocs",
+      "title": "DEFT documentation for Andrew",
+      "from": null,
+      "to": null
+    },
     "a_qbkakxf0": {
       "id": "a_qbkakxf0",
       "at": "2026-10-05T14:17:13.160Z",
@@ -4823,6 +4853,16 @@
       "title": "Digitize Sam's speech",
       "from": null,
       "to": null
+    },
+    "a_t1t2do8k": {
+      "id": "a_t1t2do8k",
+      "at": "2026-10-05T14:19:45.741Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_mvasgn4",
+      "title": "Multivar assignment 4",
+      "from": null,
+      "to": "doneAt"
     },
     "a_v3k24h46": {
       "id": "a_v3k24h46",
@@ -4913,6 +4953,16 @@
       "title": "Auto-plan: 4 tasks",
       "from": null,
       "to": "planned"
+    },
+    "a_zr7tstrl": {
+      "id": "a_zr7tstrl",
+      "at": "2026-10-05T14:19:45.936Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "c_groceries",
+      "title": "Grocery run",
+      "from": null,
+      "to": "last,log"
     }
   }
 }
