@@ -2239,7 +2239,7 @@
       "title": "Clinical notes (3 behind)",
       "cat": "psc",
       "status": "todo",
-      "due": null,
+      "due": "2026-10-07",
       "time": null,
       "plan": "2026-10-06",
       "est": 60,
@@ -2270,7 +2270,7 @@
       "moved": 1,
       "win": false,
       "created": "2026-10-05T14:17:31.806Z",
-      "updated": "2026-10-05T19:53:13.745Z",
+      "updated": "2026-10-05T19:53:19.845Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -5129,6 +5129,16 @@
       "title": "Fold + put away laundry",
       "from": null,
       "to": "2026-10-05"
+    },
+    "a_1jnhtk7x": {
+      "id": "a_1jnhtk7x",
+      "at": "2026-10-05T19:53:19.845Z",
+      "src": "dash",
+      "type": "edit",
+      "ref": "t_ff9fmzh1",
+      "title": "Clinical notes (3 behind)",
+      "from": null,
+      "to": "due"
     },
     "a_2dytst1f": {
       "id": "a_2dytst1f",
