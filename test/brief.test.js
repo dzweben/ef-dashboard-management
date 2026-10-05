@@ -36,7 +36,8 @@ test('buildBrief: lines cover due today, overdue, meetings, deadlines, chores, t
   const chores = line('CHORES');
   assert.match(chores, /Take out trash/);
   assert.match(chores, /Walk Ziggy 1\/2/);
-  assert.match(chores, /Just 5 minutes on Take out trash \(15d since last\)\./);
+  assert.match(chores, /Most overdue: Take out trash \(15d since last\)\./);
+  assert.ok(!/Just \d+ minutes/.test(chores), 'no time nudges: Danny asked for reminders, not timing coaching');
   assert.ok(!chores.includes('Retired chore'));
   assert.match(line('TOMORROW'), /^TOMORROW \/\/ Tue 10\/6 \[2h 30m\/4h\]: .*Predis lit review 1h 30m/);
   assert.match(line('DONE'), /^DONE \/\/ 1 today/);

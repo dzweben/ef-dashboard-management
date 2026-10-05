@@ -91,7 +91,7 @@ function headlineFor(state, tv, plate, focus, dueChores) {
   if (tv.triage.length) return `Clear board, but ${plural(tv.triage.length, 'stale item')} need${tv.triage.length === 1 ? 's' : ''} a verdict.`;
   if (dueChores.length) {
     const c = dueChores[0].chore;
-    return `Clear board. ${titleOf(c)} is due. Just ${isNum(c.min) ? c.min : 5} minutes?`;
+    return `Clear board. ${titleOf(c)} is due.`;
   }
   if (tv.doneToday.length) return `Board cleared. ${plural(tv.doneToday.length, 'thing')} done today. Go touch grass.`;
   if (backlog(state).length) return 'Clear board. Pick something from the backlog?';
@@ -100,9 +100,8 @@ function headlineFor(state, tv, plate, focus, dueChores) {
 
 function choreNudge(info) {
   const c = info.chore;
-  const min = isNum(c.min) ? c.min : 5;
   const why = info.daysSince == null ? 'never logged' : info.daysSince === 0 ? 'not enough today' : `${info.daysSince}d since last`;
-  return `Just ${min} minutes on ${titleOf(c)} (${why}).`;
+  return `Most overdue: ${titleOf(c)} (${why}).`;
 }
 
 function tomorrowLine(state, today) {
