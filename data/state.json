@@ -2414,13 +2414,18 @@
           "id": "s1",
           "t": "pages 1-10",
           "done": false
+        },
+        {
+          "id": "s2",
+          "t": "pages 10-20",
+          "done": false
         }
       ],
       "triage": false,
       "moved": 0,
       "win": false,
       "created": "2026-10-05T14:36:33.913Z",
-      "updated": "2026-10-05T19:54:47.465Z",
+      "updated": "2026-10-05T19:54:51.138Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -5435,6 +5440,16 @@
       "title": "Reschedule dentist",
       "from": null,
       "to": "kind"
+    },
+    "a_anjyjjq0": {
+      "id": "a_anjyjjq0",
+      "at": "2026-10-05T19:54:51.138Z",
+      "src": "dash",
+      "type": "sub",
+      "ref": "t_g29xic6w",
+      "title": "OCD pres: read the Barlow chapter / pages 10-20",
+      "from": null,
+      "to": "added"
     },
     "a_b89wq3f4": {
       "id": "a_b89wq3f4",
