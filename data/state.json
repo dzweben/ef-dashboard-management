@@ -2424,13 +2424,18 @@
           "id": "s3",
           "t": "pages 20-30",
           "done": false
+        },
+        {
+          "id": "s4",
+          "t": "pages 30-40",
+          "done": false
         }
       ],
       "triage": false,
       "moved": 0,
       "win": false,
       "created": "2026-10-05T14:36:33.913Z",
-      "updated": "2026-10-05T19:54:54.783Z",
+      "updated": "2026-10-05T19:54:57.925Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -5453,6 +5458,16 @@
       "type": "sub",
       "ref": "t_g29xic6w",
       "title": "OCD pres: read the Barlow chapter / pages 10-20",
+      "from": null,
+      "to": "added"
+    },
+    "a_b31pdpmz": {
+      "id": "a_b31pdpmz",
+      "at": "2026-10-05T19:54:57.925Z",
+      "src": "dash",
+      "type": "sub",
+      "ref": "t_g29xic6w",
+      "title": "OCD pres: read the Barlow chapter / pages 30-40",
       "from": null,
       "to": "added"
     },
