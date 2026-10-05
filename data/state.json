@@ -23,12 +23,12 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-05T16:28:10.808Z",
+    "at": "2026-10-05T16:45:40.596Z",
     "headline": "6 things today. Start with: Clinical notes (3 behind) (1h).",
     "lines": [
       "CHORES // Closet reset · Clean first floor · Water plants. Most overdue: Closet reset (48d since last).",
       "TOMORROW // Tue 10/6 [4h/4h]: Email Johanna: full LEARN breakdown (issues we ran into) · RSA: participant data fixes · Start ABCD work for Jason · OCD pres: build workshop 1h",
-      "DONE // 5 today · streak 8d"
+      "DONE // 8 today · streak 8d"
     ],
     "asks": [
       "Anything coming up for Meetings?",
@@ -44,8 +44,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-05T16:28:08.633Z",
-    "lastActivitySeen": "2026-10-05T16:28:08.633Z"
+    "lastClaudeSync": "2026-10-05T16:45:32.734Z",
+    "lastActivitySeen": "2026-10-05T16:45:32.734Z"
   },
   "cats": {
     "admin": {
@@ -1187,7 +1187,7 @@
       "status": "todo",
       "due": null,
       "time": null,
-      "plan": "2026-10-08",
+      "plan": "2026-10-07",
       "est": 10,
       "spent": 0,
       "blocks": [],
@@ -1200,7 +1200,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T16:07:46.945Z",
-      "updated": "2026-10-05T16:07:46.945Z",
+      "updated": "2026-10-05T16:45:35.622Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -2730,6 +2730,30 @@
       "doneAt": null,
       "src": "import"
     },
+    "t_jqx4n2sn": {
+      "id": "t_jqx4n2sn",
+      "title": "Worked on TUBRIC advertisements",
+      "cat": "tubric",
+      "status": "done",
+      "due": null,
+      "time": null,
+      "plan": null,
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-05T16:45:35.185Z",
+      "updated": "2026-10-05T16:45:35.315Z",
+      "doneAt": "2026-10-05T16:45:35.315Z",
+      "src": "chat"
+    },
     "t_jrvlxxp7": {
       "id": "t_jrvlxxp7",
       "title": "Flux: register, hotel, flights",
@@ -3186,6 +3210,30 @@
       "doneAt": "2026-09-25T17:00:00.000Z",
       "src": "import"
     },
+    "t_no91rb89": {
+      "id": "t_no91rb89",
+      "title": "VST analyses for Johanna",
+      "cat": "rsa",
+      "status": "done",
+      "due": null,
+      "time": null,
+      "plan": null,
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "analysis",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-05T16:45:34.922Z",
+      "updated": "2026-10-05T16:45:35.042Z",
+      "doneAt": "2026-10-05T16:45:35.042Z",
+      "src": "chat"
+    },
     "t_npw7vdzl": {
       "id": "t_npw7vdzl",
       "title": "Email Johanna + DTI team",
@@ -3281,6 +3329,30 @@
       "updated": "2026-10-05T14:17:31.153Z",
       "doneAt": null,
       "src": "import"
+    },
+    "t_obvmjfht": {
+      "id": "t_obvmjfht",
+      "title": "Nyx meeting (tentative)",
+      "cat": "rsa",
+      "status": "todo",
+      "due": null,
+      "time": null,
+      "plan": "2026-10-08",
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "meeting",
+      "notes": "Tried to set up for Thu 10/8; waiting to confirm",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-05T16:45:35.462Z",
+      "updated": "2026-10-05T16:45:35.462Z",
+      "doneAt": null,
+      "src": "chat"
     },
     "t_ocdillus": {
       "id": "t_ocdillus",
@@ -3615,6 +3687,30 @@
       "created": "2026-10-05T14:17:13.980Z",
       "updated": "2026-10-05T14:17:13.980Z",
       "doneAt": null,
+      "src": "chat"
+    },
+    "t_rhix291h": {
+      "id": "t_rhix291h",
+      "title": "Worked through analyses for Nyx",
+      "cat": "rsa",
+      "status": "done",
+      "due": null,
+      "time": null,
+      "plan": null,
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "analysis",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-05T16:45:34.652Z",
+      "updated": "2026-10-05T16:45:34.786Z",
+      "doneAt": "2026-10-05T16:45:34.786Z",
       "src": "chat"
     },
     "t_rkse0ib5": {
@@ -4987,6 +5083,16 @@
       "from": null,
       "to": null
     },
+    "a_54qx3t4o": {
+      "id": "a_54qx3t4o",
+      "at": "2026-10-05T16:45:34.922Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_no91rb89",
+      "title": "VST analyses for Johanna",
+      "from": null,
+      "to": null
+    },
     "a_5lxmzcu4": {
       "id": "a_5lxmzcu4",
       "at": "2026-10-05T14:17:31.380Z",
@@ -4994,6 +5100,16 @@
       "type": "chore",
       "ref": "c_groceries",
       "title": "Grocery run",
+      "from": null,
+      "to": null
+    },
+    "a_6jdawx5m": {
+      "id": "a_6jdawx5m",
+      "at": "2026-10-05T16:45:34.786Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_rhix291h",
+      "title": "Worked through analyses for Nyx",
       "from": null,
       "to": null
     },
@@ -5077,6 +5193,16 @@
       "from": null,
       "to": "due,est,prio,project,blocks"
     },
+    "a_988rum77": {
+      "id": "a_988rum77",
+      "at": "2026-10-05T16:45:35.622Z",
+      "src": "chat",
+      "type": "move",
+      "ref": "t_4dz0f3k6",
+      "title": "Follow up with Nyx if no reply",
+      "from": "2026-10-08",
+      "to": "2026-10-07"
+    },
     "a_9pm1ahgw": {
       "id": "a_9pm1ahgw",
       "at": "2026-10-05T16:28:10.441Z",
@@ -5096,6 +5222,16 @@
       "title": "Reschedule dentist",
       "from": null,
       "to": "kind"
+    },
+    "a_b89wq3f4": {
+      "id": "a_b89wq3f4",
+      "at": "2026-10-05T16:45:35.185Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_jqx4n2sn",
+      "title": "Worked on TUBRIC advertisements",
+      "from": null,
+      "to": null
     },
     "a_bmuhszru": {
       "id": "a_bmuhszru",
@@ -5176,6 +5312,26 @@
       "title": "Clinical notes (3 behind) / Note 2",
       "from": null,
       "to": "added"
+    },
+    "a_fasjkh53": {
+      "id": "a_fasjkh53",
+      "at": "2026-10-05T16:45:35.315Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_jqx4n2sn",
+      "title": "Worked on TUBRIC advertisements",
+      "from": null,
+      "to": null
+    },
+    "a_fhh50ri9": {
+      "id": "a_fhh50ri9",
+      "at": "2026-10-05T16:45:35.042Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_no91rb89",
+      "title": "VST analyses for Johanna",
+      "from": null,
+      "to": null
     },
     "a_g0dxbq09": {
       "id": "a_g0dxbq09",
@@ -5316,6 +5472,16 @@
       "title": "SPARK docs: SPARK-NM",
       "from": null,
       "to": "2026-10-10"
+    },
+    "a_mhhu72qr": {
+      "id": "a_mhhu72qr",
+      "at": "2026-10-05T16:45:35.462Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_obvmjfht",
+      "title": "Nyx meeting (tentative)",
+      "from": null,
+      "to": "2026-10-08"
     },
     "a_mur64d0r": {
       "id": "a_mur64d0r",
@@ -5474,6 +5640,16 @@
       "type": "done",
       "ref": "t_gwaqz2l9",
       "title": "SPARK PPI meeting with Teij",
+      "from": null,
+      "to": null
+    },
+    "a_tmsfaoog": {
+      "id": "a_tmsfaoog",
+      "at": "2026-10-05T16:45:34.652Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_rhix291h",
+      "title": "Worked through analyses for Nyx",
       "from": null,
       "to": null
     },
