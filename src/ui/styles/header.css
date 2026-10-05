@@ -334,6 +334,9 @@
   .hdr { gap: 14px; padding-top: 14px; }
   .hdr-top { grid-template-areas: 'logo status' 'sub sub'; align-items: center; }
   .hdr-mode { display: none; }
+  /* the logo must never run under the status chips, even before the stencil font loads */
+  .hdr-logo-row { overflow: hidden; }
+  .hdr-logo { font-size: clamp(1.6rem, 7.6vw, 2.5rem); white-space: nowrap; }
   .hdr-sub { font-size: 10px; letter-spacing: 0.08em; margin-top: 8px; }
   .hdr-sync { height: 30px; padding: 0 8px; gap: 7px; letter-spacing: 0.08em; }
   .hdr-connect { height: 30px; padding: 0 8px; }

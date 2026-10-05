@@ -76,7 +76,21 @@ ${body}
 `;
 
 async function main(args) {
-  const template = readFileSync(join(root, 'src/ui/template.html'), 'utf8');
+  const ROOT_REDIRECT = `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EF Console</title>
+<meta http-equiv="refresh" content="0; url=docs/">
+<script>location.replace('docs/' + location.hash);</script>
+<style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#0b0b0d;color:#f2f0ea;font:14px ui-monospace,Menlo,monospace}a{color:#ff2d95}</style>
+</head>
+<body><p>Loading <a href="docs/">EF Console</a>…</p></body>
+</html>
+`;
+
+const template = readFileSync(join(root, 'src/ui/template.html'), 'utf8');
   const css = readStyles();
   const js = await bundleJs(args);
 
@@ -86,6 +100,11 @@ async function main(args) {
   mkdirSync(join(root, 'dist'), { recursive: true });
   writeFileSync(join(root, 'docs/index.html'), fullDoc(fragment));
   if (!existsSync(join(root, 'docs/.nojekyll'))) writeFileSync(join(root, 'docs/.nojekyll'), '');
+  // GitHub Pages may be set to serve the repo root instead of /docs. Without this,
+  // the root URL shows README.md as a plain text page. Redirect it to the dashboard
+  // (keeping the #tab), and skip Jekyll so README is never rendered as the home page.
+  writeFileSync(join(root, 'index.html'), ROOT_REDIRECT);
+  if (!existsSync(join(root, '.nojekyll'))) writeFileSync(join(root, '.nojekyll'), '');
   writeFileSync(join(root, 'dist/fragment.html'), fragment);
 
   if (args.has('--preview')) {

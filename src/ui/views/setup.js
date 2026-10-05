@@ -265,10 +265,10 @@ function githubSection(ctx) {
   const hasToken = !!ctx?.hasToken;
 
   const steps = [
-    ['Open GitHub’s token page', h('span', ' ', h('a', { href: tokenUrl(cfg), target: '_blank', rel: 'noopener noreferrer' }, 'github.com/settings/personal-access-tokens/new', ic(ctx, 'external')), ' (Fine-grained tokens → Generate new token).')],
+    ['Open GitHub’s token page', h('span', ' ', h('a', { href: tokenUrl(cfg), target: '_blank', rel: 'noopener noreferrer' }, 'this link', ic(ctx, 'external')), ' opens a fine-grained token form with the name, expiry and Contents: Read and write already filled in.')],
     ['Name + expiry', h('span', ' Name it ', h('code', 'EF Console'), '. Expiration: ', h('b', 'Custom → up to 1 year'), ' out (GitHub’s max). Put a reminder in your calendar.')],
-    ['Repository access', h('span', ' ', h('b', 'Only select repositories'), ' → pick ', h('code', repoName), '. Nothing else.')],
-    ['Permissions', h('span', ' Repository permissions → ', h('b', 'Contents: Read and write'), '. Leave everything else alone (Metadata: Read-only is automatic).')],
+    ['Repository access', h('span', ' ', h('b', 'Only select repositories'), ' → pick ', h('code', repoName), '. Permissions stay hidden until you do this.')],
+    ['Permissions', h('span', ' Under Repository permissions, check ', h('b', 'Contents: Read and write'), ' is listed. If not: ', h('b', 'Add permissions'), ' → Contents, then switch Read-only to Read and write. Metadata: Read-only is added automatically.')],
     ['Generate + paste', h('span', ' Hit ', h('b', 'Generate token'), ', copy the ', h('code', 'github_pat_…'), ' string, paste it below, Save. Do the same once on your phone.')],
   ];
 
