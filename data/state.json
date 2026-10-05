@@ -2419,13 +2419,18 @@
           "id": "s2",
           "t": "pages 10-20",
           "done": false
+        },
+        {
+          "id": "s3",
+          "t": "pages 20-30",
+          "done": false
         }
       ],
       "triage": false,
       "moved": 0,
       "win": false,
       "created": "2026-10-05T14:36:33.913Z",
-      "updated": "2026-10-05T19:54:51.138Z",
+      "updated": "2026-10-05T19:54:54.783Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -5648,6 +5653,16 @@
       "type": "sub",
       "ref": "t_ff9fmzh1",
       "title": "Clinical notes (3 behind) / Note 3",
+      "from": null,
+      "to": "added"
+    },
+    "a_i2jnvzm7": {
+      "id": "a_i2jnvzm7",
+      "at": "2026-10-05T19:54:54.783Z",
+      "src": "dash",
+      "type": "sub",
+      "ref": "t_g29xic6w",
+      "title": "OCD pres: read the Barlow chapter / pages 20-30",
       "from": null,
       "to": "added"
     },
