@@ -22,30 +22,31 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-05T14:15:45.581Z",
-    "headline": "7 things today. Start with: Email Nyx: set up RSA meeting (10m).",
+    "at": "2026-10-05T14:17:40.980Z",
+    "headline": "8 things today. Start with: Clinical notes (3 behind) (1h).",
     "lines": [
-      "CHORES // Closet reset · Laundry · Grocery run · Clean first floor · +1 more. Just 5 minutes on Closet reset (48d since last).",
-      "TOMORROW // Tue 10/6 [4h/4h]: Nyx planning · RSA: participant data fixes · Start ABCD work for Jason · OCD pres: illustrations for dyads 45m"
+      "CHORES // Closet reset · Clean first floor · Water plants. Just 5 minutes on Closet reset (48d since last).",
+      "TOMORROW // Tue 10/6 [4h/4h]: RSA: participant data fixes · Start ABCD work for Jason · AI pres: build slides + plan, send out 1h · OCD pres: write main script 45m",
+      "DONE // 3 today"
     ],
     "asks": [
-      "Did 'Multivar assignment 4' happen?",
-      "Did 'Work out RSA front-to-back before the Nyx meeting' happen?",
-      "Anything coming up for Clinical (PSC)?",
-      "Did 'ABCD review meeting' happen?"
+      "Did 'DTI: fix icons' happen?",
+      "Did 'SPARK: neuromelanin GLM + 3dMVM script for Ronan' happen?",
+      "Anything coming up for Ziggy?",
+      "Anything coming up for Undergrad?"
     ],
     "focus": [
+      "t_ff9fmzh1",
       "t_emailnyx",
-      "t_dentist",
-      "t_teij"
+      "t_dentist"
     ]
   },
   "clock": {
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-05T14:15:43.693Z",
-    "lastActivitySeen": "2026-10-05T14:15:43.693Z"
+    "lastClaudeSync": "2026-10-05T14:16:57.384Z",
+    "lastActivitySeen": "2026-10-05T14:16:57.384Z"
   },
   "cats": {
     "admin": {
@@ -151,10 +152,12 @@
       "aliases": [
         "ef",
         "executive function",
-        "executive functioning"
+        "executive functioning",
+        "planning",
+        "to-do system"
       ],
       "order": 17,
-      "note": "Ask Danny what EF covers so Claude files things correctly.",
+      "note": "Executive functioning",
       "archived": false,
       "created": "2026-10-05T04:00:00.000Z"
     },
@@ -373,6 +376,21 @@
       "archived": false,
       "created": "2026-10-05T04:00:00.000Z"
     },
+    "random": {
+      "id": "random",
+      "name": "Random",
+      "group": "life",
+      "color": "#fb9892",
+      "glyph": "RA",
+      "aliases": [
+        "random",
+        "misc"
+      ],
+      "order": 74,
+      "note": "",
+      "archived": false,
+      "created": "2026-10-05T14:17:14.242Z"
+    },
     "rsa": {
       "id": "rsa",
       "name": "RSA",
@@ -529,6 +547,50 @@
       "order": 3,
       "created": "2026-10-05T04:00:00.000Z",
       "updated": "2026-10-05T04:00:00.000Z"
+    },
+    "p_m7qpuz93": {
+      "id": "p_m7qpuz93",
+      "name": "Department AI presentation",
+      "cat": "gradroles",
+      "kind": "project",
+      "status": "active",
+      "due": "2026-10-19",
+      "goal": "Present to the department on 10/19; slides + plan out by 10/15",
+      "milestones": [
+        {
+          "id": "m1",
+          "t": "Convert voice transcripts",
+          "due": null,
+          "done": false,
+          "doneAt": null
+        },
+        {
+          "id": "m2",
+          "t": "Start a Claude Code thread",
+          "due": null,
+          "done": false,
+          "doneAt": null
+        },
+        {
+          "id": "m3",
+          "t": "Slides + plan sent out",
+          "due": "2026-10-15",
+          "done": false,
+          "doneAt": null
+        },
+        {
+          "id": "m4",
+          "t": "Present",
+          "due": "2026-10-19",
+          "done": false,
+          "doneAt": null
+        }
+      ],
+      "weeklyHours": null,
+      "notes": "",
+      "order": 0,
+      "created": "2026-10-05T14:17:21.417Z",
+      "updated": "2026-10-05T14:17:29.847Z"
     },
     "p_ocd": {
       "id": "p_ocd",
@@ -1011,6 +1073,30 @@
       "doneAt": "2026-07-27T17:00:00.000Z",
       "src": "import"
     },
+    "t_3e4d9blz": {
+      "id": "t_3e4d9blz",
+      "title": "Department AI presentation",
+      "cat": "gradroles",
+      "status": "todo",
+      "due": "2026-10-19",
+      "time": null,
+      "plan": null,
+      "est": 0,
+      "spent": 0,
+      "blocks": [],
+      "project": "p_m7qpuz93",
+      "prio": 1,
+      "kind": "deadline",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": true,
+      "created": "2026-10-05T14:17:30.453Z",
+      "updated": "2026-10-05T14:17:30.453Z",
+      "doneAt": null,
+      "src": "chat"
+    },
     "t_3ev797ab": {
       "id": "t_3ev797ab",
       "title": "RSA methods",
@@ -1082,6 +1168,30 @@
       "updated": "2026-09-13T17:00:00.000Z",
       "doneAt": "2026-09-13T17:00:00.000Z",
       "src": "import"
+    },
+    "t_5nyn860s": {
+      "id": "t_5nyn860s",
+      "title": "Lily's birthday",
+      "cat": "personal",
+      "status": "todo",
+      "due": "2026-10-16",
+      "time": null,
+      "plan": null,
+      "est": 0,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "deadline",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-05T14:17:14.119Z",
+      "updated": "2026-10-05T14:17:14.119Z",
+      "doneAt": null,
+      "src": "chat"
     },
     "t_60a77spl": {
       "id": "t_60a77spl",
@@ -1203,6 +1313,30 @@
       "doneAt": "2026-07-30T17:00:00.000Z",
       "src": "import"
     },
+    "t_70o15587": {
+      "id": "t_70o15587",
+      "title": "Fold + put away laundry",
+      "cat": "home",
+      "status": "todo",
+      "due": null,
+      "time": null,
+      "plan": "2026-10-05",
+      "est": 15,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-05T14:17:31.662Z",
+      "updated": "2026-10-05T14:17:31.662Z",
+      "doneAt": null,
+      "src": "chat"
+    },
     "t_7mndmbp3": {
       "id": "t_7mndmbp3",
       "title": "Clinical notes",
@@ -1275,6 +1409,30 @@
       "doneAt": "2026-09-28T17:00:00.000Z",
       "src": "import"
     },
+    "t_8frv9vmq": {
+      "id": "t_8frv9vmq",
+      "title": "Multivar assignment 5",
+      "cat": "multivar",
+      "status": "done",
+      "due": null,
+      "time": null,
+      "plan": null,
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-05T14:17:30.719Z",
+      "updated": "2026-10-05T14:17:30.865Z",
+      "doneAt": "2026-10-05T14:17:30.865Z",
+      "src": "chat"
+    },
     "t_8zpmocd1": {
       "id": "t_8zpmocd1",
       "title": "RSA app sections 6/7",
@@ -1298,6 +1456,30 @@
       "updated": "2026-08-27T17:00:00.000Z",
       "doneAt": "2026-08-27T17:00:00.000Z",
       "src": "import"
+    },
+    "t_9028028n": {
+      "id": "t_9028028n",
+      "title": "Lily gift: order or buy it",
+      "cat": "personal",
+      "status": "todo",
+      "due": null,
+      "time": null,
+      "plan": "2026-10-10",
+      "est": 20,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-05T14:17:13.846Z",
+      "updated": "2026-10-05T14:17:13.846Z",
+      "doneAt": null,
+      "src": "chat"
     },
     "t_9re4i0kn": {
       "id": "t_9re4i0kn",
@@ -1352,7 +1534,7 @@
       "title": "ABCD review meeting",
       "cat": "manuscripts",
       "status": "todo",
-      "due": "2026-09-28",
+      "due": "2026-11-01",
       "time": null,
       "plan": null,
       "est": null,
@@ -1363,11 +1545,11 @@
       "kind": "meeting",
       "notes": "",
       "subs": [],
-      "triage": true,
+      "triage": false,
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T04:00:00.000Z",
+      "updated": "2026-10-05T14:17:13.404Z",
       "doneAt": null,
       "src": "import"
     },
@@ -1467,6 +1649,30 @@
       "doneAt": "2026-09-01T17:00:00.000Z",
       "src": "import"
     },
+    "t_bgaw290s": {
+      "id": "t_bgaw290s",
+      "title": "AI pres: convert voice transcripts",
+      "cat": "gradroles",
+      "status": "todo",
+      "due": null,
+      "time": null,
+      "plan": "2026-10-07",
+      "est": 45,
+      "spent": 0,
+      "blocks": [],
+      "project": "p_m7qpuz93",
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-05T14:17:30.009Z",
+      "updated": "2026-10-05T14:17:30.009Z",
+      "doneAt": null,
+      "src": "chat"
+    },
     "t_brother": {
       "id": "t_brother",
       "title": "Send items to little brother",
@@ -1490,6 +1696,52 @@
       "updated": "2026-10-05T04:00:00.000Z",
       "doneAt": null,
       "src": "import"
+    },
+    "t_cdhxbtfb": {
+      "id": "t_cdhxbtfb",
+      "title": "AI pres: build slides + plan, send out",
+      "cat": "gradroles",
+      "status": "todo",
+      "due": "2026-10-15",
+      "time": null,
+      "plan": null,
+      "est": 180,
+      "spent": 0,
+      "blocks": [
+        {
+          "id": "b_im3js1kf",
+          "d": "2026-10-06",
+          "m": 60,
+          "done": false,
+          "auto": true
+        },
+        {
+          "id": "b_o1yq2x2n",
+          "d": "2026-10-09",
+          "m": 60,
+          "done": false,
+          "auto": true
+        },
+        {
+          "id": "b_vl6dl2g5",
+          "d": "2026-10-12",
+          "m": 60,
+          "done": false,
+          "auto": true
+        }
+      ],
+      "project": "p_m7qpuz93",
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-05T14:17:30.295Z",
+      "updated": "2026-10-05T14:17:36.237Z",
+      "doneAt": null,
+      "src": "chat"
     },
     "t_cerd8psv": {
       "id": "t_cerd8psv",
@@ -1757,7 +2009,7 @@
     },
     "t_emailnyx": {
       "id": "t_emailnyx",
-      "title": "Email Nyx: set up RSA meeting",
+      "title": "Email Nyx: reschedule RSA meeting (data issues)",
       "cat": "rsa",
       "status": "todo",
       "due": null,
@@ -1775,7 +2027,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T04:00:00.000Z",
+      "updated": "2026-10-05T14:17:31.027Z",
       "doneAt": null,
       "src": "import"
     },
@@ -1851,6 +2103,46 @@
       "doneAt": "2026-09-02T17:00:00.000Z",
       "src": "import"
     },
+    "t_ff9fmzh1": {
+      "id": "t_ff9fmzh1",
+      "title": "Clinical notes (3 behind)",
+      "cat": "psc",
+      "status": "todo",
+      "due": null,
+      "time": null,
+      "plan": "2026-10-05",
+      "est": 60,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 2,
+      "kind": "task",
+      "notes": "",
+      "subs": [
+        {
+          "id": "s1",
+          "t": "Note 1 (oldest)",
+          "done": false
+        },
+        {
+          "id": "s2",
+          "t": "Note 2",
+          "done": false
+        },
+        {
+          "id": "s3",
+          "t": "Note 3",
+          "done": false
+        }
+      ],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-05T14:17:31.806Z",
+      "updated": "2026-10-05T14:17:32.198Z",
+      "doneAt": null,
+      "src": "chat"
+    },
     "t_finalms": {
       "id": "t_finalms",
       "title": "Finalize manuscripts",
@@ -1922,6 +2214,30 @@
       "updated": "2026-08-07T17:00:00.000Z",
       "doneAt": "2026-08-07T17:00:00.000Z",
       "src": "import"
+    },
+    "t_g00i7nop": {
+      "id": "t_g00i7nop",
+      "title": "Digitize Sam's speech",
+      "cat": "random",
+      "status": "todo",
+      "due": null,
+      "time": null,
+      "plan": null,
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-05T14:17:14.384Z",
+      "updated": "2026-10-05T14:17:14.384Z",
+      "doneAt": null,
+      "src": "chat"
     },
     "t_g0ll4yzm": {
       "id": "t_g0ll4yzm",
@@ -2503,7 +2819,7 @@
       "id": "t_mvasgn4",
       "title": "Multivar assignment 4",
       "cat": "multivar",
-      "status": "todo",
+      "status": "done",
       "due": "2026-09-25",
       "time": null,
       "plan": null,
@@ -2515,13 +2831,37 @@
       "kind": "deadline",
       "notes": "",
       "subs": [],
-      "triage": true,
+      "triage": false,
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T04:00:00.000Z",
-      "doneAt": null,
+      "updated": "2026-10-05T14:17:30.577Z",
+      "doneAt": "2026-10-05T14:17:30.577Z",
       "src": "import"
+    },
+    "t_myezwqph": {
+      "id": "t_myezwqph",
+      "title": "Lily gift: pick an idea",
+      "cat": "personal",
+      "status": "todo",
+      "due": null,
+      "time": null,
+      "plan": "2026-10-07",
+      "est": 15,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-05T14:17:13.694Z",
+      "updated": "2026-10-05T14:17:13.694Z",
+      "doneAt": null,
+      "src": "chat"
     },
     "t_n5ijohjh": {
       "id": "t_n5ijohjh",
@@ -2650,20 +2990,20 @@
       "status": "todo",
       "due": null,
       "time": null,
-      "plan": "2026-10-06",
+      "plan": null,
       "est": 60,
       "spent": 0,
       "blocks": [],
       "project": null,
       "prio": 1,
       "kind": "task",
-      "notes": "",
+      "notes": "Moved back; date TBD",
       "subs": [],
       "triage": false,
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T04:00:00.000Z",
+      "updated": "2026-10-05T14:17:31.267Z",
       "doneAt": null,
       "src": "import"
     },
@@ -2674,20 +3014,20 @@
       "status": "todo",
       "due": null,
       "time": null,
-      "plan": "2026-09-25",
+      "plan": null,
       "est": null,
       "spent": 0,
       "blocks": [],
       "project": null,
       "prio": 1,
       "kind": "task",
-      "notes": "",
+      "notes": "Nyx meeting moved back; date TBD",
       "subs": [],
-      "triage": true,
+      "triage": false,
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T04:00:00.000Z",
+      "updated": "2026-10-05T14:17:31.153Z",
       "doneAt": null,
       "src": "import"
     },
@@ -2703,15 +3043,22 @@
       "spent": 0,
       "blocks": [
         {
-          "id": "b_kq3p3thz",
-          "d": "2026-10-06",
-          "m": 45,
+          "id": "b_xty7kpav",
+          "d": "2026-10-08",
+          "m": 30,
           "done": false,
           "auto": true
         },
         {
-          "id": "b_u2rc1ckb",
-          "d": "2026-10-11",
+          "id": "b_cjgcz0sr",
+          "d": "2026-10-10",
+          "m": 30,
+          "done": false,
+          "auto": true
+        },
+        {
+          "id": "b_65dgc0w3",
+          "d": "2026-10-12",
           "m": 60,
           "done": false,
           "auto": true
@@ -2719,7 +3066,7 @@
         {
           "id": "b_1njvm0i4",
           "d": "2026-10-15",
-          "m": 75,
+          "m": 60,
           "done": false,
           "auto": true
         }
@@ -2733,7 +3080,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T05:30:39.081Z",
+      "updated": "2026-10-05T14:17:36.237Z",
       "doneAt": null,
       "src": "import"
     },
@@ -2773,9 +3120,16 @@
       "spent": 0,
       "blocks": [
         {
-          "id": "b_n1lw1rfe",
-          "d": "2026-10-08",
-          "m": 60,
+          "id": "b_4mim4e65",
+          "d": "2026-10-10",
+          "m": 40,
+          "done": false,
+          "auto": true
+        },
+        {
+          "id": "b_ppge7md7",
+          "d": "2026-10-11",
+          "m": 20,
           "done": false,
           "auto": true
         }
@@ -2789,7 +3143,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T05:30:39.081Z",
+      "updated": "2026-10-05T14:17:36.237Z",
       "doneAt": null,
       "src": "import"
     },
@@ -2805,22 +3159,22 @@
       "spent": 0,
       "blocks": [
         {
-          "id": "b_dkftwiuf",
-          "d": "2026-10-05",
-          "m": 90,
+          "id": "b_hx5tz56y",
+          "d": "2026-10-06",
+          "m": 45,
           "done": false,
           "auto": true
         },
         {
-          "id": "b_lapcixwq",
-          "d": "2026-10-07",
-          "m": 30,
+          "id": "b_i527khz9",
+          "d": "2026-10-09",
+          "m": 60,
           "done": false,
           "auto": true
         },
         {
-          "id": "b_ctjwfl4h",
-          "d": "2026-10-10",
+          "id": "b_o1rq6rnk",
+          "d": "2026-10-11",
           "m": 60,
           "done": false,
           "auto": true
@@ -2828,7 +3182,7 @@
         {
           "id": "b_uncfqvvs",
           "d": "2026-10-13",
-          "m": 60,
+          "m": 75,
           "done": false,
           "auto": true
         }
@@ -2842,7 +3196,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T05:30:39.081Z",
+      "updated": "2026-10-05T14:17:36.237Z",
       "doneAt": null,
       "src": "import"
     },
@@ -2860,14 +3214,14 @@
         {
           "id": "b_74xgaxz2",
           "d": "2026-10-05",
-          "m": 60,
+          "m": 90,
           "done": false,
           "auto": true
         },
         {
           "id": "b_lc8y9ti9",
           "d": "2026-10-07",
-          "m": 60,
+          "m": 30,
           "done": false,
           "auto": true
         },
@@ -2895,7 +3249,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T05:30:39.081Z",
+      "updated": "2026-10-05T14:17:36.237Z",
       "doneAt": null,
       "src": "import"
     },
@@ -2994,6 +3348,30 @@
       "updated": "2026-08-17T17:00:00.000Z",
       "doneAt": "2026-08-17T17:00:00.000Z",
       "src": "import"
+    },
+    "t_rejru5fr": {
+      "id": "t_rejru5fr",
+      "title": "Lily gift: card + wrap",
+      "cat": "personal",
+      "status": "todo",
+      "due": null,
+      "time": null,
+      "plan": "2026-10-14",
+      "est": 15,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-05T14:17:13.980Z",
+      "updated": "2026-10-05T14:17:13.980Z",
+      "doneAt": null,
+      "src": "chat"
     },
     "t_rqk0lqh6": {
       "id": "t_rqk0lqh6",
@@ -3534,6 +3912,52 @@
       "doneAt": "2026-09-23T17:00:00.000Z",
       "src": "import"
     },
+    "t_vnujsabp": {
+      "id": "t_vnujsabp",
+      "title": "ABCD review prep",
+      "cat": "manuscripts",
+      "status": "todo",
+      "due": "2026-10-31",
+      "time": null,
+      "plan": null,
+      "est": 180,
+      "spent": 0,
+      "blocks": [
+        {
+          "id": "b_ncm3vmim",
+          "d": "2026-10-12",
+          "m": 60,
+          "done": false,
+          "auto": true
+        },
+        {
+          "id": "b_8iw4v1h1",
+          "d": "2026-10-18",
+          "m": 60,
+          "done": false,
+          "auto": true
+        },
+        {
+          "id": "b_imux5si8",
+          "d": "2026-10-24",
+          "m": 60,
+          "done": false,
+          "auto": true
+        }
+      ],
+      "project": null,
+      "prio": 0,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-05T14:17:13.553Z",
+      "updated": "2026-10-05T14:17:36.237Z",
+      "doneAt": null,
+      "src": "chat"
+    },
     "t_w0wwfbzm": {
       "id": "t_w0wwfbzm",
       "title": "RSA results",
@@ -3798,6 +4222,30 @@
       "doneAt": "2026-07-22T17:00:00.000Z",
       "src": "import"
     },
+    "t_yiscxmbk": {
+      "id": "t_yiscxmbk",
+      "title": "Fill out availability for grad department meeting",
+      "cat": "gradroles",
+      "status": "done",
+      "due": null,
+      "time": null,
+      "plan": null,
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "meeting",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-05T14:17:13.160Z",
+      "updated": "2026-10-05T14:17:13.279Z",
+      "doneAt": "2026-10-05T14:17:13.279Z",
+      "src": "chat"
+    },
     "t_yp5czq0q": {
       "id": "t_yp5czq0q",
       "title": "RA tutorial",
@@ -3894,6 +4342,30 @@
       "doneAt": "2026-09-24T17:00:00.000Z",
       "src": "import"
     },
+    "t_zhr60254": {
+      "id": "t_zhr60254",
+      "title": "AI pres: start a Claude Code thread",
+      "cat": "gradroles",
+      "status": "todo",
+      "due": null,
+      "time": null,
+      "plan": "2026-10-08",
+      "est": 30,
+      "spent": 0,
+      "blocks": [],
+      "project": "p_m7qpuz93",
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-05T14:17:30.159Z",
+      "updated": "2026-10-05T14:17:30.159Z",
+      "doneAt": null,
+      "src": "chat"
+    },
     "t_zv9lb6lq": {
       "id": "t_zv9lb6lq",
       "title": "Project upkeep",
@@ -3988,16 +4460,17 @@
       "cat": "home",
       "every": 7,
       "perDay": 1,
-      "last": "2026-09-20",
+      "last": "2026-10-05",
       "start": null,
       "log": [
-        "2026-09-20"
+        "2026-09-20",
+        "2026-10-05"
       ],
       "min": 5,
       "active": true,
       "notes": "",
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T04:00:00.000Z"
+      "updated": "2026-10-05T14:17:31.380Z"
     },
     "c_laundry": {
       "id": "c_laundry",
@@ -4005,17 +4478,18 @@
       "cat": "home",
       "every": 7,
       "perDay": 1,
-      "last": "2026-09-19",
+      "last": "2026-10-05",
       "start": null,
       "log": [
         "2026-08-29",
-        "2026-09-19"
+        "2026-09-19",
+        "2026-10-05"
       ],
       "min": 5,
       "active": true,
       "notes": "",
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T04:00:00.000Z"
+      "updated": "2026-10-05T14:17:31.510Z"
     },
     "c_plants": {
       "id": "c_plants",
@@ -4060,6 +4534,126 @@
       "from": null,
       "to": "active"
     },
+    "a_1gw6jhep": {
+      "id": "a_1gw6jhep",
+      "at": "2026-10-05T14:17:31.662Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_70o15587",
+      "title": "Fold + put away laundry",
+      "from": null,
+      "to": "2026-10-05"
+    },
+    "a_2dytst1f": {
+      "id": "a_2dytst1f",
+      "at": "2026-10-05T14:17:14.119Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_5nyn860s",
+      "title": "Lily's birthday",
+      "from": null,
+      "to": "2026-10-16"
+    },
+    "a_2k2cpb20": {
+      "id": "a_2k2cpb20",
+      "at": "2026-10-05T14:17:13.004Z",
+      "src": "chat",
+      "type": "cat",
+      "ref": "ef",
+      "title": "EF",
+      "from": null,
+      "to": "aliases,note"
+    },
+    "a_2n20mp5b": {
+      "id": "a_2n20mp5b",
+      "at": "2026-10-05T14:17:30.009Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_bgaw290s",
+      "title": "AI pres: convert voice transcripts",
+      "from": null,
+      "to": "2026-10-07"
+    },
+    "a_35tsikm0": {
+      "id": "a_35tsikm0",
+      "at": "2026-10-05T14:17:13.553Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_vnujsabp",
+      "title": "ABCD review prep",
+      "from": null,
+      "to": "2026-10-31"
+    },
+    "a_3kk81m05": {
+      "id": "a_3kk81m05",
+      "at": "2026-10-05T14:17:30.453Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_3e4d9blz",
+      "title": "Department AI presentation",
+      "from": null,
+      "to": "2026-10-19"
+    },
+    "a_538wiuzb": {
+      "id": "a_538wiuzb",
+      "at": "2026-10-05T14:17:30.865Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_8frv9vmq",
+      "title": "Multivar assignment 5",
+      "from": null,
+      "to": null
+    },
+    "a_5lxmzcu4": {
+      "id": "a_5lxmzcu4",
+      "at": "2026-10-05T14:17:31.380Z",
+      "src": "chat",
+      "type": "chore",
+      "ref": "c_groceries",
+      "title": "Grocery run",
+      "from": null,
+      "to": null
+    },
+    "a_7oiedoth": {
+      "id": "a_7oiedoth",
+      "at": "2026-10-05T14:17:30.295Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_cdhxbtfb",
+      "title": "AI pres: build slides + plan, send out",
+      "from": null,
+      "to": "2026-10-15"
+    },
+    "a_7r9nei99": {
+      "id": "a_7r9nei99",
+      "at": "2026-10-05T14:17:36.237Z",
+      "src": "chat",
+      "type": "block",
+      "ref": null,
+      "title": "Auto-plan: 6 tasks",
+      "from": null,
+      "to": "planned"
+    },
+    "a_7zkdt7ra": {
+      "id": "a_7zkdt7ra",
+      "at": "2026-10-05T14:17:30.719Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_8frv9vmq",
+      "title": "Multivar assignment 5",
+      "from": null,
+      "to": null
+    },
+    "a_8nllrbgc": {
+      "id": "a_8nllrbgc",
+      "at": "2026-10-05T14:17:14.242Z",
+      "src": "chat",
+      "type": "cat",
+      "ref": "random",
+      "title": "Random",
+      "from": null,
+      "to": "new"
+    },
     "a_ab1vdls5": {
       "id": "a_ab1vdls5",
       "at": "2026-10-05T05:29:51.592Z",
@@ -4069,6 +4663,126 @@
       "title": "Reschedule dentist",
       "from": null,
       "to": "kind"
+    },
+    "a_bmuhszru": {
+      "id": "a_bmuhszru",
+      "at": "2026-10-05T14:17:31.153Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_nyxprep",
+      "title": "Work out RSA front-to-back before the Nyx meeting",
+      "from": null,
+      "to": "plan,notes,triage"
+    },
+    "a_cfr2osvv": {
+      "id": "a_cfr2osvv",
+      "at": "2026-10-05T14:17:31.027Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_emailnyx",
+      "title": "Email Nyx: reschedule RSA meeting (data issues)",
+      "from": null,
+      "to": "title"
+    },
+    "a_cwm773yd": {
+      "id": "a_cwm773yd",
+      "at": "2026-10-05T14:17:31.510Z",
+      "src": "chat",
+      "type": "chore",
+      "ref": "c_laundry",
+      "title": "Laundry",
+      "from": null,
+      "to": null
+    },
+    "a_da5jb6s4": {
+      "id": "a_da5jb6s4",
+      "at": "2026-10-05T14:17:31.267Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_nyxplan",
+      "title": "Nyx planning",
+      "from": null,
+      "to": "plan,notes"
+    },
+    "a_epvdwcly": {
+      "id": "a_epvdwcly",
+      "at": "2026-10-05T14:17:32.083Z",
+      "src": "chat",
+      "type": "sub",
+      "ref": "t_ff9fmzh1",
+      "title": "Clinical notes (3 behind) / Note 2",
+      "from": null,
+      "to": "added"
+    },
+    "a_gm9clpj5": {
+      "id": "a_gm9clpj5",
+      "at": "2026-10-05T14:17:13.694Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_myezwqph",
+      "title": "Lily gift: pick an idea",
+      "from": null,
+      "to": "2026-10-07"
+    },
+    "a_gxh75gs3": {
+      "id": "a_gxh75gs3",
+      "at": "2026-10-05T14:17:30.159Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_zhr60254",
+      "title": "AI pres: start a Claude Code thread",
+      "from": null,
+      "to": "2026-10-08"
+    },
+    "a_hrsypf5i": {
+      "id": "a_hrsypf5i",
+      "at": "2026-10-05T14:17:21.417Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "p_m7qpuz93",
+      "title": "Department AI presentation",
+      "from": null,
+      "to": null
+    },
+    "a_i000a8bi": {
+      "id": "a_i000a8bi",
+      "at": "2026-10-05T14:17:32.198Z",
+      "src": "chat",
+      "type": "sub",
+      "ref": "t_ff9fmzh1",
+      "title": "Clinical notes (3 behind) / Note 3",
+      "from": null,
+      "to": "added"
+    },
+    "a_jkyq1p24": {
+      "id": "a_jkyq1p24",
+      "at": "2026-10-05T14:17:29.696Z",
+      "src": "chat",
+      "type": "milestone",
+      "ref": "p_m7qpuz93",
+      "title": "Department AI presentation / Slides + plan sent out",
+      "from": null,
+      "to": "added"
+    },
+    "a_jv3m53zo": {
+      "id": "a_jv3m53zo",
+      "at": "2026-10-05T14:17:31.806Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_ff9fmzh1",
+      "title": "Clinical notes (3 behind)",
+      "from": null,
+      "to": "2026-10-05"
+    },
+    "a_l5mf16u9": {
+      "id": "a_l5mf16u9",
+      "at": "2026-10-05T14:17:13.404Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_abcdmeet",
+      "title": "ABCD review meeting",
+      "from": null,
+      "to": "due,triage"
     },
     "a_mur64d0r": {
       "id": "a_mur64d0r",
@@ -4089,6 +4803,106 @@
       "title": "OCD presentation / Read manual + take notes",
       "from": null,
       "to": "todo"
+    },
+    "a_qbkakxf0": {
+      "id": "a_qbkakxf0",
+      "at": "2026-10-05T14:17:13.160Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_yiscxmbk",
+      "title": "Fill out availability for grad department meeting",
+      "from": null,
+      "to": null
+    },
+    "a_sp2i3lbe": {
+      "id": "a_sp2i3lbe",
+      "at": "2026-10-05T14:17:14.384Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_g00i7nop",
+      "title": "Digitize Sam's speech",
+      "from": null,
+      "to": null
+    },
+    "a_v3k24h46": {
+      "id": "a_v3k24h46",
+      "at": "2026-10-05T14:17:13.279Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_yiscxmbk",
+      "title": "Fill out availability for grad department meeting",
+      "from": null,
+      "to": null
+    },
+    "a_vd20tvkg": {
+      "id": "a_vd20tvkg",
+      "at": "2026-10-05T14:17:13.980Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_rejru5fr",
+      "title": "Lily gift: card + wrap",
+      "from": null,
+      "to": "2026-10-14"
+    },
+    "a_vifpgt4f": {
+      "id": "a_vifpgt4f",
+      "at": "2026-10-05T14:17:13.846Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_9028028n",
+      "title": "Lily gift: order or buy it",
+      "from": null,
+      "to": "2026-10-10"
+    },
+    "a_wmxq2qat": {
+      "id": "a_wmxq2qat",
+      "at": "2026-10-05T14:17:29.847Z",
+      "src": "chat",
+      "type": "milestone",
+      "ref": "p_m7qpuz93",
+      "title": "Department AI presentation / Present",
+      "from": null,
+      "to": "added"
+    },
+    "a_xizy3mri": {
+      "id": "a_xizy3mri",
+      "at": "2026-10-05T14:17:29.556Z",
+      "src": "chat",
+      "type": "milestone",
+      "ref": "p_m7qpuz93",
+      "title": "Department AI presentation / Start a Claude Code thread",
+      "from": null,
+      "to": "added"
+    },
+    "a_yorvm1jk": {
+      "id": "a_yorvm1jk",
+      "at": "2026-10-05T14:17:30.577Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_mvasgn4",
+      "title": "Multivar assignment 4",
+      "from": null,
+      "to": null
+    },
+    "a_yr4847gz": {
+      "id": "a_yr4847gz",
+      "at": "2026-10-05T14:17:31.950Z",
+      "src": "chat",
+      "type": "sub",
+      "ref": "t_ff9fmzh1",
+      "title": "Clinical notes (3 behind) / Note 1 (oldest)",
+      "from": null,
+      "to": "added"
+    },
+    "a_ys04mx79": {
+      "id": "a_ys04mx79",
+      "at": "2026-10-05T14:17:29.426Z",
+      "src": "chat",
+      "type": "milestone",
+      "ref": "p_m7qpuz93",
+      "title": "Department AI presentation / Convert voice transcripts",
+      "from": null,
+      "to": "added"
     },
     "a_zf94znkj": {
       "id": "a_zf94znkj",
