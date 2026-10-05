@@ -34,7 +34,7 @@ export const DEFAULT_SETTINGS = Object.freeze({
 
 export const INBOX_CATEGORY = Object.freeze({
   id: 'inbox', name: 'Inbox', group: 'admin', color: '#b0b8c1', glyph: '··',
-  aliases: [], order: 999, note: 'Uncategorized. Claude files these.', archived: false, created: null,
+  aliases: [], order: 999, note: 'Uncategorized. Claude files these.', archived: false, created: '2026-10-05T00:00:00.000Z',
 });
 
 const ID_ALPHABET = '0123456789abcdefghijklmnopqrstuvwxyz';
