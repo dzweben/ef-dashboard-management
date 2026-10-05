@@ -22,12 +22,12 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-05T14:34:53.128Z",
+    "at": "2026-10-05T14:36:41.805Z",
     "headline": "8 things today. Start with: Clinical notes (3 behind) (1h).",
     "lines": [
       "CHORES // Closet reset · Clean first floor · Water plants. Just 5 minutes on Closet reset (48d since last).",
-      "TOMORROW // Tue 10/6 [3h 45m/4h]: RSA: participant data fixes · Start ABCD work for Jason · SPARK docs: SPARK-NM 45m · SPARK docs: task-completion audit script 45m",
-      "DONE // 1 today · streak 8d"
+      "TOMORROW // Tue 10/6 [4h/4h]: RSA: participant data fixes · Start ABCD work for Jason · AI pres: build slides + plan, send out 1h · OCD pres: write main script 45m",
+      "DONE // 2 today · streak 8d"
     ],
     "asks": [
       "Anything coming up for Meetings?",
@@ -35,16 +35,16 @@
     ],
     "focus": [
       "t_ff9fmzh1",
-      "t_emailnyx",
-      "t_dentist"
+      "t_g29xic6w",
+      "t_emailnyx"
     ]
   },
   "clock": {
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-05T14:34:35.955Z",
-    "lastActivitySeen": "2026-10-05T14:34:35.955Z"
+    "lastClaudeSync": "2026-10-05T14:35:55.214Z",
+    "lastActivitySeen": "2026-10-05T14:35:55.214Z"
   },
   "cats": {
     "admin": {
@@ -655,13 +655,20 @@
           "due": "2026-10-21",
           "done": false,
           "doneAt": null
+        },
+        {
+          "id": "m7",
+          "t": "Read Barlow chapter",
+          "due": null,
+          "done": false,
+          "doneAt": null
         }
       ],
       "weeklyHours": null,
       "notes": "",
       "order": 1,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T14:14:33.631Z"
+      "updated": "2026-10-05T14:36:34.044Z"
     },
     "p_predis": {
       "id": "p_predis",
@@ -1326,6 +1333,30 @@
       "doneAt": "2026-07-30T17:00:00.000Z",
       "src": "import"
     },
+    "t_6qjhgro1": {
+      "id": "t_6qjhgro1",
+      "title": "OCD pres: get Barlow chapter",
+      "cat": "cbt",
+      "status": "done",
+      "due": null,
+      "time": null,
+      "plan": null,
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": "p_ocd",
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-05T14:36:33.631Z",
+      "updated": "2026-10-05T14:36:33.747Z",
+      "doneAt": "2026-10-05T14:36:33.747Z",
+      "src": "chat"
+    },
     "t_70o15587": {
       "id": "t_70o15587",
       "title": "Fold + put away laundry",
@@ -1722,6 +1753,13 @@
       "spent": 0,
       "blocks": [
         {
+          "id": "b_1uz5cop3",
+          "d": "2026-10-06",
+          "m": 60,
+          "done": false,
+          "auto": true
+        },
+        {
           "id": "b_o1yq2x2n",
           "d": "2026-10-09",
           "m": 60,
@@ -1729,15 +1767,8 @@
           "auto": true
         },
         {
-          "id": "b_ko3s2t20",
-          "d": "2026-10-11",
-          "m": 60,
-          "done": false,
-          "auto": true
-        },
-        {
-          "id": "b_o9iblf6i",
-          "d": "2026-10-13",
+          "id": "b_s99m4bzj",
+          "d": "2026-10-12",
           "m": 60,
           "done": false,
           "auto": true
@@ -1752,7 +1783,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T14:17:30.295Z",
-      "updated": "2026-10-05T14:34:46.447Z",
+      "updated": "2026-10-05T14:36:34.175Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -2276,6 +2307,30 @@
       "doneAt": "2026-09-01T17:00:00.000Z",
       "src": "import"
     },
+    "t_g29xic6w": {
+      "id": "t_g29xic6w",
+      "title": "OCD pres: read the Barlow chapter",
+      "cat": "cbt",
+      "status": "todo",
+      "due": null,
+      "time": null,
+      "plan": "2026-10-05",
+      "est": 60,
+      "spent": 0,
+      "blocks": [],
+      "project": "p_ocd",
+      "prio": 2,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-05T14:36:33.913Z",
+      "updated": "2026-10-05T14:36:33.913Z",
+      "doneAt": null,
+      "src": "chat"
+    },
     "t_gfzc3z2h": {
       "id": "t_gfzc3z2h",
       "title": "NCVS manuscript session",
@@ -2617,22 +2672,14 @@
       "title": "SPARK docs: task-completion audit script",
       "cat": "sdn",
       "status": "todo",
-      "due": "2026-10-10",
+      "due": null,
       "time": null,
       "plan": null,
-      "est": 45,
+      "est": 20,
       "spent": 0,
-      "blocks": [
-        {
-          "id": "b_vpvy7zcq",
-          "d": "2026-10-06",
-          "m": 45,
-          "done": false,
-          "auto": true
-        }
-      ],
-      "project": "p_e1f8ij8g",
-      "prio": 1,
+      "blocks": [],
+      "project": null,
+      "prio": 0,
       "kind": "writing",
       "notes": "",
       "subs": [],
@@ -2640,7 +2687,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T14:34:46.180Z",
-      "updated": "2026-10-05T14:34:46.447Z",
+      "updated": "2026-10-05T14:36:33.442Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -3081,22 +3128,14 @@
       "title": "SPARK docs: PPI",
       "cat": "sdn",
       "status": "todo",
-      "due": "2026-10-10",
+      "due": null,
       "time": null,
       "plan": null,
-      "est": 45,
+      "est": 20,
       "spent": 0,
-      "blocks": [
-        {
-          "id": "b_o534wxck",
-          "d": "2026-10-05",
-          "m": 45,
-          "done": false,
-          "auto": true
-        }
-      ],
-      "project": "p_e1f8ij8g",
-      "prio": 1,
+      "blocks": [],
+      "project": null,
+      "prio": 0,
       "kind": "writing",
       "notes": "",
       "subs": [],
@@ -3104,7 +3143,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T14:34:45.734Z",
-      "updated": "2026-10-05T14:34:46.447Z",
+      "updated": "2026-10-05T14:36:33.083Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -3170,14 +3209,7 @@
         {
           "id": "b_bog560wi",
           "d": "2026-10-09",
-          "m": 30,
-          "done": false,
-          "auto": true
-        },
-        {
-          "id": "b_65dgc0w3",
-          "d": "2026-10-12",
-          "m": 30,
+          "m": 45,
           "done": false,
           "auto": true
         },
@@ -3191,7 +3223,7 @@
         {
           "id": "b_xip1g5i3",
           "d": "2026-10-16",
-          "m": 60,
+          "m": 75,
           "done": false,
           "auto": true
         }
@@ -3205,7 +3237,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T14:34:46.447Z",
+      "updated": "2026-10-05T14:36:34.175Z",
       "doneAt": null,
       "src": "import"
     },
@@ -3245,8 +3277,8 @@
       "spent": 0,
       "blocks": [
         {
-          "id": "b_whry25o1",
-          "d": "2026-10-12",
+          "id": "b_qthof9hx",
+          "d": "2026-10-10",
           "m": 60,
           "done": false,
           "auto": true
@@ -3261,7 +3293,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T14:34:46.447Z",
+      "updated": "2026-10-05T14:36:34.175Z",
       "doneAt": null,
       "src": "import"
     },
@@ -3277,29 +3309,43 @@
       "spent": 0,
       "blocks": [
         {
+          "id": "b_ts935d3j",
+          "d": "2026-10-06",
+          "m": 45,
+          "done": false,
+          "auto": true
+        },
+        {
+          "id": "b_8e8jwgzh",
+          "d": "2026-10-07",
+          "m": 30,
+          "done": false,
+          "auto": true
+        },
+        {
+          "id": "b_88izoxtk",
+          "d": "2026-10-08",
+          "m": 30,
+          "done": false,
+          "auto": true
+        },
+        {
           "id": "b_i527khz9",
           "d": "2026-10-09",
-          "m": 90,
+          "m": 15,
           "done": false,
           "auto": true
         },
         {
           "id": "b_o1rq6rnk",
           "d": "2026-10-11",
-          "m": 30,
+          "m": 60,
           "done": false,
           "auto": true
         },
         {
           "id": "b_uncfqvvs",
           "d": "2026-10-13",
-          "m": 60,
-          "done": false,
-          "auto": true
-        },
-        {
-          "id": "b_dbzqhv3q",
-          "d": "2026-10-14",
           "m": 60,
           "done": false,
           "auto": true
@@ -3314,7 +3360,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T14:34:46.447Z",
+      "updated": "2026-10-05T14:36:34.175Z",
       "doneAt": null,
       "src": "import"
     },
@@ -3330,22 +3376,22 @@
       "spent": 60,
       "blocks": [
         {
+          "id": "b_deuu88mm",
+          "d": "2026-10-05",
+          "m": 40,
+          "done": false,
+          "auto": true
+        },
+        {
           "id": "b_lc8y9ti9",
           "d": "2026-10-07",
-          "m": 90,
+          "m": 60,
           "done": false,
           "auto": true
         },
         {
-          "id": "b_32cu2kzu",
-          "d": "2026-10-08",
-          "m": 30,
-          "done": false,
-          "auto": true
-        },
-        {
-          "id": "b_1xgqwzmn",
-          "d": "2026-10-10",
+          "id": "b_jvnigp76",
+          "d": "2026-10-09",
           "m": 60,
           "done": false,
           "auto": true
@@ -3353,7 +3399,7 @@
         {
           "id": "b_num34lzs",
           "d": "2026-10-11",
-          "m": 60,
+          "m": 80,
           "done": false,
           "auto": true
         }
@@ -3367,7 +3413,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T14:34:46.447Z",
+      "updated": "2026-10-05T14:36:34.175Z",
       "doneAt": null,
       "src": "import"
     },
@@ -3939,22 +3985,14 @@
       "title": "SPARK docs: SPARK-RSA",
       "cat": "sdn",
       "status": "todo",
-      "due": "2026-10-10",
+      "due": null,
       "time": null,
       "plan": null,
-      "est": 45,
+      "est": 20,
       "spent": 0,
-      "blocks": [
-        {
-          "id": "b_s4b6vakb",
-          "d": "2026-10-05",
-          "m": 45,
-          "done": false,
-          "auto": true
-        }
-      ],
-      "project": "p_e1f8ij8g",
-      "prio": 1,
+      "blocks": [],
+      "project": null,
+      "prio": 0,
       "kind": "writing",
       "notes": "",
       "subs": [],
@@ -3962,7 +4000,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T14:34:45.895Z",
-      "updated": "2026-10-05T14:34:46.447Z",
+      "updated": "2026-10-05T14:36:33.195Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -4137,22 +4175,14 @@
       "title": "SPARK docs: SPARK-NM",
       "cat": "sdn",
       "status": "todo",
-      "due": "2026-10-10",
+      "due": null,
       "time": null,
       "plan": null,
-      "est": 45,
+      "est": 20,
       "spent": 0,
-      "blocks": [
-        {
-          "id": "b_1bdkptkh",
-          "d": "2026-10-06",
-          "m": 45,
-          "done": false,
-          "auto": true
-        }
-      ],
-      "project": "p_e1f8ij8g",
-      "prio": 1,
+      "blocks": [],
+      "project": null,
+      "prio": 0,
       "kind": "writing",
       "notes": "",
       "subs": [],
@@ -4160,7 +4190,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T14:34:46.028Z",
-      "updated": "2026-10-05T14:34:46.447Z",
+      "updated": "2026-10-05T14:36:33.318Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -4716,6 +4746,16 @@
       "from": null,
       "to": "active"
     },
+    "a_131eea89": {
+      "id": "a_131eea89",
+      "at": "2026-10-05T14:36:33.913Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_g29xic6w",
+      "title": "OCD pres: read the Barlow chapter",
+      "from": null,
+      "to": "2026-10-05"
+    },
     "a_1gw6jhep": {
       "id": "a_1gw6jhep",
       "at": "2026-10-05T14:17:31.662Z",
@@ -4806,6 +4846,16 @@
       "from": null,
       "to": null
     },
+    "a_6xc783jb": {
+      "id": "a_6xc783jb",
+      "at": "2026-10-05T14:36:33.318Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_wi5bybtk",
+      "title": "SPARK docs: SPARK-NM",
+      "from": null,
+      "to": "due,est,prio,project,blocks"
+    },
     "a_7oiedoth": {
       "id": "a_7oiedoth",
       "at": "2026-10-05T14:17:30.295Z",
@@ -4855,6 +4905,16 @@
       "title": "Random",
       "from": null,
       "to": "new"
+    },
+    "a_8t986jas": {
+      "id": "a_8t986jas",
+      "at": "2026-10-05T14:36:33.195Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_uk9l5qyj",
+      "title": "SPARK docs: SPARK-RSA",
+      "from": null,
+      "to": "due,est,prio,project,blocks"
     },
     "a_ab1vdls5": {
       "id": "a_ab1vdls5",
@@ -4996,6 +5056,16 @@
       "from": null,
       "to": "project"
     },
+    "a_jkr27d2i": {
+      "id": "a_jkr27d2i",
+      "at": "2026-10-05T14:36:34.044Z",
+      "src": "chat",
+      "type": "milestone",
+      "ref": "p_ocd",
+      "title": "OCD presentation / Read Barlow chapter",
+      "from": null,
+      "to": "added"
+    },
     "a_jkyq1p24": {
       "id": "a_jkyq1p24",
       "at": "2026-10-05T14:17:29.696Z",
@@ -5076,6 +5146,26 @@
       "from": null,
       "to": "2026-10-10"
     },
+    "a_pb9ss73m": {
+      "id": "a_pb9ss73m",
+      "at": "2026-10-05T14:36:33.747Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_6qjhgro1",
+      "title": "OCD pres: get Barlow chapter",
+      "from": null,
+      "to": null
+    },
+    "a_pinpjj08": {
+      "id": "a_pinpjj08",
+      "at": "2026-10-05T14:36:33.083Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_nt657niu",
+      "title": "SPARK docs: PPI",
+      "from": null,
+      "to": "due,est,prio,project,blocks"
+    },
     "a_pw0zmaso": {
       "id": "a_pw0zmaso",
       "at": "2026-10-05T14:34:45.027Z",
@@ -5123,6 +5213,16 @@
       "type": "add",
       "ref": "p_e1f8ij8g",
       "title": "SPARK grant update",
+      "from": null,
+      "to": null
+    },
+    "a_rphn1squ": {
+      "id": "a_rphn1squ",
+      "at": "2026-10-05T14:36:33.631Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_6qjhgro1",
+      "title": "OCD pres: get Barlow chapter",
       "from": null,
       "to": null
     },
@@ -5196,6 +5296,16 @@
       "from": null,
       "to": "2026-10-14"
     },
+    "a_vg3kpwsu": {
+      "id": "a_vg3kpwsu",
+      "at": "2026-10-05T14:36:34.175Z",
+      "src": "chat",
+      "type": "block",
+      "ref": null,
+      "title": "Auto-plan: 5 tasks",
+      "from": null,
+      "to": "planned"
+    },
     "a_vifpgt4f": {
       "id": "a_vifpgt4f",
       "at": "2026-10-05T14:17:13.846Z",
@@ -5215,6 +5325,16 @@
       "title": "Department AI presentation / Present",
       "from": null,
       "to": "added"
+    },
+    "a_wp33fmbu": {
+      "id": "a_wp33fmbu",
+      "at": "2026-10-05T14:36:33.442Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_js7mae0q",
+      "title": "SPARK docs: task-completion audit script",
+      "from": null,
+      "to": "due,est,prio,project,blocks"
     },
     "a_xizy3mri": {
       "id": "a_xizy3mri",
