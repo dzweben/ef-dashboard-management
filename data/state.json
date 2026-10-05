@@ -2736,7 +2736,7 @@
       "id": "t_johanna",
       "title": "Add notes from Johanna's meeting to RSA",
       "cat": "rsa",
-      "status": "todo",
+      "status": "done",
       "due": null,
       "time": null,
       "plan": "2026-10-05",
@@ -2752,8 +2752,8 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T04:00:00.000Z",
-      "doneAt": null,
+      "updated": "2026-10-05T19:21:43.987Z",
+      "doneAt": "2026-10-05T19:21:43.987Z",
       "src": "import"
     },
     "t_jqx4n2sn": {
@@ -5249,6 +5249,16 @@
       "title": "SPARK docs: SPARK-NM",
       "from": null,
       "to": "due,est,prio,project,blocks"
+    },
+    "a_7mc0nftn": {
+      "id": "a_7mc0nftn",
+      "at": "2026-10-05T19:21:43.987Z",
+      "src": "dash",
+      "type": "done",
+      "ref": "t_johanna",
+      "title": "Add notes from Johanna's meeting to RSA",
+      "from": null,
+      "to": null
     },
     "a_7oiedoth": {
       "id": "a_7oiedoth",
