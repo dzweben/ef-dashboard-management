@@ -23,7 +23,7 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-05T16:13:53.550Z",
+    "at": "2026-10-05T16:28:10.808Z",
     "headline": "6 things today. Start with: Clinical notes (3 behind) (1h).",
     "lines": [
       "CHORES // Closet reset · Clean first floor · Water plants. Most overdue: Closet reset (48d since last).",
@@ -44,8 +44,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-05T16:12:41.993Z",
-    "lastActivitySeen": "2026-10-05T16:12:41.993Z"
+    "lastClaudeSync": "2026-10-05T16:28:08.633Z",
+    "lastActivitySeen": "2026-10-05T16:28:08.633Z"
   },
   "cats": {
     "admin": {
@@ -4788,6 +4788,23 @@
       "created": "2026-10-05T04:00:00.000Z",
       "updated": "2026-10-05T14:19:45.936Z"
     },
+    "c_k6mbnv2u": {
+      "id": "c_k6mbnv2u",
+      "title": "TUBRIC LinkedIn post",
+      "cat": "tubric",
+      "every": 7,
+      "perDay": 1,
+      "last": "2026-10-05",
+      "start": null,
+      "log": [
+        "2026-10-05"
+      ],
+      "min": 5,
+      "active": true,
+      "notes": "",
+      "created": "2026-10-05T16:28:10.441Z",
+      "updated": "2026-10-05T16:28:10.551Z"
+    },
     "c_laundry": {
       "id": "c_laundry",
       "title": "Laundry",
@@ -5059,6 +5076,16 @@
       "title": "SPARK docs: SPARK-RSA",
       "from": null,
       "to": "due,est,prio,project,blocks"
+    },
+    "a_9pm1ahgw": {
+      "id": "a_9pm1ahgw",
+      "at": "2026-10-05T16:28:10.441Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "c_k6mbnv2u",
+      "title": "TUBRIC LinkedIn post",
+      "from": null,
+      "to": "every 7d"
     },
     "a_ab1vdls5": {
       "id": "a_ab1vdls5",
@@ -5579,6 +5606,16 @@
       "title": "Department AI presentation / Convert voice transcripts",
       "from": null,
       "to": "added"
+    },
+    "a_zbpimpd5": {
+      "id": "a_zbpimpd5",
+      "at": "2026-10-05T16:28:10.551Z",
+      "src": "chat",
+      "type": "chore",
+      "ref": "c_k6mbnv2u",
+      "title": "TUBRIC LinkedIn post",
+      "from": null,
+      "to": null
     },
     "a_zf94znkj": {
       "id": "a_zf94znkj",
