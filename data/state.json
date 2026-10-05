@@ -2409,12 +2409,18 @@
       "prio": 2,
       "kind": "task",
       "notes": "",
-      "subs": [],
+      "subs": [
+        {
+          "id": "s1",
+          "t": "pages 1-10",
+          "done": false
+        }
+      ],
       "triage": false,
       "moved": 0,
       "win": false,
       "created": "2026-10-05T14:36:33.913Z",
-      "updated": "2026-10-05T14:36:33.913Z",
+      "updated": "2026-10-05T19:54:47.465Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -6029,6 +6035,16 @@
       "title": "SPARK docs: task-completion audit script",
       "from": null,
       "to": "due,est,prio,project,blocks"
+    },
+    "a_wvqfq8vf": {
+      "id": "a_wvqfq8vf",
+      "at": "2026-10-05T19:54:47.465Z",
+      "src": "dash",
+      "type": "sub",
+      "ref": "t_g29xic6w",
+      "title": "OCD pres: read the Barlow chapter / pages 1-10",
+      "from": null,
+      "to": "added"
     },
     "a_x196b213": {
       "id": "a_x196b213",
