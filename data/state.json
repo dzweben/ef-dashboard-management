@@ -2398,7 +2398,7 @@
       "id": "t_g29xic6w",
       "title": "OCD pres: read the Barlow chapter",
       "cat": "cbt",
-      "status": "todo",
+      "status": "done",
       "due": null,
       "time": null,
       "plan": "2026-10-05",
@@ -2429,14 +2429,19 @@
           "id": "s4",
           "t": "pages 30-40",
           "done": false
+        },
+        {
+          "id": "s5",
+          "t": "pages 40-50",
+          "done": false
         }
       ],
       "triage": false,
       "moved": 0,
       "win": false,
       "created": "2026-10-05T14:36:33.913Z",
-      "updated": "2026-10-05T19:54:57.925Z",
-      "doneAt": null,
+      "updated": "2026-10-05T19:55:03.453Z",
+      "doneAt": "2026-10-05T19:55:03.453Z",
       "src": "chat"
     },
     "t_gfzc3z2h": {
@@ -5101,6 +5106,16 @@
       "from": null,
       "to": "2026-10-06"
     },
+    "a_0y3gxqdw": {
+      "id": "a_0y3gxqdw",
+      "at": "2026-10-05T19:55:01.458Z",
+      "src": "dash",
+      "type": "sub",
+      "ref": "t_g29xic6w",
+      "title": "OCD pres: read the Barlow chapter / pages 40-50",
+      "from": null,
+      "to": "added"
+    },
     "a_1035a7a5": {
       "id": "a_1035a7a5",
       "at": "2026-10-05T19:19:21.914Z",
@@ -5930,6 +5945,16 @@
       "title": "RSA front-to-back for Nyx: finish + full review / First half of the analyses",
       "from": null,
       "to": "added"
+    },
+    "a_ronavla8": {
+      "id": "a_ronavla8",
+      "at": "2026-10-05T19:55:03.453Z",
+      "src": "dash",
+      "type": "done",
+      "ref": "t_g29xic6w",
+      "title": "OCD pres: read the Barlow chapter",
+      "from": null,
+      "to": null
     },
     "a_rphn1squ": {
       "id": "a_rphn1squ",
