@@ -38,6 +38,15 @@ function ctxOf(state, ctx) {
 
 const noop = (state) => ({ state, writes: [], activity: [] });
 
+/** An ISO timestamp that falls at midday of local day `d` in `tz` (16:00Z is 11am–noon in US zones). */
+function backdatedAt(d, tz) {
+  for (const hh of ['16', '12', '20', '08']) {
+    const iso = `${d}T${hh}:00:00.000Z`;
+    if (localDateOf(iso, tz) === d) return iso;
+  }
+  return `${d}T12:00:00.000Z`;
+}
+
 function entry(state, col, id) {
   if (typeof id !== 'string' || !id) return null;
   const coll = state?.[col];
@@ -382,12 +391,27 @@ export function addTask(state, partial = {}, ctx = {}) {
 }
 
 /** status → done, doneAt → now, triage cleared. Already done → no-op. */
+/**
+ * Mark a task done. `on` ("YYYY-MM-DD", not after today) backdates the completion
+ * to midday of that local day, so streaks and the heatmap show when it really
+ * happened. On an already-done task, `on` just moves its completion day.
+ */
 export function completeTask(state, args = {}, ctx = {}) {
   const c = ctxOf(state, ctx);
-  const t = entry(state, 'tasks', obj(args).id);
-  if (!t || t.status === 'done') return noop(state);
+  const a = obj(args);
+  const t = entry(state, 'tasks', a.id);
+  if (!t) return noop(state);
+  const on = isISODate(a.on) && a.on <= c.today ? a.on : null;
+  const doneAt = on && on !== c.today ? backdatedAt(on, c.tz) : c.now;
+  if (t.status === 'done') {
+    if (!on || (t.doneAt && localDateOf(t.doneAt, c.tz) === on)) return noop(state);
+    const tx = new Tx(state, c);
+    tx.update('tasks', t.id, { doneAt, updated: c.now });
+    tx.log('edit', t.id, t.title, null, 'doneAt');
+    return tx.result();
+  }
   const tx = new Tx(state, c);
-  const data = { status: 'done', doneAt: c.now, updated: c.now };
+  const data = { status: 'done', doneAt, updated: c.now };
   if (t.triage) data.triage = false;
   tx.update('tasks', t.id, data);
   tx.log('done', t.id, t.title);

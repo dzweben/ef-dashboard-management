@@ -665,3 +665,22 @@ test('CLI-6: a failed pull does not advance lastClaudeSync and fails fast (no re
   assert.match(sync.stdout, /pull failed/);
   assert.equal(JSON.parse(localText(S)).sync.lastClaudeSync, before);
 });
+
+test('done --on backdates a completion; on a done task it moves the day', () => {
+  const f = fixture();
+  ef(f, 'done', 'dentist', '--on', '2026-10-03');
+  const t = read(f).tasks.t_dentist;
+  assert.equal(t.status, 'done');
+  assert.equal(t.doneAt.slice(0, 10), '2026-10-03');
+  ef(f, 'done', 'dentist', '--on', 'yesterday');
+  assert.equal(read(f).tasks.t_dentist.doneAt.slice(0, 10), '2026-10-04');
+  assert.throws(() => ef(f, 'done', 'participant data', '--on', 'tomorrow'), (err) => err.status === 1);
+});
+
+test('chore done --on logs the real day without moving last backwards', () => {
+  const f = fixture();
+  ef(f, 'chore', 'done', 'laundry', '--on', '2026-10-03');
+  const c = read(f).chores.c_laundry;
+  assert.equal(c.last, '2026-10-03');
+  assert.deepEqual(c.log.slice(-2), ['2026-09-19', '2026-10-03']);
+});

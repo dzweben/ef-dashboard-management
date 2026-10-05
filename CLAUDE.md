@@ -88,6 +88,8 @@ A lone `-` reads the words from stdin for the other commands too
 | several lines / a dump | one to-do per line with `ef add - <<'EOF'`; split compound lines ("email tom and sam" → two) only when they're clearly separate actions |
 | `RSA intro by fri, ~3h` | `ef add 'RSA intro by fri ~3h'` then `ef plan` |
 | `done with X` / `finished X` / `X ✓` | `ef done 'X'` |
+| `I did X` / `did X this weekend` / `finished X last week` | `ef done 'X' --on <day>` (backdate, see "Danny's preferences") |
+| `did laundry saturday` | `ef chore done 'laundry' --on sat` |
 | `push X to thursday` / `move X` | `ef move 'X' thu` |
 | `drop X` / `not doing X` | `ef drop 'X'` |
 | `X happened` / `X didn't happen` (triage) | `ef done 'X'` / `ef move 'X' <date>` or `ef drop 'X'` |
@@ -111,6 +113,19 @@ Dates: weekday names mean the next one after today ("fri"); `next fri` means
 Friday of next week; `10/12` is this year unless that's >60 days ago. All in
 `America/New_York`. When Danny gives a time ("3pm"), it's a meeting/appointment
 time. "by X" / "due X" sets a deadline; "- X" / "on X" / "@X" sets the do-day.
+
+## Danny's preferences (he told you; follow them)
+
+- **Backdate what he already did.** When he says he did something, log it on
+  the day it happened with `--on` (`ef done 'X' --on fri`, `ef chore done
+  'laundry' --on sun`). If he's vague ("this weekend", "last week", a list of
+  things he got done), spread them across a couple of plausible previous days
+  rather than stacking them all on today. Today only when he says today.
+- **Ziggy walks are not tracked** as a chore (paused on his request).
+- **EF = executive functioning.**
+- **"Random"** is his catch-all category for misc personal to-dos.
+- The repo stays **public** by his choice: keep every stored word safe to
+  publish (see Privacy rules).
 
 ## How to be the front end
 

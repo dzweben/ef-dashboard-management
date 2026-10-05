@@ -767,7 +767,7 @@ Every chat turn:
 Capture + edit:
   ef add 'email mike - tomorrow' [--plan D] [--due D] [--cat id] [--est 30m] [--time 3pm] [--prio 0-3|low|normal|high|critical] [--project id] [--notes txt]
   ef add - <<'EOF'              one to-do per line from stdin (nothing in it is shell-expanded)
-  ef done <task>                ef undo <task>          ef drop <task>          ef delete <task>
+  ef done <task> [--on D]       ef undo <task>          ef drop <task>          ef delete <task>
   ef move <task> <date>         (dates: tomorrow, fri, next mon, 10/12, in 3 days...)
   ef edit <task> [--title t] [--cat id] [--due D|none] [--plan D|none] [--time 3pm|none] [--est 1h|none] [--prio n] [--notes t] [--project id|none] [--triage yes|no] [--win yes|no]
   ef sub <task> 'subtask' [--est 30m]    ef subdone <task> <n|text>
@@ -779,7 +779,7 @@ Look:
   ef projects   ef chores   ef cats   ef stats   ef changes [--since ISO]
 
 Chores, clock, categories, projects, settings:
-  ef chore add 'title' --every 7 [--per-day 2] [--cat id] [--min 5]   ef chore done <chore>   ef chore edit <chore> --every N
+  ef chore add 'title' --every 7 [--per-day 2] [--cat id] [--min 5]   ef chore done <chore> [--on D]   ef chore edit <chore> --every N
   ef clock in <task id|chore id|words> [--goal 5] [--free]   ef clock out [--done]   ef clock
   ef cat add 'Name' [--group research|clinical|coursework|teaching|service|admin|life] [--alias a,b] [--color #hex]
   ef cat edit <id> [--name n] [--color #hex] [--group g] [--alias a,b] [--archive yes|no]
@@ -909,10 +909,12 @@ async function main() {
     case 'undo':
     case 'drop':
     case 'delete': {
-      const t = findTask(state, pos.join(' '), cmd === 'undo' ? 'done' : cmd === 'delete' ? 'any' : 'todo');
+      const on = cmd === 'done' && flags.on ? dateArg(flags.on, today, 'date') : null;
+      if (on && on > today) die(`--on ${fmtDay(on)} is in the future`);
+      const t = findTask(state, pos.join(' '), cmd === 'undo' ? 'done' : cmd === 'delete' || on ? 'any' : 'todo');
       const op = { done: 'completeTask', undo: 'reopenTask', drop: 'dropTask', delete: 'deleteTask' }[cmd];
-      mustChange(apply(op, { id: t.id }), `${t.title} is already ${t.status}`);
-      console.log(`${cmd}: ${t.title}`);
+      mustChange(apply(op, on ? { id: t.id, on } : { id: t.id }), on ? `${t.title} is already done on ${fmtDay(on)}` : `${t.title} is already ${t.status}`);
+      console.log(`${cmd}: ${t.title}${on && on !== today ? ` (on ${fmtDay(on)})` : ''}`);
       break;
     }
 
@@ -1079,8 +1081,10 @@ async function main() {
         console.log(`chore added: ${title}`);
       } else if (sub === 'done') {
         const c = findIn(state.chores, r.join(' '), 'chore');
-        mustChange(apply('choreDone', { id: c.id }), `could not mark ${c.title} done`);
-        console.log(`♺ ${c.title} done`);
+        const on = flags.on ? dateArg(flags.on, today, 'date') : null;
+        if (on && on > today) die(`--on ${fmtDay(on)} is in the future`);
+        mustChange(apply('choreDone', on ? { id: c.id, date: on } : { id: c.id }), `could not mark ${c.title} done`);
+        console.log(`♺ ${c.title} done${on && on !== today ? ` (on ${fmtDay(on)})` : ''}`);
       } else if (sub === 'edit') {
         const c = findIn(state.chores, r.join(' '), 'chore');
         const patch = {};
