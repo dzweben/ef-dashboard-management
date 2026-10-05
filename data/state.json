@@ -16,13 +16,14 @@
     "maxBlock": 120,
     "minBlock": 30,
     "prefBlock": 60,
+    "overbookAt": 1.35,
     "defaultEst": 20,
     "horizon": 14,
     "offDays": [],
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-05T16:12:44.146Z",
+    "at": "2026-10-05T16:13:53.550Z",
     "headline": "6 things today. Start with: Clinical notes (3 behind) (1h).",
     "lines": [
       "CHORES // Closet reset · Clean first floor · Water plants. Most overdue: Closet reset (48d since last).",
