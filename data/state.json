@@ -22,18 +22,16 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-05T14:33:18.102Z",
+    "at": "2026-10-05T14:34:53.128Z",
     "headline": "8 things today. Start with: Clinical notes (3 behind) (1h).",
     "lines": [
       "CHORES // Closet reset · Clean first floor · Water plants. Just 5 minutes on Closet reset (48d since last).",
-      "TOMORROW // Tue 10/6 [4h/4h]: RSA: participant data fixes · Start ABCD work for Jason · AI pres: build slides + plan, send out 1h · OCD pres: write main script 45m",
-      "DONE // 1 today · streak 3d"
+      "TOMORROW // Tue 10/6 [3h 45m/4h]: RSA: participant data fixes · Start ABCD work for Jason · SPARK docs: SPARK-NM 45m · SPARK docs: task-completion audit script 45m",
+      "DONE // 1 today · streak 8d"
     ],
     "asks": [
-      "Did 'DTI: fix icons' happen?",
-      "Did 'SPARK: neuromelanin GLM + 3dMVM script for Ronan' happen?",
-      "Anything coming up for Ziggy?",
-      "Anything coming up for Undergrad?"
+      "Anything coming up for Meetings?",
+      "Anything coming up for Ziggy?"
     ],
     "focus": [
       "t_ff9fmzh1",
@@ -45,8 +43,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-05T14:33:10.948Z",
-    "lastActivitySeen": "2026-10-05T14:33:10.948Z"
+    "lastClaudeSync": "2026-10-05T14:34:35.955Z",
+    "lastActivitySeen": "2026-10-05T14:34:35.955Z"
   },
   "cats": {
     "admin": {
@@ -547,6 +545,21 @@
       "order": 3,
       "created": "2026-10-05T04:00:00.000Z",
       "updated": "2026-10-05T04:00:00.000Z"
+    },
+    "p_e1f8ij8g": {
+      "id": "p_e1f8ij8g",
+      "name": "SPARK grant update",
+      "cat": "sdn",
+      "kind": "project",
+      "status": "active",
+      "due": "2026-10-10",
+      "goal": "Grant update due Sat 10/10: SPARK analyses + documentation",
+      "milestones": [],
+      "weeklyHours": null,
+      "notes": "",
+      "order": 0,
+      "created": "2026-10-05T14:34:37.560Z",
+      "updated": "2026-10-05T14:34:37.560Z"
     },
     "p_m7qpuz93": {
       "id": "p_m7qpuz93",
@@ -1709,13 +1722,6 @@
       "spent": 0,
       "blocks": [
         {
-          "id": "b_im3js1kf",
-          "d": "2026-10-06",
-          "m": 60,
-          "done": false,
-          "auto": true
-        },
-        {
           "id": "b_o1yq2x2n",
           "d": "2026-10-09",
           "m": 60,
@@ -1723,8 +1729,15 @@
           "auto": true
         },
         {
-          "id": "b_vl6dl2g5",
-          "d": "2026-10-12",
+          "id": "b_ko3s2t20",
+          "d": "2026-10-11",
+          "m": 60,
+          "done": false,
+          "auto": true
+        },
+        {
+          "id": "b_o9iblf6i",
+          "d": "2026-10-13",
           "m": 60,
           "done": false,
           "auto": true
@@ -1739,7 +1752,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T14:17:30.295Z",
-      "updated": "2026-10-05T14:17:36.237Z",
+      "updated": "2026-10-05T14:34:46.447Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -1915,7 +1928,7 @@
       "id": "t_dticons",
       "title": "DTI: fix icons",
       "cat": "dti",
-      "status": "todo",
+      "status": "done",
       "due": null,
       "time": null,
       "plan": "2026-09-29",
@@ -1927,12 +1940,12 @@
       "kind": "task",
       "notes": "",
       "subs": [],
-      "triage": true,
+      "triage": false,
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T04:00:00.000Z",
-      "doneAt": null,
+      "updated": "2026-10-05T14:34:44.751Z",
+      "doneAt": "2026-09-29T16:00:00.000Z",
       "src": "import"
     },
     "t_dx5ujiog": {
@@ -2311,6 +2324,30 @@
       "doneAt": "2026-07-07T17:00:00.000Z",
       "src": "import"
     },
+    "t_gwaqz2l9": {
+      "id": "t_gwaqz2l9",
+      "title": "SPARK PPI meeting with Teij",
+      "cat": "sdn",
+      "status": "done",
+      "due": null,
+      "time": null,
+      "plan": null,
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": "p_e1f8ij8g",
+      "prio": 1,
+      "kind": "meeting",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-05T14:34:45.477Z",
+      "updated": "2026-10-05T14:34:45.595Z",
+      "doneAt": "2026-10-02T16:00:00.000Z",
+      "src": "chat"
+    },
     "t_h6mjmt89": {
       "id": "t_h6mjmt89",
       "title": "Multivar assignment 1",
@@ -2575,6 +2612,38 @@
       "doneAt": "2026-08-21T17:00:00.000Z",
       "src": "import"
     },
+    "t_js7mae0q": {
+      "id": "t_js7mae0q",
+      "title": "SPARK docs: task-completion audit script",
+      "cat": "sdn",
+      "status": "todo",
+      "due": "2026-10-10",
+      "time": null,
+      "plan": null,
+      "est": 45,
+      "spent": 0,
+      "blocks": [
+        {
+          "id": "b_vpvy7zcq",
+          "d": "2026-10-06",
+          "m": 45,
+          "done": false,
+          "auto": true
+        }
+      ],
+      "project": "p_e1f8ij8g",
+      "prio": 1,
+      "kind": "writing",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-05T14:34:46.180Z",
+      "updated": "2026-10-05T14:34:46.447Z",
+      "doneAt": null,
+      "src": "chat"
+    },
     "t_k6pyokni": {
       "id": "t_k6pyokni",
       "title": "Meet with coauthors + plan journal",
@@ -2646,6 +2715,30 @@
       "updated": "2026-07-16T17:00:00.000Z",
       "doneAt": "2026-07-16T17:00:00.000Z",
       "src": "import"
+    },
+    "t_l0tfthj9": {
+      "id": "t_l0tfthj9",
+      "title": "SPARK grant update",
+      "cat": "sdn",
+      "status": "todo",
+      "due": "2026-10-10",
+      "time": null,
+      "plan": null,
+      "est": 0,
+      "spent": 0,
+      "blocks": [],
+      "project": "p_e1f8ij8g",
+      "prio": 1,
+      "kind": "deadline",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": true,
+      "created": "2026-10-05T14:34:46.312Z",
+      "updated": "2026-10-05T14:34:46.312Z",
+      "doneAt": null,
+      "src": "chat"
     },
     "t_l6x0bsiu": {
       "id": "t_l6x0bsiu",
@@ -2983,6 +3076,38 @@
       "doneAt": "2026-08-07T17:00:00.000Z",
       "src": "import"
     },
+    "t_nt657niu": {
+      "id": "t_nt657niu",
+      "title": "SPARK docs: PPI",
+      "cat": "sdn",
+      "status": "todo",
+      "due": "2026-10-10",
+      "time": null,
+      "plan": null,
+      "est": 45,
+      "spent": 0,
+      "blocks": [
+        {
+          "id": "b_o534wxck",
+          "d": "2026-10-05",
+          "m": 45,
+          "done": false,
+          "auto": true
+        }
+      ],
+      "project": "p_e1f8ij8g",
+      "prio": 1,
+      "kind": "writing",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-05T14:34:45.734Z",
+      "updated": "2026-10-05T14:34:46.447Z",
+      "doneAt": null,
+      "src": "chat"
+    },
     "t_nyxplan": {
       "id": "t_nyxplan",
       "title": "Nyx planning",
@@ -3043,15 +3168,8 @@
       "spent": 0,
       "blocks": [
         {
-          "id": "b_xty7kpav",
-          "d": "2026-10-08",
-          "m": 30,
-          "done": false,
-          "auto": true
-        },
-        {
-          "id": "b_cjgcz0sr",
-          "d": "2026-10-10",
+          "id": "b_bog560wi",
+          "d": "2026-10-09",
           "m": 30,
           "done": false,
           "auto": true
@@ -3059,13 +3177,20 @@
         {
           "id": "b_65dgc0w3",
           "d": "2026-10-12",
+          "m": 30,
+          "done": false,
+          "auto": true
+        },
+        {
+          "id": "b_ta1r0fzs",
+          "d": "2026-10-13",
           "m": 60,
           "done": false,
           "auto": true
         },
         {
-          "id": "b_1njvm0i4",
-          "d": "2026-10-15",
+          "id": "b_xip1g5i3",
+          "d": "2026-10-16",
           "m": 60,
           "done": false,
           "auto": true
@@ -3080,7 +3205,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T14:17:36.237Z",
+      "updated": "2026-10-05T14:34:46.447Z",
       "doneAt": null,
       "src": "import"
     },
@@ -3120,16 +3245,9 @@
       "spent": 0,
       "blocks": [
         {
-          "id": "b_4mim4e65",
-          "d": "2026-10-10",
-          "m": 40,
-          "done": false,
-          "auto": true
-        },
-        {
-          "id": "b_ppge7md7",
-          "d": "2026-10-11",
-          "m": 20,
+          "id": "b_whry25o1",
+          "d": "2026-10-12",
+          "m": 60,
           "done": false,
           "auto": true
         }
@@ -3143,7 +3261,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T14:17:36.237Z",
+      "updated": "2026-10-05T14:34:46.447Z",
       "doneAt": null,
       "src": "import"
     },
@@ -3159,30 +3277,30 @@
       "spent": 0,
       "blocks": [
         {
-          "id": "b_hx5tz56y",
-          "d": "2026-10-06",
-          "m": 45,
-          "done": false,
-          "auto": true
-        },
-        {
           "id": "b_i527khz9",
           "d": "2026-10-09",
-          "m": 60,
+          "m": 90,
           "done": false,
           "auto": true
         },
         {
           "id": "b_o1rq6rnk",
           "d": "2026-10-11",
-          "m": 60,
+          "m": 30,
           "done": false,
           "auto": true
         },
         {
           "id": "b_uncfqvvs",
           "d": "2026-10-13",
-          "m": 75,
+          "m": 60,
+          "done": false,
+          "auto": true
+        },
+        {
+          "id": "b_dbzqhv3q",
+          "d": "2026-10-14",
+          "m": 60,
           "done": false,
           "auto": true
         }
@@ -3196,7 +3314,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T14:17:36.237Z",
+      "updated": "2026-10-05T14:34:46.447Z",
       "doneAt": null,
       "src": "import"
     },
@@ -3212,22 +3330,22 @@
       "spent": 60,
       "blocks": [
         {
-          "id": "b_74xgaxz2",
-          "d": "2026-10-05",
+          "id": "b_lc8y9ti9",
+          "d": "2026-10-07",
           "m": 90,
           "done": false,
           "auto": true
         },
         {
-          "id": "b_lc8y9ti9",
-          "d": "2026-10-07",
+          "id": "b_32cu2kzu",
+          "d": "2026-10-08",
           "m": 30,
           "done": false,
           "auto": true
         },
         {
-          "id": "b_1lruuqcd",
-          "d": "2026-10-09",
+          "id": "b_1xgqwzmn",
+          "d": "2026-10-10",
           "m": 60,
           "done": false,
           "auto": true
@@ -3249,7 +3367,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T14:17:36.237Z",
+      "updated": "2026-10-05T14:34:46.447Z",
       "doneAt": null,
       "src": "import"
     },
@@ -3580,24 +3698,24 @@
       "id": "t_sparkglm",
       "title": "SPARK: neuromelanin GLM + 3dMVM script for Ronan",
       "cat": "sdn",
-      "status": "todo",
+      "status": "done",
       "due": null,
       "time": null,
       "plan": "2026-09-29",
       "est": null,
       "spent": 0,
       "blocks": [],
-      "project": null,
+      "project": "p_e1f8ij8g",
       "prio": 1,
       "kind": "analysis",
       "notes": "",
       "subs": [],
-      "triage": true,
+      "triage": false,
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T04:00:00.000Z",
-      "doneAt": null,
+      "updated": "2026-10-05T14:34:45.027Z",
+      "doneAt": "2026-09-30T16:00:00.000Z",
       "src": "import"
     },
     "t_sugrc3qs": {
@@ -3674,16 +3792,16 @@
     },
     "t_teij": {
       "id": "t_teij",
-      "title": "Set up a meeting with Teij",
-      "cat": "meetings",
-      "status": "todo",
+      "title": "Set up SPARK PPI meeting with Teij",
+      "cat": "sdn",
+      "status": "done",
       "due": null,
       "time": null,
       "plan": "2026-10-05",
       "est": 10,
       "spent": 0,
       "blocks": [],
-      "project": null,
+      "project": "p_e1f8ij8g",
       "prio": 1,
       "kind": "email",
       "notes": "",
@@ -3692,8 +3810,8 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T04:00:00.000Z",
-      "doneAt": null,
+      "updated": "2026-10-05T14:34:45.286Z",
+      "doneAt": "2026-10-01T16:00:00.000Z",
       "src": "import"
     },
     "t_tubricscan": {
@@ -3815,6 +3933,38 @@
       "updated": "2026-07-22T17:00:00.000Z",
       "doneAt": "2026-07-22T17:00:00.000Z",
       "src": "import"
+    },
+    "t_uk9l5qyj": {
+      "id": "t_uk9l5qyj",
+      "title": "SPARK docs: SPARK-RSA",
+      "cat": "sdn",
+      "status": "todo",
+      "due": "2026-10-10",
+      "time": null,
+      "plan": null,
+      "est": 45,
+      "spent": 0,
+      "blocks": [
+        {
+          "id": "b_s4b6vakb",
+          "d": "2026-10-05",
+          "m": 45,
+          "done": false,
+          "auto": true
+        }
+      ],
+      "project": "p_e1f8ij8g",
+      "prio": 1,
+      "kind": "writing",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-05T14:34:45.895Z",
+      "updated": "2026-10-05T14:34:46.447Z",
+      "doneAt": null,
+      "src": "chat"
     },
     "t_upnjc4gk": {
       "id": "t_upnjc4gk",
@@ -3981,6 +4131,38 @@
       "updated": "2026-08-04T17:00:00.000Z",
       "doneAt": "2026-08-04T17:00:00.000Z",
       "src": "import"
+    },
+    "t_wi5bybtk": {
+      "id": "t_wi5bybtk",
+      "title": "SPARK docs: SPARK-NM",
+      "cat": "sdn",
+      "status": "todo",
+      "due": "2026-10-10",
+      "time": null,
+      "plan": null,
+      "est": 45,
+      "spent": 0,
+      "blocks": [
+        {
+          "id": "b_1bdkptkh",
+          "d": "2026-10-06",
+          "m": 45,
+          "done": false,
+          "auto": true
+        }
+      ],
+      "project": "p_e1f8ij8g",
+      "prio": 1,
+      "kind": "writing",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-05T14:34:46.028Z",
+      "updated": "2026-10-05T14:34:46.447Z",
+      "doneAt": null,
+      "src": "chat"
     },
     "t_wk2w6pwr": {
       "id": "t_wk2w6pwr",
@@ -4594,6 +4776,16 @@
       "from": null,
       "to": "2026-10-19"
     },
+    "a_49sdqtli": {
+      "id": "a_49sdqtli",
+      "at": "2026-10-05T14:34:44.751Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_dticons",
+      "title": "DTI: fix icons",
+      "from": null,
+      "to": null
+    },
     "a_538wiuzb": {
       "id": "a_538wiuzb",
       "at": "2026-10-05T14:17:30.865Z",
@@ -4694,6 +4886,16 @@
       "from": null,
       "to": "title"
     },
+    "a_cuwkz7f4": {
+      "id": "a_cuwkz7f4",
+      "at": "2026-10-05T14:34:45.286Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_teij",
+      "title": "Set up SPARK PPI meeting with Teij",
+      "from": null,
+      "to": null
+    },
     "a_cwm773yd": {
       "id": "a_cwm773yd",
       "at": "2026-10-05T14:17:31.510Z",
@@ -4724,6 +4926,16 @@
       "from": null,
       "to": "added"
     },
+    "a_g0dxbq09": {
+      "id": "a_g0dxbq09",
+      "at": "2026-10-05T14:34:45.165Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_teij",
+      "title": "Set up SPARK PPI meeting with Teij",
+      "from": null,
+      "to": "title,cat,project"
+    },
     "a_gm9clpj5": {
       "id": "a_gm9clpj5",
       "at": "2026-10-05T14:17:13.694Z",
@@ -4733,6 +4945,16 @@
       "title": "Lily gift: pick an idea",
       "from": null,
       "to": "2026-10-07"
+    },
+    "a_gp0ifrqh": {
+      "id": "a_gp0ifrqh",
+      "at": "2026-10-05T14:34:45.895Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_uk9l5qyj",
+      "title": "SPARK docs: SPARK-RSA",
+      "from": null,
+      "to": "2026-10-10"
     },
     "a_gxh75gs3": {
       "id": "a_gxh75gs3",
@@ -4763,6 +4985,16 @@
       "title": "Clinical notes (3 behind) / Note 3",
       "from": null,
       "to": "added"
+    },
+    "a_ie3ax8oy": {
+      "id": "a_ie3ax8oy",
+      "at": "2026-10-05T14:34:44.886Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_sparkglm",
+      "title": "SPARK: neuromelanin GLM + 3dMVM script for Ronan",
+      "from": null,
+      "to": "project"
     },
     "a_jkyq1p24": {
       "id": "a_jkyq1p24",
@@ -4804,6 +5036,16 @@
       "from": null,
       "to": "due,triage"
     },
+    "a_m8k6y0g5": {
+      "id": "a_m8k6y0g5",
+      "at": "2026-10-05T14:34:46.028Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_wi5bybtk",
+      "title": "SPARK docs: SPARK-NM",
+      "from": null,
+      "to": "2026-10-10"
+    },
     "a_mur64d0r": {
       "id": "a_mur64d0r",
       "at": "2026-10-05T05:29:51.713Z",
@@ -4824,6 +5066,26 @@
       "from": null,
       "to": "todo"
     },
+    "a_okfzn01o": {
+      "id": "a_okfzn01o",
+      "at": "2026-10-05T14:34:45.734Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_nt657niu",
+      "title": "SPARK docs: PPI",
+      "from": null,
+      "to": "2026-10-10"
+    },
+    "a_pw0zmaso": {
+      "id": "a_pw0zmaso",
+      "at": "2026-10-05T14:34:45.027Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_sparkglm",
+      "title": "SPARK: neuromelanin GLM + 3dMVM script for Ronan",
+      "from": null,
+      "to": null
+    },
     "a_q3523u1d": {
       "id": "a_q3523u1d",
       "at": "2026-10-05T14:19:45.616Z",
@@ -4841,6 +5103,26 @@
       "type": "add",
       "ref": "t_yiscxmbk",
       "title": "Fill out availability for grad department meeting",
+      "from": null,
+      "to": null
+    },
+    "a_qkpq4c0n": {
+      "id": "a_qkpq4c0n",
+      "at": "2026-10-05T14:34:46.447Z",
+      "src": "chat",
+      "type": "block",
+      "ref": null,
+      "title": "Auto-plan: 9 tasks",
+      "from": null,
+      "to": "planned"
+    },
+    "a_r5hwqpz7": {
+      "id": "a_r5hwqpz7",
+      "at": "2026-10-05T14:34:37.560Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "p_e1f8ij8g",
+      "title": "SPARK grant update",
       "from": null,
       "to": null
     },
@@ -4863,6 +5145,36 @@
       "title": "Multivar assignment 4",
       "from": null,
       "to": "doneAt"
+    },
+    "a_t3nafgzw": {
+      "id": "a_t3nafgzw",
+      "at": "2026-10-05T14:34:45.595Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_gwaqz2l9",
+      "title": "SPARK PPI meeting with Teij",
+      "from": null,
+      "to": null
+    },
+    "a_tzrgt1im": {
+      "id": "a_tzrgt1im",
+      "at": "2026-10-05T14:34:46.180Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_js7mae0q",
+      "title": "SPARK docs: task-completion audit script",
+      "from": null,
+      "to": "2026-10-10"
+    },
+    "a_unxbdn3k": {
+      "id": "a_unxbdn3k",
+      "at": "2026-10-05T14:34:45.477Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_gwaqz2l9",
+      "title": "SPARK PPI meeting with Teij",
+      "from": null,
+      "to": null
     },
     "a_v3k24h46": {
       "id": "a_v3k24h46",
@@ -4913,6 +5225,16 @@
       "title": "Department AI presentation / Start a Claude Code thread",
       "from": null,
       "to": "added"
+    },
+    "a_y6558ve2": {
+      "id": "a_y6558ve2",
+      "at": "2026-10-05T14:34:46.312Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_l0tfthj9",
+      "title": "SPARK grant update",
+      "from": null,
+      "to": "2026-10-10"
     },
     "a_yorvm1jk": {
       "id": "a_yorvm1jk",
