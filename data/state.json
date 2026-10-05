@@ -22,12 +22,12 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-05T14:43:29.235Z",
-    "headline": "8 things today. Start with: Clinical notes (3 behind) (1h).",
+    "at": "2026-10-05T16:07:55.801Z",
+    "headline": "6 things today. Start with: Clinical notes (3 behind) (1h).",
     "lines": [
       "CHORES // Closet reset · Clean first floor · Water plants. Most overdue: Closet reset (48d since last).",
-      "TOMORROW // Tue 10/6 [4h/4h]: RSA: participant data fixes · Start ABCD work for Jason · AI pres: build slides + plan, send out 1h · OCD pres: write main script 45m",
-      "DONE // 2 today · streak 8d"
+      "TOMORROW // Tue 10/6 [4h/4h]: Email Johanna: full LEARN breakdown (issues we ran into) · RSA: participant data fixes · Start ABCD work for Jason · OCD pres: build workshop 1h",
+      "DONE // 5 today · streak 8d"
     ],
     "asks": [
       "Anything coming up for Meetings?",
@@ -36,15 +36,15 @@
     "focus": [
       "t_ff9fmzh1",
       "t_g29xic6w",
-      "t_emailnyx"
+      "t_dentist"
     ]
   },
   "clock": {
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-05T14:42:20.149Z",
-    "lastActivitySeen": "2026-10-05T14:42:20.149Z"
+    "lastClaudeSync": "2026-10-05T16:07:44.171Z",
+    "lastActivitySeen": "2026-10-05T16:07:44.171Z"
   },
   "cats": {
     "admin": {
@@ -237,6 +237,20 @@
       "note": "Uncategorized. Claude files these.",
       "archived": false,
       "created": "2026-10-05T04:19:46.423Z"
+    },
+    "learn": {
+      "id": "learn",
+      "name": "LEARN",
+      "group": "research",
+      "color": "#3ccfce",
+      "glyph": "LE",
+      "aliases": [
+        "learn"
+      ],
+      "order": 19,
+      "note": "",
+      "archived": false,
+      "created": "2026-10-05T16:07:45.982Z"
     },
     "manuscripts": {
       "id": "manuscripts",
@@ -1165,6 +1179,30 @@
       "doneAt": "2026-09-25T17:00:00.000Z",
       "src": "import"
     },
+    "t_4dz0f3k6": {
+      "id": "t_4dz0f3k6",
+      "title": "Follow up with Nyx if no reply",
+      "cat": "rsa",
+      "status": "todo",
+      "due": null,
+      "time": null,
+      "plan": "2026-10-08",
+      "est": 10,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "email",
+      "notes": "Emailed 10/5 about rescheduling the RSA meeting",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-05T16:07:46.945Z",
+      "updated": "2026-10-05T16:07:46.945Z",
+      "doneAt": null,
+      "src": "chat"
+    },
     "t_5e8u0jdk": {
       "id": "t_5e8u0jdk",
       "title": "RA tutorial debugging",
@@ -1378,6 +1416,30 @@
       "win": false,
       "created": "2026-10-05T14:17:31.662Z",
       "updated": "2026-10-05T14:17:31.662Z",
+      "doneAt": null,
+      "src": "chat"
+    },
+    "t_7e8sndnw": {
+      "id": "t_7e8sndnw",
+      "title": "Email Johanna: full LEARN breakdown (issues we ran into)",
+      "cat": "learn",
+      "status": "todo",
+      "due": null,
+      "time": null,
+      "plan": "2026-10-06",
+      "est": 45,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "email",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-05T16:07:46.135Z",
+      "updated": "2026-10-05T16:07:46.135Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -1753,15 +1815,15 @@
       "spent": 0,
       "blocks": [
         {
-          "id": "b_1uz5cop3",
-          "d": "2026-10-06",
+          "id": "b_ntjqin7i",
+          "d": "2026-10-07",
           "m": 60,
           "done": false,
           "auto": true
         },
         {
-          "id": "b_o1yq2x2n",
-          "d": "2026-10-09",
+          "id": "b_gtmz6xxu",
+          "d": "2026-10-10",
           "m": 60,
           "done": false,
           "auto": true
@@ -1783,7 +1845,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T14:17:30.295Z",
-      "updated": "2026-10-05T14:36:34.175Z",
+      "updated": "2026-10-05T16:07:52.027Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -2031,7 +2093,7 @@
       "id": "t_emailjason",
       "title": "Email Jason: follow up + reschedule Visit 1",
       "cat": "manuscripts",
-      "status": "todo",
+      "status": "done",
       "due": null,
       "time": null,
       "plan": "2026-10-05",
@@ -2047,15 +2109,15 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T04:00:00.000Z",
-      "doneAt": null,
+      "updated": "2026-10-05T16:07:46.554Z",
+      "doneAt": "2026-10-05T16:07:46.554Z",
       "src": "import"
     },
     "t_emailnyx": {
       "id": "t_emailnyx",
       "title": "Email Nyx: reschedule RSA meeting (data issues)",
       "cat": "rsa",
-      "status": "todo",
+      "status": "done",
       "due": null,
       "time": null,
       "plan": "2026-10-05",
@@ -2071,8 +2133,8 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T14:17:31.027Z",
-      "doneAt": null,
+      "updated": "2026-10-05T16:07:46.679Z",
+      "doneAt": "2026-10-05T16:07:46.679Z",
       "src": "import"
     },
     "t_enouah9n": {
@@ -2498,6 +2560,30 @@
       "updated": "2026-07-08T17:00:00.000Z",
       "doneAt": "2026-07-08T17:00:00.000Z",
       "src": "import"
+    },
+    "t_irm5bjiz": {
+      "id": "t_irm5bjiz",
+      "title": "Email Eunice about the chapter",
+      "cat": "cbt",
+      "status": "done",
+      "due": null,
+      "time": null,
+      "plan": null,
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": "p_ocd",
+      "prio": 1,
+      "kind": "email",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-05T16:07:46.288Z",
+      "updated": "2026-10-05T16:07:46.434Z",
+      "doneAt": "2026-10-05T16:07:46.434Z",
+      "src": "chat"
     },
     "t_ivvtdg0q": {
       "id": "t_ivvtdg0q",
@@ -3209,7 +3295,14 @@
         {
           "id": "b_bog560wi",
           "d": "2026-10-09",
-          "m": 45,
+          "m": 30,
+          "done": false,
+          "auto": true
+        },
+        {
+          "id": "b_d44xlzu5",
+          "d": "2026-10-11",
+          "m": 30,
           "done": false,
           "auto": true
         },
@@ -3223,7 +3316,7 @@
         {
           "id": "b_xip1g5i3",
           "d": "2026-10-16",
-          "m": 75,
+          "m": 60,
           "done": false,
           "auto": true
         }
@@ -3237,7 +3330,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T14:36:34.175Z",
+      "updated": "2026-10-05T16:07:52.027Z",
       "doneAt": null,
       "src": "import"
     },
@@ -3277,8 +3370,8 @@
       "spent": 0,
       "blocks": [
         {
-          "id": "b_qthof9hx",
-          "d": "2026-10-10",
+          "id": "b_w1sez76b",
+          "d": "2026-10-11",
           "m": 60,
           "done": false,
           "auto": true
@@ -3293,7 +3386,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T14:36:34.175Z",
+      "updated": "2026-10-05T16:07:52.027Z",
       "doneAt": null,
       "src": "import"
     },
@@ -3309,13 +3402,6 @@
       "spent": 0,
       "blocks": [
         {
-          "id": "b_ts935d3j",
-          "d": "2026-10-06",
-          "m": 45,
-          "done": false,
-          "auto": true
-        },
-        {
           "id": "b_8e8jwgzh",
           "d": "2026-10-07",
           "m": 30,
@@ -3323,29 +3409,22 @@
           "auto": true
         },
         {
-          "id": "b_88izoxtk",
-          "d": "2026-10-08",
-          "m": 30,
-          "done": false,
-          "auto": true
-        },
-        {
           "id": "b_i527khz9",
           "d": "2026-10-09",
-          "m": 15,
+          "m": 90,
           "done": false,
           "auto": true
         },
         {
-          "id": "b_o1rq6rnk",
-          "d": "2026-10-11",
+          "id": "b_9ckwamp5",
+          "d": "2026-10-12",
           "m": 60,
           "done": false,
           "auto": true
         },
         {
-          "id": "b_uncfqvvs",
-          "d": "2026-10-13",
+          "id": "b_mlhs0acb",
+          "d": "2026-10-14",
           "m": 60,
           "done": false,
           "auto": true
@@ -3360,7 +3439,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T14:36:34.175Z",
+      "updated": "2026-10-05T16:07:52.027Z",
       "doneAt": null,
       "src": "import"
     },
@@ -3378,13 +3457,13 @@
         {
           "id": "b_deuu88mm",
           "d": "2026-10-05",
-          "m": 40,
+          "m": 60,
           "done": false,
           "auto": true
         },
         {
-          "id": "b_lc8y9ti9",
-          "d": "2026-10-07",
+          "id": "b_t1q8ayt4",
+          "d": "2026-10-06",
           "m": 60,
           "done": false,
           "auto": true
@@ -3399,7 +3478,7 @@
         {
           "id": "b_num34lzs",
           "d": "2026-10-11",
-          "m": 80,
+          "m": 60,
           "done": false,
           "auto": true
         }
@@ -3413,7 +3492,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T14:36:34.175Z",
+      "updated": "2026-10-05T16:07:52.027Z",
       "doneAt": null,
       "src": "import"
     },
@@ -3534,6 +3613,30 @@
       "win": false,
       "created": "2026-10-05T14:17:13.980Z",
       "updated": "2026-10-05T14:17:13.980Z",
+      "doneAt": null,
+      "src": "chat"
+    },
+    "t_rkse0ib5": {
+      "id": "t_rkse0ib5",
+      "title": "Follow up with Jason if no reply",
+      "cat": "manuscripts",
+      "status": "todo",
+      "due": null,
+      "time": null,
+      "plan": "2026-10-08",
+      "est": 10,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "email",
+      "notes": "Emailed 10/5: follow up + reschedule Visit 1",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-05T16:07:46.811Z",
+      "updated": "2026-10-05T16:07:46.811Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -4746,6 +4849,26 @@
       "from": null,
       "to": "active"
     },
+    "a_0fhkzyno": {
+      "id": "a_0fhkzyno",
+      "at": "2026-10-05T16:07:46.945Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_4dz0f3k6",
+      "title": "Follow up with Nyx if no reply",
+      "from": null,
+      "to": "2026-10-08"
+    },
+    "a_0rq9xp0z": {
+      "id": "a_0rq9xp0z",
+      "at": "2026-10-05T16:07:46.135Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_7e8sndnw",
+      "title": "Email Johanna: full LEARN breakdown (issues we ran into)",
+      "from": null,
+      "to": "2026-10-06"
+    },
     "a_131eea89": {
       "id": "a_131eea89",
       "at": "2026-10-05T14:36:33.913Z",
@@ -4805,6 +4928,16 @@
       "title": "ABCD review prep",
       "from": null,
       "to": "2026-10-31"
+    },
+    "a_3antmo5h": {
+      "id": "a_3antmo5h",
+      "at": "2026-10-05T16:07:46.434Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_irm5bjiz",
+      "title": "Email Eunice about the chapter",
+      "from": null,
+      "to": null
     },
     "a_3kk81m05": {
       "id": "a_3kk81m05",
@@ -4875,6 +5008,16 @@
       "title": "Auto-plan: 6 tasks",
       "from": null,
       "to": "planned"
+    },
+    "a_7ydwya5u": {
+      "id": "a_7ydwya5u",
+      "at": "2026-10-05T16:07:46.679Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_emailnyx",
+      "title": "Email Nyx: reschedule RSA meeting (data issues)",
+      "from": null,
+      "to": null
     },
     "a_7zkdt7ra": {
       "id": "a_7zkdt7ra",
@@ -4975,6 +5118,26 @@
       "title": "Nyx planning",
       "from": null,
       "to": "plan,notes"
+    },
+    "a_e42b40da": {
+      "id": "a_e42b40da",
+      "at": "2026-10-05T16:07:46.554Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_emailjason",
+      "title": "Email Jason: follow up + reschedule Visit 1",
+      "from": null,
+      "to": null
+    },
+    "a_e5m1br10": {
+      "id": "a_e5m1br10",
+      "at": "2026-10-05T16:07:46.288Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_irm5bjiz",
+      "title": "Email Eunice about the chapter",
+      "from": null,
+      "to": null
     },
     "a_epvdwcly": {
       "id": "a_epvdwcly",
@@ -5096,6 +5259,16 @@
       "from": null,
       "to": "2026-10-05"
     },
+    "a_l2hzj14y": {
+      "id": "a_l2hzj14y",
+      "at": "2026-10-05T16:07:46.811Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_rkse0ib5",
+      "title": "Follow up with Jason if no reply",
+      "from": null,
+      "to": "2026-10-08"
+    },
     "a_l5mf16u9": {
       "id": "a_l5mf16u9",
       "at": "2026-10-05T14:17:13.404Z",
@@ -5135,6 +5308,16 @@
       "title": "OCD presentation / Read manual + take notes",
       "from": null,
       "to": "todo"
+    },
+    "a_nl1iba23": {
+      "id": "a_nl1iba23",
+      "at": "2026-10-05T16:07:45.982Z",
+      "src": "chat",
+      "type": "cat",
+      "ref": "learn",
+      "title": "LEARN",
+      "from": null,
+      "to": "new"
     },
     "a_okfzn01o": {
       "id": "a_okfzn01o",
@@ -5195,6 +5378,16 @@
       "title": "Fill out availability for grad department meeting",
       "from": null,
       "to": null
+    },
+    "a_qdclajqv": {
+      "id": "a_qdclajqv",
+      "at": "2026-10-05T16:07:52.027Z",
+      "src": "chat",
+      "type": "block",
+      "ref": null,
+      "title": "Auto-plan: 5 tasks",
+      "from": null,
+      "to": "planned"
     },
     "a_qkpq4c0n": {
       "id": "a_qkpq4c0n",
