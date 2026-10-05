@@ -543,8 +543,8 @@
           "id": "m1",
           "t": "Read manual + take notes",
           "due": null,
-          "done": true,
-          "doneAt": "2026-09-02T17:00:00.000Z"
+          "done": false,
+          "doneAt": null
         },
         {
           "id": "m2",
@@ -586,7 +586,7 @@
       "notes": "",
       "order": 1,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T04:00:00.000Z"
+      "updated": "2026-10-05T14:14:33.631Z"
     },
     "p_predis": {
       "id": "p_predis",
@@ -4069,6 +4069,16 @@
       "title": "Auto-plan: 4 tasks",
       "from": null,
       "to": "planned"
+    },
+    "a_nj430qnj": {
+      "id": "a_nj430qnj",
+      "at": "2026-10-05T14:14:33.631Z",
+      "src": "dash",
+      "type": "milestone",
+      "ref": "p_ocd",
+      "title": "OCD presentation / Read manual + take notes",
+      "from": null,
+      "to": "todo"
     },
     "a_zf94znkj": {
       "id": "a_zf94znkj",
