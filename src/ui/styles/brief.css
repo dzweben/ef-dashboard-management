@@ -1,0 +1,74 @@
+/* Claude's check-in: a photocopied paper note taped to the console. */
+.brief { padding: 12px 6px 4px 2px; min-width: 0; }
+.brief-card {
+  padding: 20px 18px 16px;
+  background-color: var(--paper);
+  background-image:
+    radial-gradient(rgba(0, 0, 0, 0.07) 0.8px, transparent 1.2px),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.35), rgba(0, 0, 0, 0.04));
+  background-size: 5px 5px, 100% 100%;
+  color: var(--paper-ink);
+  box-shadow: 6px 6px 0 #000;
+  transform: rotate(-0.6deg);
+}
+.brief-card::after {
+  /* a second scrap of tape on the bottom-right corner */
+  content: ''; position: absolute; right: -10px; bottom: 10px; width: 54px; height: 16px;
+  background: var(--tape);
+  transform: rotate(-38deg);
+}
+.brief-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 12px; }
+.brief-label {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 3px 9px 3px 7px;
+  background: #111;
+  color: var(--paper);
+  font-family: var(--font-mono);
+  font-size: var(--fs-2xs);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transform: rotate(-1.2deg);
+  box-shadow: 2px 2px 0 var(--pink);
+}
+.brief-label svg { width: 13px; height: 13px; color: var(--pink); }
+.brief-when { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #5a574f; text-align: right; }
+.brief-headline { font-size: 1.55rem; line-height: 1.15; color: #0d0d0d; margin-bottom: 10px; overflow-wrap: anywhere; }
+.brief-lines { list-style: none; margin: 0 0 12px; padding: 0; display: grid; gap: 6px; font-size: var(--fs-sm); line-height: 1.38; }
+.brief-lines li { display: grid; grid-template-columns: auto 1fr; gap: 8px; }
+.brief-lines li::before { content: '//'; font-family: var(--font-mono); font-weight: 700; color: #d1006a; }
+.brief-focus { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 0 0 12px; }
+.brief-focus-label { font-family: var(--font-mono); font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #3d3b36; margin-right: 2px; }
+.brief-focus-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  max-width: 100%;
+  padding: 4px 9px 4px 7px;
+  border: 0;
+  background: #111;
+  color: var(--paper);
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  text-align: left;
+  box-shadow: 2px 2px 0 var(--pink);
+}
+.brief-focus-btn svg { width: 13px; height: 13px; color: var(--pink); }
+.brief-focus-btn span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.brief-focus-btn:hover { background: var(--pink); color: #000; }
+.brief-focus-btn:hover svg { color: #000; }
+.brief-asks { list-style: none; margin: 0; padding: 10px 0 0; border-top: 2px dashed rgba(0, 0, 0, 0.22); display: grid; gap: 7px; }
+.brief-asks li { display: grid; grid-template-columns: auto 1fr; align-items: start; gap: 9px; font-size: var(--fs-sm); font-weight: 600; line-height: 1.35; }
+.brief-q {
+  display: inline-grid; place-items: center;
+  width: 19px; height: 19px; margin-top: 1px;
+  background: var(--pink); color: #000;
+  font-family: var(--font-mono); font-size: 12px; font-weight: 700;
+  transform: rotate(-5deg);
+  box-shadow: 1px 1px 0 #000;
+}
+.brief-empty { font-family: var(--font-mono); font-size: var(--fs-xs); color: #333; }
+.brief-empty b { background: #111; color: var(--acid); padding: 1px 6px; font-weight: 400; }
+.brief-card.is-empty .brief-headline { color: #222; }
+.brief-card.is-stale { background-color: #d9d4c6; }
+.brief-card.is-stale .brief-when { color: #9a2b00; font-weight: 700; }
+.brief-stale { margin-top: 10px; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: #5a574f; }

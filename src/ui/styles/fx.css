@@ -1,0 +1,42 @@
+/* The check-off moment: confetti bits + a rubber stamp. Both are fixed-position
+   children of <body>, created and removed by fx/burst.js. */
+.fx-layer { position: fixed; inset: 0; z-index: 120; pointer-events: none; overflow: hidden; }
+.fx-bit { position: fixed; display: block; box-shadow: 1px 1px 0 #000; will-change: transform, opacity; }
+
+.fx-stamp {
+  position: fixed;
+  z-index: 121;
+  pointer-events: none;
+  padding: 3px 14px 0;
+  border: 4px solid var(--acid);
+  outline: 2px solid var(--acid);
+  outline-offset: 3px;
+  background: rgba(5, 5, 6, 0.6);
+  color: var(--acid);
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 2.3rem;
+  line-height: 1.02;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-shadow: 0 0 14px rgba(200, 255, 26, 0.55);
+  box-shadow: 0 0 26px -2px rgba(200, 255, 26, 0.45);
+  transform: translate(-50%, -50%) rotate(-8deg);
+  /* worn rubber-stamp ink */
+  -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='70'><filter id='f'><feTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='2' seed='7'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -3 2.35'/></filter><rect width='100%' height='100%' filter='url(%23f)'/></svg>");
+  mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='70'><filter id='f'><feTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='2' seed='7'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -3 2.35'/></filter><rect width='100%' height='100%' filter='url(%23f)'/></svg>");
+  animation: stamp-thunk 1s var(--ease) both;
+}
+.fx-stamp.is-pink { border-color: var(--pink); outline-color: var(--pink); color: var(--pink); text-shadow: 0 0 14px rgba(255, 45, 149, 0.55); box-shadow: 0 0 26px -2px rgba(255, 45, 149, 0.45); }
+.fx-stamp.is-cyan { border-color: var(--cyan); outline-color: var(--cyan); color: var(--cyan); }
+.fx-stamp.is-static { animation: none; }
+@keyframes stamp-thunk {
+  0% { opacity: 0; transform: translate(-50%, -50%) rotate(-14deg) scale(1.6); }
+  14% { opacity: 1; transform: translate(-50%, -50%) rotate(-8deg) scale(0.94); }
+  22% { transform: translate(-50%, -50%) rotate(-8deg) scale(1.04); }
+  30% { transform: translate(-50%, -50%) rotate(-8deg) scale(1); }
+  70% { opacity: 1; }
+  100% { opacity: 0; transform: translate(-50%, -50%) rotate(-8deg) scale(1); }
+}
+@media (max-width: 720px) { .fx-stamp { font-size: 1.8rem; } }

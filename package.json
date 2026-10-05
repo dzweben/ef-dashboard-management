@@ -7,7 +7,7 @@
   "bin": { "ef": "bin/ef.mjs" },
   "scripts": {
     "build": "node scripts/build.mjs",
-    "test": "node --test test/",
+    "test": "node --test test/*.test.js",
     "ef": "node bin/ef.mjs",
     "shot": "node scripts/screenshot.mjs"
   },

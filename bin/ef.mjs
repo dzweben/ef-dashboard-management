@@ -15,7 +15,7 @@ import {
 import { parseQuickAdd } from '../src/engine/parse.js';
 import { resolveCategory } from '../src/engine/categories.js';
 import { OPS } from '../src/engine/ops.js';
-import { allocate, risks, dayLoad } from '../src/engine/schedule.js';
+import { allocate, risks, dayLoad, planStart } from '../src/engine/schedule.js';
 import { todayView, calendarView, upcomingDeadlines, backlog, projectView, choreView } from '../src/engine/views.js';
 import { streak, weekStats } from '../src/engine/stats.js';
 import { buildBrief, changesSince } from '../src/engine/brief.js';
@@ -582,7 +582,7 @@ async function main() {
 
     case 'plan': {
       const ids = pos.length ? [findTask(state, pos.join(' '), 'todo').id] : undefined;
-      const { updates, risks: rs } = allocate(state, { today, taskIds: ids, replan: !flags.keep });
+      const { updates, risks: rs } = allocate(state, { today, taskIds: ids, replan: !flags.keep, from: flags.from ? dateArg(flags.from, today) : planStart(ctx.now, state.settings.tz) });
       const n = Object.keys(updates).length;
       if (n) apply('applyAllocation', { updates });
       for (const [id, blocks] of Object.entries(updates)) {

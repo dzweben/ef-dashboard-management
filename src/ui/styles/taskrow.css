@@ -1,0 +1,137 @@
+/* taskRow: [check] [catmark] [title / meta chips] [actions]
+   Base layout (touch + anything unknown): title gets the full width, the
+   actions sit at the end of the meta line. Fine pointers float them on hover. */
+.trow {
+  --c: var(--ink-3);
+  position: relative;
+  display: grid;
+  grid-template-columns: 28px 24px minmax(0, 1fr) auto;
+  grid-template-areas: 'check cat title title' 'check cat meta acts';
+  column-gap: 10px;
+  row-gap: 4px;
+  align-items: center;
+  padding: 8px 8px 8px 6px;
+  border-bottom: 1px dashed var(--line);
+  transition: background var(--dur);
+}
+.trow:last-child { border-bottom: 0; }
+.trow.no-meta { grid-template-areas: 'check cat title acts'; }
+.trow::before {
+  content: ''; position: absolute; left: 0; top: 7px; bottom: 7px; width: 2px;
+  background: var(--c); opacity: 0; transition: opacity var(--dur);
+}
+.trow:hover { background: var(--panel-2); }
+.trow:hover::before, .trow:focus-within::before { opacity: 1; }
+
+.trow-check { grid-area: check; display: grid; place-items: center; width: 28px; height: 28px; cursor: pointer; }
+.trow > .catmark { grid-area: cat; }
+
+.trow-title {
+  grid-area: title;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--fs-md);
+  font-weight: 500;
+  line-height: 1.3;
+  text-align: left;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+}
+.trow-title:focus-visible { box-shadow: none; outline: 2px solid var(--cyan); outline-offset: 2px; }
+.trow-title:hover .trow-text { text-decoration: underline dotted var(--cyan); text-underline-offset: 4px; }
+.trow-text {
+  background: linear-gradient(var(--acid), var(--acid)) 0 60% / 0% 2px no-repeat;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  transition: background-size 300ms var(--ease), color 200ms;
+}
+.trow-prio { margin-right: 6px; font-family: var(--font-mono); font-size: 0.8em; font-weight: 700; letter-spacing: -0.06em; color: var(--pink); }
+.trow-prio.is-crit { color: var(--blood); text-shadow: 0 0 10px rgba(255, 59, 48, 0.5); }
+
+.trow-meta { grid-area: meta; display: flex; flex-wrap: wrap; gap: 4px; min-width: 0; }
+.trow-meta .chip { height: 19px; padding: 0 5px; gap: 4px; font-size: 10px; }
+.trow-meta .chip svg { width: 10px; height: 10px; }
+.chip-proj { max-width: 100%; }
+.chip-trunc { max-width: 16ch; overflow: hidden; text-overflow: ellipsis; }
+
+.trow-acts { grid-area: acts; display: flex; align-items: center; justify-content: flex-end; gap: 4px; }
+.trow-btn { min-width: 28px; }
+.trow-btn.is-clock { color: var(--pink); }
+.trow-btn.is-clock:hover { border-color: var(--pink); color: var(--pink); }
+.trow-btn.is-clock svg { fill: currentColor; }
+.trow-btn.is-yes { color: var(--acid); border-color: var(--acid); }
+.trow-btn.is-yes:hover { background: var(--acid); color: #000; }
+.trow-btn.is-drop:hover { color: var(--blood); border-color: var(--blood); }
+.trow-btn.is-tmrw { color: var(--hazard); border-color: var(--hazard); }
+.trow-btn.is-tmrw:hover { background: var(--hazard); color: #000; }
+.trow-acts.has-tmrw .is-edit { display: none; }
+
+/* triage rows: Yes / Today / Drop on their own line */
+.trow.is-triage { grid-template-columns: 28px 24px minmax(0, 1fr); grid-template-areas: 'check cat title' 'check cat meta' 'acts acts acts'; }
+.trow.is-triage.no-meta { grid-template-areas: 'check cat title' 'acts acts acts'; }
+.trow.is-triage .trow-acts { padding-top: 4px; }
+.trow.is-triage .trow-btn { flex: 1; max-width: 116px; }
+.trow.is-triage.is-overdue::before { opacity: 0; }
+
+/* touch: 40px targets */
+@media (hover: none), (pointer: coarse) {
+  .trow { grid-template-columns: 40px 24px minmax(0, 1fr) auto; column-gap: 8px; padding: 8px 2px 8px 0; }
+  .trow.is-triage { grid-template-columns: 40px 24px minmax(0, 1fr); }
+  .trow-check { width: 40px; height: 40px; }
+  .trow-title { min-height: 26px; }
+  .trow-btn { min-height: 40px; min-width: 40px; }
+  .trow-btn.is-edit { display: none; }
+  .trow-acts.has-tmrw .is-move { display: none; }
+}
+
+/* mouse: actions float in on hover / keyboard focus, title keeps the width */
+@media (hover: hover) and (pointer: fine) {
+  .trow:not(.is-triage) { grid-template-columns: 28px 24px minmax(0, 1fr); grid-template-areas: 'check cat title' 'check cat meta'; }
+  .trow.no-meta:not(.is-triage) { grid-template-areas: 'check cat title'; }
+  .trow-acts:not(.is-pinned) {
+    position: absolute; right: 6px; top: 50%; z-index: 2;
+    padding: 3px;
+    background: var(--panel-3);
+    border: 1px solid var(--line-2);
+    box-shadow: 3px 3px 0 #000;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(6px, -50%);
+    transition: opacity 110ms, transform 110ms var(--ease);
+  }
+  .trow:hover .trow-acts, .trow:focus-within .trow-acts { opacity: 1; pointer-events: auto; transform: translate(0, -50%); }
+  .trow[draggable='true'] { cursor: grab; }
+  .trow[draggable='true']:active { cursor: grabbing; }
+}
+@media (min-width: 1100px) and (hover: hover) and (pointer: fine) {
+  .trow.is-triage { grid-template-columns: 28px 24px minmax(0, 1fr) auto; grid-template-areas: 'check cat title acts' 'check cat meta acts'; }
+  .trow.is-triage.no-meta { grid-template-areas: 'check cat title acts'; }
+  .trow.is-triage .trow-acts { padding-top: 0; }
+  .trow.is-triage .trow-btn { flex: none; }
+}
+
+/* states */
+.trow.is-overdue::before { opacity: 1; width: 3px; background: var(--blood); }
+.trow.is-low .trow-text { color: var(--ink-2); }
+.trow.is-done .trow-text, .trow.is-completing .trow-text { color: var(--ink-3); background-size: 100% 2px; }
+.trow.is-done .catmark { filter: grayscale(0.85) brightness(0.7); }
+.trow.is-dropped .trow-text { color: var(--ink-4); text-decoration: line-through; }
+.trow.is-completing { background: rgba(200, 255, 26, 0.08); animation: row-thunk 240ms 70ms var(--ease); }
+.trow.is-completing::before { opacity: 1; background: var(--acid); width: 3px; }
+.trow.is-completing .check { border-color: var(--acid); box-shadow: var(--glow-acid); }
+.trow.is-completing .check::before { animation: slash-a 170ms var(--ease) both; }
+.trow.is-completing .check::after { animation: slash-b 170ms 90ms var(--ease) both; }
+.trow.is-completing .trow-acts { opacity: 0 !important; pointer-events: none !important; }
+.trow.is-dragging { opacity: 0.4; outline: 2px dashed var(--pink); outline-offset: -2px; }
+@keyframes slash-a { from { transform: translate(-50%, -50%) rotate(45deg) scaleX(0); } to { transform: translate(-50%, -50%) rotate(45deg) scaleX(1); } }
+@keyframes slash-b { from { transform: translate(-50%, -50%) rotate(-45deg) scaleX(0); } to { transform: translate(-50%, -50%) rotate(-45deg) scaleX(1); } }
+@keyframes row-thunk { 0% { transform: translateY(0); } 40% { transform: translateY(2px); } 100% { transform: none; } }
+
+/* compact rows (calendar / project lists) */
+.trow.is-compact { padding: 5px 6px 5px 4px; column-gap: 8px; row-gap: 2px; }
+.trow.is-compact .trow-title { font-size: var(--fs-sm); }
+.trow.is-compact > .catmark { width: 18px; height: 18px; font-size: 7px; }

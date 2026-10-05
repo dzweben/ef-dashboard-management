@@ -15,11 +15,30 @@
     },
     "maxBlock": 120,
     "minBlock": 30,
+    "prefBlock": 60,
     "defaultEst": 20,
     "horizon": 14,
     "offDays": []
   },
-  "brief": null,
+  "brief": {
+    "at": "2026-10-05T05:31:48.741Z",
+    "headline": "7 things today. Start with: Email Nyx: set up RSA meeting (10m).",
+    "lines": [
+      "CHORES // Closet reset · Laundry · Grocery run · Clean first floor · +2 more. Just 5 minutes on Closet reset (48d since last).",
+      "TOMORROW // Tue 10/6 [4h/4h]: Nyx planning · RSA: participant data fixes · Start ABCD work for Jason · OCD pres: illustrations for dyads 45m"
+    ],
+    "asks": [
+      "Did 'Multivar assignment 4' happen?",
+      "Did 'Work out RSA front-to-back before the Nyx meeting' happen?",
+      "Anything coming up for Clinical (PSC)?",
+      "Did 'ABCD review meeting' happen?"
+    ],
+    "focus": [
+      "t_emailnyx",
+      "t_dentist",
+      "t_teij"
+    ]
+  },
   "clock": {
     "active": false
   },
@@ -1628,14 +1647,14 @@
       "blocks": [],
       "project": null,
       "prio": 1,
-      "kind": "appt",
+      "kind": "task",
       "notes": "",
       "subs": [],
       "triage": false,
       "moved": 2,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T04:00:00.000Z",
+      "updated": "2026-10-05T05:29:51.592Z",
       "doneAt": null,
       "src": "import"
     },
@@ -2681,7 +2700,29 @@
       "plan": null,
       "est": 180,
       "spent": 0,
-      "blocks": [],
+      "blocks": [
+        {
+          "id": "b_kq3p3thz",
+          "d": "2026-10-06",
+          "m": 45,
+          "done": false,
+          "auto": true
+        },
+        {
+          "id": "b_u2rc1ckb",
+          "d": "2026-10-11",
+          "m": 60,
+          "done": false,
+          "auto": true
+        },
+        {
+          "id": "b_1njvm0i4",
+          "d": "2026-10-15",
+          "m": 75,
+          "done": false,
+          "auto": true
+        }
+      ],
       "project": "p_ocd",
       "prio": 1,
       "kind": "task",
@@ -2691,7 +2732,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T04:00:00.000Z",
+      "updated": "2026-10-05T05:30:39.081Z",
       "doneAt": null,
       "src": "import"
     },
@@ -2729,7 +2770,15 @@
       "plan": null,
       "est": 60,
       "spent": 0,
-      "blocks": [],
+      "blocks": [
+        {
+          "id": "b_n1lw1rfe",
+          "d": "2026-10-08",
+          "m": 60,
+          "done": false,
+          "auto": true
+        }
+      ],
       "project": "p_ocd",
       "prio": 1,
       "kind": "task",
@@ -2739,7 +2788,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T04:00:00.000Z",
+      "updated": "2026-10-05T05:30:39.081Z",
       "doneAt": null,
       "src": "import"
     },
@@ -2753,7 +2802,36 @@
       "plan": null,
       "est": 240,
       "spent": 0,
-      "blocks": [],
+      "blocks": [
+        {
+          "id": "b_dkftwiuf",
+          "d": "2026-10-05",
+          "m": 90,
+          "done": false,
+          "auto": true
+        },
+        {
+          "id": "b_lapcixwq",
+          "d": "2026-10-07",
+          "m": 30,
+          "done": false,
+          "auto": true
+        },
+        {
+          "id": "b_ctjwfl4h",
+          "d": "2026-10-10",
+          "m": 60,
+          "done": false,
+          "auto": true
+        },
+        {
+          "id": "b_uncfqvvs",
+          "d": "2026-10-13",
+          "m": 60,
+          "done": false,
+          "auto": true
+        }
+      ],
       "project": "p_ocd",
       "prio": 1,
       "kind": "writing",
@@ -2763,7 +2841,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T04:00:00.000Z",
+      "updated": "2026-10-05T05:30:39.081Z",
       "doneAt": null,
       "src": "import"
     },
@@ -2777,7 +2855,36 @@
       "plan": null,
       "est": 300,
       "spent": 60,
-      "blocks": [],
+      "blocks": [
+        {
+          "id": "b_74xgaxz2",
+          "d": "2026-10-05",
+          "m": 60,
+          "done": false,
+          "auto": true
+        },
+        {
+          "id": "b_lc8y9ti9",
+          "d": "2026-10-07",
+          "m": 60,
+          "done": false,
+          "auto": true
+        },
+        {
+          "id": "b_1lruuqcd",
+          "d": "2026-10-09",
+          "m": 60,
+          "done": false,
+          "auto": true
+        },
+        {
+          "id": "b_num34lzs",
+          "d": "2026-10-11",
+          "m": 60,
+          "done": false,
+          "auto": true
+        }
+      ],
       "project": "p_ocd",
       "prio": 1,
       "kind": "writing",
@@ -2787,7 +2894,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T04:00:00.000Z",
+      "updated": "2026-10-05T05:30:39.081Z",
       "doneAt": null,
       "src": "import"
     },
@@ -3935,5 +4042,36 @@
     }
   },
   "sessions": {},
-  "activity": {}
+  "activity": {
+    "a_ab1vdls5": {
+      "id": "a_ab1vdls5",
+      "at": "2026-10-05T05:29:51.592Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_dentist",
+      "title": "Reschedule dentist",
+      "from": null,
+      "to": "kind"
+    },
+    "a_mur64d0r": {
+      "id": "a_mur64d0r",
+      "at": "2026-10-05T05:29:51.713Z",
+      "src": "chat",
+      "type": "block",
+      "ref": null,
+      "title": "Auto-plan: 4 tasks",
+      "from": null,
+      "to": "planned"
+    },
+    "a_zf94znkj": {
+      "id": "a_zf94znkj",
+      "at": "2026-10-05T05:30:39.081Z",
+      "src": "chat",
+      "type": "block",
+      "ref": null,
+      "title": "Auto-plan: 4 tasks",
+      "from": null,
+      "to": "planned"
+    }
+  }
 }

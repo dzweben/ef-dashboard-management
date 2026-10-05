@@ -105,7 +105,7 @@ export function boot(root = document) {
       });
     }
     app.store.load().catch((err) => {
-      app.status = { kind: 'error', at: nowISO(), message: err?.message || String(err) };
+      if (app.status.kind === 'loading') app.status = { kind: 'error', at: nowISO(), message: err?.message || String(err) };
       schedule();
     });
   }
@@ -126,7 +126,7 @@ export function boot(root = document) {
       store: { mode: app.store?.mode ?? 'readonly', status: app.status, canWrite, refresh: () => app.store?.refresh?.() },
       config: app.config,
       hasToken: !!app.token,
-      act, setUI, rerender: schedule,
+      act, setUI, setTab, rerender: schedule,
       openTask: (id) => setUI({ drawer: { taskId: id }, move: null, clockSheet: null }),
       openMove: (taskId, blockId = null) => setUI({ move: { taskId, blockId }, drawer: null, clockSheet: null }),
       openClock: (ref = null) => setUI({ clockSheet: { ref }, drawer: null, move: null }),
@@ -143,7 +143,7 @@ export function boot(root = document) {
     if (vmCache.state === state && vmCache.today === today) return vmCache.vm;
     const vm = {
       today: todayView(state, today),
-      cal: calendarView(state, today, 14),
+      cal: calendarView(state, today, 14, today),
       deadlines: upcomingDeadlines(state, today, 30),
       backlog: backlog(state),
       projects: projectView(state, today),

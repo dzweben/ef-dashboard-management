@@ -1,0 +1,102 @@
+/* Chores: tiles with a decay fuse (acid fresh → hazard due → blood overdue), DID IT, 5 min. */
+.chores { container-type: inline-size; container-name: chores; }
+.chores .panel-body { display: grid; gap: 12px; }
+.chores-title { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; min-width: 0; }
+.chores-sub {
+  font-family: var(--font-scrawl); font-size: var(--fs-md); color: var(--hazard);
+  transform: rotate(-2deg); line-height: 1; white-space: nowrap;
+}
+.chores-due { display: inline-flex; align-items: baseline; gap: 5px; color: var(--ink-3); }
+.chores-due b { font-size: 1.7rem; color: var(--ink-2); }
+.chores-due.is-hot b { color: var(--hazard); text-shadow: 0 0 12px rgba(255, 214, 10, 0.45); }
+
+.chore-grid { display: grid; gap: 8px; }
+
+.chore-tile {
+  --tone: var(--acid);
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-areas: 'mark main' 'acts acts';
+  gap: 8px 10px;
+  align-items: center;
+  padding: 10px 10px 10px 12px;
+  background: var(--panel-2);
+  border: 2px solid var(--line);
+  border-left: 4px solid var(--tone);
+  min-width: 0;
+}
+.chore-tile > .catmark { grid-area: mark; align-self: start; margin-top: 1px; }
+.chore-main { grid-area: main; min-width: 0; display: grid; gap: 5px; }
+.chore-acts { grid-area: acts; display: flex; gap: 8px; justify-content: flex-end; flex-wrap: wrap; }
+.chore-acts .btn { min-height: 34px; }
+
+.chore-tile.is-fresh { --tone: var(--acid); }
+.chore-tile.is-soon { --tone: #e6f06a; }
+.chore-tile.is-due { --tone: var(--hazard); }
+.chore-tile.is-over { --tone: var(--blood); border-color: rgba(255, 59, 48, 0.55); border-left-color: var(--blood); background-color: #1a0f0f; }
+.chore-tile.is-over::before {
+  content: ''; position: absolute; left: -4px; right: -2px; top: -2px; height: 4px; pointer-events: none;
+  background: repeating-linear-gradient(-45deg, var(--blood) 0 6px, #000 6px 12px);
+}
+.chore-tile.is-done { --tone: var(--acid); opacity: 0.78; }
+.chore-tile.is-done .chore-title { color: var(--ink-2); }
+.chore-tile.is-clocked { border-color: var(--cyan); box-shadow: var(--shadow-cyan); }
+.chore-tile.is-clocked .chore-state-t { color: var(--cyan); animation: chore-blink 1s steps(2, start) infinite; }
+@keyframes chore-blink { 50% { opacity: 0.3; } }
+.chore-tile.is-flash { animation: chore-flash 900ms var(--ease); }
+@keyframes chore-flash {
+  0% { background-color: rgba(200, 255, 26, 0.55); box-shadow: 0 0 0 2px var(--acid), 0 0 28px rgba(200, 255, 26, 0.6); }
+  100% { background-color: var(--panel-2); box-shadow: none; }
+}
+
+.chore-title-row { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; min-width: 0; }
+.chore-title {
+  font-family: var(--font-body); font-weight: 700; font-size: var(--fs-md); text-transform: none; letter-spacing: 0;
+  line-height: 1.2; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.chore-cad { flex: none; font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.1em; color: var(--ink-3); border: 1px solid var(--line-2); padding: 1px 5px; }
+
+.chore-state { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; min-width: 0; }
+.chore-fuse { display: inline-grid; grid-template-columns: repeat(8, 9px); gap: 2px; height: 9px; }
+.chore-fuse i, .chore-pips i { display: block; background: #26262e; box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.6); }
+.chore-fuse i.on { background: var(--tone); box-shadow: 0 0 5px color-mix(in srgb, var(--tone) 60%, transparent); }
+.chore-tile.is-over .chore-fuse i.on { animation: chore-blink 1.2s steps(2, start) infinite; }
+.chore-pips { display: inline-flex; gap: 4px; }
+.chore-pips i { width: 11px; height: 11px; border: 1px solid var(--ink-3); background: transparent; box-shadow: none; }
+.chore-pips i.on { background: var(--acid); border-color: var(--acid); box-shadow: 0 0 6px rgba(200, 255, 26, 0.55); }
+.chore-state-t { font-family: var(--font-mono); font-size: 0.66rem; font-weight: 700; letter-spacing: 0.08em; color: var(--tone); white-space: nowrap; }
+.chore-last { font-family: var(--font-mono); font-size: 0.62rem; color: var(--ink-3); white-space: nowrap; }
+
+.chore-did:not(.btn-acid) { color: var(--acid); border-color: rgba(200, 255, 26, 0.5); }
+.chore-go { color: var(--pink); border-color: rgba(255, 45, 149, 0.6); }
+.chore-go:hover { background: var(--pink); color: var(--accent-ink); border-color: var(--pink); }
+.chore-stop { color: var(--cyan); border-color: var(--cyan); }
+
+.chores-foot { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.chores-five { flex: 1 1 auto; min-height: 42px; font-size: var(--fs-xs); }
+.chores-more { justify-self: start; }
+
+.chore-skel { display: grid; gap: 8px; }
+.chore-skel-row { height: 56px; display: grid; place-items: center; background: var(--panel-2); border: 2px dashed var(--line); }
+
+/* add form: a terminal line */
+.chore-add {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
+  padding-top: 12px; border-top: 2px dashed var(--line);
+}
+.chore-add-prompt { font-family: var(--font-mono); font-weight: 700; color: var(--pink); font-size: var(--fs-lg); }
+.chore-add > .field { flex: 1 1 180px; min-width: 0; }
+.chore-add-every { display: inline-flex; align-items: center; gap: 6px; }
+.chore-add-every .field { width: 72px; text-align: center; }
+
+@container chores (min-width: 460px) {
+  .chore-tile { grid-template-columns: auto minmax(0, 1fr) auto; grid-template-areas: 'mark main acts'; }
+  .chore-acts { flex-wrap: nowrap; }
+}
+@container chores (min-width: 820px) {
+  .chore-grid:not(.is-compact) { grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 10px; }
+}
+@media (pointer: coarse) {
+  .chore-acts .btn { min-height: 40px; padding-inline: 12px; }
+}

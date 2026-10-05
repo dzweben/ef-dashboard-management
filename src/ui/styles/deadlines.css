@@ -1,0 +1,91 @@
+/* // INCOMING: deadline radar with countdowns and runway meters. */
+.deadlines .panel-head h2 .slash { color: var(--hazard); }
+.dl-head-right { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.dl-body { display: grid; gap: 6px; }
+
+.dl-risk {
+  position: relative;
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 10px 8px 20px;
+  border: 2px solid var(--hazard);
+  background: rgba(255, 214, 10, 0.06);
+  color: var(--hazard);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  line-height: 1.35;
+}
+.dl-risk svg { width: 15px; height: 15px; flex: none; }
+.dl-risk-stripe { position: absolute; left: 0; top: 0; bottom: 0; width: 9px; background: var(--hazard-stripes); }
+
+.dl-list { display: grid; }
+.dl-row {
+  --c: var(--ink-3);
+  display: grid;
+  grid-template-columns: 62px minmax(0, 1fr) minmax(120px, 170px) auto;
+  grid-template-areas: 'count main run act';
+  align-items: center;
+  gap: 8px 14px;
+  padding: 10px 2px;
+  border-bottom: 1px dashed var(--line);
+}
+.dl-row:last-child { border-bottom: 0; }
+.dl-count {
+  grid-area: count;
+  display: flex; align-items: baseline; justify-content: center; gap: 1px;
+  padding-right: 10px;
+  border-right: 2px solid var(--line-2);
+  color: var(--ink-2);
+}
+.dl-count .shout { font-size: 2.5rem; }
+.dl-unit { font-family: var(--font-mono); font-size: var(--fs-xs); font-weight: 700; }
+.dl-count.is-warn { color: var(--hazard); }
+.dl-count.is-hot { color: var(--pink); text-shadow: 0 0 16px rgba(255, 45, 149, 0.45); }
+.dl-count.is-now .shout { font-size: 1.7rem; letter-spacing: 0.04em; }
+.dl-main { grid-area: main; min-width: 0; }
+.dl-title { display: flex; align-items: center; gap: 9px; min-width: 0; }
+.dl-name {
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--fs-md);
+  font-weight: 600;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+.dl-name:hover { color: var(--cyan); }
+.dl-meta { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; padding-left: 33px; }
+.dl-meta .chip { height: 19px; padding: 0 5px; font-size: 10px; }
+.dl-meta .chip svg { width: 10px; height: 10px; }
+.dl-runway { grid-area: run; display: grid; gap: 5px; min-width: 0; }
+.dl-meter { height: 9px; }
+.dl-runway-label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); white-space: nowrap; }
+.dl-runway-label b { color: var(--ink); }
+.dl-runway-label.is-good { color: var(--acid); }
+.dl-runway.is-unknown .dl-meter { background: repeating-linear-gradient(-45deg, var(--void) 0 4px, rgba(255, 214, 10, 0.18) 4px 6px); }
+.dl-act { grid-area: act; display: flex; justify-content: flex-end; }
+.dl-act:empty { display: none; }
+.dl-row.st-at-risk { background: linear-gradient(90deg, rgba(255, 59, 48, 0.08), transparent 60%); }
+.dl-row.st-at-risk .dl-count { color: var(--blood); }
+.dl-row.st-unplanned .dl-meter { background: repeating-linear-gradient(-45deg, var(--void) 0 4px, rgba(255, 45, 149, 0.22) 4px 6px); }
+.dl-row.st-at-risk .dl-meter { background: repeating-linear-gradient(-45deg, var(--void) 0 4px, rgba(255, 59, 48, 0.3) 4px 6px); }
+.dl-more { justify-self: start; margin-top: 4px; }
+.dl-empty code { background: var(--void); color: var(--acid); padding: 1px 6px; font-family: var(--font-mono); }
+
+/* narrow (half-width column or phone): stack the runway under the title */
+@media (max-width: 1099px) {
+  .dl-row { grid-template-columns: 56px minmax(0, 1fr) auto; grid-template-areas: 'count main act' 'count run run'; }
+  .dl-count .shout { font-size: 2.2rem; }
+}
+@media (max-width: 720px) {
+  .dl-row { grid-template-columns: 50px minmax(0, 1fr) auto; grid-template-areas: 'count main main' 'count run act'; gap: 8px 12px; }
+  .dl-row:has(.dl-act:empty) { grid-template-areas: 'count main main' 'count run run'; }
+  .dl-act .btn { min-height: 40px; }
+  .dl-meta { padding-left: 0; }
+  .dl-name { white-space: normal; }
+}

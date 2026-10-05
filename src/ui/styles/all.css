@@ -1,0 +1,77 @@
+/* All to-dos: grep bar, segmented status switch, colored category chips, grouped rows. */
+.all { container-type: inline-size; container-name: all; }
+.all .panel-body { display: grid; gap: 14px; }
+.all-readout { display: inline-flex; align-items: baseline; gap: 6px; }
+.all-readout b { font-size: 2rem; color: var(--cyan); text-shadow: 2px 2px 0 #000; }
+
+.all-bar { display: grid; gap: 10px; grid-template-columns: minmax(0, 1fr); align-items: center; }
+
+/* search: a terminal grep line */
+.all-search { position: relative; display: flex; align-items: center; min-width: 0; }
+.all-prompt { position: absolute; left: 12px; font-family: var(--font-mono); font-weight: 700; color: var(--pink); pointer-events: none; }
+.all-search .field { padding-left: 30px; padding-right: 38px; min-height: 42px; font-size: var(--fs-md); }
+.all-search .field::-webkit-search-cancel-button { display: none; }
+.all-search .field::placeholder { color: var(--ink-4); }
+.all-clear-q { position: absolute; right: 4px; }
+
+/* status: one segmented switch */
+.all-status { display: flex; border: 2px solid var(--line-2); box-shadow: 3px 3px 0 #000; width: max-content; max-width: 100%; }
+.all-seg {
+  display: inline-flex; align-items: center; gap: 7px;
+  min-height: 38px; padding: 0 12px;
+  border: 0; border-right: 2px solid var(--line-2);
+  background: var(--panel-2); color: var(--ink-2);
+  font-family: var(--font-mono); font-size: var(--fs-2xs); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+}
+.all-seg:last-child { border-right: 0; }
+.all-seg b { font-family: var(--font-shout); font-weight: 900; font-size: 1.05rem; letter-spacing: 0; color: var(--ink-3); }
+.all-seg:hover { color: var(--ink); }
+.all-seg[aria-pressed='true'] { background: var(--ink); color: #000; }
+.all-seg[aria-pressed='true'] b { color: #000; }
+.all-seg.is-open[aria-pressed='true'] { background: var(--cyan); }
+.all-seg.is-done[aria-pressed='true'] { background: var(--acid); }
+.all-seg.is-dropped[aria-pressed='true'] { background: var(--ink-3); }
+
+.all-sort { display: inline-flex; align-items: center; gap: 8px; }
+.all-sort .field { min-height: 38px; width: auto; padding-block: 4px; }
+
+/* category chips: colored, multi-select */
+.all-cats { display: flex; flex-wrap: wrap; gap: 6px; }
+.all-cat {
+  --c: var(--ink-3);
+  display: inline-flex; align-items: center; gap: 6px;
+  min-height: 28px; padding: 0 8px;
+  border: 1px solid color-mix(in srgb, var(--c) 45%, var(--line-2));
+  background: transparent; color: var(--ink-2);
+  font-family: var(--font-mono); font-size: var(--fs-2xs); letter-spacing: 0.04em; text-transform: uppercase;
+}
+.all-cat b { font-weight: 700; color: var(--ink-3); }
+.all-cat:hover { border-color: var(--c); color: var(--ink); }
+.all-cat[aria-pressed='true'] { background: var(--c); border-color: var(--c); color: #0b0b0d; box-shadow: 2px 2px 0 #000; }
+.all-cat[aria-pressed='true'] b { color: #0b0b0d; }
+.all-cat[aria-pressed='true'] .catdot { background: #0b0b0d; }
+.all-cat.is-reset { border-style: dashed; color: var(--pink); border-color: var(--pink); }
+.all-cat.is-reset svg { width: 12px; height: 12px; }
+
+/* groups */
+.all-groups { display: grid; gap: 22px; }
+.all-group { display: grid; gap: 6px; min-width: 0; }
+.all-group-h { display: flex; align-items: center; gap: 10px; margin: 0 0 2px; font-size: var(--fs-lg); }
+.all-group-name { flex: none; }
+.all-group-n { flex: none; font-family: var(--font-mono); font-size: var(--fs-2xs); font-weight: 700; color: #000; background: var(--hazard); padding: 1px 6px; letter-spacing: 0.06em; }
+.all-group-rule { flex: 1 1 auto; height: 2px; background: repeating-linear-gradient(90deg, var(--line-2) 0 6px, transparent 6px 10px); }
+.all-rows { display: grid; gap: 4px; min-width: 0; }
+.all-more { justify-self: center; }
+.all-empty .scrawl { font-size: var(--fs-xl); }
+
+@container all (min-width: 760px) {
+  .all-bar { grid-template-columns: minmax(240px, 1fr) auto auto; }
+}
+@media (pointer: coarse) {
+  .all-seg { min-height: 42px; }
+  .all-cat { min-height: 36px; }
+}
+@container all (max-width: 420px) {
+  .all-status { width: 100%; }
+  .all-seg { flex: 1 1 0; justify-content: center; padding: 0 6px; gap: 4px; letter-spacing: 0.04em; }
+}
