@@ -23,13 +23,13 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-05T23:37:02.904Z",
+    "at": "2026-10-05T23:39:43.010Z",
     "headline": "8 things today. Start with: Reschedule dentist (10m).",
     "lines": [
       "INCOMING // Clinical notes (3 behind) Wed 10/7 (2d): 1h left, 1h booked · RSA front-to-back for Nyx: finish + full review Thu 10/8 (3d): 3h left, 3h booked",
       "CHORES // Closet reset · Clean first floor · Water plants. Most overdue: Closet reset (48d since last).",
       "TOMORROW // Tue 10/6 [6h 30m/8h]: Clinical notes (3 behind) · OCD pres: read the Barlow chapter · Email Johanna: full LEARN breakdown (issues we ran into) · RSA: participant data fixes · +2 more",
-      "DONE // 14 today · streak 8d"
+      "DONE // 18 today · streak 8d"
     ],
     "asks": [
       "Anything coming up for Meetings?",
@@ -45,8 +45,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-05T23:36:59.097Z",
-    "lastActivitySeen": "2026-10-05T23:36:59.097Z"
+    "lastClaudeSync": "2026-10-05T23:39:39.955Z",
+    "lastActivitySeen": "2026-10-05T23:39:39.955Z"
   },
   "cats": {
     "admin": {
@@ -1337,6 +1337,30 @@
       "created": "2026-10-05T14:17:14.119Z",
       "updated": "2026-10-05T14:17:14.119Z",
       "doneAt": null,
+      "src": "chat"
+    },
+    "t_600w9swt": {
+      "id": "t_600w9swt",
+      "title": "Texted Willie",
+      "cat": "fun",
+      "status": "done",
+      "due": null,
+      "time": null,
+      "plan": null,
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-05T23:39:42.137Z",
+      "updated": "2026-10-05T23:39:42.249Z",
+      "doneAt": "2026-10-05T23:39:42.249Z",
       "src": "chat"
     },
     "t_60a77spl": {
@@ -3091,6 +3115,30 @@
       "doneAt": "2026-08-04T17:00:00.000Z",
       "src": "import"
     },
+    "t_loqkgrp2": {
+      "id": "t_loqkgrp2",
+      "title": "Texted Jesse",
+      "cat": "fun",
+      "status": "done",
+      "due": null,
+      "time": null,
+      "plan": null,
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-05T23:39:42.625Z",
+      "updated": "2026-10-05T23:39:42.753Z",
+      "doneAt": "2026-10-05T23:39:42.753Z",
+      "src": "chat"
+    },
     "t_lqwr1zp6": {
       "id": "t_lqwr1zp6",
       "title": "RSA methods",
@@ -4390,6 +4438,30 @@
       "doneAt": "2026-09-19T17:00:00.000Z",
       "src": "import"
     },
+    "t_v0qxqa8l": {
+      "id": "t_v0qxqa8l",
+      "title": "Called Chuck",
+      "cat": "fun",
+      "status": "done",
+      "due": null,
+      "time": null,
+      "plan": null,
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-05T23:39:42.378Z",
+      "updated": "2026-10-05T23:39:42.492Z",
+      "doneAt": "2026-10-05T23:39:42.492Z",
+      "src": "chat"
+    },
     "t_v7ax28ej": {
       "id": "t_v7ax28ej",
       "title": "Finish poster",
@@ -4413,6 +4485,30 @@
       "updated": "2026-08-14T17:00:00.000Z",
       "doneAt": "2026-08-14T17:00:00.000Z",
       "src": "import"
+    },
+    "t_vg8yhjnq": {
+      "id": "t_vg8yhjnq",
+      "title": "Played chess",
+      "cat": "fun",
+      "status": "done",
+      "due": null,
+      "time": null,
+      "plan": null,
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-05T23:39:41.884Z",
+      "updated": "2026-10-05T23:39:42.001Z",
+      "doneAt": "2026-10-05T23:39:42.001Z",
+      "src": "chat"
     },
     "t_vi361qst": {
       "id": "t_vi361qst",
@@ -5190,6 +5286,16 @@
       "from": null,
       "to": "added"
     },
+    "a_0yetj900": {
+      "id": "a_0yetj900",
+      "at": "2026-10-05T23:39:42.137Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_600w9swt",
+      "title": "Texted Willie",
+      "from": null,
+      "to": null
+    },
     "a_1035a7a5": {
       "id": "a_1035a7a5",
       "at": "2026-10-05T19:19:21.914Z",
@@ -5340,6 +5446,16 @@
       "from": null,
       "to": null
     },
+    "a_4eit4tfa": {
+      "id": "a_4eit4tfa",
+      "at": "2026-10-05T23:39:42.625Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_loqkgrp2",
+      "title": "Texted Jesse",
+      "from": null,
+      "to": null
+    },
     "a_4l443agi": {
       "id": "a_4l443agi",
       "at": "2026-10-05T16:49:38.919Z",
@@ -5349,6 +5465,16 @@
       "title": "RSA front-to-back for Nyx: finish + full review / First half of the analyses",
       "from": null,
       "to": "done"
+    },
+    "a_4m67028y": {
+      "id": "a_4m67028y",
+      "at": "2026-10-05T23:39:42.753Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_loqkgrp2",
+      "title": "Texted Jesse",
+      "from": null,
+      "to": null
     },
     "a_4ovoan82": {
       "id": "a_4ovoan82",
@@ -5780,6 +5906,16 @@
       "from": null,
       "to": "title,cat,project"
     },
+    "a_galkvucu": {
+      "id": "a_galkvucu",
+      "at": "2026-10-05T23:39:42.378Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_v0qxqa8l",
+      "title": "Called Chuck",
+      "from": null,
+      "to": null
+    },
     "a_gm9clpj5": {
       "id": "a_gm9clpj5",
       "at": "2026-10-05T14:17:13.694Z",
@@ -5809,6 +5945,16 @@
       "title": "AI pres: start a Claude Code thread",
       "from": null,
       "to": "2026-10-08"
+    },
+    "a_h6gau41z": {
+      "id": "a_h6gau41z",
+      "at": "2026-10-05T23:39:42.492Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_v0qxqa8l",
+      "title": "Called Chuck",
+      "from": null,
+      "to": null
     },
     "a_hrsypf5i": {
       "id": "a_hrsypf5i",
@@ -5917,6 +6063,16 @@
       "type": "add",
       "ref": "t_53v1h9ku",
       "title": "Workout",
+      "from": null,
+      "to": null
+    },
+    "a_khtlfybg": {
+      "id": "a_khtlfybg",
+      "at": "2026-10-05T23:39:42.249Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_600w9swt",
+      "title": "Texted Willie",
       "from": null,
       "to": null
     },
@@ -6200,6 +6356,16 @@
       "from": null,
       "to": null
     },
+    "a_sm1xakr9": {
+      "id": "a_sm1xakr9",
+      "at": "2026-10-05T23:39:41.884Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_vg8yhjnq",
+      "title": "Played chess",
+      "from": null,
+      "to": null
+    },
     "a_sp2i3lbe": {
       "id": "a_sp2i3lbe",
       "at": "2026-10-05T14:17:14.384Z",
@@ -6277,6 +6443,16 @@
       "type": "done",
       "ref": "t_yiscxmbk",
       "title": "Fill out availability for grad department meeting",
+      "from": null,
+      "to": null
+    },
+    "a_v5no27ki": {
+      "id": "a_v5no27ki",
+      "at": "2026-10-05T23:39:42.001Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_vg8yhjnq",
+      "title": "Played chess",
       "from": null,
       "to": null
     },
