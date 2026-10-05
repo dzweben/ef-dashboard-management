@@ -684,3 +684,13 @@ test('chore done --on logs the real day without moving last backwards', () => {
   assert.equal(c.last, '2026-10-03');
   assert.deepEqual(c.log.slice(-2), ['2026-09-19', '2026-10-03']);
 });
+
+test('edit --clear-blocks removes undone work blocks (keeps finished ones)', () => {
+  const f = fixture();
+  ef(f, 'plan');
+  assert.ok(read(f).tasks.t_ocd.blocks.length > 0);
+  ef(f, 'edit', 't_ocd', '--due', 'none', '--clear-blocks');
+  const t = read(f).tasks.t_ocd;
+  assert.equal(t.due, null);
+  assert.deepEqual(t.blocks.filter((b) => !b.done), []);
+});

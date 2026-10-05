@@ -769,7 +769,7 @@ Capture + edit:
   ef add - <<'EOF'              one to-do per line from stdin (nothing in it is shell-expanded)
   ef done <task> [--on D]       ef undo <task>          ef drop <task>          ef delete <task>
   ef move <task> <date>         (dates: tomorrow, fri, next mon, 10/12, in 3 days...)
-  ef edit <task> [--title t] [--cat id] [--due D|none] [--plan D|none] [--time 3pm|none] [--est 1h|none] [--prio n] [--notes t] [--project id|none] [--triage yes|no] [--win yes|no]
+  ef edit <task> [--title t] [--cat id] [--due D|none] [--plan D|none] [--time 3pm|none] [--est 1h|none] [--prio n] [--notes t] [--project id|none] [--triage yes|no] [--win yes|no] [--clear-blocks]
   ef sub <task> 'subtask' [--est 30m]    ef subdone <task> <n|text>
   ef log <task> <minutes>        ef plan [<task>] [--keep]   (auto-book work blocks before deadlines)
   <task> is an id (t_...) or words from the title; a lone "-" reads the words from stdin.
@@ -953,6 +953,7 @@ async function main() {
       if (flags.kind) patch.kind = String(flags.kind);
       if (flags.triage) patch.triage = /^(y|yes|true|1)$/i.test(String(flags.triage));
       if (flags.win) patch.win = /^(y|yes|true|1)$/i.test(String(flags.win));
+      if (flags['clear-blocks']) patch.blocks = (t.blocks ?? []).filter((b) => b.done);
       if (!Object.keys(patch).length) die('nothing to edit');
       mustChange(apply('editTask', { id: t.id, patch }), `${t.title} already has those values (or they were invalid)`);
       console.log(`edited ${fmtTaskLine(state.tasks[t.id]).trim()}`);
