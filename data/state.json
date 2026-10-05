@@ -2270,7 +2270,7 @@
       "moved": 1,
       "win": false,
       "created": "2026-10-05T14:17:31.806Z",
-      "updated": "2026-10-05T19:53:19.845Z",
+      "updated": "2026-10-05T19:53:35.027Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -5310,6 +5310,16 @@
       "from": null,
       "to": "due,est,prio,project,blocks"
     },
+    "a_79whtfy9": {
+      "id": "a_79whtfy9",
+      "at": "2026-10-05T19:53:34.206Z",
+      "src": "dash",
+      "type": "sub",
+      "ref": "t_ff9fmzh1",
+      "title": "Clinical notes (3 behind) / Note 1 (oldest)",
+      "from": null,
+      "to": "done"
+    },
     "a_7mc0nftn": {
       "id": "a_7mc0nftn",
       "at": "2026-10-05T19:21:43.987Z",
@@ -5747,6 +5757,16 @@
       "type": "milestone",
       "ref": "p_ocd",
       "title": "OCD presentation / Read manual + take notes",
+      "from": null,
+      "to": "todo"
+    },
+    "a_nl0f5gox": {
+      "id": "a_nl0f5gox",
+      "at": "2026-10-05T19:53:35.027Z",
+      "src": "dash",
+      "type": "sub",
+      "ref": "t_ff9fmzh1",
+      "title": "Clinical notes (3 behind) / Note 1 (oldest)",
       "from": null,
       "to": "todo"
     },
