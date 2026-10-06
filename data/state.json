@@ -23,12 +23,13 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-06T14:28:20.810Z",
+    "at": "2026-10-06T15:51:27.387Z",
     "headline": "9 things today. Start with: Clinical notes (3 behind) (1h).",
     "lines": [
       "INCOMING // Clinical notes (3 behind) Wed 10/7 (1d): 1h left, 1h booked · RSA front-to-back for Nyx: finish + full review Thu 10/8 (2d): 3h left, 3h booked · OCD pres: build workshop Tue 10/13 (7d): 4h left, 4h booked",
       "CHORES // Closet reset · Clean first floor · Water plants. Most overdue: Closet reset (49d since last).",
-      "TOMORROW // Wed 10/7 [7h 25m/8h]: DUE Clinical notes (3 behind) · Finalize ADIS · Follow up with Nyx if no reply · Lily gift: pick an idea · +6 more"
+      "TOMORROW // Wed 10/7 [6h 5m/8h]: DUE Clinical notes (3 behind) · Email Phil: E-ADIS got minimal feedback, it's ready · Follow up with Nyx if no reply · Lily gift: pick an idea · +6 more",
+      "DONE // 1 today · streak 9d"
     ],
     "asks": [
       "Anything coming up for Undergrad?",
@@ -44,8 +45,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-06T14:27:58.134Z",
-    "lastActivitySeen": "2026-10-06T14:27:58.134Z"
+    "lastClaudeSync": "2026-10-06T15:51:03.120Z",
+    "lastActivitySeen": "2026-10-06T15:51:03.120Z"
   },
   "cats": {
     "admin": {
@@ -589,6 +590,21 @@
       "order": 0,
       "created": "2026-10-05T14:34:37.560Z",
       "updated": "2026-10-05T14:34:37.560Z"
+    },
+    "p_iy5b0ta6": {
+      "id": "p_iy5b0ta6",
+      "name": "E-ADIS",
+      "cat": "caadc",
+      "kind": "project",
+      "status": "active",
+      "due": null,
+      "goal": "Electronic ADIS: finalize and hand off to Phil.",
+      "milestones": [],
+      "weeklyHours": null,
+      "notes": "",
+      "order": 0,
+      "created": "2026-10-06T15:51:18.358Z",
+      "updated": "2026-10-06T15:51:18.358Z"
     },
     "p_m7qpuz93": {
       "id": "p_m7qpuz93",
@@ -1787,16 +1803,16 @@
     },
     "t_adis": {
       "id": "t_adis",
-      "title": "Finalize ADIS",
+      "title": "E-ADIS: fix based on Rachel's suggestions",
       "cat": "caadc",
-      "status": "todo",
+      "status": "done",
       "due": null,
       "time": null,
       "plan": "2026-10-07",
       "est": 90,
       "spent": 0,
       "blocks": [],
-      "project": null,
+      "project": "p_iy5b0ta6",
       "prio": 1,
       "kind": "task",
       "notes": "",
@@ -1805,8 +1821,8 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T04:00:00.000Z",
-      "doneAt": null,
+      "updated": "2026-10-06T15:51:21.736Z",
+      "doneAt": "2026-10-06T15:51:21.736Z",
       "src": "import"
     },
     "t_aogb3lli": {
@@ -2190,6 +2206,30 @@
       "updated": "2026-08-31T17:00:00.000Z",
       "doneAt": "2026-08-31T17:00:00.000Z",
       "src": "import"
+    },
+    "t_dyjiic1q": {
+      "id": "t_dyjiic1q",
+      "title": "Email Phil: E-ADIS got minimal feedback, it's ready",
+      "cat": "caadc",
+      "status": "todo",
+      "due": null,
+      "time": null,
+      "plan": "2026-10-07",
+      "est": 10,
+      "spent": 0,
+      "blocks": [],
+      "project": "p_iy5b0ta6",
+      "prio": 1,
+      "kind": "email",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-06T15:51:21.874Z",
+      "updated": "2026-10-06T15:51:27.124Z",
+      "doneAt": null,
+      "src": "chat"
     },
     "t_e0js7trp": {
       "id": "t_e0js7trp",
@@ -5811,6 +5851,16 @@
       "from": null,
       "to": "est,notes"
     },
+    "a_cbbkfub1": {
+      "id": "a_cbbkfub1",
+      "at": "2026-10-06T15:51:27.124Z",
+      "src": "chat",
+      "type": "move",
+      "ref": "t_dyjiic1q",
+      "title": "Email Phil: E-ADIS got minimal feedback, it's ready",
+      "from": null,
+      "to": "2026-10-07"
+    },
     "a_cfr2osvv": {
       "id": "a_cfr2osvv",
       "at": "2026-10-05T14:17:31.027Z",
@@ -6131,6 +6181,16 @@
       "from": null,
       "to": "2026-10-05"
     },
+    "a_jw76oi5h": {
+      "id": "a_jw76oi5h",
+      "at": "2026-10-06T15:51:21.874Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_dyjiic1q",
+      "title": "Email Phil: E-ADIS got minimal feedback, it's ready",
+      "from": null,
+      "to": null
+    },
     "a_k0kq8xn9": {
       "id": "a_k0kq8xn9",
       "at": "2026-10-05T23:37:01.821Z",
@@ -6191,6 +6251,16 @@
       "from": null,
       "to": "due,triage"
     },
+    "a_lu3kewfl": {
+      "id": "a_lu3kewfl",
+      "at": "2026-10-06T15:51:21.736Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_adis",
+      "title": "E-ADIS: fix based on Rachel's suggestions",
+      "from": null,
+      "to": null
+    },
     "a_m8k6y0g5": {
       "id": "a_m8k6y0g5",
       "at": "2026-10-05T14:34:46.028Z",
@@ -6210,6 +6280,16 @@
       "title": "Nyx meeting (tentative)",
       "from": null,
       "to": "2026-10-08"
+    },
+    "a_mttxjizp": {
+      "id": "a_mttxjizp",
+      "at": "2026-10-06T15:51:18.358Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "p_iy5b0ta6",
+      "title": "E-ADIS",
+      "from": null,
+      "to": null
     },
     "a_mur64d0r": {
       "id": "a_mur64d0r",
@@ -6690,6 +6770,16 @@
       "title": "Department AI presentation / Convert voice transcripts",
       "from": null,
       "to": "added"
+    },
+    "a_z5917tu6": {
+      "id": "a_z5917tu6",
+      "at": "2026-10-06T15:51:21.602Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_adis",
+      "title": "E-ADIS: fix based on Rachel's suggestions",
+      "from": null,
+      "to": "title,project"
     },
     "a_z9lmvm6s": {
       "id": "a_z9lmvm6s",
