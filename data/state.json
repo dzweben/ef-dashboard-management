@@ -23,12 +23,12 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-05T23:46:53.901Z",
-    "headline": "8 things today. Start with: Reschedule dentist (10m).",
+    "at": "2026-10-06T00:59:51.191Z",
+    "headline": "2 things today. Start with: Reschedule dentist (10m).",
     "lines": [
       "INCOMING // Clinical notes (3 behind) Wed 10/7 (2d): 1h left, 1h booked · RSA front-to-back for Nyx: finish + full review Thu 10/8 (3d): 3h left, 3h booked",
       "CHORES // Closet reset · Clean first floor · Water plants. Most overdue: Closet reset (48d since last).",
-      "TOMORROW // Tue 10/6 [6h 30m/8h]: Clinical notes (3 behind) · OCD pres: read the Barlow chapter · Email Johanna: full LEARN breakdown (issues we ran into) · RSA: participant data fixes · +2 more",
+      "TOMORROW // Tue 10/6 [8h/8h]: Clinical notes (3 behind) · OCD pres: read the Barlow chapter · Email Johanna: full LEARN breakdown (issues we ran into) · RSA: participant data fixes · +4 more",
       "DONE // 18 today · streak 8d"
     ],
     "asks": [
@@ -37,16 +37,15 @@
     ],
     "focus": [
       "t_dentist",
-      "t_70o15587",
-      "t_ocdrehearse"
+      "t_70o15587"
     ]
   },
   "clock": {
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-05T23:46:51.616Z",
-    "lastActivitySeen": "2026-10-05T23:46:51.616Z"
+    "lastClaudeSync": "2026-10-06T00:59:37.080Z",
+    "lastActivitySeen": "2026-10-06T00:59:37.080Z"
   },
   "cats": {
     "admin": {
@@ -1927,22 +1926,22 @@
       "spent": 0,
       "blocks": [
         {
-          "id": "b_r07acoho",
-          "d": "2026-10-05",
+          "id": "b_4s2nmg7g",
+          "d": "2026-10-07",
           "m": 60,
           "done": false,
           "auto": true
         },
         {
-          "id": "b_pvtunymm",
-          "d": "2026-10-10",
+          "id": "b_2r3thxfu",
+          "d": "2026-10-12",
           "m": 60,
           "done": false,
           "auto": true
         },
         {
-          "id": "b_lmii816k",
-          "d": "2026-10-16",
+          "id": "b_wwvd4qx3",
+          "d": "2026-10-17",
           "m": 60,
           "done": false,
           "auto": true
@@ -1957,7 +1956,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T14:17:30.295Z",
-      "updated": "2026-10-05T20:25:26.005Z",
+      "updated": "2026-10-06T00:59:46.030Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -3559,22 +3558,22 @@
       "spent": 0,
       "blocks": [
         {
-          "id": "b_3zl9bemy",
-          "d": "2026-10-05",
+          "id": "b_eo4tqj4m",
+          "d": "2026-10-07",
           "m": 60,
           "done": false,
           "auto": true
         },
         {
-          "id": "b_daiydw1g",
-          "d": "2026-10-09",
+          "id": "b_n0kwne7t",
+          "d": "2026-10-11",
           "m": 60,
           "done": false,
           "auto": true
         },
         {
-          "id": "b_iql745pp",
-          "d": "2026-10-14",
+          "id": "b_a9e3smo7",
+          "d": "2026-10-15",
           "m": 60,
           "done": false,
           "auto": true
@@ -3589,7 +3588,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T20:25:26.005Z",
+      "updated": "2026-10-06T00:59:46.030Z",
       "doneAt": null,
       "src": "import"
     },
@@ -3629,8 +3628,8 @@
       "spent": 0,
       "blocks": [
         {
-          "id": "b_5aiu7gyo",
-          "d": "2026-10-05",
+          "id": "b_giujq0kd",
+          "d": "2026-10-07",
           "m": 60,
           "done": false,
           "auto": true
@@ -3645,7 +3644,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T20:25:26.005Z",
+      "updated": "2026-10-06T00:59:46.030Z",
       "doneAt": null,
       "src": "import"
     },
@@ -3661,22 +3660,29 @@
       "spent": 0,
       "blocks": [
         {
-          "id": "b_j3yda070",
-          "d": "2026-10-05",
-          "m": 60,
+          "id": "b_pbln74j8",
+          "d": "2026-10-06",
+          "m": 30,
           "done": false,
           "auto": true
         },
         {
           "id": "b_yvwgqhk9",
           "d": "2026-10-07",
+          "m": 30,
+          "done": false,
+          "auto": true
+        },
+        {
+          "id": "b_xhbn9ros",
+          "d": "2026-10-08",
           "m": 60,
           "done": false,
           "auto": true
         },
         {
-          "id": "b_0jiyyz1q",
-          "d": "2026-10-10",
+          "id": "b_6uqgvdft",
+          "d": "2026-10-11",
           "m": 60,
           "done": false,
           "auto": true
@@ -3698,7 +3704,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T20:25:26.005Z",
+      "updated": "2026-10-06T00:59:46.030Z",
       "doneAt": null,
       "src": "import"
     },
@@ -3714,8 +3720,8 @@
       "spent": 60,
       "blocks": [
         {
-          "id": "b_deuu88mm",
-          "d": "2026-10-05",
+          "id": "b_nz7he9ax",
+          "d": "2026-10-06",
           "m": 60,
           "done": false,
           "auto": true
@@ -3751,7 +3757,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T20:25:26.005Z",
+      "updated": "2026-10-06T00:59:46.030Z",
       "doneAt": null,
       "src": "import"
     },
@@ -4546,22 +4552,22 @@
       "spent": 0,
       "blocks": [
         {
-          "id": "b_i344a2o5",
-          "d": "2026-10-05",
+          "id": "b_ji643kqy",
+          "d": "2026-10-07",
           "m": 60,
           "done": false,
           "auto": true
         },
         {
-          "id": "b_eg30rxsv",
-          "d": "2026-10-13",
+          "id": "b_bqdyqr87",
+          "d": "2026-10-15",
           "m": 60,
           "done": false,
           "auto": true
         },
         {
-          "id": "b_9om2jtfv",
-          "d": "2026-10-22",
+          "id": "b_xc8udmfd",
+          "d": "2026-10-23",
           "m": 60,
           "done": false,
           "auto": true
@@ -4576,7 +4582,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T14:17:13.553Z",
-      "updated": "2026-10-05T20:25:26.005Z",
+      "updated": "2026-10-06T00:59:46.030Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -5695,6 +5701,16 @@
       "title": "TUBRIC LinkedIn post",
       "from": null,
       "to": "every 7d"
+    },
+    "a_aa2h2e0y": {
+      "id": "a_aa2h2e0y",
+      "at": "2026-10-06T00:59:46.030Z",
+      "src": "chat",
+      "type": "block",
+      "ref": null,
+      "title": "Auto-plan: 6 tasks",
+      "from": null,
+      "to": "planned"
     },
     "a_ab1vdls5": {
       "id": "a_ab1vdls5",
