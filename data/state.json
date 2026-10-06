@@ -23,29 +23,29 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-06T00:59:51.191Z",
-    "headline": "2 things today. Start with: Reschedule dentist (10m).",
+    "at": "2026-10-06T12:59:27.202Z",
+    "headline": "9 things today. Start with: Clinical notes (3 behind) (1h).",
     "lines": [
-      "INCOMING // Clinical notes (3 behind) Wed 10/7 (2d): 1h left, 1h booked · RSA front-to-back for Nyx: finish + full review Thu 10/8 (3d): 3h left, 3h booked",
-      "CHORES // Closet reset · Clean first floor · Water plants. Most overdue: Closet reset (48d since last).",
-      "TOMORROW // Tue 10/6 [8h/8h]: Clinical notes (3 behind) · OCD pres: read the Barlow chapter · Email Johanna: full LEARN breakdown (issues we ran into) · RSA: participant data fixes · +4 more",
-      "DONE // 18 today · streak 8d"
+      "INCOMING // Clinical notes (3 behind) Wed 10/7 (1d): 1h left, 1h booked · RSA front-to-back for Nyx: finish + full review Thu 10/8 (2d): 3h left, 3h booked · OCD pres: build workshop Tue 10/13 (7d): 4h left, 4h booked",
+      "CHORES // Closet reset · Clean first floor · Water plants. Most overdue: Closet reset (49d since last).",
+      "TOMORROW // Wed 10/7 [7h 25m/8h]: DUE Clinical notes (3 behind) · Finalize ADIS · Follow up with Nyx if no reply · Lily gift: pick an idea · +6 more"
     ],
     "asks": [
-      "Anything coming up for Meetings?",
-      "Anything coming up for Ziggy?"
+      "Anything coming up for Undergrad?",
+      "Anything coming up for EF?"
     ],
     "focus": [
-      "t_dentist",
-      "t_70o15587"
+      "t_ff9fmzh1",
+      "t_g29xic6w",
+      "t_dentist"
     ]
   },
   "clock": {
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-06T00:59:37.080Z",
-    "lastActivitySeen": "2026-10-06T00:59:37.080Z"
+    "lastClaudeSync": "2026-10-06T12:59:20.843Z",
+    "lastActivitySeen": "2026-10-06T12:59:20.843Z"
   },
   "cats": {
     "admin": {
