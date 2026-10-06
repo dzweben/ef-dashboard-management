@@ -23,12 +23,12 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-06T16:06:25.551Z",
-    "headline": "9 things today. Start with: Clinical notes (3 behind) (1h).",
+    "at": "2026-10-06T16:07:16.530Z",
+    "headline": "11 things today. Start with: Clinical notes (3 behind) (1h).",
     "lines": [
-      "INCOMING // Clinical notes (3 behind) Wed 10/7 (1d): 1h left, 1h booked · RSA front-to-back for Nyx: finish + full review Thu 10/8 (2d): 3h left, 3h booked · OCD pres: build workshop Tue 10/13 (7d): 4h left, 4h booked",
+      "INCOMING // Clinical notes (3 behind) Wed 10/7 (1d): 1h left, 1h booked · Master Nyx's RSA script front to back (#1 priority) Thu 10/8 (2d): 3h left, 3h booked · OCD pres: build workshop Tue 10/13 (7d): 4h left, 4h booked",
       "CHORES // Closet reset · Clean first floor · Water plants. Most overdue: Closet reset (49d since last).",
-      "TOMORROW // Wed 10/7 [6h 5m/8h]: DUE Clinical notes (3 behind) · Email Phil: E-ADIS got minimal feedback, it's ready · Follow up with Nyx if no reply · Lily gift: pick an idea · +6 more",
+      "TOMORROW // Wed 10/7 [6h 5m/8h]: DUE Clinical notes (3 behind) · Master Nyx's RSA script front to back (#1 priority) · Email Phil: E-ADIS got minimal feedback, it's ready · Follow up with Nyx if no reply · +5 more",
       "DONE // 1 today · streak 9d"
     ],
     "asks": [
@@ -45,8 +45,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-06T16:06:17.218Z",
-    "lastActivitySeen": "2026-10-06T16:06:17.218Z"
+    "lastClaudeSync": "2026-10-06T16:06:53.184Z",
+    "lastActivitySeen": "2026-10-06T16:06:53.184Z"
   },
   "cats": {
     "admin": {
@@ -1957,22 +1957,29 @@
       "spent": 0,
       "blocks": [
         {
+          "id": "b_20tznv1k",
+          "d": "2026-10-06",
+          "m": 30,
+          "done": false,
+          "auto": true
+        },
+        {
           "id": "b_4s2nmg7g",
           "d": "2026-10-07",
+          "m": 30,
+          "done": false,
+          "auto": true
+        },
+        {
+          "id": "b_dy8avuwk",
+          "d": "2026-10-11",
           "m": 60,
           "done": false,
           "auto": true
         },
         {
-          "id": "b_2r3thxfu",
-          "d": "2026-10-12",
-          "m": 60,
-          "done": false,
-          "auto": true
-        },
-        {
-          "id": "b_wwvd4qx3",
-          "d": "2026-10-17",
+          "id": "b_ml8j9v70",
+          "d": "2026-10-16",
           "m": 60,
           "done": false,
           "auto": true
@@ -1987,7 +1994,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T14:17:30.295Z",
-      "updated": "2026-10-06T00:59:46.030Z",
+      "updated": "2026-10-06T16:07:11.068Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -3531,27 +3538,27 @@
     },
     "t_nyxprep": {
       "id": "t_nyxprep",
-      "title": "RSA front-to-back for Nyx: finish + full review",
+      "title": "Master Nyx's RSA script front to back (#1 priority)",
       "cat": "rsa",
       "status": "todo",
       "due": "2026-10-08",
       "time": null,
-      "plan": null,
+      "plan": "2026-10-07",
       "est": 240,
       "spent": 60,
       "blocks": [
         {
-          "id": "b_nk4bq1oh",
-          "d": "2026-10-06",
+          "id": "b_05luxoi9",
+          "d": "2026-10-07",
           "m": 180,
           "done": false,
           "auto": false
         }
       ],
       "project": null,
-      "prio": 1,
+      "prio": 3,
       "kind": "task",
-      "notes": "About 1/3 done 10/5. Needs a solid 3h sit-down with Nyx's code before the Thu evening meeting.",
+      "notes": "Wed 10/7 #1 priority: learn the script front to back, completely master it before the Thu evening Nyx meeting. About 1/3 done 10/5.",
       "subs": [
         {
           "id": "s1",
@@ -3573,7 +3580,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T20:20:42.348Z",
+      "updated": "2026-10-06T16:07:01.326Z",
       "doneAt": null,
       "src": "import"
     },
@@ -3613,22 +3620,22 @@
       "spent": 0,
       "blocks": [
         {
-          "id": "b_eo4tqj4m",
-          "d": "2026-10-07",
+          "id": "b_117uol8g",
+          "d": "2026-10-06",
           "m": 60,
           "done": false,
           "auto": true
         },
         {
-          "id": "b_n0kwne7t",
-          "d": "2026-10-11",
+          "id": "b_vys5ekni",
+          "d": "2026-10-10",
           "m": 60,
           "done": false,
           "auto": true
         },
         {
-          "id": "b_a9e3smo7",
-          "d": "2026-10-15",
+          "id": "b_5k7d185w",
+          "d": "2026-10-14",
           "m": 60,
           "done": false,
           "auto": true
@@ -3643,7 +3650,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-06T00:59:46.030Z",
+      "updated": "2026-10-06T16:07:11.068Z",
       "doneAt": null,
       "src": "import"
     },
@@ -3683,8 +3690,8 @@
       "spent": 0,
       "blocks": [
         {
-          "id": "b_giujq0kd",
-          "d": "2026-10-07",
+          "id": "b_xnyi3000",
+          "d": "2026-10-06",
           "m": 60,
           "done": false,
           "auto": true
@@ -3699,7 +3706,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-06T00:59:46.030Z",
+      "updated": "2026-10-06T16:07:11.068Z",
       "doneAt": null,
       "src": "import"
     },
@@ -3717,14 +3724,7 @@
         {
           "id": "b_pbln74j8",
           "d": "2026-10-06",
-          "m": 30,
-          "done": false,
-          "auto": true
-        },
-        {
-          "id": "b_yvwgqhk9",
-          "d": "2026-10-07",
-          "m": 30,
+          "m": 60,
           "done": false,
           "auto": true
         },
@@ -3759,7 +3759,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-06T00:59:46.030Z",
+      "updated": "2026-10-06T16:07:11.068Z",
       "doneAt": null,
       "src": "import"
     },
@@ -5346,7 +5346,7 @@
     "s_5s10aacz": {
       "id": "s_5s10aacz",
       "ref": "task:t_nyxprep",
-      "title": "RSA front-to-back for Nyx: finish + full review",
+      "title": "Master Nyx's RSA script front to back (#1 priority)",
       "cat": "rsa",
       "start": "2026-10-05T15:49:38.634Z",
       "end": "2026-10-05T16:49:38.634Z",
@@ -5374,6 +5374,16 @@
       "title": "Follow up with Nyx if no reply",
       "from": null,
       "to": "2026-10-08"
+    },
+    "a_0muzy5fe": {
+      "id": "a_0muzy5fe",
+      "at": "2026-10-06T16:07:01.183Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_nyxprep",
+      "title": "Master Nyx's RSA script front to back (#1 priority)",
+      "from": null,
+      "to": "title,plan,prio,notes,blocks"
     },
     "a_0rq9xp0z": {
       "id": "a_0rq9xp0z",
@@ -5441,7 +5451,7 @@
       "src": "chat",
       "type": "edit",
       "ref": "t_nyxprep",
-      "title": "RSA front-to-back for Nyx: finish + full review",
+      "title": "Master Nyx's RSA script front to back (#1 priority)",
       "from": null,
       "to": "title,due,est,notes"
     },
@@ -5571,7 +5581,7 @@
       "src": "chat",
       "type": "sub",
       "ref": "t_nyxprep",
-      "title": "RSA front-to-back for Nyx: finish + full review / First half of the analyses",
+      "title": "Master Nyx's RSA script front to back (#1 priority) / First half of the analyses",
       "from": null,
       "to": "done"
     },
@@ -5631,7 +5641,7 @@
       "src": "chat",
       "type": "clock",
       "ref": "t_nyxprep",
-      "title": "RSA front-to-back for Nyx: finish + full review",
+      "title": "Master Nyx's RSA script front to back (#1 priority)",
       "from": null,
       "to": "60m"
     },
@@ -5861,7 +5871,7 @@
       "src": "chat",
       "type": "edit",
       "ref": "t_nyxprep",
-      "title": "RSA front-to-back for Nyx: finish + full review",
+      "title": "Master Nyx's RSA script front to back (#1 priority)",
       "from": null,
       "to": "plan,notes,triage"
     },
@@ -5871,7 +5881,7 @@
       "src": "chat",
       "type": "edit",
       "ref": "t_nyxprep",
-      "title": "RSA front-to-back for Nyx: finish + full review",
+      "title": "Master Nyx's RSA script front to back (#1 priority)",
       "from": null,
       "to": "est,notes"
     },
@@ -6045,6 +6055,16 @@
       "from": null,
       "to": "title,cat,project"
     },
+    "a_g6qoqieb": {
+      "id": "a_g6qoqieb",
+      "at": "2026-10-06T16:07:11.068Z",
+      "src": "chat",
+      "type": "block",
+      "ref": null,
+      "title": "Auto-plan: 4 tasks",
+      "from": null,
+      "to": "planned"
+    },
     "a_galkvucu": {
       "id": "a_galkvucu",
       "at": "2026-10-05T23:39:42.378Z",
@@ -6171,7 +6191,7 @@
       "src": "chat",
       "type": "sub",
       "ref": "t_nyxprep",
-      "title": "RSA front-to-back for Nyx: finish + full review / Review front to back",
+      "title": "Master Nyx's RSA script front to back (#1 priority) / Review front to back",
       "from": null,
       "to": "added"
     },
@@ -6251,7 +6271,7 @@
       "src": "chat",
       "type": "sub",
       "ref": "t_nyxprep",
-      "title": "RSA front-to-back for Nyx: finish + full review / Finish the second half",
+      "title": "Master Nyx's RSA script front to back (#1 priority) / Finish the second half",
       "from": null,
       "to": "added"
     },
@@ -6261,7 +6281,7 @@
       "src": "chat",
       "type": "edit",
       "ref": "t_nyxprep",
-      "title": "RSA front-to-back for Nyx: finish + full review",
+      "title": "Master Nyx's RSA script front to back (#1 priority)",
       "from": null,
       "to": "plan,est,notes,blocks"
     },
@@ -6381,9 +6401,19 @@
       "src": "chat",
       "type": "edit",
       "ref": "t_nyxprep",
-      "title": "RSA front-to-back for Nyx: finish + full review",
+      "title": "Master Nyx's RSA script front to back (#1 priority)",
       "from": null,
       "to": "plan,blocks"
+    },
+    "a_nzjc95qa": {
+      "id": "a_nzjc95qa",
+      "at": "2026-10-06T16:07:01.326Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_nyxprep",
+      "title": "Master Nyx's RSA script front to back (#1 priority)",
+      "from": null,
+      "to": "blocks"
     },
     "a_okfzn01o": {
       "id": "a_okfzn01o",
@@ -6511,7 +6541,7 @@
       "src": "chat",
       "type": "sub",
       "ref": "t_nyxprep",
-      "title": "RSA front-to-back for Nyx: finish + full review / First half of the analyses",
+      "title": "Master Nyx's RSA script front to back (#1 priority) / First half of the analyses",
       "from": null,
       "to": "added"
     },
@@ -6721,7 +6751,7 @@
       "src": "chat",
       "type": "edit",
       "ref": "t_nyxprep",
-      "title": "RSA front-to-back for Nyx: finish + full review",
+      "title": "Master Nyx's RSA script front to back (#1 priority)",
       "from": null,
       "to": "blocks"
     },
