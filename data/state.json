@@ -23,7 +23,7 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-06T12:59:27.202Z",
+    "at": "2026-10-06T14:28:20.810Z",
     "headline": "9 things today. Start with: Clinical notes (3 behind) (1h).",
     "lines": [
       "INCOMING // Clinical notes (3 behind) Wed 10/7 (1d): 1h left, 1h booked · RSA front-to-back for Nyx: finish + full review Thu 10/8 (2d): 3h left, 3h booked · OCD pres: build workshop Tue 10/13 (7d): 4h left, 4h booked",
@@ -44,8 +44,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-06T12:59:20.843Z",
-    "lastActivitySeen": "2026-10-06T12:59:20.843Z"
+    "lastClaudeSync": "2026-10-06T14:27:58.134Z",
+    "lastActivitySeen": "2026-10-06T14:27:58.134Z"
   },
   "cats": {
     "admin": {
@@ -735,6 +735,21 @@
       "order": 4,
       "created": "2026-10-05T04:00:00.000Z",
       "updated": "2026-10-05T04:00:00.000Z"
+    },
+    "p_rmn3431p": {
+      "id": "p_rmn3431p",
+      "name": "Social motivation task (Chloe)",
+      "cat": "sdn",
+      "kind": "project",
+      "status": "active",
+      "due": null,
+      "goal": "Build and research Chloe's social motivation task. Background work: never ahead of deadlines.",
+      "milestones": [],
+      "weeklyHours": null,
+      "notes": "",
+      "order": 0,
+      "created": "2026-10-06T14:28:12.283Z",
+      "updated": "2026-10-06T14:28:12.283Z"
     },
     "p_rsa": {
       "id": "p_rsa",
@@ -4586,6 +4601,30 @@
       "doneAt": null,
       "src": "chat"
     },
+    "t_vo8ap6ds": {
+      "id": "t_vo8ap6ds",
+      "title": "Social motivation task: upload notes photo + start Claude thread",
+      "cat": "sdn",
+      "status": "todo",
+      "due": null,
+      "time": null,
+      "plan": null,
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": "p_rmn3431p",
+      "prio": 0,
+      "kind": "task",
+      "notes": "Background task, low priority. First step of building/researching the social motivation task.",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-06T14:28:17.538Z",
+      "updated": "2026-10-06T14:28:17.538Z",
+      "doneAt": null,
+      "src": "chat"
+    },
     "t_w0wwfbzm": {
       "id": "t_w0wwfbzm",
       "title": "RSA results",
@@ -5832,6 +5871,16 @@
       "from": null,
       "to": null
     },
+    "a_ddos3n32": {
+      "id": "a_ddos3n32",
+      "at": "2026-10-06T14:28:17.538Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_vo8ap6ds",
+      "title": "Social motivation task: upload notes photo + start Claude thread",
+      "from": null,
+      "to": null
+    },
     "a_dtpssg8p": {
       "id": "a_dtpssg8p",
       "at": "2026-10-05T23:37:02.568Z",
@@ -6019,6 +6068,16 @@
       "type": "undone",
       "ref": "t_ff9fmzh1",
       "title": "Clinical notes (3 behind)",
+      "from": null,
+      "to": null
+    },
+    "a_j2y7clcs": {
+      "id": "a_j2y7clcs",
+      "at": "2026-10-06T14:28:12.283Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "p_rmn3431p",
+      "title": "Social motivation task (Chloe)",
       "from": null,
       "to": null
     },
