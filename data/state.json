@@ -23,14 +23,13 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-07T04:16:48.561Z",
+    "at": "2026-10-07T12:59:54.911Z",
     "headline": "9 things today. Start with: Clinical notes (3 behind) (1h).",
     "lines": [
       "DUE TODAY // Clinical notes (3 behind) (1h left)",
       "INCOMING // Master Nyx's RSA script front to back (#1 priority) Thu 10/8 (1d): 3h left, 3h booked · OCD pres: build workshop Tue 10/13 (6d): 4h left, 4h booked",
       "CHORES // Clean first floor · Water plants. Most overdue: Clean first floor (17d since last).",
-      "TOMORROW // Thu 10/8 [8h/8h]: DUE Master Nyx's RSA script front to back (#1 priority) · Nyx meeting · Follow up with Jason if no reply · RSA manuscript update 1/3 · +5 more",
-      "DONE // 2 today · streak 10d"
+      "TOMORROW // Thu 10/8 [8h/8h]: DUE Master Nyx's RSA script front to back (#1 priority) · Nyx meeting · Follow up with Jason if no reply · RSA manuscript update 1/3 · +5 more"
     ],
     "asks": [
       "'Reschedule dentist' got pushed 3x. Shrink it, pin it to a day, or drop it?",
@@ -47,8 +46,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-07T04:16:46.150Z",
-    "lastActivitySeen": "2026-10-07T04:16:46.150Z"
+    "lastClaudeSync": "2026-10-07T12:59:39.981Z",
+    "lastActivitySeen": "2026-10-07T12:59:39.981Z"
   },
   "cats": {
     "admin": {
@@ -4152,8 +4151,8 @@
       "moved": 1,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-07T04:09:47.634Z",
-      "doneAt": "2026-10-07T04:09:47.634Z",
+      "updated": "2026-10-07T12:59:54.654Z",
+      "doneAt": "2026-10-06T16:00:00.000Z",
       "src": "import"
     },
     "t_rsaupd1": {
@@ -4440,8 +4439,8 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-07T04:09:53.155Z",
-      "updated": "2026-10-07T04:09:53.462Z",
-      "doneAt": "2026-10-07T04:09:53.462Z",
+      "updated": "2026-10-07T12:59:54.749Z",
+      "doneAt": "2026-10-06T16:00:00.000Z",
       "src": "chat"
     },
     "t_tubricscan": {
@@ -5893,6 +5892,16 @@
       "from": null,
       "to": "done"
     },
+    "a_7b9ki9rd": {
+      "id": "a_7b9ki9rd",
+      "at": "2026-10-07T12:59:54.749Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_tkkb8hsn",
+      "title": "Review paper: first chip (restart)",
+      "from": null,
+      "to": "doneAt"
+    },
     "a_7mc0nftn": {
       "id": "a_7mc0nftn",
       "at": "2026-10-05T19:21:43.987Z",
@@ -6292,6 +6301,16 @@
       "title": "Set up SPARK PPI meeting with Teij",
       "from": null,
       "to": "title,cat,project"
+    },
+    "a_g3f9onrf": {
+      "id": "a_g3f9onrf",
+      "at": "2026-10-07T12:59:54.654Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_rsafixes",
+      "title": "RSA: participant data fixes",
+      "from": null,
+      "to": "doneAt"
     },
     "a_g6qoqieb": {
       "id": "a_g6qoqieb",
