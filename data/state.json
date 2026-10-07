@@ -23,30 +23,32 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-07T02:20:33.328Z",
-    "headline": "2 things today. Start with: Clinical notes (3 behind) (1h).",
+    "at": "2026-10-07T04:09:53.859Z",
+    "headline": "9 things today. Start with: Clinical notes (3 behind) (1h).",
     "lines": [
-      "INCOMING // Clinical notes (3 behind) Wed 10/7 (1d): 1h left, 1h booked · Master Nyx's RSA script front to back (#1 priority) Thu 10/8 (2d): 3h left, 3h booked · OCD pres: build workshop Tue 10/13 (7d): 4h left, 4h booked",
-      "CHORES // Closet reset · Clean first floor · Water plants. Most overdue: Closet reset (49d since last).",
-      "TOMORROW // Wed 10/7 [8h/8h]: DUE Clinical notes (3 behind) · Master Nyx's RSA script front to back (#1 priority) · OCD pres: read the Barlow chapter · Email Johanna: full LEARN breakdown (issues we ran into) · +7 more",
-      "DONE // 5 today · streak 9d"
+      "DUE TODAY // Clinical notes (3 behind) (1h left)",
+      "INCOMING // Master Nyx's RSA script front to back (#1 priority) Thu 10/8 (1d): 3h left, 3h booked · OCD pres: build workshop Tue 10/13 (6d): 4h left, 4h booked",
+      "CHORES // Clean first floor · Water plants. Most overdue: Clean first floor (17d since last).",
+      "TOMORROW // Thu 10/8 [8h 10m/8h]: DUE Master Nyx's RSA script front to back (#1 priority) · Nyx meeting · Follow up with Jason if no reply · RSA manuscript update 1/3 · +6 more",
+      "DONE // 2 today · streak 10d"
     ],
     "asks": [
       "'Reschedule dentist' got pushed 3x. Shrink it, pin it to a day, or drop it?",
-      "Anything coming up for Undergrad?",
-      "Anything coming up for EF?"
+      "Anything coming up for Meetings?",
+      "Anything coming up for Ziggy?"
     ],
     "focus": [
       "t_ff9fmzh1",
-      "t_70o15587"
+      "t_nyxprep",
+      "t_dentist"
     ]
   },
   "clock": {
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-07T02:19:47.374Z",
-    "lastActivitySeen": "2026-10-07T02:19:47.374Z"
+    "lastClaudeSync": "2026-10-07T04:09:31.879Z",
+    "lastActivitySeen": "2026-10-07T04:09:31.879Z"
   },
   "cats": {
     "admin": {
@@ -591,6 +593,21 @@
       "created": "2026-10-05T14:34:37.560Z",
       "updated": "2026-10-05T14:34:37.560Z"
     },
+    "p_f18i5wz7": {
+      "id": "p_f18i5wz7",
+      "name": "Review paper (long-term)",
+      "cat": "manuscripts",
+      "kind": "project",
+      "status": "active",
+      "due": null,
+      "goal": "Long-term review paper, chipped at little by little. Restarted 10/6.",
+      "milestones": [],
+      "weeklyHours": null,
+      "notes": "",
+      "order": 0,
+      "created": "2026-10-07T04:09:48.062Z",
+      "updated": "2026-10-07T04:09:48.062Z"
+    },
     "p_iy5b0ta6": {
       "id": "p_iy5b0ta6",
       "name": "E-ADIS",
@@ -1056,6 +1073,30 @@
       "updated": "2026-08-18T17:00:00.000Z",
       "doneAt": "2026-08-18T17:00:00.000Z",
       "src": "import"
+    },
+    "t_2m1nsi1p": {
+      "id": "t_2m1nsi1p",
+      "title": "Tell Chloe to add the RSA participant data fixes to the univariate",
+      "cat": "rsa",
+      "status": "todo",
+      "due": null,
+      "time": null,
+      "plan": "2026-10-08",
+      "est": 10,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-07T04:09:47.352Z",
+      "updated": "2026-10-07T04:09:47.352Z",
+      "doneAt": null,
+      "src": "chat"
     },
     "t_2tdzf21s": {
       "id": "t_2tdzf21s",
@@ -1587,25 +1628,25 @@
     },
     "t_7e8sndnw": {
       "id": "t_7e8sndnw",
-      "title": "Email Johanna: full LEARN breakdown (issues we ran into)",
+      "title": "Send Johanna the LEARN breakdown email (drafted)",
       "cat": "learn",
       "status": "todo",
       "due": null,
       "time": null,
       "plan": "2026-10-07",
-      "est": 45,
+      "est": 5,
       "spent": 0,
       "blocks": [],
       "project": null,
       "prio": 1,
       "kind": "email",
-      "notes": "",
+      "notes": "Drafted 10/6; send Wed morning.",
       "subs": [],
       "triage": false,
       "moved": 1,
       "win": false,
       "created": "2026-10-05T16:07:46.135Z",
-      "updated": "2026-10-07T02:20:29.010Z",
+      "updated": "2026-10-07T04:09:47.917Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -2202,15 +2243,15 @@
       "spent": 0,
       "blocks": [],
       "project": null,
-      "prio": 1,
+      "prio": 2,
       "kind": "task",
-      "notes": "",
+      "notes": "Danny: keep reminding and pressing until this call is made.",
       "subs": [],
       "triage": false,
       "moved": 3,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-07T02:20:29.145Z",
+      "updated": "2026-10-07T04:09:47.769Z",
       "doneAt": null,
       "src": "import"
     },
@@ -4084,7 +4125,7 @@
       "id": "t_rsafixes",
       "title": "RSA: participant data fixes",
       "cat": "rsa",
-      "status": "todo",
+      "status": "done",
       "due": null,
       "time": null,
       "plan": "2026-10-07",
@@ -4094,12 +4135,12 @@
       "project": null,
       "prio": 1,
       "kind": "analysis",
-      "notes": "10/6: worked on this most of the day; it took precedence over everything else.",
+      "notes": "Fixes done 10/6 (most of the day).",
       "subs": [
         {
           "id": "s1",
           "t": "Add participant data fixes to RSA",
-          "done": false
+          "done": true
         },
         {
           "id": "s2",
@@ -4111,8 +4152,8 @@
       "moved": 1,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-07T02:20:28.855Z",
-      "doneAt": null,
+      "updated": "2026-10-07T04:09:47.634Z",
+      "doneAt": "2026-10-07T04:09:47.634Z",
       "src": "import"
     },
     "t_rsaupd1": {
@@ -4378,6 +4419,30 @@
       "updated": "2026-10-05T14:34:45.286Z",
       "doneAt": "2026-10-01T16:00:00.000Z",
       "src": "import"
+    },
+    "t_tkkb8hsn": {
+      "id": "t_tkkb8hsn",
+      "title": "Review paper: first chip (restart)",
+      "cat": "manuscripts",
+      "status": "done",
+      "due": null,
+      "time": null,
+      "plan": "2026-10-07",
+      "est": 15,
+      "spent": 15,
+      "blocks": [],
+      "project": "p_f18i5wz7",
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-07T04:09:53.155Z",
+      "updated": "2026-10-07T04:09:53.462Z",
+      "doneAt": "2026-10-07T04:09:53.462Z",
+      "src": "chat"
     },
     "t_tubricscan": {
       "id": "t_tubricscan",
@@ -5416,6 +5481,16 @@
     }
   },
   "sessions": {
+    "s_4vwqvck0": {
+      "id": "s_4vwqvck0",
+      "ref": "task:t_tkkb8hsn",
+      "title": "Review paper: first chip (restart)",
+      "cat": "manuscripts",
+      "start": "2026-10-07T03:54:53.319Z",
+      "end": "2026-10-07T04:09:53.319Z",
+      "min": 15,
+      "d": "2026-10-07"
+    },
     "s_5s10aacz": {
       "id": "s_5s10aacz",
       "ref": "task:t_nyxprep",
@@ -5464,7 +5539,7 @@
       "src": "chat",
       "type": "add",
       "ref": "t_7e8sndnw",
-      "title": "Email Johanna: full LEARN breakdown (issues we ran into)",
+      "title": "Send Johanna the LEARN breakdown email (drafted)",
       "from": null,
       "to": "2026-10-06"
     },
@@ -5608,6 +5683,16 @@
       "from": null,
       "to": "2026-10-31"
     },
+    "a_39bqthd4": {
+      "id": "a_39bqthd4",
+      "at": "2026-10-07T04:09:47.769Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_dentist",
+      "title": "Reschedule dentist",
+      "from": null,
+      "to": "prio,notes"
+    },
     "a_3antmo5h": {
       "id": "a_3antmo5h",
       "at": "2026-10-05T16:07:46.434Z",
@@ -5627,6 +5712,16 @@
       "title": "Department AI presentation",
       "from": null,
       "to": "2026-10-19"
+    },
+    "a_3xc69rss": {
+      "id": "a_3xc69rss",
+      "at": "2026-10-07T04:09:48.062Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "p_f18i5wz7",
+      "title": "Review paper (long-term)",
+      "from": null,
+      "to": null
     },
     "a_49sdqtli": {
       "id": "a_49sdqtli",
@@ -5735,6 +5830,16 @@
       "type": "chore",
       "ref": "c_groceries",
       "title": "Grocery run",
+      "from": null,
+      "to": null
+    },
+    "a_5njeiihg": {
+      "id": "a_5njeiihg",
+      "at": "2026-10-07T04:09:53.462Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_tkkb8hsn",
+      "title": "Review paper: first chip (restart)",
       "from": null,
       "to": null
     },
@@ -5938,6 +6043,16 @@
       "from": null,
       "to": "added"
     },
+    "a_aujdc047": {
+      "id": "a_aujdc047",
+      "at": "2026-10-07T04:09:47.495Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_rsafixes",
+      "title": "RSA: participant data fixes",
+      "from": null,
+      "to": "notes"
+    },
     "a_b31pdpmz": {
       "id": "a_b31pdpmz",
       "at": "2026-10-05T19:54:57.925Z",
@@ -6097,6 +6212,16 @@
       "title": "AI pres: convert voice transcripts",
       "from": "2026-10-07",
       "to": "2026-10-14"
+    },
+    "a_ehaxov0f": {
+      "id": "a_ehaxov0f",
+      "at": "2026-10-07T04:09:47.634Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_rsafixes",
+      "title": "RSA: participant data fixes",
+      "from": null,
+      "to": null
     },
     "a_epvdwcly": {
       "id": "a_epvdwcly",
@@ -6478,6 +6603,16 @@
       "from": null,
       "to": "2026-10-08"
     },
+    "a_l2u0j980": {
+      "id": "a_l2u0j980",
+      "at": "2026-10-07T04:09:53.155Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_tkkb8hsn",
+      "title": "Review paper: first chip (restart)",
+      "from": null,
+      "to": "2026-10-07"
+    },
     "a_l5mf16u9": {
       "id": "a_l5mf16u9",
       "at": "2026-10-05T14:17:13.404Z",
@@ -6487,6 +6622,16 @@
       "title": "ABCD review meeting",
       "from": null,
       "to": "due,triage"
+    },
+    "a_lejypuw3": {
+      "id": "a_lejypuw3",
+      "at": "2026-10-07T04:09:47.182Z",
+      "src": "chat",
+      "type": "sub",
+      "ref": "t_rsafixes",
+      "title": "RSA: participant data fixes / Add participant data fixes to RSA",
+      "from": null,
+      "to": "done"
     },
     "a_lu3kewfl": {
       "id": "a_lu3kewfl",
@@ -6738,6 +6883,16 @@
       "from": null,
       "to": null
     },
+    "a_rha2tv5n": {
+      "id": "a_rha2tv5n",
+      "at": "2026-10-07T04:09:47.917Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_7e8sndnw",
+      "title": "Send Johanna the LEARN breakdown email (drafted)",
+      "from": null,
+      "to": "title,est,notes"
+    },
     "a_rhork6yo": {
       "id": "a_rhork6yo",
       "at": "2026-10-05T16:49:38.753Z",
@@ -6777,6 +6932,16 @@
       "title": "Nyx meeting",
       "from": null,
       "to": "title,notes"
+    },
+    "a_rzz8233m": {
+      "id": "a_rzz8233m",
+      "at": "2026-10-07T04:09:47.352Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_2m1nsi1p",
+      "title": "Tell Chloe to add the RSA participant data fixes to the univariate",
+      "from": null,
+      "to": "2026-10-08"
     },
     "a_s2a052n8": {
       "id": "a_s2a052n8",
@@ -6837,6 +7002,16 @@
       "title": "SPARK PPI meeting with Teij",
       "from": null,
       "to": null
+    },
+    "a_t7i7og64": {
+      "id": "a_t7i7og64",
+      "at": "2026-10-07T04:09:53.319Z",
+      "src": "chat",
+      "type": "clock",
+      "ref": "t_tkkb8hsn",
+      "title": "Review paper: first chip (restart)",
+      "from": null,
+      "to": "15m"
     },
     "a_tmsfaoog": {
       "id": "a_tmsfaoog",
@@ -7094,7 +7269,7 @@
       "src": "chat",
       "type": "move",
       "ref": "t_7e8sndnw",
-      "title": "Email Johanna: full LEARN breakdown (issues we ran into)",
+      "title": "Send Johanna the LEARN breakdown email (drafted)",
       "from": "2026-10-06",
       "to": "2026-10-07"
     },
