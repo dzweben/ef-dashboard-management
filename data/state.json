@@ -23,13 +23,13 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-07T18:03:59.009Z",
-    "headline": "10 things today. Start with: Clinical notes (3 behind) (1h).",
+    "at": "2026-10-07T18:06:11.486Z",
+    "headline": "12 things today. Start with: Clinical notes (3 behind) (1h).",
     "lines": [
       "DUE TODAY // Clinical notes (3 behind) (1h left)",
-      "INCOMING // Master Nyx's RSA script front to back (#1 priority) Thu 10/8 (1d): 3h left, 3h booked · OCD pres: build workshop Tue 10/13 (6d): 4h left, 4h booked",
+      "INCOMING // Master Nyx's RSA script front to back (#1 priority) Thu 10/8 (1d): 4h left, 4h booked · OCD pres: build workshop Tue 10/13 (6d): 4h left, 4h booked",
       "CHORES // Clean first floor · Water plants. Most overdue: Clean first floor (17d since last).",
-      "TOMORROW // Thu 10/8 [8h/8h]: DUE Master Nyx's RSA script front to back (#1 priority) · Nyx meeting · Follow up with Jason if no reply · RSA manuscript update 1/3 · +5 more"
+      "TOMORROW // Thu 10/8 [8h/8h]: DUE Master Nyx's RSA script front to back (#1 priority) · Nyx meeting · Follow up with Jason if no reply · RSA manuscript update 1/3 · +2 more"
     ],
     "asks": [
       "'Reschedule dentist' got pushed 3x. Shrink it, pin it to a day, or drop it?",
@@ -38,16 +38,16 @@
     ],
     "focus": [
       "t_ff9fmzh1",
-      "t_nyxprep",
-      "t_dentist"
+      "t_dentist",
+      "t_g29xic6w"
     ]
   },
   "clock": {
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-07T18:03:43.992Z",
-    "lastActivitySeen": "2026-10-07T18:03:43.992Z"
+    "lastClaudeSync": "2026-10-07T18:06:03.523Z",
+    "lastActivitySeen": "2026-10-07T18:06:03.523Z"
   },
   "cats": {
     "admin": {
@@ -2045,22 +2045,15 @@
       "spent": 0,
       "blocks": [
         {
-          "id": "b_d6z16916",
-          "d": "2026-10-08",
-          "m": 30,
-          "done": false,
-          "auto": true
-        },
-        {
           "id": "b_rzf650w9",
           "d": "2026-10-09",
-          "m": 30,
+          "m": 60,
           "done": false,
           "auto": true
         },
         {
-          "id": "b_untwl9z6",
-          "d": "2026-10-12",
+          "id": "b_41rxwmef",
+          "d": "2026-10-13",
           "m": 60,
           "done": false,
           "auto": true
@@ -2082,7 +2075,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T14:17:30.295Z",
-      "updated": "2026-10-07T02:20:29.501Z",
+      "updated": "2026-10-07T18:06:05.603Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -3631,14 +3624,14 @@
       "status": "todo",
       "due": "2026-10-08",
       "time": null,
-      "plan": "2026-10-07",
-      "est": 240,
+      "plan": "2026-10-08",
+      "est": 300,
       "spent": 60,
       "blocks": [
         {
-          "id": "b_05luxoi9",
-          "d": "2026-10-07",
-          "m": 180,
+          "id": "b_ffsokwlw",
+          "d": "2026-10-08",
+          "m": 240,
           "done": false,
           "auto": false
         }
@@ -3646,7 +3639,7 @@
       "project": null,
       "prio": 3,
       "kind": "task",
-      "notes": "Wed 10/7 #1 priority: learn the script front to back, completely master it before the Thu evening Nyx meeting. About 1/3 done 10/5.",
+      "notes": "Thu 10/8: whole morning on this (#1 priority), before the Thu evening Nyx meeting. About 1/3 done 10/5.",
       "subs": [
         {
           "id": "s1",
@@ -3665,10 +3658,10 @@
         }
       ],
       "triage": false,
-      "moved": 0,
+      "moved": 1,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-06T16:07:01.326Z",
+      "updated": "2026-10-07T18:06:05.456Z",
       "doneAt": null,
       "src": "import"
     },
@@ -3708,8 +3701,8 @@
       "spent": 0,
       "blocks": [
         {
-          "id": "b_mov56493",
-          "d": "2026-10-08",
+          "id": "b_h0ovmgd5",
+          "d": "2026-10-07",
           "m": 60,
           "done": false,
           "auto": true
@@ -3738,7 +3731,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-07T02:20:29.501Z",
+      "updated": "2026-10-07T18:06:05.603Z",
       "doneAt": null,
       "src": "import"
     },
@@ -3778,8 +3771,8 @@
       "spent": 0,
       "blocks": [
         {
-          "id": "b_wenod2ds",
-          "d": "2026-10-08",
+          "id": "b_pnv4qqbb",
+          "d": "2026-10-07",
           "m": 60,
           "done": false,
           "auto": true
@@ -3794,7 +3787,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-07T01:00:34.880Z",
+      "updated": "2026-10-07T18:06:05.603Z",
       "doneAt": null,
       "src": "import"
     },
@@ -3810,8 +3803,8 @@
       "spent": 0,
       "blocks": [
         {
-          "id": "b_21lg46ni",
-          "d": "2026-10-08",
+          "id": "b_ogicxu7a",
+          "d": "2026-10-07",
           "m": 60,
           "done": false,
           "auto": true
@@ -3847,7 +3840,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-07T02:20:29.501Z",
+      "updated": "2026-10-07T18:06:05.603Z",
       "doneAt": null,
       "src": "import"
     },
@@ -3865,14 +3858,14 @@
         {
           "id": "b_3tfba7fy",
           "d": "2026-10-07",
-          "m": 55,
+          "m": 90,
           "done": false,
           "auto": true
         },
         {
           "id": "b_uovavbrp",
           "d": "2026-10-08",
-          "m": 60,
+          "m": 30,
           "done": false,
           "auto": true
         },
@@ -3886,7 +3879,7 @@
         {
           "id": "b_num34lzs",
           "d": "2026-10-11",
-          "m": 65,
+          "m": 60,
           "done": false,
           "auto": true
         }
@@ -3900,7 +3893,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-07T02:20:29.501Z",
+      "updated": "2026-10-07T18:06:05.603Z",
       "doneAt": null,
       "src": "import"
     },
@@ -5660,6 +5653,16 @@
       "from": null,
       "to": "title,due,est,notes"
     },
+    "a_1f407yt0": {
+      "id": "a_1f407yt0",
+      "at": "2026-10-07T18:06:05.322Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_nyxprep",
+      "title": "Master Nyx's RSA script front to back (#1 priority)",
+      "from": null,
+      "to": "plan,est,notes,blocks"
+    },
     "a_1gw6jhep": {
       "id": "a_1gw6jhep",
       "at": "2026-10-05T14:17:31.662Z",
@@ -6349,6 +6352,16 @@
       "title": "OCD pres: read the Barlow chapter",
       "from": "2026-10-06",
       "to": "2026-10-07"
+    },
+    "a_fw3p27vj": {
+      "id": "a_fw3p27vj",
+      "at": "2026-10-07T18:06:05.603Z",
+      "src": "chat",
+      "type": "block",
+      "ref": null,
+      "title": "Auto-plan: 5 tasks",
+      "from": null,
+      "to": "planned"
     },
     "a_g0dxbq09": {
       "id": "a_g0dxbq09",
@@ -7289,6 +7302,16 @@
       "title": "AI pres: start a Claude Code thread",
       "from": "2026-10-08",
       "to": "2026-10-15"
+    },
+    "a_xpe3ipqi": {
+      "id": "a_xpe3ipqi",
+      "at": "2026-10-07T18:06:05.456Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_nyxprep",
+      "title": "Master Nyx's RSA script front to back (#1 priority)",
+      "from": null,
+      "to": "blocks"
     },
     "a_y6558ve2": {
       "id": "a_y6558ve2",
