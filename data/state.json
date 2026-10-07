@@ -23,8 +23,8 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-07T12:59:54.911Z",
-    "headline": "9 things today. Start with: Clinical notes (3 behind) (1h).",
+    "at": "2026-10-07T18:03:59.009Z",
+    "headline": "10 things today. Start with: Clinical notes (3 behind) (1h).",
     "lines": [
       "DUE TODAY // Clinical notes (3 behind) (1h left)",
       "INCOMING // Master Nyx's RSA script front to back (#1 priority) Thu 10/8 (1d): 3h left, 3h booked · OCD pres: build workshop Tue 10/13 (6d): 4h left, 4h booked",
@@ -46,8 +46,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-07T12:59:39.981Z",
-    "lastActivitySeen": "2026-10-07T12:59:39.981Z"
+    "lastClaudeSync": "2026-10-07T18:03:43.992Z",
+    "lastActivitySeen": "2026-10-07T18:03:43.992Z"
   },
   "cats": {
     "admin": {
@@ -1605,7 +1605,7 @@
       "id": "t_70o15587",
       "title": "Fold + put away laundry",
       "cat": "home",
-      "status": "todo",
+      "status": "done",
       "due": null,
       "time": null,
       "plan": "2026-10-05",
@@ -1621,8 +1621,8 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T14:17:31.662Z",
-      "updated": "2026-10-05T14:17:31.662Z",
-      "doneAt": null,
+      "updated": "2026-10-07T18:03:58.447Z",
+      "doneAt": "2026-10-06T16:00:00.000Z",
       "src": "chat"
     },
     "t_7e8sndnw": {
@@ -3976,6 +3976,30 @@
       "doneAt": null,
       "src": "chat"
     },
+    "t_pmvc74vr": {
+      "id": "t_pmvc74vr",
+      "title": "Laundry: new load",
+      "cat": "home",
+      "status": "todo",
+      "due": null,
+      "time": null,
+      "plan": "2026-10-07",
+      "est": 15,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-07T18:03:58.764Z",
+      "updated": "2026-10-07T18:03:58.764Z",
+      "doneAt": null,
+      "src": "chat"
+    },
     "t_pwcr1u0p": {
       "id": "t_pwcr1u0p",
       "title": "To-do list overhaul (meta!)",
@@ -4968,6 +4992,30 @@
       "updated": "2026-07-31T17:00:00.000Z",
       "doneAt": "2026-07-31T17:00:00.000Z",
       "src": "import"
+    },
+    "t_xouhgc0d": {
+      "id": "t_xouhgc0d",
+      "title": "Change Bella's scan to my scan",
+      "cat": "admin",
+      "status": "todo",
+      "due": null,
+      "time": null,
+      "plan": "2026-10-07",
+      "est": 10,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-07T18:03:58.618Z",
+      "updated": "2026-10-07T18:03:58.618Z",
+      "doneAt": null,
+      "src": "chat"
     },
     "t_xtqk2a5t": {
       "id": "t_xtqk2a5t",
@@ -6022,6 +6070,16 @@
       "from": null,
       "to": "every 7d"
     },
+    "a_a2ems5mt": {
+      "id": "a_a2ems5mt",
+      "at": "2026-10-07T18:03:58.447Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_70o15587",
+      "title": "Fold + put away laundry",
+      "from": null,
+      "to": null
+    },
     "a_aa2h2e0y": {
       "id": "a_aa2h2e0y",
       "at": "2026-10-06T00:59:46.030Z",
@@ -6842,6 +6900,16 @@
       "from": null,
       "to": null
     },
+    "a_q10b1mvm": {
+      "id": "a_q10b1mvm",
+      "at": "2026-10-07T18:03:58.764Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_pmvc74vr",
+      "title": "Laundry: new load",
+      "from": null,
+      "to": "2026-10-07"
+    },
     "a_q3523u1d": {
       "id": "a_q3523u1d",
       "at": "2026-10-05T14:19:45.616Z",
@@ -7061,6 +7129,16 @@
       "title": "SPARK docs: task-completion audit script",
       "from": null,
       "to": "2026-10-10"
+    },
+    "a_u9g9i65o": {
+      "id": "a_u9g9i65o",
+      "at": "2026-10-07T18:03:58.618Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_xouhgc0d",
+      "title": "Change Bella's scan to my scan",
+      "from": null,
+      "to": "2026-10-07"
     },
     "a_uifa8e2c": {
       "id": "a_uifa8e2c",
