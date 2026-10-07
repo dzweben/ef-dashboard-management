@@ -23,12 +23,12 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-06T16:09:26.270Z",
-    "headline": "11 things today. Start with: Clinical notes (3 behind) (1h).",
+    "at": "2026-10-07T01:00:40.158Z",
+    "headline": "6 things today. Start with: Clinical notes (3 behind) (1h).",
     "lines": [
       "INCOMING // Clinical notes (3 behind) Wed 10/7 (1d): 1h left, 1h booked · Master Nyx's RSA script front to back (#1 priority) Thu 10/8 (2d): 3h left, 3h booked · OCD pres: build workshop Tue 10/13 (7d): 4h left, 4h booked",
       "CHORES // Closet reset · Clean first floor · Water plants. Most overdue: Closet reset (49d since last).",
-      "TOMORROW // Wed 10/7 [6h 5m/8h]: DUE Clinical notes (3 behind) · Master Nyx's RSA script front to back (#1 priority) · Email Phil: E-ADIS got minimal feedback, it's ready · Follow up with Nyx if no reply · +5 more",
+      "TOMORROW // Wed 10/7 [7h 35m/8h]: DUE Clinical notes (3 behind) · Master Nyx's RSA script front to back (#1 priority) · Email Phil: E-ADIS got minimal feedback, it's ready · Follow up with Nyx if no reply · +6 more",
       "DONE // 1 today · streak 9d"
     ],
     "asks": [
@@ -45,8 +45,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-06T16:09:24.581Z",
-    "lastActivitySeen": "2026-10-06T16:09:24.581Z"
+    "lastClaudeSync": "2026-10-07T01:00:25.947Z",
+    "lastActivitySeen": "2026-10-07T01:00:25.947Z"
   },
   "cats": {
     "admin": {
@@ -1957,29 +1957,22 @@
       "spent": 0,
       "blocks": [
         {
-          "id": "b_20tznv1k",
-          "d": "2026-10-06",
-          "m": 30,
-          "done": false,
-          "auto": true
-        },
-        {
-          "id": "b_4s2nmg7g",
-          "d": "2026-10-07",
-          "m": 30,
-          "done": false,
-          "auto": true
-        },
-        {
-          "id": "b_dy8avuwk",
-          "d": "2026-10-11",
+          "id": "b_d6z16916",
+          "d": "2026-10-08",
           "m": 60,
           "done": false,
           "auto": true
         },
         {
-          "id": "b_ml8j9v70",
-          "d": "2026-10-16",
+          "id": "b_05vn0iq8",
+          "d": "2026-10-13",
+          "m": 60,
+          "done": false,
+          "auto": true
+        },
+        {
+          "id": "b_xyq6pth1",
+          "d": "2026-10-17",
           "m": 60,
           "done": false,
           "auto": true
@@ -1994,7 +1987,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T14:17:30.295Z",
-      "updated": "2026-10-06T16:07:11.068Z",
+      "updated": "2026-10-07T01:00:34.880Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -2394,8 +2387,8 @@
       "spent": 0,
       "blocks": [
         {
-          "id": "b_st23u3m2",
-          "d": "2026-10-06",
+          "id": "b_iri7y9lh",
+          "d": "2026-10-07",
           "m": 60,
           "done": false,
           "auto": true
@@ -2426,7 +2419,7 @@
       "moved": 1,
       "win": false,
       "created": "2026-10-05T14:17:31.806Z",
-      "updated": "2026-10-05T20:25:26.005Z",
+      "updated": "2026-10-07T01:00:34.880Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -3620,22 +3613,22 @@
       "spent": 0,
       "blocks": [
         {
-          "id": "b_117uol8g",
-          "d": "2026-10-06",
+          "id": "b_aux11v4d",
+          "d": "2026-10-07",
           "m": 60,
           "done": false,
           "auto": true
         },
         {
-          "id": "b_vys5ekni",
-          "d": "2026-10-10",
+          "id": "b_b9sq5ilg",
+          "d": "2026-10-11",
           "m": 60,
           "done": false,
           "auto": true
         },
         {
-          "id": "b_5k7d185w",
-          "d": "2026-10-14",
+          "id": "b_uamdcgop",
+          "d": "2026-10-15",
           "m": 60,
           "done": false,
           "auto": true
@@ -3650,7 +3643,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-06T16:07:11.068Z",
+      "updated": "2026-10-07T01:00:34.880Z",
       "doneAt": null,
       "src": "import"
     },
@@ -3690,8 +3683,8 @@
       "spent": 0,
       "blocks": [
         {
-          "id": "b_xnyi3000",
-          "d": "2026-10-06",
+          "id": "b_wenod2ds",
+          "d": "2026-10-08",
           "m": 60,
           "done": false,
           "auto": true
@@ -3706,7 +3699,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-06T16:07:11.068Z",
+      "updated": "2026-10-07T01:00:34.880Z",
       "doneAt": null,
       "src": "import"
     },
@@ -3722,15 +3715,15 @@
       "spent": 0,
       "blocks": [
         {
-          "id": "b_pbln74j8",
-          "d": "2026-10-06",
+          "id": "b_o4aa78zf",
+          "d": "2026-10-07",
           "m": 60,
           "done": false,
           "auto": true
         },
         {
-          "id": "b_xhbn9ros",
-          "d": "2026-10-08",
+          "id": "b_p8xhrrew",
+          "d": "2026-10-09",
           "m": 60,
           "done": false,
           "auto": true
@@ -3759,7 +3752,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-06T16:07:11.068Z",
+      "updated": "2026-10-07T01:00:34.880Z",
       "doneAt": null,
       "src": "import"
     },
@@ -3775,13 +3768,6 @@
       "spent": 60,
       "blocks": [
         {
-          "id": "b_nz7he9ax",
-          "d": "2026-10-06",
-          "m": 60,
-          "done": false,
-          "auto": true
-        },
-        {
           "id": "b_3tfba7fy",
           "d": "2026-10-07",
           "m": 60,
@@ -3789,8 +3775,15 @@
           "auto": true
         },
         {
-          "id": "b_l866r7oa",
-          "d": "2026-10-09",
+          "id": "b_uovavbrp",
+          "d": "2026-10-08",
+          "m": 60,
+          "done": false,
+          "auto": true
+        },
+        {
+          "id": "b_04gpexq2",
+          "d": "2026-10-10",
           "m": 60,
           "done": false,
           "auto": true
@@ -3812,7 +3805,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-06T00:59:46.030Z",
+      "updated": "2026-10-07T01:00:34.880Z",
       "doneAt": null,
       "src": "import"
     },
@@ -4631,15 +4624,15 @@
       "spent": 0,
       "blocks": [
         {
-          "id": "b_ji643kqy",
-          "d": "2026-10-07",
+          "id": "b_05u4hmsx",
+          "d": "2026-10-08",
           "m": 60,
           "done": false,
           "auto": true
         },
         {
-          "id": "b_bqdyqr87",
-          "d": "2026-10-15",
+          "id": "b_zlt52wip",
+          "d": "2026-10-16",
           "m": 60,
           "done": false,
           "auto": true
@@ -4661,7 +4654,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T14:17:13.553Z",
-      "updated": "2026-10-06T00:59:46.030Z",
+      "updated": "2026-10-07T01:00:34.880Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -6174,6 +6167,16 @@
       "title": "Clinical notes (3 behind)",
       "from": null,
       "to": null
+    },
+    "a_insj0re9": {
+      "id": "a_insj0re9",
+      "at": "2026-10-07T01:00:34.880Z",
+      "src": "chat",
+      "type": "block",
+      "ref": null,
+      "title": "Auto-plan: 7 tasks",
+      "from": null,
+      "to": "planned"
     },
     "a_j2y7clcs": {
       "id": "a_j2y7clcs",
