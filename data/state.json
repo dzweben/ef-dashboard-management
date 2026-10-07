@@ -5297,19 +5297,20 @@
       "cat": "home",
       "every": 14,
       "perDay": 1,
-      "last": "2026-08-18",
+      "last": "2026-10-06",
       "start": null,
       "log": [
         "2026-07-24",
         "2026-08-03",
         "2026-08-17",
-        "2026-08-18"
+        "2026-08-18",
+        "2026-10-06"
       ],
       "min": 5,
       "active": true,
       "notes": "",
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T04:00:00.000Z"
+      "updated": "2026-10-07T02:25:08.274Z"
     },
     "c_floor1": {
       "id": "c_floor1",
@@ -5494,6 +5495,16 @@
       "type": "add",
       "ref": "t_yalu9vlo",
       "title": "Sent 2 session reminders",
+      "from": null,
+      "to": null
+    },
+    "a_12zf7f10": {
+      "id": "a_12zf7f10",
+      "at": "2026-10-07T02:25:08.274Z",
+      "src": "dash",
+      "type": "chore",
+      "ref": "c_closet",
+      "title": "Closet reset",
       "from": null,
       "to": null
     },
