@@ -23,13 +23,13 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-07T18:06:11.486Z",
+    "at": "2026-10-07T18:20:51.415Z",
     "headline": "12 things today. Start with: Clinical notes (3 behind) (1h).",
     "lines": [
       "DUE TODAY // Clinical notes (3 behind) (1h left)",
       "INCOMING // Master Nyx's RSA script front to back (#1 priority) Thu 10/8 (1d): 4h left, 4h booked · OCD pres: build workshop Tue 10/13 (6d): 4h left, 4h booked",
       "CHORES // Clean first floor · Water plants. Most overdue: Clean first floor (17d since last).",
-      "TOMORROW // Thu 10/8 [8h/8h]: DUE Master Nyx's RSA script front to back (#1 priority) · Nyx meeting · Follow up with Jason if no reply · RSA manuscript update 1/3 · +2 more"
+      "TOMORROW // Thu 10/8 [5h/8h]: DUE Master Nyx's RSA script front to back (#1 priority) · Nyx meeting · Follow up with Jason if no reply · Master Nyx's RSA script front to back (#1 priority) 4h · +1 more"
     ],
     "asks": [
       "'Reschedule dentist' got pushed 3x. Shrink it, pin it to a day, or drop it?",
@@ -46,8 +46,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-07T18:06:03.523Z",
-    "lastActivitySeen": "2026-10-07T18:06:03.523Z"
+    "lastClaudeSync": "2026-10-07T18:20:34.380Z",
+    "lastActivitySeen": "2026-10-07T18:20:34.380Z"
   },
   "cats": {
     "admin": {
@@ -817,8 +817,8 @@
           "id": "m4",
           "t": "Manuscript update 1/3",
           "due": null,
-          "done": false,
-          "doneAt": null
+          "done": true,
+          "doneAt": "2026-10-07T18:20:46.973Z"
         },
         {
           "id": "m5",
@@ -853,7 +853,7 @@
       "notes": "",
       "order": 2,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T04:00:00.000Z"
+      "updated": "2026-10-07T18:20:46.973Z"
     }
   },
   "tasks": {
@@ -4176,7 +4176,7 @@
       "id": "t_rsaupd1",
       "title": "RSA manuscript update 1/3",
       "cat": "rsa",
-      "status": "todo",
+      "status": "done",
       "due": null,
       "time": null,
       "plan": "2026-10-08",
@@ -4192,8 +4192,8 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T04:00:00.000Z",
-      "doneAt": null,
+      "updated": "2026-10-07T18:20:46.865Z",
+      "doneAt": "2026-10-06T16:00:00.000Z",
       "src": "import"
     },
     "t_runiyigc": {
@@ -6243,6 +6243,16 @@
       "from": null,
       "to": null
     },
+    "a_dr42njtz": {
+      "id": "a_dr42njtz",
+      "at": "2026-10-07T18:20:46.973Z",
+      "src": "chat",
+      "type": "milestone",
+      "ref": "p_rsa",
+      "title": "RSA manuscript / Manuscript update 1/3",
+      "from": null,
+      "to": "done"
+    },
     "a_dtpssg8p": {
       "id": "a_dtpssg8p",
       "at": "2026-10-05T23:37:02.568Z",
@@ -7402,6 +7412,16 @@
       "title": "Send Johanna the LEARN breakdown email (drafted)",
       "from": "2026-10-06",
       "to": "2026-10-07"
+    },
+    "a_z8qdlsb2": {
+      "id": "a_z8qdlsb2",
+      "at": "2026-10-07T18:20:46.865Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_rsaupd1",
+      "title": "RSA manuscript update 1/3",
+      "from": null,
+      "to": null
     },
     "a_z9lmvm6s": {
       "id": "a_z9lmvm6s",
