@@ -23,30 +23,30 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-07T01:00:40.158Z",
-    "headline": "6 things today. Start with: Clinical notes (3 behind) (1h).",
+    "at": "2026-10-07T02:20:33.328Z",
+    "headline": "2 things today. Start with: Clinical notes (3 behind) (1h).",
     "lines": [
       "INCOMING // Clinical notes (3 behind) Wed 10/7 (1d): 1h left, 1h booked · Master Nyx's RSA script front to back (#1 priority) Thu 10/8 (2d): 3h left, 3h booked · OCD pres: build workshop Tue 10/13 (7d): 4h left, 4h booked",
       "CHORES // Closet reset · Clean first floor · Water plants. Most overdue: Closet reset (49d since last).",
-      "TOMORROW // Wed 10/7 [7h 35m/8h]: DUE Clinical notes (3 behind) · Master Nyx's RSA script front to back (#1 priority) · Email Phil: E-ADIS got minimal feedback, it's ready · Follow up with Nyx if no reply · +6 more",
-      "DONE // 1 today · streak 9d"
+      "TOMORROW // Wed 10/7 [8h/8h]: DUE Clinical notes (3 behind) · Master Nyx's RSA script front to back (#1 priority) · OCD pres: read the Barlow chapter · Email Johanna: full LEARN breakdown (issues we ran into) · +7 more",
+      "DONE // 5 today · streak 9d"
     ],
     "asks": [
+      "'Reschedule dentist' got pushed 3x. Shrink it, pin it to a day, or drop it?",
       "Anything coming up for Undergrad?",
       "Anything coming up for EF?"
     ],
     "focus": [
       "t_ff9fmzh1",
-      "t_g29xic6w",
-      "t_dentist"
+      "t_70o15587"
     ]
   },
   "clock": {
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-07T01:00:25.947Z",
-    "lastActivitySeen": "2026-10-07T01:00:25.947Z"
+    "lastClaudeSync": "2026-10-07T02:19:47.374Z",
+    "lastActivitySeen": "2026-10-07T02:19:47.374Z"
   },
   "cats": {
     "admin": {
@@ -841,6 +841,30 @@
     }
   },
   "tasks": {
+    "t_0hh5ulmb": {
+      "id": "t_0hh5ulmb",
+      "title": "Packed Lily a lunch + made her breakfast",
+      "cat": "personal",
+      "status": "done",
+      "due": null,
+      "time": null,
+      "plan": "2026-10-06",
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-07T02:20:18.434Z",
+      "updated": "2026-10-07T02:20:18.580Z",
+      "doneAt": "2026-10-07T02:20:18.580Z",
+      "src": "chat"
+    },
     "t_0sep3hns": {
       "id": "t_0sep3hns",
       "title": "RA tutorial",
@@ -1275,26 +1299,26 @@
     },
     "t_4dz0f3k6": {
       "id": "t_4dz0f3k6",
-      "title": "Follow up with Nyx if no reply",
+      "title": "Set up meeting with Nyx",
       "cat": "rsa",
-      "status": "todo",
+      "status": "done",
       "due": null,
       "time": null,
-      "plan": "2026-10-07",
+      "plan": "2026-10-06",
       "est": 10,
       "spent": 0,
       "blocks": [],
       "project": null,
       "prio": 1,
       "kind": "email",
-      "notes": "Emailed 10/5 about rescheduling the RSA meeting",
+      "notes": "Set up 10/6 for Thursday.",
       "subs": [],
       "triage": false,
       "moved": 0,
       "win": false,
       "created": "2026-10-05T16:07:46.945Z",
-      "updated": "2026-10-05T16:45:35.622Z",
-      "doneAt": null,
+      "updated": "2026-10-07T02:20:17.917Z",
+      "doneAt": "2026-10-07T02:20:17.917Z",
       "src": "chat"
     },
     "t_53v1h9ku": {
@@ -1568,7 +1592,7 @@
       "status": "todo",
       "due": null,
       "time": null,
-      "plan": "2026-10-06",
+      "plan": "2026-10-07",
       "est": 45,
       "spent": 0,
       "blocks": [],
@@ -1578,10 +1602,10 @@
       "notes": "",
       "subs": [],
       "triage": false,
-      "moved": 0,
+      "moved": 1,
       "win": false,
       "created": "2026-10-05T16:07:46.135Z",
-      "updated": "2026-10-05T16:07:46.135Z",
+      "updated": "2026-10-07T02:20:29.010Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -1921,6 +1945,30 @@
       "doneAt": null,
       "src": "chat"
     },
+    "t_boaipt8j": {
+      "id": "t_boaipt8j",
+      "title": "Walked Ziggy in the woods (decompress day)",
+      "cat": "fun",
+      "status": "done",
+      "due": null,
+      "time": null,
+      "plan": "2026-10-06",
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-07T02:20:19.124Z",
+      "updated": "2026-10-07T02:20:19.295Z",
+      "doneAt": "2026-10-07T02:20:19.295Z",
+      "src": "chat"
+    },
     "t_brother": {
       "id": "t_brother",
       "title": "Send items to little brother",
@@ -1959,13 +2007,20 @@
         {
           "id": "b_d6z16916",
           "d": "2026-10-08",
-          "m": 60,
+          "m": 30,
           "done": false,
           "auto": true
         },
         {
-          "id": "b_05vn0iq8",
-          "d": "2026-10-13",
+          "id": "b_rzf650w9",
+          "d": "2026-10-09",
+          "m": 30,
+          "done": false,
+          "auto": true
+        },
+        {
+          "id": "b_untwl9z6",
+          "d": "2026-10-12",
           "m": 60,
           "done": false,
           "auto": true
@@ -1987,7 +2042,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T14:17:30.295Z",
-      "updated": "2026-10-07T01:00:34.880Z",
+      "updated": "2026-10-07T02:20:29.501Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -2142,7 +2197,7 @@
       "status": "todo",
       "due": null,
       "time": null,
-      "plan": "2026-10-05",
+      "plan": "2026-10-07",
       "est": 10,
       "spent": 0,
       "blocks": [],
@@ -2152,10 +2207,10 @@
       "notes": "",
       "subs": [],
       "triage": false,
-      "moved": 2,
+      "moved": 3,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T05:29:51.592Z",
+      "updated": "2026-10-07T02:20:29.145Z",
       "doneAt": null,
       "src": "import"
     },
@@ -2550,7 +2605,7 @@
       "status": "todo",
       "due": null,
       "time": null,
-      "plan": "2026-10-06",
+      "plan": "2026-10-07",
       "est": 60,
       "spent": 0,
       "blocks": [],
@@ -2562,7 +2617,7 @@
         {
           "id": "s1",
           "t": "pages 1-10",
-          "done": false
+          "done": true
         },
         {
           "id": "s2",
@@ -2586,10 +2641,10 @@
         }
       ],
       "triage": false,
-      "moved": 1,
+      "moved": 2,
       "win": false,
       "created": "2026-10-05T14:36:33.913Z",
-      "updated": "2026-10-05T20:19:57.755Z",
+      "updated": "2026-10-07T02:20:29.331Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -3579,7 +3634,7 @@
     },
     "t_obvmjfht": {
       "id": "t_obvmjfht",
-      "title": "Nyx meeting (tentative)",
+      "title": "Nyx meeting",
       "cat": "rsa",
       "status": "todo",
       "due": null,
@@ -3591,13 +3646,13 @@
       "project": null,
       "prio": 1,
       "kind": "meeting",
-      "notes": "Thursday evening (tentative); waiting to confirm",
+      "notes": "Thursday evening; set up 10/6.",
       "subs": [],
       "triage": false,
       "moved": 0,
       "win": false,
       "created": "2026-10-05T16:45:35.462Z",
-      "updated": "2026-10-05T20:19:57.968Z",
+      "updated": "2026-10-07T02:20:18.050Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -3613,8 +3668,8 @@
       "spent": 0,
       "blocks": [
         {
-          "id": "b_aux11v4d",
-          "d": "2026-10-07",
+          "id": "b_mov56493",
+          "d": "2026-10-08",
           "m": 60,
           "done": false,
           "auto": true
@@ -3643,7 +3698,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-07T01:00:34.880Z",
+      "updated": "2026-10-07T02:20:29.501Z",
       "doneAt": null,
       "src": "import"
     },
@@ -3715,29 +3770,29 @@
       "spent": 0,
       "blocks": [
         {
-          "id": "b_o4aa78zf",
-          "d": "2026-10-07",
+          "id": "b_21lg46ni",
+          "d": "2026-10-08",
           "m": 60,
           "done": false,
           "auto": true
         },
         {
-          "id": "b_p8xhrrew",
-          "d": "2026-10-09",
+          "id": "b_0k2qym86",
+          "d": "2026-10-10",
           "m": 60,
           "done": false,
           "auto": true
         },
         {
-          "id": "b_6uqgvdft",
-          "d": "2026-10-11",
+          "id": "b_7xdk4s65",
+          "d": "2026-10-12",
           "m": 60,
           "done": false,
           "auto": true
         },
         {
-          "id": "b_40g6f67m",
-          "d": "2026-10-13",
+          "id": "b_2g4z1mvu",
+          "d": "2026-10-14",
           "m": 60,
           "done": false,
           "auto": true
@@ -3752,7 +3807,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-07T01:00:34.880Z",
+      "updated": "2026-10-07T02:20:29.501Z",
       "doneAt": null,
       "src": "import"
     },
@@ -3770,7 +3825,7 @@
         {
           "id": "b_3tfba7fy",
           "d": "2026-10-07",
-          "m": 60,
+          "m": 55,
           "done": false,
           "auto": true
         },
@@ -3791,7 +3846,7 @@
         {
           "id": "b_num34lzs",
           "d": "2026-10-11",
-          "m": 60,
+          "m": 65,
           "done": false,
           "auto": true
         }
@@ -3805,7 +3860,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-07T01:00:34.880Z",
+      "updated": "2026-10-07T02:20:29.501Z",
       "doneAt": null,
       "src": "import"
     },
@@ -4032,14 +4087,14 @@
       "status": "todo",
       "due": null,
       "time": null,
-      "plan": "2026-10-06",
+      "plan": "2026-10-07",
       "est": 45,
       "spent": 0,
       "blocks": [],
       "project": null,
       "prio": 1,
       "kind": "analysis",
-      "notes": "",
+      "notes": "10/6: worked on this most of the day; it took precedence over everything else.",
       "subs": [
         {
           "id": "s1",
@@ -4053,10 +4108,10 @@
         }
       ],
       "triage": false,
-      "moved": 0,
+      "moved": 1,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T04:00:00.000Z",
+      "updated": "2026-10-07T02:20:28.855Z",
       "doneAt": null,
       "src": "import"
     },
@@ -4624,8 +4679,8 @@
       "spent": 0,
       "blocks": [
         {
-          "id": "b_05u4hmsx",
-          "d": "2026-10-08",
+          "id": "b_d8q4amsq",
+          "d": "2026-10-09",
           "m": 60,
           "done": false,
           "auto": true
@@ -4654,7 +4709,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T14:17:13.553Z",
-      "updated": "2026-10-07T01:00:34.880Z",
+      "updated": "2026-10-07T02:20:29.501Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -4705,6 +4760,30 @@
       "updated": "2026-08-04T17:00:00.000Z",
       "doneAt": "2026-08-04T17:00:00.000Z",
       "src": "import"
+    },
+    "t_w6lsiize": {
+      "id": "t_w6lsiize",
+      "title": "Went to Lily's graduation ceremony",
+      "cat": "personal",
+      "status": "done",
+      "due": null,
+      "time": null,
+      "plan": "2026-10-06",
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-07T02:20:18.739Z",
+      "updated": "2026-10-07T02:20:18.874Z",
+      "doneAt": "2026-10-07T02:20:18.874Z",
+      "src": "chat"
     },
     "t_wi5bybtk": {
       "id": "t_wi5bybtk",
@@ -5364,7 +5443,7 @@
       "src": "chat",
       "type": "add",
       "ref": "t_4dz0f3k6",
-      "title": "Follow up with Nyx if no reply",
+      "title": "Set up meeting with Nyx",
       "from": null,
       "to": "2026-10-08"
     },
@@ -5684,7 +5763,7 @@
       "src": "chat",
       "type": "edit",
       "ref": "t_obvmjfht",
-      "title": "Nyx meeting (tentative)",
+      "title": "Nyx meeting",
       "from": null,
       "to": "notes"
     },
@@ -5788,13 +5867,23 @@
       "from": null,
       "to": "due,est,prio,project,blocks"
     },
+    "a_97ponret": {
+      "id": "a_97ponret",
+      "at": "2026-10-07T02:20:18.580Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_0hh5ulmb",
+      "title": "Packed Lily a lunch + made her breakfast",
+      "from": null,
+      "to": null
+    },
     "a_988rum77": {
       "id": "a_988rum77",
       "at": "2026-10-05T16:45:35.622Z",
       "src": "chat",
       "type": "move",
       "ref": "t_4dz0f3k6",
-      "title": "Follow up with Nyx if no reply",
+      "title": "Set up meeting with Nyx",
       "from": "2026-10-08",
       "to": "2026-10-07"
     },
@@ -6018,6 +6107,16 @@
       "from": null,
       "to": null
     },
+    "a_fcwzu6ez": {
+      "id": "a_fcwzu6ez",
+      "at": "2026-10-07T02:20:29.501Z",
+      "src": "chat",
+      "type": "block",
+      "ref": null,
+      "title": "Auto-plan: 5 tasks",
+      "from": null,
+      "to": "planned"
+    },
     "a_fhh50ri9": {
       "id": "a_fhh50ri9",
       "at": "2026-10-05T16:45:35.042Z",
@@ -6037,6 +6136,16 @@
       "title": "Settings",
       "from": null,
       "to": "cap"
+    },
+    "a_fnpchsxy": {
+      "id": "a_fnpchsxy",
+      "at": "2026-10-07T02:20:29.331Z",
+      "src": "chat",
+      "type": "move",
+      "ref": "t_g29xic6w",
+      "title": "OCD pres: read the Barlow chapter",
+      "from": "2026-10-06",
+      "to": "2026-10-07"
     },
     "a_g0dxbq09": {
       "id": "a_g0dxbq09",
@@ -6067,6 +6176,16 @@
       "title": "Called Chuck",
       "from": null,
       "to": null
+    },
+    "a_gb7x5t7i": {
+      "id": "a_gb7x5t7i",
+      "at": "2026-10-07T02:20:29.145Z",
+      "src": "chat",
+      "type": "move",
+      "ref": "t_dentist",
+      "title": "Reschedule dentist",
+      "from": "2026-10-05",
+      "to": "2026-10-07"
     },
     "a_gd6b8jom": {
       "id": "a_gd6b8jom",
@@ -6118,6 +6237,16 @@
       "from": null,
       "to": null
     },
+    "a_hfubvxod": {
+      "id": "a_hfubvxod",
+      "at": "2026-10-07T02:20:28.711Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_rsafixes",
+      "title": "RSA: participant data fixes",
+      "from": null,
+      "to": "notes"
+    },
     "a_hrsypf5i": {
       "id": "a_hrsypf5i",
       "at": "2026-10-05T14:17:21.417Z",
@@ -6157,6 +6286,16 @@
       "title": "SPARK: neuromelanin GLM + 3dMVM script for Ronan",
       "from": null,
       "to": "project"
+    },
+    "a_ij6az70c": {
+      "id": "a_ij6az70c",
+      "at": "2026-10-07T02:20:18.874Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_w6lsiize",
+      "title": "Went to Lily's graduation ceremony",
+      "from": null,
+      "to": null
     },
     "a_inph8i61": {
       "id": "a_inph8i61",
@@ -6198,6 +6337,16 @@
       "from": null,
       "to": "added"
     },
+    "a_jknxjxa0": {
+      "id": "a_jknxjxa0",
+      "at": "2026-10-07T02:20:19.124Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_boaipt8j",
+      "title": "Walked Ziggy in the woods (decompress day)",
+      "from": null,
+      "to": "2026-10-06"
+    },
     "a_jkr27d2i": {
       "id": "a_jkr27d2i",
       "at": "2026-10-05T14:36:34.044Z",
@@ -6217,6 +6366,16 @@
       "title": "Department AI presentation / Slides + plan sent out",
       "from": null,
       "to": "added"
+    },
+    "a_jmqij15y": {
+      "id": "a_jmqij15y",
+      "at": "2026-10-07T02:20:18.739Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_w6lsiize",
+      "title": "Went to Lily's graduation ceremony",
+      "from": null,
+      "to": "2026-10-06"
     },
     "a_jtff7l66": {
       "id": "a_jtff7l66",
@@ -6288,6 +6447,16 @@
       "from": null,
       "to": "plan,est,notes,blocks"
     },
+    "a_l0k8lmu2": {
+      "id": "a_l0k8lmu2",
+      "at": "2026-10-07T02:20:18.434Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_0hh5ulmb",
+      "title": "Packed Lily a lunch + made her breakfast",
+      "from": null,
+      "to": "2026-10-06"
+    },
     "a_l2hzj14y": {
       "id": "a_l2hzj14y",
       "at": "2026-10-05T16:07:46.811Z",
@@ -6318,6 +6487,16 @@
       "from": null,
       "to": null
     },
+    "a_m7x3vuzk": {
+      "id": "a_m7x3vuzk",
+      "at": "2026-10-07T02:20:17.917Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_4dz0f3k6",
+      "title": "Set up meeting with Nyx",
+      "from": null,
+      "to": null
+    },
     "a_m8k6y0g5": {
       "id": "a_m8k6y0g5",
       "at": "2026-10-05T14:34:46.028Z",
@@ -6334,7 +6513,7 @@
       "src": "chat",
       "type": "add",
       "ref": "t_obvmjfht",
-      "title": "Nyx meeting (tentative)",
+      "title": "Nyx meeting",
       "from": null,
       "to": "2026-10-08"
     },
@@ -6417,6 +6596,16 @@
       "title": "Master Nyx's RSA script front to back (#1 priority)",
       "from": null,
       "to": "blocks"
+    },
+    "a_oa74bkcr": {
+      "id": "a_oa74bkcr",
+      "at": "2026-10-07T02:20:19.295Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_boaipt8j",
+      "title": "Walked Ziggy in the woods (decompress day)",
+      "from": null,
+      "to": null
     },
     "a_okfzn01o": {
       "id": "a_okfzn01o",
@@ -6568,6 +6757,16 @@
       "from": null,
       "to": null
     },
+    "a_rtvop23h": {
+      "id": "a_rtvop23h",
+      "at": "2026-10-07T02:20:18.050Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_obvmjfht",
+      "title": "Nyx meeting",
+      "from": null,
+      "to": "title,notes"
+    },
     "a_s2a052n8": {
       "id": "a_s2a052n8",
       "at": "2026-10-05T19:53:44.908Z",
@@ -6577,6 +6776,16 @@
       "title": "Clinical notes (3 behind)",
       "from": null,
       "to": null
+    },
+    "a_se5pmdgt": {
+      "id": "a_se5pmdgt",
+      "at": "2026-10-07T02:20:17.775Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_4dz0f3k6",
+      "title": "Set up meeting with Nyx",
+      "from": null,
+      "to": "title,plan,notes"
     },
     "a_sm1xakr9": {
       "id": "a_sm1xakr9",
@@ -6627,6 +6836,16 @@
       "title": "Worked through analyses for Nyx",
       "from": null,
       "to": null
+    },
+    "a_tsii79h8": {
+      "id": "a_tsii79h8",
+      "at": "2026-10-07T02:20:28.855Z",
+      "src": "chat",
+      "type": "move",
+      "ref": "t_rsafixes",
+      "title": "RSA: participant data fixes",
+      "from": "2026-10-06",
+      "to": "2026-10-07"
     },
     "a_tzrgt1im": {
       "id": "a_tzrgt1im",
@@ -6707,6 +6926,16 @@
       "title": "Lily gift: order or buy it",
       "from": null,
       "to": "2026-10-10"
+    },
+    "a_vrpav2q1": {
+      "id": "a_vrpav2q1",
+      "at": "2026-10-07T02:20:23.462Z",
+      "src": "chat",
+      "type": "sub",
+      "ref": "t_g29xic6w",
+      "title": "OCD pres: read the Barlow chapter / pages 1-10",
+      "from": null,
+      "to": "done"
     },
     "a_wmxq2qat": {
       "id": "a_wmxq2qat",
@@ -6847,6 +7076,16 @@
       "title": "E-ADIS: fix based on Rachel's suggestions",
       "from": null,
       "to": "title,project"
+    },
+    "a_z6k9q4fs": {
+      "id": "a_z6k9q4fs",
+      "at": "2026-10-07T02:20:29.010Z",
+      "src": "chat",
+      "type": "move",
+      "ref": "t_7e8sndnw",
+      "title": "Email Johanna: full LEARN breakdown (issues we ran into)",
+      "from": "2026-10-06",
+      "to": "2026-10-07"
     },
     "a_z9lmvm6s": {
       "id": "a_z9lmvm6s",
