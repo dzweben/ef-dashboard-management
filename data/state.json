@@ -23,13 +23,13 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-07T04:09:53.859Z",
+    "at": "2026-10-07T04:16:48.561Z",
     "headline": "9 things today. Start with: Clinical notes (3 behind) (1h).",
     "lines": [
       "DUE TODAY // Clinical notes (3 behind) (1h left)",
       "INCOMING // Master Nyx's RSA script front to back (#1 priority) Thu 10/8 (1d): 3h left, 3h booked · OCD pres: build workshop Tue 10/13 (6d): 4h left, 4h booked",
       "CHORES // Clean first floor · Water plants. Most overdue: Clean first floor (17d since last).",
-      "TOMORROW // Thu 10/8 [8h 10m/8h]: DUE Master Nyx's RSA script front to back (#1 priority) · Nyx meeting · Follow up with Jason if no reply · RSA manuscript update 1/3 · +6 more",
+      "TOMORROW // Thu 10/8 [8h/8h]: DUE Master Nyx's RSA script front to back (#1 priority) · Nyx meeting · Follow up with Jason if no reply · RSA manuscript update 1/3 · +5 more",
       "DONE // 2 today · streak 10d"
     ],
     "asks": [
@@ -47,8 +47,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-07T04:09:31.879Z",
-    "lastActivitySeen": "2026-10-07T04:09:31.879Z"
+    "lastClaudeSync": "2026-10-07T04:16:46.150Z",
+    "lastActivitySeen": "2026-10-07T04:16:46.150Z"
   },
   "cats": {
     "admin": {
@@ -1078,7 +1078,7 @@
       "id": "t_2m1nsi1p",
       "title": "Tell Chloe to add the RSA participant data fixes to the univariate",
       "cat": "rsa",
-      "status": "todo",
+      "status": "done",
       "due": null,
       "time": null,
       "plan": "2026-10-08",
@@ -1094,8 +1094,8 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-07T04:09:47.352Z",
-      "updated": "2026-10-07T04:09:47.352Z",
-      "doneAt": null,
+      "updated": "2026-10-07T04:16:48.282Z",
+      "doneAt": "2026-10-06T16:00:00.000Z",
       "src": "chat"
     },
     "t_2tdzf21s": {
@@ -7252,6 +7252,16 @@
       "title": "Department AI presentation / Convert voice transcripts",
       "from": null,
       "to": "added"
+    },
+    "a_yz5h29tz": {
+      "id": "a_yz5h29tz",
+      "at": "2026-10-07T04:16:48.282Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_2m1nsi1p",
+      "title": "Tell Chloe to add the RSA participant data fixes to the univariate",
+      "from": null,
+      "to": null
     },
     "a_z5917tu6": {
       "id": "a_z5917tu6",
