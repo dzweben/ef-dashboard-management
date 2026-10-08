@@ -23,13 +23,13 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-07T18:20:51.415Z",
-    "headline": "12 things today. Start with: Clinical notes (3 behind) (1h).",
+    "at": "2026-10-08T01:00:19.613Z",
+    "headline": "8 things today. Start with: Clinical notes (3 behind) (1h).",
     "lines": [
       "DUE TODAY // Clinical notes (3 behind) (1h left)",
       "INCOMING // Master Nyx's RSA script front to back (#1 priority) Thu 10/8 (1d): 4h left, 4h booked · OCD pres: build workshop Tue 10/13 (6d): 4h left, 4h booked",
       "CHORES // Clean first floor · Water plants. Most overdue: Clean first floor (17d since last).",
-      "TOMORROW // Thu 10/8 [5h/8h]: DUE Master Nyx's RSA script front to back (#1 priority) · Nyx meeting · Follow up with Jason if no reply · Master Nyx's RSA script front to back (#1 priority) 4h · +1 more"
+      "TOMORROW // Thu 10/8 [8h/8h]: DUE Master Nyx's RSA script front to back (#1 priority) · Nyx meeting · Follow up with Jason if no reply · Master Nyx's RSA script front to back (#1 priority) 4h · +4 more"
     ],
     "asks": [
       "'Reschedule dentist' got pushed 3x. Shrink it, pin it to a day, or drop it?",
@@ -46,8 +46,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-07T18:20:34.380Z",
-    "lastActivitySeen": "2026-10-07T18:20:34.380Z"
+    "lastClaudeSync": "2026-10-08T01:00:08.610Z",
+    "lastActivitySeen": "2026-10-08T01:00:08.610Z"
   },
   "cats": {
     "admin": {
@@ -3701,8 +3701,8 @@
       "spent": 0,
       "blocks": [
         {
-          "id": "b_h0ovmgd5",
-          "d": "2026-10-07",
+          "id": "b_550d2oyu",
+          "d": "2026-10-08",
           "m": 60,
           "done": false,
           "auto": true
@@ -3731,7 +3731,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-07T18:06:05.603Z",
+      "updated": "2026-10-08T01:00:15.764Z",
       "doneAt": null,
       "src": "import"
     },
@@ -3771,9 +3771,16 @@
       "spent": 0,
       "blocks": [
         {
-          "id": "b_pnv4qqbb",
-          "d": "2026-10-07",
-          "m": 60,
+          "id": "b_buz20urh",
+          "d": "2026-10-08",
+          "m": 30,
+          "done": false,
+          "auto": true
+        },
+        {
+          "id": "b_ti37j801",
+          "d": "2026-10-09",
+          "m": 30,
           "done": false,
           "auto": true
         }
@@ -3787,7 +3794,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-07T18:06:05.603Z",
+      "updated": "2026-10-08T01:00:15.764Z",
       "doneAt": null,
       "src": "import"
     },
@@ -3803,8 +3810,8 @@
       "spent": 0,
       "blocks": [
         {
-          "id": "b_ogicxu7a",
-          "d": "2026-10-07",
+          "id": "b_0onbxm0r",
+          "d": "2026-10-08",
           "m": 60,
           "done": false,
           "auto": true
@@ -3840,7 +3847,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-07T18:06:05.603Z",
+      "updated": "2026-10-08T01:00:15.764Z",
       "doneAt": null,
       "src": "import"
     },
@@ -3856,16 +3863,16 @@
       "spent": 60,
       "blocks": [
         {
-          "id": "b_3tfba7fy",
-          "d": "2026-10-07",
-          "m": 90,
+          "id": "b_uovavbrp",
+          "d": "2026-10-08",
+          "m": 60,
           "done": false,
           "auto": true
         },
         {
-          "id": "b_uovavbrp",
-          "d": "2026-10-08",
-          "m": 30,
+          "id": "b_cnrpc4b1",
+          "d": "2026-10-09",
+          "m": 60,
           "done": false,
           "auto": true
         },
@@ -3893,7 +3900,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-07T18:06:05.603Z",
+      "updated": "2026-10-08T01:00:15.764Z",
       "doneAt": null,
       "src": "import"
     },
@@ -6282,6 +6289,16 @@
       "title": "Email Eunice about the chapter",
       "from": null,
       "to": null
+    },
+    "a_e7iwr0l5": {
+      "id": "a_e7iwr0l5",
+      "at": "2026-10-08T01:00:15.764Z",
+      "src": "chat",
+      "type": "block",
+      "ref": null,
+      "title": "Auto-plan: 4 tasks",
+      "from": null,
+      "to": "planned"
     },
     "a_e8pgn01e": {
       "id": "a_e8pgn01e",
