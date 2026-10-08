@@ -23,30 +23,34 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-08T03:59:38.550Z",
-    "headline": "1 thing today. Start with: Clinical notes (3 behind) (1h).",
+    "at": "2026-10-08T04:03:02.810Z",
+    "headline": "12 things today (1 overdue). Start with: Clinical notes (3 behind) (1h).",
     "lines": [
-      "DUE TODAY // Clinical notes (3 behind) (1h left)",
-      "INCOMING // Master Nyx's RSA script front to back (#1 priority) Thu 10/8 (1d): 4h left, 4h booked · OCD pres: build workshop Tue 10/13 (6d): 4h left, 4h booked",
-      "CHORES // Clean first floor · Water plants. Most overdue: Clean first floor (17d since last).",
-      "TOMORROW // Thu 10/8 [8h/8h]: DUE Master Nyx's RSA script front to back (#1 priority) · Nyx meeting · Clinical notes (3 behind) · Reschedule dentist · +9 more",
-      "DONE // 6 today · streak 10d"
+      "DUE TODAY // Master Nyx's RSA script front to back (#1 priority) (4h left)",
+      "OVERDUE // Clinical notes (3 behind) (1d late)",
+      "MEETINGS // Nyx meeting",
+      "INCOMING // OCD pres: build workshop Tue 10/13 (5d): 4h left, 4h booked",
+      "CHORES // Clean first floor · Water plants. Most overdue: Clean first floor (18d since last).",
+      "TOMORROW // Fri 10/9 [4h 30m/7h]: AI pres: build slides + plan, send out 1h · OCD pres: build workshop 1h · OCD pres: illustrations for dyads 30m · OCD pres: rehearse 1h · +1 more"
     ],
     "asks": [
+      "'Clinical notes (3 behind)' is 1d late. Still on? New date or drop it?",
       "'Reschedule dentist' got pushed 4x. Shrink it, pin it to a day, or drop it?",
-      "Anything coming up for Meetings?",
-      "Anything coming up for Ziggy?"
+      "Anything coming up for Undergrad?",
+      "Anything coming up for EF?"
     ],
     "focus": [
-      "t_ff9fmzh1"
+      "t_ff9fmzh1",
+      "t_nyxprep",
+      "t_dentist"
     ]
   },
   "clock": {
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-08T03:59:36.283Z",
-    "lastActivitySeen": "2026-10-08T03:59:36.283Z"
+    "lastClaudeSync": "2026-10-08T04:02:51.556Z",
+    "lastActivitySeen": "2026-10-08T04:02:51.556Z"
   },
   "cats": {
     "admin": {
@@ -319,8 +323,7 @@
       "aliases": [
         "multivar",
         "multivariate",
-        "mv",
-        "virtual school"
+        "mv"
       ],
       "order": 31,
       "note": "",
@@ -500,6 +503,21 @@
       "archived": false,
       "created": "2026-10-05T04:00:00.000Z"
     },
+    "virtual-school": {
+      "id": "virtual-school",
+      "name": "Virtual school",
+      "group": "research",
+      "color": "#9eb3ff",
+      "glyph": "VI",
+      "aliases": [
+        "virtual school",
+        "vschool"
+      ],
+      "order": 20,
+      "note": "",
+      "archived": false,
+      "created": "2026-10-08T04:02:53.126Z"
+    },
     "ziggy": {
       "id": "ziggy",
       "name": "Ziggy",
@@ -670,17 +688,17 @@
     "p_nf541req": {
       "id": "p_nf541req",
       "name": "Virtual school",
-      "cat": "multivar",
+      "cat": "virtual-school",
       "kind": "project",
       "status": "active",
       "due": null,
-      "goal": "Big long-term background project, part of the ongoing multivariate work. No deadline.",
+      "goal": "Big long-term background research project. The Multivariate assignments use it as their dataset/project. No deadline.",
       "milestones": [],
       "weeklyHours": null,
       "notes": "",
       "order": 0,
       "created": "2026-10-08T03:59:38.096Z",
-      "updated": "2026-10-08T03:59:38.096Z"
+      "updated": "2026-10-08T04:02:58.685Z"
     },
     "p_ocd": {
       "id": "p_ocd",
@@ -1212,7 +1230,7 @@
     "t_386krv7q": {
       "id": "t_386krv7q",
       "title": "Virtual school work",
-      "cat": "multivar",
+      "cat": "virtual-school",
       "status": "done",
       "due": null,
       "time": null,
@@ -1229,7 +1247,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-08T03:58:07.705Z",
-      "updated": "2026-10-08T03:59:38.416Z",
+      "updated": "2026-10-08T04:02:53.531Z",
       "doneAt": "2026-10-08T03:58:07.817Z",
       "src": "chat"
     },
@@ -5696,6 +5714,16 @@
     }
   },
   "activity": {
+    "a_0bzzpsvx": {
+      "id": "a_0bzzpsvx",
+      "at": "2026-10-08T04:02:53.531Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_386krv7q",
+      "title": "Virtual school work",
+      "from": null,
+      "to": "cat"
+    },
     "a_0edgmsqc": {
       "id": "a_0edgmsqc",
       "at": "2026-10-05T14:15:45.288Z",
@@ -6335,6 +6363,16 @@
       "title": "Reschedule dentist",
       "from": null,
       "to": "kind"
+    },
+    "a_aht9g25v": {
+      "id": "a_aht9g25v",
+      "at": "2026-10-08T04:02:53.031Z",
+      "src": "chat",
+      "type": "cat",
+      "ref": "multivar",
+      "title": "Multivariate",
+      "from": null,
+      "to": "aliases"
     },
     "a_anjyjjq0": {
       "id": "a_anjyjjq0",
@@ -6986,6 +7024,16 @@
       "from": null,
       "to": "added"
     },
+    "a_ks5d8rpw": {
+      "id": "a_ks5d8rpw",
+      "at": "2026-10-08T04:02:53.126Z",
+      "src": "chat",
+      "type": "cat",
+      "ref": "virtual-school",
+      "title": "Virtual school",
+      "from": null,
+      "to": "new"
+    },
     "a_ksbrporm": {
       "id": "a_ksbrporm",
       "at": "2026-10-05T20:19:57.870Z",
@@ -7416,6 +7464,16 @@
       "from": null,
       "to": "2026-10-07"
     },
+    "a_rxvaqgat": {
+      "id": "a_rxvaqgat",
+      "at": "2026-10-08T04:02:58.685Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "p_nf541req",
+      "title": "Virtual school",
+      "from": null,
+      "to": "goal"
+    },
     "a_rzz8233m": {
       "id": "a_rzz8233m",
       "at": "2026-10-07T04:09:47.352Z",
@@ -7645,6 +7703,16 @@
       "title": "OCD pres: read the Barlow chapter / pages 1-10",
       "from": null,
       "to": "done"
+    },
+    "a_w4ljktc4": {
+      "id": "a_w4ljktc4",
+      "at": "2026-10-08T04:02:53.431Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "p_nf541req",
+      "title": "Virtual school",
+      "from": null,
+      "to": "cat"
     },
     "a_wmxq2qat": {
       "id": "a_wmxq2qat",
