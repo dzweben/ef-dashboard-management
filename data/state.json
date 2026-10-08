@@ -23,7 +23,7 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-08T03:58:16.025Z",
+    "at": "2026-10-08T03:58:36.457Z",
     "headline": "1 thing today. Start with: Clinical notes (3 behind) (1h).",
     "lines": [
       "DUE TODAY // Clinical notes (3 behind) (1h left)",
@@ -45,8 +45,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-08T03:57:52.998Z",
-    "lastActivitySeen": "2026-10-08T03:57:52.998Z"
+    "lastClaudeSync": "2026-10-08T03:58:32.226Z",
+    "lastActivitySeen": "2026-10-08T03:58:32.226Z"
   },
   "cats": {
     "admin": {
@@ -4074,14 +4074,14 @@
     },
     "t_pn7sqwj7": {
       "id": "t_pn7sqwj7",
-      "title": "SPARK RPPR: big work session",
+      "title": "SPARK RPPR: 3h work session",
       "cat": "sdn",
       "status": "done",
       "due": null,
       "time": null,
       "plan": "2026-10-07",
       "est": null,
-      "spent": 0,
+      "spent": 180,
       "blocks": [],
       "project": "p_e1f8ij8g",
       "prio": 1,
@@ -4092,7 +4092,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-08T03:58:07.031Z",
-      "updated": "2026-10-08T03:58:07.134Z",
+      "updated": "2026-10-08T03:58:36.344Z",
       "doneAt": "2026-10-08T03:58:07.134Z",
       "src": "chat"
     },
@@ -5667,6 +5667,16 @@
       "end": "2026-10-05T16:49:38.634Z",
       "min": 60,
       "d": "2026-10-05"
+    },
+    "s_ro0gag9u": {
+      "id": "s_ro0gag9u",
+      "ref": "task:t_pn7sqwj7",
+      "title": "SPARK RPPR: 3h work session",
+      "cat": "sdn",
+      "start": "2026-10-08T00:58:36.194Z",
+      "end": "2026-10-08T03:58:36.194Z",
+      "min": 180,
+      "d": "2026-10-07"
     }
   },
   "activity": {
@@ -5709,6 +5719,16 @@
       "title": "Send Johanna the LEARN breakdown email (drafted)",
       "from": null,
       "to": "2026-10-06"
+    },
+    "a_0tz3a0ji": {
+      "id": "a_0tz3a0ji",
+      "at": "2026-10-08T03:58:36.194Z",
+      "src": "chat",
+      "type": "clock",
+      "ref": "t_pn7sqwj7",
+      "title": "SPARK RPPR: 3h work session",
+      "from": null,
+      "to": "180m"
     },
     "a_0y3gxqdw": {
       "id": "a_0y3gxqdw",
@@ -6476,7 +6496,7 @@
       "src": "chat",
       "type": "done",
       "ref": "t_pn7sqwj7",
-      "title": "SPARK RPPR: big work session",
+      "title": "SPARK RPPR: 3h work session",
       "from": null,
       "to": null
     },
@@ -6896,7 +6916,7 @@
       "src": "chat",
       "type": "add",
       "ref": "t_pn7sqwj7",
-      "title": "SPARK RPPR: big work session",
+      "title": "SPARK RPPR: 3h work session",
       "from": null,
       "to": "2026-10-07"
     },
@@ -6999,6 +7019,16 @@
       "title": "E-ADIS: fix based on Rachel's suggestions",
       "from": null,
       "to": null
+    },
+    "a_lxe8japs": {
+      "id": "a_lxe8japs",
+      "at": "2026-10-08T03:58:36.344Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_pn7sqwj7",
+      "title": "SPARK RPPR: 3h work session",
+      "from": null,
+      "to": "title"
     },
     "a_m7x3vuzk": {
       "id": "a_m7x3vuzk",
