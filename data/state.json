@@ -23,7 +23,7 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-08T03:58:36.457Z",
+    "at": "2026-10-08T03:59:38.550Z",
     "headline": "1 thing today. Start with: Clinical notes (3 behind) (1h).",
     "lines": [
       "DUE TODAY // Clinical notes (3 behind) (1h left)",
@@ -45,8 +45,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-08T03:58:32.226Z",
-    "lastActivitySeen": "2026-10-08T03:58:32.226Z"
+    "lastClaudeSync": "2026-10-08T03:59:36.283Z",
+    "lastActivitySeen": "2026-10-08T03:59:36.283Z"
   },
   "cats": {
     "admin": {
@@ -319,7 +319,8 @@
       "aliases": [
         "multivar",
         "multivariate",
-        "mv"
+        "mv",
+        "virtual school"
       ],
       "order": 31,
       "note": "",
@@ -665,6 +666,21 @@
       "order": 0,
       "created": "2026-10-05T14:17:21.417Z",
       "updated": "2026-10-05T19:40:51.932Z"
+    },
+    "p_nf541req": {
+      "id": "p_nf541req",
+      "name": "Virtual school",
+      "cat": "multivar",
+      "kind": "project",
+      "status": "active",
+      "due": null,
+      "goal": "Big long-term background project, part of the ongoing multivariate work. No deadline.",
+      "milestones": [],
+      "weeklyHours": null,
+      "notes": "",
+      "order": 0,
+      "created": "2026-10-08T03:59:38.096Z",
+      "updated": "2026-10-08T03:59:38.096Z"
     },
     "p_ocd": {
       "id": "p_ocd",
@@ -1196,7 +1212,7 @@
     "t_386krv7q": {
       "id": "t_386krv7q",
       "title": "Virtual school work",
-      "cat": "inbox",
+      "cat": "multivar",
       "status": "done",
       "due": null,
       "time": null,
@@ -1204,7 +1220,7 @@
       "est": null,
       "spent": 0,
       "blocks": [],
-      "project": null,
+      "project": "p_nf541req",
       "prio": 1,
       "kind": "task",
       "notes": "",
@@ -1213,7 +1229,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-08T03:58:07.705Z",
-      "updated": "2026-10-08T03:58:07.817Z",
+      "updated": "2026-10-08T03:59:38.416Z",
       "doneAt": "2026-10-08T03:58:07.817Z",
       "src": "chat"
     },
@@ -5690,6 +5706,16 @@
       "from": null,
       "to": "active"
     },
+    "a_0f31m6xf": {
+      "id": "a_0f31m6xf",
+      "at": "2026-10-08T03:59:38.416Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_386krv7q",
+      "title": "Virtual school work",
+      "from": null,
+      "to": "cat,project"
+    },
     "a_0fhkzyno": {
       "id": "a_0fhkzyno",
       "at": "2026-10-05T16:07:46.945Z",
@@ -6067,6 +6093,16 @@
       "type": "done",
       "ref": "t_yalu9vlo",
       "title": "Sent 2 session reminders",
+      "from": null,
+      "to": null
+    },
+    "a_6hczqq7a": {
+      "id": "a_6hczqq7a",
+      "at": "2026-10-08T03:59:38.096Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "p_nf541req",
+      "title": "Virtual school",
       "from": null,
       "to": null
     },
@@ -7049,6 +7085,16 @@
       "title": "SPARK docs: SPARK-NM",
       "from": null,
       "to": "2026-10-10"
+    },
+    "a_mab81ihi": {
+      "id": "a_mab81ihi",
+      "at": "2026-10-08T03:59:37.991Z",
+      "src": "chat",
+      "type": "cat",
+      "ref": "multivar",
+      "title": "Multivariate",
+      "from": null,
+      "to": "aliases"
     },
     "a_mhhu72qr": {
       "id": "a_mhhu72qr",
