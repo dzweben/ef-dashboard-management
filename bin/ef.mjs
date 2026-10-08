@@ -782,7 +782,7 @@ Chores, clock, categories, projects, settings:
   ef chore add 'title' --every 7 [--per-day 2] [--cat id] [--min 5]   ef chore done <chore> [--on D]   ef chore edit <chore> --every N
   ef clock in <task id|chore id|words> [--goal 5] [--free]   ef clock out [--done]   ef clock
   ef cat add 'Name' [--group research|clinical|coursework|teaching|service|admin|life] [--alias a,b] [--color #hex]
-  ef cat edit <id> [--name n] [--color #hex] [--group g] [--alias a,b] [--archive yes|no]
+  ef cat edit <id> [--name n] [--color #hex] [--group g] [--alias a,b] [--unalias a,b] [--archive yes|no]
   ef project add 'Name' [--cat id] [--due D] [--goal txt]   ef project edit <project> [--due D] [--name n] [--status active|paused|done]
   ef project shift <project> <+days|new due date>   (moves the deadline, open milestones, linked to-dos; re-books work)   ef ms <project> 'milestone' [--due D]   ef msdone <project> <milestone>
   ef settings [--cap mon=240,tue=240,...]   every week (per weekday)
@@ -1186,7 +1186,11 @@ async function main() {
         if (flags.color) patch.color = String(flags.color);
         if (flags.group) patch.group = String(flags.group);
         if (flags.glyph) patch.glyph = String(flags.glyph);
-        if (flags.alias) patch.aliases = [...new Set([...(c.aliases ?? []), ...String(flags.alias).split(',').map((s) => s.trim().toLowerCase())])];
+        if (flags.alias || flags.unalias) {
+          const list = (v) => (v ? String(v).split(',').map((s) => s.trim().toLowerCase()).filter(Boolean) : []);
+          const drop = new Set(list(flags.unalias));
+          patch.aliases = [...new Set([...(c.aliases ?? []), ...list(flags.alias)])].filter((a) => !drop.has(a));
+        }
         if (flags.archive) patch.archived = /^(y|yes|true|1)$/i.test(String(flags.archive));
         if (flags.note) patch.note = String(flags.note);
         if (!Object.keys(patch).length) die('nothing to edit');

@@ -723,3 +723,13 @@ test('block books a fixed session that plan keeps', () => {
   assert.equal(fixed[0].m, 120);
   assert.equal(t.blocks.filter((b) => !b.done).reduce((n, b) => n + b.m, 0), 240);
 });
+
+test('cat edit --unalias removes aliases; --alias still appends', () => {
+  const f = fixture();
+  ef(f, 'cat', 'edit', 'multivar', '--alias', 'virtual school,vs');
+  assert.ok(read(f).cats.multivar.aliases.includes('virtual school'));
+  ef(f, 'cat', 'edit', 'multivar', '--unalias', 'Virtual School, vs');
+  const a = read(f).cats.multivar.aliases;
+  assert.ok(!a.includes('virtual school') && !a.includes('vs'));
+  assert.ok(a.includes('multivar'), 'other aliases stay');
+});
