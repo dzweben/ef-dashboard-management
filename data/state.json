@@ -23,34 +23,33 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-08T04:03:02.810Z",
-    "headline": "12 things today (1 overdue). Start with: Clinical notes (3 behind) (1h).",
+    "at": "2026-10-08T04:03:31.530Z",
+    "headline": "11 things today. Start with: Master Nyx's RSA script front to back (#1 priority) (4h).",
     "lines": [
       "DUE TODAY // Master Nyx's RSA script front to back (#1 priority) (4h left)",
-      "OVERDUE // Clinical notes (3 behind) (1d late)",
       "MEETINGS // Nyx meeting",
-      "INCOMING // OCD pres: build workshop Tue 10/13 (5d): 4h left, 4h booked",
+      "INCOMING // Clinical notes (3 behind) Fri 10/9 (1d): 1h left, 1h booked · OCD pres: build workshop Tue 10/13 (5d): 4h left, 4h booked",
       "CHORES // Clean first floor · Water plants. Most overdue: Clean first floor (18d since last).",
-      "TOMORROW // Fri 10/9 [4h 30m/7h]: AI pres: build slides + plan, send out 1h · OCD pres: build workshop 1h · OCD pres: illustrations for dyads 30m · OCD pres: rehearse 1h · +1 more"
+      "TOMORROW // Fri 10/9 [6h 10m/7h]: DUE Clinical notes (3 behind) · Email Billy · Email Chelsea · Clinical notes (3 behind) 1h · +5 more"
     ],
     "asks": [
-      "'Clinical notes (3 behind)' is 1d late. Still on? New date or drop it?",
       "'Reschedule dentist' got pushed 4x. Shrink it, pin it to a day, or drop it?",
       "Anything coming up for Undergrad?",
+      "'Clinical notes (3 behind)' got pushed 3x. Shrink it, pin it to a day, or drop it?",
       "Anything coming up for EF?"
     ],
     "focus": [
-      "t_ff9fmzh1",
       "t_nyxprep",
-      "t_dentist"
+      "t_dentist",
+      "t_xouhgc0d"
     ]
   },
   "clock": {
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-08T04:02:51.556Z",
-    "lastActivitySeen": "2026-10-08T04:02:51.556Z"
+    "lastClaudeSync": "2026-10-08T04:03:22.533Z",
+    "lastActivitySeen": "2026-10-08T04:03:22.533Z"
   },
   "cats": {
     "admin": {
@@ -1011,6 +1010,30 @@
       "doneAt": "2026-08-05T17:00:00.000Z",
       "src": "import"
     },
+    "t_1umnesd3": {
+      "id": "t_1umnesd3",
+      "title": "Email Billy",
+      "cat": "admin",
+      "status": "todo",
+      "due": null,
+      "time": null,
+      "plan": "2026-10-09",
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "email",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-08T04:03:28.734Z",
+      "updated": "2026-10-08T04:03:28.734Z",
+      "doneAt": null,
+      "src": "chat"
+    },
     "t_246qe3qg": {
       "id": "t_246qe3qg",
       "title": "RSA results/methods part 3",
@@ -1803,6 +1826,30 @@
       "doneAt": "2026-09-28T17:00:00.000Z",
       "src": "import"
     },
+    "t_81ej8elz": {
+      "id": "t_81ej8elz",
+      "title": "Email Chelsea",
+      "cat": "admin",
+      "status": "todo",
+      "due": null,
+      "time": null,
+      "plan": "2026-10-09",
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "email",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-08T04:03:28.749Z",
+      "updated": "2026-10-08T04:03:28.749Z",
+      "doneAt": null,
+      "src": "chat"
+    },
     "t_8frv9vmq": {
       "id": "t_8frv9vmq",
       "title": "Multivar assignment 5",
@@ -2550,15 +2597,15 @@
       "title": "Clinical notes (3 behind)",
       "cat": "psc",
       "status": "todo",
-      "due": "2026-10-07",
+      "due": "2026-10-09",
       "time": null,
-      "plan": "2026-10-08",
+      "plan": "2026-10-09",
       "est": 60,
       "spent": 0,
       "blocks": [
         {
-          "id": "b_iri7y9lh",
-          "d": "2026-10-07",
+          "id": "b_nar2c58t",
+          "d": "2026-10-09",
           "m": 60,
           "done": false,
           "auto": true
@@ -2567,7 +2614,7 @@
       "project": null,
       "prio": 2,
       "kind": "task",
-      "notes": "",
+      "notes": "Pushed to Fri 10/9 on purpose: Thu is the Nyx code day.",
       "subs": [
         {
           "id": "s1",
@@ -2586,10 +2633,10 @@
         }
       ],
       "triage": false,
-      "moved": 2,
+      "moved": 3,
       "win": false,
       "created": "2026-10-05T14:17:31.806Z",
-      "updated": "2026-10-08T03:58:12.824Z",
+      "updated": "2026-10-08T04:03:28.846Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -3745,7 +3792,7 @@
       "project": null,
       "prio": 3,
       "kind": "task",
-      "notes": "Thu 10/8: whole morning on this (#1 priority), before the Thu evening Nyx meeting. About 1/3 done 10/5.",
+      "notes": "Thu 10/8: the day starts with this; everything else waits behind it. Before the Thu evening Nyx meeting.",
       "subs": [
         {
           "id": "s1",
@@ -3767,7 +3814,7 @@
       "moved": 1,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-07T18:06:05.456Z",
+      "updated": "2026-10-08T04:03:28.624Z",
       "doneAt": null,
       "src": "import"
     },
@@ -5834,6 +5881,16 @@
       "from": null,
       "to": "2026-10-05"
     },
+    "a_16z66c95": {
+      "id": "a_16z66c95",
+      "at": "2026-10-08T04:03:23.992Z",
+      "src": "chat",
+      "type": "move",
+      "ref": "t_ff9fmzh1",
+      "title": "Clinical notes (3 behind)",
+      "from": "2026-10-08",
+      "to": "2026-10-09"
+    },
     "a_17n2sb12": {
       "id": "a_17n2sb12",
       "at": "2026-10-05T19:40:51.939Z",
@@ -6704,6 +6761,16 @@
       "from": null,
       "to": "doneAt"
     },
+    "a_g4r6o1yk": {
+      "id": "a_g4r6o1yk",
+      "at": "2026-10-08T04:03:28.846Z",
+      "src": "chat",
+      "type": "block",
+      "ref": "t_ff9fmzh1",
+      "title": "Clinical notes (3 behind)",
+      "from": null,
+      "to": "planned"
+    },
     "a_g6qoqieb": {
       "id": "a_g6qoqieb",
       "at": "2026-10-06T16:07:11.068Z",
@@ -6893,6 +6960,16 @@
       "title": "Social motivation task (Chloe)",
       "from": null,
       "to": null
+    },
+    "a_j7c2z1s3": {
+      "id": "a_j7c2z1s3",
+      "at": "2026-10-08T04:03:28.734Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_1umnesd3",
+      "title": "Email Billy",
+      "from": null,
+      "to": "2026-10-09"
     },
     "a_jdq0vxia": {
       "id": "a_jdq0vxia",
@@ -7144,6 +7221,16 @@
       "from": null,
       "to": "aliases"
     },
+    "a_men1xcmq": {
+      "id": "a_men1xcmq",
+      "at": "2026-10-08T04:03:28.525Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_ff9fmzh1",
+      "title": "Clinical notes (3 behind)",
+      "from": null,
+      "to": "due,notes,blocks"
+    },
     "a_mhhu72qr": {
       "id": "a_mhhu72qr",
       "at": "2026-10-05T16:45:35.462Z",
@@ -7153,6 +7240,16 @@
       "title": "Nyx meeting",
       "from": null,
       "to": "2026-10-08"
+    },
+    "a_mm5fcb44": {
+      "id": "a_mm5fcb44",
+      "at": "2026-10-08T04:03:28.624Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_nyxprep",
+      "title": "Master Nyx's RSA script front to back (#1 priority)",
+      "from": null,
+      "to": "notes"
     },
     "a_mmbmr22f": {
       "id": "a_mmbmr22f",
@@ -7713,6 +7810,16 @@
       "title": "Virtual school",
       "from": null,
       "to": "cat"
+    },
+    "a_w6zeq2cm": {
+      "id": "a_w6zeq2cm",
+      "at": "2026-10-08T04:03:28.749Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_81ej8elz",
+      "title": "Email Chelsea",
+      "from": null,
+      "to": "2026-10-09"
     },
     "a_wmxq2qat": {
       "id": "a_wmxq2qat",
