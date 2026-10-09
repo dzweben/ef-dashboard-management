@@ -23,14 +23,14 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-08T12:59:24.683Z",
-    "headline": "11 things today. Start with: Master Nyx's RSA script front to back (#1 priority) (4h).",
+    "at": "2026-10-09T01:00:07.661Z",
+    "headline": "8 things today. Start with: Master Nyx's RSA script front to back (#1 priority) (4h).",
     "lines": [
       "DUE TODAY // Master Nyx's RSA script front to back (#1 priority) (4h left)",
       "MEETINGS // Nyx meeting",
       "INCOMING // Clinical notes (3 behind) Fri 10/9 (1d): 1h left, 1h booked · OCD pres: build workshop Tue 10/13 (5d): 4h left, 4h booked",
       "CHORES // Clean first floor · Water plants. Most overdue: Clean first floor (18d since last).",
-      "TOMORROW // Fri 10/9 [6h 10m/7h]: DUE Clinical notes (3 behind) · Email Billy · Email Chelsea · Clinical notes (3 behind) 1h · +5 more"
+      "TOMORROW // Fri 10/9 [6h 40m/7h]: DUE Clinical notes (3 behind) · Email Billy · Email Chelsea · Clinical notes (3 behind) 1h · +5 more"
     ],
     "asks": [
       "'Reschedule dentist' got pushed 4x. Shrink it, pin it to a day, or drop it?",
@@ -48,8 +48,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-08T12:59:17.710Z",
-    "lastActivitySeen": "2026-10-08T12:59:17.710Z"
+    "lastClaudeSync": "2026-10-09T01:00:00.240Z",
+    "lastActivitySeen": "2026-10-09T01:00:00.240Z"
   },
   "cats": {
     "admin": {
@@ -3854,22 +3854,15 @@
       "spent": 0,
       "blocks": [
         {
-          "id": "b_550d2oyu",
-          "d": "2026-10-08",
-          "m": 30,
-          "done": false,
-          "auto": true
-        },
-        {
           "id": "b_zdmfoj74",
           "d": "2026-10-09",
-          "m": 30,
+          "m": 60,
           "done": false,
           "auto": true
         },
         {
-          "id": "b_b9sq5ilg",
-          "d": "2026-10-11",
+          "id": "b_sy0cpb6q",
+          "d": "2026-10-12",
           "m": 60,
           "done": false,
           "auto": true
@@ -3891,7 +3884,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-08T03:58:13.476Z",
+      "updated": "2026-10-09T01:00:07.135Z",
       "doneAt": null,
       "src": "import"
     },
@@ -3963,8 +3956,8 @@
       "spent": 0,
       "blocks": [
         {
-          "id": "b_0onbxm0r",
-          "d": "2026-10-08",
+          "id": "b_cvil1buc",
+          "d": "2026-10-09",
           "m": 60,
           "done": false,
           "auto": true
@@ -4000,7 +3993,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-08T01:00:15.764Z",
+      "updated": "2026-10-09T01:00:07.135Z",
       "doneAt": null,
       "src": "import"
     },
@@ -4015,13 +4008,6 @@
       "est": 300,
       "spent": 60,
       "blocks": [
-        {
-          "id": "b_uovavbrp",
-          "d": "2026-10-08",
-          "m": 60,
-          "done": false,
-          "auto": true
-        },
         {
           "id": "b_cnrpc4b1",
           "d": "2026-10-09",
@@ -4042,6 +4028,13 @@
           "m": 60,
           "done": false,
           "auto": true
+        },
+        {
+          "id": "b_yljqpkdi",
+          "d": "2026-10-12",
+          "m": 60,
+          "done": false,
+          "auto": true
         }
       ],
       "project": "p_ocd",
@@ -4053,7 +4046,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-08T01:00:15.764Z",
+      "updated": "2026-10-09T01:00:07.135Z",
       "doneAt": null,
       "src": "import"
     },
@@ -4968,23 +4961,23 @@
       "spent": 0,
       "blocks": [
         {
-          "id": "b_d8q4amsq",
-          "d": "2026-10-09",
+          "id": "b_sslyalvq",
+          "d": "2026-10-10",
+          "m": 40,
+          "done": false,
+          "auto": true
+        },
+        {
+          "id": "b_1tv0dbdr",
+          "d": "2026-10-17",
           "m": 60,
           "done": false,
           "auto": true
         },
         {
-          "id": "b_zlt52wip",
-          "d": "2026-10-16",
-          "m": 60,
-          "done": false,
-          "auto": true
-        },
-        {
-          "id": "b_xc8udmfd",
-          "d": "2026-10-23",
-          "m": 60,
+          "id": "b_z68smnpm",
+          "d": "2026-10-24",
+          "m": 80,
           "done": false,
           "auto": true
         }
@@ -4998,7 +4991,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T14:17:13.553Z",
-      "updated": "2026-10-07T02:20:29.501Z",
+      "updated": "2026-10-09T01:00:07.135Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -6320,6 +6313,16 @@
       "title": "Multivar assignment 5",
       "from": null,
       "to": "doneAt"
+    },
+    "a_8cq4kiqq": {
+      "id": "a_8cq4kiqq",
+      "at": "2026-10-09T01:00:07.135Z",
+      "src": "chat",
+      "type": "block",
+      "ref": null,
+      "title": "Auto-plan: 4 tasks",
+      "from": null,
+      "to": "planned"
     },
     "a_8jlgepcq": {
       "id": "a_8jlgepcq",
