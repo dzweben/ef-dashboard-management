@@ -23,13 +23,14 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-09T17:54:37.487Z",
+    "at": "2026-10-09T17:55:38.074Z",
     "headline": "12 things today. Start with: Clinical notes (3 behind) (1h).",
     "lines": [
       "DUE TODAY // Clinical notes (3 behind) (1h left)",
       "INCOMING // OCD pres: build workshop Tue 10/13 (4d): 4h left, 4h booked · OCD pres: write main script Fri 10/16 (7d): 4h left, 4h booked",
       "CHORES // Clean first floor · Water plants. Most overdue: Clean first floor (19d since last).",
-      "TOMORROW // Sat 10/10 [3h/3h]: Lily gift: order or buy it · OCD pres: build workshop 1h · OCD pres: write main script 1h · ABCD review prep 40m"
+      "TOMORROW // Sat 10/10 [3h/3h]: Lily gift: order or buy it · OCD pres: build workshop 1h · OCD pres: write main script 1h · ABCD review prep 40m",
+      "DONE // 4 today · streak 12d"
     ],
     "asks": [
       "'Clinical notes (3 behind)' got pushed 3x. Shrink it, pin it to a day, or drop it?",
@@ -46,8 +47,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-09T17:54:18.405Z",
-    "lastActivitySeen": "2026-10-09T17:54:18.405Z"
+    "lastClaudeSync": "2026-10-09T17:55:29.409Z",
+    "lastActivitySeen": "2026-10-09T17:55:29.409Z"
   },
   "cats": {
     "admin": {
@@ -1030,6 +1031,30 @@
       "created": "2026-10-08T04:03:28.734Z",
       "updated": "2026-10-08T04:03:28.734Z",
       "doneAt": null,
+      "src": "chat"
+    },
+    "t_1wm8vw66": {
+      "id": "t_1wm8vw66",
+      "title": "Nyx: follow-up work after the meeting",
+      "cat": "rsa",
+      "status": "done",
+      "due": null,
+      "time": null,
+      "plan": "2026-10-09",
+      "est": null,
+      "spent": 60,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "meeting",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-09T17:55:36.720Z",
+      "updated": "2026-10-09T17:55:36.998Z",
+      "doneAt": "2026-10-09T17:55:36.998Z",
       "src": "chat"
     },
     "t_246qe3qg": {
@@ -4072,6 +4097,30 @@
       "doneAt": "2026-07-22T17:00:00.000Z",
       "src": "import"
     },
+    "t_or58jns1": {
+      "id": "t_or58jns1",
+      "title": "RPPR RSA: fixed analyses (for later analyses)",
+      "cat": "sdn",
+      "status": "done",
+      "due": null,
+      "time": null,
+      "plan": "2026-10-09",
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "analysis",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-09T17:55:37.673Z",
+      "updated": "2026-10-09T17:55:37.805Z",
+      "doneAt": "2026-10-09T17:55:37.805Z",
+      "src": "chat"
+    },
     "t_ozfo7jts": {
       "id": "t_ozfo7jts",
       "title": "Lab presentation",
@@ -4587,6 +4636,30 @@
       "doneAt": "2026-07-13T17:00:00.000Z",
       "src": "import"
     },
+    "t_tdln9lou": {
+      "id": "t_tdln9lou",
+      "title": "VST RSA: fixed analyses",
+      "cat": "rsa",
+      "status": "done",
+      "due": null,
+      "time": null,
+      "plan": "2026-10-09",
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "analysis",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-09T17:55:37.146Z",
+      "updated": "2026-10-09T17:55:37.265Z",
+      "doneAt": "2026-10-09T17:55:37.265Z",
+      "src": "chat"
+    },
     "t_teij": {
       "id": "t_teij",
       "title": "Set up SPARK PPI meeting with Teij",
@@ -5015,6 +5088,30 @@
       "created": "2026-10-06T14:28:17.538Z",
       "updated": "2026-10-06T14:28:17.538Z",
       "doneAt": null,
+      "src": "chat"
+    },
+    "t_vvgz845d": {
+      "id": "t_vvgz845d",
+      "title": "LEARN RSA: fixed analyses",
+      "cat": "learn",
+      "status": "done",
+      "due": null,
+      "time": null,
+      "plan": "2026-10-09",
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "analysis",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-09T17:55:37.396Z",
+      "updated": "2026-10-09T17:55:37.527Z",
+      "doneAt": "2026-10-09T17:55:37.527Z",
       "src": "chat"
     },
     "t_w0wwfbzm": {
@@ -5749,6 +5846,16 @@
       "end": "2026-10-08T03:58:36.194Z",
       "min": 180,
       "d": "2026-10-07"
+    },
+    "s_zxy1ax4s": {
+      "id": "s_zxy1ax4s",
+      "ref": "task:t_1wm8vw66",
+      "title": "Nyx: follow-up work after the meeting",
+      "cat": "rsa",
+      "start": "2026-10-09T16:55:36.845Z",
+      "end": "2026-10-09T17:55:36.845Z",
+      "min": 60,
+      "d": "2026-10-09"
     }
   },
   "activity": {
@@ -5992,6 +6099,16 @@
       "from": null,
       "to": "2026-10-07"
     },
+    "a_2zb9kv6f": {
+      "id": "a_2zb9kv6f",
+      "at": "2026-10-09T17:55:36.845Z",
+      "src": "chat",
+      "type": "clock",
+      "ref": "t_1wm8vw66",
+      "title": "Nyx: follow-up work after the meeting",
+      "from": null,
+      "to": "60m"
+    },
     "a_35tsikm0": {
       "id": "a_35tsikm0",
       "at": "2026-10-05T14:17:13.553Z",
@@ -6192,6 +6309,16 @@
       "from": null,
       "to": null
     },
+    "a_6j394aco": {
+      "id": "a_6j394aco",
+      "at": "2026-10-09T17:55:37.265Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_tdln9lou",
+      "title": "VST RSA: fixed analyses",
+      "from": null,
+      "to": null
+    },
     "a_6jdawx5m": {
       "id": "a_6jdawx5m",
       "at": "2026-10-05T16:45:34.786Z",
@@ -6201,6 +6328,26 @@
       "title": "Worked through analyses for Nyx",
       "from": null,
       "to": null
+    },
+    "a_6kdgy7ab": {
+      "id": "a_6kdgy7ab",
+      "at": "2026-10-09T17:55:37.396Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_vvgz845d",
+      "title": "LEARN RSA: fixed analyses",
+      "from": null,
+      "to": "2026-10-09"
+    },
+    "a_6qhmhm09": {
+      "id": "a_6qhmhm09",
+      "at": "2026-10-09T17:55:37.146Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_tdln9lou",
+      "title": "VST RSA: fixed analyses",
+      "from": null,
+      "to": "2026-10-09"
     },
     "a_6xc783jb": {
       "id": "a_6xc783jb",
@@ -6399,6 +6546,16 @@
       "type": "done",
       "ref": "t_3yuku10d",
       "title": "RSA: big work session",
+      "from": null,
+      "to": null
+    },
+    "a_9czt9xpa": {
+      "id": "a_9czt9xpa",
+      "at": "2026-10-09T17:55:36.998Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_1wm8vw66",
+      "title": "Nyx: follow-up work after the meeting",
       "from": null,
       "to": null
     },
@@ -6982,6 +7139,16 @@
       "from": null,
       "to": "added"
     },
+    "a_i88i1nw2": {
+      "id": "a_i88i1nw2",
+      "at": "2026-10-09T17:55:36.720Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_1wm8vw66",
+      "title": "Nyx: follow-up work after the meeting",
+      "from": null,
+      "to": "2026-10-09"
+    },
     "a_ie3ax8oy": {
       "id": "a_ie3ax8oy",
       "at": "2026-10-05T14:34:44.886Z",
@@ -7432,6 +7599,16 @@
       "from": null,
       "to": "blocks"
     },
+    "a_o9yb2vtf": {
+      "id": "a_o9yb2vtf",
+      "at": "2026-10-09T17:55:37.527Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_vvgz845d",
+      "title": "LEARN RSA: fixed analyses",
+      "from": null,
+      "to": null
+    },
     "a_oa74bkcr": {
       "id": "a_oa74bkcr",
       "at": "2026-10-07T02:20:19.295Z",
@@ -7571,6 +7748,16 @@
       "title": "SPARK grant update",
       "from": null,
       "to": null
+    },
+    "a_r8f2ertb": {
+      "id": "a_r8f2ertb",
+      "at": "2026-10-09T17:55:37.673Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_or58jns1",
+      "title": "RPPR RSA: fixed analyses (for later analyses)",
+      "from": null,
+      "to": "2026-10-09"
     },
     "a_rha2tv5n": {
       "id": "a_rha2tv5n",
@@ -8111,6 +8298,16 @@
       "title": "Send Johanna the LEARN breakdown email (drafted)",
       "from": "2026-10-06",
       "to": "2026-10-07"
+    },
+    "a_z8lomgbk": {
+      "id": "a_z8lomgbk",
+      "at": "2026-10-09T17:55:37.805Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_or58jns1",
+      "title": "RPPR RSA: fixed analyses (for later analyses)",
+      "from": null,
+      "to": null
     },
     "a_z8qdlsb2": {
       "id": "a_z8qdlsb2",
