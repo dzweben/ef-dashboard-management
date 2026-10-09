@@ -23,13 +23,13 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-09T17:55:38.074Z",
+    "at": "2026-10-09T18:29:22.729Z",
     "headline": "12 things today. Start with: Clinical notes (3 behind) (1h).",
     "lines": [
       "DUE TODAY // Clinical notes (3 behind) (1h left)",
       "INCOMING // OCD pres: build workshop Tue 10/13 (4d): 4h left, 4h booked · OCD pres: write main script Fri 10/16 (7d): 4h left, 4h booked",
       "CHORES // Clean first floor · Water plants. Most overdue: Clean first floor (19d since last).",
-      "TOMORROW // Sat 10/10 [3h/3h]: Lily gift: order or buy it · OCD pres: build workshop 1h · OCD pres: write main script 1h · ABCD review prep 40m",
+      "TOMORROW // Sat 10/10 [2h 20m/3h]: Lily gift: order or buy it · OCD pres: build workshop 1h · OCD pres: write main script 1h",
       "DONE // 4 today · streak 12d"
     ],
     "asks": [
@@ -47,8 +47,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-09T17:55:29.409Z",
-    "lastActivitySeen": "2026-10-09T17:55:29.409Z"
+    "lastClaudeSync": "2026-10-09T18:29:01.755Z",
+    "lastActivitySeen": "2026-10-09T18:29:01.755Z"
   },
   "cats": {
     "admin": {
@@ -646,7 +646,7 @@
       "kind": "project",
       "status": "active",
       "due": "2026-10-26",
-      "goal": "Present to the department on 10/19; slides + plan out by 10/15",
+      "goal": "Present to the department Mon 10/26; slides + plan out by Thu 10/22.",
       "milestones": [
         {
           "id": "m1",
@@ -681,7 +681,7 @@
       "notes": "",
       "order": 0,
       "created": "2026-10-05T14:17:21.417Z",
-      "updated": "2026-10-05T19:40:51.932Z"
+      "updated": "2026-10-09T18:29:18.639Z"
     },
     "p_nf541req": {
       "id": "p_nf541req",
@@ -2197,37 +2197,37 @@
       "spent": 0,
       "blocks": [
         {
-          "id": "b_rzf650w9",
-          "d": "2026-10-09",
+          "id": "b_ohc6vadz",
+          "d": "2026-10-19",
           "m": 60,
           "done": false,
-          "auto": true
+          "auto": false
         },
         {
-          "id": "b_41rxwmef",
-          "d": "2026-10-13",
+          "id": "b_dpmhghsr",
+          "d": "2026-10-20",
           "m": 60,
           "done": false,
-          "auto": true
+          "auto": false
         },
         {
-          "id": "b_xyq6pth1",
-          "d": "2026-10-17",
+          "id": "b_lapqen64",
+          "d": "2026-10-21",
           "m": 60,
           "done": false,
-          "auto": true
+          "auto": false
         }
       ],
       "project": "p_m7qpuz93",
       "prio": 1,
       "kind": "task",
-      "notes": "",
+      "notes": "Talk moved to Mon 10/26; slides + plan go out by Thu 10/22. Build them the week of 10/19, after the transcripts (10/14) and the Claude thread (10/15).",
       "subs": [],
       "triage": false,
       "moved": 0,
       "win": false,
       "created": "2026-10-05T14:17:30.295Z",
-      "updated": "2026-10-07T18:06:05.603Z",
+      "updated": "2026-10-09T18:29:18.525Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -5032,23 +5032,23 @@
       "spent": 0,
       "blocks": [
         {
-          "id": "b_sslyalvq",
-          "d": "2026-10-10",
-          "m": 40,
-          "done": false,
-          "auto": true
-        },
-        {
-          "id": "b_1tv0dbdr",
-          "d": "2026-10-17",
+          "id": "b_ug66wsm9",
+          "d": "2026-10-09",
           "m": 60,
           "done": false,
           "auto": true
         },
         {
-          "id": "b_z68smnpm",
-          "d": "2026-10-24",
-          "m": 80,
+          "id": "b_wwljyfin",
+          "d": "2026-10-16",
+          "m": 60,
+          "done": false,
+          "auto": true
+        },
+        {
+          "id": "b_2a0d5s4g",
+          "d": "2026-10-23",
+          "m": 60,
           "done": false,
           "auto": true
         }
@@ -5062,7 +5062,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T14:17:13.553Z",
-      "updated": "2026-10-09T01:00:07.135Z",
+      "updated": "2026-10-09T18:29:18.783Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -6109,6 +6109,16 @@
       "from": null,
       "to": "60m"
     },
+    "a_30b1fxej": {
+      "id": "a_30b1fxej",
+      "at": "2026-10-09T18:29:18.271Z",
+      "src": "chat",
+      "type": "block",
+      "ref": "t_cdhxbtfb",
+      "title": "AI pres: build slides + plan, send out",
+      "from": null,
+      "to": "planned"
+    },
     "a_35tsikm0": {
       "id": "a_35tsikm0",
       "at": "2026-10-05T14:17:13.553Z",
@@ -6668,6 +6678,16 @@
       "title": "Master Nyx's RSA script front to back (#1 priority)",
       "from": null,
       "to": "plan,notes,triage"
+    },
+    "a_bpghe1w6": {
+      "id": "a_bpghe1w6",
+      "at": "2026-10-09T18:29:18.639Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "p_m7qpuz93",
+      "title": "Department AI presentation",
+      "from": null,
+      "to": "goal"
     },
     "a_bs5m0qdc": {
       "id": "a_bs5m0qdc",
@@ -7329,6 +7349,26 @@
       "from": null,
       "to": null
     },
+    "a_k2ontjml": {
+      "id": "a_k2ontjml",
+      "at": "2026-10-09T18:29:18.386Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_cdhxbtfb",
+      "title": "AI pres: build slides + plan, send out",
+      "from": null,
+      "to": "blocks"
+    },
+    "a_k3tcye22": {
+      "id": "a_k3tcye22",
+      "at": "2026-10-09T18:29:18.390Z",
+      "src": "chat",
+      "type": "block",
+      "ref": "t_cdhxbtfb",
+      "title": "AI pres: build slides + plan, send out",
+      "from": null,
+      "to": "planned"
+    },
     "a_khtlfybg": {
       "id": "a_khtlfybg",
       "at": "2026-10-05T23:39:42.249Z",
@@ -7619,6 +7659,16 @@
       "from": null,
       "to": null
     },
+    "a_obk40cv6": {
+      "id": "a_obk40cv6",
+      "at": "2026-10-09T18:29:18.525Z",
+      "src": "chat",
+      "type": "block",
+      "ref": "t_cdhxbtfb",
+      "title": "AI pres: build slides + plan, send out",
+      "from": null,
+      "to": "planned"
+    },
     "a_okfzn01o": {
       "id": "a_okfzn01o",
       "at": "2026-10-05T14:34:45.734Z",
@@ -7628,6 +7678,36 @@
       "title": "SPARK docs: PPI",
       "from": null,
       "to": "2026-10-10"
+    },
+    "a_om6fi19p": {
+      "id": "a_om6fi19p",
+      "at": "2026-10-09T18:29:18.521Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_cdhxbtfb",
+      "title": "AI pres: build slides + plan, send out",
+      "from": null,
+      "to": "blocks"
+    },
+    "a_om9c67w2": {
+      "id": "a_om9c67w2",
+      "at": "2026-10-09T18:29:18.266Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_cdhxbtfb",
+      "title": "AI pres: build slides + plan, send out",
+      "from": null,
+      "to": "blocks"
+    },
+    "a_p0thn6sc": {
+      "id": "a_p0thn6sc",
+      "at": "2026-10-09T18:29:18.783Z",
+      "src": "chat",
+      "type": "block",
+      "ref": "t_vnujsabp",
+      "title": "ABCD review prep",
+      "from": null,
+      "to": "planned"
     },
     "a_p2hqp0hu": {
       "id": "a_p2hqp0hu",
@@ -7728,6 +7808,16 @@
       "title": "Baked cookies",
       "from": null,
       "to": null
+    },
+    "a_qkp378uy": {
+      "id": "a_qkp378uy",
+      "at": "2026-10-09T18:29:18.118Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_cdhxbtfb",
+      "title": "AI pres: build slides + plan, send out",
+      "from": null,
+      "to": "notes,blocks"
     },
     "a_qkpq4c0n": {
       "id": "a_qkpq4c0n",
