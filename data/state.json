@@ -23,33 +23,31 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-09T12:59:03.047Z",
-    "headline": "15 things today (1 overdue). Start with: Master Nyx's RSA script front to back (#1 priority) (4h).",
+    "at": "2026-10-09T17:54:37.487Z",
+    "headline": "12 things today. Start with: Clinical notes (3 behind) (1h).",
     "lines": [
       "DUE TODAY // Clinical notes (3 behind) (1h left)",
-      "OVERDUE // Master Nyx's RSA script front to back (#1 priority) (1d late)",
       "INCOMING // OCD pres: build workshop Tue 10/13 (4d): 4h left, 4h booked · OCD pres: write main script Fri 10/16 (7d): 4h left, 4h booked",
       "CHORES // Clean first floor · Water plants. Most overdue: Clean first floor (19d since last).",
-      "TOMORROW // Sat 10/10 [3h/3h]: DUE SPARK grant update (RPPR) · Lily gift: order or buy it · OCD pres: build workshop 1h · OCD pres: write main script 1h · +1 more"
+      "TOMORROW // Sat 10/10 [3h/3h]: Lily gift: order or buy it · OCD pres: build workshop 1h · OCD pres: write main script 1h · ABCD review prep 40m"
     ],
     "asks": [
-      "Did 'Nyx meeting' happen?",
-      "'Master Nyx's RSA script front to back (#1 priority)' is 1d late. Still on? New date or drop it?",
-      "'Reschedule dentist' got pushed 4x. Shrink it, pin it to a day, or drop it?",
-      "Anything coming up for Meetings?"
+      "'Clinical notes (3 behind)' got pushed 3x. Shrink it, pin it to a day, or drop it?",
+      "Anything coming up for Meetings?",
+      "Anything coming up for Ziggy?"
     ],
     "focus": [
-      "t_nyxprep",
       "t_ff9fmzh1",
-      "t_dentist"
+      "t_xouhgc0d",
+      "t_rkse0ib5"
     ]
   },
   "clock": {
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-09T12:58:55.324Z",
-    "lastActivitySeen": "2026-10-09T12:58:55.324Z"
+    "lastClaudeSync": "2026-10-09T17:54:18.405Z",
+    "lastActivitySeen": "2026-10-09T17:54:18.405Z"
   },
   "cats": {
     "admin": {
@@ -600,7 +598,7 @@
       "name": "SPARK grant update",
       "cat": "sdn",
       "kind": "project",
-      "status": "active",
+      "status": "done",
       "due": "2026-10-10",
       "goal": "Grant update due Sat 10/10: SPARK analyses + documentation",
       "milestones": [],
@@ -608,7 +606,7 @@
       "notes": "",
       "order": 0,
       "created": "2026-10-05T14:34:37.560Z",
-      "updated": "2026-10-05T14:34:37.560Z"
+      "updated": "2026-10-09T17:54:33.586Z"
     },
     "p_f18i5wz7": {
       "id": "p_f18i5wz7",
@@ -630,7 +628,7 @@
       "name": "E-ADIS",
       "cat": "caadc",
       "kind": "project",
-      "status": "active",
+      "status": "done",
       "due": null,
       "goal": "Electronic ADIS: finalize and hand off to Phil.",
       "milestones": [],
@@ -638,7 +636,7 @@
       "notes": "",
       "order": 0,
       "created": "2026-10-06T15:51:18.358Z",
-      "updated": "2026-10-06T15:51:18.358Z"
+      "updated": "2026-10-09T17:54:33.696Z"
     },
     "p_m7qpuz93": {
       "id": "p_m7qpuz93",
@@ -2356,7 +2354,7 @@
       "id": "t_dentist",
       "title": "Reschedule dentist",
       "cat": "health",
-      "status": "todo",
+      "status": "done",
       "due": null,
       "time": null,
       "plan": "2026-10-08",
@@ -2372,8 +2370,8 @@
       "moved": 4,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-08T03:58:13.027Z",
-      "doneAt": null,
+      "updated": "2026-10-09T17:54:29.310Z",
+      "doneAt": "2026-10-08T16:00:00.000Z",
       "src": "import"
     },
     "t_dticons": {
@@ -2428,7 +2426,7 @@
       "id": "t_dyjiic1q",
       "title": "Email Phil: E-ADIS got minimal feedback, it's ready",
       "cat": "caadc",
-      "status": "todo",
+      "status": "done",
       "due": null,
       "time": null,
       "plan": "2026-10-08",
@@ -2444,8 +2442,8 @@
       "moved": 1,
       "win": false,
       "created": "2026-10-06T15:51:21.874Z",
-      "updated": "2026-10-08T03:58:12.929Z",
-      "doneAt": null,
+      "updated": "2026-10-09T17:54:29.193Z",
+      "doneAt": "2026-10-08T16:00:00.000Z",
       "src": "chat"
     },
     "t_e0js7trp": {
@@ -3318,7 +3316,7 @@
       "id": "t_l0tfthj9",
       "title": "SPARK grant update (RPPR)",
       "cat": "sdn",
-      "status": "todo",
+      "status": "done",
       "due": "2026-10-10",
       "time": null,
       "plan": null,
@@ -3334,8 +3332,8 @@
       "moved": 0,
       "win": true,
       "created": "2026-10-05T14:34:46.312Z",
-      "updated": "2026-10-08T03:58:06.855Z",
-      "doneAt": null,
+      "updated": "2026-10-09T17:54:29.079Z",
+      "doneAt": "2026-10-08T16:00:00.000Z",
       "src": "chat"
     },
     "t_l6x0bsiu": {
@@ -3774,7 +3772,7 @@
       "id": "t_nyxprep",
       "title": "Master Nyx's RSA script front to back (#1 priority)",
       "cat": "rsa",
-      "status": "todo",
+      "status": "done",
       "due": "2026-10-08",
       "time": null,
       "plan": "2026-10-08",
@@ -3802,27 +3800,27 @@
         {
           "id": "s2",
           "t": "Finish the second half",
-          "done": false
+          "done": true
         },
         {
           "id": "s3",
           "t": "Review front to back",
-          "done": false
+          "done": true
         }
       ],
       "triage": false,
       "moved": 1,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-08T04:03:28.624Z",
-      "doneAt": null,
+      "updated": "2026-10-09T17:54:28.806Z",
+      "doneAt": "2026-10-08T16:00:00.000Z",
       "src": "import"
     },
     "t_obvmjfht": {
       "id": "t_obvmjfht",
       "title": "Nyx meeting",
       "cat": "rsa",
-      "status": "todo",
+      "status": "done",
       "due": null,
       "time": null,
       "plan": "2026-10-08",
@@ -3838,8 +3836,8 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T16:45:35.462Z",
-      "updated": "2026-10-07T02:20:18.050Z",
-      "doneAt": null,
+      "updated": "2026-10-09T17:54:28.936Z",
+      "doneAt": "2026-10-08T16:00:00.000Z",
       "src": "chat"
     },
     "t_ocdillus": {
@@ -6004,6 +6002,16 @@
       "from": null,
       "to": "2026-10-31"
     },
+    "a_35um29n9": {
+      "id": "a_35um29n9",
+      "at": "2026-10-09T17:54:28.649Z",
+      "src": "chat",
+      "type": "sub",
+      "ref": "t_nyxprep",
+      "title": "Master Nyx's RSA script front to back (#1 priority) / Review front to back",
+      "from": null,
+      "to": "done"
+    },
     "a_39bqthd4": {
       "id": "a_39bqthd4",
       "at": "2026-10-07T04:09:47.769Z",
@@ -6294,6 +6302,16 @@
       "from": null,
       "to": null
     },
+    "a_80eczhhg": {
+      "id": "a_80eczhhg",
+      "at": "2026-10-09T17:54:28.806Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_nyxprep",
+      "title": "Master Nyx's RSA script front to back (#1 priority)",
+      "from": null,
+      "to": null
+    },
     "a_87ztt8j3": {
       "id": "a_87ztt8j3",
       "at": "2026-10-05T20:19:58.085Z",
@@ -6464,6 +6482,16 @@
       "from": null,
       "to": "added"
     },
+    "a_b3asm8mb": {
+      "id": "a_b3asm8mb",
+      "at": "2026-10-09T17:54:29.310Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_dentist",
+      "title": "Reschedule dentist",
+      "from": null,
+      "to": null
+    },
     "a_b89wq3f4": {
       "id": "a_b89wq3f4",
       "at": "2026-10-05T16:45:35.185Z",
@@ -6613,6 +6641,16 @@
       "title": "Beautiful moments with Ziggy",
       "from": null,
       "to": null
+    },
+    "a_dypiccjf": {
+      "id": "a_dypiccjf",
+      "at": "2026-10-09T17:54:28.522Z",
+      "src": "chat",
+      "type": "sub",
+      "ref": "t_nyxprep",
+      "title": "Master Nyx's RSA script front to back (#1 priority) / Finish the second half",
+      "from": null,
+      "to": "done"
     },
     "a_e42b40da": {
       "id": "a_e42b40da",
@@ -6834,6 +6872,16 @@
       "from": null,
       "to": "2026-10-07"
     },
+    "a_goiqtked": {
+      "id": "a_goiqtked",
+      "at": "2026-10-09T17:54:29.193Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_dyjiic1q",
+      "title": "Email Phil: E-ADIS got minimal feedback, it's ready",
+      "from": null,
+      "to": null
+    },
     "a_gp0ifrqh": {
       "id": "a_gp0ifrqh",
       "at": "2026-10-05T14:34:45.895Z",
@@ -6864,6 +6912,26 @@
       "from": null,
       "to": null
     },
+    "a_h826dp6x": {
+      "id": "a_h826dp6x",
+      "at": "2026-10-09T17:54:29.079Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_l0tfthj9",
+      "title": "SPARK grant update (RPPR)",
+      "from": null,
+      "to": null
+    },
+    "a_hd7r8n59": {
+      "id": "a_hd7r8n59",
+      "at": "2026-10-09T17:54:33.586Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "p_e1f8ij8g",
+      "title": "SPARK grant update",
+      "from": null,
+      "to": "status"
+    },
     "a_hfubvxod": {
       "id": "a_hfubvxod",
       "at": "2026-10-07T02:20:28.711Z",
@@ -6873,6 +6941,16 @@
       "title": "RSA: participant data fixes",
       "from": null,
       "to": "notes"
+    },
+    "a_hk2b1e88": {
+      "id": "a_hk2b1e88",
+      "at": "2026-10-09T17:54:33.696Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "p_iy5b0ta6",
+      "title": "E-ADIS",
+      "from": null,
+      "to": "status"
     },
     "a_hrsypf5i": {
       "id": "a_hrsypf5i",
@@ -7913,6 +7991,16 @@
       "title": "Master Nyx's RSA script front to back (#1 priority)",
       "from": null,
       "to": "blocks"
+    },
+    "a_xt0gbbyu": {
+      "id": "a_xt0gbbyu",
+      "at": "2026-10-09T17:54:28.936Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_obvmjfht",
+      "title": "Nyx meeting",
+      "from": null,
+      "to": null
     },
     "a_y6558ve2": {
       "id": "a_y6558ve2",
