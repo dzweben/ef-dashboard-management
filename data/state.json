@@ -23,7 +23,7 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-10T15:23:12.492Z",
+    "at": "2026-10-10T15:24:10.356Z",
     "headline": "4 things today. Start with: Clinical notes (3 behind) (1h).",
     "lines": [
       "DUE TODAY // Clinical notes (3 behind) (1h left)",
@@ -46,8 +46,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-10T15:23:09.468Z",
-    "lastActivitySeen": "2026-10-10T15:23:09.468Z"
+    "lastClaudeSync": "2026-10-10T15:24:04.411Z",
+    "lastActivitySeen": "2026-10-10T15:24:04.411Z"
   },
   "cats": {
     "admin": {
@@ -5789,7 +5789,7 @@
       "id": "c_floor1",
       "title": "Clean first floor",
       "cat": "home",
-      "every": 14,
+      "every": 7,
       "perDay": 1,
       "last": "2026-10-09",
       "start": null,
@@ -5802,7 +5802,7 @@
       "active": true,
       "notes": "",
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-10T04:42:38.124Z"
+      "updated": "2026-10-10T15:24:10.016Z"
     },
     "c_groceries": {
       "id": "c_groceries",
@@ -6791,6 +6791,16 @@
       "title": "Worked on TUBRIC advertisements",
       "from": null,
       "to": null
+    },
+    "a_bkbvn3g1": {
+      "id": "a_bkbvn3g1",
+      "at": "2026-10-10T15:24:10.016Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "c_floor1",
+      "title": "Clean first floor",
+      "from": null,
+      "to": "every"
     },
     "a_bmuhszru": {
       "id": "a_bmuhszru",
