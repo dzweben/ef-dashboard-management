@@ -23,13 +23,13 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-09T18:29:22.729Z",
-    "headline": "12 things today. Start with: Clinical notes (3 behind) (1h).",
+    "at": "2026-10-10T01:00:17.233Z",
+    "headline": "7 things today. Start with: Clinical notes (3 behind) (1h).",
     "lines": [
       "DUE TODAY // Clinical notes (3 behind) (1h left)",
       "INCOMING // OCD pres: build workshop Tue 10/13 (4d): 4h left, 4h booked · OCD pres: write main script Fri 10/16 (7d): 4h left, 4h booked",
       "CHORES // Clean first floor · Water plants. Most overdue: Clean first floor (19d since last).",
-      "TOMORROW // Sat 10/10 [2h 20m/3h]: Lily gift: order or buy it · OCD pres: build workshop 1h · OCD pres: write main script 1h",
+      "TOMORROW // Sat 10/10 [2h 40m/3h]: Lily gift: order or buy it · OCD pres: build workshop 1h 20m · OCD pres: write main script 1h",
       "DONE // 4 today · streak 12d"
     ],
     "asks": [
@@ -47,8 +47,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-09T18:29:01.755Z",
-    "lastActivitySeen": "2026-10-09T18:29:01.755Z"
+    "lastClaudeSync": "2026-10-10T01:00:09.048Z",
+    "lastActivitySeen": "2026-10-10T01:00:09.048Z"
   },
   "cats": {
     "admin": {
@@ -3877,23 +3877,23 @@
       "spent": 0,
       "blocks": [
         {
-          "id": "b_zdmfoj74",
-          "d": "2026-10-09",
+          "id": "b_7cq7hk97",
+          "d": "2026-10-11",
+          "m": 40,
+          "done": false,
+          "auto": true
+        },
+        {
+          "id": "b_fcifdk43",
+          "d": "2026-10-13",
           "m": 60,
           "done": false,
           "auto": true
         },
         {
-          "id": "b_sy0cpb6q",
-          "d": "2026-10-12",
-          "m": 60,
-          "done": false,
-          "auto": true
-        },
-        {
-          "id": "b_uamdcgop",
-          "d": "2026-10-15",
-          "m": 60,
+          "id": "b_2fth0nxd",
+          "d": "2026-10-16",
+          "m": 80,
           "done": false,
           "auto": true
         }
@@ -3907,7 +3907,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-09T01:00:07.135Z",
+      "updated": "2026-10-10T01:00:16.515Z",
       "doneAt": null,
       "src": "import"
     },
@@ -3947,8 +3947,8 @@
       "spent": 0,
       "blocks": [
         {
-          "id": "b_ti37j801",
-          "d": "2026-10-09",
+          "id": "b_m9lq02ho",
+          "d": "2026-10-12",
           "m": 60,
           "done": false,
           "auto": true
@@ -3963,7 +3963,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-08T03:58:13.476Z",
+      "updated": "2026-10-10T01:00:16.515Z",
       "doneAt": null,
       "src": "import"
     },
@@ -3979,13 +3979,6 @@
       "spent": 0,
       "blocks": [
         {
-          "id": "b_cvil1buc",
-          "d": "2026-10-09",
-          "m": 60,
-          "done": false,
-          "auto": true
-        },
-        {
           "id": "b_0k2qym86",
           "d": "2026-10-10",
           "m": 60,
@@ -3993,8 +3986,15 @@
           "auto": true
         },
         {
-          "id": "b_7xdk4s65",
-          "d": "2026-10-12",
+          "id": "b_21em8c3u",
+          "d": "2026-10-11",
+          "m": 60,
+          "done": false,
+          "auto": true
+        },
+        {
+          "id": "b_4ryyeqik",
+          "d": "2026-10-13",
           "m": 60,
           "done": false,
           "auto": true
@@ -4016,7 +4016,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-09T01:00:07.135Z",
+      "updated": "2026-10-10T01:00:16.515Z",
       "doneAt": null,
       "src": "import"
     },
@@ -4032,30 +4032,23 @@
       "spent": 60,
       "blocks": [
         {
-          "id": "b_cnrpc4b1",
-          "d": "2026-10-09",
-          "m": 60,
-          "done": false,
-          "auto": true
-        },
-        {
           "id": "b_04gpexq2",
           "d": "2026-10-10",
-          "m": 60,
+          "m": 80,
           "done": false,
           "auto": true
         },
         {
           "id": "b_num34lzs",
           "d": "2026-10-11",
-          "m": 60,
+          "m": 80,
           "done": false,
           "auto": true
         },
         {
           "id": "b_yljqpkdi",
           "d": "2026-10-12",
-          "m": 60,
+          "m": 80,
           "done": false,
           "auto": true
         }
@@ -4069,7 +4062,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-09T01:00:07.135Z",
+      "updated": "2026-10-10T01:00:16.515Z",
       "doneAt": null,
       "src": "import"
     },
@@ -5032,22 +5025,22 @@
       "spent": 0,
       "blocks": [
         {
-          "id": "b_ug66wsm9",
-          "d": "2026-10-09",
+          "id": "b_lcvaafc4",
+          "d": "2026-10-12",
           "m": 60,
           "done": false,
           "auto": true
         },
         {
-          "id": "b_wwljyfin",
-          "d": "2026-10-16",
+          "id": "b_00mys2eb",
+          "d": "2026-10-18",
           "m": 60,
           "done": false,
           "auto": true
         },
         {
-          "id": "b_2a0d5s4g",
-          "d": "2026-10-23",
+          "id": "b_k7pmjzz2",
+          "d": "2026-10-24",
           "m": 60,
           "done": false,
           "auto": true
@@ -5062,7 +5055,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T14:17:13.553Z",
-      "updated": "2026-10-09T18:29:18.783Z",
+      "updated": "2026-10-10T01:00:16.515Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -6436,6 +6429,16 @@
       "type": "block",
       "ref": null,
       "title": "Auto-plan: 6 tasks",
+      "from": null,
+      "to": "planned"
+    },
+    "a_7xz03df4": {
+      "id": "a_7xz03df4",
+      "at": "2026-10-10T01:00:16.515Z",
+      "src": "chat",
+      "type": "block",
+      "ref": null,
+      "title": "Auto-plan: 5 tasks",
       "from": null,
       "to": "planned"
     },
