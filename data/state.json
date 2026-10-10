@@ -23,13 +23,13 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-10T04:42:42.890Z",
+    "at": "2026-10-10T06:05:36.358Z",
     "headline": "4 things today. Start with: Clinical notes (3 behind) (1h).",
     "lines": [
       "DUE TODAY // Clinical notes (3 behind) (1h left)",
       "INCOMING // OCD pres: build workshop Tue 10/13 (3d): 4h left, 4h booked · OCD pres: write main script Fri 10/16 (6d): 4h left, 4h booked",
       "CHORES // Grocery run · Water plants. Most overdue: Grocery run (7d since last).",
-      "TOMORROW // Sun 10/11 [3h/3h]: Email Billy · Email Chelsea · Follow up with Jason if no reply · OCD pres: build workshop 1h 20m · +1 more"
+      "TOMORROW // Sun 10/11 [3h/3h]: Email Billy · Email Chelsea · Follow up with Jason if no reply · Slack Dave + Shenghan (TUBRIC) · +2 more"
     ],
     "asks": [
       "'Clinical notes (3 behind)' got pushed 4x. Shrink it, pin it to a day, or drop it?",
@@ -39,15 +39,15 @@
     "focus": [
       "t_ff9fmzh1",
       "t_pmvc74vr",
-      "t_ocdwork"
+      "t_hats3lws"
     ]
   },
   "clock": {
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-10T04:42:27.888Z",
-    "lastActivitySeen": "2026-10-10T04:42:27.888Z"
+    "lastClaudeSync": "2026-10-10T06:05:28.267Z",
+    "lastActivitySeen": "2026-10-10T06:05:28.267Z"
   },
   "cats": {
     "admin": {
@@ -2984,6 +2984,30 @@
       "doneAt": "2026-07-07T17:00:00.000Z",
       "src": "import"
     },
+    "t_hats3lws": {
+      "id": "t_hats3lws",
+      "title": "TUBRIC LinkedIn post",
+      "cat": "tubric",
+      "status": "todo",
+      "due": null,
+      "time": null,
+      "plan": "2026-10-10",
+      "est": 20,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-10T06:05:29.919Z",
+      "updated": "2026-10-10T06:05:29.919Z",
+      "doneAt": null,
+      "src": "chat"
+    },
     "t_hd9xybgp": {
       "id": "t_hd9xybgp",
       "title": "Clinical notes",
@@ -3343,6 +3367,30 @@
       "updated": "2026-07-16T17:00:00.000Z",
       "doneAt": "2026-07-16T17:00:00.000Z",
       "src": "import"
+    },
+    "t_kr128758": {
+      "id": "t_kr128758",
+      "title": "Slack Dave + Shenghan (TUBRIC)",
+      "cat": "tubric",
+      "status": "todo",
+      "due": null,
+      "time": null,
+      "plan": "2026-10-11",
+      "est": 10,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-10T06:05:30.061Z",
+      "updated": "2026-10-10T06:05:30.061Z",
+      "doneAt": null,
+      "src": "chat"
     },
     "t_l0tfthj9": {
       "id": "t_l0tfthj9",
@@ -3986,23 +4034,16 @@
       "spent": 0,
       "blocks": [
         {
-          "id": "b_0k2qym86",
-          "d": "2026-10-10",
-          "m": 40,
-          "done": false,
-          "auto": true
-        },
-        {
           "id": "b_21em8c3u",
           "d": "2026-10-11",
-          "m": 50,
+          "m": 40,
           "done": false,
           "auto": true
         },
         {
           "id": "b_1j1mna2x",
           "d": "2026-10-12",
-          "m": 30,
+          "m": 60,
           "done": false,
           "auto": true
         },
@@ -4016,7 +4057,7 @@
         {
           "id": "b_2g4z1mvu",
           "d": "2026-10-14",
-          "m": 60,
+          "m": 80,
           "done": false,
           "auto": true
         }
@@ -4030,7 +4071,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-10T04:42:39.170Z",
+      "updated": "2026-10-10T06:05:34.087Z",
       "doneAt": null,
       "src": "import"
     },
@@ -6747,6 +6788,16 @@
       "from": null,
       "to": "goal"
     },
+    "a_bpo44e9s": {
+      "id": "a_bpo44e9s",
+      "at": "2026-10-10T06:05:29.919Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_hats3lws",
+      "title": "TUBRIC LinkedIn post",
+      "from": null,
+      "to": "2026-10-10"
+    },
     "a_bs5m0qdc": {
       "id": "a_bs5m0qdc",
       "at": "2026-10-05T16:49:47.391Z",
@@ -8397,6 +8448,16 @@
       "from": null,
       "to": null
     },
+    "a_xxkyqpnn": {
+      "id": "a_xxkyqpnn",
+      "at": "2026-10-10T06:05:30.061Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_kr128758",
+      "title": "Slack Dave + Shenghan (TUBRIC)",
+      "from": null,
+      "to": "2026-10-11"
+    },
     "a_y6558ve2": {
       "id": "a_y6558ve2",
       "at": "2026-10-05T14:34:46.312Z",
@@ -8456,6 +8517,16 @@
       "title": "Department AI presentation / Convert voice transcripts",
       "from": null,
       "to": "added"
+    },
+    "a_ys3whz1q": {
+      "id": "a_ys3whz1q",
+      "at": "2026-10-10T06:05:34.087Z",
+      "src": "chat",
+      "type": "block",
+      "ref": "t_ocdscript",
+      "title": "OCD pres: write main script",
+      "from": null,
+      "to": "planned"
     },
     "a_yz5h29tz": {
       "id": "a_yz5h29tz",
