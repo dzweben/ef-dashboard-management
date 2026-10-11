@@ -23,13 +23,13 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-10T15:24:10.356Z",
-    "headline": "4 things today. Start with: Clinical notes (3 behind) (1h).",
+    "at": "2026-10-11T01:00:02.863Z",
+    "headline": "3 things today. Start with: Clinical notes (3 behind) (1h).",
     "lines": [
       "DUE TODAY // Clinical notes (3 behind) (1h left)",
       "INCOMING // OCD pres: build workshop Tue 10/13 (3d): 4h left, 4h booked · OCD pres: write main script Fri 10/16 (6d): 4h left, 4h booked",
       "CHORES // Grocery run · Water plants. Most overdue: Grocery run (7d since last).",
-      "TOMORROW // Sun 10/11 [3h/3h]: Email Billy · Email Chelsea · Follow up with Jason if no reply · Slack Dave + Shenghan (TUBRIC) · +2 more"
+      "TOMORROW // Sun 10/11 [3h/3h]: Email Billy · Email Chelsea · Follow up with Jason if no reply · Slack Dave + Shenghan (TUBRIC) · +1 more"
     ],
     "asks": [
       "'Clinical notes (3 behind)' got pushed 4x. Shrink it, pin it to a day, or drop it?",
@@ -46,8 +46,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-10T15:24:04.411Z",
-    "lastActivitySeen": "2026-10-10T15:24:04.411Z"
+    "lastClaudeSync": "2026-10-11T00:59:56.461Z",
+    "lastActivitySeen": "2026-10-11T00:59:56.461Z"
   },
   "cats": {
     "admin": {
@@ -4058,13 +4058,6 @@
       "spent": 0,
       "blocks": [
         {
-          "id": "b_21em8c3u",
-          "d": "2026-10-11",
-          "m": 40,
-          "done": false,
-          "auto": true
-        },
-        {
           "id": "b_1j1mna2x",
           "d": "2026-10-12",
           "m": 60,
@@ -4081,7 +4074,14 @@
         {
           "id": "b_2g4z1mvu",
           "d": "2026-10-14",
-          "m": 80,
+          "m": 60,
+          "done": false,
+          "auto": true
+        },
+        {
+          "id": "b_7l5pjg2c",
+          "d": "2026-10-15",
+          "m": 60,
           "done": false,
           "auto": true
         }
@@ -4095,7 +4095,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-10T06:05:34.087Z",
+      "updated": "2026-10-11T00:59:58.947Z",
       "doneAt": null,
       "src": "import"
     },
@@ -4111,23 +4111,16 @@
       "spent": 60,
       "blocks": [
         {
-          "id": "b_04gpexq2",
-          "d": "2026-10-10",
-          "m": 80,
-          "done": false,
-          "auto": true
-        },
-        {
           "id": "b_num34lzs",
           "d": "2026-10-11",
-          "m": 80,
+          "m": 120,
           "done": false,
           "auto": true
         },
         {
           "id": "b_yljqpkdi",
           "d": "2026-10-12",
-          "m": 80,
+          "m": 120,
           "done": false,
           "auto": true
         }
@@ -4141,7 +4134,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-10T01:00:16.515Z",
+      "updated": "2026-10-11T00:59:58.947Z",
       "doneAt": null,
       "src": "import"
     },
@@ -5106,7 +5099,7 @@
         {
           "id": "b_lcvaafc4",
           "d": "2026-10-12",
-          "m": 60,
+          "m": 50,
           "done": false,
           "auto": true
         },
@@ -5120,7 +5113,7 @@
         {
           "id": "b_k7pmjzz2",
           "d": "2026-10-24",
-          "m": 60,
+          "m": 70,
           "done": false,
           "auto": true
         }
@@ -5134,7 +5127,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T14:17:13.553Z",
-      "updated": "2026-10-10T01:00:16.515Z",
+      "updated": "2026-10-11T00:59:58.947Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -7411,6 +7404,16 @@
       "title": "SDN / SPARK",
       "from": null,
       "to": "aliases"
+    },
+    "a_jjga7zsv": {
+      "id": "a_jjga7zsv",
+      "at": "2026-10-11T00:59:58.947Z",
+      "src": "chat",
+      "type": "block",
+      "ref": null,
+      "title": "Auto-plan: 3 tasks",
+      "from": null,
+      "to": "planned"
     },
     "a_jkc5n42q": {
       "id": "a_jkc5n42q",
