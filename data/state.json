@@ -23,19 +23,19 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-12T01:00:22.454Z",
-    "headline": "7 things today (1 overdue). Start with: Clinical notes (3 behind) (1h).",
+    "at": "2026-10-12T13:00:25.011Z",
+    "headline": "15 things today (1 overdue). Start with: Clinical notes (3 behind) (1h).",
     "lines": [
-      "OVERDUE // Clinical notes (3 behind) (1d late)",
-      "INCOMING // OCD pres: build workshop Tue 10/13 (2d): 4h left, 2h booked, TIGHT · OCD pres: write main script Fri 10/16 (5d): 4h left, 4h booked",
-      "CHORES // Grocery run · Laundry · Water plants. Most overdue: Grocery run (8d since last).",
-      "TOMORROW // Mon 10/12 [8h/8h]: Lily gift: order or buy it · Rewatch neuromelanin video · Start ABCD work for Jason · Lily gift: order or buy it 20m · +5 more"
+      "OVERDUE // Clinical notes (3 behind) (2d late)",
+      "INCOMING // OCD pres: build workshop Tue 10/13 (1d): 4h left, 2h booked, AT RISK · OCD pres: write main script Fri 10/16 (4d): 4h left, 4h booked · OCD pres: illustrations for dyads Mon 10/19 (7d): 3h left, 3h booked",
+      "CHORES // Grocery run · Laundry · TUBRIC LinkedIn post · Water plants. Most overdue: Grocery run (9d since last).",
+      "TOMORROW // Tue 10/13 [1h/8h]: DUE Lily gift: order or buy it · DUE OCD pres: build workshop · OCD pres: write main script 1h"
     ],
     "asks": [
-      "OCD pres: build workshop: 2h not blocked out before Tue 10/13. Auto-plan it?",
+      "OCD pres: build workshop needs 4h but only 2h is free before Tue 10/13. Cut scope or move the deadline?",
       "'Clinical notes (3 behind)' got pushed 4x. Shrink it, pin it to a day, or drop it?",
-      "Anything coming up for Meetings?",
-      "'Clinical notes (3 behind)' is 1d late. Still on? New date or drop it?"
+      "Anything coming up for Undergrad?",
+      "'Clinical notes (3 behind)' is 2d late. Still on? New date or drop it?"
     ],
     "focus": [
       "t_ff9fmzh1",
@@ -47,8 +47,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-12T01:00:10.733Z",
-    "lastActivitySeen": "2026-10-12T01:00:10.733Z"
+    "lastClaudeSync": "2026-10-12T13:00:16.096Z",
+    "lastActivitySeen": "2026-10-12T13:00:16.096Z"
   },
   "cats": {
     "admin": {
