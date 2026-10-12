@@ -27,7 +27,7 @@
     "headline": "12 things today. Start with: Clinical notes (3 behind) (1h).",
     "lines": [
       "DUE TODAY // Clinical notes (3 behind) (1h left)",
-      "MEETINGS // 1pm Add Phil meeting (Tue 10/20, ) to my calendar",
+      "MEETINGS // 1pm Put the Phil meeting on my calendar (Tue 10/20 at 1 PM)",
       "INCOMING // OCD pres: build workshop Tue 10/13 (1d): 4h left, 2h booked, AT RISK · OCD pres: write main script Fri 10/16 (4d): 4h left, 4h booked · OCD pres: illustrations for dyads Mon 10/19 (7d): 3h left, 3h booked",
       "CHORES // Grocery run · Laundry · TUBRIC LinkedIn post. Most overdue: Grocery run (9d since last).",
       "TOMORROW // Tue 10/13 [2h/8h]: DUE Lily gift: order or buy it · DUE OCD pres: build workshop · Rerun PPI for Teij email · OCD pres: write main script 1h"
@@ -1732,11 +1732,11 @@
     },
     "t_6us113ij": {
       "id": "t_6us113ij",
-      "title": "Add Phil meeting (Tue 10/20, ) to my calendar",
+      "title": "Put the Phil meeting on my calendar (Tue 10/20 at 1 PM)",
       "cat": "admin",
       "status": "todo",
       "due": null,
-      "time": "13:00",
+      "time": null,
       "plan": "2026-10-12",
       "est": 5,
       "spent": 0,
@@ -1750,7 +1750,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-12T19:28:55.546Z",
-      "updated": "2026-10-12T19:28:55.546Z",
+      "updated": "2026-10-12T19:29:02.908Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -6280,7 +6280,7 @@
       "src": "chat",
       "type": "add",
       "ref": "t_6us113ij",
-      "title": "Add Phil meeting (Tue 10/20, ) to my calendar",
+      "title": "Put the Phil meeting on my calendar (Tue 10/20 at 1 PM)",
       "from": null,
       "to": "2026-10-12"
     },
@@ -8393,6 +8393,16 @@
       "title": "Set up meeting with Nyx",
       "from": null,
       "to": "title,plan,notes"
+    },
+    "a_sgf2c9s3": {
+      "id": "a_sgf2c9s3",
+      "at": "2026-10-12T19:29:02.908Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_6us113ij",
+      "title": "Put the Phil meeting on my calendar (Tue 10/20 at 1 PM)",
+      "from": null,
+      "to": "title,time"
     },
     "a_sm1xakr9": {
       "id": "a_sm1xakr9",
