@@ -23,32 +23,32 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-12T13:00:25.011Z",
-    "headline": "15 things today (1 overdue). Start with: Clinical notes (3 behind) (1h).",
+    "at": "2026-10-12T19:17:27.643Z",
+    "headline": "11 things today. Start with: Clinical notes (3 behind) (1h).",
     "lines": [
-      "OVERDUE // Clinical notes (3 behind) (2d late)",
+      "DUE TODAY // Clinical notes (3 behind) (1h left)",
       "INCOMING // OCD pres: build workshop Tue 10/13 (1d): 4h left, 2h booked, AT RISK · OCD pres: write main script Fri 10/16 (4d): 4h left, 4h booked · OCD pres: illustrations for dyads Mon 10/19 (7d): 3h left, 3h booked",
-      "CHORES // Grocery run · Laundry · TUBRIC LinkedIn post · Water plants. Most overdue: Grocery run (9d since last).",
-      "TOMORROW // Tue 10/13 [1h/8h]: DUE Lily gift: order or buy it · DUE OCD pres: build workshop · OCD pres: write main script 1h"
+      "CHORES // Grocery run · Laundry · TUBRIC LinkedIn post. Most overdue: Grocery run (9d since last).",
+      "TOMORROW // Tue 10/13 [2h/8h]: DUE Lily gift: order or buy it · DUE OCD pres: build workshop · Rerun PPI for Teij email · OCD pres: write main script 1h"
     ],
     "asks": [
-      "OCD pres: build workshop needs 4h but only 2h is free before Tue 10/13. Cut scope or move the deadline?",
-      "'Clinical notes (3 behind)' got pushed 4x. Shrink it, pin it to a day, or drop it?",
+      "OCD pres: build workshop needs 4h but only 3h 25m is free before Tue 10/13. Cut scope or move the deadline?",
+      "'Clinical notes (3 behind)' got pushed 5x. Shrink it, pin it to a day, or drop it?",
       "Anything coming up for Undergrad?",
-      "'Clinical notes (3 behind)' is 2d late. Still on? New date or drop it?"
+      "Anything coming up for EF?"
     ],
     "focus": [
       "t_ff9fmzh1",
-      "t_rkse0ib5",
-      "t_kr128758"
+      "t_pmvc74vr",
+      "t_rkse0ib5"
     ]
   },
   "clock": {
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-12T13:00:16.096Z",
-    "lastActivitySeen": "2026-10-12T13:00:16.096Z"
+    "lastClaudeSync": "2026-10-12T19:17:09.604Z",
+    "lastActivitySeen": "2026-10-12T19:17:09.604Z"
   },
   "cats": {
     "admin": {
@@ -2008,7 +2008,7 @@
       "status": "todo",
       "due": null,
       "time": null,
-      "plan": "2026-10-12",
+      "plan": "2026-10-19",
       "est": 90,
       "spent": 0,
       "blocks": [],
@@ -2018,10 +2018,10 @@
       "notes": "",
       "subs": [],
       "triage": false,
-      "moved": 1,
+      "moved": 2,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T20:24:46.264Z",
+      "updated": "2026-10-12T19:17:19.106Z",
       "doneAt": null,
       "src": "import"
     },
@@ -2652,15 +2652,15 @@
       "title": "Clinical notes (3 behind)",
       "cat": "psc",
       "status": "todo",
-      "due": "2026-10-10",
+      "due": "2026-10-12",
       "time": null,
-      "plan": "2026-10-10",
+      "plan": "2026-10-12",
       "est": 60,
       "spent": 0,
       "blocks": [
         {
-          "id": "b_b4w66zsq",
-          "d": "2026-10-10",
+          "id": "b_xemzlzyc",
+          "d": "2026-10-12",
           "m": 60,
           "done": false,
           "auto": false
@@ -2669,7 +2669,7 @@
       "project": null,
       "prio": 2,
       "kind": "task",
-      "notes": "Sat 10/10 morning.",
+      "notes": "Later today, Mon 10/12.",
       "subs": [
         {
           "id": "s1",
@@ -2688,10 +2688,10 @@
         }
       ],
       "triage": false,
-      "moved": 4,
+      "moved": 5,
       "win": false,
       "created": "2026-10-05T14:17:31.806Z",
-      "updated": "2026-10-10T04:42:38.564Z",
+      "updated": "2026-10-12T19:17:18.815Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -3397,7 +3397,7 @@
       "id": "t_kr128758",
       "title": "Slack Dave + Shenghan (TUBRIC)",
       "cat": "tubric",
-      "status": "todo",
+      "status": "done",
       "due": null,
       "time": null,
       "plan": "2026-10-11",
@@ -3413,8 +3413,8 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-10T06:05:30.061Z",
-      "updated": "2026-10-10T06:05:30.061Z",
-      "doneAt": null,
+      "updated": "2026-10-12T19:17:18.504Z",
+      "doneAt": "2026-10-11T16:00:00.000Z",
       "src": "chat"
     },
     "t_l0tfthj9": {
@@ -4211,32 +4211,8 @@
       "status": "todo",
       "due": null,
       "time": null,
-      "plan": "2026-10-12",
+      "plan": "2026-10-20",
       "est": null,
-      "spent": 0,
-      "blocks": [],
-      "project": null,
-      "prio": 1,
-      "kind": "task",
-      "notes": "",
-      "subs": [],
-      "triage": false,
-      "moved": 0,
-      "win": false,
-      "created": "2026-10-06T16:06:22.566Z",
-      "updated": "2026-10-06T16:06:22.566Z",
-      "doneAt": null,
-      "src": "chat"
-    },
-    "t_pmvc74vr": {
-      "id": "t_pmvc74vr",
-      "title": "Laundry: new load",
-      "cat": "home",
-      "status": "todo",
-      "due": null,
-      "time": null,
-      "plan": "2026-10-08",
-      "est": 15,
       "spent": 0,
       "blocks": [],
       "project": null,
@@ -4247,8 +4223,32 @@
       "triage": false,
       "moved": 1,
       "win": false,
+      "created": "2026-10-06T16:06:22.566Z",
+      "updated": "2026-10-12T19:17:19.264Z",
+      "doneAt": null,
+      "src": "chat"
+    },
+    "t_pmvc74vr": {
+      "id": "t_pmvc74vr",
+      "title": "Laundry: new load",
+      "cat": "home",
+      "status": "todo",
+      "due": null,
+      "time": null,
+      "plan": "2026-10-12",
+      "est": 15,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 2,
+      "kind": "task",
+      "notes": "Important: do today.",
+      "subs": [],
+      "triage": false,
+      "moved": 2,
+      "win": false,
       "created": "2026-10-07T18:03:58.764Z",
-      "updated": "2026-10-08T03:58:13.260Z",
+      "updated": "2026-10-12T19:17:18.949Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -4323,6 +4323,30 @@
       "updated": "2026-08-17T17:00:00.000Z",
       "doneAt": "2026-08-17T17:00:00.000Z",
       "src": "import"
+    },
+    "t_rc0owh8i": {
+      "id": "t_rc0owh8i",
+      "title": "Rerun PPI for Teij email",
+      "cat": "sdn",
+      "status": "todo",
+      "due": null,
+      "time": null,
+      "plan": "2026-10-13",
+      "est": 60,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "analysis",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-12T19:17:20.080Z",
+      "updated": "2026-10-12T19:17:20.080Z",
+      "doneAt": null,
+      "src": "chat"
     },
     "t_rejru5fr": {
       "id": "t_rejru5fr",
@@ -5091,37 +5115,37 @@
       "spent": 0,
       "blocks": [
         {
-          "id": "b_lcvaafc4",
-          "d": "2026-10-12",
-          "m": 50,
-          "done": false,
-          "auto": true
-        },
-        {
-          "id": "b_00mys2eb",
-          "d": "2026-10-18",
+          "id": "b_ruz6itel",
+          "d": "2026-10-21",
           "m": 60,
           "done": false,
-          "auto": true
+          "auto": false
         },
         {
-          "id": "b_k7pmjzz2",
-          "d": "2026-10-24",
-          "m": 70,
+          "id": "b_5z3l5lvi",
+          "d": "2026-10-23",
+          "m": 60,
           "done": false,
-          "auto": true
+          "auto": false
+        },
+        {
+          "id": "b_9if54qzx",
+          "d": "2026-10-27",
+          "m": 60,
+          "done": false,
+          "auto": false
         }
       ],
       "project": null,
       "prio": 0,
       "kind": "task",
-      "notes": "",
+      "notes": "ABCD work pushed to the week of 10/19 (Danny, 10/12).",
       "subs": [],
       "triage": false,
       "moved": 0,
       "win": false,
       "created": "2026-10-05T14:17:13.553Z",
-      "updated": "2026-10-11T00:59:58.947Z",
+      "updated": "2026-10-12T19:17:19.903Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -5851,14 +5875,16 @@
       "cat": "home",
       "every": 7,
       "perDay": 1,
-      "last": null,
+      "last": "2026-10-11",
       "start": null,
-      "log": [],
+      "log": [
+        "2026-10-11"
+      ],
       "min": 5,
       "active": true,
       "notes": "",
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T04:00:00.000Z"
+      "updated": "2026-10-12T19:17:18.357Z"
     },
     "c_ziggy": {
       "id": "c_ziggy",
@@ -5979,6 +6005,16 @@
       "from": null,
       "to": "2026-10-06"
     },
+    "a_0sd9cx4q": {
+      "id": "a_0sd9cx4q",
+      "at": "2026-10-12T19:17:18.949Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_pmvc74vr",
+      "title": "Laundry: new load",
+      "from": null,
+      "to": "plan,prio,notes"
+    },
     "a_0tz3a0ji": {
       "id": "a_0tz3a0ji",
       "at": "2026-10-08T03:58:36.194Z",
@@ -6038,6 +6074,26 @@
       "title": "OCD pres: read the Barlow chapter",
       "from": null,
       "to": "2026-10-05"
+    },
+    "a_15f8e9bj": {
+      "id": "a_15f8e9bj",
+      "at": "2026-10-12T19:17:18.815Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_ff9fmzh1",
+      "title": "Clinical notes (3 behind)",
+      "from": null,
+      "to": "blocks"
+    },
+    "a_15wkqumk": {
+      "id": "a_15wkqumk",
+      "at": "2026-10-12T19:17:18.357Z",
+      "src": "chat",
+      "type": "chore",
+      "ref": "c_plants",
+      "title": "Water plants",
+      "from": null,
+      "to": "2026-10-11"
     },
     "a_16z66c95": {
       "id": "a_16z66c95",
@@ -6328,6 +6384,16 @@
       "title": "VST analyses for Johanna",
       "from": null,
       "to": null
+    },
+    "a_55qqae97": {
+      "id": "a_55qqae97",
+      "at": "2026-10-12T19:17:19.750Z",
+      "src": "chat",
+      "type": "block",
+      "ref": "t_vnujsabp",
+      "title": "ABCD review prep",
+      "from": null,
+      "to": "planned"
     },
     "a_5jpx22vg": {
       "id": "a_5jpx22vg",
@@ -6839,6 +6905,16 @@
       "from": null,
       "to": "2026-10-07"
     },
+    "a_bymfxp4g": {
+      "id": "a_bymfxp4g",
+      "at": "2026-10-12T19:17:19.409Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_vnujsabp",
+      "title": "ABCD review prep",
+      "from": null,
+      "to": "notes,blocks"
+    },
     "a_cbbkfub1": {
       "id": "a_cbbkfub1",
       "at": "2026-10-06T15:51:27.124Z",
@@ -6888,6 +6964,16 @@
       "title": "Set up SPARK PPI meeting with Teij",
       "from": null,
       "to": null
+    },
+    "a_cwa995uo": {
+      "id": "a_cwa995uo",
+      "at": "2026-10-12T19:17:18.648Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_ff9fmzh1",
+      "title": "Clinical notes (3 behind)",
+      "from": null,
+      "to": "due,plan,notes,blocks"
     },
     "a_cwm773yd": {
       "id": "a_cwm773yd",
@@ -6968,6 +7054,16 @@
       "title": "Master Nyx's RSA script front to back (#1 priority) / Finish the second half",
       "from": null,
       "to": "done"
+    },
+    "a_e0biuoos": {
+      "id": "a_e0biuoos",
+      "at": "2026-10-12T19:17:19.264Z",
+      "src": "chat",
+      "type": "move",
+      "ref": "t_pj82uec1",
+      "title": "Rewatch neuromelanin video",
+      "from": "2026-10-12",
+      "to": "2026-10-20"
     },
     "a_e42b40da": {
       "id": "a_e42b40da",
@@ -7749,6 +7845,16 @@
       "from": null,
       "to": null
     },
+    "a_mrwayokz": {
+      "id": "a_mrwayokz",
+      "at": "2026-10-12T19:17:19.106Z",
+      "src": "chat",
+      "type": "move",
+      "ref": "t_abcdjason",
+      "title": "Start ABCD work for Jason",
+      "from": "2026-10-12",
+      "to": "2026-10-19"
+    },
     "a_mttxjizp": {
       "id": "a_mttxjizp",
       "at": "2026-10-06T15:51:18.358Z",
@@ -8039,6 +8145,36 @@
       "from": null,
       "to": "planned"
     },
+    "a_qxabr8o1": {
+      "id": "a_qxabr8o1",
+      "at": "2026-10-12T19:17:19.582Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_vnujsabp",
+      "title": "ABCD review prep",
+      "from": null,
+      "to": "blocks"
+    },
+    "a_qzf7d7ab": {
+      "id": "a_qzf7d7ab",
+      "at": "2026-10-12T19:17:20.080Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_rc0owh8i",
+      "title": "Rerun PPI for Teij email",
+      "from": null,
+      "to": "2026-10-13"
+    },
+    "a_r1mzs03c": {
+      "id": "a_r1mzs03c",
+      "at": "2026-10-12T19:17:19.593Z",
+      "src": "chat",
+      "type": "block",
+      "ref": "t_vnujsabp",
+      "title": "ABCD review prep",
+      "from": null,
+      "to": "planned"
+    },
     "a_r5hwqpz7": {
       "id": "a_r5hwqpz7",
       "at": "2026-10-05T14:34:37.560Z",
@@ -8129,6 +8265,16 @@
       "from": null,
       "to": "2026-10-07"
     },
+    "a_rwqkfxvc": {
+      "id": "a_rwqkfxvc",
+      "at": "2026-10-12T19:17:19.903Z",
+      "src": "chat",
+      "type": "block",
+      "ref": "t_vnujsabp",
+      "title": "ABCD review prep",
+      "from": null,
+      "to": "planned"
+    },
     "a_rxvaqgat": {
       "id": "a_rxvaqgat",
       "at": "2026-10-08T04:02:58.685Z",
@@ -8168,6 +8314,16 @@
       "title": "LEARN: big work session",
       "from": null,
       "to": "2026-10-07"
+    },
+    "a_s8wpc31b": {
+      "id": "a_s8wpc31b",
+      "at": "2026-10-12T19:17:19.899Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_vnujsabp",
+      "title": "ABCD review prep",
+      "from": null,
+      "to": "blocks"
     },
     "a_se5pmdgt": {
       "id": "a_se5pmdgt",
@@ -8308,6 +8464,16 @@
       "title": "SPARK PPI meeting with Teij",
       "from": null,
       "to": null
+    },
+    "a_utpkex78": {
+      "id": "a_utpkex78",
+      "at": "2026-10-12T19:17:19.744Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_vnujsabp",
+      "title": "ABCD review prep",
+      "from": null,
+      "to": "blocks"
     },
     "a_v3k24h46": {
       "id": "a_v3k24h46",
@@ -8528,6 +8694,16 @@
       "title": "Start ABCD work for Jason",
       "from": "2026-10-06",
       "to": "2026-10-12"
+    },
+    "a_yo412mzz": {
+      "id": "a_yo412mzz",
+      "at": "2026-10-12T19:17:18.504Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_kr128758",
+      "title": "Slack Dave + Shenghan (TUBRIC)",
+      "from": null,
+      "to": null
     },
     "a_yorvm1jk": {
       "id": "a_yorvm1jk",
