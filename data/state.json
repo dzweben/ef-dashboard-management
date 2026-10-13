@@ -23,32 +23,33 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-13T00:59:48.678Z",
-    "headline": "8 things today. Start with: Clinical notes (3 behind) (1h).",
+    "at": "2026-10-13T12:59:46.119Z",
+    "headline": "12 things today (1 overdue). Start with: Clinical notes (3 behind) (1h).",
     "lines": [
-      "DUE TODAY // Clinical notes (3 behind) (1h left)",
-      "MEETINGS // Put the Phil meeting on my calendar (Tue 10/20 at 1 PM)",
-      "INCOMING // OCD pres: build workshop Tue 10/13 (1d): 1h left, 1h booked · OCD pres: write main script Fri 10/16 (4d): 4h left, 4h booked · OCD pres: illustrations for dyads Mon 10/19 (7d): 3h left, 3h booked",
-      "CHORES // Grocery run · Laundry · TUBRIC LinkedIn post. Most overdue: Grocery run (9d since last).",
-      "TOMORROW // Tue 10/13 [5h 40m/8h]: DUE Lily gift: order or buy it · DUE OCD pres: build workshop · Rerun PPI for Teij email · Lily gift: order or buy it 20m · +4 more"
+      "DUE TODAY // Lily gift: order or buy it (20m left) · OCD pres: build workshop (1h left)",
+      "OVERDUE // Clinical notes (3 behind) (1d late)",
+      "INCOMING // OCD pres: write main script Fri 10/16 (3d): 4h left, 4h booked · OCD pres: illustrations for dyads Mon 10/19 (6d): 3h left, 3h booked · OCD pres: rehearse Tue 10/20 (7d): 1h left, 1h booked",
+      "CHORES // Grocery run · Laundry · TUBRIC LinkedIn post. Most overdue: Grocery run (10d since last).",
+      "TOMORROW // Wed 10/14 [2h 20m/8h]: AI pres: convert voice transcripts · Lily gift: card + wrap · OCD pres: write main script 1h 20m"
     ],
     "asks": [
+      "Did 'Put the Phil meeting on my calendar (Tue 10/20 at 1 PM)' happen?",
+      "'Clinical notes (3 behind)' is 1d late. Still on? New date or drop it?",
       "'Clinical notes (3 behind)' got pushed 5x. Shrink it, pin it to a day, or drop it?",
-      "Anything coming up for EF?",
-      "Anything coming up for Ziggy?"
+      "Anything coming up for Undergrad?"
     ],
     "focus": [
       "t_ff9fmzh1",
-      "t_pmvc74vr",
-      "t_rkse0ib5"
+      "t_9028028n",
+      "t_ocdwork"
     ]
   },
   "clock": {
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-13T00:59:43.671Z",
-    "lastActivitySeen": "2026-10-13T00:59:43.671Z"
+    "lastClaudeSync": "2026-10-13T12:59:40.487Z",
+    "lastActivitySeen": "2026-10-13T12:59:40.487Z"
   },
   "cats": {
     "admin": {
