@@ -23,14 +23,14 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-13T16:25:12.397Z",
-    "headline": "11 things today (1 overdue). Start with: Clinical notes (3 behind) (1h).",
+    "at": "2026-10-13T21:53:07.698Z",
+    "headline": "10 things today (1 overdue). Start with: Clinical notes (3 behind) (1h).",
     "lines": [
       "DUE TODAY // Lily gift: order or buy it (20m left) · OCD pres: build workshop (10m left)",
       "OVERDUE // Clinical notes (3 behind) (1d late)",
       "INCOMING // Email Billy Thu 10/15 (2d): no estimate · Email Chelsea Thu 10/15 (2d): no estimate · OCD pres: write main script Fri 10/16 (3d): 4h left, 4h booked · +2 more",
       "CHORES // Grocery run · TUBRIC LinkedIn post. Most overdue: Grocery run (10d since last).",
-      "TOMORROW // Wed 10/14 [2h 20m/8h]: AI pres: convert voice transcripts · Lily gift: card + wrap · OCD pres: write main script 1h 20m",
+      "TOMORROW // Wed 10/14 [2h 30m/8h]: AI pres: convert voice transcripts · Email Eunice about the OCD presentation · Lily gift: card + wrap · OCD pres: write main script 1h 20m",
       "DONE // 1 today"
     ],
     "asks": [
@@ -49,8 +49,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-13T16:25:01.356Z",
-    "lastActivitySeen": "2026-10-13T16:25:01.356Z"
+    "lastClaudeSync": "2026-10-13T21:53:05.240Z",
+    "lastActivitySeen": "2026-10-13T21:53:05.240Z"
   },
   "cats": {
     "admin": {
@@ -2560,20 +2560,20 @@
       "status": "todo",
       "due": null,
       "time": null,
-      "plan": "2026-10-13",
+      "plan": "2026-10-14",
       "est": 10,
       "spent": 0,
       "blocks": [],
       "project": "p_ocd",
       "prio": 1,
       "kind": "email",
-      "notes": "",
+      "notes": "Wed 10/14 morning.",
       "subs": [],
       "triage": false,
-      "moved": 0,
+      "moved": 1,
       "win": false,
       "created": "2026-10-13T16:25:11.762Z",
-      "updated": "2026-10-13T16:25:11.762Z",
+      "updated": "2026-10-13T21:53:07.517Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -8592,6 +8592,16 @@
       "title": "OCD pres: build workshop",
       "from": null,
       "to": "planned"
+    },
+    "a_u7fbss48": {
+      "id": "a_u7fbss48",
+      "at": "2026-10-13T21:53:07.517Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_edjdn41w",
+      "title": "Email Eunice about the OCD presentation",
+      "from": null,
+      "to": "plan,notes"
     },
     "a_u9g9i65o": {
       "id": "a_u9g9i65o",
