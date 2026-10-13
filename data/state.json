@@ -23,14 +23,15 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-13T12:59:46.119Z",
-    "headline": "12 things today (1 overdue). Start with: Clinical notes (3 behind) (1h).",
+    "at": "2026-10-13T16:25:12.397Z",
+    "headline": "11 things today (1 overdue). Start with: Clinical notes (3 behind) (1h).",
     "lines": [
-      "DUE TODAY // Lily gift: order or buy it (20m left) · OCD pres: build workshop (1h left)",
+      "DUE TODAY // Lily gift: order or buy it (20m left) · OCD pres: build workshop (10m left)",
       "OVERDUE // Clinical notes (3 behind) (1d late)",
-      "INCOMING // OCD pres: write main script Fri 10/16 (3d): 4h left, 4h booked · OCD pres: illustrations for dyads Mon 10/19 (6d): 3h left, 3h booked · OCD pres: rehearse Tue 10/20 (7d): 1h left, 1h booked",
-      "CHORES // Grocery run · Laundry · TUBRIC LinkedIn post. Most overdue: Grocery run (10d since last).",
-      "TOMORROW // Wed 10/14 [2h 20m/8h]: AI pres: convert voice transcripts · Lily gift: card + wrap · OCD pres: write main script 1h 20m"
+      "INCOMING // Email Billy Thu 10/15 (2d): no estimate · Email Chelsea Thu 10/15 (2d): no estimate · OCD pres: write main script Fri 10/16 (3d): 4h left, 4h booked · +2 more",
+      "CHORES // Grocery run · TUBRIC LinkedIn post. Most overdue: Grocery run (10d since last).",
+      "TOMORROW // Wed 10/14 [2h 20m/8h]: AI pres: convert voice transcripts · Lily gift: card + wrap · OCD pres: write main script 1h 20m",
+      "DONE // 1 today"
     ],
     "asks": [
       "Did 'Put the Phil meeting on my calendar (Tue 10/20 at 1 PM)' happen?",
@@ -48,8 +49,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-13T12:59:40.487Z",
-    "lastActivitySeen": "2026-10-13T12:59:40.487Z"
+    "lastClaudeSync": "2026-10-13T16:25:01.356Z",
+    "lastActivitySeen": "2026-10-13T16:25:01.356Z"
   },
   "cats": {
     "admin": {
@@ -1015,9 +1016,9 @@
       "title": "Email Billy",
       "cat": "admin",
       "status": "todo",
-      "due": null,
+      "due": "2026-10-15",
       "time": null,
-      "plan": "2026-10-11",
+      "plan": "2026-10-15",
       "est": null,
       "spent": 0,
       "blocks": [],
@@ -1027,10 +1028,10 @@
       "notes": "",
       "subs": [],
       "triage": false,
-      "moved": 1,
+      "moved": 2,
       "win": false,
       "created": "2026-10-08T04:03:28.734Z",
-      "updated": "2026-10-10T04:42:38.659Z",
+      "updated": "2026-10-13T16:25:11.308Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -1903,9 +1904,9 @@
       "title": "Email Chelsea",
       "cat": "admin",
       "status": "todo",
-      "due": null,
+      "due": "2026-10-15",
       "time": null,
-      "plan": "2026-10-11",
+      "plan": "2026-10-15",
       "est": null,
       "spent": 0,
       "blocks": [],
@@ -1915,10 +1916,10 @@
       "notes": "",
       "subs": [],
       "triage": false,
-      "moved": 1,
+      "moved": 2,
       "win": false,
       "created": "2026-10-08T04:03:28.749Z",
-      "updated": "2026-10-10T04:42:38.762Z",
+      "updated": "2026-10-13T16:25:11.438Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -2551,6 +2552,30 @@
       "updated": "2026-08-03T17:00:00.000Z",
       "doneAt": "2026-08-03T17:00:00.000Z",
       "src": "import"
+    },
+    "t_edjdn41w": {
+      "id": "t_edjdn41w",
+      "title": "Email Eunice about the OCD presentation",
+      "cat": "cbt",
+      "status": "todo",
+      "due": null,
+      "time": null,
+      "plan": "2026-10-13",
+      "est": 10,
+      "spent": 0,
+      "blocks": [],
+      "project": "p_ocd",
+      "prio": 1,
+      "kind": "email",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-13T16:25:11.762Z",
+      "updated": "2026-10-13T16:25:11.762Z",
+      "doneAt": null,
+      "src": "chat"
     },
     "t_emailjason": {
       "id": "t_emailjason",
@@ -4150,13 +4175,13 @@
       "due": "2026-10-13",
       "time": null,
       "plan": null,
-      "est": 120,
+      "est": 70,
       "spent": 60,
       "blocks": [
         {
           "id": "b_66yy0a1d",
           "d": "2026-10-13",
-          "m": 60,
+          "m": 10,
           "done": false,
           "auto": true
         }
@@ -4164,13 +4189,13 @@
       "project": "p_ocd",
       "prio": 1,
       "kind": "writing",
-      "notes": "10/12: about 80% done, reading finished; ~1h left.",
+      "notes": "10/13: ~90% done; next step is emailing Eunice.",
       "subs": [],
       "triage": false,
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-12T21:20:46.346Z",
+      "updated": "2026-10-13T16:25:12.000Z",
       "doneAt": null,
       "src": "import"
     },
@@ -4272,25 +4297,25 @@
     },
     "t_pmvc74vr": {
       "id": "t_pmvc74vr",
-      "title": "Laundry: new load",
+      "title": "Laundry: cleanup (fold + put away)",
       "cat": "home",
       "status": "todo",
       "due": null,
       "time": null,
-      "plan": "2026-10-12",
+      "plan": "2026-10-13",
       "est": 15,
       "spent": 0,
       "blocks": [],
       "project": null,
       "prio": 2,
       "kind": "task",
-      "notes": "Important: do today.",
+      "notes": "Load is ~50% done (10/13); cleanup left.",
       "subs": [],
       "triage": false,
-      "moved": 2,
+      "moved": 3,
       "win": false,
       "created": "2026-10-07T18:03:58.764Z",
-      "updated": "2026-10-12T19:17:18.949Z",
+      "updated": "2026-10-13T16:25:11.002Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -5291,7 +5316,7 @@
       "id": "t_wi5bybtk",
       "title": "SPARK docs: SPARK-NM",
       "cat": "sdn",
-      "status": "todo",
+      "status": "done",
       "due": null,
       "time": null,
       "plan": null,
@@ -5307,8 +5332,8 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T14:34:46.028Z",
-      "updated": "2026-10-05T14:36:33.318Z",
-      "doneAt": null,
+      "updated": "2026-10-13T16:25:11.169Z",
+      "doneAt": "2026-10-13T16:25:11.169Z",
       "src": "chat"
     },
     "t_wk2w6pwr": {
@@ -5898,18 +5923,19 @@
       "cat": "home",
       "every": 7,
       "perDay": 1,
-      "last": "2026-10-04",
+      "last": "2026-10-13",
       "start": null,
       "log": [
         "2026-08-29",
         "2026-09-19",
-        "2026-10-04"
+        "2026-10-04",
+        "2026-10-13"
       ],
       "min": 5,
       "active": true,
       "notes": "",
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T14:19:45.936Z"
+      "updated": "2026-10-13T16:25:10.852Z"
     },
     "c_plants": {
       "id": "c_plants",
@@ -6053,7 +6079,7 @@
       "src": "chat",
       "type": "edit",
       "ref": "t_pmvc74vr",
-      "title": "Laundry: new load",
+      "title": "Laundry: cleanup (fold + put away)",
       "from": null,
       "to": "plan,prio,notes"
     },
@@ -6156,6 +6182,16 @@
       "title": "AI pres: build slides + plan, send out",
       "from": null,
       "to": "due,blocks"
+    },
+    "a_1duvdpzd": {
+      "id": "a_1duvdpzd",
+      "at": "2026-10-13T16:25:11.169Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_wi5bybtk",
+      "title": "SPARK docs: SPARK-NM",
+      "from": null,
+      "to": null
     },
     "a_1e8d70tp": {
       "id": "a_1e8d70tp",
@@ -6416,6 +6452,16 @@
       "title": "AI pres: build slides + plan, send out",
       "from": null,
       "to": "planned"
+    },
+    "a_4wiinn7k": {
+      "id": "a_4wiinn7k",
+      "at": "2026-10-13T16:25:11.762Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_edjdn41w",
+      "title": "Email Eunice about the OCD presentation",
+      "from": null,
+      "to": "2026-10-13"
     },
     "a_538wiuzb": {
       "id": "a_538wiuzb",
@@ -6857,6 +6903,16 @@
       "from": null,
       "to": "added"
     },
+    "a_asxnx6q5": {
+      "id": "a_asxnx6q5",
+      "at": "2026-10-13T16:25:11.308Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_1umnesd3",
+      "title": "Email Billy",
+      "from": null,
+      "to": "due,plan"
+    },
     "a_aujdc047": {
       "id": "a_aujdc047",
       "at": "2026-10-07T04:09:47.495Z",
@@ -7030,6 +7086,16 @@
     "a_cwm773yd": {
       "id": "a_cwm773yd",
       "at": "2026-10-05T14:17:31.510Z",
+      "src": "chat",
+      "type": "chore",
+      "ref": "c_laundry",
+      "title": "Laundry",
+      "from": null,
+      "to": null
+    },
+    "a_d01yyk60": {
+      "id": "a_d01yyk60",
+      "at": "2026-10-13T16:25:10.852Z",
       "src": "chat",
       "type": "chore",
       "ref": "c_laundry",
@@ -7286,6 +7352,16 @@
       "title": "Auto-plan: 4 tasks",
       "from": null,
       "to": "planned"
+    },
+    "a_g8xjxlfe": {
+      "id": "a_g8xjxlfe",
+      "at": "2026-10-13T16:25:11.002Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_pmvc74vr",
+      "title": "Laundry: cleanup (fold + put away)",
+      "from": null,
+      "to": "title,plan,notes"
     },
     "a_g90rov32": {
       "id": "a_g90rov32",
@@ -8133,7 +8209,7 @@
       "src": "chat",
       "type": "add",
       "ref": "t_pmvc74vr",
-      "title": "Laundry: new load",
+      "title": "Laundry: cleanup (fold + put away)",
       "from": null,
       "to": "2026-10-07"
     },
@@ -8273,7 +8349,7 @@
       "src": "chat",
       "type": "move",
       "ref": "t_pmvc74vr",
-      "title": "Laundry: new load",
+      "title": "Laundry: cleanup (fold + put away)",
       "from": "2026-10-07",
       "to": "2026-10-08"
     },
@@ -8457,6 +8533,16 @@
       "from": null,
       "to": null
     },
+    "a_t49tinmn": {
+      "id": "a_t49tinmn",
+      "at": "2026-10-13T16:25:11.596Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_ocdwork",
+      "title": "OCD pres: build workshop",
+      "from": null,
+      "to": "est,notes"
+    },
     "a_t7i7og64": {
       "id": "a_t7i7og64",
       "at": "2026-10-07T04:09:53.319Z",
@@ -8496,6 +8582,16 @@
       "title": "SPARK docs: task-completion audit script",
       "from": null,
       "to": "2026-10-10"
+    },
+    "a_u50xzc9m": {
+      "id": "a_u50xzc9m",
+      "at": "2026-10-13T16:25:12.000Z",
+      "src": "chat",
+      "type": "block",
+      "ref": "t_ocdwork",
+      "title": "OCD pres: build workshop",
+      "from": null,
+      "to": "planned"
     },
     "a_u9g9i65o": {
       "id": "a_u9g9i65o",
@@ -8956,6 +9052,16 @@
       "title": "Auto-plan: 4 tasks",
       "from": null,
       "to": "planned"
+    },
+    "a_zjdecb4w": {
+      "id": "a_zjdecb4w",
+      "at": "2026-10-13T16:25:11.438Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_81ej8elz",
+      "title": "Email Chelsea",
+      "from": null,
+      "to": "due,plan"
     },
     "a_zpht6pyr": {
       "id": "a_zpht6pyr",
