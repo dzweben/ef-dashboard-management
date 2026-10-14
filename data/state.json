@@ -4029,8 +4029,8 @@
       "spent": 0,
       "blocks": [
         {
-          "id": "b_oq8wvkic",
-          "d": "2026-10-13",
+          "id": "b_i7i34byo",
+          "d": "2026-10-14",
           "m": 60,
           "done": false,
           "auto": true
@@ -4059,7 +4059,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-12T21:20:46.346Z",
+      "updated": "2026-10-14T12:59:41.090Z",
       "doneAt": null,
       "src": "import"
     },
@@ -4099,8 +4099,8 @@
       "spent": 0,
       "blocks": [
         {
-          "id": "b_8bg2k70j",
-          "d": "2026-10-13",
+          "id": "b_x23nmvke",
+          "d": "2026-10-14",
           "m": 60,
           "done": false,
           "auto": true
@@ -4115,7 +4115,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-12T21:20:46.346Z",
+      "updated": "2026-10-14T12:59:41.090Z",
       "doneAt": null,
       "src": "import"
     },
@@ -4131,23 +4131,16 @@
       "spent": 0,
       "blocks": [
         {
-          "id": "b_4ryyeqik",
-          "d": "2026-10-13",
-          "m": 80,
-          "done": false,
-          "auto": true
-        },
-        {
           "id": "b_2g4z1mvu",
           "d": "2026-10-14",
-          "m": 80,
+          "m": 120,
           "done": false,
           "auto": true
         },
         {
           "id": "b_7l5pjg2c",
           "d": "2026-10-15",
-          "m": 80,
+          "m": 120,
           "done": false,
           "auto": true
         }
@@ -4161,7 +4154,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-12T21:20:46.346Z",
+      "updated": "2026-10-14T12:59:41.090Z",
       "doneAt": null,
       "src": "import"
     },
@@ -8210,6 +8203,16 @@
       "title": "Laundry: cleanup (fold + put away)",
       "from": null,
       "to": "2026-10-07"
+    },
+    "a_q1gemydb": {
+      "id": "a_q1gemydb",
+      "at": "2026-10-14T12:59:41.090Z",
+      "src": "chat",
+      "type": "block",
+      "ref": null,
+      "title": "Auto-plan: 3 tasks",
+      "from": null,
+      "to": "planned"
     },
     "a_q3523u1d": {
       "id": "a_q3523u1d",
