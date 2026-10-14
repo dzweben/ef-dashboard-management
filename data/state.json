@@ -23,32 +23,33 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-14T12:59:32.715Z",
-    "headline": "11 things today (3 overdue). Start with: Clinical notes (3 behind) (1h).",
+    "at": "2026-10-14T14:46:51.408Z",
+    "headline": "12 things today (1 overdue). Start with: OCD pres: build workshop (10m).",
     "lines": [
-      "OVERDUE // Clinical notes (3 behind) (2d late) · Lily gift: order or buy it (1d late) · OCD pres: build workshop (1d late)",
-      "INCOMING // Email Billy Thu 10/15 (1d): no estimate · Email Chelsea Thu 10/15 (1d): no estimate · OCD pres: write main script Fri 10/16 (2d): 4h left, 2h 40m booked, TIGHT · +2 more",
+      "DUE TODAY // Lily gift: order or buy it (20m left)",
+      "OVERDUE // OCD pres: build workshop (1d late)",
+      "INCOMING // Email Billy Thu 10/15 (1d): no estimate · Email Chelsea Thu 10/15 (1d): no estimate · OCD pres: write main script Fri 10/16 (2d): 4h left, 4h booked · +2 more",
       "CHORES // Grocery run · TUBRIC LinkedIn post. Most overdue: Grocery run (11d since last).",
-      "TOMORROW // Thu 10/15 [3h 45m/8h]: DUE Email Billy · DUE Email Chelsea · AI pres: start a Claude Code thread · Switch electric bill payment to Capital One · +2 more"
+      "TOMORROW // Thu 10/15 [4h 25m/8h]: DUE Email Billy · DUE Email Chelsea · AI pres: start a Claude Code thread · Switch electric bill payment to Capital One · +2 more"
     ],
     "asks": [
       "Did 'Put the Phil meeting on my calendar (Tue 10/20 at 1 PM)' happen?",
-      "OCD pres: write main script: 1h 20m not blocked out before Fri 10/16. Auto-plan it?",
-      "'Clinical notes (3 behind)' got pushed 5x. Shrink it, pin it to a day, or drop it?",
-      "Anything coming up for Ziggy?"
+      "'OCD pres: build workshop' is 1d late. Still on? New date or drop it?",
+      "'Laundry: cleanup (fold + put away)' got pushed 3x. Shrink it, pin it to a day, or drop it?",
+      "Anything coming up for Undergrad?"
     ],
     "focus": [
-      "t_ff9fmzh1",
+      "t_ocdwork",
       "t_9028028n",
-      "t_ocdwork"
+      "t_pmvc74vr"
     ]
   },
   "clock": {
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-14T12:59:29.354Z",
-    "lastActivitySeen": "2026-10-14T12:59:29.354Z"
+    "lastClaudeSync": "2026-10-14T14:46:48.083Z",
+    "lastActivitySeen": "2026-10-14T14:46:48.083Z"
   },
   "cats": {
     "admin": {
@@ -1974,9 +1975,9 @@
       "title": "Lily gift: order or buy it",
       "cat": "personal",
       "status": "todo",
-      "due": "2026-10-13",
+      "due": "2026-10-14",
       "time": null,
-      "plan": "2026-10-12",
+      "plan": "2026-10-14",
       "est": 20,
       "spent": 0,
       "blocks": [
@@ -1991,13 +1992,13 @@
       "project": null,
       "prio": 1,
       "kind": "task",
-      "notes": "Idea picked 10/9. Buy it this week, before card + wrap on Wed 10/14.",
+      "notes": "Getting it now (Wed 10/14 morning).",
       "subs": [],
       "triage": false,
-      "moved": 1,
+      "moved": 2,
       "win": false,
       "created": "2026-10-05T14:17:13.846Z",
-      "updated": "2026-10-12T21:20:46.346Z",
+      "updated": "2026-10-14T14:46:51.155Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -2699,7 +2700,7 @@
       "id": "t_ff9fmzh1",
       "title": "Clinical notes (3 behind)",
       "cat": "psc",
-      "status": "todo",
+      "status": "done",
       "due": "2026-10-12",
       "time": null,
       "plan": "2026-10-12",
@@ -2739,8 +2740,8 @@
       "moved": 5,
       "win": false,
       "created": "2026-10-05T14:17:31.806Z",
-      "updated": "2026-10-12T19:17:18.815Z",
-      "doneAt": null,
+      "updated": "2026-10-14T14:46:50.938Z",
+      "doneAt": "2026-10-13T16:00:00.000Z",
       "src": "chat"
     },
     "t_finalms": {
@@ -6384,6 +6385,16 @@
       "from": null,
       "to": null
     },
+    "a_49c49t8t": {
+      "id": "a_49c49t8t",
+      "at": "2026-10-14T14:46:51.155Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_9028028n",
+      "title": "Lily gift: order or buy it",
+      "from": null,
+      "to": "due,plan,notes"
+    },
     "a_49sdqtli": {
       "id": "a_49sdqtli",
       "at": "2026-10-05T14:34:44.751Z",
@@ -8491,6 +8502,16 @@
       "type": "add",
       "ref": "t_vg8yhjnq",
       "title": "Played chess",
+      "from": null,
+      "to": null
+    },
+    "a_so8a3hdg": {
+      "id": "a_so8a3hdg",
+      "at": "2026-10-14T14:46:50.938Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_ff9fmzh1",
+      "title": "Clinical notes (3 behind)",
       "from": null,
       "to": null
     },
