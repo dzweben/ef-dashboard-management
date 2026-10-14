@@ -23,14 +23,14 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-14T14:46:51.408Z",
-    "headline": "12 things today (1 overdue). Start with: OCD pres: build workshop (10m).",
+    "at": "2026-10-14T16:52:52.394Z",
+    "headline": "11 things today (1 overdue). Start with: OCD pres: build workshop (10m).",
     "lines": [
-      "DUE TODAY // Lily gift: order or buy it (20m left)",
       "OVERDUE // OCD pres: build workshop (1d late)",
       "INCOMING // Email Billy Thu 10/15 (1d): no estimate · Email Chelsea Thu 10/15 (1d): no estimate · OCD pres: write main script Fri 10/16 (2d): 4h left, 4h booked · +2 more",
       "CHORES // Grocery run · TUBRIC LinkedIn post. Most overdue: Grocery run (11d since last).",
-      "TOMORROW // Thu 10/15 [4h 25m/8h]: DUE Email Billy · DUE Email Chelsea · AI pres: start a Claude Code thread · Switch electric bill payment to Capital One · +2 more"
+      "TOMORROW // Thu 10/15 [4h 25m/8h]: DUE Email Billy · DUE Email Chelsea · AI pres: start a Claude Code thread · Switch electric bill payment to Capital One · +2 more",
+      "DONE // 1 today · streak 2d"
     ],
     "asks": [
       "Did 'Put the Phil meeting on my calendar (Tue 10/20 at 1 PM)' happen?",
@@ -40,16 +40,16 @@
     ],
     "focus": [
       "t_ocdwork",
-      "t_9028028n",
-      "t_pmvc74vr"
+      "t_pmvc74vr",
+      "t_edjdn41w"
     ]
   },
   "clock": {
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-14T14:46:48.083Z",
-    "lastActivitySeen": "2026-10-14T14:46:48.083Z"
+    "lastClaudeSync": "2026-10-14T16:52:49.231Z",
+    "lastActivitySeen": "2026-10-14T16:52:49.231Z"
   },
   "cats": {
     "admin": {
@@ -1974,7 +1974,7 @@
       "id": "t_9028028n",
       "title": "Lily gift: order or buy it",
       "cat": "personal",
-      "status": "todo",
+      "status": "done",
       "due": "2026-10-14",
       "time": null,
       "plan": "2026-10-14",
@@ -1998,8 +1998,8 @@
       "moved": 2,
       "win": false,
       "created": "2026-10-05T14:17:13.846Z",
-      "updated": "2026-10-14T14:46:51.155Z",
-      "doneAt": null,
+      "updated": "2026-10-14T16:52:52.137Z",
+      "doneAt": "2026-10-14T16:52:52.137Z",
       "src": "chat"
     },
     "t_9re4i0kn": {
@@ -6544,6 +6544,16 @@
       "title": "Clean first floor",
       "from": null,
       "to": "2026-10-09"
+    },
+    "a_60y0gxt9": {
+      "id": "a_60y0gxt9",
+      "at": "2026-10-14T16:52:52.137Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_9028028n",
+      "title": "Lily gift: order or buy it",
+      "from": null,
+      "to": null
     },
     "a_63bh3hu1": {
       "id": "a_63bh3hu1",
