@@ -23,18 +23,18 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-14T16:52:52.394Z",
-    "headline": "11 things today (1 overdue). Start with: OCD pres: build workshop (10m).",
+    "at": "2026-10-15T00:59:47.804Z",
+    "headline": "8 things today (1 overdue). Start with: OCD pres: build workshop (10m).",
     "lines": [
       "OVERDUE // OCD pres: build workshop (1d late)",
-      "INCOMING // Email Billy Thu 10/15 (1d): no estimate · Email Chelsea Thu 10/15 (1d): no estimate · OCD pres: write main script Fri 10/16 (2d): 4h left, 4h booked · +2 more",
+      "INCOMING // Email Billy Thu 10/15 (1d): no estimate · Email Chelsea Thu 10/15 (1d): no estimate · OCD pres: write main script Fri 10/16 (2d): 4h left, 2h booked, TIGHT · +2 more",
       "CHORES // Grocery run · TUBRIC LinkedIn post. Most overdue: Grocery run (11d since last).",
-      "TOMORROW // Thu 10/15 [4h 25m/8h]: DUE Email Billy · DUE Email Chelsea · AI pres: start a Claude Code thread · Switch electric bill payment to Capital One · +2 more",
+      "TOMORROW // Thu 10/15 [5h 25m/8h]: DUE Email Billy · DUE Email Chelsea · AI pres: start a Claude Code thread · Switch electric bill payment to Capital One · +3 more",
       "DONE // 1 today · streak 2d"
     ],
     "asks": [
       "Did 'Put the Phil meeting on my calendar (Tue 10/20 at 1 PM)' happen?",
-      "'OCD pres: build workshop' is 1d late. Still on? New date or drop it?",
+      "OCD pres: write main script: 2h not blocked out before Fri 10/16. Auto-plan it?",
       "'Laundry: cleanup (fold + put away)' got pushed 3x. Shrink it, pin it to a day, or drop it?",
       "Anything coming up for Undergrad?"
     ],
@@ -48,8 +48,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-14T16:52:49.231Z",
-    "lastActivitySeen": "2026-10-14T16:52:49.231Z"
+    "lastClaudeSync": "2026-10-15T00:59:45.017Z",
+    "lastActivitySeen": "2026-10-15T00:59:45.017Z"
   },
   "cats": {
     "admin": {
@@ -4030,15 +4030,15 @@
       "spent": 0,
       "blocks": [
         {
-          "id": "b_i7i34byo",
-          "d": "2026-10-14",
+          "id": "b_say5r096",
+          "d": "2026-10-15",
           "m": 60,
           "done": false,
           "auto": true
         },
         {
-          "id": "b_say5r096",
-          "d": "2026-10-15",
+          "id": "b_diwx02m1",
+          "d": "2026-10-16",
           "m": 60,
           "done": false,
           "auto": true
@@ -4060,7 +4060,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-14T12:59:41.090Z",
+      "updated": "2026-10-15T00:59:47.337Z",
       "doneAt": null,
       "src": "import"
     },
@@ -4100,8 +4100,8 @@
       "spent": 0,
       "blocks": [
         {
-          "id": "b_x23nmvke",
-          "d": "2026-10-14",
+          "id": "b_1trimiwb",
+          "d": "2026-10-15",
           "m": 60,
           "done": false,
           "auto": true
@@ -4116,7 +4116,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-14T12:59:41.090Z",
+      "updated": "2026-10-15T00:59:47.337Z",
       "doneAt": null,
       "src": "import"
     },
@@ -4131,13 +4131,6 @@
       "est": 240,
       "spent": 0,
       "blocks": [
-        {
-          "id": "b_2g4z1mvu",
-          "d": "2026-10-14",
-          "m": 120,
-          "done": false,
-          "auto": true
-        },
         {
           "id": "b_7l5pjg2c",
           "d": "2026-10-15",
@@ -4155,7 +4148,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-14T12:59:41.090Z",
+      "updated": "2026-10-15T00:59:47.337Z",
       "doneAt": null,
       "src": "import"
     },
@@ -6974,6 +6967,16 @@
       "title": "Clean first floor",
       "from": null,
       "to": "every"
+    },
+    "a_bl7aev0a": {
+      "id": "a_bl7aev0a",
+      "at": "2026-10-15T00:59:47.337Z",
+      "src": "chat",
+      "type": "block",
+      "ref": null,
+      "title": "Auto-plan: 3 tasks",
+      "from": null,
+      "to": "planned"
     },
     "a_bmuhszru": {
       "id": "a_bmuhszru",
