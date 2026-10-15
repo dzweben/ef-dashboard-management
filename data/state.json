@@ -23,33 +23,33 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-15T00:59:47.804Z",
-    "headline": "8 things today (1 overdue). Start with: OCD pres: build workshop (10m).",
+    "at": "2026-10-15T12:58:58.387Z",
+    "headline": "15 things today (1 overdue). Start with: OCD pres: build workshop (10m).",
     "lines": [
-      "OVERDUE // OCD pres: build workshop (1d late)",
-      "INCOMING // Email Billy Thu 10/15 (1d): no estimate · Email Chelsea Thu 10/15 (1d): no estimate · OCD pres: write main script Fri 10/16 (2d): 4h left, 2h booked, TIGHT · +2 more",
-      "CHORES // Grocery run · TUBRIC LinkedIn post. Most overdue: Grocery run (11d since last).",
-      "TOMORROW // Thu 10/15 [5h 25m/8h]: DUE Email Billy · DUE Email Chelsea · AI pres: start a Claude Code thread · Switch electric bill payment to Capital One · +3 more",
-      "DONE // 1 today · streak 2d"
+      "DUE TODAY // Email Billy · Email Chelsea",
+      "OVERDUE // OCD pres: build workshop (2d late)",
+      "INCOMING // OCD pres: write main script Fri 10/16 (1d): 4h left, 2h booked, TIGHT · OCD pres: illustrations for dyads Mon 10/19 (4d): 3h left, 3h booked · OCD pres: rehearse Tue 10/20 (5d): 1h left, 1h booked · +1 more",
+      "CHORES // Grocery run · TUBRIC LinkedIn post. Most overdue: Grocery run (12d since last).",
+      "TOMORROW // Fri 10/16 [1h/7h]: DUE Lily's birthday · DUE OCD pres: write main script · OCD pres: illustrations for dyads 1h"
     ],
     "asks": [
       "Did 'Put the Phil meeting on my calendar (Tue 10/20 at 1 PM)' happen?",
       "OCD pres: write main script: 2h not blocked out before Fri 10/16. Auto-plan it?",
       "'Laundry: cleanup (fold + put away)' got pushed 3x. Shrink it, pin it to a day, or drop it?",
-      "Anything coming up for Undergrad?"
+      "Anything coming up for EF?"
     ],
     "focus": [
       "t_ocdwork",
-      "t_pmvc74vr",
-      "t_edjdn41w"
+      "t_1umnesd3",
+      "t_81ej8elz"
     ]
   },
   "clock": {
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-15T00:59:45.017Z",
-    "lastActivitySeen": "2026-10-15T00:59:45.017Z"
+    "lastClaudeSync": "2026-10-15T12:58:51.741Z",
+    "lastActivitySeen": "2026-10-15T12:58:51.741Z"
   },
   "cats": {
     "admin": {
