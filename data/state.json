@@ -23,13 +23,13 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-16T14:45:02.404Z",
-    "headline": "6 things today (1 overdue). Start with: OCD pres: build workshop (10m).",
+    "at": "2026-10-16T14:52:27.271Z",
+    "headline": "4 things today (1 overdue).",
     "lines": [
       "OVERDUE // OCD pres: build workshop (3d late)",
-      "INCOMING // OCD pres: illustrations for dyads Mon 10/19 (3d): 3h left, 3h booked · OCD pres: rehearse Tue 10/20 (4d): 1h left, 1h booked · AI pres: build slides + plan, send out Thu 10/22 (6d): 3h left, 3h booked",
+      "INCOMING // OCD pres: illustrations for dyads Mon 10/19 (3d) · OCD pres: write main script Mon 10/19 (3d) · OCD pres: rehearse Tue 10/20 (4d) · +2 more",
       "CHORES // TUBRIC LinkedIn post · Clean first floor. Most overdue: TUBRIC LinkedIn post (11d since last).",
-      "TOMORROW // Sat 10/17 [1h 20m/3h]: TUBRIC LinkedIn post · OCD pres: illustrations for dyads 1h",
+      "TOMORROW // Sat 10/17: TUBRIC LinkedIn post",
       "DONE // 1 today · streak 4d"
     ],
     "asks": [
@@ -38,18 +38,14 @@
       "Anything coming up for Undergrad?",
       "Anything coming up for Clinical (PSC)?"
     ],
-    "focus": [
-      "t_ocdwork",
-      "t_pmvc74vr",
-      "t_edjdn41w"
-    ]
+    "focus": []
   },
   "clock": {
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-16T14:44:40.583Z",
-    "lastActivitySeen": "2026-10-16T14:44:40.583Z"
+    "lastClaudeSync": "2026-10-16T14:47:33.168Z",
+    "lastActivitySeen": "2026-10-16T14:47:33.168Z"
   },
   "cats": {
     "admin": {
@@ -2252,29 +2248,7 @@
       "plan": null,
       "est": 180,
       "spent": 0,
-      "blocks": [
-        {
-          "id": "b_ohc6vadz",
-          "d": "2026-10-19",
-          "m": 60,
-          "done": false,
-          "auto": false
-        },
-        {
-          "id": "b_dpmhghsr",
-          "d": "2026-10-20",
-          "m": 60,
-          "done": false,
-          "auto": false
-        },
-        {
-          "id": "b_lapqen64",
-          "d": "2026-10-21",
-          "m": 60,
-          "done": false,
-          "auto": false
-        }
-      ],
+      "blocks": [],
       "project": "p_m7qpuz93",
       "prio": 1,
       "kind": "task",
@@ -2284,7 +2258,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T14:17:30.295Z",
-      "updated": "2026-10-09T18:29:18.525Z",
+      "updated": "2026-10-16T14:51:26.080Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -4028,29 +4002,7 @@
       "plan": null,
       "est": 180,
       "spent": 0,
-      "blocks": [
-        {
-          "id": "b_diwx02m1",
-          "d": "2026-10-16",
-          "m": 60,
-          "done": false,
-          "auto": true
-        },
-        {
-          "id": "b_y93tbcxk",
-          "d": "2026-10-17",
-          "m": 60,
-          "done": false,
-          "auto": true
-        },
-        {
-          "id": "b_cvvp7e9s",
-          "d": "2026-10-18",
-          "m": 60,
-          "done": false,
-          "auto": true
-        }
-      ],
+      "blocks": [],
       "project": "p_ocd",
       "prio": 1,
       "kind": "task",
@@ -4060,7 +4012,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-16T01:00:11.306Z",
+      "updated": "2026-10-16T14:51:26.217Z",
       "doneAt": null,
       "src": "import"
     },
@@ -4098,15 +4050,7 @@
       "plan": null,
       "est": 60,
       "spent": 0,
-      "blocks": [
-        {
-          "id": "b_btf3m9aj",
-          "d": "2026-10-16",
-          "m": 60,
-          "done": false,
-          "auto": true
-        }
-      ],
+      "blocks": [],
       "project": "p_ocd",
       "prio": 1,
       "kind": "task",
@@ -4116,7 +4060,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-16T01:00:11.306Z",
+      "updated": "2026-10-16T14:51:26.363Z",
       "doneAt": null,
       "src": "import"
     },
@@ -4130,15 +4074,7 @@
       "plan": "2026-10-19",
       "est": 15,
       "spent": 0,
-      "blocks": [
-        {
-          "id": "b_wlvmdteu",
-          "d": "2026-10-19",
-          "m": 15,
-          "done": false,
-          "auto": true
-        }
-      ],
+      "blocks": [],
       "project": "p_ocd",
       "prio": 1,
       "kind": "writing",
@@ -4148,7 +4084,7 @@
       "moved": 1,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-16T14:44:55.550Z",
+      "updated": "2026-10-16T14:51:26.504Z",
       "doneAt": null,
       "src": "import"
     },
@@ -4162,15 +4098,7 @@
       "plan": null,
       "est": 70,
       "spent": 60,
-      "blocks": [
-        {
-          "id": "b_66yy0a1d",
-          "d": "2026-10-13",
-          "m": 10,
-          "done": false,
-          "auto": true
-        }
-      ],
+      "blocks": [],
       "project": "p_ocd",
       "prio": 1,
       "kind": "writing",
@@ -4180,7 +4108,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-13T16:25:12.000Z",
+      "updated": "2026-10-16T14:51:26.649Z",
       "doneAt": null,
       "src": "import"
     },
@@ -5165,29 +5093,7 @@
       "plan": null,
       "est": 180,
       "spent": 0,
-      "blocks": [
-        {
-          "id": "b_ruz6itel",
-          "d": "2026-10-21",
-          "m": 60,
-          "done": false,
-          "auto": false
-        },
-        {
-          "id": "b_5z3l5lvi",
-          "d": "2026-10-23",
-          "m": 60,
-          "done": false,
-          "auto": false
-        },
-        {
-          "id": "b_9if54qzx",
-          "d": "2026-10-27",
-          "m": 60,
-          "done": false,
-          "auto": false
-        }
-      ],
+      "blocks": [],
       "project": null,
       "prio": 0,
       "kind": "task",
@@ -5197,7 +5103,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T14:17:13.553Z",
-      "updated": "2026-10-12T19:17:19.903Z",
+      "updated": "2026-10-16T14:51:26.771Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -6639,6 +6545,16 @@
       "from": "2026-10-08",
       "to": "2026-10-11"
     },
+    "a_67kaqt1c": {
+      "id": "a_67kaqt1c",
+      "at": "2026-10-16T14:51:26.217Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_ocdillus",
+      "title": "OCD pres: illustrations for dyads",
+      "from": null,
+      "to": "blocks"
+    },
     "a_6fowju9x": {
       "id": "a_6fowju9x",
       "at": "2026-10-05T19:19:22.039Z",
@@ -6928,6 +6844,16 @@
       "title": "Nyx: follow-up work after the meeting",
       "from": null,
       "to": null
+    },
+    "a_9derko0u": {
+      "id": "a_9derko0u",
+      "at": "2026-10-16T14:51:26.080Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_cdhxbtfb",
+      "title": "AI pres: build slides + plan, send out",
+      "from": null,
+      "to": "blocks"
     },
     "a_9pm1ahgw": {
       "id": "a_9pm1ahgw",
@@ -8239,6 +8165,16 @@
       "from": null,
       "to": null
     },
+    "a_ohsprc1k": {
+      "id": "a_ohsprc1k",
+      "at": "2026-10-16T14:51:26.771Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_vnujsabp",
+      "title": "ABCD review prep",
+      "from": null,
+      "to": "blocks"
+    },
     "a_okfzn01o": {
       "id": "a_okfzn01o",
       "at": "2026-10-05T14:34:45.734Z",
@@ -8508,6 +8444,16 @@
       "title": "OCD pres: read the Barlow chapter",
       "from": null,
       "to": null
+    },
+    "a_rp0nav6r": {
+      "id": "a_rp0nav6r",
+      "at": "2026-10-16T14:51:26.649Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_ocdwork",
+      "title": "OCD pres: build workshop",
+      "from": null,
+      "to": "blocks"
     },
     "a_rphn1squ": {
       "id": "a_rphn1squ",
@@ -8809,6 +8755,16 @@
       "from": null,
       "to": "blocks"
     },
+    "a_v1h200lt": {
+      "id": "a_v1h200lt",
+      "at": "2026-10-16T14:51:26.504Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_ocdscript",
+      "title": "OCD pres: write main script",
+      "from": null,
+      "to": "blocks"
+    },
     "a_v3k24h46": {
       "id": "a_v3k24h46",
       "at": "2026-10-05T14:17:13.279Z",
@@ -9048,6 +9004,16 @@
       "title": "Auto-plan: 5 tasks",
       "from": null,
       "to": "planned"
+    },
+    "a_y06x72s6": {
+      "id": "a_y06x72s6",
+      "at": "2026-10-16T14:51:26.363Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_ocdrehearse",
+      "title": "OCD pres: rehearse",
+      "from": null,
+      "to": "blocks"
     },
     "a_y6558ve2": {
       "id": "a_y6558ve2",
