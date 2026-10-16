@@ -23,14 +23,14 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-16T14:52:27.271Z",
+    "at": "2026-10-16T15:18:50.777Z",
     "headline": "4 things today (1 overdue).",
     "lines": [
       "OVERDUE // OCD pres: build workshop (3d late)",
       "INCOMING // OCD pres: illustrations for dyads Mon 10/19 (3d) · OCD pres: write main script Mon 10/19 (3d) · OCD pres: rehearse Tue 10/20 (4d) · +2 more",
       "CHORES // TUBRIC LinkedIn post · Clean first floor. Most overdue: TUBRIC LinkedIn post (11d since last).",
       "TOMORROW // Sat 10/17: TUBRIC LinkedIn post",
-      "DONE // 1 today · streak 4d"
+      "DONE // 2 today · streak 4d"
     ],
     "asks": [
       "'OCD pres: build workshop' is 3d late. Still on? New date or drop it?",
@@ -44,8 +44,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-16T14:47:33.168Z",
-    "lastActivitySeen": "2026-10-16T14:47:33.168Z"
+    "lastClaudeSync": "2026-10-16T15:18:42.740Z",
+    "lastActivitySeen": "2026-10-16T15:18:42.740Z"
   },
   "cats": {
     "admin": {
@@ -2741,6 +2741,30 @@
       "updated": "2026-10-05T04:00:00.000Z",
       "doneAt": null,
       "src": "import"
+    },
+    "t_fppci0zq": {
+      "id": "t_fppci0zq",
+      "title": "Multivariate lab assignment",
+      "cat": "multivar",
+      "status": "done",
+      "due": null,
+      "time": null,
+      "plan": "2026-10-16",
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-16T15:18:50.425Z",
+      "updated": "2026-10-16T15:18:50.593Z",
+      "doneAt": "2026-10-16T15:18:50.593Z",
+      "src": "chat"
     },
     "t_fs5uyri5": {
       "id": "t_fs5uyri5",
@@ -7285,6 +7309,16 @@
       "from": null,
       "to": "added"
     },
+    "a_f8rkd4pg": {
+      "id": "a_f8rkd4pg",
+      "at": "2026-10-16T15:18:50.425Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_fppci0zq",
+      "title": "Multivariate lab assignment",
+      "from": null,
+      "to": "2026-10-16"
+    },
     "a_fasjkh53": {
       "id": "a_fasjkh53",
       "at": "2026-10-05T16:45:35.315Z",
@@ -9034,6 +9068,16 @@
       "title": "Start ABCD work for Jason",
       "from": "2026-10-06",
       "to": "2026-10-12"
+    },
+    "a_yieqiipm": {
+      "id": "a_yieqiipm",
+      "at": "2026-10-16T15:18:50.593Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_fppci0zq",
+      "title": "Multivariate lab assignment",
+      "from": null,
+      "to": null
     },
     "a_yo412mzz": {
       "id": "a_yo412mzz",
