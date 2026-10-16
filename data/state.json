@@ -23,14 +23,14 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-15T12:58:58.387Z",
-    "headline": "15 things today (1 overdue). Start with: OCD pres: build workshop (10m).",
+    "at": "2026-10-16T01:00:14.567Z",
+    "headline": "12 things today (1 overdue). Start with: OCD pres: build workshop (10m).",
     "lines": [
       "DUE TODAY // Email Billy · Email Chelsea",
       "OVERDUE // OCD pres: build workshop (2d late)",
       "INCOMING // OCD pres: write main script Fri 10/16 (1d): 4h left, 2h booked, TIGHT · OCD pres: illustrations for dyads Mon 10/19 (4d): 3h left, 3h booked · OCD pres: rehearse Tue 10/20 (5d): 1h left, 1h booked · +1 more",
       "CHORES // Grocery run · TUBRIC LinkedIn post. Most overdue: Grocery run (12d since last).",
-      "TOMORROW // Fri 10/16 [1h/7h]: DUE Lily's birthday · DUE OCD pres: write main script · OCD pres: illustrations for dyads 1h"
+      "TOMORROW // Fri 10/16 [4h/7h]: DUE Lily's birthday · DUE OCD pres: write main script · OCD pres: illustrations for dyads 1h · OCD pres: rehearse 1h · +1 more"
     ],
     "asks": [
       "Did 'Put the Phil meeting on my calendar (Tue 10/20 at 1 PM)' happen?",
@@ -48,8 +48,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-15T12:58:51.741Z",
-    "lastActivitySeen": "2026-10-15T12:58:51.741Z"
+    "lastClaudeSync": "2026-10-16T01:00:07.670Z",
+    "lastActivitySeen": "2026-10-16T01:00:07.670Z"
   },
   "cats": {
     "admin": {
@@ -4030,13 +4030,6 @@
       "spent": 0,
       "blocks": [
         {
-          "id": "b_say5r096",
-          "d": "2026-10-15",
-          "m": 60,
-          "done": false,
-          "auto": true
-        },
-        {
           "id": "b_diwx02m1",
           "d": "2026-10-16",
           "m": 60,
@@ -4046,6 +4039,13 @@
         {
           "id": "b_y93tbcxk",
           "d": "2026-10-17",
+          "m": 60,
+          "done": false,
+          "auto": true
+        },
+        {
+          "id": "b_cvvp7e9s",
+          "d": "2026-10-18",
           "m": 60,
           "done": false,
           "auto": true
@@ -4060,7 +4060,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-15T00:59:47.337Z",
+      "updated": "2026-10-16T01:00:11.306Z",
       "doneAt": null,
       "src": "import"
     },
@@ -4100,8 +4100,8 @@
       "spent": 0,
       "blocks": [
         {
-          "id": "b_1trimiwb",
-          "d": "2026-10-15",
+          "id": "b_btf3m9aj",
+          "d": "2026-10-16",
           "m": 60,
           "done": false,
           "auto": true
@@ -4116,7 +4116,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-15T00:59:47.337Z",
+      "updated": "2026-10-16T01:00:11.306Z",
       "doneAt": null,
       "src": "import"
     },
@@ -4132,8 +4132,8 @@
       "spent": 0,
       "blocks": [
         {
-          "id": "b_7l5pjg2c",
-          "d": "2026-10-15",
+          "id": "b_flhgcqpi",
+          "d": "2026-10-16",
           "m": 120,
           "done": false,
           "auto": true
@@ -4148,7 +4148,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-15T00:59:47.337Z",
+      "updated": "2026-10-16T01:00:11.306Z",
       "doneAt": null,
       "src": "import"
     },
@@ -6007,6 +6007,16 @@
       "title": "Virtual school work",
       "from": null,
       "to": "cat"
+    },
+    "a_0c2n0lbm": {
+      "id": "a_0c2n0lbm",
+      "at": "2026-10-16T01:00:11.306Z",
+      "src": "chat",
+      "type": "block",
+      "ref": null,
+      "title": "Auto-plan: 3 tasks",
+      "from": null,
+      "to": "planned"
     },
     "a_0edgmsqc": {
       "id": "a_0edgmsqc",
