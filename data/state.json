@@ -23,20 +23,20 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-16T01:00:14.567Z",
-    "headline": "12 things today (1 overdue). Start with: OCD pres: build workshop (10m).",
+    "at": "2026-10-16T12:59:41.380Z",
+    "headline": "16 things today (3 overdue). Start with: OCD pres: build workshop (10m).",
     "lines": [
-      "DUE TODAY // Email Billy · Email Chelsea",
-      "OVERDUE // OCD pres: build workshop (2d late)",
-      "INCOMING // OCD pres: write main script Fri 10/16 (1d): 4h left, 2h booked, TIGHT · OCD pres: illustrations for dyads Mon 10/19 (4d): 3h left, 3h booked · OCD pres: rehearse Tue 10/20 (5d): 1h left, 1h booked · +1 more",
-      "CHORES // Grocery run · TUBRIC LinkedIn post. Most overdue: Grocery run (12d since last).",
-      "TOMORROW // Fri 10/16 [4h/7h]: DUE Lily's birthday · DUE OCD pres: write main script · OCD pres: illustrations for dyads 1h · OCD pres: rehearse 1h · +1 more"
+      "DUE TODAY // Lily's birthday · OCD pres: write main script (4h left)",
+      "OVERDUE // OCD pres: build workshop (3d late) · Email Billy (1d late) · Email Chelsea (1d late)",
+      "INCOMING // OCD pres: illustrations for dyads Mon 10/19 (3d): 3h left, 3h booked · OCD pres: rehearse Tue 10/20 (4d): 1h left, 1h booked · AI pres: build slides + plan, send out Thu 10/22 (6d): 3h left, 3h booked",
+      "CHORES // Grocery run · TUBRIC LinkedIn post · Clean first floor. Most overdue: Grocery run (13d since last).",
+      "TOMORROW // Sat 10/17 [1h/3h]: OCD pres: illustrations for dyads 1h"
     ],
     "asks": [
       "Did 'Put the Phil meeting on my calendar (Tue 10/20 at 1 PM)' happen?",
-      "OCD pres: write main script: 2h not blocked out before Fri 10/16. Auto-plan it?",
+      "OCD pres: write main script: 2h not blocked out today. Auto-plan it?",
       "'Laundry: cleanup (fold + put away)' got pushed 3x. Shrink it, pin it to a day, or drop it?",
-      "Anything coming up for EF?"
+      "Anything coming up for Undergrad?"
     ],
     "focus": [
       "t_ocdwork",
@@ -48,8 +48,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-16T01:00:07.670Z",
-    "lastActivitySeen": "2026-10-16T01:00:07.670Z"
+    "lastClaudeSync": "2026-10-16T12:59:38.218Z",
+    "lastActivitySeen": "2026-10-16T12:59:38.218Z"
   },
   "cats": {
     "admin": {
