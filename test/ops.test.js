@@ -698,7 +698,7 @@ test('ENG-1 follow-up: a strong cadence with a date ("every week - sat") keeps t
   assert.equal(row.due, false, 'not due before its first day');
   assert.equal(row.nextDue, '2026-10-10');
   assert.ok(!todayView(res.state, TODAY).chores.some((c) => c.id === ch.id));
-  const cal = calendarView(res.state, TODAY, 14);
+  const cal = calendarView(res.state, TODAY, 14, TODAY); // pin "today": the real clock must not leak in
   assert.deepEqual(cal.filter((d) => d.chores.some((c) => c.id === ch.id)).map((d) => d.d), ['2026-10-10', '2026-10-17']);
   assert.equal(choreView(res.state, '2026-10-10').find((r) => r.chore.id === ch.id).due, true, 'due on its first day');
   // done early: the normal cadence takes over from that day

@@ -198,8 +198,10 @@ chore on that day. `stats` applies the same cap to sessions saved without `min`.
 ### Brief — Claude's latest check-in, shown on the website
 
 ```js
-{ at: "…ISO", headline: "3 things today. Start with the 5-minute laundry sort.",
-  lines: ["…"], asks: ["Did the ABCD review meeting happen?"], focus: ["t_…"] }
+{ at: "…ISO", headline: "3 things today (1 overdue).",
+  lines: ["…"], asks: ["Did the ABCD review meeting happen?"], focus: [] }
+// A to-do list, not a schedule: no work blocks, booked hours, day load or
+// suggested order (focus stays empty; Danny decides what comes first).
 ```
 
 ### Sync
@@ -512,8 +514,8 @@ a missing id (returns no writes). Activity `src` is `ctx.src`.
 
 ### brief.js
 - `buildBrief(state, { today, now })` → `{ headline, lines, asks, focus, text }`
-  (the first ask flags a clock running past `SESSION_CAP_MIN`; focus excludes
-  triage items)
+  (the first ask flags a clock running past `SESSION_CAP_MIN`; focus is always
+  empty and the text never mentions work blocks, booked time or day load)
 - `changesSince(state, sinceIso)` → activity entries from the website since then, grouped
   (by device timestamp; `ef changes` only). A task that was dropped and then
   reopened (the toast's undo) nets out like done/undone.

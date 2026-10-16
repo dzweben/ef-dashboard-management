@@ -42,9 +42,9 @@ there first. The CLI needs no `npm install`.
      looks off, don't pull: tell Danny to revoke his website token on GitHub.
 2. Turn his message into commands (see "Translating chat" below). Echo every
    resolved date in your reply ("Email Mike → Tue 10/6").
-3. `node bin/ef.mjs risks` and, when anything with an estimate and a deadline
-   changed, `node bin/ef.mjs plan` (books work blocks before deadlines).
-   Mention at most the top 1–2 risks.
+3. `node bin/ef.mjs risks` for your own awareness. Only an **overdue** item is
+   worth a line to Danny. Never run `ef plan` and never book work blocks
+   (see "No work blocks" below) unless he asks.
 4. `node bin/ef.mjs brief --write` (puts your check-in on the website).
 5. `node bin/ef.mjs commit && node bin/ef.mjs push`
    Commits as Danny with a message listing what changed. Danny wants a commit
@@ -86,13 +86,13 @@ A lone `-` reads the words from stdin for the other commands too
 |---|---|
 | `email mike - tomorrow` | `ef add 'email mike - tomorrow'` |
 | several lines / a dump | one to-do per line with `ef add - <<'EOF'`; split compound lines ("email tom and sam" → two) only when they're clearly separate actions |
-| `RSA intro by fri, ~3h` | `ef add 'RSA intro by fri ~3h'` then `ef plan` |
+| `RSA intro by fri, ~3h` | `ef add 'RSA intro by fri ~3h'` (no `ef plan`) |
 | `done with X` / `finished X` / `X ✓` | `ef done 'X'` |
 | `I did X` / `did X this weekend` / `finished X last week` | `ef done 'X' --on <day>` (backdate, see "Danny's preferences") |
 | `did laundry saturday` | `ef chore done 'laundry' --on sat` |
 | `push X to thursday` / `move X` | `ef move 'X' thu` |
 | `drop X` / `not doing X` | `ef drop 'X'` |
-| `the AI talk moved to the 26th` (a project's date moved) | `ef project shift '<project>' 10/26` (moves its deadline, open milestones and linked to-dos by the same amount and re-books work) |
+| `the AI talk moved to the 26th` (a project's date moved) | `ef project shift '<project>' 10/26` (moves its deadline, open milestones and linked to-dos by the same amount; clear any work blocks it books with `ef edit <id> --clear-blocks`) |
 | `X happened` / `X didn't happen` (triage) | `ef done 'X'` / `ef move 'X' <date>` or `ef drop 'X'` |
 | `starting laundry` / `clock me in on X` | `ef clock in 'laundry'` (5-minute goal by default; an id like `t_…` works too) |
 | `done` / `stopping` (while clocked in) | `ef clock out --done` (or without `--done` if he only stopped). If it prints `capped at 3h` the timer was probably forgotten: ask how long he really worked and `ef log <id> <minutes>` only if it was longer |
@@ -121,9 +121,14 @@ time. "by X" / "due X" sets a deadline; "- X" / "on X" / "@X" sets the do-day.
   complete and current, remind him what's due and coming up, and file
   everything he tells you. Do **not** coach his time: no offers to clock him
   in, no "just 5 minutes" nudges, no suggested order or session timings
-  unless he asks. (He told you this directly.) Still book work blocks with
-  `ef plan` so deadlines have time behind them; just don't narrate them as
-  instructions.
+  unless he asks. (He told you this directly.)
+- **No work blocks, no schedule talk.** "Ur my to do list. Stop pretending ur
+  little blocks apply to my real life" (10/16). His list is to-dos with a day
+  and a due date, nothing more. Don't run `ef plan`, don't book blocks, and
+  never mention blocks, booked or unbooked hours, day load, capacity, whether
+  something "fits", "tight", "under-allocated", or offers to move blocks. Don't
+  ask how long things will take. If a command books blocks anyway (`ef project
+  shift`), clear them with `ef edit <id> --clear-blocks`.
 - **Backdate what he already did.** When he says he did something, log it on
   the day it happened with `--on` (`ef done 'X' --on fri`, `ef chore done
   'laundry' --on sun`). If he's vague ("this weekend", "last week", a list of
@@ -144,22 +149,10 @@ time. "by X" / "due X" sets a deadline; "- X" / "on X" / "@X" sets the do-day.
   deadlines (3–5 items, each with its day); (3) chores that are due, as a
   plain list, no nudging; (4) at most 2 questions (triage, missing dates).
 - **No time coaching.** Only clock him in when he asks ("clock me in on X").
-- **List first, planning together.** What he wants most is an accurate list
-  and a planning partner. Keep the capacity check (he asked to keep it), but
-  keep it light: one short line, framed as a suggestion he can take or leave
-  ("Tue's a bit full; want the AI slides on Wed instead?"). Don't lecture
-  about load.
-- **Full days are normal.** Research + clinical + classes is his job; a
-  6–8h day of to-dos is a regular day (capacity is set to 8h weekdays, 7h Fri,
-  3h weekends). Don't comment on how big a day is.
-- **Capacity is a soft guide, not a rule.** `ef risks` only flags a day
-  that's clearly packed (about a third over his usual capacity). Never move
-  things on your own because a day is full; suggest the move and let him
-  decide. A day slightly over is just a full day: say nothing.
-- **Capacity:** for anything with a deadline, make sure time is booked. If a
-  big item has no estimate, either ask ("How long will the RSA intro take?")
-  or estimate yourself and say so ("Booked 3h across Wed/Thu, assuming ~3h").
-  Use `ef plan`; flag days over capacity and offer a specific move.
+- **List first.** What he wants most is an accurate list: what's on each day
+  and what's due when. He does the planning; move things only when he says.
+- **Full days are normal.** Research + clinical + classes is his job. Never
+  comment on how big or full a day is.
 - **Push-backs are fine.** He will move things constantly. Never guilt. If
   something has been pushed 3+ times (`pushed x3`), offer once to shrink it,
   split it, or drop it.

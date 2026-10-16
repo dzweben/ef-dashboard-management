@@ -16,22 +16,24 @@ const base = () => deepFreeze(withCats(fixture()));
 
 // ---------------------------------------------------------------- buildBrief
 
-test('buildBrief: punchy headline + focus on the fixture', () => {
+test('buildBrief: punchy headline, no suggested order (Danny decides what comes first)', () => {
   const b = buildBrief(base(), { today: TODAY, now: NOW });
-  assert.equal(b.headline, '6 things today (1 overdue). Start with: Submit IRB amendment (1h).');
-  assert.deepEqual(b.focus, ['t_irb', 't_hw', 't_email']);
+  assert.equal(b.headline, '6 things today (1 overdue). Next up: Lab meeting at 2pm.');
+  assert.ok(!/Start with/.test(b.headline));
+  assert.deepEqual(b.focus, []);
   assert.deepEqual(Object.keys(b), ['headline', 'lines', 'asks', 'focus', 'text']);
 });
 
 test('buildBrief: lines cover due today, overdue, meetings, deadlines, chores, tomorrow', () => {
   const b = buildBrief(base(), { today: TODAY, now: NOW });
   const line = (prefix) => b.lines.find((l) => l.startsWith(prefix));
-  assert.equal(line('DUE TODAY'), 'DUE TODAY // Multivariate HW 3 (1h left)');
+  assert.equal(line('DUE TODAY'), 'DUE TODAY // Multivariate HW 3');
   assert.equal(line('OVERDUE'), 'OVERDUE // Submit IRB amendment (3d late)');
   assert.equal(line('MEETINGS'), 'MEETINGS // 2pm Lab meeting');
   const incoming = line('INCOMING');
-  assert.match(incoming, /Predis lit review Mon 10\/12 \(7d\): 4h left, 2h 30m booked, TIGHT/);
-  assert.match(incoming, /CBT quiz Thu 10\/8 \(3d\): 30m left, 0m booked, UNPLANNED/);
+  assert.match(incoming, /Predis lit review Mon 10\/12 \(7d\)/);
+  assert.match(incoming, /CBT quiz Thu 10\/8 \(3d\)/);
+  assert.ok(!/booked|left|TIGHT|UNPLANNED/.test(incoming), 'a to-do list, not a schedule: no booked time');
   assert.ok(!incoming.includes('RSA manuscript draft'), 'due in 16d is outside the 7-day window');
   const chores = line('CHORES');
   assert.match(chores, /Take out trash/);
@@ -39,16 +41,16 @@ test('buildBrief: lines cover due today, overdue, meetings, deadlines, chores, t
   assert.match(chores, /Most overdue: Take out trash \(15d since last\)\./);
   assert.ok(!/Just \d+ minutes/.test(chores), 'no time nudges: Danny asked for reminders, not timing coaching');
   assert.ok(!chores.includes('Retired chore'));
-  assert.match(line('TOMORROW'), /^TOMORROW \/\/ Tue 10\/6 \[2h 30m\/4h\]: .*Predis lit review 1h 30m/);
+  assert.equal(line('TOMORROW'), 'TOMORROW // Tue 10/6: nothing on the list yet', 'work blocks and day load are never shown');
   assert.match(line('DONE'), /^DONE \/\/ 1 today/);
 });
 
-test('buildBrief: asks lead with triage, then estimates and warnings; max 4', () => {
+test('buildBrief: asks lead with triage, then late items; never estimates, booking or load; max 4', () => {
   const b = buildBrief(base(), { today: TODAY, now: NOW });
   assert.ok(b.asks.length <= 4);
   assert.equal(b.asks[0], "Did 'ABCD review meeting' happen?");
-  assert.ok(b.asks.includes("How long will 'SDN poster' take?"));
-  assert.ok(b.asks.some((q) => /Auto-plan it\?|Cut scope|Push something\?|late\./.test(q)));
+  assert.ok(b.asks.includes("'Submit IRB amendment' is 3d late. Still on? New date or drop it?"));
+  assert.ok(!b.asks.some((q) => /How long will|Auto-plan|Cut scope|Push something/.test(q)));
 });
 
 test('buildBrief: text is the plain version of everything', () => {
@@ -57,7 +59,7 @@ test('buildBrief: text is the plain version of everything', () => {
   assert.ok(b.text.includes(b.headline));
   for (const l of b.lines) assert.ok(b.text.includes(l));
   for (const q of b.asks) assert.ok(b.text.includes(`?? ${q}`));
-  assert.match(b.text, /FOCUS \/\/ 1\. Submit IRB amendment \(1h\) {2}2\. Multivariate HW 3 \(1h\) {2}3\. Email Mike \(10m\)/);
+  assert.ok(!b.text.includes('FOCUS'), 'no suggested order');
 });
 
 test('buildBrief: empty state → clear board, no throw', () => {
@@ -92,8 +94,8 @@ test('buildBrief: many stale items still leaves room for other asks; never more 
   tasks.push({ id: 't_p', title: 'Conference poster', due: '2026-10-12' });
   const b = buildBrief(deepFreeze(makeState({ tasks })), { today: TODAY });
   assert.equal(b.asks.length, 4);
-  assert.ok(b.asks.includes("How long will 'Conference poster' take?"));
-  assert.equal(b.asks.filter((q) => q.startsWith('Did ')).length, 3);
+  assert.ok(!b.asks.some((q) => q.startsWith('How long')), 'never asks for estimates');
+  assert.equal(b.asks.filter((q) => q.startsWith('Did ')).length, 4);
 });
 
 test('buildBrief: tolerates odd tasks and chores', () => {
@@ -218,8 +220,8 @@ test('ENG-4: past meetings are asked about, never the brief\'s focus', () => {
     { id: 't_adv', title: 'Advisor meeting', kind: 'meeting', due: '2026-10-09', est: 60 },
   ] }));
   const b = buildBrief(s, { today: '2026-10-12', now: '2026-10-12T14:00:00.000Z' });
-  assert.equal(b.headline, '1 thing today. Start with: Email Mike.');
-  assert.deepEqual(b.focus, ['t_mike']);
+  assert.equal(b.headline, '1 thing today.');
+  assert.deepEqual(b.focus, []);
   assert.ok(b.asks.includes("Did 'Dentist appt' happen?"));
   assert.ok(b.asks.includes("Did 'Lab meeting' happen?"));
   assert.ok(!b.asks.some((q) => /late\./.test(q)), 'a past meeting is not late work');

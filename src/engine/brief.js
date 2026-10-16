@@ -40,37 +40,6 @@ function leftTag(t) {
 
 // ---------------------------------------------------------------- buildBrief
 
-/**
- * Focus: up to 3 task ids. Overdue first, then due today, then the rest of
- * today's plate (planned, rolled over, work blocks) by priority, quick wins first.
- * Triage items (stale, or past meetings) are never focus: the brief asks about them.
- */
-function pickFocus(tv) {
-  const seen = new Set(tv.triage.map((t) => t.id)); // "did it happen?" items are questions, not focus
-  const out = [];
-  const take = (t) => {
-    if (!t || seen.has(t.id) || out.length >= 3) return;
-    seen.add(t.id);
-    out.push(t);
-  };
-  tv.overdue.forEach(take);
-  tv.dueToday.forEach(take);
-  const rest = [...tv.planned, ...tv.carried, ...tv.blocks.map((b) => b.task)];
-  const uniq = [...new Map(rest.map((t) => [t.id, t])).values()];
-  uniq
-    .sort((a, b) => {
-      const pa = isNum(a.prio) ? a.prio : 1;
-      const pb = isNum(b.prio) ? b.prio : 1;
-      if (pa !== pb) return pb - pa;
-      const ea = isNum(a.est) ? remaining(a) : Infinity;
-      const eb = isNum(b.est) ? remaining(b) : Infinity;
-      if (ea !== eb) return ea - eb;
-      return titleOf(a).localeCompare(titleOf(b));
-    })
-    .forEach(take);
-  return out;
-}
-
 function todaysPlate(tv) {
   const ids = new Map();
   for (const k of ['overdue', 'dueToday', 'meetings', 'planned', 'carried']) for (const t of tv[k]) ids.set(t.id, t);
@@ -83,7 +52,6 @@ function headlineFor(state, tv, plate, focus, dueChores) {
   if (n > 0) {
     const late = tv.overdue.length ? ` (${tv.overdue.length} overdue)` : '';
     const head = `${plural(n, 'thing')} today${late}.`;
-    if (focus.length) return `${head} Start with: ${titleOf(focus[0])}${leftTag(focus[0])}.`;
     const m = tv.meetings[0];
     if (m) return `${head} Next up: ${titleOf(m)}${m.time ? ` at ${fmtTime(m.time)}` : ''}.`;
     return head;
@@ -110,25 +78,24 @@ function tomorrowLine(state, today) {
   if (!day) return null;
   const label = `TOMORROW // ${fmtDay(tom)}`;
   if (day.isOff && !day.items.length) return `${label}: off day`;
-  if (!day.items.length) return `${label}: nothing booked yet`;
-  const items = day.items.map((it) => {
+  // Danny's list is a to-do list, not a schedule: no work blocks, no hours vs capacity.
+  const seen = new Set();
+  const items = [];
+  for (const it of day.items) {
     const t = it.task;
-    if (it.type === 'due') return `DUE ${titleOf(t)}`;
-    if (it.type === 'meeting') return `${t.time ? `${fmtTime(t.time)} ` : ''}${titleOf(t)}`;
-    if (it.type === 'block') return `${titleOf(t)} ${fmtMinutes(it.block?.m)}`;
-    return titleOf(t);
-  });
-  const load = day.load ? ` [${fmtMinutes(day.load.total)}/${fmtMinutes(day.load.cap)}]` : '';
-  return `${label}${load}: ${joinCapped(items)}`;
+    if (it.type === 'block' || !t || seen.has(t.id)) continue;
+    seen.add(t.id);
+    if (it.type === 'due') items.push(`DUE ${titleOf(t)}`);
+    else if (it.type === 'meeting') items.push(`${t.time ? `${fmtTime(t.time)} ` : ''}${titleOf(t)}`);
+    else items.push(titleOf(t));
+  }
+  if (!items.length) return `${label}: nothing on the list yet`;
+  return `${label}: ${joinCapped(items)}`;
 }
-
-const DEADLINE_STATUS = { 'at-risk': 'AT RISK', unplanned: 'UNPLANNED', tight: 'TIGHT', 'no-estimate': 'NO ESTIMATE', ok: 'OK' };
 
 function deadlineItem(d) {
   const t = d.task;
-  const when = `${fmtDay(t.due)} (${d.daysLeft}d)`;
-  if (!isNum(t.est)) return `${titleOf(t)} ${when}: no estimate`;
-  return `${titleOf(t)} ${when}: ${fmtMinutes(d.remaining)} left, ${fmtMinutes(d.allocated)} booked${d.status !== 'ok' ? `, ${DEADLINE_STATUS[d.status] ?? d.status}` : ''}`;
+  return `${titleOf(t)} ${fmtDay(t.due)} (${d.daysLeft}d)`;
 }
 
 /** Fill up to `max` slots: a first pass takes `first[i]` from each group in order, then the leftovers in order. */
@@ -164,21 +131,13 @@ function asksFor(state, today, tv, now) {
   const title = (id) => titleOf(tasks[id]);
 
   const triage = tv.triage.map((t) => `Did '${titleOf(t)}' happen?`);
-  const estimates = rs.filter((r) => r.type === 'needs-estimate' && tasks[r.taskId]).map((r) => `How long will '${title(r.taskId)}' take?`);
+  // Only list questions (late / stale / pushed): never estimates, booked time or day load.
   const warnings = [];
   for (const r of rs) {
-    if (r.type === 'crunch' && r.overdue) {
-      if (tasks[r.taskId]) warnings.push(`'${title(r.taskId)}' is ${diffDays(r.d, today)}d late. Still on? New date or drop it?`);
-    } else if (r.type === 'crunch') {
-      warnings.push(`${r.message}. Cut scope or move the deadline?`);
-    } else if (r.type === 'under-allocated') {
-      warnings.push(`${r.message}. Auto-plan it?`);
-    } else if (r.type === 'overbooked') {
-      warnings.push(`${r.message}. Push something?`);
+    if (r.type === 'crunch' && r.overdue && tasks[r.taskId]) {
+      warnings.push(`'${title(r.taskId)}' is ${diffDays(r.d, today)}d late. Still on? New date or drop it?`);
     }
   }
-  // non-overdue crunch / under-allocated first: overdue items are already in the lines
-  warnings.sort((a, b) => (a.includes('d late.') ? 1 : 0) - (b.includes('d late.') ? 1 : 0));
   const pushed = list(tasks)
     .filter((t) => (t.status ?? 'todo') === 'todo' && t.triage !== true && isNum(t.moved) && t.moved >= 3)
     .sort((a, b) => b.moved - a.moved || titleOf(a).localeCompare(titleOf(b)))
@@ -189,7 +148,6 @@ function asksFor(state, today, tv, now) {
     [
       { items: clockAsks(state, now), first: 1 },
       { items: triage, first: 2 },
-      { items: estimates, first: 1 },
       { items: warnings, first: 1 },
       { items: pushed, first: 1 },
       { items: missing, first: 1 },
@@ -209,13 +167,13 @@ export function buildBrief(state, opts = {}) {
 
   const tv = todayView(state, today);
   const plate = todaysPlate(tv);
-  const focus = pickFocus(tv);
+  const focus = []; // no suggested order: Danny decides what comes first
   const chores = choreView(state, today).filter((x) => x.due);
   const headline = headlineFor(state, tv, plate, focus, chores);
 
   const lines = [];
   if (tv.dueToday.length) {
-    lines.push(`DUE TODAY // ${joinCapped(tv.dueToday.map((t) => `${titleOf(t)}${t.time ? ` @ ${fmtTime(t.time)}` : ''}${isNum(t.est) && remaining(t) > 0 ? ` (${fmtMinutes(remaining(t))} left)` : ''}`))}`);
+    lines.push(`DUE TODAY // ${joinCapped(tv.dueToday.map((t) => `${titleOf(t)}${t.time ? ` @ ${fmtTime(t.time)}` : ''}`))}`);
   }
   if (tv.overdue.length) {
     lines.push(`OVERDUE // ${joinCapped(tv.overdue.map((t) => `${titleOf(t)} (${diffDays(t.due, today)}d late)`))}`);
@@ -223,7 +181,7 @@ export function buildBrief(state, opts = {}) {
   if (tv.meetings.length) {
     lines.push(`MEETINGS // ${joinCapped(tv.meetings.map((t) => `${t.time ? `${fmtTime(t.time)} ` : ''}${titleOf(t)}`))}`);
   }
-  const incoming = upcomingDeadlines(state, today, 7).filter((d) => d.daysLeft >= 1 && (d.status !== 'ok' || d.remaining >= 60));
+  const incoming = upcomingDeadlines(state, today, 7).filter((d) => d.daysLeft >= 1);
   if (incoming.length) lines.push(`INCOMING // ${joinCapped(incoming.map(deadlineItem), 3)}`);
   if (chores.length) {
     lines.push(`CHORES // ${joinCapped(chores.map((x) => {
@@ -249,7 +207,6 @@ export function buildBrief(state, opts = {}) {
     `EF//BRIEF ${fmtDay(today)}`,
     `> ${headline}`,
     ...(lines.length ? ['', ...lines] : []),
-    ...(focus.length ? ['', `FOCUS // ${focus.map((t, i) => `${i + 1}. ${titleOf(t)}${leftTag(t)}`).join('  ')}`] : []),
     ...(asks.length ? ['', ...asks.map((q) => `?? ${q}`)] : []),
   ].join('\n');
 
