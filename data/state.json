@@ -23,14 +23,14 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-17T01:00:18.397Z",
-    "headline": "4 things today (1 overdue).",
+    "at": "2026-10-17T01:11:50.338Z",
+    "headline": "3 things today (1 overdue).",
     "lines": [
       "OVERDUE // OCD pres: build workshop (3d late)",
       "INCOMING // OCD pres: illustrations for dyads Mon 10/19 (3d) · OCD pres: write main script Mon 10/19 (3d) · OCD pres: rehearse Tue 10/20 (4d) · +2 more",
       "CHORES // TUBRIC LinkedIn post · Clean first floor. Most overdue: TUBRIC LinkedIn post (11d since last).",
       "TOMORROW // Sat 10/17: TUBRIC LinkedIn post",
-      "DONE // 2 today · streak 4d"
+      "DONE // 3 today · streak 4d"
     ],
     "asks": [
       "'OCD pres: build workshop' is 3d late. Still on? New date or drop it?",
@@ -44,8 +44,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-17T01:00:15.128Z",
-    "lastActivitySeen": "2026-10-17T01:00:15.128Z"
+    "lastClaudeSync": "2026-10-17T01:11:48.258Z",
+    "lastActivitySeen": "2026-10-17T01:11:48.258Z"
   },
   "cats": {
     "admin": {
@@ -1942,6 +1942,30 @@
       "doneAt": "2026-10-04T16:00:00.000Z",
       "src": "chat"
     },
+    "t_8khp74co": {
+      "id": "t_8khp74co",
+      "title": "TUBRIC LinkedIn post (Sunday)",
+      "cat": "tubric",
+      "status": "todo",
+      "due": null,
+      "time": null,
+      "plan": "2026-10-18",
+      "est": 20,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-17T01:11:50.123Z",
+      "updated": "2026-10-17T01:11:50.123Z",
+      "doneAt": null,
+      "src": "chat"
+    },
     "t_8zpmocd1": {
       "id": "t_8zpmocd1",
       "title": "RSA app sections 6/7",
@@ -2530,7 +2554,7 @@
       "id": "t_edjdn41w",
       "title": "Email Eunice about the OCD presentation",
       "cat": "cbt",
-      "status": "todo",
+      "status": "done",
       "due": null,
       "time": null,
       "plan": "2026-10-14",
@@ -2546,8 +2570,8 @@
       "moved": 1,
       "win": false,
       "created": "2026-10-13T16:25:11.762Z",
-      "updated": "2026-10-13T21:53:07.517Z",
-      "doneAt": null,
+      "updated": "2026-10-17T01:11:49.998Z",
+      "doneAt": "2026-10-17T01:11:49.998Z",
       "src": "chat"
     },
     "t_emailjason": {
@@ -6569,6 +6593,16 @@
       "from": "2026-10-08",
       "to": "2026-10-11"
     },
+    "a_63tdkly5": {
+      "id": "a_63tdkly5",
+      "at": "2026-10-17T01:11:49.998Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_edjdn41w",
+      "title": "Email Eunice about the OCD presentation",
+      "from": null,
+      "to": null
+    },
     "a_67kaqt1c": {
       "id": "a_67kaqt1c",
       "at": "2026-10-16T14:51:26.217Z",
@@ -9078,6 +9112,16 @@
       "title": "Multivariate lab assignment",
       "from": null,
       "to": null
+    },
+    "a_yl975aai": {
+      "id": "a_yl975aai",
+      "at": "2026-10-17T01:11:50.123Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_8khp74co",
+      "title": "TUBRIC LinkedIn post (Sunday)",
+      "from": null,
+      "to": "2026-10-18"
     },
     "a_yo412mzz": {
       "id": "a_yo412mzz",
