@@ -23,20 +23,19 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-17T01:11:50.338Z",
-    "headline": "3 things today (1 overdue).",
+    "at": "2026-10-17T13:01:02.565Z",
+    "headline": "4 things today (1 overdue).",
     "lines": [
-      "OVERDUE // OCD pres: build workshop (3d late)",
-      "INCOMING // OCD pres: illustrations for dyads Mon 10/19 (3d) · OCD pres: write main script Mon 10/19 (3d) · OCD pres: rehearse Tue 10/20 (4d) · +2 more",
-      "CHORES // TUBRIC LinkedIn post · Clean first floor. Most overdue: TUBRIC LinkedIn post (11d since last).",
-      "TOMORROW // Sat 10/17: TUBRIC LinkedIn post",
-      "DONE // 3 today · streak 4d"
+      "OVERDUE // OCD pres: build workshop (4d late)",
+      "INCOMING // OCD pres: illustrations for dyads Mon 10/19 (2d) · OCD pres: write main script Mon 10/19 (2d) · OCD pres: rehearse Tue 10/20 (3d) · +2 more",
+      "CHORES // TUBRIC LinkedIn post · Clean first floor. Most overdue: TUBRIC LinkedIn post (12d since last).",
+      "TOMORROW // Sun 10/18: TUBRIC LinkedIn post (Sunday)"
     ],
     "asks": [
-      "'OCD pres: build workshop' is 3d late. Still on? New date or drop it?",
+      "'OCD pres: build workshop' is 4d late. Still on? New date or drop it?",
       "'Laundry: cleanup (fold + put away)' got pushed 3x. Shrink it, pin it to a day, or drop it?",
-      "Anything coming up for Undergrad?",
-      "Anything coming up for Clinical (PSC)?"
+      "Anything coming up for EF?",
+      "Anything coming up for Ziggy?"
     ],
     "focus": []
   },
@@ -44,8 +43,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-17T01:11:48.258Z",
-    "lastActivitySeen": "2026-10-17T01:11:48.258Z"
+    "lastClaudeSync": "2026-10-17T13:00:47.418Z",
+    "lastActivitySeen": "2026-10-17T13:00:47.418Z"
   },
   "cats": {
     "admin": {
