@@ -23,19 +23,20 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-19T01:00:02.104Z",
-    "headline": "5 things today (1 overdue).",
+    "at": "2026-10-19T12:59:25.843Z",
+    "headline": "9 things today (1 overdue).",
     "lines": [
-      "OVERDUE // OCD pres: build workshop (5d late)",
-      "INCOMING // OCD pres: illustrations for dyads Mon 10/19 (1d) · OCD pres: write main script Mon 10/19 (1d) · OCD pres: rehearse Tue 10/20 (2d) · +2 more",
-      "CHORES // TUBRIC LinkedIn post · Clean first floor · Water plants. Most overdue: TUBRIC LinkedIn post (13d since last).",
-      "TOMORROW // Mon 10/19: DUE OCD pres: illustrations for dyads · DUE OCD pres: write main script · Rerun PPI for Teij email · Start ABCD work for Jason"
+      "DUE TODAY // OCD pres: illustrations for dyads · OCD pres: write main script",
+      "OVERDUE // OCD pres: build workshop (6d late)",
+      "INCOMING // OCD pres: rehearse Tue 10/20 (1d) · OCD presentation in CBT Wed 10/21 (2d) · AI pres: build slides + plan, send out Thu 10/22 (3d) · +1 more",
+      "CHORES // TUBRIC LinkedIn post · Clean first floor · Water plants. Most overdue: TUBRIC LinkedIn post (14d since last).",
+      "TOMORROW // Tue 10/20: DUE OCD pres: rehearse · 1pm Meeting with Phil · Rewatch neuromelanin video"
     ],
     "asks": [
-      "'OCD pres: build workshop' is 5d late. Still on? New date or drop it?",
+      "'OCD pres: build workshop' is 6d late. Still on? New date or drop it?",
       "'Laundry: cleanup (fold + put away)' got pushed 3x. Shrink it, pin it to a day, or drop it?",
-      "Anything coming up for Undergrad?",
-      "Anything coming up for Clinical (PSC)?"
+      "Anything coming up for EF?",
+      "Anything coming up for Ziggy?"
     ],
     "focus": []
   },
@@ -43,8 +44,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-19T00:59:56.120Z",
-    "lastActivitySeen": "2026-10-19T00:59:56.120Z"
+    "lastClaudeSync": "2026-10-19T12:59:19.983Z",
+    "lastActivitySeen": "2026-10-19T12:59:19.983Z"
   },
   "cats": {
     "admin": {
