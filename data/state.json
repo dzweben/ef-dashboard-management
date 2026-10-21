@@ -23,13 +23,14 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-21T12:59:01.269Z",
+    "at": "2026-10-21T15:06:29.665Z",
     "headline": "2 things today.",
     "lines": [
       "DUE TODAY // OCD presentation in CBT",
       "INCOMING // AI pres: build slides + plan, send out Fri 10/23 (2d) · Department AI presentation Mon 10/26 (5d)",
       "CHORES // TUBRIC LinkedIn post · Clean first floor · Water plants · Laundry · +1 more. Most overdue: TUBRIC LinkedIn post (16d since last).",
-      "TOMORROW // Thu 10/22: Follow up with Jason · TUBRIC LinkedIn post"
+      "TOMORROW // Thu 10/22: Follow up with Jason · TUBRIC LinkedIn post",
+      "DONE // 1 today · streak 4d"
     ],
     "asks": [
       "'Start ABCD work for Jason' got pushed 3x. Shrink it, pin it to a day, or drop it?",
@@ -42,8 +43,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-21T12:58:54.067Z",
-    "lastActivitySeen": "2026-10-21T12:58:54.067Z"
+    "lastClaudeSync": "2026-10-21T15:06:08.803Z",
+    "lastActivitySeen": "2026-10-21T15:06:08.803Z"
   },
   "cats": {
     "admin": {
@@ -3846,6 +3847,30 @@
       "doneAt": "2026-09-19T17:00:00.000Z",
       "src": "import"
     },
+    "t_na4bi6p6": {
+      "id": "t_na4bi6p6",
+      "title": "Sent session reminder texts",
+      "cat": "psc",
+      "status": "done",
+      "due": null,
+      "time": null,
+      "plan": "2026-10-21",
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-21T15:06:18.571Z",
+      "updated": "2026-10-21T15:06:29.342Z",
+      "doneAt": "2026-10-21T15:06:18.715Z",
+      "src": "chat"
+    },
     "t_na6j9ch6": {
       "id": "t_na6j9ch6",
       "title": "Semester payment",
@@ -7465,6 +7490,16 @@
       "from": null,
       "to": null
     },
+    "a_fcr3aobn": {
+      "id": "a_fcr3aobn",
+      "at": "2026-10-21T15:06:29.342Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_na4bi6p6",
+      "title": "Sent session reminder texts",
+      "from": null,
+      "to": "cat"
+    },
     "a_fcwzu6ez": {
       "id": "a_fcwzu6ez",
       "at": "2026-10-07T02:20:29.501Z",
@@ -7684,6 +7719,16 @@
       "title": "SPARK grant update (RPPR)",
       "from": null,
       "to": null
+    },
+    "a_h8si4glh": {
+      "id": "a_h8si4glh",
+      "at": "2026-10-21T15:06:18.571Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_na4bi6p6",
+      "title": "Sent session reminder texts",
+      "from": null,
+      "to": "2026-10-21"
     },
     "a_hd7r8n59": {
       "id": "a_hd7r8n59",
@@ -8362,6 +8407,16 @@
       "type": "done",
       "ref": "t_xouhgc0d",
       "title": "Change Bella's scan to my scan",
+      "from": null,
+      "to": null
+    },
+    "a_ogzubn27": {
+      "id": "a_ogzubn27",
+      "at": "2026-10-21T15:06:18.715Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_na4bi6p6",
+      "title": "Sent session reminder texts",
       "from": null,
       "to": null
     },
