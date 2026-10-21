@@ -23,7 +23,7 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-21T15:06:29.665Z",
+    "at": "2026-10-21T15:06:47.399Z",
     "headline": "2 things today.",
     "lines": [
       "DUE TODAY // OCD presentation in CBT",
@@ -34,8 +34,8 @@
     ],
     "asks": [
       "'Start ABCD work for Jason' got pushed 3x. Shrink it, pin it to a day, or drop it?",
-      "Anything coming up for Ziggy?",
-      "Anything coming up for Undergrad?"
+      "Anything coming up for Meetings?",
+      "Anything coming up for Ziggy?"
     ],
     "focus": []
   },
@@ -43,8 +43,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-21T15:06:08.803Z",
-    "lastActivitySeen": "2026-10-21T15:06:08.803Z"
+    "lastClaudeSync": "2026-10-21T15:06:45.518Z",
+    "lastActivitySeen": "2026-10-21T15:06:45.518Z"
   },
   "cats": {
     "admin": {
@@ -3749,6 +3749,30 @@
       "created": "2026-10-12T19:28:55.739Z",
       "updated": "2026-10-21T05:18:28.950Z",
       "doneAt": "2026-10-20T16:00:00.000Z",
+      "src": "chat"
+    },
+    "t_mushfx1z": {
+      "id": "t_mushfx1z",
+      "title": "Add new client to hours tracking",
+      "cat": "psc",
+      "status": "todo",
+      "due": null,
+      "time": null,
+      "plan": null,
+      "est": 10,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-21T15:06:47.165Z",
+      "updated": "2026-10-21T15:06:47.165Z",
+      "doneAt": null,
       "src": "chat"
     },
     "t_mvasgn4": {
@@ -7729,6 +7753,16 @@
       "title": "Sent session reminder texts",
       "from": null,
       "to": "2026-10-21"
+    },
+    "a_hafo8h30": {
+      "id": "a_hafo8h30",
+      "at": "2026-10-21T15:06:47.165Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_mushfx1z",
+      "title": "Add new client to hours tracking",
+      "from": null,
+      "to": null
     },
     "a_hd7r8n59": {
       "id": "a_hd7r8n59",
