@@ -23,21 +23,19 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-21T01:00:34.755Z",
-    "headline": "12 things today (3 overdue). Next up: Meeting with Phil at 1pm.",
+    "at": "2026-10-21T05:14:54.922Z",
+    "headline": "3 things today.",
     "lines": [
-      "DUE TODAY // OCD pres: rehearse",
-      "OVERDUE // OCD pres: build workshop (7d late) · OCD pres: illustrations for dyads (1d late) · OCD pres: write main script (1d late)",
-      "MEETINGS // 1pm Meeting with Phil",
-      "INCOMING // OCD presentation in CBT Wed 10/21 (1d) · AI pres: build slides + plan, send out Thu 10/22 (2d) · Department AI presentation Mon 10/26 (6d)",
-      "CHORES // TUBRIC LinkedIn post · Clean first floor · Water plants · Closet reset · +1 more. Most overdue: TUBRIC LinkedIn post (15d since last).",
-      "TOMORROW // Wed 10/21: DUE OCD presentation in CBT · AI pres: convert voice transcripts · AI pres: start a Claude Code thread"
+      "DUE TODAY // OCD presentation in CBT",
+      "INCOMING // AI pres: build slides + plan, send out Thu 10/22 (1d) · Department AI presentation Mon 10/26 (5d)",
+      "CHORES // TUBRIC LinkedIn post · Clean first floor · Water plants · Laundry · +1 more. Most overdue: TUBRIC LinkedIn post (16d since last).",
+      "TOMORROW // Thu 10/22: DUE AI pres: build slides + plan, send out · TUBRIC LinkedIn post"
     ],
     "asks": [
-      "'OCD pres: build workshop' is 7d late. Still on? New date or drop it?",
-      "'Laundry: cleanup (fold + put away)' got pushed 3x. Shrink it, pin it to a day, or drop it?",
-      "Anything coming up for Undergrad?",
-      "'OCD pres: illustrations for dyads' is 1d late. Still on? New date or drop it?"
+      "Did 'Meeting with Phil' happen?",
+      "'Start ABCD work for Jason' got pushed 3x. Shrink it, pin it to a day, or drop it?",
+      "Anything coming up for EF?",
+      "Anything coming up for Ziggy?"
     ],
     "focus": []
   },
@@ -45,8 +43,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-21T01:00:28.728Z",
-    "lastActivitySeen": "2026-10-21T01:00:28.728Z"
+    "lastClaudeSync": "2026-10-21T05:14:31.220Z",
+    "lastActivitySeen": "2026-10-21T05:14:31.220Z"
   },
   "cats": {
     "admin": {
@@ -1945,12 +1943,12 @@
     },
     "t_8khp74co": {
       "id": "t_8khp74co",
-      "title": "TUBRIC LinkedIn post (Sunday)",
+      "title": "TUBRIC LinkedIn post #2",
       "cat": "tubric",
       "status": "todo",
       "due": null,
       "time": null,
-      "plan": "2026-10-18",
+      "plan": "2026-10-23",
       "est": 20,
       "spent": 0,
       "blocks": [],
@@ -1960,10 +1958,10 @@
       "notes": "",
       "subs": [],
       "triage": false,
-      "moved": 0,
+      "moved": 1,
       "win": false,
       "created": "2026-10-17T01:11:50.123Z",
-      "updated": "2026-10-17T01:11:50.123Z",
+      "updated": "2026-10-21T05:14:50.635Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -2054,20 +2052,20 @@
       "status": "todo",
       "due": null,
       "time": null,
-      "plan": "2026-10-19",
+      "plan": "2026-10-23",
       "est": 90,
       "spent": 0,
       "blocks": [],
       "project": null,
       "prio": 1,
       "kind": "task",
-      "notes": "",
+      "notes": "Doing this in the meeting with Jason (hopefully Fri)",
       "subs": [],
       "triage": false,
-      "moved": 2,
+      "moved": 3,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-12T19:17:19.106Z",
+      "updated": "2026-10-21T05:14:50.959Z",
       "doneAt": null,
       "src": "import"
     },
@@ -3088,7 +3086,7 @@
       "status": "todo",
       "due": null,
       "time": null,
-      "plan": "2026-10-17",
+      "plan": "2026-10-22",
       "est": 20,
       "spent": 0,
       "blocks": [],
@@ -3098,10 +3096,10 @@
       "notes": "",
       "subs": [],
       "triage": false,
-      "moved": 1,
+      "moved": 2,
       "win": false,
       "created": "2026-10-10T06:05:29.919Z",
-      "updated": "2026-10-16T14:44:55.365Z",
+      "updated": "2026-10-21T05:14:50.415Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -4045,7 +4043,7 @@
       "id": "t_ocdillus",
       "title": "OCD pres: illustrations for dyads",
       "cat": "cbt",
-      "status": "todo",
+      "status": "done",
       "due": "2026-10-19",
       "time": null,
       "plan": null,
@@ -4061,8 +4059,8 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-16T14:51:26.217Z",
-      "doneAt": null,
+      "updated": "2026-10-21T05:14:50.059Z",
+      "doneAt": "2026-10-19T16:00:00.000Z",
       "src": "import"
     },
     "t_ocdpresent": {
@@ -4093,7 +4091,7 @@
       "id": "t_ocdrehearse",
       "title": "OCD pres: rehearse",
       "cat": "cbt",
-      "status": "todo",
+      "status": "done",
       "due": "2026-10-20",
       "time": null,
       "plan": null,
@@ -4109,15 +4107,15 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-16T14:51:26.363Z",
-      "doneAt": null,
+      "updated": "2026-10-21T05:14:50.164Z",
+      "doneAt": "2026-10-20T16:00:00.000Z",
       "src": "import"
     },
     "t_ocdscript": {
       "id": "t_ocdscript",
       "title": "OCD pres: write main script",
       "cat": "cbt",
-      "status": "todo",
+      "status": "done",
       "due": "2026-10-19",
       "time": null,
       "plan": "2026-10-19",
@@ -4133,15 +4131,15 @@
       "moved": 1,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-16T14:51:26.504Z",
-      "doneAt": null,
+      "updated": "2026-10-21T05:14:49.949Z",
+      "doneAt": "2026-10-19T16:00:00.000Z",
       "src": "import"
     },
     "t_ocdwork": {
       "id": "t_ocdwork",
       "title": "OCD pres: build workshop",
       "cat": "cbt",
-      "status": "todo",
+      "status": "done",
       "due": "2026-10-13",
       "time": null,
       "plan": null,
@@ -4157,8 +4155,8 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-16T14:51:26.649Z",
-      "doneAt": null,
+      "updated": "2026-10-21T05:14:49.632Z",
+      "doneAt": "2026-10-18T16:00:00.000Z",
       "src": "import"
     },
     "t_on561py9": {
@@ -4237,7 +4235,7 @@
       "id": "t_pj82uec1",
       "title": "Rewatch neuromelanin video",
       "cat": "sdn",
-      "status": "todo",
+      "status": "done",
       "due": null,
       "time": null,
       "plan": "2026-10-20",
@@ -4253,15 +4251,15 @@
       "moved": 1,
       "win": false,
       "created": "2026-10-06T16:06:22.566Z",
-      "updated": "2026-10-12T19:17:19.264Z",
-      "doneAt": null,
+      "updated": "2026-10-21T05:14:50.291Z",
+      "doneAt": "2026-10-20T16:00:00.000Z",
       "src": "chat"
     },
     "t_pmvc74vr": {
       "id": "t_pmvc74vr",
       "title": "Laundry: cleanup (fold + put away)",
       "cat": "home",
-      "status": "todo",
+      "status": "done",
       "due": null,
       "time": null,
       "plan": "2026-10-13",
@@ -4277,8 +4275,8 @@
       "moved": 3,
       "win": false,
       "created": "2026-10-07T18:03:58.764Z",
-      "updated": "2026-10-13T16:25:11.002Z",
-      "doneAt": null,
+      "updated": "2026-10-21T05:14:49.741Z",
+      "doneAt": "2026-10-18T16:00:00.000Z",
       "src": "chat"
     },
     "t_pn7sqwj7": {
@@ -4360,7 +4358,7 @@
       "status": "todo",
       "due": null,
       "time": null,
-      "plan": "2026-10-19",
+      "plan": "2026-10-23",
       "est": 60,
       "spent": 0,
       "blocks": [],
@@ -4370,10 +4368,10 @@
       "notes": "",
       "subs": [],
       "triage": false,
-      "moved": 1,
+      "moved": 2,
       "win": false,
       "created": "2026-10-12T19:17:20.080Z",
-      "updated": "2026-10-16T14:44:55.017Z",
+      "updated": "2026-10-21T05:14:50.735Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -5712,7 +5710,7 @@
       "id": "t_zhr60254",
       "title": "AI pres: start a Claude Code thread",
       "cat": "gradroles",
-      "status": "todo",
+      "status": "done",
       "due": null,
       "time": null,
       "plan": "2026-10-21",
@@ -5728,8 +5726,8 @@
       "moved": 2,
       "win": false,
       "created": "2026-10-05T14:17:30.159Z",
-      "updated": "2026-10-16T14:44:54.775Z",
-      "doneAt": null,
+      "updated": "2026-10-21T05:14:49.842Z",
+      "doneAt": "2026-10-18T16:00:00.000Z",
       "src": "chat"
     },
     "t_zv9lb6lq": {
@@ -6013,6 +6011,16 @@
       "title": "Set up meeting with Nyx",
       "from": null,
       "to": "2026-10-08"
+    },
+    "a_0lffseav": {
+      "id": "a_0lffseav",
+      "at": "2026-10-21T05:14:50.959Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_abcdjason",
+      "title": "Start ABCD work for Jason",
+      "from": null,
+      "to": "notes"
     },
     "a_0muzy5fe": {
       "id": "a_0muzy5fe",
@@ -6584,6 +6592,16 @@
       "from": null,
       "to": null
     },
+    "a_62ff0qai": {
+      "id": "a_62ff0qai",
+      "at": "2026-10-21T05:14:50.164Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_ocdrehearse",
+      "title": "OCD pres: rehearse",
+      "from": null,
+      "to": null
+    },
     "a_63bh3hu1": {
       "id": "a_63bh3hu1",
       "at": "2026-10-10T04:42:38.890Z",
@@ -6731,6 +6749,16 @@
       "type": "done",
       "ref": "t_johanna",
       "title": "Add notes from Johanna's meeting to RSA",
+      "from": null,
+      "to": null
+    },
+    "a_7n2sf5p5": {
+      "id": "a_7n2sf5p5",
+      "at": "2026-10-21T05:14:50.059Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_ocdillus",
+      "title": "OCD pres: illustrations for dyads",
       "from": null,
       "to": null
     },
@@ -6883,6 +6911,16 @@
       "title": "Set up meeting with Nyx",
       "from": "2026-10-08",
       "to": "2026-10-07"
+    },
+    "a_98tybkeo": {
+      "id": "a_98tybkeo",
+      "at": "2026-10-21T05:14:50.291Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_pj82uec1",
+      "title": "Rewatch neuromelanin video",
+      "from": null,
+      "to": null
     },
     "a_9clxm0mv": {
       "id": "a_9clxm0mv",
@@ -7644,6 +7682,16 @@
       "from": null,
       "to": "added"
     },
+    "a_i430magf": {
+      "id": "a_i430magf",
+      "at": "2026-10-21T05:14:50.735Z",
+      "src": "chat",
+      "type": "move",
+      "ref": "t_rc0owh8i",
+      "title": "Rerun PPI for Teij email",
+      "from": "2026-10-19",
+      "to": "2026-10-23"
+    },
     "a_i88i1nw2": {
       "id": "a_i88i1nw2",
       "at": "2026-10-09T17:55:36.720Z",
@@ -7653,6 +7701,16 @@
       "title": "Nyx: follow-up work after the meeting",
       "from": null,
       "to": "2026-10-09"
+    },
+    "a_idj3wz8m": {
+      "id": "a_idj3wz8m",
+      "at": "2026-10-21T05:14:50.528Z",
+      "src": "chat",
+      "type": "move",
+      "ref": "t_8khp74co",
+      "title": "TUBRIC LinkedIn post #2",
+      "from": "2026-10-18",
+      "to": "2026-10-23"
     },
     "a_ie3ax8oy": {
       "id": "a_ie3ax8oy",
@@ -7994,6 +8052,16 @@
       "from": null,
       "to": "done"
     },
+    "a_liiye4wn": {
+      "id": "a_liiye4wn",
+      "at": "2026-10-21T05:14:50.635Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_8khp74co",
+      "title": "TUBRIC LinkedIn post #2",
+      "from": null,
+      "to": "title"
+    },
     "a_lu3kewfl": {
       "id": "a_lu3kewfl",
       "at": "2026-10-06T15:51:21.736Z",
@@ -8304,6 +8372,16 @@
       "from": null,
       "to": null
     },
+    "a_pgf62yte": {
+      "id": "a_pgf62yte",
+      "at": "2026-10-21T05:14:49.741Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_pmvc74vr",
+      "title": "Laundry: cleanup (fold + put away)",
+      "from": null,
+      "to": null
+    },
     "a_pibyuj7e": {
       "id": "a_pibyuj7e",
       "at": "2026-10-05T20:19:57.755Z",
@@ -8423,6 +8501,16 @@
       "title": "Auto-plan: 9 tasks",
       "from": null,
       "to": "planned"
+    },
+    "a_qktwkj3c": {
+      "id": "a_qktwkj3c",
+      "at": "2026-10-21T05:14:50.853Z",
+      "src": "chat",
+      "type": "move",
+      "ref": "t_abcdjason",
+      "title": "Start ABCD work for Jason",
+      "from": "2026-10-19",
+      "to": "2026-10-23"
     },
     "a_qxabr8o1": {
       "id": "a_qxabr8o1",
@@ -8714,6 +8802,16 @@
       "from": null,
       "to": "est,notes"
     },
+    "a_t4i8lwjb": {
+      "id": "a_t4i8lwjb",
+      "at": "2026-10-21T05:14:49.632Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_ocdwork",
+      "title": "OCD pres: build workshop",
+      "from": null,
+      "to": null
+    },
     "a_t7i7og64": {
       "id": "a_t7i7og64",
       "at": "2026-10-07T04:09:53.319Z",
@@ -8723,6 +8821,16 @@
       "title": "Review paper: first chip (restart)",
       "from": null,
       "to": "15m"
+    },
+    "a_tidpodux": {
+      "id": "a_tidpodux",
+      "at": "2026-10-21T05:14:49.949Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_ocdscript",
+      "title": "OCD pres: write main script",
+      "from": null,
+      "to": null
     },
     "a_tmsfaoog": {
       "id": "a_tmsfaoog",
@@ -9014,6 +9122,16 @@
       "from": null,
       "to": "added"
     },
+    "a_xmhgx4nt": {
+      "id": "a_xmhgx4nt",
+      "at": "2026-10-21T05:14:49.842Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_zhr60254",
+      "title": "AI pres: start a Claude Code thread",
+      "from": null,
+      "to": null
+    },
     "a_xp3gx7p7": {
       "id": "a_xp3gx7p7",
       "at": "2026-10-05T19:40:51.939Z",
@@ -9120,7 +9238,7 @@
       "src": "chat",
       "type": "add",
       "ref": "t_8khp74co",
-      "title": "TUBRIC LinkedIn post (Sunday)",
+      "title": "TUBRIC LinkedIn post #2",
       "from": null,
       "to": "2026-10-18"
     },
@@ -9323,6 +9441,16 @@
       "title": "Grocery run",
       "from": null,
       "to": "last,log"
+    },
+    "a_zvsszoib": {
+      "id": "a_zvsszoib",
+      "at": "2026-10-21T05:14:50.415Z",
+      "src": "chat",
+      "type": "move",
+      "ref": "t_hats3lws",
+      "title": "TUBRIC LinkedIn post",
+      "from": "2026-10-17",
+      "to": "2026-10-22"
     }
   }
 }
