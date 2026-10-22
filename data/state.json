@@ -23,7 +23,7 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-22T16:25:17.398Z",
+    "at": "2026-10-22T16:25:30.451Z",
     "headline": "3 things today.",
     "lines": [
       "INCOMING // AI pres: build slides + plan, send out Fri 10/23 (1d) · Department AI presentation Mon 10/26 (4d)",
@@ -697,7 +697,7 @@
       "name": "OCD presentation",
       "cat": "cbt",
       "kind": "project",
-      "status": "active",
+      "status": "done",
       "due": "2026-10-21",
       "goal": "CBT class: OCD workshop + presentation on 10/21",
       "milestones": [
@@ -755,7 +755,7 @@
       "notes": "",
       "order": 1,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-12T21:20:45.866Z"
+      "updated": "2026-10-22T16:25:30.218Z"
     },
     "p_predis": {
       "id": "p_predis",
@@ -7331,6 +7331,16 @@
       "title": "Laundry",
       "from": null,
       "to": null
+    },
+    "a_d1537h86": {
+      "id": "a_d1537h86",
+      "at": "2026-10-22T16:25:30.218Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "p_ocd",
+      "title": "OCD presentation",
+      "from": null,
+      "to": "status"
     },
     "a_d3gwjfzc": {
       "id": "a_d3gwjfzc",
