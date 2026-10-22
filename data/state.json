@@ -23,19 +23,17 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-22T12:59:31.663Z",
-    "headline": "4 things today (1 overdue).",
+    "at": "2026-10-22T16:25:17.398Z",
+    "headline": "3 things today.",
     "lines": [
-      "OVERDUE // OCD presentation in CBT (1d late)",
       "INCOMING // AI pres: build slides + plan, send out Fri 10/23 (1d) · Department AI presentation Mon 10/26 (4d)",
       "CHORES // TUBRIC LinkedIn post · Clean first floor · Water plants · Laundry · +2 more. Most overdue: TUBRIC LinkedIn post (17d since last).",
       "TOMORROW // Fri 10/23: DUE AI pres: build slides + plan, send out · Rerun PPI for Teij email · Start ABCD work for Jason · TUBRIC LinkedIn post #2"
     ],
     "asks": [
-      "'OCD presentation in CBT' is 1d late. Still on? New date or drop it?",
       "'Start ABCD work for Jason' got pushed 3x. Shrink it, pin it to a day, or drop it?",
-      "Anything coming up for Undergrad?",
-      "Anything coming up for EF?"
+      "Anything coming up for EF?",
+      "Anything coming up for Meetings?"
     ],
     "focus": []
   },
@@ -43,8 +41,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-22T12:59:24.489Z",
-    "lastActivitySeen": "2026-10-22T12:59:24.489Z"
+    "lastClaudeSync": "2026-10-22T16:25:13.893Z",
+    "lastActivitySeen": "2026-10-22T16:25:13.893Z"
   },
   "cats": {
     "admin": {
@@ -4139,7 +4137,7 @@
       "id": "t_ocdpresent",
       "title": "OCD presentation in CBT",
       "cat": "cbt",
-      "status": "todo",
+      "status": "done",
       "due": "2026-10-21",
       "time": null,
       "plan": null,
@@ -4155,8 +4153,8 @@
       "moved": 0,
       "win": true,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T04:00:00.000Z",
-      "doneAt": null,
+      "updated": "2026-10-22T16:25:17.085Z",
+      "doneAt": "2026-10-21T16:00:00.000Z",
       "src": "import"
     },
     "t_ocdrehearse": {
@@ -8663,6 +8661,16 @@
       "title": "Start ABCD work for Jason",
       "from": "2026-10-19",
       "to": "2026-10-23"
+    },
+    "a_qs6lkwnp": {
+      "id": "a_qs6lkwnp",
+      "at": "2026-10-22T16:25:17.085Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_ocdpresent",
+      "title": "OCD presentation in CBT",
+      "from": null,
+      "to": null
     },
     "a_qxabr8o1": {
       "id": "a_qxabr8o1",
