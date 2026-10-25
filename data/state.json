@@ -23,19 +23,19 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-25T01:00:28.357Z",
+    "at": "2026-10-25T12:59:18.366Z",
     "headline": "7 things today (1 overdue).",
     "lines": [
-      "OVERDUE // AI pres: build slides + plan, send out (1d late)",
-      "INCOMING // Department AI presentation Mon 10/26 (2d)",
-      "CHORES // TUBRIC LinkedIn post · Clean first floor · Water plants · Laundry · +2 more. Most overdue: TUBRIC LinkedIn post (19d since last).",
-      "TOMORROW // Sun 10/25: nothing on the list yet"
+      "OVERDUE // AI pres: build slides + plan, send out (2d late)",
+      "INCOMING // Department AI presentation Mon 10/26 (1d) · ABCD review meeting Sun 11/1 (7d)",
+      "CHORES // TUBRIC LinkedIn post · Clean first floor · Water plants · Laundry · +2 more. Most overdue: TUBRIC LinkedIn post (20d since last).",
+      "TOMORROW // Mon 10/26: DUE Department AI presentation"
     ],
     "asks": [
-      "'AI pres: build slides + plan, send out' is 1d late. Still on? New date or drop it?",
+      "'AI pres: build slides + plan, send out' is 2d late. Still on? New date or drop it?",
       "'Start ABCD work for Jason' got pushed 3x. Shrink it, pin it to a day, or drop it?",
-      "Anything coming up for Undergrad?",
-      "Anything coming up for EF?"
+      "Anything coming up for Meetings?",
+      "Anything coming up for Ziggy?"
     ],
     "focus": []
   },
@@ -43,8 +43,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-25T01:00:21.978Z",
-    "lastActivitySeen": "2026-10-25T01:00:21.978Z"
+    "lastClaudeSync": "2026-10-25T12:58:53.331Z",
+    "lastActivitySeen": "2026-10-25T12:58:53.331Z"
   },
   "cats": {
     "admin": {
