@@ -23,17 +23,15 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-26T13:03:26.656Z",
-    "headline": "8 things today (1 overdue).",
+    "at": "2026-10-26T14:57:08.719Z",
+    "headline": "4 things today.",
     "lines": [
       "DUE TODAY // Department AI presentation",
-      "OVERDUE // AI pres: build slides + plan, send out (3d late)",
       "INCOMING // ABCD review meeting Sun 11/1 (6d)",
-      "CHORES // TUBRIC LinkedIn post · Clean first floor · Water plants · Laundry · +2 more. Most overdue: TUBRIC LinkedIn post (21d since last).",
+      "CHORES // Clean first floor · Laundry · Closet reset. Most overdue: Clean first floor (17d since last).",
       "TOMORROW // Tue 10/27: nothing on the list yet"
     ],
     "asks": [
-      "'AI pres: build slides + plan, send out' is 3d late. Still on? New date or drop it?",
       "'Start ABCD work for Jason' got pushed 3x. Shrink it, pin it to a day, or drop it?",
       "Anything coming up for coursework?",
       "Anything coming up for Undergrad?"
@@ -44,8 +42,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-26T13:03:19.603Z",
-    "lastActivitySeen": "2026-10-26T13:03:19.603Z"
+    "lastClaudeSync": "2026-10-26T14:56:59.783Z",
+    "lastActivitySeen": "2026-10-26T14:56:59.783Z"
   },
   "cats": {
     "admin": {
@@ -1970,7 +1968,7 @@
       "id": "t_8khp74co",
       "title": "TUBRIC LinkedIn post #2",
       "cat": "tubric",
-      "status": "todo",
+      "status": "done",
       "due": null,
       "time": null,
       "plan": "2026-10-23",
@@ -1986,8 +1984,8 @@
       "moved": 1,
       "win": false,
       "created": "2026-10-17T01:11:50.123Z",
-      "updated": "2026-10-21T05:14:50.635Z",
-      "doneAt": null,
+      "updated": "2026-10-26T14:57:03.919Z",
+      "doneAt": "2026-10-23T16:00:00.000Z",
       "src": "chat"
     },
     "t_8zpmocd1": {
@@ -2290,7 +2288,7 @@
       "id": "t_cdhxbtfb",
       "title": "AI pres: build slides + plan, send out",
       "cat": "gradroles",
-      "status": "todo",
+      "status": "done",
       "due": "2026-10-23",
       "time": null,
       "plan": null,
@@ -2306,8 +2304,8 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-05T14:17:30.295Z",
-      "updated": "2026-10-21T05:18:35.816Z",
-      "doneAt": null,
+      "updated": "2026-10-26T14:57:04.546Z",
+      "doneAt": "2026-10-25T16:00:00.000Z",
       "src": "chat"
     },
     "t_cerd8psv": {
@@ -3108,7 +3106,7 @@
       "id": "t_hats3lws",
       "title": "TUBRIC LinkedIn post",
       "cat": "tubric",
-      "status": "todo",
+      "status": "done",
       "due": null,
       "time": null,
       "plan": "2026-10-22",
@@ -3124,8 +3122,8 @@
       "moved": 2,
       "win": false,
       "created": "2026-10-10T06:05:29.919Z",
-      "updated": "2026-10-21T05:14:50.415Z",
-      "doneAt": null,
+      "updated": "2026-10-26T14:57:03.779Z",
+      "doneAt": "2026-10-22T16:00:00.000Z",
       "src": "chat"
     },
     "t_hd9xybgp": {
@@ -4431,20 +4429,20 @@
       "status": "todo",
       "due": null,
       "time": null,
-      "plan": "2026-10-23",
+      "plan": null,
       "est": 60,
       "spent": 0,
       "blocks": [],
       "project": null,
       "prio": 1,
       "kind": "analysis",
-      "notes": "",
+      "notes": "Deep back burner for now (10/26)",
       "subs": [],
       "triage": false,
       "moved": 2,
       "win": false,
       "created": "2026-10-12T19:17:20.080Z",
-      "updated": "2026-10-21T05:14:50.735Z",
+      "updated": "2026-10-26T14:57:04.683Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -5899,18 +5897,19 @@
       "cat": "home",
       "every": 7,
       "perDay": 1,
-      "last": "2026-10-15",
+      "last": "2026-10-25",
       "start": null,
       "log": [
         "2026-09-20",
         "2026-10-03",
-        "2026-10-15"
+        "2026-10-15",
+        "2026-10-25"
       ],
       "min": 5,
       "active": true,
       "notes": "",
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-16T14:45:02.245Z"
+      "updated": "2026-10-26T14:57:04.410Z"
     },
     "c_k6mbnv2u": {
       "id": "c_k6mbnv2u",
@@ -5918,16 +5917,17 @@
       "cat": "tubric",
       "every": 7,
       "perDay": 1,
-      "last": "2026-10-05",
+      "last": "2026-10-23",
       "start": null,
       "log": [
-        "2026-10-05"
+        "2026-10-05",
+        "2026-10-23"
       ],
       "min": 5,
       "active": true,
       "notes": "",
       "created": "2026-10-05T16:28:10.441Z",
-      "updated": "2026-10-05T16:28:10.551Z"
+      "updated": "2026-10-26T14:57:04.054Z"
     },
     "c_laundry": {
       "id": "c_laundry",
@@ -5955,16 +5955,17 @@
       "cat": "home",
       "every": 7,
       "perDay": 1,
-      "last": "2026-10-11",
+      "last": "2026-10-24",
       "start": null,
       "log": [
-        "2026-10-11"
+        "2026-10-11",
+        "2026-10-24"
       ],
       "min": 5,
       "active": true,
       "notes": "",
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-12T19:17:18.357Z"
+      "updated": "2026-10-26T14:57:04.183Z"
     },
     "c_ziggy": {
       "id": "c_ziggy",
@@ -6455,6 +6456,16 @@
       "from": null,
       "to": null
     },
+    "a_3i64ntmz": {
+      "id": "a_3i64ntmz",
+      "at": "2026-10-26T14:57:04.546Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_cdhxbtfb",
+      "title": "AI pres: build slides + plan, send out",
+      "from": null,
+      "to": null
+    },
     "a_3kk81m05": {
       "id": "a_3kk81m05",
       "at": "2026-10-05T14:17:30.453Z",
@@ -6542,6 +6553,16 @@
       "type": "done",
       "ref": "t_loqkgrp2",
       "title": "Texted Jesse",
+      "from": null,
+      "to": null
+    },
+    "a_4oi91txq": {
+      "id": "a_4oi91txq",
+      "at": "2026-10-26T14:57:03.779Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_hats3lws",
+      "title": "TUBRIC LinkedIn post",
       "from": null,
       "to": null
     },
@@ -7125,6 +7146,16 @@
       "from": null,
       "to": "due,plan"
     },
+    "a_asy3k7ss": {
+      "id": "a_asy3k7ss",
+      "at": "2026-10-26T14:57:04.683Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_rc0owh8i",
+      "title": "Rerun PPI for Teij email",
+      "from": null,
+      "to": "plan,notes"
+    },
     "a_aujdc047": {
       "id": "a_aujdc047",
       "at": "2026-10-07T04:09:47.495Z",
@@ -7264,6 +7295,16 @@
       "title": "Email Phil: E-ADIS got minimal feedback, it's ready",
       "from": null,
       "to": "2026-10-07"
+    },
+    "a_cepu52wv": {
+      "id": "a_cepu52wv",
+      "at": "2026-10-26T14:57:04.183Z",
+      "src": "chat",
+      "type": "chore",
+      "ref": "c_plants",
+      "title": "Water plants",
+      "from": null,
+      "to": "2026-10-24"
     },
     "a_cfr2osvv": {
       "id": "a_cfr2osvv",
@@ -8705,6 +8746,16 @@
       "from": null,
       "to": "2026-10-13"
     },
+    "a_r05kmpao": {
+      "id": "a_r05kmpao",
+      "at": "2026-10-26T14:57:04.410Z",
+      "src": "chat",
+      "type": "chore",
+      "ref": "c_groceries",
+      "title": "Grocery run",
+      "from": null,
+      "to": "2026-10-25"
+    },
     "a_r1mzs03c": {
       "id": "a_r1mzs03c",
       "at": "2026-10-12T19:17:19.593Z",
@@ -9115,6 +9166,16 @@
       "from": null,
       "to": "blocks"
     },
+    "a_uvu4jepb": {
+      "id": "a_uvu4jepb",
+      "at": "2026-10-26T14:57:03.919Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_8khp74co",
+      "title": "TUBRIC LinkedIn post #2",
+      "from": null,
+      "to": null
+    },
     "a_v1h200lt": {
       "id": "a_v1h200lt",
       "at": "2026-10-16T14:51:26.504Z",
@@ -9174,6 +9235,16 @@
       "title": "Lily gift: order or buy it",
       "from": null,
       "to": "2026-10-10"
+    },
+    "a_viyipd62": {
+      "id": "a_viyipd62",
+      "at": "2026-10-26T14:57:04.054Z",
+      "src": "chat",
+      "type": "chore",
+      "ref": "c_k6mbnv2u",
+      "title": "TUBRIC LinkedIn post",
+      "from": null,
+      "to": "2026-10-23"
     },
     "a_vrpav2q1": {
       "id": "a_vrpav2q1",
