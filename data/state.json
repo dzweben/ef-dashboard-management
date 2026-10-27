@@ -23,18 +23,19 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-27T01:00:56.260Z",
-    "headline": "4 things today.",
+    "at": "2026-10-27T13:01:36.105Z",
+    "headline": "4 things today (1 overdue).",
     "lines": [
-      "DUE TODAY // Department AI presentation",
-      "INCOMING // ABCD review meeting Sun 11/1 (6d)",
-      "CHORES // Clean first floor · Laundry · Closet reset. Most overdue: Clean first floor (17d since last).",
-      "TOMORROW // Tue 10/27: nothing on the list yet"
+      "OVERDUE // Department AI presentation (1d late)",
+      "INCOMING // ABCD review meeting Sun 11/1 (5d)",
+      "CHORES // Clean first floor · Laundry · Closet reset. Most overdue: Clean first floor (18d since last).",
+      "TOMORROW // Wed 10/28: nothing on the list yet"
     ],
     "asks": [
+      "'Department AI presentation' is 1d late. Still on? New date or drop it?",
       "'Start ABCD work for Jason' got pushed 3x. Shrink it, pin it to a day, or drop it?",
-      "Anything coming up for coursework?",
-      "Anything coming up for Undergrad?"
+      "Anything coming up for Ziggy?",
+      "Anything coming up for coursework?"
     ],
     "focus": []
   },
@@ -42,8 +43,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-27T01:00:48.857Z",
-    "lastActivitySeen": "2026-10-27T01:00:48.857Z"
+    "lastClaudeSync": "2026-10-27T13:01:28.755Z",
+    "lastActivitySeen": "2026-10-27T13:01:28.755Z"
   },
   "cats": {
     "admin": {
