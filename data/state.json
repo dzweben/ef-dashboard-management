@@ -23,19 +23,17 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-27T13:01:36.105Z",
-    "headline": "4 things today (1 overdue).",
+    "at": "2026-10-27T13:28:58.555Z",
+    "headline": "1 thing today.",
     "lines": [
-      "OVERDUE // Department AI presentation (1d late)",
       "INCOMING // ABCD review meeting Sun 11/1 (5d)",
-      "CHORES // Clean first floor · Laundry · Closet reset. Most overdue: Clean first floor (18d since last).",
+      "CHORES // Clean first floor · Closet reset. Most overdue: Clean first floor (18d since last).",
       "TOMORROW // Wed 10/28: nothing on the list yet"
     ],
     "asks": [
-      "'Department AI presentation' is 1d late. Still on? New date or drop it?",
       "'Start ABCD work for Jason' got pushed 3x. Shrink it, pin it to a day, or drop it?",
-      "Anything coming up for Ziggy?",
-      "Anything coming up for coursework?"
+      "Anything coming up for EF?",
+      "Anything coming up for Meetings?"
     ],
     "focus": []
   },
@@ -43,8 +41,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-27T13:01:28.755Z",
-    "lastActivitySeen": "2026-10-27T13:01:28.755Z"
+    "lastClaudeSync": "2026-10-27T13:28:38.884Z",
+    "lastActivitySeen": "2026-10-27T13:28:38.884Z"
   },
   "cats": {
     "admin": {
@@ -640,7 +638,7 @@
       "name": "Department AI presentation",
       "cat": "gradroles",
       "kind": "project",
-      "status": "active",
+      "status": "done",
       "due": "2026-10-26",
       "goal": "Present to the department Mon 10/26; slides + plan out by Thu 10/22.",
       "milestones": [
@@ -677,7 +675,7 @@
       "notes": "",
       "order": 0,
       "created": "2026-10-05T14:17:21.417Z",
-      "updated": "2026-10-09T18:29:18.639Z"
+      "updated": "2026-10-27T13:28:47.351Z"
     },
     "p_nf541req": {
       "id": "p_nf541req",
@@ -1345,7 +1343,7 @@
       "id": "t_3e4d9blz",
       "title": "Department AI presentation",
       "cat": "gradroles",
-      "status": "todo",
+      "status": "done",
       "due": "2026-10-26",
       "time": null,
       "plan": null,
@@ -1361,8 +1359,8 @@
       "moved": 0,
       "win": true,
       "created": "2026-10-05T14:17:30.453Z",
-      "updated": "2026-10-05T19:40:51.937Z",
-      "doneAt": null,
+      "updated": "2026-10-27T13:28:47.054Z",
+      "doneAt": "2026-10-26T16:00:00.000Z",
       "src": "chat"
     },
     "t_3ev797ab": {
@@ -1437,6 +1435,30 @@
       "doneAt": "2026-10-08T03:58:07.379Z",
       "src": "chat"
     },
+    "t_46w5afv4": {
+      "id": "t_46w5afv4",
+      "title": "Laundry: put away",
+      "cat": "home",
+      "status": "todo",
+      "due": null,
+      "time": null,
+      "plan": "2026-10-27",
+      "est": 15,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-27T13:28:48.297Z",
+      "updated": "2026-10-27T13:28:48.297Z",
+      "doneAt": null,
+      "src": "chat"
+    },
     "t_47gu573l": {
       "id": "t_47gu573l",
       "title": "Baked cookies",
@@ -1492,20 +1514,20 @@
       "status": "todo",
       "due": null,
       "time": null,
-      "plan": "2026-10-22",
+      "plan": null,
       "est": 10,
       "spent": 0,
       "blocks": [],
       "project": null,
       "prio": 1,
       "kind": "task",
-      "notes": "",
+      "notes": "Jason not really responding (10/27); ABCD work pushed back",
       "subs": [],
       "triage": false,
       "moved": 0,
       "win": false,
       "created": "2026-10-21T05:18:29.246Z",
-      "updated": "2026-10-21T05:18:29.246Z",
+      "updated": "2026-10-27T13:28:47.618Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -2076,20 +2098,20 @@
       "status": "todo",
       "due": null,
       "time": null,
-      "plan": "2026-10-23",
+      "plan": null,
       "est": 90,
       "spent": 0,
       "blocks": [],
       "project": null,
       "prio": 1,
       "kind": "task",
-      "notes": "Doing this in the meeting with Jason (hopefully Fri)",
+      "notes": "Pushed back; Jason not really responding (10/27)",
       "subs": [],
       "triage": false,
       "moved": 3,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-21T05:14:50.959Z",
+      "updated": "2026-10-27T13:28:47.488Z",
       "doneAt": null,
       "src": "import"
     },
@@ -2217,7 +2239,7 @@
       "id": "t_bgaw290s",
       "title": "AI pres: convert voice transcripts",
       "cat": "gradroles",
-      "status": "todo",
+      "status": "done",
       "due": null,
       "time": null,
       "plan": "2026-10-21",
@@ -2233,8 +2255,8 @@
       "moved": 2,
       "win": false,
       "created": "2026-10-05T14:17:30.009Z",
-      "updated": "2026-10-16T14:44:54.898Z",
-      "doneAt": null,
+      "updated": "2026-10-27T13:28:47.191Z",
+      "doneAt": "2026-10-24T16:00:00.000Z",
       "src": "chat"
     },
     "t_boaipt8j": {
@@ -5202,6 +5224,30 @@
       "doneAt": "2026-09-23T17:00:00.000Z",
       "src": "import"
     },
+    "t_vl25ur6v": {
+      "id": "t_vl25ur6v",
+      "title": "Clinical prep",
+      "cat": "psc",
+      "status": "done",
+      "due": null,
+      "time": null,
+      "plan": "2026-10-26",
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-27T13:28:47.762Z",
+      "updated": "2026-10-27T13:28:47.901Z",
+      "doneAt": "2026-10-26T16:00:00.000Z",
+      "src": "chat"
+    },
     "t_vnujsabp": {
       "id": "t_vnujsabp",
       "title": "ABCD review prep",
@@ -5320,6 +5366,30 @@
       "created": "2026-10-07T02:20:18.739Z",
       "updated": "2026-10-07T02:20:18.874Z",
       "doneAt": "2026-10-07T02:20:18.874Z",
+      "src": "chat"
+    },
+    "t_wa5uzzs6": {
+      "id": "t_wa5uzzs6",
+      "title": "Clinical notes",
+      "cat": "psc",
+      "status": "todo",
+      "due": null,
+      "time": null,
+      "plan": "2026-11-02",
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-27T13:28:48.047Z",
+      "updated": "2026-10-27T13:28:48.047Z",
+      "doneAt": null,
       "src": "chat"
     },
     "t_wi5bybtk": {
@@ -5936,19 +6006,20 @@
       "cat": "home",
       "every": 7,
       "perDay": 1,
-      "last": "2026-10-13",
+      "last": "2026-10-26",
       "start": null,
       "log": [
         "2026-08-29",
         "2026-09-19",
         "2026-10-04",
-        "2026-10-13"
+        "2026-10-13",
+        "2026-10-26"
       ],
       "min": 5,
       "active": true,
       "notes": "",
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-13T16:25:10.852Z"
+      "updated": "2026-10-27T13:28:48.166Z"
     },
     "c_plants": {
       "id": "c_plants",
@@ -7127,6 +7198,16 @@
       "from": null,
       "to": "aliases"
     },
+    "a_akj30d8v": {
+      "id": "a_akj30d8v",
+      "at": "2026-10-27T13:28:48.047Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_wa5uzzs6",
+      "title": "Clinical notes",
+      "from": null,
+      "to": "2026-11-02"
+    },
     "a_anjyjjq0": {
       "id": "a_anjyjjq0",
       "at": "2026-10-05T19:54:51.138Z",
@@ -7336,6 +7417,16 @@
       "title": "OCD presentation / Read Barlow chapter",
       "from": null,
       "to": "done"
+    },
+    "a_crw732v4": {
+      "id": "a_crw732v4",
+      "at": "2026-10-27T13:28:47.901Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_vl25ur6v",
+      "title": "Clinical prep",
+      "from": null,
+      "to": null
     },
     "a_cuwkz7f4": {
       "id": "a_cuwkz7f4",
@@ -7767,6 +7858,16 @@
       "from": null,
       "to": "2026-10-10"
     },
+    "a_gtc0x6w3": {
+      "id": "a_gtc0x6w3",
+      "at": "2026-10-27T13:28:47.054Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_3e4d9blz",
+      "title": "Department AI presentation",
+      "from": null,
+      "to": null
+    },
     "a_gxh75gs3": {
       "id": "a_gxh75gs3",
       "at": "2026-10-05T14:17:30.159Z",
@@ -7844,6 +7945,16 @@
       "type": "edit",
       "ref": "p_iy5b0ta6",
       "title": "E-ADIS",
+      "from": null,
+      "to": "status"
+    },
+    "a_hqyzpn22": {
+      "id": "a_hqyzpn22",
+      "at": "2026-10-27T13:28:47.351Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "p_m7qpuz93",
+      "title": "Department AI presentation",
       "from": null,
       "to": "status"
     },
@@ -8487,6 +8598,16 @@
       "from": null,
       "to": "planned"
     },
+    "a_ofcbwo5q": {
+      "id": "a_ofcbwo5q",
+      "at": "2026-10-27T13:28:47.618Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_4e96u3u8",
+      "title": "Follow up with Jason",
+      "from": null,
+      "to": "plan,notes"
+    },
     "a_og8bpk2t": {
       "id": "a_og8bpk2t",
       "at": "2026-10-10T04:42:38.232Z",
@@ -8646,6 +8767,16 @@
       "title": "DEFT documentation for Andrew",
       "from": null,
       "to": null
+    },
+    "a_q7vsmdg7": {
+      "id": "a_q7vsmdg7",
+      "at": "2026-10-27T13:28:48.297Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_46w5afv4",
+      "title": "Laundry: put away",
+      "from": null,
+      "to": "2026-10-27"
     },
     "a_qbkakxf0": {
       "id": "a_qbkakxf0",
@@ -9057,6 +9188,16 @@
       "from": null,
       "to": "15m"
     },
+    "a_tfzaegd3": {
+      "id": "a_tfzaegd3",
+      "at": "2026-10-27T13:28:47.762Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_vl25ur6v",
+      "title": "Clinical prep",
+      "from": null,
+      "to": "2026-10-26"
+    },
     "a_tidpodux": {
       "id": "a_tidpodux",
       "at": "2026-10-21T05:14:49.949Z",
@@ -9076,6 +9217,16 @@
       "title": "Worked through analyses for Nyx",
       "from": null,
       "to": null
+    },
+    "a_tqfidyzh": {
+      "id": "a_tqfidyzh",
+      "at": "2026-10-27T13:28:47.488Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_abcdjason",
+      "title": "Start ABCD work for Jason",
+      "from": null,
+      "to": "plan,notes"
     },
     "a_tsii79h8": {
       "id": "a_tsii79h8",
@@ -9287,6 +9438,16 @@
       "from": "2026-10-09",
       "to": "2026-10-11"
     },
+    "a_wd5sqoul": {
+      "id": "a_wd5sqoul",
+      "at": "2026-10-27T13:28:48.166Z",
+      "src": "chat",
+      "type": "chore",
+      "ref": "c_laundry",
+      "title": "Laundry",
+      "from": null,
+      "to": "2026-10-26"
+    },
     "a_wmxq2qat": {
       "id": "a_wmxq2qat",
       "at": "2026-10-05T14:17:29.847Z",
@@ -9356,6 +9517,16 @@
       "title": "OCD pres: build workshop",
       "from": null,
       "to": "est,notes"
+    },
+    "a_x98j2blj": {
+      "id": "a_x98j2blj",
+      "at": "2026-10-27T13:28:47.191Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_bgaw290s",
+      "title": "AI pres: convert voice transcripts",
+      "from": null,
+      "to": null
     },
     "a_xamx2vwi": {
       "id": "a_xamx2vwi",
