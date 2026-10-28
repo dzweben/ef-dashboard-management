@@ -23,7 +23,7 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-28T13:00:45.975Z",
+    "at": "2026-10-28T13:44:45.813Z",
     "headline": "1 thing today.",
     "lines": [
       "INCOMING // ABCD review meeting Sun 11/1 (4d)",
@@ -41,8 +41,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-28T13:00:39.734Z",
-    "lastActivitySeen": "2026-10-28T13:00:39.734Z"
+    "lastClaudeSync": "2026-10-28T13:44:20.108Z",
+    "lastActivitySeen": "2026-10-28T13:44:20.108Z"
   },
   "cats": {
     "admin": {
@@ -1795,6 +1795,30 @@
       "doneAt": "2026-10-15T16:00:00.000Z",
       "src": "chat"
     },
+    "t_6xqcqbe6": {
+      "id": "t_6xqcqbe6",
+      "title": "Clinical notes",
+      "cat": "psc",
+      "status": "done",
+      "due": null,
+      "time": null,
+      "plan": "2026-10-27",
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-28T13:44:35.742Z",
+      "updated": "2026-10-28T13:44:35.842Z",
+      "doneAt": "2026-10-27T16:00:00.000Z",
+      "src": "chat"
+    },
     "t_70o15587": {
       "id": "t_70o15587",
       "title": "Fold + put away laundry",
@@ -1821,7 +1845,7 @@
     },
     "t_72h9qejc": {
       "id": "t_72h9qejc",
-      "title": "Switch electric bill payment to Capital One",
+      "title": "Switch bill payments to Capital One",
       "cat": "admin",
       "status": "todo",
       "due": null,
@@ -1834,12 +1858,28 @@
       "prio": 1,
       "kind": "task",
       "notes": "",
-      "subs": [],
+      "subs": [
+        {
+          "id": "s1",
+          "t": "Electric bill",
+          "done": false
+        },
+        {
+          "id": "s2",
+          "t": "Squarespace bill",
+          "done": false
+        },
+        {
+          "id": "s3",
+          "t": "Check Chase for other bills to switch",
+          "done": false
+        }
+      ],
       "triage": false,
       "moved": 1,
       "win": false,
       "created": "2026-10-10T15:23:12.236Z",
-      "updated": "2026-10-16T14:44:55.177Z",
+      "updated": "2026-10-28T13:44:36.686Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -3533,6 +3573,30 @@
       "doneAt": "2026-10-11T16:00:00.000Z",
       "src": "chat"
     },
+    "t_kyc9nn75": {
+      "id": "t_kyc9nn75",
+      "title": "Titanium planning",
+      "cat": "psc",
+      "status": "done",
+      "due": null,
+      "time": null,
+      "plan": "2026-10-27",
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-28T13:44:35.976Z",
+      "updated": "2026-10-28T13:44:36.113Z",
+      "doneAt": "2026-10-27T16:00:00.000Z",
+      "src": "chat"
+    },
     "t_l0tfthj9": {
       "id": "t_l0tfthj9",
       "title": "SPARK grant update (RPPR)",
@@ -4108,6 +4172,30 @@
       "updated": "2026-10-09T17:54:28.806Z",
       "doneAt": "2026-10-08T16:00:00.000Z",
       "src": "import"
+    },
+    "t_obh7ymh9": {
+      "id": "t_obh7ymh9",
+      "title": "RSA prep for Tuesday",
+      "cat": "rsa",
+      "status": "done",
+      "due": null,
+      "time": null,
+      "plan": "2026-10-27",
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-28T13:44:36.245Z",
+      "updated": "2026-10-28T13:44:45.641Z",
+      "doneAt": "2026-10-27T16:00:00.000Z",
+      "src": "chat"
     },
     "t_obvmjfht": {
       "id": "t_obvmjfht",
@@ -6628,6 +6716,16 @@
       "from": null,
       "to": null
     },
+    "a_4nwmdto4": {
+      "id": "a_4nwmdto4",
+      "at": "2026-10-28T13:44:36.113Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_kyc9nn75",
+      "title": "Titanium planning",
+      "from": null,
+      "to": null
+    },
     "a_4oi91txq": {
       "id": "a_4oi91txq",
       "at": "2026-10-26T14:57:03.779Z",
@@ -6887,6 +6985,16 @@
       "title": "Clinical notes (3 behind) / Note 1 (oldest)",
       "from": null,
       "to": "done"
+    },
+    "a_7afvatap": {
+      "id": "a_7afvatap",
+      "at": "2026-10-28T13:44:36.417Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_72h9qejc",
+      "title": "Switch bill payments to Capital One",
+      "from": null,
+      "to": "title"
     },
     "a_7b9ki9rd": {
       "id": "a_7b9ki9rd",
@@ -7218,6 +7326,16 @@
       "from": null,
       "to": "added"
     },
+    "a_anu6w65q": {
+      "id": "a_anu6w65q",
+      "at": "2026-10-28T13:44:45.641Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_obh7ymh9",
+      "title": "RSA prep for Tuesday",
+      "from": null,
+      "to": "title"
+    },
     "a_asxnx6q5": {
       "id": "a_asxnx6q5",
       "at": "2026-10-13T16:25:11.308Z",
@@ -7337,6 +7455,16 @@
       "title": "Master Nyx's RSA script front to back (#1 priority)",
       "from": null,
       "to": "est,notes"
+    },
+    "a_bufjlcal": {
+      "id": "a_bufjlcal",
+      "at": "2026-10-28T13:44:36.509Z",
+      "src": "chat",
+      "type": "sub",
+      "ref": "t_72h9qejc",
+      "title": "Switch bill payments to Capital One / Electric bill",
+      "from": null,
+      "to": "added"
     },
     "a_bv1pj74j": {
       "id": "a_bv1pj74j",
@@ -7638,6 +7766,16 @@
       "from": null,
       "to": "added"
     },
+    "a_eyi5vyry": {
+      "id": "a_eyi5vyry",
+      "at": "2026-10-28T13:44:35.976Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_kyc9nn75",
+      "title": "Titanium planning",
+      "from": null,
+      "to": "2026-10-27"
+    },
     "a_f8rkd4pg": {
       "id": "a_f8rkd4pg",
       "at": "2026-10-16T15:18:50.425Z",
@@ -7717,6 +7855,16 @@
       "title": "Auto-plan: 5 tasks",
       "from": null,
       "to": "planned"
+    },
+    "a_fwfnib18": {
+      "id": "a_fwfnib18",
+      "at": "2026-10-28T13:44:35.742Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_6xqcqbe6",
+      "title": "Clinical notes",
+      "from": null,
+      "to": "2026-10-27"
     },
     "a_g0dxbq09": {
       "id": "a_g0dxbq09",
@@ -8184,7 +8332,7 @@
       "src": "chat",
       "type": "add",
       "ref": "t_72h9qejc",
-      "title": "Switch electric bill payment to Capital One",
+      "title": "Switch bill payments to Capital One",
       "from": null,
       "to": "2026-10-15"
     },
@@ -9028,6 +9176,16 @@
       "from": null,
       "to": "2026-10-08"
     },
+    "a_s1ui68hs": {
+      "id": "a_s1ui68hs",
+      "at": "2026-10-28T13:44:36.593Z",
+      "src": "chat",
+      "type": "sub",
+      "ref": "t_72h9qejc",
+      "title": "Switch bill payments to Capital One / Squarespace bill",
+      "from": null,
+      "to": "added"
+    },
     "a_s2a052n8": {
       "id": "a_s2a052n8",
       "at": "2026-10-05T19:53:44.908Z",
@@ -9258,6 +9416,16 @@
       "from": null,
       "to": "planned"
     },
+    "a_u76o3t5k": {
+      "id": "a_u76o3t5k",
+      "at": "2026-10-28T13:44:36.330Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_obh7ymh9",
+      "title": "RSA prep for Tuesday",
+      "from": null,
+      "to": null
+    },
     "a_u7fbss48": {
       "id": "a_u7fbss48",
       "at": "2026-10-13T21:53:07.517Z",
@@ -9305,6 +9473,16 @@
       "type": "add",
       "ref": "t_gwaqz2l9",
       "title": "SPARK PPI meeting with Teij",
+      "from": null,
+      "to": null
+    },
+    "a_usw1lg2a": {
+      "id": "a_usw1lg2a",
+      "at": "2026-10-28T13:44:35.842Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_6xqcqbe6",
+      "title": "Clinical notes",
       "from": null,
       "to": null
     },
@@ -9474,7 +9652,7 @@
       "src": "chat",
       "type": "move",
       "ref": "t_72h9qejc",
-      "title": "Switch electric bill payment to Capital One",
+      "title": "Switch bill payments to Capital One",
       "from": "2026-10-15",
       "to": "2026-10-30"
     },
@@ -9507,6 +9685,16 @@
       "title": "Master Nyx's RSA script front to back (#1 priority)",
       "from": null,
       "to": "blocks"
+    },
+    "a_x39hjmzi": {
+      "id": "a_x39hjmzi",
+      "at": "2026-10-28T13:44:36.245Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_obh7ymh9",
+      "title": "RSA prep for Tuesday",
+      "from": null,
+      "to": "2026-10-27"
     },
     "a_x7kykr8t": {
       "id": "a_x7kykr8t",
@@ -9545,6 +9733,16 @@
       "type": "milestone",
       "ref": "p_m7qpuz93",
       "title": "Department AI presentation / Start a Claude Code thread",
+      "from": null,
+      "to": "added"
+    },
+    "a_xkinhlv5": {
+      "id": "a_xkinhlv5",
+      "at": "2026-10-28T13:44:36.686Z",
+      "src": "chat",
+      "type": "sub",
+      "ref": "t_72h9qejc",
+      "title": "Switch bill payments to Capital One / Check Chase for other bills to switch",
       "from": null,
       "to": "added"
     },
