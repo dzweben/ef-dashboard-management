@@ -23,12 +23,12 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-30T00:59:56.095Z",
-    "headline": "1 thing today.",
+    "at": "2026-10-30T12:59:24.391Z",
+    "headline": "2 things today.",
     "lines": [
-      "INCOMING // ABCD review meeting Sun 11/1 (3d)",
-      "CHORES // Clean first floor · Closet reset. Most overdue: Clean first floor (20d since last).",
-      "TOMORROW // Fri 10/30: Switch bill payments to Capital One"
+      "INCOMING // ABCD review meeting Sun 11/1 (2d)",
+      "CHORES // Clean first floor · Closet reset · TUBRIC LinkedIn post. Most overdue: Clean first floor (21d since last).",
+      "TOMORROW // Sat 10/31: nothing on the list yet"
     ],
     "asks": [
       "'Start ABCD work for Jason' got pushed 3x. Shrink it, pin it to a day, or drop it?",
@@ -41,8 +41,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-30T00:59:52.518Z",
-    "lastActivitySeen": "2026-10-30T00:59:52.518Z"
+    "lastClaudeSync": "2026-10-30T12:59:19.809Z",
+    "lastActivitySeen": "2026-10-30T12:59:19.809Z"
   },
   "cats": {
     "admin": {
