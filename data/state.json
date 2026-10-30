@@ -23,17 +23,17 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-30T12:59:24.391Z",
-    "headline": "2 things today.",
+    "at": "2026-10-30T22:12:53.505Z",
+    "headline": "4 things today.",
     "lines": [
-      "INCOMING // ABCD review meeting Sun 11/1 (2d)",
-      "CHORES // Clean first floor · Closet reset · TUBRIC LinkedIn post. Most overdue: Clean first floor (21d since last).",
-      "TOMORROW // Sat 10/31: nothing on the list yet"
+      "CHORES // Closet reset · TUBRIC LinkedIn post. Most overdue: Closet reset (24d since last).",
+      "TOMORROW // Sat 10/31: Closet reset",
+      "DONE // 1 today · streak 2d"
     ],
     "asks": [
       "'Start ABCD work for Jason' got pushed 3x. Shrink it, pin it to a day, or drop it?",
-      "Anything coming up for EF?",
-      "Anything coming up for Meetings?"
+      "Anything coming up for Ziggy?",
+      "Anything coming up for coursework?"
     ],
     "focus": []
   },
@@ -41,8 +41,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-30T12:59:19.809Z",
-    "lastActivitySeen": "2026-10-30T12:59:19.809Z"
+    "lastClaudeSync": "2026-10-30T22:12:16.136Z",
+    "lastActivitySeen": "2026-10-30T22:12:16.136Z"
   },
   "cats": {
     "admin": {
@@ -1883,6 +1883,54 @@
       "doneAt": null,
       "src": "chat"
     },
+    "t_73aal7su": {
+      "id": "t_73aal7su",
+      "title": "DTI write-up",
+      "cat": "dti",
+      "status": "todo",
+      "due": null,
+      "time": null,
+      "plan": "2026-10-30",
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "writing",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-30T22:12:44.634Z",
+      "updated": "2026-10-30T22:12:44.634Z",
+      "doneAt": null,
+      "src": "chat"
+    },
+    "t_76wb31ss": {
+      "id": "t_76wb31ss",
+      "title": "Closet reset",
+      "cat": "home",
+      "status": "todo",
+      "due": null,
+      "time": null,
+      "plan": "2026-10-31",
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-30T22:12:44.006Z",
+      "updated": "2026-10-30T22:12:44.006Z",
+      "doneAt": null,
+      "src": "chat"
+    },
     "t_7e8sndnw": {
       "id": "t_7e8sndnw",
       "title": "Send Johanna the LEARN breakdown email (drafted)",
@@ -2138,7 +2186,7 @@
       "status": "todo",
       "due": null,
       "time": null,
-      "plan": null,
+      "plan": "2026-11-04",
       "est": 90,
       "spent": 0,
       "blocks": [],
@@ -2151,7 +2199,7 @@
       "moved": 3,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-27T13:28:47.488Z",
+      "updated": "2026-10-30T22:12:43.626Z",
       "doneAt": null,
       "src": "import"
     },
@@ -2160,7 +2208,7 @@
       "title": "ABCD review meeting",
       "cat": "manuscripts",
       "status": "todo",
-      "due": "2026-11-01",
+      "due": null,
       "time": null,
       "plan": null,
       "est": null,
@@ -2169,13 +2217,13 @@
       "project": null,
       "prio": 1,
       "kind": "meeting",
-      "notes": "",
+      "notes": "Pushed (10/30); starting ABCD work Wed 11/4, new meeting date TBD",
       "subs": [],
       "triage": false,
       "moved": 0,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-05T14:17:13.404Z",
+      "updated": "2026-10-30T22:12:43.470Z",
       "doneAt": null,
       "src": "import"
     },
@@ -4712,6 +4760,30 @@
       "doneAt": "2026-10-06T16:00:00.000Z",
       "src": "import"
     },
+    "t_rtgnqdky": {
+      "id": "t_rtgnqdky",
+      "title": "RSA: analyses fix",
+      "cat": "rsa",
+      "status": "todo",
+      "due": null,
+      "time": null,
+      "plan": "2026-10-30",
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "analysis",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-30T22:12:44.832Z",
+      "updated": "2026-10-30T22:12:44.832Z",
+      "doneAt": null,
+      "src": "chat"
+    },
     "t_runiyigc": {
       "id": "t_runiyigc",
       "title": "Clinical visit confirmations",
@@ -5912,6 +5984,30 @@
       "doneAt": "2026-09-24T17:00:00.000Z",
       "src": "import"
     },
+    "t_zcn644r1": {
+      "id": "t_zcn644r1",
+      "title": "Clinical review with client",
+      "cat": "psc",
+      "status": "done",
+      "due": null,
+      "time": null,
+      "plan": "2026-10-30",
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-30T22:12:52.928Z",
+      "updated": "2026-10-30T22:12:53.113Z",
+      "doneAt": "2026-10-30T22:12:53.113Z",
+      "src": "chat"
+    },
     "t_zcnwzz7r": {
       "id": "t_zcnwzz7r",
       "title": "Beautiful moments with Ziggy",
@@ -6037,18 +6133,19 @@
       "cat": "home",
       "every": 7,
       "perDay": 1,
-      "last": "2026-10-09",
+      "last": "2026-10-29",
       "start": null,
       "log": [
         "2026-08-30",
         "2026-09-20",
-        "2026-10-09"
+        "2026-10-09",
+        "2026-10-29"
       ],
       "min": 5,
       "active": true,
       "notes": "",
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-10T15:24:10.016Z"
+      "updated": "2026-10-30T22:12:43.773Z"
     },
     "c_groceries": {
       "id": "c_groceries",
@@ -7526,6 +7623,16 @@
       "from": null,
       "to": "title"
     },
+    "a_cfzj5rwd": {
+      "id": "a_cfzj5rwd",
+      "at": "2026-10-30T22:12:44.634Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_73aal7su",
+      "title": "DTI write-up",
+      "from": null,
+      "to": "2026-10-30"
+    },
     "a_cm3ibjm6": {
       "id": "a_cm3ibjm6",
       "at": "2026-10-12T01:00:12.927Z",
@@ -7565,6 +7672,16 @@
       "title": "Set up SPARK PPI meeting with Teij",
       "from": null,
       "to": null
+    },
+    "a_cw481id1": {
+      "id": "a_cw481id1",
+      "at": "2026-10-30T22:12:43.626Z",
+      "src": "chat",
+      "type": "move",
+      "ref": "t_abcdjason",
+      "title": "Start ABCD work for Jason",
+      "from": null,
+      "to": "2026-11-04"
     },
     "a_cwa995uo": {
       "id": "a_cwa995uo",
@@ -7666,6 +7783,16 @@
       "from": null,
       "to": "done"
     },
+    "a_dt5i624s": {
+      "id": "a_dt5i624s",
+      "at": "2026-10-30T22:12:44.006Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_76wb31ss",
+      "title": "Closet reset",
+      "from": null,
+      "to": "2026-10-31"
+    },
     "a_dtpssg8p": {
       "id": "a_dtpssg8p",
       "at": "2026-10-05T23:37:02.568Z",
@@ -7675,6 +7802,16 @@
       "title": "Beautiful moments with Ziggy",
       "from": null,
       "to": null
+    },
+    "a_dwfbkrez": {
+      "id": "a_dwfbkrez",
+      "at": "2026-10-30T22:12:43.470Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_abcdmeet",
+      "title": "ABCD review meeting",
+      "from": null,
+      "to": "due,notes"
     },
     "a_dypiccjf": {
       "id": "a_dypiccjf",
@@ -8245,6 +8382,16 @@
       "title": "SDN / SPARK",
       "from": null,
       "to": "aliases"
+    },
+    "a_jh8sjkaz": {
+      "id": "a_jh8sjkaz",
+      "at": "2026-10-30T22:12:43.773Z",
+      "src": "chat",
+      "type": "chore",
+      "ref": "c_floor1",
+      "title": "Clean first floor",
+      "from": null,
+      "to": "2026-10-29"
     },
     "a_jjga7zsv": {
       "id": "a_jjga7zsv",
@@ -8886,6 +9033,16 @@
       "from": null,
       "to": null
     },
+    "a_px2nmfh4": {
+      "id": "a_px2nmfh4",
+      "at": "2026-10-30T22:12:52.928Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_zcn644r1",
+      "title": "Clinical review with client",
+      "from": null,
+      "to": "2026-10-30"
+    },
     "a_q10b1mvm": {
       "id": "a_q10b1mvm",
       "at": "2026-10-07T18:03:58.764Z",
@@ -9346,6 +9503,16 @@
       "from": null,
       "to": "15m"
     },
+    "a_t8ahljwf": {
+      "id": "a_t8ahljwf",
+      "at": "2026-10-30T22:12:53.113Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_zcn644r1",
+      "title": "Clinical review with client",
+      "from": null,
+      "to": null
+    },
     "a_tfzaegd3": {
       "id": "a_tfzaegd3",
       "at": "2026-10-27T13:28:47.762Z",
@@ -9625,6 +9792,16 @@
       "title": "Laundry",
       "from": null,
       "to": "2026-10-26"
+    },
+    "a_wi9rnlxn": {
+      "id": "a_wi9rnlxn",
+      "at": "2026-10-30T22:12:44.832Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_rtgnqdky",
+      "title": "RSA: analyses fix",
+      "from": null,
+      "to": "2026-10-30"
     },
     "a_wmxq2qat": {
       "id": "a_wmxq2qat",
