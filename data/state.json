@@ -23,7 +23,7 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-31T17:33:13.326Z",
+    "at": "2026-10-31T17:33:49.114Z",
     "headline": "5 things today.",
     "lines": [
       "CHORES // Closet reset · TUBRIC LinkedIn post · Water plants. Most overdue: Closet reset (25d since last).",
@@ -41,8 +41,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-31T17:33:06.489Z",
-    "lastActivitySeen": "2026-10-31T17:33:06.489Z"
+    "lastClaudeSync": "2026-10-31T17:33:47.256Z",
+    "lastActivitySeen": "2026-10-31T17:33:47.256Z"
   },
   "cats": {
     "admin": {
@@ -2153,6 +2153,30 @@
       "created": "2026-10-05T14:17:13.846Z",
       "updated": "2026-10-14T16:52:52.137Z",
       "doneAt": "2026-10-14T16:52:52.137Z",
+      "src": "chat"
+    },
+    "t_951h4ng2": {
+      "id": "t_951h4ng2",
+      "title": "Email Eva and Lauren Alloy about the TUBRIC position",
+      "cat": "tubric",
+      "status": "todo",
+      "due": null,
+      "time": null,
+      "plan": "2026-11-02",
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "email",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-31T17:33:48.728Z",
+      "updated": "2026-10-31T17:33:48.728Z",
+      "doneAt": null,
       "src": "chat"
     },
     "t_9re4i0kn": {
@@ -6740,6 +6764,16 @@
       "title": "AI pres: convert voice transcripts",
       "from": "2026-10-14",
       "to": "2026-10-21"
+    },
+    "a_24znkp2y": {
+      "id": "a_24znkp2y",
+      "at": "2026-10-31T17:33:48.728Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_951h4ng2",
+      "title": "Email Eva and Lauren Alloy about the TUBRIC position",
+      "from": null,
+      "to": "2026-11-02"
     },
     "a_2dytst1f": {
       "id": "a_2dytst1f",
