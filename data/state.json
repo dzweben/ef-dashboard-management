@@ -23,16 +23,16 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-31T04:24:13.401Z",
-    "headline": "3 things today.",
+    "at": "2026-10-31T05:25:14.611Z",
+    "headline": "5 things today.",
     "lines": [
       "CHORES // Closet reset · TUBRIC LinkedIn post · Water plants. Most overdue: Closet reset (25d since last).",
       "TOMORROW // Sun 11/1: nothing on the list yet"
     ],
     "asks": [
       "'Start ABCD work for Jason' got pushed 3x. Shrink it, pin it to a day, or drop it?",
-      "CAADC / ADIS: nothing open and quiet for 3+ weeks. Still active, or archive it?",
-      "Dev projects: nothing open and quiet for 3+ weeks. Still active, or archive it?"
+      "Anything coming up for Undergrad?",
+      "Anything coming up for Grad roles?"
     ],
     "focus": []
   },
@@ -40,8 +40,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-31T04:24:06.425Z",
-    "lastActivitySeen": "2026-10-31T04:24:06.425Z"
+    "lastClaudeSync": "2026-10-31T05:25:00.874Z",
+    "lastActivitySeen": "2026-10-31T05:25:00.874Z"
   },
   "cats": {
     "admin": {
@@ -2273,6 +2273,30 @@
       "updated": "2026-09-11T17:00:00.000Z",
       "doneAt": "2026-09-11T17:00:00.000Z",
       "src": "import"
+    },
+    "t_arm4xh5u": {
+      "id": "t_arm4xh5u",
+      "title": "PSC client: send visit reminder + scheduling for Monday's session",
+      "cat": "psc",
+      "status": "todo",
+      "due": null,
+      "time": null,
+      "plan": "2026-10-31",
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-31T05:25:14.090Z",
+      "updated": "2026-10-31T05:25:14.192Z",
+      "doneAt": null,
+      "src": "chat"
     },
     "t_bardrdte": {
       "id": "t_bardrdte",
@@ -4604,6 +4628,30 @@
       "doneAt": "2026-08-17T17:00:00.000Z",
       "src": "import"
     },
+    "t_qcok2qlp": {
+      "id": "t_qcok2qlp",
+      "title": "Cancel Monday's appointment",
+      "cat": "health",
+      "status": "todo",
+      "due": null,
+      "time": null,
+      "plan": "2026-10-31",
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-31T05:25:14.313Z",
+      "updated": "2026-10-31T05:25:14.406Z",
+      "doneAt": null,
+      "src": "chat"
+    },
     "t_rc0owh8i": {
       "id": "t_rc0owh8i",
       "title": "Rerun PPI for Teij email",
@@ -6755,6 +6803,16 @@
       "title": "Department AI presentation",
       "from": null,
       "to": "2026-10-19"
+    },
+    "a_3n258xjj": {
+      "id": "a_3n258xjj",
+      "at": "2026-10-31T05:25:14.406Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_qcok2qlp",
+      "title": "Cancel Monday's appointment",
+      "from": null,
+      "to": "title"
     },
     "a_3pn58f5k": {
       "id": "a_3pn58f5k",
@@ -9066,6 +9124,16 @@
       "from": null,
       "to": "due,est,prio,project,blocks"
     },
+    "a_pt5h801f": {
+      "id": "a_pt5h801f",
+      "at": "2026-10-31T05:25:14.090Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_arm4xh5u",
+      "title": "PSC client: send visit reminder + scheduling for Monday's session",
+      "from": null,
+      "to": "2026-10-31"
+    },
     "a_pw0zmaso": {
       "id": "a_pw0zmaso",
       "at": "2026-10-05T14:34:45.027Z",
@@ -9686,6 +9754,16 @@
       "from": null,
       "to": "2026-10-07"
     },
+    "a_uby42ryn": {
+      "id": "a_uby42ryn",
+      "at": "2026-10-31T05:25:14.192Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_arm4xh5u",
+      "title": "PSC client: send visit reminder + scheduling for Monday's session",
+      "from": null,
+      "to": "title"
+    },
     "a_udei7j1j": {
       "id": "a_udei7j1j",
       "at": "2026-10-08T03:58:12.824Z",
@@ -9775,6 +9853,16 @@
       "title": "Played chess",
       "from": null,
       "to": null
+    },
+    "a_vc2kpa2i": {
+      "id": "a_vc2kpa2i",
+      "at": "2026-10-31T05:25:14.313Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_qcok2qlp",
+      "title": "Cancel Monday's appointment",
+      "from": null,
+      "to": "2026-10-31"
     },
     "a_vd20tvkg": {
       "id": "a_vd20tvkg",
