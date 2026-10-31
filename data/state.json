@@ -23,11 +23,11 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-31T17:33:49.114Z",
+    "at": "2026-10-31T17:37:15.050Z",
     "headline": "5 things today.",
     "lines": [
       "CHORES // Closet reset · TUBRIC LinkedIn post · Water plants. Most overdue: Closet reset (25d since last).",
-      "TOMORROW // Sun 11/1: Email Phil with my update · Multivariate homework",
+      "TOMORROW // Sun 11/1: Email Phil with my update · Multivariate homework · PSC client: send visit reminder for Monday's session",
       "DONE // 1 today · streak 3d"
     ],
     "asks": [
@@ -41,8 +41,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-31T17:33:47.256Z",
-    "lastActivitySeen": "2026-10-31T17:33:47.256Z"
+    "lastClaudeSync": "2026-10-31T17:37:12.703Z",
+    "lastActivitySeen": "2026-10-31T17:37:12.703Z"
   },
   "cats": {
     "admin": {
@@ -2301,7 +2301,7 @@
     },
     "t_arm4xh5u": {
       "id": "t_arm4xh5u",
-      "title": "PSC client: send visit reminder + scheduling for Monday's session",
+      "title": "PSC client: scheduling for Monday's session",
       "cat": "psc",
       "status": "todo",
       "due": null,
@@ -2319,7 +2319,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-31T05:25:14.090Z",
-      "updated": "2026-10-31T05:25:14.192Z",
+      "updated": "2026-10-31T17:37:14.311Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -6104,6 +6104,30 @@
       "doneAt": "2026-08-14T17:00:00.000Z",
       "src": "import"
     },
+    "t_yz0tnrdk": {
+      "id": "t_yz0tnrdk",
+      "title": "PSC client: send visit reminder for Monday's session",
+      "cat": "psc",
+      "status": "todo",
+      "due": null,
+      "time": null,
+      "plan": "2026-11-01",
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-31T17:37:14.527Z",
+      "updated": "2026-10-31T17:37:14.714Z",
+      "doneAt": null,
+      "src": "chat"
+    },
     "t_z0x61fw4": {
       "id": "t_z0x61fw4",
       "title": "Fill out WhenToMeets",
@@ -6975,6 +6999,16 @@
       "from": null,
       "to": null
     },
+    "a_3z2tblkf": {
+      "id": "a_3z2tblkf",
+      "at": "2026-10-31T17:37:14.714Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_yz0tnrdk",
+      "title": "PSC client: send visit reminder for Monday's session",
+      "from": null,
+      "to": "title"
+    },
     "a_49c49t8t": {
       "id": "a_49c49t8t",
       "at": "2026-10-14T14:46:51.155Z",
@@ -7534,6 +7568,16 @@
       "title": "Rewatch neuromelanin video",
       "from": null,
       "to": null
+    },
+    "a_9ab2f6pv": {
+      "id": "a_9ab2f6pv",
+      "at": "2026-10-31T17:37:14.311Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_arm4xh5u",
+      "title": "PSC client: scheduling for Monday's session",
+      "from": null,
+      "to": "title"
     },
     "a_9clxm0mv": {
       "id": "a_9clxm0mv",
@@ -9301,7 +9345,7 @@
       "src": "chat",
       "type": "add",
       "ref": "t_arm4xh5u",
-      "title": "PSC client: send visit reminder + scheduling for Monday's session",
+      "title": "PSC client: scheduling for Monday's session",
       "from": null,
       "to": "2026-10-31"
     },
@@ -9951,7 +9995,7 @@
       "src": "chat",
       "type": "edit",
       "ref": "t_arm4xh5u",
-      "title": "PSC client: send visit reminder + scheduling for Monday's session",
+      "title": "PSC client: scheduling for Monday's session",
       "from": null,
       "to": "title"
     },
@@ -10264,6 +10308,16 @@
       "title": "Department AI presentation / Start a Claude Code thread",
       "from": null,
       "to": "added"
+    },
+    "a_xjfy95en": {
+      "id": "a_xjfy95en",
+      "at": "2026-10-31T17:37:14.527Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_yz0tnrdk",
+      "title": "PSC client: send visit reminder for Monday's session",
+      "from": null,
+      "to": "2026-11-01"
     },
     "a_xkinhlv5": {
       "id": "a_xkinhlv5",
