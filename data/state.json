@@ -23,17 +23,16 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-31T00:59:48.564Z",
-    "headline": "4 things today.",
+    "at": "2026-10-31T04:24:13.401Z",
+    "headline": "3 things today.",
     "lines": [
-      "CHORES // Closet reset · TUBRIC LinkedIn post. Most overdue: Closet reset (24d since last).",
-      "TOMORROW // Sat 10/31: Closet reset",
-      "DONE // 1 today · streak 2d"
+      "CHORES // Closet reset · TUBRIC LinkedIn post · Water plants. Most overdue: Closet reset (25d since last).",
+      "TOMORROW // Sun 11/1: nothing on the list yet"
     ],
     "asks": [
       "'Start ABCD work for Jason' got pushed 3x. Shrink it, pin it to a day, or drop it?",
-      "Anything coming up for Ziggy?",
-      "Anything coming up for coursework?"
+      "CAADC / ADIS: nothing open and quiet for 3+ weeks. Still active, or archive it?",
+      "Dev projects: nothing open and quiet for 3+ weeks. Still active, or archive it?"
     ],
     "focus": []
   },
@@ -41,8 +40,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-31T00:59:44.283Z",
-    "lastActivitySeen": "2026-10-31T00:59:44.283Z"
+    "lastClaudeSync": "2026-10-31T04:24:06.425Z",
+    "lastActivitySeen": "2026-10-31T04:24:06.425Z"
   },
   "cats": {
     "admin": {
@@ -1437,7 +1436,7 @@
     },
     "t_46w5afv4": {
       "id": "t_46w5afv4",
-      "title": "Laundry: put away",
+      "title": "Laundry: put away (other half)",
       "cat": "home",
       "status": "todo",
       "due": null,
@@ -1449,13 +1448,13 @@
       "project": null,
       "prio": 1,
       "kind": "task",
-      "notes": "",
+      "notes": "Half put away Fri 10/30",
       "subs": [],
       "triage": false,
       "moved": 0,
       "win": false,
       "created": "2026-10-27T13:28:48.297Z",
-      "updated": "2026-10-27T13:28:48.297Z",
+      "updated": "2026-10-31T04:24:09.899Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -1887,7 +1886,7 @@
       "id": "t_73aal7su",
       "title": "DTI write-up",
       "cat": "dti",
-      "status": "todo",
+      "status": "done",
       "due": null,
       "time": null,
       "plan": "2026-10-30",
@@ -1903,8 +1902,8 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-30T22:12:44.634Z",
-      "updated": "2026-10-30T22:12:44.634Z",
-      "doneAt": null,
+      "updated": "2026-10-31T04:24:09.437Z",
+      "doneAt": "2026-10-30T16:00:00.000Z",
       "src": "chat"
     },
     "t_76wb31ss": {
@@ -4437,6 +4436,30 @@
       "doneAt": "2026-10-09T17:55:37.805Z",
       "src": "chat"
     },
+    "t_ot1bquuw": {
+      "id": "t_ot1bquuw",
+      "title": "Built neuromelanin tool for SPARK",
+      "cat": "sdn",
+      "status": "done",
+      "due": null,
+      "time": null,
+      "plan": "2026-10-30",
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-31T04:24:09.693Z",
+      "updated": "2026-10-31T04:24:09.792Z",
+      "doneAt": "2026-10-30T16:00:00.000Z",
+      "src": "chat"
+    },
     "t_ozfo7jts": {
       "id": "t_ozfo7jts",
       "title": "Lab presentation",
@@ -4764,7 +4787,7 @@
       "id": "t_rtgnqdky",
       "title": "RSA: analyses fix",
       "cat": "rsa",
-      "status": "todo",
+      "status": "done",
       "due": null,
       "time": null,
       "plan": "2026-10-30",
@@ -4780,8 +4803,8 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-30T22:12:44.832Z",
-      "updated": "2026-10-30T22:12:44.832Z",
-      "doneAt": null,
+      "updated": "2026-10-31T04:24:09.551Z",
+      "doneAt": "2026-10-30T16:00:00.000Z",
       "src": "chat"
     },
     "t_runiyigc": {
@@ -7463,6 +7486,16 @@
       "from": null,
       "to": "notes"
     },
+    "a_b1x7ltu7": {
+      "id": "a_b1x7ltu7",
+      "at": "2026-10-31T04:24:09.792Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_ot1bquuw",
+      "title": "Built neuromelanin tool for SPARK",
+      "from": null,
+      "to": null
+    },
     "a_b31pdpmz": {
       "id": "a_b31pdpmz",
       "at": "2026-10-05T19:54:57.925Z",
@@ -7482,6 +7515,16 @@
       "title": "Reschedule dentist",
       "from": null,
       "to": null
+    },
+    "a_b7255qme": {
+      "id": "a_b7255qme",
+      "at": "2026-10-31T04:24:09.693Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_ot1bquuw",
+      "title": "Built neuromelanin tool for SPARK",
+      "from": null,
+      "to": "2026-10-30"
     },
     "a_b89wq3f4": {
       "id": "a_b89wq3f4",
@@ -9079,7 +9122,7 @@
       "src": "chat",
       "type": "add",
       "ref": "t_46w5afv4",
-      "title": "Laundry: put away",
+      "title": "Laundry: put away (other half)",
       "from": null,
       "to": "2026-10-27"
     },
@@ -9152,6 +9195,16 @@
       "title": "Start ABCD work for Jason",
       "from": "2026-10-19",
       "to": "2026-10-23"
+    },
+    "a_qpj83p5p": {
+      "id": "a_qpj83p5p",
+      "at": "2026-10-31T04:24:09.437Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_73aal7su",
+      "title": "DTI write-up",
+      "from": null,
+      "to": null
     },
     "a_qs6lkwnp": {
       "id": "a_qs6lkwnp",
@@ -9242,6 +9295,16 @@
       "title": "Master Nyx's RSA script front to back (#1 priority) / First half of the analyses",
       "from": null,
       "to": "added"
+    },
+    "a_rjwalamj": {
+      "id": "a_rjwalamj",
+      "at": "2026-10-31T04:24:09.899Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_46w5afv4",
+      "title": "Laundry: put away (other half)",
+      "from": null,
+      "to": "title,notes"
     },
     "a_rn2ywy7o": {
       "id": "a_rn2ywy7o",
@@ -9562,6 +9625,16 @@
       "title": "RSA: participant data fixes",
       "from": "2026-10-06",
       "to": "2026-10-07"
+    },
+    "a_tto0ve46": {
+      "id": "a_tto0ve46",
+      "at": "2026-10-31T04:24:09.551Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_rtgnqdky",
+      "title": "RSA: analyses fix",
+      "from": null,
+      "to": null
     },
     "a_tzrgt1im": {
       "id": "a_tzrgt1im",
