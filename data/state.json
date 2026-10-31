@@ -23,12 +23,12 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-31T17:46:22.633Z",
-    "headline": "4 things today.",
+    "at": "2026-10-31T18:40:12.355Z",
+    "headline": "3 things today.",
     "lines": [
-      "CHORES // Closet reset · TUBRIC LinkedIn post · Water plants. Most overdue: Closet reset (25d since last).",
-      "TOMORROW // Sun 11/1: Email Phil with my update · Multivariate homework · PSC client: send visit reminder for Monday's session",
-      "DONE // 2 today · streak 3d"
+      "CHORES // Closet reset · Water plants. Most overdue: Closet reset (25d since last).",
+      "TOMORROW // Sun 11/1: Email Phil with my update · Multivariate homework · PSC client: reschedule Monday's session to Thursday · PSC client: send visit reminder for Monday's session",
+      "DONE // 3 today · streak 3d"
     ],
     "asks": [
       "'Start ABCD work for Jason' got pushed 3x. Shrink it, pin it to a day, or drop it?",
@@ -41,8 +41,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-31T17:46:20.449Z",
-    "lastActivitySeen": "2026-10-31T17:46:20.449Z"
+    "lastClaudeSync": "2026-10-31T18:40:09.741Z",
+    "lastActivitySeen": "2026-10-31T18:40:09.741Z"
   },
   "cats": {
     "admin": {
@@ -4705,7 +4705,7 @@
       "id": "t_qcok2qlp",
       "title": "Cancel Monday's appointment",
       "cat": "health",
-      "status": "todo",
+      "status": "done",
       "due": null,
       "time": null,
       "plan": "2026-10-31",
@@ -4721,8 +4721,8 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-31T05:25:14.313Z",
-      "updated": "2026-10-31T05:25:14.406Z",
-      "doneAt": null,
+      "updated": "2026-10-31T18:40:11.691Z",
+      "doneAt": "2026-10-31T18:40:11.691Z",
       "src": "chat"
     },
     "t_qu7ix4eb": {
@@ -5478,6 +5478,30 @@
       "created": "2026-10-05T23:39:42.378Z",
       "updated": "2026-10-05T23:39:42.492Z",
       "doneAt": "2026-10-05T23:39:42.492Z",
+      "src": "chat"
+    },
+    "t_v3h0fe51": {
+      "id": "t_v3h0fe51",
+      "title": "PSC client: reschedule Monday's session to Thursday",
+      "cat": "psc",
+      "status": "todo",
+      "due": null,
+      "time": null,
+      "plan": "2026-11-01",
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-31T18:40:11.869Z",
+      "updated": "2026-10-31T18:40:12.016Z",
+      "doneAt": null,
       "src": "chat"
     },
     "t_v7ax28ej": {
@@ -6389,17 +6413,18 @@
       "cat": "tubric",
       "every": 7,
       "perDay": 1,
-      "last": "2026-10-23",
+      "last": "2026-10-31",
       "start": null,
       "log": [
         "2026-10-05",
-        "2026-10-23"
+        "2026-10-23",
+        "2026-10-31"
       ],
       "min": 5,
       "active": true,
       "notes": "",
       "created": "2026-10-05T16:28:10.441Z",
-      "updated": "2026-10-26T14:57:04.054Z"
+      "updated": "2026-10-31T18:40:11.524Z"
     },
     "c_laundry": {
       "id": "c_laundry",
@@ -7339,6 +7364,16 @@
       "from": null,
       "to": "notes"
     },
+    "a_712do2il": {
+      "id": "a_712do2il",
+      "at": "2026-10-31T18:40:11.524Z",
+      "src": "chat",
+      "type": "chore",
+      "ref": "c_k6mbnv2u",
+      "title": "TUBRIC LinkedIn post",
+      "from": null,
+      "to": null
+    },
     "a_79whtfy9": {
       "id": "a_79whtfy9",
       "at": "2026-10-05T19:53:34.206Z",
@@ -7958,6 +7993,16 @@
       "title": "OCD presentation / Read Barlow chapter",
       "from": null,
       "to": "done"
+    },
+    "a_cr74f46z": {
+      "id": "a_cr74f46z",
+      "at": "2026-10-31T18:40:11.691Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_qcok2qlp",
+      "title": "Cancel Monday's appointment",
+      "from": null,
+      "to": null
     },
     "a_crw732v4": {
       "id": "a_crw732v4",
@@ -9169,6 +9214,16 @@
       "from": null,
       "to": "2026-11-02"
     },
+    "a_nygb69e4": {
+      "id": "a_nygb69e4",
+      "at": "2026-10-31T18:40:12.016Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_v3h0fe51",
+      "title": "PSC client: reschedule Monday's session to Thursday",
+      "from": null,
+      "to": "title"
+    },
     "a_nzjc95qa": {
       "id": "a_nzjc95qa",
       "at": "2026-10-06T16:07:01.326Z",
@@ -9348,6 +9403,16 @@
       "title": "SPARK docs: PPI",
       "from": null,
       "to": "due,est,prio,project,blocks"
+    },
+    "a_ppo5kw29": {
+      "id": "a_ppo5kw29",
+      "at": "2026-10-31T18:40:11.869Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_v3h0fe51",
+      "title": "PSC client: reschedule Monday's session to Thursday",
+      "from": null,
+      "to": "2026-11-01"
     },
     "a_pt5h801f": {
       "id": "a_pt5h801f",
