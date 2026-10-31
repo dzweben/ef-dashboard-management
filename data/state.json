@@ -23,7 +23,7 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-31T12:59:05.899Z",
+    "at": "2026-10-31T17:31:21.969Z",
     "headline": "5 things today.",
     "lines": [
       "CHORES // Closet reset · TUBRIC LinkedIn post · Water plants. Most overdue: Closet reset (25d since last).",
@@ -40,8 +40,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-31T12:59:01.685Z",
-    "lastActivitySeen": "2026-10-31T12:59:01.685Z"
+    "lastClaudeSync": "2026-10-31T17:31:17.385Z",
+    "lastActivitySeen": "2026-10-31T17:31:17.385Z"
   },
   "cats": {
     "admin": {
@@ -4652,6 +4652,30 @@
       "doneAt": null,
       "src": "chat"
     },
+    "t_qu7ix4eb": {
+      "id": "t_qu7ix4eb",
+      "title": "PSC: reach out to set up a call for Wednesday",
+      "cat": "psc",
+      "status": "todo",
+      "due": null,
+      "time": null,
+      "plan": "2026-11-02",
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-31T17:31:21.551Z",
+      "updated": "2026-10-31T17:31:21.681Z",
+      "doneAt": null,
+      "src": "chat"
+    },
     "t_rc0owh8i": {
       "id": "t_rc0owh8i",
       "title": "Rerun PPI for Teij email",
@@ -8954,6 +8978,16 @@
       "from": null,
       "to": "plan,blocks"
     },
+    "a_nuphps4t": {
+      "id": "a_nuphps4t",
+      "at": "2026-10-31T17:31:21.551Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_qu7ix4eb",
+      "title": "PSC: reach out to set up a call for Wednesday",
+      "from": null,
+      "to": "2026-11-02"
+    },
     "a_nzjc95qa": {
       "id": "a_nzjc95qa",
       "at": "2026-10-06T16:07:01.326Z",
@@ -9643,6 +9677,16 @@
       "title": "Clinical review with client",
       "from": null,
       "to": null
+    },
+    "a_tfq8gjpr": {
+      "id": "a_tfq8gjpr",
+      "at": "2026-10-31T17:31:21.681Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_qu7ix4eb",
+      "title": "PSC: reach out to set up a call for Wednesday",
+      "from": null,
+      "to": "title"
     },
     "a_tfzaegd3": {
       "id": "a_tfzaegd3",
