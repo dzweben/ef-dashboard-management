@@ -23,17 +23,17 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-31T17:31:31.124Z",
+    "at": "2026-10-31T17:33:13.326Z",
     "headline": "5 things today.",
     "lines": [
       "CHORES // Closet reset · TUBRIC LinkedIn post · Water plants. Most overdue: Closet reset (25d since last).",
-      "TOMORROW // Sun 11/1: nothing on the list yet",
+      "TOMORROW // Sun 11/1: Email Phil with my update · Multivariate homework",
       "DONE // 1 today · streak 3d"
     ],
     "asks": [
       "'Start ABCD work for Jason' got pushed 3x. Shrink it, pin it to a day, or drop it?",
-      "Anything coming up for Undergrad?",
-      "Anything coming up for Grad roles?"
+      "Anything coming up for Ziggy?",
+      "CAADC / ADIS: nothing open and quiet for 3+ weeks. Still active, or archive it?"
     ],
     "focus": []
   },
@@ -41,8 +41,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-31T17:31:17.385Z",
-    "lastActivitySeen": "2026-10-31T17:31:17.385Z"
+    "lastClaudeSync": "2026-10-31T17:33:06.489Z",
+    "lastActivitySeen": "2026-10-31T17:33:06.489Z"
   },
   "cats": {
     "admin": {
@@ -4245,6 +4245,30 @@
       "doneAt": "2026-10-08T16:00:00.000Z",
       "src": "import"
     },
+    "t_o0derl3f": {
+      "id": "t_o0derl3f",
+      "title": "Email Phil with my update",
+      "cat": "admin",
+      "status": "todo",
+      "due": null,
+      "time": null,
+      "plan": "2026-11-01",
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "email",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-31T17:33:08.208Z",
+      "updated": "2026-10-31T17:33:08.208Z",
+      "doneAt": null,
+      "src": "chat"
+    },
     "t_obh7ymh9": {
       "id": "t_obh7ymh9",
       "title": "RSA prep for Tuesday",
@@ -6176,6 +6200,30 @@
       "doneAt": "2026-10-18T16:00:00.000Z",
       "src": "chat"
     },
+    "t_ztes4t22": {
+      "id": "t_ztes4t22",
+      "title": "Multivariate homework",
+      "cat": "multivar",
+      "status": "todo",
+      "due": null,
+      "time": null,
+      "plan": "2026-11-01",
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-31T17:33:08.146Z",
+      "updated": "2026-10-31T17:33:08.146Z",
+      "doneAt": null,
+      "src": "chat"
+    },
     "t_zv9lb6lq": {
       "id": "t_zv9lb6lq",
       "title": "Project upkeep",
@@ -6642,6 +6690,16 @@
       "title": "Master Nyx's RSA script front to back (#1 priority)",
       "from": null,
       "to": "plan,est,notes,blocks"
+    },
+    "a_1f413evq": {
+      "id": "a_1f413evq",
+      "at": "2026-10-31T17:33:08.146Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_ztes4t22",
+      "title": "Multivariate homework",
+      "from": null,
+      "to": "2026-11-01"
     },
     "a_1gw6jhep": {
       "id": "a_1gw6jhep",
@@ -9592,6 +9650,16 @@
       "title": "OCD presentation / Read manual + take notes",
       "from": null,
       "to": "done"
+    },
+    "a_scj65iz7": {
+      "id": "a_scj65iz7",
+      "at": "2026-10-31T17:33:08.208Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_o0derl3f",
+      "title": "Email Phil with my update",
+      "from": null,
+      "to": "2026-11-01"
     },
     "a_se5pmdgt": {
       "id": "a_se5pmdgt",
