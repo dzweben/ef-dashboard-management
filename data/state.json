@@ -23,11 +23,12 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-31T17:31:21.969Z",
+    "at": "2026-10-31T17:31:31.124Z",
     "headline": "5 things today.",
     "lines": [
       "CHORES // Closet reset · TUBRIC LinkedIn post · Water plants. Most overdue: Closet reset (25d since last).",
-      "TOMORROW // Sun 11/1: nothing on the list yet"
+      "TOMORROW // Sun 11/1: nothing on the list yet",
+      "DONE // 1 today · streak 3d"
     ],
     "asks": [
       "'Start ABCD work for Jason' got pushed 3x. Shrink it, pin it to a day, or drop it?",
@@ -4580,6 +4581,30 @@
       "doneAt": "2026-10-08T03:58:07.134Z",
       "src": "chat"
     },
+    "t_pnnjnz0a": {
+      "id": "t_pnnjnz0a",
+      "title": "Made lunch for me and Lily + cleanup",
+      "cat": "home",
+      "status": "done",
+      "due": null,
+      "time": null,
+      "plan": "2026-10-31",
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-10-31T17:31:30.841Z",
+      "updated": "2026-10-31T17:31:30.979Z",
+      "doneAt": "2026-10-31T17:31:30.979Z",
+      "src": "chat"
+    },
     "t_pwcr1u0p": {
       "id": "t_pwcr1u0p",
       "title": "To-do list overhaul (meta!)",
@@ -7618,6 +7643,16 @@
       "from": null,
       "to": null
     },
+    "a_bb057uen": {
+      "id": "a_bb057uen",
+      "at": "2026-10-31T17:31:30.979Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_pnnjnz0a",
+      "title": "Made lunch for me and Lily + cleanup",
+      "from": null,
+      "to": null
+    },
     "a_bkbvn3g1": {
       "id": "a_bkbvn3g1",
       "at": "2026-10-10T15:24:10.016Z",
@@ -8997,6 +9032,16 @@
       "title": "Master Nyx's RSA script front to back (#1 priority)",
       "from": null,
       "to": "blocks"
+    },
+    "a_o36flsue": {
+      "id": "a_o36flsue",
+      "at": "2026-10-31T17:31:30.841Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_pnnjnz0a",
+      "title": "Made lunch for me and Lily + cleanup",
+      "from": null,
+      "to": "2026-10-31"
     },
     "a_o9yb2vtf": {
       "id": "a_o9yb2vtf",
