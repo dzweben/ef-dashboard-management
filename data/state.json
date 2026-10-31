@@ -23,12 +23,12 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-10-31T17:37:15.050Z",
-    "headline": "5 things today.",
+    "at": "2026-10-31T17:46:22.633Z",
+    "headline": "4 things today.",
     "lines": [
       "CHORES // Closet reset · TUBRIC LinkedIn post · Water plants. Most overdue: Closet reset (25d since last).",
       "TOMORROW // Sun 11/1: Email Phil with my update · Multivariate homework · PSC client: send visit reminder for Monday's session",
-      "DONE // 1 today · streak 3d"
+      "DONE // 2 today · streak 3d"
     ],
     "asks": [
       "'Start ABCD work for Jason' got pushed 3x. Shrink it, pin it to a day, or drop it?",
@@ -41,8 +41,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-10-31T17:37:12.703Z",
-    "lastActivitySeen": "2026-10-31T17:37:12.703Z"
+    "lastClaudeSync": "2026-10-31T17:46:20.449Z",
+    "lastActivitySeen": "2026-10-31T17:46:20.449Z"
   },
   "cats": {
     "admin": {
@@ -2303,7 +2303,7 @@
       "id": "t_arm4xh5u",
       "title": "PSC client: scheduling for Monday's session",
       "cat": "psc",
-      "status": "todo",
+      "status": "done",
       "due": null,
       "time": null,
       "plan": "2026-10-31",
@@ -2319,8 +2319,8 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-31T05:25:14.090Z",
-      "updated": "2026-10-31T17:37:14.311Z",
-      "doneAt": null,
+      "updated": "2026-10-31T17:46:22.269Z",
+      "doneAt": "2026-10-31T17:46:22.269Z",
       "src": "chat"
     },
     "t_bardrdte": {
@@ -6818,6 +6818,16 @@
       "title": "EF",
       "from": null,
       "to": "aliases,note"
+    },
+    "a_2l9e6fz1": {
+      "id": "a_2l9e6fz1",
+      "at": "2026-10-31T17:46:22.269Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_arm4xh5u",
+      "title": "PSC client: scheduling for Monday's session",
+      "from": null,
+      "to": null
     },
     "a_2n20mp5b": {
       "id": "a_2n20mp5b",
