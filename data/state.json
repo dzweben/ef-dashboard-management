@@ -23,17 +23,16 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-11-01T00:59:56.935Z",
-    "headline": "3 things today.",
+    "at": "2026-11-01T13:59:36.003Z",
+    "headline": "7 things today.",
     "lines": [
-      "CHORES // Closet reset · Water plants. Most overdue: Closet reset (25d since last).",
-      "TOMORROW // Sun 11/1: Email Phil with my update · Multivariate homework · PSC client: reschedule Monday's session to Thursday · PSC client: send visit reminder for Monday's session",
-      "DONE // 3 today · streak 3d"
+      "CHORES // Closet reset · Water plants · Grocery run. Most overdue: Closet reset (26d since last).",
+      "TOMORROW // Mon 11/2: Clinical notes · Email Eva and Lauren Alloy about the TUBRIC position · PSC: reach out to set up a call for Wednesday"
     ],
     "asks": [
       "'Start ABCD work for Jason' got pushed 3x. Shrink it, pin it to a day, or drop it?",
-      "Anything coming up for Ziggy?",
-      "CAADC / ADIS: nothing open and quiet for 3+ weeks. Still active, or archive it?"
+      "Dev projects: nothing open and quiet for 3+ weeks. Still active, or archive it?",
+      "LEARN: nothing open and quiet for 3+ weeks. Still active, or archive it?"
     ],
     "focus": []
   },
@@ -41,8 +40,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-11-01T00:59:52.883Z",
-    "lastActivitySeen": "2026-11-01T00:59:52.883Z"
+    "lastClaudeSync": "2026-11-01T13:59:32.538Z",
+    "lastActivitySeen": "2026-11-01T13:59:32.538Z"
   },
   "cats": {
     "admin": {
