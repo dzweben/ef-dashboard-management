@@ -23,16 +23,16 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-11-02T02:00:15.538Z",
-    "headline": "7 things today.",
+    "at": "2026-11-02T14:09:12.396Z",
+    "headline": "9 things today.",
     "lines": [
-      "CHORES // Closet reset · Water plants · Grocery run. Most overdue: Closet reset (26d since last).",
-      "TOMORROW // Mon 11/2: Clinical notes · Email Eva and Lauren Alloy about the TUBRIC position · PSC: reach out to set up a call for Wednesday"
+      "CHORES // Closet reset · Water plants · Grocery run · Laundry. Most overdue: Closet reset (27d since last).",
+      "TOMORROW // Tue 11/3: nothing on the list yet"
     ],
     "asks": [
       "'Start ABCD work for Jason' got pushed 3x. Shrink it, pin it to a day, or drop it?",
-      "Dev projects: nothing open and quiet for 3+ weeks. Still active, or archive it?",
-      "LEARN: nothing open and quiet for 3+ weeks. Still active, or archive it?"
+      "Virtual school: nothing open and quiet for 3+ weeks. Still active, or archive it?",
+      "Fun: nothing open and quiet for 3+ weeks. Still active, or archive it?"
     ],
     "focus": []
   },
@@ -40,8 +40,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-11-02T02:00:11.449Z",
-    "lastActivitySeen": "2026-11-02T02:00:11.449Z"
+    "lastClaudeSync": "2026-11-02T14:09:08.572Z",
+    "lastActivitySeen": "2026-11-02T14:09:08.572Z"
   },
   "cats": {
     "admin": {
@@ -1438,7 +1438,7 @@
       "id": "t_46w5afv4",
       "title": "Laundry: put away (other half)",
       "cat": "home",
-      "status": "todo",
+      "status": "done",
       "due": null,
       "time": null,
       "plan": "2026-10-27",
@@ -1454,8 +1454,8 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-27T13:28:48.297Z",
-      "updated": "2026-10-31T04:24:09.899Z",
-      "doneAt": null,
+      "updated": "2026-11-02T14:09:11.825Z",
+      "doneAt": "2026-11-01T16:00:00.000Z",
       "src": "chat"
     },
     "t_47gu573l": {
@@ -1745,6 +1745,30 @@
       "updated": "2026-07-30T17:00:00.000Z",
       "doneAt": "2026-07-30T17:00:00.000Z",
       "src": "import"
+    },
+    "t_6gvlanfd": {
+      "id": "t_6gvlanfd",
+      "title": "Laundry: one more push",
+      "cat": "home",
+      "status": "todo",
+      "due": null,
+      "time": null,
+      "plan": "2026-11-01",
+      "est": 15,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-11-02T14:09:12.008Z",
+      "updated": "2026-11-02T14:09:12.008Z",
+      "doneAt": null,
+      "src": "chat"
     },
     "t_6qjhgro1": {
       "id": "t_6qjhgro1",
@@ -4275,7 +4299,7 @@
       "status": "todo",
       "due": null,
       "time": null,
-      "plan": "2026-11-01",
+      "plan": "2026-11-02",
       "est": null,
       "spent": 0,
       "blocks": [],
@@ -4285,10 +4309,10 @@
       "notes": "",
       "subs": [],
       "triage": false,
-      "moved": 0,
+      "moved": 1,
       "win": false,
       "created": "2026-10-31T17:33:08.208Z",
-      "updated": "2026-10-31T17:33:08.208Z",
+      "updated": "2026-11-02T14:09:12.133Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -5483,7 +5507,7 @@
       "id": "t_v3h0fe51",
       "title": "PSC client: reschedule Monday's session to Thursday",
       "cat": "psc",
-      "status": "todo",
+      "status": "done",
       "due": null,
       "time": null,
       "plan": "2026-11-01",
@@ -5499,8 +5523,8 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-31T18:40:11.869Z",
-      "updated": "2026-10-31T18:40:12.016Z",
-      "doneAt": null,
+      "updated": "2026-11-02T14:09:11.702Z",
+      "doneAt": "2026-11-01T16:00:00.000Z",
       "src": "chat"
     },
     "t_v7ax28ej": {
@@ -6412,18 +6436,19 @@
       "cat": "tubric",
       "every": 7,
       "perDay": 1,
-      "last": "2026-10-31",
+      "last": "2026-11-01",
       "start": null,
       "log": [
         "2026-10-05",
         "2026-10-23",
-        "2026-10-31"
+        "2026-10-31",
+        "2026-11-01"
       ],
       "min": 5,
       "active": true,
       "notes": "",
       "created": "2026-10-05T16:28:10.441Z",
-      "updated": "2026-10-31T18:40:11.524Z"
+      "updated": "2026-11-02T14:09:11.553Z"
     },
     "c_laundry": {
       "id": "c_laundry",
@@ -7213,6 +7238,16 @@
       "from": null,
       "to": null
     },
+    "a_5ngodjsd": {
+      "id": "a_5ngodjsd",
+      "at": "2026-11-02T14:09:11.702Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_v3h0fe51",
+      "title": "PSC client: reschedule Monday's session to Thursday",
+      "from": null,
+      "to": null
+    },
     "a_5njeiihg": {
       "id": "a_5njeiihg",
       "at": "2026-10-07T04:09:53.462Z",
@@ -7462,6 +7497,16 @@
       "title": "Auto-plan: 6 tasks",
       "from": null,
       "to": "planned"
+    },
+    "a_7uh9a1ps": {
+      "id": "a_7uh9a1ps",
+      "at": "2026-11-02T14:09:12.008Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_6gvlanfd",
+      "title": "Laundry: one more push",
+      "from": null,
+      "to": "2026-11-01"
     },
     "a_7xz03df4": {
       "id": "a_7xz03df4",
@@ -7852,6 +7897,16 @@
       "title": "Auto-plan: 3 tasks",
       "from": null,
       "to": "planned"
+    },
+    "a_bmr4hiyy": {
+      "id": "a_bmr4hiyy",
+      "at": "2026-11-02T14:09:11.825Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_46w5afv4",
+      "title": "Laundry: put away (other half)",
+      "from": null,
+      "to": null
     },
     "a_bmuhszru": {
       "id": "a_bmuhszru",
@@ -9043,6 +9098,16 @@
       "from": null,
       "to": "title"
     },
+    "a_lygn43vx": {
+      "id": "a_lygn43vx",
+      "at": "2026-11-02T14:09:12.133Z",
+      "src": "chat",
+      "type": "move",
+      "ref": "t_o0derl3f",
+      "title": "Email Phil with my update",
+      "from": "2026-11-01",
+      "to": "2026-11-02"
+    },
     "a_m7x3vuzk": {
       "id": "a_m7x3vuzk",
       "at": "2026-10-07T02:20:17.917Z",
@@ -9742,6 +9807,16 @@
       "title": "Virtual school",
       "from": null,
       "to": "goal"
+    },
+    "a_rxyrf4f8": {
+      "id": "a_rxyrf4f8",
+      "at": "2026-11-02T14:09:11.553Z",
+      "src": "chat",
+      "type": "chore",
+      "ref": "c_k6mbnv2u",
+      "title": "TUBRIC LinkedIn post",
+      "from": null,
+      "to": "2026-11-01"
     },
     "a_rzz8233m": {
       "id": "a_rzz8233m",
