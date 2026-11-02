@@ -23,7 +23,7 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-11-02T15:06:34.907Z",
+    "at": "2026-11-02T20:31:25.387Z",
     "headline": "8 things today.",
     "lines": [
       "CHORES // Closet reset · Water plants · Grocery run · Laundry. Most overdue: Closet reset (27d since last).",
@@ -31,8 +31,8 @@
     ],
     "asks": [
       "'Start ABCD work for Jason' got pushed 3x. Shrink it, pin it to a day, or drop it?",
-      "Virtual school: nothing open and quiet for 3+ weeks. Still active, or archive it?",
-      "Fun: nothing open and quiet for 3+ weeks. Still active, or archive it?"
+      "Anything coming up for Grad roles?",
+      "Anything coming up for EF?"
     ],
     "focus": []
   },
@@ -40,8 +40,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-11-02T15:06:32.496Z",
-    "lastActivitySeen": "2026-11-02T15:06:32.496Z"
+    "lastClaudeSync": "2026-11-02T20:31:16.687Z",
+    "lastActivitySeen": "2026-11-02T20:31:16.687Z"
   },
   "cats": {
     "admin": {
@@ -4294,8 +4294,8 @@
     },
     "t_o0derl3f": {
       "id": "t_o0derl3f",
-      "title": "Email Phil with my update",
-      "cat": "admin",
+      "title": "Email Phil my report for the CAADC",
+      "cat": "caadc",
       "status": "todo",
       "due": null,
       "time": null,
@@ -4312,7 +4312,7 @@
       "moved": 1,
       "win": false,
       "created": "2026-10-31T17:33:08.208Z",
-      "updated": "2026-11-02T14:09:12.133Z",
+      "updated": "2026-11-02T20:31:24.997Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -6758,6 +6758,16 @@
       "from": null,
       "to": "due,blocks"
     },
+    "a_1cz03lr6": {
+      "id": "a_1cz03lr6",
+      "at": "2026-11-02T20:31:24.997Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_o0derl3f",
+      "title": "Email Phil my report for the CAADC",
+      "from": null,
+      "to": "title,cat"
+    },
     "a_1duvdpzd": {
       "id": "a_1duvdpzd",
       "at": "2026-10-13T16:25:11.169Z",
@@ -9124,7 +9134,7 @@
       "src": "chat",
       "type": "move",
       "ref": "t_o0derl3f",
-      "title": "Email Phil with my update",
+      "title": "Email Phil my report for the CAADC",
       "from": "2026-11-01",
       "to": "2026-11-02"
     },
@@ -9904,7 +9914,7 @@
       "src": "chat",
       "type": "add",
       "ref": "t_o0derl3f",
-      "title": "Email Phil with my update",
+      "title": "Email Phil my report for the CAADC",
       "from": null,
       "to": "2026-11-01"
     },
