@@ -23,8 +23,8 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-11-02T14:09:21.846Z",
-    "headline": "9 things today.",
+    "at": "2026-11-02T14:20:54.532Z",
+    "headline": "8 things today.",
     "lines": [
       "CHORES // Closet reset · Water plants · Grocery run · Laundry. Most overdue: Closet reset (27d since last).",
       "TOMORROW // Tue 11/3: nothing on the list yet"
@@ -40,8 +40,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-11-02T14:09:08.572Z",
-    "lastActivitySeen": "2026-11-02T14:09:08.572Z"
+    "lastClaudeSync": "2026-11-02T14:20:52.166Z",
+    "lastActivitySeen": "2026-11-02T14:20:52.166Z"
   },
   "cats": {
     "admin": {
@@ -6153,12 +6153,12 @@
     },
     "t_yz0tnrdk": {
       "id": "t_yz0tnrdk",
-      "title": "PSC client: send visit reminder for Monday's session",
+      "title": "PSC client: send visit reminder for Thursday's session",
       "cat": "psc",
       "status": "todo",
       "due": null,
       "time": null,
-      "plan": "2026-11-01",
+      "plan": "2026-11-04",
       "est": null,
       "spent": 0,
       "blocks": [],
@@ -6168,10 +6168,10 @@
       "notes": "",
       "subs": [],
       "triage": false,
-      "moved": 0,
+      "moved": 1,
       "win": false,
       "created": "2026-10-31T17:37:14.527Z",
-      "updated": "2026-10-31T17:37:14.714Z",
+      "updated": "2026-11-02T14:20:54.230Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -7064,7 +7064,7 @@
       "src": "chat",
       "type": "edit",
       "ref": "t_yz0tnrdk",
-      "title": "PSC client: send visit reminder for Monday's session",
+      "title": "PSC client: send visit reminder for Thursday's session",
       "from": null,
       "to": "title"
     },
@@ -8477,6 +8477,16 @@
       "title": "SPARK grant update (RPPR)",
       "from": null,
       "to": "title,notes"
+    },
+    "a_gafi6l1v": {
+      "id": "a_gafi6l1v",
+      "at": "2026-11-02T14:20:54.230Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_yz0tnrdk",
+      "title": "PSC client: send visit reminder for Thursday's session",
+      "from": null,
+      "to": "title,plan"
     },
     "a_galkvucu": {
       "id": "a_galkvucu",
@@ -10474,7 +10484,7 @@
       "src": "chat",
       "type": "add",
       "ref": "t_yz0tnrdk",
-      "title": "PSC client: send visit reminder for Monday's session",
+      "title": "PSC client: send visit reminder for Thursday's session",
       "from": null,
       "to": "2026-11-01"
     },
