@@ -23,7 +23,7 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-11-02T14:09:12.396Z",
+    "at": "2026-11-02T14:09:21.846Z",
     "headline": "9 things today.",
     "lines": [
       "CHORES // Closet reset · Water plants · Grocery run · Laundry. Most overdue: Closet reset (27d since last).",
@@ -1753,7 +1753,7 @@
       "status": "todo",
       "due": null,
       "time": null,
-      "plan": "2026-11-01",
+      "plan": "2026-11-02",
       "est": 15,
       "spent": 0,
       "blocks": [],
@@ -1763,10 +1763,10 @@
       "notes": "",
       "subs": [],
       "triage": false,
-      "moved": 0,
+      "moved": 1,
       "win": false,
       "created": "2026-11-02T14:09:12.008Z",
-      "updated": "2026-11-02T14:09:12.008Z",
+      "updated": "2026-11-02T14:09:21.672Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -7097,6 +7097,16 @@
       "title": "Workout",
       "from": null,
       "to": null
+    },
+    "a_4e829mfp": {
+      "id": "a_4e829mfp",
+      "at": "2026-11-02T14:09:21.672Z",
+      "src": "chat",
+      "type": "move",
+      "ref": "t_6gvlanfd",
+      "title": "Laundry: one more push",
+      "from": "2026-11-01",
+      "to": "2026-11-02"
     },
     "a_4eit4tfa": {
       "id": "a_4eit4tfa",
