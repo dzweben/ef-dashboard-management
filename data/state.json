@@ -23,16 +23,16 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-11-03T02:00:10.473Z",
+    "at": "2026-11-03T13:59:50.051Z",
     "headline": "8 things today.",
     "lines": [
-      "CHORES // Closet reset · Water plants · Grocery run · Laundry. Most overdue: Closet reset (27d since last).",
-      "TOMORROW // Tue 11/3: nothing on the list yet"
+      "CHORES // Closet reset · Water plants · Grocery run · Laundry. Most overdue: Closet reset (28d since last).",
+      "TOMORROW // Wed 11/4: PSC client: send visit reminder for Thursday's session · Start ABCD work for Jason"
     ],
     "asks": [
       "'Start ABCD work for Jason' got pushed 3x. Shrink it, pin it to a day, or drop it?",
-      "Anything coming up for Grad roles?",
-      "Anything coming up for EF?"
+      "Anything coming up for Meetings?",
+      "Anything coming up for Ziggy?"
     ],
     "focus": []
   },
@@ -40,8 +40,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-11-03T02:00:04.627Z",
-    "lastActivitySeen": "2026-11-03T02:00:04.627Z"
+    "lastClaudeSync": "2026-11-03T13:59:45.035Z",
+    "lastActivitySeen": "2026-11-03T13:59:45.035Z"
   },
   "cats": {
     "admin": {
