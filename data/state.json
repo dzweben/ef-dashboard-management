@@ -23,14 +23,14 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-11-05T13:58:44.742Z",
-    "headline": "10 things today.",
+    "at": "2026-11-05T18:26:29.738Z",
+    "headline": "7 things today.",
     "lines": [
-      "CHORES // Closet reset · Water plants · Grocery run · Laundry · +1 more. Most overdue: Closet reset (30d since last).",
+      "CHORES // Closet reset · Water plants · Grocery run. Most overdue: Closet reset (30d since last).",
       "TOMORROW // Fri 11/6: nothing on the list yet"
     ],
     "asks": [
-      "'Start ABCD work for Jason' got pushed 3x. Shrink it, pin it to a day, or drop it?",
+      "'Start ABCD work for Jason' got pushed 4x. Shrink it, pin it to a day, or drop it?",
       "Virtual school: nothing open and quiet for 3+ weeks. Still active, or archive it?",
       "Fun: nothing open and quiet for 3+ weeks. Still active, or archive it?"
     ],
@@ -40,8 +40,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-11-05T13:58:42.869Z",
-    "lastActivitySeen": "2026-11-05T13:58:42.869Z"
+    "lastClaudeSync": "2026-11-05T18:26:18.340Z",
+    "lastActivitySeen": "2026-11-05T18:26:18.340Z"
   },
   "cats": {
     "admin": {
@@ -1434,6 +1434,30 @@
       "doneAt": "2026-10-08T03:58:07.379Z",
       "src": "chat"
     },
+    "t_44gq52ga": {
+      "id": "t_44gq52ga",
+      "title": "Clinical notes: finish the rest",
+      "cat": "psc",
+      "status": "todo",
+      "due": null,
+      "time": null,
+      "plan": "2026-11-05",
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-11-05T18:26:29.038Z",
+      "updated": "2026-11-05T18:26:29.038Z",
+      "doneAt": null,
+      "src": "chat"
+    },
     "t_46w5afv4": {
       "id": "t_46w5afv4",
       "title": "Laundry: put away (other half)",
@@ -1750,7 +1774,7 @@
       "id": "t_6gvlanfd",
       "title": "Laundry: one more push",
       "cat": "home",
-      "status": "todo",
+      "status": "done",
       "due": null,
       "time": null,
       "plan": "2026-11-02",
@@ -1766,8 +1790,8 @@
       "moved": 1,
       "win": false,
       "created": "2026-11-02T14:09:12.008Z",
-      "updated": "2026-11-02T14:09:21.672Z",
-      "doneAt": null,
+      "updated": "2026-11-05T18:26:28.424Z",
+      "doneAt": "2026-11-03T16:00:00.000Z",
       "src": "chat"
     },
     "t_6qjhgro1": {
@@ -2233,7 +2257,7 @@
       "status": "todo",
       "due": null,
       "time": null,
-      "plan": "2026-11-04",
+      "plan": "2026-11-09",
       "est": 90,
       "spent": 0,
       "blocks": [],
@@ -2243,10 +2267,10 @@
       "notes": "Pushed back; Jason not really responding (10/27)",
       "subs": [],
       "triage": false,
-      "moved": 3,
+      "moved": 4,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-30T22:12:43.626Z",
+      "updated": "2026-11-05T18:26:28.775Z",
       "doneAt": null,
       "src": "import"
     },
@@ -4752,7 +4776,7 @@
       "id": "t_qu7ix4eb",
       "title": "PSC: reach out to set up a call for Wednesday",
       "cat": "psc",
-      "status": "todo",
+      "status": "done",
       "due": null,
       "time": null,
       "plan": "2026-11-02",
@@ -4768,7 +4792,31 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-31T17:31:21.551Z",
-      "updated": "2026-10-31T17:31:21.681Z",
+      "updated": "2026-11-05T18:26:29.141Z",
+      "doneAt": "2026-11-04T16:00:00.000Z",
+      "src": "chat"
+    },
+    "t_r39hsx0f": {
+      "id": "t_r39hsx0f",
+      "title": "Reschedule the appointment I cancelled",
+      "cat": "health",
+      "status": "todo",
+      "due": null,
+      "time": null,
+      "plan": "2026-11-05",
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-11-05T18:26:29.388Z",
+      "updated": "2026-11-05T18:26:29.498Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -5747,7 +5795,7 @@
       "id": "t_wa5uzzs6",
       "title": "Clinical notes",
       "cat": "psc",
-      "status": "todo",
+      "status": "done",
       "due": null,
       "time": null,
       "plan": "2026-11-02",
@@ -5763,8 +5811,8 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-27T13:28:48.047Z",
-      "updated": "2026-10-27T13:28:48.047Z",
-      "doneAt": null,
+      "updated": "2026-11-05T18:26:28.910Z",
+      "doneAt": "2026-11-04T16:00:00.000Z",
       "src": "chat"
     },
     "t_wi5bybtk": {
@@ -6155,7 +6203,7 @@
       "id": "t_yz0tnrdk",
       "title": "PSC client: send visit reminder for Thursday's session",
       "cat": "psc",
-      "status": "todo",
+      "status": "done",
       "due": null,
       "time": null,
       "plan": "2026-11-04",
@@ -6171,8 +6219,8 @@
       "moved": 1,
       "win": false,
       "created": "2026-10-31T17:37:14.527Z",
-      "updated": "2026-11-02T14:20:54.230Z",
-      "doneAt": null,
+      "updated": "2026-11-05T18:26:29.246Z",
+      "doneAt": "2026-11-04T16:00:00.000Z",
       "src": "chat"
     },
     "t_z0x61fw4": {
@@ -6396,19 +6444,20 @@
       "cat": "home",
       "every": 7,
       "perDay": 1,
-      "last": "2026-10-29",
+      "last": "2026-11-04",
       "start": null,
       "log": [
         "2026-08-30",
         "2026-09-20",
         "2026-10-09",
-        "2026-10-29"
+        "2026-10-29",
+        "2026-11-04"
       ],
       "min": 5,
       "active": true,
       "notes": "",
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-30T22:12:43.773Z"
+      "updated": "2026-11-05T18:26:28.637Z"
     },
     "c_groceries": {
       "id": "c_groceries",
@@ -6456,20 +6505,21 @@
       "cat": "home",
       "every": 7,
       "perDay": 1,
-      "last": "2026-10-26",
+      "last": "2026-11-03",
       "start": null,
       "log": [
         "2026-08-29",
         "2026-09-19",
         "2026-10-04",
         "2026-10-13",
-        "2026-10-26"
+        "2026-10-26",
+        "2026-11-03"
       ],
       "min": 5,
       "active": true,
       "notes": "",
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-27T13:28:48.166Z"
+      "updated": "2026-11-05T18:26:28.529Z"
     },
     "c_plants": {
       "id": "c_plants",
@@ -6828,6 +6878,16 @@
       "from": null,
       "to": "due"
     },
+    "a_1spq7wjh": {
+      "id": "a_1spq7wjh",
+      "at": "2026-11-05T18:26:29.388Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_r39hsx0f",
+      "title": "Reschedule the appointment I cancelled",
+      "from": null,
+      "to": "2026-11-05"
+    },
     "a_1ydmd09w": {
       "id": "a_1ydmd09w",
       "at": "2026-10-16T14:44:54.160Z",
@@ -6967,6 +7027,16 @@
       "title": "AI pres: build slides + plan, send out",
       "from": null,
       "to": "planned"
+    },
+    "a_30xls6ul": {
+      "id": "a_30xls6ul",
+      "at": "2026-11-05T18:26:29.246Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_yz0tnrdk",
+      "title": "PSC client: send visit reminder for Thursday's session",
+      "from": null,
+      "to": null
     },
     "a_35tsikm0": {
       "id": "a_35tsikm0",
@@ -7177,6 +7247,16 @@
       "title": "AI pres: build slides + plan, send out",
       "from": null,
       "to": "planned"
+    },
+    "a_4p3xmld6": {
+      "id": "a_4p3xmld6",
+      "at": "2026-11-05T18:26:29.038Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_44gq52ga",
+      "title": "Clinical notes: finish the rest",
+      "from": null,
+      "to": "2026-11-05"
     },
     "a_4wiinn7k": {
       "id": "a_4wiinn7k",
@@ -7787,6 +7867,16 @@
       "title": "Clinical notes",
       "from": null,
       "to": "2026-11-02"
+    },
+    "a_an843xoy": {
+      "id": "a_an843xoy",
+      "at": "2026-11-05T18:26:28.910Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_wa5uzzs6",
+      "title": "Clinical notes",
+      "from": null,
+      "to": null
     },
     "a_anjyjjq0": {
       "id": "a_anjyjjq0",
@@ -8428,6 +8518,16 @@
       "from": null,
       "to": "2026-10-27"
     },
+    "a_fz4j4vz1": {
+      "id": "a_fz4j4vz1",
+      "at": "2026-11-05T18:26:28.775Z",
+      "src": "chat",
+      "type": "move",
+      "ref": "t_abcdjason",
+      "title": "Start ABCD work for Jason",
+      "from": "2026-11-04",
+      "to": "2026-11-09"
+    },
     "a_g0dxbq09": {
       "id": "a_g0dxbq09",
       "at": "2026-10-05T14:34:45.165Z",
@@ -8538,6 +8638,16 @@
       "from": null,
       "to": "2026-10-12"
     },
+    "a_glcidzaz": {
+      "id": "a_glcidzaz",
+      "at": "2026-11-05T18:26:29.141Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_qu7ix4eb",
+      "title": "PSC: reach out to set up a call for Wednesday",
+      "from": null,
+      "to": null
+    },
     "a_gm9clpj5": {
       "id": "a_gm9clpj5",
       "at": "2026-10-05T14:17:13.694Z",
@@ -8647,6 +8757,16 @@
       "title": "SPARK grant update",
       "from": null,
       "to": "status"
+    },
+    "a_hduodqp7": {
+      "id": "a_hduodqp7",
+      "at": "2026-11-05T18:26:28.637Z",
+      "src": "chat",
+      "type": "chore",
+      "ref": "c_floor1",
+      "title": "Clean first floor",
+      "from": null,
+      "to": "2026-11-04"
     },
     "a_hfubvxod": {
       "id": "a_hfubvxod",
@@ -10128,6 +10248,16 @@
       "from": null,
       "to": "2026-10-10"
     },
+    "a_u4vliqku": {
+      "id": "a_u4vliqku",
+      "at": "2026-11-05T18:26:29.498Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_r39hsx0f",
+      "title": "Reschedule the appointment I cancelled",
+      "from": null,
+      "to": "title"
+    },
     "a_u50xzc9m": {
       "id": "a_u50xzc9m",
       "at": "2026-10-13T16:25:12.000Z",
@@ -10267,6 +10397,16 @@
       "title": "Played chess",
       "from": null,
       "to": null
+    },
+    "a_v823wgd2": {
+      "id": "a_v823wgd2",
+      "at": "2026-11-05T18:26:28.529Z",
+      "src": "chat",
+      "type": "chore",
+      "ref": "c_laundry",
+      "title": "Laundry",
+      "from": null,
+      "to": "2026-11-03"
     },
     "a_vc2kpa2i": {
       "id": "a_vc2kpa2i",
@@ -10687,6 +10827,16 @@
       "title": "OCD pres: write main script",
       "from": null,
       "to": "planned"
+    },
+    "a_ysuqpbfn": {
+      "id": "a_ysuqpbfn",
+      "at": "2026-11-05T18:26:28.424Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_6gvlanfd",
+      "title": "Laundry: one more push",
+      "from": null,
+      "to": null
     },
     "a_yz5h29tz": {
       "id": "a_yz5h29tz",
