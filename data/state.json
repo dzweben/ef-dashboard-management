@@ -23,16 +23,16 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-11-06T01:59:42.674Z",
-    "headline": "7 things today.",
+    "at": "2026-11-06T13:59:58.598Z",
+    "headline": "8 things today.",
     "lines": [
-      "CHORES // Closet reset · Water plants · Grocery run. Most overdue: Closet reset (30d since last).",
-      "TOMORROW // Fri 11/6: nothing on the list yet"
+      "CHORES // Closet reset · Water plants · Grocery run. Most overdue: Closet reset (31d since last).",
+      "TOMORROW // Sat 11/7: nothing on the list yet"
     ],
     "asks": [
-      "'Start ABCD work for Jason' got pushed 4x. Shrink it, pin it to a day, or drop it?",
-      "Virtual school: nothing open and quiet for 3+ weeks. Still active, or archive it?",
-      "Fun: nothing open and quiet for 3+ weeks. Still active, or archive it?"
+      "'Start ABCD work for Jason' got pushed 5x. Shrink it, pin it to a day, or drop it?",
+      "Anything coming up for Undergrad?",
+      "Anything coming up for Grad roles?"
     ],
     "focus": []
   },
@@ -40,8 +40,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-11-06T01:59:40.715Z",
-    "lastActivitySeen": "2026-11-06T01:59:40.715Z"
+    "lastClaudeSync": "2026-11-06T13:59:56.593Z",
+    "lastActivitySeen": "2026-11-06T13:59:56.593Z"
   },
   "cats": {
     "admin": {
@@ -2257,7 +2257,7 @@
       "status": "todo",
       "due": null,
       "time": null,
-      "plan": "2026-11-09",
+      "plan": "2026-12-01",
       "est": 90,
       "spent": 0,
       "blocks": [],
@@ -2267,10 +2267,10 @@
       "notes": "Pushed back; Jason not really responding (10/27)",
       "subs": [],
       "triage": false,
-      "moved": 4,
+      "moved": 5,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-11-05T18:26:28.775Z",
+      "updated": "2026-11-06T13:59:58.049Z",
       "doneAt": null,
       "src": "import"
     },
@@ -5119,6 +5119,30 @@
       "doneAt": "2026-09-16T17:00:00.000Z",
       "src": "import"
     },
+    "t_sjv8ghxt": {
+      "id": "t_sjv8ghxt",
+      "title": "Convert a client's hours (hours tracking)",
+      "cat": "psc",
+      "status": "todo",
+      "due": null,
+      "time": null,
+      "plan": "2026-11-06",
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-11-06T13:59:58.171Z",
+      "updated": "2026-11-06T13:59:58.279Z",
+      "doneAt": null,
+      "src": "chat"
+    },
     "t_sk5347l9": {
       "id": "t_sk5347l9",
       "title": "RA tutorial",
@@ -7128,6 +7152,16 @@
       "from": "2026-10-13",
       "to": "2026-10-19"
     },
+    "a_3pqm9479": {
+      "id": "a_3pqm9479",
+      "at": "2026-11-06T13:59:58.049Z",
+      "src": "chat",
+      "type": "move",
+      "ref": "t_abcdjason",
+      "title": "Start ABCD work for Jason",
+      "from": "2026-11-09",
+      "to": "2026-12-01"
+    },
     "a_3xc69rss": {
       "id": "a_3xc69rss",
       "at": "2026-10-07T04:09:48.062Z",
@@ -7357,6 +7391,16 @@
       "title": "Review paper: first chip (restart)",
       "from": null,
       "to": null
+    },
+    "a_5nx69zyg": {
+      "id": "a_5nx69zyg",
+      "at": "2026-11-06T13:59:58.171Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_sjv8ghxt",
+      "title": "Convert a client's hours (hours tracking)",
+      "from": null,
+      "to": "2026-11-06"
     },
     "a_5uhe0pp1": {
       "id": "a_5uhe0pp1",
@@ -8717,6 +8761,16 @@
       "title": "Called Chuck",
       "from": null,
       "to": null
+    },
+    "a_h7j4hwzn": {
+      "id": "a_h7j4hwzn",
+      "at": "2026-11-06T13:59:58.279Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_sjv8ghxt",
+      "title": "Convert a client's hours (hours tracking)",
+      "from": null,
+      "to": "title"
     },
     "a_h826dp6x": {
       "id": "a_h826dp6x",
