@@ -23,10 +23,10 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-11-06T13:59:58.598Z",
-    "headline": "8 things today.",
+    "at": "2026-11-06T14:00:10.818Z",
+    "headline": "7 things today.",
     "lines": [
-      "CHORES // Closet reset · Water plants · Grocery run. Most overdue: Closet reset (31d since last).",
+      "CHORES // Water plants · Grocery run. Most overdue: Water plants (13d since last).",
       "TOMORROW // Sat 11/7: nothing on the list yet"
     ],
     "asks": [
@@ -1954,11 +1954,35 @@
       "doneAt": "2026-10-30T16:00:00.000Z",
       "src": "chat"
     },
+    "t_73ki1zwh": {
+      "id": "t_73ki1zwh",
+      "title": "Watered 1/3 of the plants",
+      "cat": "home",
+      "status": "done",
+      "due": null,
+      "time": null,
+      "plan": "2026-11-05",
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-11-06T14:00:10.044Z",
+      "updated": "2026-11-06T14:00:10.156Z",
+      "doneAt": "2026-11-05T16:00:00.000Z",
+      "src": "chat"
+    },
     "t_76wb31ss": {
       "id": "t_76wb31ss",
       "title": "Closet reset",
       "cat": "home",
-      "status": "todo",
+      "status": "done",
       "due": null,
       "time": null,
       "plan": "2026-10-31",
@@ -1974,8 +1998,8 @@
       "moved": 0,
       "win": false,
       "created": "2026-10-30T22:12:44.006Z",
-      "updated": "2026-10-30T22:12:44.006Z",
-      "doneAt": null,
+      "updated": "2026-11-06T14:00:10.484Z",
+      "doneAt": "2026-11-05T16:00:00.000Z",
       "src": "chat"
     },
     "t_7e8sndnw": {
@@ -3258,6 +3282,30 @@
       "created": "2026-10-05T14:34:45.477Z",
       "updated": "2026-10-05T14:34:45.595Z",
       "doneAt": "2026-10-02T16:00:00.000Z",
+      "src": "chat"
+    },
+    "t_h4q9tele": {
+      "id": "t_h4q9tele",
+      "title": "Finished all client rescheduling",
+      "cat": "psc",
+      "status": "done",
+      "due": null,
+      "time": null,
+      "plan": "2026-11-05",
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-11-06T14:00:10.274Z",
+      "updated": "2026-11-06T14:00:10.382Z",
+      "doneAt": "2026-11-05T16:00:00.000Z",
       "src": "chat"
     },
     "t_h6mjmt89": {
@@ -6447,20 +6495,21 @@
       "cat": "home",
       "every": 14,
       "perDay": 1,
-      "last": "2026-10-06",
+      "last": "2026-11-05",
       "start": null,
       "log": [
         "2026-07-24",
         "2026-08-03",
         "2026-08-17",
         "2026-08-18",
-        "2026-10-06"
+        "2026-10-06",
+        "2026-11-05"
       ],
       "min": 5,
       "active": true,
       "notes": "",
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-07T02:25:08.274Z"
+      "updated": "2026-11-06T14:00:10.587Z"
     },
     "c_floor1": {
       "id": "c_floor1",
@@ -6931,6 +6980,16 @@
       "title": "AI pres: convert voice transcripts",
       "from": "2026-10-14",
       "to": "2026-10-21"
+    },
+    "a_225m3qwh": {
+      "id": "a_225m3qwh",
+      "at": "2026-11-06T14:00:10.484Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_76wb31ss",
+      "title": "Closet reset",
+      "from": null,
+      "to": null
     },
     "a_24znkp2y": {
       "id": "a_24znkp2y",
@@ -7522,6 +7581,16 @@
       "from": null,
       "to": "2026-10-09"
     },
+    "a_6vxsy981": {
+      "id": "a_6vxsy981",
+      "at": "2026-11-06T14:00:10.044Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_73ki1zwh",
+      "title": "Watered 1/3 of the plants",
+      "from": null,
+      "to": "2026-11-05"
+    },
     "a_6xc783jb": {
       "id": "a_6xc783jb",
       "at": "2026-10-05T14:36:33.318Z",
@@ -7701,6 +7770,16 @@
       "title": "Lily gift: order or buy it",
       "from": null,
       "to": "due,plan,notes"
+    },
+    "a_86p8zmfa": {
+      "id": "a_86p8zmfa",
+      "at": "2026-11-06T14:00:10.587Z",
+      "src": "chat",
+      "type": "chore",
+      "ref": "c_closet",
+      "title": "Closet reset",
+      "from": null,
+      "to": "2026-11-05"
     },
     "a_87ztt8j3": {
       "id": "a_87ztt8j3",
@@ -8442,6 +8521,16 @@
       "from": "2026-10-07",
       "to": "2026-10-14"
     },
+    "a_ebnlbqdq": {
+      "id": "a_ebnlbqdq",
+      "at": "2026-11-06T14:00:10.382Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_h4q9tele",
+      "title": "Finished all client rescheduling",
+      "from": null,
+      "to": null
+    },
     "a_ehaxov0f": {
       "id": "a_ehaxov0f",
       "at": "2026-10-07T04:09:47.634Z",
@@ -9099,6 +9188,16 @@
       "type": "add",
       "ref": "t_dyjiic1q",
       "title": "Email Phil: E-ADIS got minimal feedback, it's ready",
+      "from": null,
+      "to": null
+    },
+    "a_jwx3i93l": {
+      "id": "a_jwx3i93l",
+      "at": "2026-11-06T14:00:10.156Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_73ki1zwh",
+      "title": "Watered 1/3 of the plants",
       "from": null,
       "to": null
     },
@@ -10151,6 +10250,16 @@
       "title": "Send Johanna the LEARN breakdown email (drafted)",
       "from": null,
       "to": null
+    },
+    "a_syiui4pu": {
+      "id": "a_syiui4pu",
+      "at": "2026-11-06T14:00:10.274Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_h4q9tele",
+      "title": "Finished all client rescheduling",
+      "from": null,
+      "to": "2026-11-05"
     },
     "a_t0rndag8": {
       "id": "a_t0rndag8",
