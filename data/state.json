@@ -23,16 +23,16 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-11-09T01:59:57.716Z",
+    "at": "2026-11-09T13:59:29.136Z",
     "headline": "6 things today.",
     "lines": [
-      "CHORES // Grocery run · TUBRIC LinkedIn post. Most overdue: Grocery run (14d since last).",
-      "TOMORROW // Mon 11/9: nothing on the list yet"
+      "CHORES // Grocery run · TUBRIC LinkedIn post. Most overdue: Grocery run (15d since last).",
+      "TOMORROW // Tue 11/10: nothing on the list yet"
     ],
     "asks": [
       "'Start ABCD work for Jason' got pushed 5x. Shrink it, pin it to a day, or drop it?",
-      "Anything coming up for Undergrad?",
-      "Anything coming up for Grad roles?"
+      "Anything coming up for EF?",
+      "Anything coming up for Meetings?"
     ],
     "focus": []
   },
@@ -40,8 +40,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-11-09T01:59:56.168Z",
-    "lastActivitySeen": "2026-11-09T01:59:56.168Z"
+    "lastClaudeSync": "2026-11-09T13:59:27.576Z",
+    "lastActivitySeen": "2026-11-09T13:59:27.576Z"
   },
   "cats": {
     "admin": {
