@@ -23,16 +23,16 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-11-10T01:59:52.422Z",
-    "headline": "6 things today.",
+    "at": "2026-11-10T05:20:17.259Z",
+    "headline": "5 things today.",
     "lines": [
-      "CHORES // Grocery run · TUBRIC LinkedIn post. Most overdue: Grocery run (15d since last).",
-      "TOMORROW // Tue 11/10: nothing on the list yet"
+      "CHORES // Grocery run · Laundry. Most overdue: Grocery run (16d since last).",
+      "TOMORROW // Wed 11/11: nothing on the list yet"
     ],
     "asks": [
       "'Start ABCD work for Jason' got pushed 5x. Shrink it, pin it to a day, or drop it?",
-      "Anything coming up for EF?",
-      "Anything coming up for Meetings?"
+      "Anything coming up for Ziggy?",
+      "Anything coming up for coursework?"
     ],
     "focus": []
   },
@@ -40,8 +40,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-11-10T01:59:50.261Z",
-    "lastActivitySeen": "2026-11-10T01:59:50.261Z"
+    "lastClaudeSync": "2026-11-10T05:20:02.485Z",
+    "lastActivitySeen": "2026-11-10T05:20:02.485Z"
   },
   "cats": {
     "admin": {
@@ -1578,6 +1578,30 @@
       "doneAt": "2026-10-05T23:37:01.943Z",
       "src": "chat"
     },
+    "t_5a950qh7": {
+      "id": "t_5a950qh7",
+      "title": "Lab meeting",
+      "cat": "meetings",
+      "status": "done",
+      "due": null,
+      "time": null,
+      "plan": "2026-11-09",
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "meeting",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-11-10T05:20:16.652Z",
+      "updated": "2026-11-10T05:20:16.769Z",
+      "doneAt": "2026-11-09T16:00:00.000Z",
+      "src": "chat"
+    },
     "t_5e8u0jdk": {
       "id": "t_5e8u0jdk",
       "title": "RA tutorial debugging",
@@ -2850,6 +2874,30 @@
       "doneAt": "2026-10-17T01:11:49.998Z",
       "src": "chat"
     },
+    "t_elg4mzeb": {
+      "id": "t_elg4mzeb",
+      "title": "RSA + impact analyses: big work session",
+      "cat": "rsa",
+      "status": "done",
+      "due": null,
+      "time": null,
+      "plan": "2026-11-09",
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "analysis",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-11-10T05:20:15.879Z",
+      "updated": "2026-11-10T05:20:15.991Z",
+      "doneAt": "2026-11-09T16:00:00.000Z",
+      "src": "chat"
+    },
     "t_emailjason": {
       "id": "t_emailjason",
       "title": "Email Jason: follow up + reschedule Visit 1",
@@ -3524,6 +3572,30 @@
       "doneAt": "2026-09-28T17:00:00.000Z",
       "src": "import"
     },
+    "t_j8irf972": {
+      "id": "t_j8irf972",
+      "title": "Neuromelanin: big work session",
+      "cat": "sdn",
+      "status": "done",
+      "due": null,
+      "time": null,
+      "plan": "2026-11-09",
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-11-10T05:20:16.154Z",
+      "updated": "2026-11-10T05:20:16.275Z",
+      "doneAt": "2026-11-09T16:00:00.000Z",
+      "src": "chat"
+    },
     "t_j8u6b5id": {
       "id": "t_j8u6b5id",
       "title": "Work order",
@@ -3571,6 +3643,30 @@
       "updated": "2026-09-24T17:00:00.000Z",
       "doneAt": "2026-09-24T17:00:00.000Z",
       "src": "import"
+    },
+    "t_jgmz4cr6": {
+      "id": "t_jgmz4cr6",
+      "title": "Clinical prep reading (50-100 pages)",
+      "cat": "psc",
+      "status": "done",
+      "due": null,
+      "time": null,
+      "plan": "2026-11-09",
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-11-10T05:20:16.895Z",
+      "updated": "2026-11-10T05:20:17.009Z",
+      "doneAt": "2026-11-09T16:00:00.000Z",
+      "src": "chat"
     },
     "t_jm86kswg": {
       "id": "t_jm86kswg",
@@ -4268,6 +4364,30 @@
       "doneAt": "2026-10-05T16:45:35.042Z",
       "src": "chat"
     },
+    "t_np7nqsxj": {
+      "id": "t_np7nqsxj",
+      "title": "Attended TUBRIC scan",
+      "cat": "tubric",
+      "status": "done",
+      "due": null,
+      "time": null,
+      "plan": "2026-11-09",
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-11-10T05:20:16.393Z",
+      "updated": "2026-11-10T05:20:16.504Z",
+      "doneAt": "2026-11-09T16:00:00.000Z",
+      "src": "chat"
+    },
     "t_npw7vdzl": {
       "id": "t_npw7vdzl",
       "title": "Email Johanna + DTI team",
@@ -4872,7 +4992,7 @@
       "id": "t_r39hsx0f",
       "title": "Reschedule the appointment I cancelled",
       "cat": "health",
-      "status": "todo",
+      "status": "done",
       "due": null,
       "time": null,
       "plan": "2026-11-05",
@@ -4888,8 +5008,8 @@
       "moved": 0,
       "win": false,
       "created": "2026-11-05T18:26:29.388Z",
-      "updated": "2026-11-05T18:26:29.498Z",
-      "doneAt": null,
+      "updated": "2026-11-10T05:20:15.634Z",
+      "doneAt": "2026-11-09T16:00:00.000Z",
       "src": "chat"
     },
     "t_rc0owh8i": {
@@ -6582,19 +6702,20 @@
       "cat": "tubric",
       "every": 7,
       "perDay": 1,
-      "last": "2026-11-01",
+      "last": "2026-11-09",
       "start": null,
       "log": [
         "2026-10-05",
         "2026-10-23",
         "2026-10-31",
-        "2026-11-01"
+        "2026-11-01",
+        "2026-11-09"
       ],
       "min": 5,
       "active": true,
       "notes": "",
       "created": "2026-10-05T16:28:10.441Z",
-      "updated": "2026-11-02T14:09:11.553Z"
+      "updated": "2026-11-10T05:20:15.747Z"
     },
     "c_laundry": {
       "id": "c_laundry",
@@ -7085,6 +7206,16 @@
       "title": "AI pres: convert voice transcripts",
       "from": null,
       "to": "2026-10-07"
+    },
+    "a_2ndtudlv": {
+      "id": "a_2ndtudlv",
+      "at": "2026-11-10T05:20:16.769Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_5a950qh7",
+      "title": "Lab meeting",
+      "from": null,
+      "to": null
     },
     "a_2ofysfc5": {
       "id": "a_2ofysfc5",
@@ -8036,6 +8167,16 @@
       "from": null,
       "to": "aliases"
     },
+    "a_aj19g4pb": {
+      "id": "a_aj19g4pb",
+      "at": "2026-11-10T05:20:15.879Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_elg4mzeb",
+      "title": "RSA + impact analyses: big work session",
+      "from": null,
+      "to": "2026-11-09"
+    },
     "a_akj30d8v": {
       "id": "a_akj30d8v",
       "at": "2026-10-27T13:28:48.047Z",
@@ -8136,6 +8277,16 @@
       "from": null,
       "to": null
     },
+    "a_b5n3ju04": {
+      "id": "a_b5n3ju04",
+      "at": "2026-11-10T05:20:16.504Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_np7nqsxj",
+      "title": "Attended TUBRIC scan",
+      "from": null,
+      "to": null
+    },
     "a_b7255qme": {
       "id": "a_b7255qme",
       "at": "2026-10-31T04:24:09.693Z",
@@ -8163,6 +8314,16 @@
       "type": "done",
       "ref": "t_pnnjnz0a",
       "title": "Made lunch for me and Lily + cleanup",
+      "from": null,
+      "to": null
+    },
+    "a_bfebafl1": {
+      "id": "a_bfebafl1",
+      "at": "2026-11-10T05:20:16.275Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_j8irf972",
+      "title": "Neuromelanin: big work session",
       "from": null,
       "to": null
     },
@@ -8255,6 +8416,16 @@
       "title": "Virtual school work",
       "from": null,
       "to": "2026-10-07"
+    },
+    "a_bxe64tti": {
+      "id": "a_bxe64tti",
+      "at": "2026-11-10T05:20:16.652Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_5a950qh7",
+      "title": "Lab meeting",
+      "from": null,
+      "to": "2026-11-09"
     },
     "a_bymfxp4g": {
       "id": "a_bymfxp4g",
@@ -8433,6 +8604,16 @@
       "type": "done",
       "ref": "t_vnujsabp",
       "title": "ABCD review prep",
+      "from": null,
+      "to": null
+    },
+    "a_d8apk0mo": {
+      "id": "a_d8apk0mo",
+      "at": "2026-11-10T05:20:17.009Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_jgmz4cr6",
+      "title": "Clinical prep reading (50-100 pages)",
       "from": null,
       "to": null
     },
@@ -9105,6 +9286,16 @@
       "title": "Auto-plan: 7 tasks",
       "from": null,
       "to": "planned"
+    },
+    "a_ip03riw2": {
+      "id": "a_ip03riw2",
+      "at": "2026-11-10T05:20:16.393Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_np7nqsxj",
+      "title": "Attended TUBRIC scan",
+      "from": null,
+      "to": "2026-11-09"
     },
     "a_j2y7clcs": {
       "id": "a_j2y7clcs",
@@ -10066,6 +10257,16 @@
       "from": null,
       "to": "2026-10-09"
     },
+    "a_rdhdwrb4": {
+      "id": "a_rdhdwrb4",
+      "at": "2026-11-10T05:20:15.991Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_elg4mzeb",
+      "title": "RSA + impact analyses: big work session",
+      "from": null,
+      "to": null
+    },
     "a_rha2tv5n": {
       "id": "a_rha2tv5n",
       "at": "2026-10-07T04:09:47.917Z",
@@ -10616,6 +10817,16 @@
       "from": null,
       "to": null
     },
+    "a_v598u0z4": {
+      "id": "a_v598u0z4",
+      "at": "2026-11-10T05:20:16.895Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_jgmz4cr6",
+      "title": "Clinical prep reading (50-100 pages)",
+      "from": null,
+      "to": "2026-11-09"
+    },
     "a_v5no27ki": {
       "id": "a_v5no27ki",
       "at": "2026-10-05T23:39:42.001Z",
@@ -10635,6 +10846,16 @@
       "title": "Laundry",
       "from": null,
       "to": "2026-11-03"
+    },
+    "a_vbl5j8zp": {
+      "id": "a_vbl5j8zp",
+      "at": "2026-11-10T05:20:15.634Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_r39hsx0f",
+      "title": "Reschedule the appointment I cancelled",
+      "from": null,
+      "to": null
     },
     "a_vc2kpa2i": {
       "id": "a_vc2kpa2i",
@@ -10786,6 +11007,16 @@
       "from": null,
       "to": "added"
     },
+    "a_wy9vpsl1": {
+      "id": "a_wy9vpsl1",
+      "at": "2026-11-10T05:20:16.154Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_j8irf972",
+      "title": "Neuromelanin: big work session",
+      "from": null,
+      "to": "2026-11-09"
+    },
     "a_x196b213": {
       "id": "a_x196b213",
       "at": "2026-10-05T19:53:13.745Z",
@@ -10815,6 +11046,16 @@
       "title": "RSA prep for Tuesday",
       "from": null,
       "to": "2026-10-27"
+    },
+    "a_x68d7fvs": {
+      "id": "a_x68d7fvs",
+      "at": "2026-11-10T05:20:15.747Z",
+      "src": "chat",
+      "type": "chore",
+      "ref": "c_k6mbnv2u",
+      "title": "TUBRIC LinkedIn post",
+      "from": null,
+      "to": "2026-11-09"
     },
     "a_x7kykr8t": {
       "id": "a_x7kykr8t",
