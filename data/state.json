@@ -23,16 +23,16 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-11-11T02:00:02.236Z",
+    "at": "2026-11-11T13:59:04.700Z",
     "headline": "5 things today.",
     "lines": [
-      "CHORES // Grocery run · Laundry. Most overdue: Grocery run (16d since last).",
-      "TOMORROW // Wed 11/11: nothing on the list yet"
+      "CHORES // Grocery run · Laundry · Clean first floor. Most overdue: Grocery run (17d since last).",
+      "TOMORROW // Thu 11/12: nothing on the list yet"
     ],
     "asks": [
       "'Start ABCD work for Jason' got pushed 5x. Shrink it, pin it to a day, or drop it?",
-      "Anything coming up for Ziggy?",
-      "Anything coming up for coursework?"
+      "Dev projects: nothing open and quiet for 3+ weeks. Still active, or archive it?",
+      "LEARN: nothing open and quiet for 3+ weeks. Still active, or archive it?"
     ],
     "focus": []
   },
@@ -40,8 +40,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-11-11T02:00:00.605Z",
-    "lastActivitySeen": "2026-11-11T02:00:00.605Z"
+    "lastClaudeSync": "2026-11-11T13:59:03.171Z",
+    "lastActivitySeen": "2026-11-11T13:59:03.171Z"
   },
   "cats": {
     "admin": {
