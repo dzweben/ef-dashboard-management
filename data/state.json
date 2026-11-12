@@ -23,10 +23,10 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-11-12T17:56:28.730Z",
-    "headline": "1 thing today.",
+    "at": "2026-11-12T17:58:35.967Z",
+    "headline": "2 things today.",
     "lines": [
-      "CHORES // Grocery run · Laundry. Most overdue: Grocery run (18d since last).",
+      "CHORES // Laundry. Most overdue: Laundry (9d since last).",
       "TOMORROW // Fri 11/13: nothing on the list yet",
       "DONE // 3 today · streak 2d"
     ],
@@ -41,8 +41,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-11-12T17:56:04.836Z",
-    "lastActivitySeen": "2026-11-12T17:56:04.836Z"
+    "lastClaudeSync": "2026-11-12T17:58:34.171Z",
+    "lastActivitySeen": "2026-11-12T17:58:34.171Z"
   },
   "cats": {
     "admin": {
@@ -4712,6 +4712,30 @@
       "doneAt": "2026-11-12T17:56:15.681Z",
       "src": "chat"
     },
+    "t_o2n9e42b": {
+      "id": "t_o2n9e42b",
+      "title": "Laundry + tidy up (tonight)",
+      "cat": "home",
+      "status": "todo",
+      "due": null,
+      "time": null,
+      "plan": "2026-11-12",
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-11-12T17:58:35.760Z",
+      "updated": "2026-11-12T17:58:35.760Z",
+      "doneAt": null,
+      "src": "chat"
+    },
     "t_obh7ymh9": {
       "id": "t_obh7ymh9",
       "title": "RSA prep for Tuesday",
@@ -6887,19 +6911,20 @@
       "cat": "home",
       "every": 7,
       "perDay": 1,
-      "last": "2026-10-25",
+      "last": "2026-11-12",
       "start": null,
       "log": [
         "2026-09-20",
         "2026-10-03",
         "2026-10-15",
-        "2026-10-25"
+        "2026-10-25",
+        "2026-11-12"
       ],
       "min": 5,
       "active": true,
       "notes": "",
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-10-26T14:57:04.410Z"
+      "updated": "2026-11-12T17:58:35.639Z"
     },
     "c_k6mbnv2u": {
       "id": "c_k6mbnv2u",
@@ -9972,6 +9997,16 @@
       "from": "2026-11-01",
       "to": "2026-11-02"
     },
+    "a_m02lni5y": {
+      "id": "a_m02lni5y",
+      "at": "2026-11-12T17:58:35.760Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_o2n9e42b",
+      "title": "Laundry + tidy up (tonight)",
+      "from": null,
+      "to": "2026-11-12"
+    },
     "a_m7x3vuzk": {
       "id": "a_m7x3vuzk",
       "at": "2026-10-07T02:20:17.917Z",
@@ -10071,6 +10106,16 @@
       "title": "Auto-plan: 4 tasks",
       "from": null,
       "to": "planned"
+    },
+    "a_mvci2s1u": {
+      "id": "a_mvci2s1u",
+      "at": "2026-11-12T17:58:35.639Z",
+      "src": "chat",
+      "type": "chore",
+      "ref": "c_groceries",
+      "title": "Grocery run",
+      "from": null,
+      "to": null
     },
     "a_n1j9fkq1": {
       "id": "a_n1j9fkq1",
