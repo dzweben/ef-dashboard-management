@@ -23,11 +23,12 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-11-12T02:00:10.536Z",
+    "at": "2026-11-12T04:29:14.741Z",
     "headline": "5 things today.",
     "lines": [
       "CHORES // Grocery run · Laundry · Clean first floor. Most overdue: Grocery run (17d since last).",
-      "TOMORROW // Thu 11/12: nothing on the list yet"
+      "TOMORROW // Thu 11/12: nothing on the list yet",
+      "DONE // 5 today"
     ],
     "asks": [
       "'Start ABCD work for Jason' got pushed 5x. Shrink it, pin it to a day, or drop it?",
@@ -40,8 +41,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-11-12T02:00:08.779Z",
-    "lastActivitySeen": "2026-11-12T02:00:08.779Z"
+    "lastClaudeSync": "2026-11-12T04:29:06.416Z",
+    "lastActivitySeen": "2026-11-12T04:29:06.416Z"
   },
   "cats": {
     "admin": {
@@ -2098,6 +2099,30 @@
       "doneAt": "2026-09-28T17:00:00.000Z",
       "src": "import"
     },
+    "t_7yrhhri6": {
+      "id": "t_7yrhhri6",
+      "title": "Cooked dinner",
+      "cat": "home",
+      "status": "done",
+      "due": null,
+      "time": null,
+      "plan": "2026-11-11",
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-11-12T04:29:14.399Z",
+      "updated": "2026-11-12T04:29:14.510Z",
+      "doneAt": "2026-11-12T04:29:14.510Z",
+      "src": "chat"
+    },
     "t_804en1q3": {
       "id": "t_804en1q3",
       "title": "RSA PPI",
@@ -2121,6 +2146,30 @@
       "updated": "2026-09-28T17:00:00.000Z",
       "doneAt": "2026-09-28T17:00:00.000Z",
       "src": "import"
+    },
+    "t_817hg4tp": {
+      "id": "t_817hg4tp",
+      "title": "Clinical prep (lots)",
+      "cat": "psc",
+      "status": "done",
+      "due": null,
+      "time": null,
+      "plan": "2026-11-11",
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-11-12T04:29:13.394Z",
+      "updated": "2026-11-12T04:29:13.512Z",
+      "doneAt": "2026-11-12T04:29:13.512Z",
+      "src": "chat"
     },
     "t_81ej8elz": {
       "id": "t_81ej8elz",
@@ -2488,6 +2537,30 @@
       "created": "2026-10-05T14:17:30.009Z",
       "updated": "2026-10-27T13:28:47.191Z",
       "doneAt": "2026-10-24T16:00:00.000Z",
+      "src": "chat"
+    },
+    "t_bgwvic07": {
+      "id": "t_bgwvic07",
+      "title": "DTI paper: big work session",
+      "cat": "dti",
+      "status": "done",
+      "due": null,
+      "time": null,
+      "plan": "2026-11-11",
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-11-12T04:29:13.878Z",
+      "updated": "2026-11-12T04:29:14.013Z",
+      "doneAt": "2026-11-12T04:29:14.013Z",
       "src": "chat"
     },
     "t_boaipt8j": {
@@ -3571,6 +3644,30 @@
       "updated": "2026-09-28T17:00:00.000Z",
       "doneAt": "2026-09-28T17:00:00.000Z",
       "src": "import"
+    },
+    "t_j0rxycdw": {
+      "id": "t_j0rxycdw",
+      "title": "E-ADIS: big work session",
+      "cat": "caadc",
+      "status": "done",
+      "due": null,
+      "time": null,
+      "plan": "2026-11-11",
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-11-12T04:29:14.139Z",
+      "updated": "2026-11-12T04:29:14.271Z",
+      "doneAt": "2026-11-12T04:29:14.271Z",
+      "src": "chat"
     },
     "t_j8irf972": {
       "id": "t_j8irf972",
@@ -5767,6 +5864,30 @@
       "doneAt": "2026-10-05T23:39:42.492Z",
       "src": "chat"
     },
+    "t_v1e4yl1a": {
+      "id": "t_v1e4yl1a",
+      "title": "Client session",
+      "cat": "psc",
+      "status": "done",
+      "due": null,
+      "time": null,
+      "plan": "2026-11-11",
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-11-12T04:29:13.638Z",
+      "updated": "2026-11-12T04:29:13.755Z",
+      "doneAt": "2026-11-12T04:29:13.755Z",
+      "src": "chat"
+    },
     "t_v3h0fe51": {
       "id": "t_v3h0fe51",
       "title": "PSC client: reschedule Monday's session to Thursday",
@@ -6997,6 +7118,16 @@
       "from": null,
       "to": "blocks"
     },
+    "a_15ks3ixz": {
+      "id": "a_15ks3ixz",
+      "at": "2026-11-12T04:29:13.638Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_v1e4yl1a",
+      "title": "Client session",
+      "from": null,
+      "to": "2026-11-11"
+    },
     "a_15wkqumk": {
       "id": "a_15wkqumk",
       "at": "2026-10-12T19:17:18.357Z",
@@ -7086,6 +7217,16 @@
       "title": "Multivariate homework",
       "from": null,
       "to": "2026-11-01"
+    },
+    "a_1ffta4p9": {
+      "id": "a_1ffta4p9",
+      "at": "2026-11-12T04:29:13.512Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_817hg4tp",
+      "title": "Clinical prep (lots)",
+      "from": null,
+      "to": null
     },
     "a_1gw6jhep": {
       "id": "a_1gw6jhep",
@@ -8157,6 +8298,16 @@
       "from": null,
       "to": "kind"
     },
+    "a_adtlokrt": {
+      "id": "a_adtlokrt",
+      "at": "2026-11-12T04:29:13.878Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_bgwvic07",
+      "title": "DTI paper: big work session",
+      "from": null,
+      "to": "2026-11-11"
+    },
     "a_aht9g25v": {
       "id": "a_aht9g25v",
       "at": "2026-10-08T04:02:53.031Z",
@@ -8246,6 +8397,16 @@
       "title": "RSA: participant data fixes",
       "from": null,
       "to": "notes"
+    },
+    "a_awo2yegh": {
+      "id": "a_awo2yegh",
+      "at": "2026-11-12T04:29:14.271Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_j0rxycdw",
+      "title": "E-ADIS: big work session",
+      "from": null,
+      "to": null
     },
     "a_b1x7ltu7": {
       "id": "a_b1x7ltu7",
@@ -9157,6 +9318,16 @@
       "from": null,
       "to": "notes"
     },
+    "a_hj2hr0wt": {
+      "id": "a_hj2hr0wt",
+      "at": "2026-11-12T04:29:14.013Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_bgwvic07",
+      "title": "DTI paper: big work session",
+      "from": null,
+      "to": null
+    },
     "a_hk2b1e88": {
       "id": "a_hk2b1e88",
       "at": "2026-10-09T17:54:33.696Z",
@@ -9396,6 +9567,16 @@
       "title": "Went to Lily's graduation ceremony",
       "from": null,
       "to": "2026-10-06"
+    },
+    "a_jnpn6tpo": {
+      "id": "a_jnpn6tpo",
+      "at": "2026-11-12T04:29:14.399Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_7yrhhri6",
+      "title": "Cooked dinner",
+      "from": null,
+      "to": "2026-11-11"
     },
     "a_jtff7l66": {
       "id": "a_jtff7l66",
@@ -9897,6 +10078,16 @@
       "from": null,
       "to": "plan,notes"
     },
+    "a_ofw3t1cn": {
+      "id": "a_ofw3t1cn",
+      "at": "2026-11-12T04:29:14.139Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_j0rxycdw",
+      "title": "E-ADIS: big work session",
+      "from": null,
+      "to": "2026-11-11"
+    },
     "a_og8bpk2t": {
       "id": "a_og8bpk2t",
       "at": "2026-10-10T04:42:38.232Z",
@@ -10027,6 +10218,16 @@
       "from": null,
       "to": "due,est,prio,project,blocks"
     },
+    "a_pmgipw9o": {
+      "id": "a_pmgipw9o",
+      "at": "2026-11-12T04:29:13.394Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_817hg4tp",
+      "title": "Clinical prep (lots)",
+      "from": null,
+      "to": "2026-11-11"
+    },
     "a_ppo5kw29": {
       "id": "a_ppo5kw29",
       "at": "2026-10-31T18:40:11.869Z",
@@ -10094,6 +10295,16 @@
       "type": "done",
       "ref": "t_deftdocs",
       "title": "DEFT documentation for Andrew",
+      "from": null,
+      "to": null
+    },
+    "a_q65w6hyy": {
+      "id": "a_q65w6hyy",
+      "at": "2026-11-12T04:29:14.510Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_7yrhhri6",
+      "title": "Cooked dinner",
       "from": null,
       "to": null
     },
@@ -10986,6 +11197,16 @@
       "title": "SPARK docs: task-completion audit script",
       "from": null,
       "to": "due,est,prio,project,blocks"
+    },
+    "a_wqxzii3i": {
+      "id": "a_wqxzii3i",
+      "at": "2026-11-12T04:29:13.755Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_v1e4yl1a",
+      "title": "Client session",
+      "from": null,
+      "to": null
     },
     "a_wsdgc8bw": {
       "id": "a_wsdgc8bw",
