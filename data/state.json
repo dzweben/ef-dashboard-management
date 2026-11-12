@@ -23,11 +23,12 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-11-12T13:58:44.323Z",
-    "headline": "5 things today.",
+    "at": "2026-11-12T17:56:28.730Z",
+    "headline": "1 thing today.",
     "lines": [
-      "CHORES // Grocery run · Laundry · Clean first floor. Most overdue: Grocery run (18d since last).",
-      "TOMORROW // Fri 11/13: nothing on the list yet"
+      "CHORES // Grocery run · Laundry. Most overdue: Grocery run (18d since last).",
+      "TOMORROW // Fri 11/13: nothing on the list yet",
+      "DONE // 3 today · streak 2d"
     ],
     "asks": [
       "'Start ABCD work for Jason' got pushed 5x. Shrink it, pin it to a day, or drop it?",
@@ -40,8 +41,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-11-12T13:58:42.632Z",
-    "lastActivitySeen": "2026-11-12T13:58:42.632Z"
+    "lastClaudeSync": "2026-11-12T17:56:04.836Z",
+    "lastActivitySeen": "2026-11-12T17:56:04.836Z"
   },
   "cats": {
     "admin": {
@@ -906,6 +907,30 @@
       "doneAt": "2026-10-07T02:20:18.580Z",
       "src": "chat"
     },
+    "t_0nwips4f": {
+      "id": "t_0nwips4f",
+      "title": "Emailed Judith about WPPSI dates",
+      "cat": "psc",
+      "status": "done",
+      "due": null,
+      "time": null,
+      "plan": "2026-11-12",
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-11-12T17:56:15.895Z",
+      "updated": "2026-11-12T17:56:16.011Z",
+      "doneAt": "2026-11-12T17:56:16.011Z",
+      "src": "chat"
+    },
     "t_0sep3hns": {
       "id": "t_0sep3hns",
       "title": "RA tutorial",
@@ -1438,7 +1463,7 @@
       "id": "t_44gq52ga",
       "title": "Clinical notes: finish the rest",
       "cat": "psc",
-      "status": "todo",
+      "status": "done",
       "due": null,
       "time": null,
       "plan": "2026-11-05",
@@ -1454,8 +1479,8 @@
       "moved": 0,
       "win": false,
       "created": "2026-11-05T18:26:29.038Z",
-      "updated": "2026-11-05T18:26:29.038Z",
-      "doneAt": null,
+      "updated": "2026-11-12T17:56:15.457Z",
+      "doneAt": "2026-11-12T17:56:15.457Z",
       "src": "chat"
     },
     "t_46w5afv4": {
@@ -1818,6 +1843,30 @@
       "doneAt": "2026-11-03T16:00:00.000Z",
       "src": "chat"
     },
+    "t_6l3rwhoz": {
+      "id": "t_6l3rwhoz",
+      "title": "Register for classes",
+      "cat": "admin",
+      "status": "todo",
+      "due": null,
+      "time": null,
+      "plan": "2026-11-16",
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-11-12T17:56:16.165Z",
+      "updated": "2026-11-12T17:56:16.165Z",
+      "doneAt": null,
+      "src": "chat"
+    },
     "t_6qjhgro1": {
       "id": "t_6qjhgro1",
       "title": "OCD pres: get Barlow chapter",
@@ -1888,6 +1937,41 @@
       "created": "2026-10-28T13:44:35.742Z",
       "updated": "2026-10-28T13:44:35.842Z",
       "doneAt": "2026-10-27T16:00:00.000Z",
+      "src": "chat"
+    },
+    "t_6y9vjszh": {
+      "id": "t_6y9vjszh",
+      "title": "Write up the 2 ADIS reports",
+      "cat": "caadc",
+      "status": "todo",
+      "due": null,
+      "time": null,
+      "plan": "2026-11-16",
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "writing",
+      "notes": "",
+      "subs": [
+        {
+          "id": "s1",
+          "t": "ADIS report 1",
+          "done": false
+        },
+        {
+          "id": "s2",
+          "t": "ADIS report 2",
+          "done": false
+        }
+      ],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-11-12T17:56:16.290Z",
+      "updated": "2026-11-12T17:56:16.501Z",
+      "doneAt": null,
       "src": "chat"
     },
     "t_70o15587": {
@@ -2305,7 +2389,7 @@
       "status": "todo",
       "due": null,
       "time": null,
-      "plan": "2026-11-02",
+      "plan": "2026-11-17",
       "est": null,
       "spent": 0,
       "blocks": [],
@@ -2315,10 +2399,10 @@
       "notes": "",
       "subs": [],
       "triage": false,
-      "moved": 0,
+      "moved": 1,
       "win": false,
       "created": "2026-10-31T17:33:48.728Z",
-      "updated": "2026-10-31T17:33:48.728Z",
+      "updated": "2026-11-12T17:56:15.782Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -4608,7 +4692,7 @@
       "id": "t_o0derl3f",
       "title": "Email Phil my report for the CAADC",
       "cat": "caadc",
-      "status": "todo",
+      "status": "done",
       "due": null,
       "time": null,
       "plan": "2026-11-02",
@@ -4624,8 +4708,8 @@
       "moved": 1,
       "win": false,
       "created": "2026-10-31T17:33:08.208Z",
-      "updated": "2026-11-02T20:31:24.997Z",
-      "doneAt": null,
+      "updated": "2026-11-12T17:56:15.681Z",
+      "doneAt": "2026-11-12T17:56:15.681Z",
       "src": "chat"
     },
     "t_obh7ymh9": {
@@ -5411,7 +5495,7 @@
       "id": "t_sjv8ghxt",
       "title": "Convert a client's ROM",
       "cat": "psc",
-      "status": "todo",
+      "status": "dropped",
       "due": null,
       "time": null,
       "plan": "2026-11-06",
@@ -5427,7 +5511,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-11-06T13:59:58.171Z",
-      "updated": "2026-11-07T05:38:06.297Z",
+      "updated": "2026-11-12T17:56:15.337Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -6781,20 +6865,21 @@
       "cat": "home",
       "every": 7,
       "perDay": 1,
-      "last": "2026-11-04",
+      "last": "2026-11-12",
       "start": null,
       "log": [
         "2026-08-30",
         "2026-09-20",
         "2026-10-09",
         "2026-10-29",
-        "2026-11-04"
+        "2026-11-04",
+        "2026-11-12"
       ],
       "min": 5,
       "active": true,
       "notes": "",
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-11-05T18:26:28.637Z"
+      "updated": "2026-11-12T17:56:15.560Z"
     },
     "c_groceries": {
       "id": "c_groceries",
@@ -7967,6 +8052,16 @@
       "from": null,
       "to": "doneAt"
     },
+    "a_7h3078ev": {
+      "id": "a_7h3078ev",
+      "at": "2026-11-12T17:56:15.681Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_o0derl3f",
+      "title": "Email Phil my report for the CAADC",
+      "from": null,
+      "to": null
+    },
     "a_7hfe8azo": {
       "id": "a_7hfe8azo",
       "at": "2026-10-08T03:58:07.601Z",
@@ -8487,6 +8582,16 @@
       "from": null,
       "to": null
     },
+    "a_bjdrc0ih": {
+      "id": "a_bjdrc0ih",
+      "at": "2026-11-12T17:56:15.560Z",
+      "src": "chat",
+      "type": "chore",
+      "ref": "c_floor1",
+      "title": "Clean first floor",
+      "from": null,
+      "to": null
+    },
     "a_bkbvn3g1": {
       "id": "a_bkbvn3g1",
       "at": "2026-10-10T15:24:10.016Z",
@@ -8936,6 +9041,16 @@
       "title": "RSA: participant data fixes",
       "from": null,
       "to": null
+    },
+    "a_ehkl89l9": {
+      "id": "a_ehkl89l9",
+      "at": "2026-11-12T17:56:15.895Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_0nwips4f",
+      "title": "Emailed Judith about WPPSI dates",
+      "from": null,
+      "to": "2026-11-12"
     },
     "a_epvdwcly": {
       "id": "a_epvdwcly",
@@ -9417,6 +9532,16 @@
       "from": null,
       "to": "project"
     },
+    "a_igqwjdm6": {
+      "id": "a_igqwjdm6",
+      "at": "2026-11-12T17:56:15.782Z",
+      "src": "chat",
+      "type": "move",
+      "ref": "t_951h4ng2",
+      "title": "Email Eva and Lauren Alloy about the TUBRIC position",
+      "from": "2026-11-02",
+      "to": "2026-11-17"
+    },
     "a_ij6az70c": {
       "id": "a_ij6az70c",
       "at": "2026-10-07T02:20:18.874Z",
@@ -9694,6 +9819,16 @@
       "type": "done",
       "ref": "t_600w9swt",
       "title": "Texted Willie",
+      "from": null,
+      "to": null
+    },
+    "a_kkc67tca": {
+      "id": "a_kkc67tca",
+      "at": "2026-11-12T17:56:16.011Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_0nwips4f",
+      "title": "Emailed Judith about WPPSI dates",
       "from": null,
       "to": null
     },
@@ -10236,6 +10371,16 @@
       "title": "PSC client: reschedule Monday's session to Thursday",
       "from": null,
       "to": "2026-11-01"
+    },
+    "a_pqdibgkh": {
+      "id": "a_pqdibgkh",
+      "at": "2026-11-12T17:56:16.290Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_6y9vjszh",
+      "title": "Write up the 2 ADIS reports",
+      "from": null,
+      "to": "2026-11-16"
     },
     "a_pt5h801f": {
       "id": "a_pt5h801f",
@@ -10837,6 +10982,16 @@
       "from": null,
       "to": null
     },
+    "a_timug94v": {
+      "id": "a_timug94v",
+      "at": "2026-11-12T17:56:16.501Z",
+      "src": "chat",
+      "type": "sub",
+      "ref": "t_6y9vjszh",
+      "title": "Write up the 2 ADIS reports / ADIS report 2",
+      "from": null,
+      "to": "added"
+    },
     "a_tmsfaoog": {
       "id": "a_tmsfaoog",
       "at": "2026-10-05T16:45:34.652Z",
@@ -11016,6 +11171,16 @@
       "title": "OCD pres: write main script",
       "from": null,
       "to": "blocks"
+    },
+    "a_v1y6udwo": {
+      "id": "a_v1y6udwo",
+      "at": "2026-11-12T17:56:16.393Z",
+      "src": "chat",
+      "type": "sub",
+      "ref": "t_6y9vjszh",
+      "title": "Write up the 2 ADIS reports / ADIS report 1",
+      "from": null,
+      "to": "added"
     },
     "a_v3k24h46": {
       "id": "a_v3k24h46",
@@ -11227,6 +11392,16 @@
       "from": null,
       "to": "added"
     },
+    "a_wwot19ok": {
+      "id": "a_wwot19ok",
+      "at": "2026-11-12T17:56:16.165Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_6l3rwhoz",
+      "title": "Register for classes",
+      "from": null,
+      "to": "2026-11-16"
+    },
     "a_wy9vpsl1": {
       "id": "a_wy9vpsl1",
       "at": "2026-11-10T05:20:16.154Z",
@@ -11416,6 +11591,16 @@
       "title": "OCD pres: rehearse",
       "from": null,
       "to": "blocks"
+    },
+    "a_y3gydggv": {
+      "id": "a_y3gydggv",
+      "at": "2026-11-12T17:56:15.337Z",
+      "src": "chat",
+      "type": "drop",
+      "ref": "t_sjv8ghxt",
+      "title": "Convert a client's ROM",
+      "from": null,
+      "to": null
     },
     "a_y6558ve2": {
       "id": "a_y6558ve2",
@@ -11616,6 +11801,16 @@
       "title": "Auto-plan: 7 tasks",
       "from": null,
       "to": "planned"
+    },
+    "a_zbcy6n06": {
+      "id": "a_zbcy6n06",
+      "at": "2026-11-12T17:56:15.457Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_44gq52ga",
+      "title": "Clinical notes: finish the rest",
+      "from": null,
+      "to": null
     },
     "a_zbpimpd5": {
       "id": "a_zbpimpd5",
