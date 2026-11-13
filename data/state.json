@@ -23,17 +23,16 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-11-13T02:00:21.388Z",
+    "at": "2026-11-13T14:50:28.065Z",
     "headline": "2 things today.",
     "lines": [
-      "CHORES // Laundry. Most overdue: Laundry (9d since last).",
-      "TOMORROW // Fri 11/13: nothing on the list yet",
-      "DONE // 3 today · streak 2d"
+      "CHORES // Laundry · Water plants. Most overdue: Laundry (10d since last).",
+      "TOMORROW // Sat 11/14: nothing on the list yet"
     ],
     "asks": [
       "'Start ABCD work for Jason' got pushed 5x. Shrink it, pin it to a day, or drop it?",
-      "Virtual school: nothing open and quiet for 3+ weeks. Still active, or archive it?",
-      "Fun: nothing open and quiet for 3+ weeks. Still active, or archive it?"
+      "Anything coming up for Undergrad?",
+      "Anything coming up for Grad roles?"
     ],
     "focus": []
   },
@@ -41,8 +40,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-11-13T02:00:19.920Z",
-    "lastActivitySeen": "2026-11-13T02:00:19.920Z"
+    "lastClaudeSync": "2026-11-13T14:50:26.259Z",
+    "lastActivitySeen": "2026-11-13T14:50:26.259Z"
   },
   "cats": {
     "admin": {
