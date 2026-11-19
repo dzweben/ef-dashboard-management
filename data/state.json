@@ -23,10 +23,10 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-11-19T17:31:44.560Z",
+    "at": "2026-11-19T17:32:03.917Z",
     "headline": "5 things today.",
     "lines": [
-      "CHORES // Laundry · Water plants · TUBRIC LinkedIn post · Clean first floor · +2 more. Most overdue: Laundry (16d since last).",
+      "CHORES // Water plants · TUBRIC LinkedIn post · Closet reset · Grocery run. Most overdue: Water plants (13d since last).",
       "TOMORROW // Fri 11/20: nothing on the list yet"
     ],
     "asks": [
@@ -40,8 +40,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-11-19T17:31:42.587Z",
-    "lastActivitySeen": "2026-11-19T17:31:42.587Z"
+    "lastClaudeSync": "2026-11-19T17:32:01.756Z",
+    "lastActivitySeen": "2026-11-19T17:32:01.756Z"
   },
   "cats": {
     "admin": {
@@ -4715,7 +4715,7 @@
       "id": "t_o2n9e42b",
       "title": "Laundry + tidy up (tonight)",
       "cat": "home",
-      "status": "todo",
+      "status": "done",
       "due": null,
       "time": null,
       "plan": "2026-11-12",
@@ -4731,8 +4731,8 @@
       "moved": 0,
       "win": false,
       "created": "2026-11-12T17:58:35.760Z",
-      "updated": "2026-11-12T17:58:35.760Z",
-      "doneAt": null,
+      "updated": "2026-11-19T17:32:03.526Z",
+      "doneAt": "2026-11-18T16:00:00.000Z",
       "src": "chat"
     },
     "t_obh7ymh9": {
@@ -6834,6 +6834,30 @@
       "doneAt": "2026-09-19T17:00:00.000Z",
       "src": "import"
     },
+    "t_zzchdeop": {
+      "id": "t_zzchdeop",
+      "title": "Laundry: the rest",
+      "cat": "home",
+      "status": "todo",
+      "due": null,
+      "time": null,
+      "plan": "2026-11-19",
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "task",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-11-19T17:32:03.692Z",
+      "updated": "2026-11-19T17:32:03.692Z",
+      "doneAt": null,
+      "src": "chat"
+    },
     "t_zzdq885c": {
       "id": "t_zzdq885c",
       "title": "Send out DTI email",
@@ -6888,7 +6912,7 @@
       "cat": "home",
       "every": 7,
       "perDay": 1,
-      "last": "2026-11-12",
+      "last": "2026-11-18",
       "start": null,
       "log": [
         "2026-08-30",
@@ -6896,13 +6920,14 @@
         "2026-10-09",
         "2026-10-29",
         "2026-11-04",
-        "2026-11-12"
+        "2026-11-12",
+        "2026-11-18"
       ],
       "min": 5,
       "active": true,
       "notes": "",
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-11-12T17:56:15.560Z"
+      "updated": "2026-11-19T17:32:03.321Z"
     },
     "c_groceries": {
       "id": "c_groceries",
@@ -6952,7 +6977,7 @@
       "cat": "home",
       "every": 7,
       "perDay": 1,
-      "last": "2026-11-03",
+      "last": "2026-11-18",
       "start": null,
       "log": [
         "2026-08-29",
@@ -6960,13 +6985,14 @@
         "2026-10-04",
         "2026-10-13",
         "2026-10-26",
-        "2026-11-03"
+        "2026-11-03",
+        "2026-11-18"
       ],
       "min": 5,
       "active": true,
       "notes": "",
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-11-05T18:26:28.529Z"
+      "updated": "2026-11-19T17:32:03.416Z"
     },
     "c_plants": {
       "id": "c_plants",
@@ -8055,6 +8081,16 @@
       "title": "Clinical notes (3 behind) / Note 1 (oldest)",
       "from": null,
       "to": "done"
+    },
+    "a_7ad0ma0m": {
+      "id": "a_7ad0ma0m",
+      "at": "2026-11-19T17:32:03.526Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_o2n9e42b",
+      "title": "Laundry + tidy up (tonight)",
+      "from": null,
+      "to": null
     },
     "a_7afvatap": {
       "id": "a_7afvatap",
@@ -9386,6 +9422,16 @@
       "from": null,
       "to": "2026-10-08"
     },
+    "a_h3nxqwui": {
+      "id": "a_h3nxqwui",
+      "at": "2026-11-19T17:32:03.321Z",
+      "src": "chat",
+      "type": "chore",
+      "ref": "c_floor1",
+      "title": "Clean first floor",
+      "from": null,
+      "to": "2026-11-18"
+    },
     "a_h6gau41z": {
       "id": "a_h6gau41z",
       "at": "2026-10-05T23:39:42.492Z",
@@ -10405,6 +10451,16 @@
       "title": "SPARK docs: PPI",
       "from": null,
       "to": "due,est,prio,project,blocks"
+    },
+    "a_pjliji3z": {
+      "id": "a_pjliji3z",
+      "at": "2026-11-19T17:32:03.692Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_zzchdeop",
+      "title": "Laundry: the rest",
+      "from": null,
+      "to": "2026-11-19"
     },
     "a_pmgipw9o": {
       "id": "a_pmgipw9o",
@@ -11855,6 +11911,16 @@
       "title": "Auto-plan: 7 tasks",
       "from": null,
       "to": "planned"
+    },
+    "a_zbavd9xn": {
+      "id": "a_zbavd9xn",
+      "at": "2026-11-19T17:32:03.416Z",
+      "src": "chat",
+      "type": "chore",
+      "ref": "c_laundry",
+      "title": "Laundry",
+      "from": null,
+      "to": "2026-11-18"
     },
     "a_zbcy6n06": {
       "id": "a_zbcy6n06",
