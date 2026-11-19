@@ -23,8 +23,8 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-11-19T17:32:11.066Z",
-    "headline": "5 things today.",
+    "at": "2026-11-19T17:32:25.555Z",
+    "headline": "6 things today.",
     "lines": [
       "CHORES // Water plants · TUBRIC LinkedIn post · Closet reset · Grocery run. Most overdue: Water plants (13d since last).",
       "TOMORROW // Fri 11/20: nothing on the list yet"
@@ -6282,6 +6282,30 @@
       "doneAt": "2026-11-04T16:00:00.000Z",
       "src": "chat"
     },
+    "t_waml5qm1": {
+      "id": "t_waml5qm1",
+      "title": "Finish WPPSI write-up",
+      "cat": "psc",
+      "status": "todo",
+      "due": null,
+      "time": null,
+      "plan": "2026-11-19",
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "writing",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-11-19T17:32:25.418Z",
+      "updated": "2026-11-19T17:32:25.418Z",
+      "doneAt": null,
+      "src": "chat"
+    },
     "t_wi5bybtk": {
       "id": "t_wi5bybtk",
       "title": "SPARK docs: SPARK-NM",
@@ -7945,6 +7969,16 @@
       "title": "Clean first floor",
       "from": null,
       "to": "2026-10-09"
+    },
+    "a_60c4s334": {
+      "id": "a_60c4s334",
+      "at": "2026-11-19T17:32:25.418Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_waml5qm1",
+      "title": "Finish WPPSI write-up",
+      "from": null,
+      "to": "2026-11-19"
     },
     "a_60y0gxt9": {
       "id": "a_60y0gxt9",
