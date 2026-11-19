@@ -23,7 +23,7 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-11-19T17:32:03.917Z",
+    "at": "2026-11-19T17:32:11.066Z",
     "headline": "5 things today.",
     "lines": [
       "CHORES // Water plants · TUBRIC LinkedIn post · Closet reset · Grocery run. Most overdue: Water plants (13d since last).",
@@ -4519,6 +4519,30 @@
       "doneAt": "2026-09-25T17:00:00.000Z",
       "src": "import"
     },
+    "t_no5bw3we": {
+      "id": "t_no5bw3we",
+      "title": "Find a new dentist",
+      "cat": "health",
+      "status": "todo",
+      "due": null,
+      "time": null,
+      "plan": null,
+      "est": null,
+      "spent": 0,
+      "blocks": [],
+      "project": null,
+      "prio": 1,
+      "kind": "appt",
+      "notes": "",
+      "subs": [],
+      "triage": false,
+      "moved": 0,
+      "win": false,
+      "created": "2026-11-19T17:32:10.943Z",
+      "updated": "2026-11-19T17:32:10.943Z",
+      "doneAt": null,
+      "src": "chat"
+    },
     "t_no91rb89": {
       "id": "t_no91rb89",
       "title": "VST analyses for Johanna",
@@ -8111,6 +8135,16 @@
       "title": "Review paper: first chip (restart)",
       "from": null,
       "to": "doneAt"
+    },
+    "a_7c1omgpo": {
+      "id": "a_7c1omgpo",
+      "at": "2026-11-19T17:32:10.943Z",
+      "src": "chat",
+      "type": "add",
+      "ref": "t_no5bw3we",
+      "title": "Find a new dentist",
+      "from": null,
+      "to": null
     },
     "a_7h3078ev": {
       "id": "a_7h3078ev",
