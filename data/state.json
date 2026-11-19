@@ -23,14 +23,14 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-11-19T13:58:41.517Z",
+    "at": "2026-11-19T17:31:44.560Z",
     "headline": "5 things today.",
     "lines": [
       "CHORES // Laundry · Water plants · TUBRIC LinkedIn post · Clean first floor · +2 more. Most overdue: Laundry (16d since last).",
       "TOMORROW // Fri 11/20: nothing on the list yet"
     ],
     "asks": [
-      "'Start ABCD work for Jason' got pushed 5x. Shrink it, pin it to a day, or drop it?",
+      "'Start ABCD work for Jason' got pushed 6x. Shrink it, pin it to a day, or drop it?",
       "Anything coming up for EF?",
       "Anything coming up for Meetings?"
     ],
@@ -40,8 +40,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-11-19T13:58:39.841Z",
-    "lastActivitySeen": "2026-11-19T13:58:39.841Z"
+    "lastClaudeSync": "2026-11-19T17:31:42.587Z",
+    "lastActivitySeen": "2026-11-19T17:31:42.587Z"
   },
   "cats": {
     "admin": {
@@ -2436,7 +2436,7 @@
       "status": "todo",
       "due": null,
       "time": null,
-      "plan": "2026-12-01",
+      "plan": "2026-12-15",
       "est": 90,
       "spent": 0,
       "blocks": [],
@@ -2446,10 +2446,10 @@
       "notes": "Pushed back; Jason not really responding (10/27)",
       "subs": [],
       "triage": false,
-      "moved": 5,
+      "moved": 6,
       "win": false,
       "created": "2026-10-05T04:00:00.000Z",
-      "updated": "2026-11-06T13:59:58.049Z",
+      "updated": "2026-11-19T17:31:44.282Z",
       "doneAt": null,
       "src": "import"
     },
@@ -8555,6 +8555,16 @@
       "title": "Reschedule dentist",
       "from": null,
       "to": null
+    },
+    "a_b4syrb1a": {
+      "id": "a_b4syrb1a",
+      "at": "2026-11-19T17:31:44.282Z",
+      "src": "chat",
+      "type": "move",
+      "ref": "t_abcdjason",
+      "title": "Start ABCD work for Jason",
+      "from": "2026-12-01",
+      "to": "2026-12-15"
     },
     "a_b5n3ju04": {
       "id": "a_b5n3ju04",
