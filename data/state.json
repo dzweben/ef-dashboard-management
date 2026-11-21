@@ -23,11 +23,12 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-11-21T02:00:30.426Z",
-    "headline": "6 things today.",
+    "at": "2026-11-21T03:40:01.222Z",
+    "headline": "4 things today.",
     "lines": [
       "CHORES // Water plants · TUBRIC LinkedIn post · Grocery run · Closet reset. Most overdue: Water plants (14d since last).",
-      "TOMORROW // Sat 11/21: nothing on the list yet"
+      "TOMORROW // Sat 11/21: nothing on the list yet",
+      "DONE // 1 today"
     ],
     "asks": [
       "'Start ABCD work for Jason' got pushed 6x. Shrink it, pin it to a day, or drop it?",
@@ -40,8 +41,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-11-21T02:00:28.743Z",
-    "lastActivitySeen": "2026-11-21T02:00:28.743Z"
+    "lastClaudeSync": "2026-11-21T03:39:54.318Z",
+    "lastActivitySeen": "2026-11-21T03:39:54.318Z"
   },
   "cats": {
     "admin": {
@@ -1849,7 +1850,7 @@
       "status": "todo",
       "due": null,
       "time": null,
-      "plan": "2026-11-16",
+      "plan": "2026-11-23",
       "est": null,
       "spent": 0,
       "blocks": [],
@@ -1859,10 +1860,10 @@
       "notes": "",
       "subs": [],
       "triage": false,
-      "moved": 0,
+      "moved": 1,
       "win": false,
       "created": "2026-11-12T17:56:16.165Z",
-      "updated": "2026-11-12T17:56:16.165Z",
+      "updated": "2026-11-21T03:40:00.856Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -1940,7 +1941,7 @@
     },
     "t_6y9vjszh": {
       "id": "t_6y9vjszh",
-      "title": "Write up the 2 ADIS reports",
+      "title": "ADIS reports: final wrap-up (99% done)",
       "cat": "caadc",
       "status": "todo",
       "due": null,
@@ -1969,7 +1970,7 @@
       "moved": 0,
       "win": false,
       "created": "2026-11-12T17:56:16.290Z",
-      "updated": "2026-11-12T17:56:16.501Z",
+      "updated": "2026-11-21T03:40:00.978Z",
       "doneAt": null,
       "src": "chat"
     },
@@ -6286,7 +6287,7 @@
       "id": "t_waml5qm1",
       "title": "Finish WPPSI write-up",
       "cat": "psc",
-      "status": "todo",
+      "status": "done",
       "due": null,
       "time": null,
       "plan": "2026-11-19",
@@ -6302,8 +6303,8 @@
       "moved": 0,
       "win": false,
       "created": "2026-11-19T17:32:25.418Z",
-      "updated": "2026-11-19T17:32:25.418Z",
-      "doneAt": null,
+      "updated": "2026-11-21T03:40:00.742Z",
+      "doneAt": "2026-11-21T03:40:00.742Z",
       "src": "chat"
     },
     "t_wi5bybtk": {
@@ -7269,6 +7270,16 @@
       "title": "Clinical notes (3 behind)",
       "from": "2026-10-08",
       "to": "2026-10-09"
+    },
+    "a_17itgfns": {
+      "id": "a_17itgfns",
+      "at": "2026-11-21T03:40:00.856Z",
+      "src": "chat",
+      "type": "move",
+      "ref": "t_6l3rwhoz",
+      "title": "Register for classes",
+      "from": "2026-11-16",
+      "to": "2026-11-23"
     },
     "a_1cz03lr6": {
       "id": "a_1cz03lr6",
@@ -8590,6 +8601,16 @@
       "from": null,
       "to": "2026-10-16"
     },
+    "a_fcf45bvz": {
+      "id": "a_fcf45bvz",
+      "at": "2026-11-21T03:40:00.978Z",
+      "src": "chat",
+      "type": "edit",
+      "ref": "t_6y9vjszh",
+      "title": "ADIS reports: final wrap-up (99% done)",
+      "from": null,
+      "to": "title"
+    },
     "a_fcr3aobn": {
       "id": "a_fcr3aobn",
       "at": "2026-10-21T15:06:29.342Z",
@@ -8879,6 +8900,16 @@
       "title": "E-ADIS",
       "from": null,
       "to": "status"
+    },
+    "a_hmzfqhrh": {
+      "id": "a_hmzfqhrh",
+      "at": "2026-11-21T03:40:00.742Z",
+      "src": "chat",
+      "type": "done",
+      "ref": "t_waml5qm1",
+      "title": "Finish WPPSI write-up",
+      "from": null,
+      "to": null
     },
     "a_hqyzpn22": {
       "id": "a_hqyzpn22",
@@ -9546,7 +9577,7 @@
       "src": "chat",
       "type": "add",
       "ref": "t_6y9vjszh",
-      "title": "Write up the 2 ADIS reports",
+      "title": "ADIS reports: final wrap-up (99% done)",
       "from": null,
       "to": "2026-11-16"
     },
@@ -10006,7 +10037,7 @@
       "src": "chat",
       "type": "sub",
       "ref": "t_6y9vjszh",
-      "title": "Write up the 2 ADIS reports / ADIS report 2",
+      "title": "ADIS reports: final wrap-up (99% done) / ADIS report 2",
       "from": null,
       "to": "added"
     },
@@ -10156,7 +10187,7 @@
       "src": "chat",
       "type": "sub",
       "ref": "t_6y9vjszh",
-      "title": "Write up the 2 ADIS reports / ADIS report 1",
+      "title": "ADIS reports: final wrap-up (99% done) / ADIS report 1",
       "from": null,
       "to": "added"
     },
