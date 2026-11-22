@@ -23,16 +23,16 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-11-22T02:00:12.771Z",
+    "at": "2026-11-22T13:59:27.340Z",
     "headline": "4 things today.",
     "lines": [
-      "CHORES // Water plants · TUBRIC LinkedIn post · Grocery run · Closet reset. Most overdue: Water plants (15d since last).",
-      "TOMORROW // Sun 11/22: nothing on the list yet"
+      "CHORES // Water plants · TUBRIC LinkedIn post · Grocery run · Closet reset. Most overdue: Water plants (16d since last).",
+      "TOMORROW // Mon 11/23: Register for classes"
     ],
     "asks": [
       "'Start ABCD work for Jason' got pushed 6x. Shrink it, pin it to a day, or drop it?",
-      "Dev projects: nothing open and quiet for 3+ weeks. Still active, or archive it?",
-      "LEARN: nothing open and quiet for 3+ weeks. Still active, or archive it?"
+      "Virtual school: nothing open and quiet for 3+ weeks. Still active, or archive it?",
+      "Fun: nothing open and quiet for 3+ weeks. Still active, or archive it?"
     ],
     "focus": []
   },
@@ -40,8 +40,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-11-22T02:00:11.118Z",
-    "lastActivitySeen": "2026-11-22T02:00:11.118Z"
+    "lastClaudeSync": "2026-11-22T13:59:25.404Z",
+    "lastActivitySeen": "2026-11-22T13:59:25.404Z"
   },
   "cats": {
     "admin": {
@@ -7160,16 +7160,6 @@
       "from": null,
       "to": "planned"
     },
-    "a_0f31m6xf": {
-      "id": "a_0f31m6xf",
-      "at": "2026-10-08T03:59:38.416Z",
-      "src": "chat",
-      "type": "edit",
-      "ref": "t_386krv7q",
-      "title": "Virtual school work",
-      "from": null,
-      "to": "cat,project"
-    },
     "a_0lffseav": {
       "id": "a_0lffseav",
       "at": "2026-10-21T05:14:50.959Z",
@@ -7189,16 +7179,6 @@
       "title": "Laundry: cleanup (fold + put away)",
       "from": null,
       "to": "plan,prio,notes"
-    },
-    "a_0tz3a0ji": {
-      "id": "a_0tz3a0ji",
-      "at": "2026-10-08T03:58:36.194Z",
-      "src": "chat",
-      "type": "clock",
-      "ref": "t_pn7sqwj7",
-      "title": "SPARK RPPR: 3h work session",
-      "from": null,
-      "to": "180m"
     },
     "a_15f8e9bj": {
       "id": "a_15f8e9bj",
@@ -7279,16 +7259,6 @@
       "title": "SPARK docs: SPARK-NM",
       "from": null,
       "to": null
-    },
-    "a_1f407yt0": {
-      "id": "a_1f407yt0",
-      "at": "2026-10-07T18:06:05.322Z",
-      "src": "chat",
-      "type": "edit",
-      "ref": "t_nyxprep",
-      "title": "Master Nyx's RSA script front to back (#1 priority)",
-      "from": null,
-      "to": "plan,est,notes,blocks"
     },
     "a_1f413evq": {
       "id": "a_1f413evq",
@@ -7400,26 +7370,6 @@
       "from": null,
       "to": "planned"
     },
-    "a_2w18gwk0": {
-      "id": "a_2w18gwk0",
-      "at": "2026-10-08T03:58:13.027Z",
-      "src": "chat",
-      "type": "move",
-      "ref": "t_dentist",
-      "title": "Reschedule dentist",
-      "from": "2026-10-07",
-      "to": "2026-10-08"
-    },
-    "a_2xe0eemv": {
-      "id": "a_2xe0eemv",
-      "at": "2026-10-08T03:58:07.245Z",
-      "src": "chat",
-      "type": "add",
-      "ref": "t_3yuku10d",
-      "title": "RSA: big work session",
-      "from": null,
-      "to": "2026-10-07"
-    },
     "a_2yvnz214": {
       "id": "a_2yvnz214",
       "at": "2026-10-12T19:28:55.546Z",
@@ -7470,16 +7420,6 @@
       "from": null,
       "to": "done"
     },
-    "a_39bqthd4": {
-      "id": "a_39bqthd4",
-      "at": "2026-10-07T04:09:47.769Z",
-      "src": "chat",
-      "type": "edit",
-      "ref": "t_dentist",
-      "title": "Reschedule dentist",
-      "from": null,
-      "to": "prio,notes"
-    },
     "a_39rsoh34": {
       "id": "a_39rsoh34",
       "at": "2026-10-16T14:44:54.523Z",
@@ -7529,16 +7469,6 @@
       "title": "Start ABCD work for Jason",
       "from": "2026-11-09",
       "to": "2026-12-01"
-    },
-    "a_3xc69rss": {
-      "id": "a_3xc69rss",
-      "at": "2026-10-07T04:09:48.062Z",
-      "src": "chat",
-      "type": "add",
-      "ref": "p_f18i5wz7",
-      "title": "Review paper (long-term)",
-      "from": null,
-      "to": null
     },
     "a_3z2tblkf": {
       "id": "a_3z2tblkf",
@@ -7640,16 +7570,6 @@
       "from": null,
       "to": null
     },
-    "a_5njeiihg": {
-      "id": "a_5njeiihg",
-      "at": "2026-10-07T04:09:53.462Z",
-      "src": "chat",
-      "type": "done",
-      "ref": "t_tkkb8hsn",
-      "title": "Review paper: first chip (restart)",
-      "from": null,
-      "to": null
-    },
     "a_5nx69zyg": {
       "id": "a_5nx69zyg",
       "at": "2026-11-06T13:59:58.171Z",
@@ -7730,16 +7650,6 @@
       "from": null,
       "to": "blocks"
     },
-    "a_6hczqq7a": {
-      "id": "a_6hczqq7a",
-      "at": "2026-10-08T03:59:38.096Z",
-      "src": "chat",
-      "type": "add",
-      "ref": "p_nf541req",
-      "title": "Virtual school",
-      "from": null,
-      "to": null
-    },
     "a_6j394aco": {
       "id": "a_6j394aco",
       "at": "2026-10-09T17:55:37.265Z",
@@ -7810,16 +7720,6 @@
       "from": null,
       "to": "title"
     },
-    "a_7b9ki9rd": {
-      "id": "a_7b9ki9rd",
-      "at": "2026-10-07T12:59:54.749Z",
-      "src": "chat",
-      "type": "edit",
-      "ref": "t_tkkb8hsn",
-      "title": "Review paper: first chip (restart)",
-      "from": null,
-      "to": "doneAt"
-    },
     "a_7c1omgpo": {
       "id": "a_7c1omgpo",
       "at": "2026-11-19T17:32:10.943Z",
@@ -7837,16 +7737,6 @@
       "type": "done",
       "ref": "t_o0derl3f",
       "title": "Email Phil my report for the CAADC",
-      "from": null,
-      "to": null
-    },
-    "a_7hfe8azo": {
-      "id": "a_7hfe8azo",
-      "at": "2026-10-08T03:58:07.601Z",
-      "src": "chat",
-      "type": "done",
-      "ref": "t_fwixg5sr",
-      "title": "LEARN: big work session",
       "from": null,
       "to": null
     },
@@ -7930,16 +7820,6 @@
       "from": null,
       "to": "planned"
     },
-    "a_8jlgepcq": {
-      "id": "a_8jlgepcq",
-      "at": "2026-10-08T03:58:12.929Z",
-      "src": "chat",
-      "type": "move",
-      "ref": "t_dyjiic1q",
-      "title": "Email Phil: E-ADIS got minimal feedback, it's ready",
-      "from": "2026-10-07",
-      "to": "2026-10-08"
-    },
     "a_8x79ea4h": {
       "id": "a_8x79ea4h",
       "at": "2026-10-21T05:18:35.816Z",
@@ -7980,16 +7860,6 @@
       "from": null,
       "to": "title"
     },
-    "a_9clxm0mv": {
-      "id": "a_9clxm0mv",
-      "at": "2026-10-08T03:58:07.379Z",
-      "src": "chat",
-      "type": "done",
-      "ref": "t_3yuku10d",
-      "title": "RSA: big work session",
-      "from": null,
-      "to": null
-    },
     "a_9czt9xpa": {
       "id": "a_9czt9xpa",
       "at": "2026-10-09T17:55:36.998Z",
@@ -8019,16 +7889,6 @@
       "title": "Follow up with Jason if no reply",
       "from": null,
       "to": "doneAt"
-    },
-    "a_a2ems5mt": {
-      "id": "a_a2ems5mt",
-      "at": "2026-10-07T18:03:58.447Z",
-      "src": "chat",
-      "type": "done",
-      "ref": "t_70o15587",
-      "title": "Fold + put away laundry",
-      "from": null,
-      "to": null
     },
     "a_adtlokrt": {
       "id": "a_adtlokrt",
@@ -8109,16 +7969,6 @@
       "title": "Rerun PPI for Teij email",
       "from": null,
       "to": "plan,notes"
-    },
-    "a_aujdc047": {
-      "id": "a_aujdc047",
-      "at": "2026-10-07T04:09:47.495Z",
-      "src": "chat",
-      "type": "edit",
-      "ref": "t_rsafixes",
-      "title": "RSA: participant data fixes",
-      "from": null,
-      "to": "notes"
     },
     "a_awo2yegh": {
       "id": "a_awo2yegh",
@@ -8270,16 +8120,6 @@
       "from": null,
       "to": "added"
     },
-    "a_bv1pj74j": {
-      "id": "a_bv1pj74j",
-      "at": "2026-10-08T03:58:07.705Z",
-      "src": "chat",
-      "type": "add",
-      "ref": "t_386krv7q",
-      "title": "Virtual school work",
-      "from": null,
-      "to": "2026-10-07"
-    },
     "a_bxe64tti": {
       "id": "a_bxe64tti",
       "at": "2026-11-10T05:20:16.652Z",
@@ -8339,16 +8179,6 @@
       "title": "OCD pres: build workshop",
       "from": null,
       "to": "planned"
-    },
-    "a_cn9s7wdz": {
-      "id": "a_cn9s7wdz",
-      "at": "2026-10-08T03:58:06.493Z",
-      "src": "chat",
-      "type": "milestone",
-      "ref": "p_ocd",
-      "title": "OCD presentation / Read Barlow chapter",
-      "from": null,
-      "to": "done"
     },
     "a_cr74f46z": {
       "id": "a_cr74f46z",
@@ -8430,16 +8260,6 @@
       "from": null,
       "to": null
     },
-    "a_dr42njtz": {
-      "id": "a_dr42njtz",
-      "at": "2026-10-07T18:20:46.973Z",
-      "src": "chat",
-      "type": "milestone",
-      "ref": "p_rsa",
-      "title": "RSA manuscript / Manuscript update 1/3",
-      "from": null,
-      "to": "done"
-    },
     "a_dt5i624s": {
       "id": "a_dt5i624s",
       "at": "2026-10-30T22:12:44.006Z",
@@ -8480,26 +8300,6 @@
       "from": "2026-10-12",
       "to": "2026-10-20"
     },
-    "a_e5e54bbe": {
-      "id": "a_e5e54bbe",
-      "at": "2026-10-08T03:58:07.134Z",
-      "src": "chat",
-      "type": "done",
-      "ref": "t_pn7sqwj7",
-      "title": "SPARK RPPR: 3h work session",
-      "from": null,
-      "to": null
-    },
-    "a_e7iwr0l5": {
-      "id": "a_e7iwr0l5",
-      "at": "2026-10-08T01:00:15.764Z",
-      "src": "chat",
-      "type": "block",
-      "ref": null,
-      "title": "Auto-plan: 4 tasks",
-      "from": null,
-      "to": "planned"
-    },
     "a_ebnlbqdq": {
       "id": "a_ebnlbqdq",
       "at": "2026-11-06T14:00:10.382Z",
@@ -8507,16 +8307,6 @@
       "type": "done",
       "ref": "t_h4q9tele",
       "title": "Finished all client rescheduling",
-      "from": null,
-      "to": null
-    },
-    "a_ehaxov0f": {
-      "id": "a_ehaxov0f",
-      "at": "2026-10-07T04:09:47.634Z",
-      "src": "chat",
-      "type": "done",
-      "ref": "t_rsafixes",
-      "title": "RSA: participant data fixes",
       "from": null,
       "to": null
     },
@@ -8570,16 +8360,6 @@
       "from": null,
       "to": "cat"
     },
-    "a_fw3p27vj": {
-      "id": "a_fw3p27vj",
-      "at": "2026-10-07T18:06:05.603Z",
-      "src": "chat",
-      "type": "block",
-      "ref": null,
-      "title": "Auto-plan: 5 tasks",
-      "from": null,
-      "to": "planned"
-    },
     "a_fwfnib18": {
       "id": "a_fwfnib18",
       "at": "2026-10-28T13:44:35.742Z",
@@ -8600,16 +8380,6 @@
       "from": "2026-11-04",
       "to": "2026-11-09"
     },
-    "a_g3f9onrf": {
-      "id": "a_g3f9onrf",
-      "at": "2026-10-07T12:59:54.654Z",
-      "src": "chat",
-      "type": "edit",
-      "ref": "t_rsafixes",
-      "title": "RSA: participant data fixes",
-      "from": null,
-      "to": "doneAt"
-    },
     "a_g4r6o1yk": {
       "id": "a_g4r6o1yk",
       "at": "2026-10-08T04:03:28.846Z",
@@ -8629,16 +8399,6 @@
       "title": "Laundry: cleanup (fold + put away)",
       "from": null,
       "to": "title,plan,notes"
-    },
-    "a_g90rov32": {
-      "id": "a_g90rov32",
-      "at": "2026-10-08T03:58:06.855Z",
-      "src": "chat",
-      "type": "edit",
-      "ref": "t_l0tfthj9",
-      "title": "SPARK grant update (RPPR)",
-      "from": null,
-      "to": "title,notes"
     },
     "a_gafi6l1v": {
       "id": "a_gafi6l1v",
@@ -8850,16 +8610,6 @@
       "from": "2026-11-02",
       "to": "2026-11-17"
     },
-    "a_imawckzg": {
-      "id": "a_imawckzg",
-      "at": "2026-10-08T03:58:13.476Z",
-      "src": "chat",
-      "type": "block",
-      "ref": null,
-      "title": "Auto-plan: 2 tasks",
-      "from": null,
-      "to": "planned"
-    },
     "a_ip03riw2": {
       "id": "a_ip03riw2",
       "at": "2026-11-10T05:20:16.393Z",
@@ -8879,16 +8629,6 @@
       "title": "Email Billy",
       "from": null,
       "to": "2026-10-09"
-    },
-    "a_jdq0vxia": {
-      "id": "a_jdq0vxia",
-      "at": "2026-10-08T03:58:06.753Z",
-      "src": "chat",
-      "type": "cat",
-      "ref": "sdn",
-      "title": "SDN / SPARK",
-      "from": null,
-      "to": "aliases"
     },
     "a_jh8sjkaz": {
       "id": "a_jh8sjkaz",
@@ -8939,16 +8679,6 @@
       "title": "Watered 1/3 of the plants",
       "from": null,
       "to": null
-    },
-    "a_jyqp9i8o": {
-      "id": "a_jyqp9i8o",
-      "at": "2026-10-08T03:58:07.031Z",
-      "src": "chat",
-      "type": "add",
-      "ref": "t_pn7sqwj7",
-      "title": "SPARK RPPR: 3h work session",
-      "from": null,
-      "to": "2026-10-07"
     },
     "a_jz5f8hmd": {
       "id": "a_jz5f8hmd",
@@ -9010,16 +8740,6 @@
       "from": null,
       "to": "new"
     },
-    "a_l2u0j980": {
-      "id": "a_l2u0j980",
-      "at": "2026-10-07T04:09:53.155Z",
-      "src": "chat",
-      "type": "add",
-      "ref": "t_tkkb8hsn",
-      "title": "Review paper: first chip (restart)",
-      "from": null,
-      "to": "2026-10-07"
-    },
     "a_lczk50ca": {
       "id": "a_lczk50ca",
       "at": "2026-10-10T04:42:38.338Z",
@@ -9029,16 +8749,6 @@
       "title": "Lily gift: pick an idea",
       "from": null,
       "to": null
-    },
-    "a_lejypuw3": {
-      "id": "a_lejypuw3",
-      "at": "2026-10-07T04:09:47.182Z",
-      "src": "chat",
-      "type": "sub",
-      "ref": "t_rsafixes",
-      "title": "RSA: participant data fixes / Add participant data fixes to RSA",
-      "from": null,
-      "to": "done"
     },
     "a_liiye4wn": {
       "id": "a_liiye4wn",
@@ -9060,16 +8770,6 @@
       "from": null,
       "to": null
     },
-    "a_lxe8japs": {
-      "id": "a_lxe8japs",
-      "at": "2026-10-08T03:58:36.344Z",
-      "src": "chat",
-      "type": "edit",
-      "ref": "t_pn7sqwj7",
-      "title": "SPARK RPPR: 3h work session",
-      "from": null,
-      "to": "title"
-    },
     "a_lygn43vx": {
       "id": "a_lygn43vx",
       "at": "2026-11-02T14:09:12.133Z",
@@ -9089,16 +8789,6 @@
       "title": "Laundry + tidy up (tonight)",
       "from": null,
       "to": "2026-11-12"
-    },
-    "a_mab81ihi": {
-      "id": "a_mab81ihi",
-      "at": "2026-10-08T03:59:37.991Z",
-      "src": "chat",
-      "type": "cat",
-      "ref": "multivar",
-      "title": "Multivariate",
-      "from": null,
-      "to": "aliases"
     },
     "a_men1xcmq": {
       "id": "a_men1xcmq",
@@ -9120,16 +8810,6 @@
       "from": null,
       "to": "notes"
     },
-    "a_mmbmr22f": {
-      "id": "a_mmbmr22f",
-      "at": "2026-10-08T03:58:07.817Z",
-      "src": "chat",
-      "type": "done",
-      "ref": "t_386krv7q",
-      "title": "Virtual school work",
-      "from": null,
-      "to": null
-    },
     "a_mrwayokz": {
       "id": "a_mrwayokz",
       "at": "2026-10-12T19:17:19.106Z",
@@ -9147,16 +8827,6 @@
       "type": "chore",
       "ref": "c_groceries",
       "title": "Grocery run",
-      "from": null,
-      "to": null
-    },
-    "a_n1j9fkq1": {
-      "id": "a_n1j9fkq1",
-      "at": "2026-10-08T03:58:06.391Z",
-      "src": "chat",
-      "type": "done",
-      "ref": "t_g29xic6w",
-      "title": "OCD pres: read the Barlow chapter",
       "from": null,
       "to": null
     },
@@ -9370,16 +9040,6 @@
       "from": null,
       "to": "2026-10-30"
     },
-    "a_q10b1mvm": {
-      "id": "a_q10b1mvm",
-      "at": "2026-10-07T18:03:58.764Z",
-      "src": "chat",
-      "type": "add",
-      "ref": "t_pmvc74vr",
-      "title": "Laundry: cleanup (fold + put away)",
-      "from": null,
-      "to": "2026-10-07"
-    },
     "a_q1gemydb": {
       "id": "a_q1gemydb",
       "at": "2026-10-14T12:59:41.090Z",
@@ -9520,16 +9180,6 @@
       "from": null,
       "to": null
     },
-    "a_rha2tv5n": {
-      "id": "a_rha2tv5n",
-      "at": "2026-10-07T04:09:47.917Z",
-      "src": "chat",
-      "type": "edit",
-      "ref": "t_7e8sndnw",
-      "title": "Send Johanna the LEARN breakdown email (drafted)",
-      "from": null,
-      "to": "title,est,notes"
-    },
     "a_rjwalamj": {
       "id": "a_rjwalamj",
       "at": "2026-10-31T04:24:09.899Z",
@@ -9540,16 +9190,6 @@
       "from": null,
       "to": "title,notes"
     },
-    "a_rn2ywy7o": {
-      "id": "a_rn2ywy7o",
-      "at": "2026-10-08T03:58:13.260Z",
-      "src": "chat",
-      "type": "move",
-      "ref": "t_pmvc74vr",
-      "title": "Laundry: cleanup (fold + put away)",
-      "from": "2026-10-07",
-      "to": "2026-10-08"
-    },
     "a_rp0nav6r": {
       "id": "a_rp0nav6r",
       "at": "2026-10-16T14:51:26.649Z",
@@ -9559,16 +9199,6 @@
       "title": "OCD pres: build workshop",
       "from": null,
       "to": "blocks"
-    },
-    "a_rvu5rhfq": {
-      "id": "a_rvu5rhfq",
-      "at": "2026-10-08T03:58:07.941Z",
-      "src": "chat",
-      "type": "add",
-      "ref": "t_uukcdgpx",
-      "title": "Therapy sessions (2 clients)",
-      "from": null,
-      "to": "2026-10-07"
     },
     "a_rwqkfxvc": {
       "id": "a_rwqkfxvc",
@@ -9600,16 +9230,6 @@
       "from": null,
       "to": "2026-11-01"
     },
-    "a_rzz8233m": {
-      "id": "a_rzz8233m",
-      "at": "2026-10-07T04:09:47.352Z",
-      "src": "chat",
-      "type": "add",
-      "ref": "t_2m1nsi1p",
-      "title": "Tell Chloe to add the RSA participant data fixes to the univariate",
-      "from": null,
-      "to": "2026-10-08"
-    },
     "a_s1ui68hs": {
       "id": "a_s1ui68hs",
       "at": "2026-10-28T13:44:36.593Z",
@@ -9619,16 +9239,6 @@
       "title": "Switch bill payments to Capital One / Squarespace bill",
       "from": null,
       "to": "added"
-    },
-    "a_s2aw5nzg": {
-      "id": "a_s2aw5nzg",
-      "at": "2026-10-08T03:58:07.504Z",
-      "src": "chat",
-      "type": "add",
-      "ref": "t_fwixg5sr",
-      "title": "LEARN: big work session",
-      "from": null,
-      "to": "2026-10-07"
     },
     "a_s8wpc31b": {
       "id": "a_s8wpc31b",
@@ -9680,16 +9290,6 @@
       "from": null,
       "to": null
     },
-    "a_swfqjipe": {
-      "id": "a_swfqjipe",
-      "at": "2026-10-08T03:58:06.614Z",
-      "src": "chat",
-      "type": "done",
-      "ref": "t_7e8sndnw",
-      "title": "Send Johanna the LEARN breakdown email (drafted)",
-      "from": null,
-      "to": null
-    },
     "a_syiui4pu": {
       "id": "a_syiui4pu",
       "at": "2026-11-06T14:00:10.274Z",
@@ -9729,16 +9329,6 @@
       "title": "OCD pres: build workshop",
       "from": null,
       "to": null
-    },
-    "a_t7i7og64": {
-      "id": "a_t7i7og64",
-      "at": "2026-10-07T04:09:53.319Z",
-      "src": "chat",
-      "type": "clock",
-      "ref": "t_tkkb8hsn",
-      "title": "Review paper: first chip (restart)",
-      "from": null,
-      "to": "15m"
     },
     "a_t8ahljwf": {
       "id": "a_t8ahljwf",
@@ -9850,16 +9440,6 @@
       "from": null,
       "to": "plan,notes"
     },
-    "a_u9g9i65o": {
-      "id": "a_u9g9i65o",
-      "at": "2026-10-07T18:03:58.618Z",
-      "src": "chat",
-      "type": "add",
-      "ref": "t_xouhgc0d",
-      "title": "Change Bella's scan to my scan",
-      "from": null,
-      "to": "2026-10-07"
-    },
     "a_uby42ryn": {
       "id": "a_uby42ryn",
       "at": "2026-10-31T05:25:14.192Z",
@@ -9869,16 +9449,6 @@
       "title": "PSC client: scheduling for Monday's session",
       "from": null,
       "to": "title"
-    },
-    "a_udei7j1j": {
-      "id": "a_udei7j1j",
-      "at": "2026-10-08T03:58:12.824Z",
-      "src": "chat",
-      "type": "move",
-      "ref": "t_ff9fmzh1",
-      "title": "Clinical notes (3 behind)",
-      "from": "2026-10-06",
-      "to": "2026-10-08"
     },
     "a_usw1lg2a": {
       "id": "a_usw1lg2a",
@@ -10110,16 +9680,6 @@
       "from": null,
       "to": null
     },
-    "a_xamx2vwi": {
-      "id": "a_xamx2vwi",
-      "at": "2026-10-08T03:58:13.133Z",
-      "src": "chat",
-      "type": "move",
-      "ref": "t_xouhgc0d",
-      "title": "Change Bella's scan to my scan",
-      "from": "2026-10-07",
-      "to": "2026-10-08"
-    },
     "a_xjfy95en": {
       "id": "a_xjfy95en",
       "at": "2026-10-31T17:37:14.527Z",
@@ -10149,16 +9709,6 @@
       "title": "AI pres: start a Claude Code thread",
       "from": null,
       "to": null
-    },
-    "a_xpe3ipqi": {
-      "id": "a_xpe3ipqi",
-      "at": "2026-10-07T18:06:05.456Z",
-      "src": "chat",
-      "type": "edit",
-      "ref": "t_nyxprep",
-      "title": "Master Nyx's RSA script front to back (#1 priority)",
-      "from": null,
-      "to": "blocks"
     },
     "a_xr5hbdgt": {
       "id": "a_xr5hbdgt",
@@ -10270,26 +9820,6 @@
       "from": null,
       "to": null
     },
-    "a_yz5h29tz": {
-      "id": "a_yz5h29tz",
-      "at": "2026-10-07T04:16:48.282Z",
-      "src": "chat",
-      "type": "done",
-      "ref": "t_2m1nsi1p",
-      "title": "Tell Chloe to add the RSA participant data fixes to the univariate",
-      "from": null,
-      "to": null
-    },
-    "a_z1g1bod9": {
-      "id": "a_z1g1bod9",
-      "at": "2026-10-08T03:58:13.368Z",
-      "src": "chat",
-      "type": "move",
-      "ref": "t_myezwqph",
-      "title": "Lily gift: pick an idea",
-      "from": "2026-10-07",
-      "to": "2026-10-08"
-    },
     "a_z4ee9k13": {
       "id": "a_z4ee9k13",
       "at": "2026-11-07T05:38:06.297Z",
@@ -10300,16 +9830,6 @@
       "from": null,
       "to": "title"
     },
-    "a_z6axfxv7": {
-      "id": "a_z6axfxv7",
-      "at": "2026-10-08T03:58:08.041Z",
-      "src": "chat",
-      "type": "done",
-      "ref": "t_uukcdgpx",
-      "title": "Therapy sessions (2 clients)",
-      "from": null,
-      "to": null
-    },
     "a_z8lomgbk": {
       "id": "a_z8lomgbk",
       "at": "2026-10-09T17:55:37.805Z",
@@ -10317,16 +9837,6 @@
       "type": "done",
       "ref": "t_or58jns1",
       "title": "RPPR RSA: fixed analyses (for later analyses)",
-      "from": null,
-      "to": null
-    },
-    "a_z8qdlsb2": {
-      "id": "a_z8qdlsb2",
-      "at": "2026-10-07T18:20:46.865Z",
-      "src": "chat",
-      "type": "done",
-      "ref": "t_rsaupd1",
-      "title": "RSA manuscript update 1/3",
       "from": null,
       "to": null
     },
