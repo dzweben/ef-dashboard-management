@@ -23,16 +23,16 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-11-24T01:59:40.984Z",
+    "at": "2026-11-24T13:59:10.771Z",
     "headline": "5 things today.",
     "lines": [
-      "CHORES // Water plants · TUBRIC LinkedIn post · Grocery run · Closet reset. Most overdue: Water plants (17d since last).",
-      "TOMORROW // Tue 11/24: nothing on the list yet"
+      "CHORES // Water plants · TUBRIC LinkedIn post · Grocery run · Closet reset. Most overdue: Water plants (18d since last).",
+      "TOMORROW // Wed 11/25: nothing on the list yet"
     ],
     "asks": [
       "'Start ABCD work for Jason' got pushed 6x. Shrink it, pin it to a day, or drop it?",
-      "Anything coming up for Undergrad?",
-      "Anything coming up for Grad roles?"
+      "Anything coming up for EF?",
+      "Anything coming up for Meetings?"
     ],
     "focus": []
   },
@@ -40,8 +40,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-11-24T01:59:39.396Z",
-    "lastActivitySeen": "2026-11-24T01:59:39.396Z"
+    "lastClaudeSync": "2026-11-24T13:59:08.883Z",
+    "lastActivitySeen": "2026-11-24T13:59:08.883Z"
   },
   "cats": {
     "admin": {
@@ -7360,26 +7360,6 @@
       "from": null,
       "to": "2026-10-12"
     },
-    "a_2zb9kv6f": {
-      "id": "a_2zb9kv6f",
-      "at": "2026-10-09T17:55:36.845Z",
-      "src": "chat",
-      "type": "clock",
-      "ref": "t_1wm8vw66",
-      "title": "Nyx: follow-up work after the meeting",
-      "from": null,
-      "to": "60m"
-    },
-    "a_30b1fxej": {
-      "id": "a_30b1fxej",
-      "at": "2026-10-09T18:29:18.271Z",
-      "src": "chat",
-      "type": "block",
-      "ref": "t_cdhxbtfb",
-      "title": "AI pres: build slides + plan, send out",
-      "from": null,
-      "to": "planned"
-    },
     "a_30xls6ul": {
       "id": "a_30xls6ul",
       "at": "2026-11-05T18:26:29.246Z",
@@ -7389,16 +7369,6 @@
       "title": "PSC client: send visit reminder for Thursday's session",
       "from": null,
       "to": null
-    },
-    "a_35um29n9": {
-      "id": "a_35um29n9",
-      "at": "2026-10-09T17:54:28.649Z",
-      "src": "chat",
-      "type": "sub",
-      "ref": "t_nyxprep",
-      "title": "Master Nyx's RSA script front to back (#1 priority) / Review front to back",
-      "from": null,
-      "to": "done"
     },
     "a_39rsoh34": {
       "id": "a_39rsoh34",
@@ -7630,36 +7600,6 @@
       "from": null,
       "to": "blocks"
     },
-    "a_6j394aco": {
-      "id": "a_6j394aco",
-      "at": "2026-10-09T17:55:37.265Z",
-      "src": "chat",
-      "type": "done",
-      "ref": "t_tdln9lou",
-      "title": "VST RSA: fixed analyses",
-      "from": null,
-      "to": null
-    },
-    "a_6kdgy7ab": {
-      "id": "a_6kdgy7ab",
-      "at": "2026-10-09T17:55:37.396Z",
-      "src": "chat",
-      "type": "add",
-      "ref": "t_vvgz845d",
-      "title": "LEARN RSA: fixed analyses",
-      "from": null,
-      "to": "2026-10-09"
-    },
-    "a_6qhmhm09": {
-      "id": "a_6qhmhm09",
-      "at": "2026-10-09T17:55:37.146Z",
-      "src": "chat",
-      "type": "add",
-      "ref": "t_tdln9lou",
-      "title": "VST RSA: fixed analyses",
-      "from": null,
-      "to": "2026-10-09"
-    },
     "a_6vxsy981": {
       "id": "a_6vxsy981",
       "at": "2026-11-06T14:00:10.044Z",
@@ -7750,26 +7690,6 @@
       "from": null,
       "to": "2026-11-01"
     },
-    "a_7xz03df4": {
-      "id": "a_7xz03df4",
-      "at": "2026-10-10T01:00:16.515Z",
-      "src": "chat",
-      "type": "block",
-      "ref": null,
-      "title": "Auto-plan: 5 tasks",
-      "from": null,
-      "to": "planned"
-    },
-    "a_80eczhhg": {
-      "id": "a_80eczhhg",
-      "at": "2026-10-09T17:54:28.806Z",
-      "src": "chat",
-      "type": "done",
-      "ref": "t_nyxprep",
-      "title": "Master Nyx's RSA script front to back (#1 priority)",
-      "from": null,
-      "to": null
-    },
     "a_85ul2ie7": {
       "id": "a_85ul2ie7",
       "at": "2026-10-10T04:42:38.994Z",
@@ -7829,16 +7749,6 @@
       "title": "PSC client: scheduling for Monday's session",
       "from": null,
       "to": "title"
-    },
-    "a_9czt9xpa": {
-      "id": "a_9czt9xpa",
-      "at": "2026-10-09T17:55:36.998Z",
-      "src": "chat",
-      "type": "done",
-      "ref": "t_1wm8vw66",
-      "title": "Nyx: follow-up work after the meeting",
-      "from": null,
-      "to": null
     },
     "a_9derko0u": {
       "id": "a_9derko0u",
@@ -7950,16 +7860,6 @@
       "from": null,
       "to": null
     },
-    "a_b3asm8mb": {
-      "id": "a_b3asm8mb",
-      "at": "2026-10-09T17:54:29.310Z",
-      "src": "chat",
-      "type": "done",
-      "ref": "t_dentist",
-      "title": "Reschedule dentist",
-      "from": null,
-      "to": null
-    },
     "a_b4syrb1a": {
       "id": "a_b4syrb1a",
       "at": "2026-11-19T17:31:44.282Z",
@@ -8049,16 +7949,6 @@
       "title": "Laundry: put away (other half)",
       "from": null,
       "to": null
-    },
-    "a_bpghe1w6": {
-      "id": "a_bpghe1w6",
-      "at": "2026-10-09T18:29:18.639Z",
-      "src": "chat",
-      "type": "edit",
-      "ref": "p_m7qpuz93",
-      "title": "Department AI presentation",
-      "from": null,
-      "to": "goal"
     },
     "a_bpo44e9s": {
       "id": "a_bpo44e9s",
@@ -8240,16 +8130,6 @@
       "from": null,
       "to": "due,notes"
     },
-    "a_dypiccjf": {
-      "id": "a_dypiccjf",
-      "at": "2026-10-09T17:54:28.522Z",
-      "src": "chat",
-      "type": "sub",
-      "ref": "t_nyxprep",
-      "title": "Master Nyx's RSA script front to back (#1 priority) / Finish the second half",
-      "from": null,
-      "to": "done"
-    },
     "a_e0biuoos": {
       "id": "a_e0biuoos",
       "at": "2026-10-12T19:17:19.264Z",
@@ -8390,16 +8270,6 @@
       "from": null,
       "to": "blocks"
     },
-    "a_goiqtked": {
-      "id": "a_goiqtked",
-      "at": "2026-10-09T17:54:29.193Z",
-      "src": "chat",
-      "type": "done",
-      "ref": "t_dyjiic1q",
-      "title": "Email Phil: E-ADIS got minimal feedback, it's ready",
-      "from": null,
-      "to": null
-    },
     "a_gtc0x6w3": {
       "id": "a_gtc0x6w3",
       "at": "2026-10-27T13:28:47.054Z",
@@ -8430,16 +8300,6 @@
       "from": null,
       "to": "title"
     },
-    "a_h826dp6x": {
-      "id": "a_h826dp6x",
-      "at": "2026-10-09T17:54:29.079Z",
-      "src": "chat",
-      "type": "done",
-      "ref": "t_l0tfthj9",
-      "title": "SPARK grant update (RPPR)",
-      "from": null,
-      "to": null
-    },
     "a_h8si4glh": {
       "id": "a_h8si4glh",
       "at": "2026-10-21T15:06:18.571Z",
@@ -8460,16 +8320,6 @@
       "from": null,
       "to": null
     },
-    "a_hd7r8n59": {
-      "id": "a_hd7r8n59",
-      "at": "2026-10-09T17:54:33.586Z",
-      "src": "chat",
-      "type": "edit",
-      "ref": "p_e1f8ij8g",
-      "title": "SPARK grant update",
-      "from": null,
-      "to": "status"
-    },
     "a_hduodqp7": {
       "id": "a_hduodqp7",
       "at": "2026-11-05T18:26:28.637Z",
@@ -8489,16 +8339,6 @@
       "title": "DTI paper: big work session",
       "from": null,
       "to": null
-    },
-    "a_hk2b1e88": {
-      "id": "a_hk2b1e88",
-      "at": "2026-10-09T17:54:33.696Z",
-      "src": "chat",
-      "type": "edit",
-      "ref": "p_iy5b0ta6",
-      "title": "E-ADIS",
-      "from": null,
-      "to": "status"
     },
     "a_hmzfqhrh": {
       "id": "a_hmzfqhrh",
@@ -8529,16 +8369,6 @@
       "title": "Rerun PPI for Teij email",
       "from": "2026-10-19",
       "to": "2026-10-23"
-    },
-    "a_i88i1nw2": {
-      "id": "a_i88i1nw2",
-      "at": "2026-10-09T17:55:36.720Z",
-      "src": "chat",
-      "type": "add",
-      "ref": "t_1wm8vw66",
-      "title": "Nyx: follow-up work after the meeting",
-      "from": null,
-      "to": "2026-10-09"
     },
     "a_idj3wz8m": {
       "id": "a_idj3wz8m",
@@ -8627,26 +8457,6 @@
       "type": "block",
       "ref": "t_ocdscript",
       "title": "OCD pres: write main script",
-      "from": null,
-      "to": "planned"
-    },
-    "a_k2ontjml": {
-      "id": "a_k2ontjml",
-      "at": "2026-10-09T18:29:18.386Z",
-      "src": "chat",
-      "type": "edit",
-      "ref": "t_cdhxbtfb",
-      "title": "AI pres: build slides + plan, send out",
-      "from": null,
-      "to": "blocks"
-    },
-    "a_k3tcye22": {
-      "id": "a_k3tcye22",
-      "at": "2026-10-09T18:29:18.390Z",
-      "src": "chat",
-      "type": "block",
-      "ref": "t_cdhxbtfb",
-      "title": "AI pres: build slides + plan, send out",
       "from": null,
       "to": "planned"
     },
@@ -8770,26 +8580,6 @@
       "from": null,
       "to": "2026-10-31"
     },
-    "a_o9yb2vtf": {
-      "id": "a_o9yb2vtf",
-      "at": "2026-10-09T17:55:37.527Z",
-      "src": "chat",
-      "type": "done",
-      "ref": "t_vvgz845d",
-      "title": "LEARN RSA: fixed analyses",
-      "from": null,
-      "to": null
-    },
-    "a_obk40cv6": {
-      "id": "a_obk40cv6",
-      "at": "2026-10-09T18:29:18.525Z",
-      "src": "chat",
-      "type": "block",
-      "ref": "t_cdhxbtfb",
-      "title": "AI pres: build slides + plan, send out",
-      "from": null,
-      "to": "planned"
-    },
     "a_ofcbwo5q": {
       "id": "a_ofcbwo5q",
       "at": "2026-10-27T13:28:47.618Z",
@@ -8839,36 +8629,6 @@
       "title": "ABCD review prep",
       "from": null,
       "to": "blocks"
-    },
-    "a_om6fi19p": {
-      "id": "a_om6fi19p",
-      "at": "2026-10-09T18:29:18.521Z",
-      "src": "chat",
-      "type": "edit",
-      "ref": "t_cdhxbtfb",
-      "title": "AI pres: build slides + plan, send out",
-      "from": null,
-      "to": "blocks"
-    },
-    "a_om9c67w2": {
-      "id": "a_om9c67w2",
-      "at": "2026-10-09T18:29:18.266Z",
-      "src": "chat",
-      "type": "edit",
-      "ref": "t_cdhxbtfb",
-      "title": "AI pres: build slides + plan, send out",
-      "from": null,
-      "to": "blocks"
-    },
-    "a_p0thn6sc": {
-      "id": "a_p0thn6sc",
-      "at": "2026-10-09T18:29:18.783Z",
-      "src": "chat",
-      "type": "block",
-      "ref": "t_vnujsabp",
-      "title": "ABCD review prep",
-      "from": null,
-      "to": "planned"
     },
     "a_pgf62yte": {
       "id": "a_pgf62yte",
@@ -8990,16 +8750,6 @@
       "from": null,
       "to": "2026-10-15"
     },
-    "a_qkp378uy": {
-      "id": "a_qkp378uy",
-      "at": "2026-10-09T18:29:18.118Z",
-      "src": "chat",
-      "type": "edit",
-      "ref": "t_cdhxbtfb",
-      "title": "AI pres: build slides + plan, send out",
-      "from": null,
-      "to": "notes,blocks"
-    },
     "a_qktwkj3c": {
       "id": "a_qktwkj3c",
       "at": "2026-10-21T05:14:50.853Z",
@@ -9069,16 +8819,6 @@
       "title": "ABCD review prep",
       "from": null,
       "to": "planned"
-    },
-    "a_r8f2ertb": {
-      "id": "a_r8f2ertb",
-      "at": "2026-10-09T17:55:37.673Z",
-      "src": "chat",
-      "type": "add",
-      "ref": "t_or58jns1",
-      "title": "RPPR RSA: fixed analyses (for later analyses)",
-      "from": null,
-      "to": "2026-10-09"
     },
     "a_rdhdwrb4": {
       "id": "a_rdhdwrb4",
@@ -9600,16 +9340,6 @@
       "from": null,
       "to": "2026-10-20"
     },
-    "a_xt0gbbyu": {
-      "id": "a_xt0gbbyu",
-      "at": "2026-10-09T17:54:28.936Z",
-      "src": "chat",
-      "type": "done",
-      "ref": "t_obvmjfht",
-      "title": "Nyx meeting",
-      "from": null,
-      "to": null
-    },
     "a_xxkyqpnn": {
       "id": "a_xxkyqpnn",
       "at": "2026-10-10T06:05:30.061Z",
@@ -9709,16 +9439,6 @@
       "title": "Convert a client's ROM",
       "from": null,
       "to": "title"
-    },
-    "a_z8lomgbk": {
-      "id": "a_z8lomgbk",
-      "at": "2026-10-09T17:55:37.805Z",
-      "src": "chat",
-      "type": "done",
-      "ref": "t_or58jns1",
-      "title": "RPPR RSA: fixed analyses (for later analyses)",
-      "from": null,
-      "to": null
     },
     "a_zbavd9xn": {
       "id": "a_zbavd9xn",
