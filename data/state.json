@@ -23,16 +23,16 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-11-25T01:59:48.530Z",
+    "at": "2026-11-25T13:58:56.984Z",
     "headline": "5 things today.",
     "lines": [
-      "CHORES // Water plants · TUBRIC LinkedIn post · Grocery run · Closet reset. Most overdue: Water plants (18d since last).",
-      "TOMORROW // Wed 11/25: nothing on the list yet"
+      "CHORES // Water plants · TUBRIC LinkedIn post · Grocery run · Closet reset · +2 more. Most overdue: Water plants (19d since last).",
+      "TOMORROW // Thu 11/26: nothing on the list yet"
     ],
     "asks": [
       "'Start ABCD work for Jason' got pushed 6x. Shrink it, pin it to a day, or drop it?",
-      "Anything coming up for EF?",
-      "Anything coming up for Meetings?"
+      "Anything coming up for Ziggy?",
+      "Anything coming up for coursework?"
     ],
     "focus": []
   },
@@ -40,8 +40,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-11-25T01:59:46.782Z",
-    "lastActivitySeen": "2026-11-25T01:59:46.782Z"
+    "lastClaudeSync": "2026-11-25T13:58:54.317Z",
+    "lastActivitySeen": "2026-11-25T13:58:54.317Z"
   },
   "cats": {
     "admin": {
@@ -7340,16 +7340,6 @@
       "from": null,
       "to": null
     },
-    "a_2t6fnc2r": {
-      "id": "a_2t6fnc2r",
-      "at": "2026-10-10T04:42:39.170Z",
-      "src": "chat",
-      "type": "block",
-      "ref": null,
-      "title": "Auto-plan: 3 tasks",
-      "from": null,
-      "to": "planned"
-    },
     "a_2yvnz214": {
       "id": "a_2yvnz214",
       "at": "2026-10-12T19:28:55.546Z",
@@ -7530,16 +7520,6 @@
       "from": null,
       "to": "2026-11-06"
     },
-    "a_5uhe0pp1": {
-      "id": "a_5uhe0pp1",
-      "at": "2026-10-10T04:42:38.124Z",
-      "src": "chat",
-      "type": "chore",
-      "ref": "c_floor1",
-      "title": "Clean first floor",
-      "from": null,
-      "to": "2026-10-09"
-    },
     "a_60c4s334": {
       "id": "a_60c4s334",
       "at": "2026-11-19T17:32:25.418Z",
@@ -7569,16 +7549,6 @@
       "title": "OCD pres: rehearse",
       "from": null,
       "to": null
-    },
-    "a_63bh3hu1": {
-      "id": "a_63bh3hu1",
-      "at": "2026-10-10T04:42:38.890Z",
-      "src": "chat",
-      "type": "move",
-      "ref": "t_rkse0ib5",
-      "title": "Follow up with Jason if no reply",
-      "from": "2026-10-08",
-      "to": "2026-10-11"
     },
     "a_63tdkly5": {
       "id": "a_63tdkly5",
@@ -7689,16 +7659,6 @@
       "title": "Laundry: one more push",
       "from": null,
       "to": "2026-11-01"
-    },
-    "a_85ul2ie7": {
-      "id": "a_85ul2ie7",
-      "at": "2026-10-10T04:42:38.994Z",
-      "src": "chat",
-      "type": "edit",
-      "ref": "t_9028028n",
-      "title": "Lily gift: order or buy it",
-      "from": null,
-      "to": "due,plan,notes"
     },
     "a_86p8zmfa": {
       "id": "a_86p8zmfa",
@@ -7920,16 +7880,6 @@
       "from": null,
       "to": null
     },
-    "a_bkbvn3g1": {
-      "id": "a_bkbvn3g1",
-      "at": "2026-10-10T15:24:10.016Z",
-      "src": "chat",
-      "type": "edit",
-      "ref": "c_floor1",
-      "title": "Clean first floor",
-      "from": null,
-      "to": "every"
-    },
     "a_bl7aev0a": {
       "id": "a_bl7aev0a",
       "at": "2026-10-15T00:59:47.337Z",
@@ -7949,16 +7899,6 @@
       "title": "Laundry: put away (other half)",
       "from": null,
       "to": null
-    },
-    "a_bpo44e9s": {
-      "id": "a_bpo44e9s",
-      "at": "2026-10-10T06:05:29.919Z",
-      "src": "chat",
-      "type": "add",
-      "ref": "t_hats3lws",
-      "title": "TUBRIC LinkedIn post",
-      "from": null,
-      "to": "2026-10-10"
     },
     "a_bufjlcal": {
       "id": "a_bufjlcal",
@@ -8240,16 +8180,6 @@
       "from": null,
       "to": "title,plan"
     },
-    "a_gba0zgfg": {
-      "id": "a_gba0zgfg",
-      "at": "2026-10-10T04:42:38.762Z",
-      "src": "chat",
-      "type": "move",
-      "ref": "t_81ej8elz",
-      "title": "Email Chelsea",
-      "from": "2026-10-09",
-      "to": "2026-10-11"
-    },
     "a_glcidzaz": {
       "id": "a_glcidzaz",
       "at": "2026-11-05T18:26:29.141Z",
@@ -8259,16 +8189,6 @@
       "title": "PSC: reach out to set up a call for Wednesday",
       "from": null,
       "to": null
-    },
-    "a_go6qputw": {
-      "id": "a_go6qputw",
-      "at": "2026-10-10T04:42:38.564Z",
-      "src": "chat",
-      "type": "edit",
-      "ref": "t_ff9fmzh1",
-      "title": "Clinical notes (3 behind)",
-      "from": null,
-      "to": "blocks"
     },
     "a_gtc0x6w3": {
       "id": "a_gtc0x6w3",
@@ -8410,16 +8330,6 @@
       "from": null,
       "to": "2026-10-29"
     },
-    "a_jjga7zsv": {
-      "id": "a_jjga7zsv",
-      "at": "2026-10-11T00:59:58.947Z",
-      "src": "chat",
-      "type": "block",
-      "ref": null,
-      "title": "Auto-plan: 3 tasks",
-      "from": null,
-      "to": "planned"
-    },
     "a_jnpn6tpo": {
       "id": "a_jnpn6tpo",
       "at": "2026-11-12T04:29:14.399Z",
@@ -8429,16 +8339,6 @@
       "title": "Cooked dinner",
       "from": null,
       "to": "2026-11-11"
-    },
-    "a_jvic3e0l": {
-      "id": "a_jvic3e0l",
-      "at": "2026-10-10T15:23:12.236Z",
-      "src": "chat",
-      "type": "add",
-      "ref": "t_72h9qejc",
-      "title": "Switch bill payments to Capital One",
-      "from": null,
-      "to": "2026-10-15"
     },
     "a_jwx3i93l": {
       "id": "a_jwx3i93l",
@@ -8460,16 +8360,6 @@
       "from": null,
       "to": "planned"
     },
-    "a_kc5gbo8h": {
-      "id": "a_kc5gbo8h",
-      "at": "2026-10-10T04:42:38.452Z",
-      "src": "chat",
-      "type": "edit",
-      "ref": "t_ff9fmzh1",
-      "title": "Clinical notes (3 behind)",
-      "from": null,
-      "to": "due,plan,notes,blocks"
-    },
     "a_kkc67tca": {
       "id": "a_kkc67tca",
       "at": "2026-11-12T17:56:16.011Z",
@@ -8477,16 +8367,6 @@
       "type": "done",
       "ref": "t_0nwips4f",
       "title": "Emailed Judith about WPPSI dates",
-      "from": null,
-      "to": null
-    },
-    "a_lczk50ca": {
-      "id": "a_lczk50ca",
-      "at": "2026-10-10T04:42:38.338Z",
-      "src": "chat",
-      "type": "done",
-      "ref": "t_myezwqph",
-      "title": "Lily gift: pick an idea",
       "from": null,
       "to": null
     },
@@ -8599,16 +8479,6 @@
       "title": "E-ADIS: big work session",
       "from": null,
       "to": "2026-11-11"
-    },
-    "a_og8bpk2t": {
-      "id": "a_og8bpk2t",
-      "at": "2026-10-10T04:42:38.232Z",
-      "src": "chat",
-      "type": "done",
-      "ref": "t_xouhgc0d",
-      "title": "Change Bella's scan to my scan",
-      "from": null,
-      "to": null
     },
     "a_ogzubn27": {
       "id": "a_ogzubn27",
@@ -9190,16 +9060,6 @@
       "from": null,
       "to": "2026-10-23"
     },
-    "a_wam13taj": {
-      "id": "a_wam13taj",
-      "at": "2026-10-10T04:42:38.659Z",
-      "src": "chat",
-      "type": "move",
-      "ref": "t_1umnesd3",
-      "title": "Email Billy",
-      "from": "2026-10-09",
-      "to": "2026-10-11"
-    },
     "a_wd5sqoul": {
       "id": "a_wd5sqoul",
       "at": "2026-10-27T13:28:48.166Z",
@@ -9340,16 +9200,6 @@
       "from": null,
       "to": "2026-10-20"
     },
-    "a_xxkyqpnn": {
-      "id": "a_xxkyqpnn",
-      "at": "2026-10-10T06:05:30.061Z",
-      "src": "chat",
-      "type": "add",
-      "ref": "t_kr128758",
-      "title": "Slack Dave + Shenghan (TUBRIC)",
-      "from": null,
-      "to": "2026-10-11"
-    },
     "a_xxwv3sc1": {
       "id": "a_xxwv3sc1",
       "at": "2026-10-12T21:20:46.346Z",
@@ -9409,16 +9259,6 @@
       "title": "Slack Dave + Shenghan (TUBRIC)",
       "from": null,
       "to": null
-    },
-    "a_ys3whz1q": {
-      "id": "a_ys3whz1q",
-      "at": "2026-10-10T06:05:34.087Z",
-      "src": "chat",
-      "type": "block",
-      "ref": "t_ocdscript",
-      "title": "OCD pres: write main script",
-      "from": null,
-      "to": "planned"
     },
     "a_ysuqpbfn": {
       "id": "a_ysuqpbfn",
