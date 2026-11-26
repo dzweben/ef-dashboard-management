@@ -23,16 +23,16 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-11-26T01:59:26.485Z",
+    "at": "2026-11-26T13:59:10.630Z",
     "headline": "5 things today.",
     "lines": [
-      "CHORES // Water plants · TUBRIC LinkedIn post · Grocery run · Closet reset · +2 more. Most overdue: Water plants (19d since last).",
-      "TOMORROW // Thu 11/26: nothing on the list yet"
+      "CHORES // Water plants · TUBRIC LinkedIn post · Grocery run · Closet reset · +2 more. Most overdue: Water plants (20d since last).",
+      "TOMORROW // Fri 11/27: nothing on the list yet"
     ],
     "asks": [
       "'Start ABCD work for Jason' got pushed 6x. Shrink it, pin it to a day, or drop it?",
-      "Anything coming up for Ziggy?",
-      "Anything coming up for coursework?"
+      "Dev projects: nothing open and quiet for 3+ weeks. Still active, or archive it?",
+      "LEARN: nothing open and quiet for 3+ weeks. Still active, or archive it?"
     ],
     "focus": []
   },
@@ -40,8 +40,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-11-26T01:59:24.729Z",
-    "lastActivitySeen": "2026-11-26T01:59:24.729Z"
+    "lastClaudeSync": "2026-11-26T13:59:08.960Z",
+    "lastActivitySeen": "2026-11-26T13:59:08.960Z"
   },
   "cats": {
     "admin": {
@@ -7959,16 +7959,6 @@
       "title": "DTI write-up",
       "from": null,
       "to": "2026-10-30"
-    },
-    "a_cm3ibjm6": {
-      "id": "a_cm3ibjm6",
-      "at": "2026-10-12T01:00:12.927Z",
-      "src": "chat",
-      "type": "block",
-      "ref": "t_ocdwork",
-      "title": "OCD pres: build workshop",
-      "from": null,
-      "to": "planned"
     },
     "a_cr74f46z": {
       "id": "a_cr74f46z",
