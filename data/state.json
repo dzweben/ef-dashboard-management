@@ -23,16 +23,16 @@
     "capOverrides": {}
   },
   "brief": {
-    "at": "2026-11-27T01:59:36.913Z",
+    "at": "2026-11-27T13:59:02.837Z",
     "headline": "5 things today.",
     "lines": [
-      "CHORES // Water plants · TUBRIC LinkedIn post · Grocery run · Closet reset · +2 more. Most overdue: Water plants (20d since last).",
-      "TOMORROW // Fri 11/27: nothing on the list yet"
+      "CHORES // Water plants · TUBRIC LinkedIn post · Grocery run · Closet reset · +2 more. Most overdue: Water plants (21d since last).",
+      "TOMORROW // Sat 11/28: nothing on the list yet"
     ],
     "asks": [
       "'Start ABCD work for Jason' got pushed 6x. Shrink it, pin it to a day, or drop it?",
-      "Dev projects: nothing open and quiet for 3+ weeks. Still active, or archive it?",
-      "LEARN: nothing open and quiet for 3+ weeks. Still active, or archive it?"
+      "Virtual school: nothing open and quiet for 3+ weeks. Still active, or archive it?",
+      "Fun: nothing open and quiet for 3+ weeks. Still active, or archive it?"
     ],
     "focus": []
   },
@@ -40,8 +40,8 @@
     "active": false
   },
   "sync": {
-    "lastClaudeSync": "2026-11-27T01:59:35.208Z",
-    "lastActivitySeen": "2026-11-27T01:59:35.208Z"
+    "lastClaudeSync": "2026-11-27T13:59:01.057Z",
+    "lastActivitySeen": "2026-11-27T13:59:01.057Z"
   },
   "cats": {
     "admin": {
@@ -7160,26 +7160,6 @@
       "from": null,
       "to": "notes"
     },
-    "a_0sd9cx4q": {
-      "id": "a_0sd9cx4q",
-      "at": "2026-10-12T19:17:18.949Z",
-      "src": "chat",
-      "type": "edit",
-      "ref": "t_pmvc74vr",
-      "title": "Laundry: cleanup (fold + put away)",
-      "from": null,
-      "to": "plan,prio,notes"
-    },
-    "a_15f8e9bj": {
-      "id": "a_15f8e9bj",
-      "at": "2026-10-12T19:17:18.815Z",
-      "src": "chat",
-      "type": "edit",
-      "ref": "t_ff9fmzh1",
-      "title": "Clinical notes (3 behind)",
-      "from": null,
-      "to": "blocks"
-    },
     "a_15ks3ixz": {
       "id": "a_15ks3ixz",
       "at": "2026-11-12T04:29:13.638Z",
@@ -7189,16 +7169,6 @@
       "title": "Client session",
       "from": null,
       "to": "2026-11-11"
-    },
-    "a_15wkqumk": {
-      "id": "a_15wkqumk",
-      "at": "2026-10-12T19:17:18.357Z",
-      "src": "chat",
-      "type": "chore",
-      "ref": "c_plants",
-      "title": "Water plants",
-      "from": null,
-      "to": "2026-10-11"
     },
     "a_162tpog2": {
       "id": "a_162tpog2",
@@ -7340,16 +7310,6 @@
       "from": null,
       "to": null
     },
-    "a_2yvnz214": {
-      "id": "a_2yvnz214",
-      "at": "2026-10-12T19:28:55.546Z",
-      "src": "chat",
-      "type": "add",
-      "ref": "t_6us113ij",
-      "title": "Put the Phil meeting on my calendar (Tue 10/20 at 1 PM)",
-      "from": null,
-      "to": "2026-10-12"
-    },
     "a_30xls6ul": {
       "id": "a_30xls6ul",
       "at": "2026-11-05T18:26:29.246Z",
@@ -7489,16 +7449,6 @@
       "title": "Lily gift: card + wrap",
       "from": null,
       "to": null
-    },
-    "a_55qqae97": {
-      "id": "a_55qqae97",
-      "at": "2026-10-12T19:17:19.750Z",
-      "src": "chat",
-      "type": "block",
-      "ref": "t_vnujsabp",
-      "title": "ABCD review prep",
-      "from": null,
-      "to": "planned"
     },
     "a_5ngodjsd": {
       "id": "a_5ngodjsd",
@@ -7920,16 +7870,6 @@
       "from": null,
       "to": "2026-11-09"
     },
-    "a_bymfxp4g": {
-      "id": "a_bymfxp4g",
-      "at": "2026-10-12T19:17:19.409Z",
-      "src": "chat",
-      "type": "edit",
-      "ref": "t_vnujsabp",
-      "title": "ABCD review prep",
-      "from": null,
-      "to": "notes,blocks"
-    },
     "a_c7t1sx8p": {
       "id": "a_c7t1sx8p",
       "at": "2026-10-16T14:44:54.409Z",
@@ -7990,16 +7930,6 @@
       "from": null,
       "to": "2026-11-04"
     },
-    "a_cwa995uo": {
-      "id": "a_cwa995uo",
-      "at": "2026-10-12T19:17:18.648Z",
-      "src": "chat",
-      "type": "edit",
-      "ref": "t_ff9fmzh1",
-      "title": "Clinical notes (3 behind)",
-      "from": null,
-      "to": "due,plan,notes,blocks"
-    },
     "a_d01yyk60": {
       "id": "a_d01yyk60",
       "at": "2026-10-13T16:25:10.852Z",
@@ -8059,16 +7989,6 @@
       "title": "ABCD review meeting",
       "from": null,
       "to": "due,notes"
-    },
-    "a_e0biuoos": {
-      "id": "a_e0biuoos",
-      "at": "2026-10-12T19:17:19.264Z",
-      "src": "chat",
-      "type": "move",
-      "ref": "t_pj82uec1",
-      "title": "Rewatch neuromelanin video",
-      "from": "2026-10-12",
-      "to": "2026-10-20"
     },
     "a_ebnlbqdq": {
       "id": "a_ebnlbqdq",
@@ -8400,16 +8320,6 @@
       "from": null,
       "to": "2026-11-12"
     },
-    "a_mrwayokz": {
-      "id": "a_mrwayokz",
-      "at": "2026-10-12T19:17:19.106Z",
-      "src": "chat",
-      "type": "move",
-      "ref": "t_abcdjason",
-      "title": "Start ABCD work for Jason",
-      "from": "2026-10-12",
-      "to": "2026-10-19"
-    },
     "a_mvci2s1u": {
       "id": "a_mvci2s1u",
       "at": "2026-11-12T17:58:35.639Z",
@@ -8640,26 +8550,6 @@
       "from": null,
       "to": null
     },
-    "a_qxabr8o1": {
-      "id": "a_qxabr8o1",
-      "at": "2026-10-12T19:17:19.582Z",
-      "src": "chat",
-      "type": "edit",
-      "ref": "t_vnujsabp",
-      "title": "ABCD review prep",
-      "from": null,
-      "to": "blocks"
-    },
-    "a_qzf7d7ab": {
-      "id": "a_qzf7d7ab",
-      "at": "2026-10-12T19:17:20.080Z",
-      "src": "chat",
-      "type": "add",
-      "ref": "t_rc0owh8i",
-      "title": "Rerun PPI for Teij email",
-      "from": null,
-      "to": "2026-10-13"
-    },
     "a_r05kmpao": {
       "id": "a_r05kmpao",
       "at": "2026-10-26T14:57:04.410Z",
@@ -8669,16 +8559,6 @@
       "title": "Grocery run",
       "from": null,
       "to": "2026-10-25"
-    },
-    "a_r1mzs03c": {
-      "id": "a_r1mzs03c",
-      "at": "2026-10-12T19:17:19.593Z",
-      "src": "chat",
-      "type": "block",
-      "ref": "t_vnujsabp",
-      "title": "ABCD review prep",
-      "from": null,
-      "to": "planned"
     },
     "a_rdhdwrb4": {
       "id": "a_rdhdwrb4",
@@ -8710,16 +8590,6 @@
       "from": null,
       "to": "blocks"
     },
-    "a_rwqkfxvc": {
-      "id": "a_rwqkfxvc",
-      "at": "2026-10-12T19:17:19.903Z",
-      "src": "chat",
-      "type": "block",
-      "ref": "t_vnujsabp",
-      "title": "ABCD review prep",
-      "from": null,
-      "to": "planned"
-    },
     "a_rxyrf4f8": {
       "id": "a_rxyrf4f8",
       "at": "2026-11-02T14:09:11.553Z",
@@ -8740,26 +8610,6 @@
       "from": null,
       "to": "added"
     },
-    "a_s8wpc31b": {
-      "id": "a_s8wpc31b",
-      "at": "2026-10-12T19:17:19.899Z",
-      "src": "chat",
-      "type": "edit",
-      "ref": "t_vnujsabp",
-      "title": "ABCD review prep",
-      "from": null,
-      "to": "blocks"
-    },
-    "a_sb30e5ak": {
-      "id": "a_sb30e5ak",
-      "at": "2026-10-12T21:20:45.866Z",
-      "src": "chat",
-      "type": "milestone",
-      "ref": "p_ocd",
-      "title": "OCD presentation / Read manual + take notes",
-      "from": null,
-      "to": "done"
-    },
     "a_scj65iz7": {
       "id": "a_scj65iz7",
       "at": "2026-10-31T17:33:08.208Z",
@@ -8769,16 +8619,6 @@
       "title": "Email Phil my report for the CAADC",
       "from": null,
       "to": "2026-11-01"
-    },
-    "a_sgf2c9s3": {
-      "id": "a_sgf2c9s3",
-      "at": "2026-10-12T19:29:02.908Z",
-      "src": "chat",
-      "type": "edit",
-      "ref": "t_6us113ij",
-      "title": "Put the Phil meeting on my calendar (Tue 10/20 at 1 PM)",
-      "from": null,
-      "to": "title,time"
     },
     "a_so8a3hdg": {
       "id": "a_so8a3hdg",
@@ -8960,16 +8800,6 @@
       "from": null,
       "to": null
     },
-    "a_utpkex78": {
-      "id": "a_utpkex78",
-      "at": "2026-10-12T19:17:19.744Z",
-      "src": "chat",
-      "type": "edit",
-      "ref": "t_vnujsabp",
-      "title": "ABCD review prep",
-      "from": null,
-      "to": "blocks"
-    },
     "a_uvu4jepb": {
       "id": "a_uvu4jepb",
       "at": "2026-10-26T14:57:03.919Z",
@@ -9130,16 +8960,6 @@
       "from": null,
       "to": "2026-11-09"
     },
-    "a_x7kykr8t": {
-      "id": "a_x7kykr8t",
-      "at": "2026-10-12T21:20:46.065Z",
-      "src": "chat",
-      "type": "edit",
-      "ref": "t_ocdwork",
-      "title": "OCD pres: build workshop",
-      "from": null,
-      "to": "est,notes"
-    },
     "a_x98j2blj": {
       "id": "a_x98j2blj",
       "at": "2026-10-27T13:28:47.191Z",
@@ -9180,26 +9000,6 @@
       "from": null,
       "to": null
     },
-    "a_xr5hbdgt": {
-      "id": "a_xr5hbdgt",
-      "at": "2026-10-12T19:28:55.739Z",
-      "src": "chat",
-      "type": "add",
-      "ref": "t_mo72yck9",
-      "title": "Meeting with Phil",
-      "from": null,
-      "to": "2026-10-20"
-    },
-    "a_xxwv3sc1": {
-      "id": "a_xxwv3sc1",
-      "at": "2026-10-12T21:20:46.346Z",
-      "src": "chat",
-      "type": "block",
-      "ref": null,
-      "title": "Auto-plan: 5 tasks",
-      "from": null,
-      "to": "planned"
-    },
     "a_y06x72s6": {
       "id": "a_y06x72s6",
       "at": "2026-10-16T14:51:26.363Z",
@@ -9239,16 +9039,6 @@
       "title": "TUBRIC LinkedIn post #2",
       "from": null,
       "to": "2026-10-18"
-    },
-    "a_yo412mzz": {
-      "id": "a_yo412mzz",
-      "at": "2026-10-12T19:17:18.504Z",
-      "src": "chat",
-      "type": "done",
-      "ref": "t_kr128758",
-      "title": "Slack Dave + Shenghan (TUBRIC)",
-      "from": null,
-      "to": null
     },
     "a_ysuqpbfn": {
       "id": "a_ysuqpbfn",
